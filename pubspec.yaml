@@ -1,0 +1,23 @@
+name: figma
+description: A Figma API wrapper library for interacting with Figma documents, written in pure Dart.
+version: 2.1.0
+homepage: https://github.com/dnb-asa/figma
+repository: https://github.com/dnb-asa/figma
+issue_tracker: https://github.com/dnb-asa/figma/issues
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  http2: ^1.0.1
+  json_annotation: ^3.1.0
+  equatable: ^1.2.5
+  copy_with_extension: ^1.4.0
+
+dev_dependencies:
+  pedantic: ^1.9.2
+  test: ^1.15.4
+  build_runner: ^1.10.4
+  json_serializable: ^3.5.0
+  dotenv: ^2.0.0
+  copy_with_extension_gen: ^1.4.0

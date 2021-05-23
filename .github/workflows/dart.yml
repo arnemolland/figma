@@ -1,0 +1,47 @@
+name: Dart CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    container:
+      image:  google/dart:latest
+      
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install dependencies
+      run: pub get
+    - name: Analyze library
+      run: dartanalyzer lib
+    - name: Analyze tests
+      run: dartanalyzer test
+      
+  deploy:
+    runs-on: ubuntu-latest
+    
+    container:
+      image:  google/dart:latest
+      
+    if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+    needs: build
+    steps:
+    - uses: actions/checkout@v1
+    - name: Setup credentials
+      run: | 
+        mkdir -p ~/.pub-cache 
+        cat <<EOF > ~/.pub-cache/credentials.json
+        {
+          "accessToken":"${{ secrets.PUB_OAUTH_ACCESS_TOKEN }}",
+          "refreshToken":"${{ secrets.PUB_OAUTH_REFRESH_TOKEN }}",
+          "tokenEndpoint":"https://accounts.google.com/o/oauth2/token",
+          "scopes": [ "openid", "https://www.googleapis.com/auth/userinfo.email" ],
+          "expiration": 1570721159347
+        }
+        EOF
+    - name: Publish package
+      continue-on-error: true # ignore failure on existing version
+      run: pub publish -f

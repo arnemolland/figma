@@ -1,0 +1,6 @@
+{
+	"image": "google/dart",
+	"extensions": [
+		"Dart-Code.dart-code",
+	],
+}
