@@ -1,5 +1,9 @@
 # Changelog
 
+# 2.1.0+1
+
+- Move repository from old org (dnb-asa) to new (arnemolland)
+
 # 2.1.0
 
 - Add `copyWith` method on all data classes
