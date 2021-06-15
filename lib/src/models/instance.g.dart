@@ -8,43 +8,43 @@ part of 'instance.dart';
 
 extension InstanceCopyWith on Instance {
   Instance copyWith({
-    SizeRectangle absoluteBoundingBox,
-    BlendMode blendMode,
-    List<Node> children,
-    bool clipsContent,
-    String componentId,
-    LayoutConstraint constraints,
-    double cornerRadius,
-    CounterAxisSizingMode counterAxisSizingMode,
-    List<Effect> effects,
-    List<ExportSetting> exportSettings,
-    List<Paint> fills,
-    num horizontalPadding,
-    String id,
-    bool isMask,
-    bool isMaskOutline,
-    num itemSpacing,
-    LayoutAlign layoutAlign,
-    List<LayoutGrid> layoutGrids,
-    LayoutMode layoutMode,
-    bool locked,
-    String name,
-    double opacity,
-    OverflowDirection overflowDirection,
-    dynamic pluginData,
-    bool preserveRatio,
-    List<num> rectangleCornerRadii,
-    List<List<num>> relativeTransform,
-    dynamic sharedPluginData,
-    Vector2D size,
-    StrokeAlign strokeAlign,
-    num strokeWeight,
-    List<Paint> strokes,
-    double transitionDuration,
-    EasingType transitionEasing,
-    String transitionNodeID,
-    num verticalPadding,
-    bool visible,
+    SizeRectangle? absoluteBoundingBox,
+    BlendMode? blendMode,
+    List<Node>? children,
+    bool? clipsContent,
+    String? componentId,
+    LayoutConstraint? constraints,
+    double? cornerRadius,
+    CounterAxisSizingMode? counterAxisSizingMode,
+    List<Effect>? effects,
+    List<ExportSetting>? exportSettings,
+    List<Paint>? fills,
+    num? horizontalPadding,
+    String? id,
+    bool? isMask,
+    bool? isMaskOutline,
+    num? itemSpacing,
+    LayoutAlign? layoutAlign,
+    List<LayoutGrid>? layoutGrids,
+    LayoutMode? layoutMode,
+    bool? locked,
+    String? name,
+    double? opacity,
+    OverflowDirection? overflowDirection,
+    dynamic? pluginData,
+    bool? preserveRatio,
+    List<num>? rectangleCornerRadii,
+    List<List<num>>? relativeTransform,
+    dynamic? sharedPluginData,
+    Vector2D? size,
+    StrokeAlign? strokeAlign,
+    num? strokeWeight,
+    List<Paint>? strokes,
+    double? transitionDuration,
+    EasingType? transitionEasing,
+    String? transitionNodeID,
+    num? verticalPadding,
+    bool? visible,
   }) {
     return Instance(
       absoluteBoundingBox: absoluteBoundingBox ?? this.absoluteBoundingBox,
@@ -95,48 +95,45 @@ extension InstanceCopyWith on Instance {
 
 Instance _$InstanceFromJson(Map<String, dynamic> json) {
   return Instance(
-    componentId: json['componentId'] as String,
+    componentId: json['componentId'] as String?,
     id: json['id'] as String,
-    name: json['name'] as String,
-    visible: json['visible'] as bool,
+    name: json['name'] as String?,
+    visible: json['visible'] as bool? ?? true,
     pluginData: json['pluginData'],
     sharedPluginData: json['sharedPluginData'],
-    children: (json['children'] as List)
+    children: (json['children'] as List<dynamic>?)
         ?.map(const NodeJsonConverter().fromJson)
-        ?.toList(),
-    locked: json['locked'] as bool,
-    fills: (json['fills'] as List)
-        ?.map(
-            (e) => e == null ? null : Paint.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
-    strokes: (json['strokes'] as List)
-        ?.map(
-            (e) => e == null ? null : Paint.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
-    strokeWeight: json['strokeWeight'] as num,
+        .toList(),
+    locked: json['locked'] as bool? ?? false,
+    fills: (json['fills'] as List<dynamic>?)
+        ?.map((e) => Paint.fromJson(e as Map<String, dynamic>))
+        .toList(),
+    strokes: (json['strokes'] as List<dynamic>?)
+        ?.map((e) => Paint.fromJson(e as Map<String, dynamic>))
+        .toList(),
+    strokeWeight: json['strokeWeight'] as num?,
     strokeAlign:
         _$enumDecodeNullable(_$StrokeAlignEnumMap, json['strokeAlign']),
-    cornerRadius: (json['cornerRadius'] as num)?.toDouble(),
-    rectangleCornerRadii:
-        (json['rectangleCornerRadii'] as List)?.map((e) => e as num)?.toList(),
-    exportSettings: (json['exportSettings'] as List)
-        ?.map((e) => e == null
-            ? null
-            : ExportSetting.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
+    cornerRadius: (json['cornerRadius'] as num?)?.toDouble(),
+    rectangleCornerRadii: (json['rectangleCornerRadii'] as List<dynamic>?)
+        ?.map((e) => e as num)
+        .toList(),
+    exportSettings: (json['exportSettings'] as List<dynamic>?)
+        ?.map((e) => ExportSetting.fromJson(e as Map<String, dynamic>))
+        .toList(),
     blendMode: _$enumDecodeNullable(_$BlendModeEnumMap, json['blendMode']),
-    preserveRatio: json['preserveRatio'] as bool,
+    preserveRatio: json['preserveRatio'] as bool?,
     constraints: json['constraints'] == null
         ? null
         : LayoutConstraint.fromJson(
             json['constraints'] as Map<String, dynamic>),
     layoutAlign:
         _$enumDecodeNullable(_$LayoutAlignEnumMap, json['layoutAlign']),
-    transitionNodeID: json['transitionNodeID'] as String,
-    transitionDuration: (json['transitionDuration'] as num)?.toDouble(),
+    transitionNodeID: json['transitionNodeID'] as String?,
+    transitionDuration: (json['transitionDuration'] as num?)?.toDouble(),
     transitionEasing:
         _$enumDecodeNullable(_$EasingTypeEnumMap, json['transitionEasing']),
-    opacity: (json['opacity'] as num)?.toDouble(),
+    opacity: (json['opacity'] as num?)?.toDouble(),
     absoluteBoundingBox: json['absoluteBoundingBox'] == null
         ? null
         : SizeRectangle.fromJson(
@@ -144,28 +141,26 @@ Instance _$InstanceFromJson(Map<String, dynamic> json) {
     size: json['size'] == null
         ? null
         : Vector2D.fromJson(json['size'] as Map<String, dynamic>),
-    relativeTransform: (json['relativeTransform'] as List)
-        ?.map((e) => (e as List)?.map((e) => e as num)?.toList())
-        ?.toList(),
-    clipsContent: json['clipsContent'] as bool,
+    relativeTransform: (json['relativeTransform'] as List<dynamic>?)
+        ?.map((e) => (e as List<dynamic>).map((e) => e as num).toList())
+        .toList(),
+    clipsContent: json['clipsContent'] as bool?,
     layoutMode: _$enumDecodeNullable(_$LayoutModeEnumMap, json['layoutMode']),
     counterAxisSizingMode: _$enumDecodeNullable(
         _$CounterAxisSizingModeEnumMap, json['counterAxisSizingMode']),
-    horizontalPadding: json['horizontalPadding'] as num,
-    verticalPadding: json['verticalPadding'] as num,
-    itemSpacing: json['itemSpacing'] as num,
-    layoutGrids: (json['layoutGrids'] as List)
-        ?.map((e) =>
-            e == null ? null : LayoutGrid.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
+    horizontalPadding: json['horizontalPadding'] as num?,
+    verticalPadding: json['verticalPadding'] as num?,
+    itemSpacing: json['itemSpacing'] as num?,
+    layoutGrids: (json['layoutGrids'] as List<dynamic>?)
+        ?.map((e) => LayoutGrid.fromJson(e as Map<String, dynamic>))
+        .toList(),
     overflowDirection: _$enumDecodeNullable(
         _$OverflowDirectionEnumMap, json['overflowDirection']),
-    effects: (json['effects'] as List)
-        ?.map((e) =>
-            e == null ? null : Effect.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
-    isMask: json['isMask'] as bool,
-    isMaskOutline: json['isMaskOutline'] as bool,
+    effects: (json['effects'] as List<dynamic>?)
+        ?.map((e) => Effect.fromJson(e as Map<String, dynamic>))
+        .toList(),
+    isMask: json['isMask'] as bool?,
+    isMaskOutline: json['isMaskOutline'] as bool?,
   );
 }
 
@@ -176,7 +171,7 @@ Map<String, dynamic> _$InstanceToJson(Instance instance) => <String, dynamic>{
       'pluginData': instance.pluginData,
       'sharedPluginData': instance.sharedPluginData,
       'children':
-          instance.children?.map(const NodeJsonConverter().toJson)?.toList(),
+          instance.children?.map(const NodeJsonConverter().toJson).toList(),
       'locked': instance.locked,
       'fills': instance.fills,
       'strokes': instance.strokes,
@@ -212,36 +207,41 @@ Map<String, dynamic> _$InstanceToJson(Instance instance) => <String, dynamic>{
       'componentId': instance.componentId,
     };
 
-T _$enumDecode<T>(
-  Map<T, dynamic> enumValues,
-  dynamic source, {
-  T unknownValue,
+K _$enumDecode<K, V>(
+  Map<K, V> enumValues,
+  Object? source, {
+  K? unknownValue,
 }) {
   if (source == null) {
-    throw ArgumentError('A value must be provided. Supported values: '
-        '${enumValues.values.join(', ')}');
+    throw ArgumentError(
+      'A value must be provided. Supported values: '
+      '${enumValues.values.join(', ')}',
+    );
   }
 
-  final value = enumValues.entries
-      .singleWhere((e) => e.value == source, orElse: () => null)
-      ?.key;
-
-  if (value == null && unknownValue == null) {
-    throw ArgumentError('`$source` is not one of the supported values: '
-        '${enumValues.values.join(', ')}');
-  }
-  return value ?? unknownValue;
+  return enumValues.entries.singleWhere(
+    (e) => e.value == source,
+    orElse: () {
+      if (unknownValue == null) {
+        throw ArgumentError(
+          '`$source` is not one of the supported values: '
+          '${enumValues.values.join(', ')}',
+        );
+      }
+      return MapEntry(unknownValue, enumValues.values.first);
+    },
+  ).key;
 }
 
-T _$enumDecodeNullable<T>(
-  Map<T, dynamic> enumValues,
+K? _$enumDecodeNullable<K, V>(
+  Map<K, V> enumValues,
   dynamic source, {
-  T unknownValue,
+  K? unknownValue,
 }) {
   if (source == null) {
     return null;
   }
-  return _$enumDecode<T>(enumValues, source, unknownValue: unknownValue);
+  return _$enumDecode<K, V>(enumValues, source, unknownValue: unknownValue);
 }
 
 const _$StrokeAlignEnumMap = {

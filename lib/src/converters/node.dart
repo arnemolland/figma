@@ -3,16 +3,16 @@ import 'package:json_annotation/json_annotation.dart';
 
 /// Converts a JSON decoded object to a [Node] specific instance regarding
 /// its `type` property.
-class NodeJsonConverter implements JsonConverter<Node, Object> {
+class NodeJsonConverter implements JsonConverter<Node?, Object?> {
   const NodeJsonConverter();
 
   /// Parses a JSON object into a [Node] object
   @override
-  Node fromJson(Object json) {
+  Node? fromJson(Object? json) {
     if (json == null) {
       return null;
     }
-    final node = Node.fromJson(json);
+    final node = Node.fromJson(json as Map<String, dynamic>);
     switch (node.type?.toUpperCase()) {
       case 'CANVAS':
         return Canvas.fromJson(json);
@@ -46,8 +46,6 @@ class NodeJsonConverter implements JsonConverter<Node, Object> {
         return Document.fromJson(json);
       case 'VARIANT_COMPONENT':
         return Frame.fromJson(json);
-      case 'COMPONENT_SET':
-        return Frame.fromJson(json);
       default:
         throw UnsupportedError('Unsupported node type : ${node.type}');
     }
@@ -55,7 +53,7 @@ class NodeJsonConverter implements JsonConverter<Node, Object> {
 
   /// Parses a [Node] object into a JSON object
   @override
-  Object toJson(Node object) {
+  Object? toJson(Node? object) {
     if (object == null) {
       return null;
     }

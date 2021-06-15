@@ -12,12 +12,12 @@ part 'document.g.dart';
 class Document extends Node {
   /// An array of canvases attached to the document
   @NodeJsonConverter()
-  final List<Node> children;
+  final List<Node?>? children;
 
   Document({
-    String id,
-    String name,
-    bool visible,
+    required String id,
+    String? name,
+    required bool visible,
     dynamic pluginData,
     dynamic sharedPluginData,
     this.children,
@@ -30,7 +30,7 @@ class Document extends Node {
         );
 
   @override
-  List<Object> get props => [
+  List<Object?> get props => [
         ...super.props,
         children,
       ];

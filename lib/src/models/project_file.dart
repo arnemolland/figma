@@ -9,18 +9,18 @@ part 'project_file.g.dart';
 @CopyWith()
 class ProjectFile extends Equatable {
   /// The file key
-  final String key;
+  final String? key;
 
   /// The name of the project file
-  final String name;
+  final String? name;
 
   /// The URL of the file thumbnail image
   @JsonKey(name: 'thumbnail_url')
-  final String thumbnailUrl;
+  final String? thumbnailUrl;
 
   /// The date t he file was last modified
   @JsonKey(name: 'last_modified')
-  final DateTime lastModified;
+  final DateTime? lastModified;
 
   ProjectFile({
     this.key,
@@ -30,7 +30,7 @@ class ProjectFile extends Equatable {
   });
 
   @override
-  List<Object> get props => [
+  List<Object?> get props => [
         key,
         name,
         thumbnailUrl,

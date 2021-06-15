@@ -1,7 +1,7 @@
-import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:equatable/equatable.dart';
 import 'package:figma/src/models/models.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:copy_with_extension/copy_with_extension.dart';
 
 part 'comments_response.g.dart';
 
@@ -9,12 +9,12 @@ part 'comments_response.g.dart';
 @CopyWith()
 class CommentsResponse extends Equatable {
   /// List of comments requested
-  final List<Comment> comments;
+  final List<Comment>? comments;
 
   CommentsResponse({this.comments});
 
   @override
-  List<Object> get props => [comments];
+  List<Object?> get props => [comments];
 
   factory CommentsResponse.fromJson(Map<String, dynamic> json) =>
       _$CommentsResponseFromJson(json);

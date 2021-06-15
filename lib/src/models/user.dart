@@ -16,16 +16,16 @@ class User extends Equatable {
 
   /// URL link to the user's profile image
   @JsonKey(name: 'img_url')
-  final String imageUrl;
+  final String? imageUrl;
 
   /// Email associated with the user's account.
   /// This will only be present on the /v1/me endpoint
-  final String email;
+  final String? email;
 
-  User({this.id, this.handle, this.imageUrl, this.email});
+  User({required this.id, required this.handle, this.imageUrl, this.email});
 
   @override
-  List<Object> get props => [id, handle, imageUrl, email];
+  List<Object?> get props => [id, handle, imageUrl, email];
 
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
 

@@ -8,8 +8,8 @@ part of 'styles_meta.dart';
 
 extension StylesMetaCopyWith on StylesMeta {
   StylesMeta copyWith({
-    Cursor cursor,
-    List<Style> styles,
+    Cursor? cursor,
+    List<Style>? styles,
   }) {
     return StylesMeta(
       cursor: cursor ?? this.cursor,
@@ -24,10 +24,9 @@ extension StylesMetaCopyWith on StylesMeta {
 
 StylesMeta _$StylesMetaFromJson(Map<String, dynamic> json) {
   return StylesMeta(
-    styles: (json['styles'] as List)
-        ?.map(
-            (e) => e == null ? null : Style.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
+    styles: (json['styles'] as List<dynamic>?)
+        ?.map((e) => Style.fromJson(e as Map<String, dynamic>))
+        .toList(),
     cursor: json['cursor'] == null
         ? null
         : Cursor.fromJson(json['cursor'] as Map<String, dynamic>),

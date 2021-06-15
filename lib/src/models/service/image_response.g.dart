@@ -8,9 +8,9 @@ part of 'image_response.dart';
 
 extension ImageResponseCopyWith on ImageResponse {
   ImageResponse copyWith({
-    String err,
-    Map<String, String> images,
-    int status,
+    String? err,
+    Map<String, String>? images,
+    int? status,
   }) {
     return ImageResponse(
       err: err ?? this.err,
@@ -26,11 +26,11 @@ extension ImageResponseCopyWith on ImageResponse {
 
 ImageResponse _$ImageResponseFromJson(Map<String, dynamic> json) {
   return ImageResponse(
-    err: json['err'] as String,
-    images: (json['images'] as Map<String, dynamic>)?.map(
+    err: json['err'] as String?,
+    images: (json['images'] as Map<String, dynamic>?)?.map(
       (k, e) => MapEntry(k, e as String),
     ),
-    status: json['status'] as int,
+    status: json['status'] as int?,
   );
 }
 

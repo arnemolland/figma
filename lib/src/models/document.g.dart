@@ -8,12 +8,12 @@ part of 'document.dart';
 
 extension DocumentCopyWith on Document {
   Document copyWith({
-    List<Node> children,
-    String id,
-    String name,
-    dynamic pluginData,
-    dynamic sharedPluginData,
-    bool visible,
+    List<Node>? children,
+    String? id,
+    String? name,
+    dynamic? pluginData,
+    dynamic? sharedPluginData,
+    bool? visible,
   }) {
     return Document(
       children: children ?? this.children,
@@ -33,13 +33,13 @@ extension DocumentCopyWith on Document {
 Document _$DocumentFromJson(Map<String, dynamic> json) {
   return Document(
     id: json['id'] as String,
-    name: json['name'] as String,
-    visible: json['visible'] as bool,
+    name: json['name'] as String?,
+    visible: json['visible'] as bool? ?? true,
     pluginData: json['pluginData'],
     sharedPluginData: json['sharedPluginData'],
-    children: (json['children'] as List)
+    children: (json['children'] as List<dynamic>?)
         ?.map(const NodeJsonConverter().fromJson)
-        ?.toList(),
+        .toList(),
   );
 }
 
@@ -50,5 +50,5 @@ Map<String, dynamic> _$DocumentToJson(Document instance) => <String, dynamic>{
       'pluginData': instance.pluginData,
       'sharedPluginData': instance.sharedPluginData,
       'children':
-          instance.children?.map(const NodeJsonConverter().toJson)?.toList(),
+          instance.children?.map(const NodeJsonConverter().toJson).toList(),
     };

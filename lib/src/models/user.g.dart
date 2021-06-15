@@ -8,10 +8,10 @@ part of 'user.dart';
 
 extension UserCopyWith on User {
   User copyWith({
-    String email,
-    String handle,
-    String id,
-    String imageUrl,
+    String? email,
+    String? handle,
+    String? id,
+    String? imageUrl,
   }) {
     return User(
       email: email ?? this.email,
@@ -30,8 +30,8 @@ User _$UserFromJson(Map<String, dynamic> json) {
   return User(
     id: json['id'] as String,
     handle: json['handle'] as String,
-    imageUrl: json['img_url'] as String,
-    email: json['email'] as String,
+    imageUrl: json['img_url'] as String?,
+    email: json['email'] as String?,
   );
 }
 

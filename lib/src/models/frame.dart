@@ -15,41 +15,42 @@ part 'frame.g.dart';
 class Frame extends Node {
   /// An array of nodes that are direct children of this node
   @NodeJsonConverter()
-  final List<Node> children;
+  final List<Node?>? children;
 
   /// If true, layer is locked and cannot be edited
+  @JsonKey(defaultValue: false)
   final bool locked;
 
   /// An array of fill paints applied to the node
-  final List<Paint> fills;
+  final List<Paint>? fills;
 
   /// An array of stroke paints applied to the node
-  final List<Paint> strokes;
+  final List<Paint>? strokes;
 
   /// The weight of strokes on the node
-  final num strokeWeight;
+  final num? strokeWeight;
 
   /// Position of stroke relative to vector outline, as a string enum
-  final StrokeAlign strokeAlign;
+  final StrokeAlign? strokeAlign;
 
   /// Radius of each corner of the frame if a single radius is set for all corners
-  final double cornerRadius;
+  final double? cornerRadius;
 
   /// Array of length 4 of the radius of each corner of the frame,
   /// starting in the top left and proceeding clockwise
-  final List<num> rectangleCornerRadii;
+  final List<num>? rectangleCornerRadii;
 
   /// An array of export settings representing images to export from node
-  final List<ExportSetting> exportSettings;
+  final List<ExportSetting>? exportSettings;
 
   /// How this node blends with nodes behind it in the scene
-  final BlendMode blendMode;
+  final BlendMode? blendMode;
 
   /// Keep height and width constrained to same ratio
-  final bool preserveRatio;
+  final bool? preserveRatio;
 
   /// Horizontal and vertical layout constraints for node
-  final LayoutConstraint constraints;
+  final LayoutConstraint? constraints;
 
   /// How the layer is aligned inside an auto-layout frame.
   /// This property is only provided for direct children
@@ -58,116 +59,116 @@ class Frame extends Node {
   /// In horizontal auto-layout frames, "MIN" and "MAX" correspond to
   /// "TOP" and "BOTTOM". In vertical auto-layout frames, "MIN" and "MAX"
   /// correspond to "LEFT" and "RIGHT".
-  final LayoutAlign layoutAlign;
+  final LayoutAlign? layoutAlign;
 
   /// Determines how the auto-layout frame’s children should be aligned in
   /// the primary axis direction. This property is only applicable for
   /// auto-layout frames.
-  final PrimaryAxisAlignItems primaryAxisAlignItems;
+  final PrimaryAxisAlignItems? primaryAxisAlignItems;
 
   /// Determines how the auto-layout frame’s children should be aligned in
   /// the counter axis direction. This property is only applicable for
   /// auto-layout frames.
-  final CounterAxisAlignItems counterAxisAlignItems;
+  final CounterAxisAlignItems? counterAxisAlignItems;
 
   /// The padding betweeen the left border of the frame and its children.
   /// This property is only applicable for auto-layout frames.
-  final double paddingLeft;
+  final double? paddingLeft;
 
   /// The padding betweeen the top border of the frame and its children.
   /// This property is only applicable for auto-layout frames.
-  final double paddingTop;
+  final double? paddingTop;
 
   /// The padding betweeen the right border of the frame and its children.
   /// This property is only applicable for auto-layout frames.
-  final double paddingRight;
+  final double? paddingRight;
 
   /// The padding betweeen the bottom border of the frame and its children.
   /// This property is only applicable for auto-layout frames.
-  final double paddingBottom;
+  final double? paddingBottom;
 
   /// Node ID of node to transition to in prototyping
-  final String transitionNodeID;
+  final String? transitionNodeID;
 
   /// The duration of the prototyping transition on this node (in milliseconds)
-  final double transitionDuration;
+  final double? transitionDuration;
 
   /// The easing curve used in the prototyping transition on this node
-  final EasingType transitionEasing;
+  final EasingType? transitionEasing;
 
   /// Opacity of the node
-  final double opacity;
+  final double? opacity;
 
   /// Bounding box of the node in absolute space coordinates
-  final SizeRectangle absoluteBoundingBox;
+  final SizeRectangle? absoluteBoundingBox;
 
   /// Width and height of element. This is different from the width and height
   /// of the bounding box in that the absolute bounding box represents the
   /// element after scaling and rotation. Only present if geometry=paths
   /// is passed
-  final Vector2D size;
+  final Vector2D? size;
 
   /// The top two rows of a matrix that represents the 2D transform of this
   /// node relative to its parent. The bottom row of the matrix is implicitly
   /// always (0, 0, 1). Use to transform coordinates in geometry. Only present
   /// if `geometry=paths` is passed
-  final List<List<num>> relativeTransform;
+  final List<List<num>>? relativeTransform;
 
   /// Whether or not this node clip content outside of its bounds
-  final bool clipsContent;
+  final bool? clipsContent;
 
   /// Whether this layer uses auto-layout to position its children.
-  final LayoutMode layoutMode;
+  final LayoutMode? layoutMode;
 
   /// Whether the counter axis has a fixed length (determined by the user)
   /// or an automatic length (determined by the layout engine). This property
   /// is only applicable for auto-layout frames.
-  final CounterAxisSizingMode counterAxisSizingMode;
+  final CounterAxisSizingMode? counterAxisSizingMode;
 
   /// Whether the primary axis has a fixed length (determined by the user) or
   /// an automatic length (determined by the layout engine). This property is
   /// only applicable for auto-layout frames.
-  final PrimaryAxisSizingMode primaryAxisSizingMode;
+  final PrimaryAxisSizingMode? primaryAxisSizingMode;
 
   /// The horizontal padding between the borders of the frame and its children.
   /// This property is only applicable for auto-layout frames.
-  final num horizontalPadding;
+  final num? horizontalPadding;
 
   /// The vertical padding between the borders of the frame and its children.
   /// This property is only applicable for auto-layout frames.
-  final num verticalPadding;
+  final num? verticalPadding;
 
   /// The distance between children of the frame.
   /// This property is only applicable for auto-layout frames.
-  final num itemSpacing;
+  final num? itemSpacing;
 
   /// An array of layout grids attached to this node. [Group] nodes do not
   /// have this attribute
-  final List<LayoutGrid> layoutGrids;
+  final List<LayoutGrid>? layoutGrids;
 
   /// Defines the scrolling behavior of the frame, if there exist contents
   /// outside of the frame boundaries. The frame can either scroll vertically,
   /// horizontally, or in both directions to the extents of the content
   /// contained within it. This behavior can be observed in a prototype.
-  final OverflowDirection overflowDirection;
+  final OverflowDirection? overflowDirection;
 
   /// An array of effects attached to this node
-  final List<Effect> effects;
+  final List<Effect>? effects;
 
   /// Does this node mask sibling nodes in front of it?
-  final bool isMask;
+  final bool? isMask;
 
   /// Does this mask ignore fill style (like gradients) and effects?
-  final bool isMaskOutline;
+  final bool? isMaskOutline;
 
   Frame({
-    String id,
-    String name,
-    bool visible,
+    required String id,
+    String? name,
+    required bool visible,
     dynamic pluginData,
     dynamic sharedPluginData,
     this.children,
-    this.locked,
+    required this.locked,
     this.fills,
     this.strokes,
     this.strokeWeight,
@@ -213,7 +214,7 @@ class Frame extends Node {
         );
 
   @override
-  List<Object> get props => [
+  List<Object?> get props => [
         ...super.props,
         children,
         locked,

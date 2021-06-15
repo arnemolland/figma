@@ -9,21 +9,21 @@ part 'color.g.dart';
 @CopyWith()
 class Color extends Equatable {
   /// Red channel value, between 0 and 1
-  final double r;
+  final double? r;
 
   /// Green channel value, between 0 and 1
-  final double g;
+  final double? g;
 
   /// Blue channel value, between 0 and 1
-  final double b;
+  final double? b;
 
   /// Alpha channel value, between 0 and 1
-  final double a;
+  final double? a;
 
   Color({this.r, this.g, this.b, this.a});
 
   @override
-  List<Object> get props => [r, g, b, a];
+  List<Object?> get props => [r, g, b, a];
 
   factory Color.fromJson(Map<String, dynamic> json) => _$ColorFromJson(json);
 

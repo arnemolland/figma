@@ -22,47 +22,47 @@ enum Operation {
 class BooleanOperation extends Vector {
   /// An array of nodes that are being boolean operated on
   @NodeJsonConverter()
-  final List<Node> children;
+  final List<Node?>? children;
 
   /// A string enum with value of "UNION", "INTERSECT", "SUBTRACT", or "EXCLUDE"
   ///  indicating the type of boolean operation applied
-  final Operation operation;
+  final Operation? operation;
 
   BooleanOperation({
     this.children,
     this.operation,
-    String id,
-    String name,
-    bool visible,
+    required String id,
+    String? name,
+    required bool visible,
     dynamic pluginData,
     dynamic sharedPluginData,
-    bool locked,
-    List<ExportSetting> exportSettings,
-    BlendMode blendMode,
-    bool preserveRatio,
-    LayoutAlign layoutAlign,
-    double layoutGrow,
-    LayoutConstraint constraints,
-    String transitionNodeID,
-    double transitionDuration,
-    EasingType transitionEasing,
-    double opacity,
-    SizeRectangle absoluteBoundingBox,
-    List<Effect> effects,
-    Vector2D size,
-    List<List<num>> relativeTransform,
-    bool isMask,
-    List<Paint> fills,
-    List<dynamic> fillGeometry,
-    List<Paint> strokes,
-    double strokeWeight,
-    StrokeCap strokeCap,
-    StrokeJoin strokeJoin,
-    List<double> strokeDashes,
-    double strokeMiterAngle,
-    List<dynamic> strokeGeometry,
-    StrokeAlign strokeAlign,
-    Map<StyleTypeKey, String> styles,
+    bool? locked,
+    List<ExportSetting>? exportSettings,
+    BlendMode? blendMode,
+    bool? preserveRatio,
+    LayoutAlign? layoutAlign,
+    double? layoutGrow,
+    LayoutConstraint? constraints,
+    String? transitionNodeID,
+    double? transitionDuration,
+    EasingType? transitionEasing,
+    double? opacity,
+    SizeRectangle? absoluteBoundingBox,
+    List<Effect>? effects,
+    Vector2D? size,
+    List<List<num>>? relativeTransform,
+    bool? isMask,
+    List<Paint>? fills,
+    List<dynamic>? fillGeometry,
+    List<Paint>? strokes,
+    double? strokeWeight,
+    StrokeCap? strokeCap,
+    StrokeJoin? strokeJoin,
+    List<double>? strokeDashes,
+    double? strokeMiterAngle,
+    List<dynamic>? strokeGeometry,
+    StrokeAlign? strokeAlign,
+    Map<StyleTypeKey, String>? styles,
   }) : super(
           id: id,
           name: name,
@@ -99,7 +99,7 @@ class BooleanOperation extends Vector {
         );
 
   @override
-  List<Object> get props => [
+  List<Object?> get props => [
         ...super.props,
         children,
         operation,

@@ -23,7 +23,7 @@ class Comment extends Equatable {
 
   /// If present, the id of the comment to which this is the reply
   @JsonKey(name: 'parent_id')
-  final String parentId;
+  final String? parentId;
 
   /// The user who left the comment
   final User user;
@@ -39,21 +39,21 @@ class Comment extends Equatable {
   /// Only set for top level comments.
   /// The number displayed with the comment in the UI
   @JsonKey(name: 'order_id')
-  final String orderId;
+  final String? orderId;
 
   Comment({
-    this.id,
+    required this.id,
     this.clientMeta,
-    this.fileKey,
+    required this.fileKey,
     this.parentId,
-    this.user,
-    this.createdAt,
-    this.resolvedAt,
+    required this.user,
+    required this.createdAt,
+    required this.resolvedAt,
     this.orderId,
   });
 
   @override
-  List<Object> get props => [
+  List<Object?> get props => [
         id,
         clientMeta,
         fileKey,

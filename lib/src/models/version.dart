@@ -16,24 +16,24 @@ class Version extends Equatable {
   final DateTime createdAt;
 
   /// The label given to the version in the editor
-  final String label;
+  final String? label;
 
   /// The description of the version as entered in the editor
-  final String description;
+  final String? description;
 
   /// The user that created the version
   final User user;
 
   Version({
-    this.id,
-    this.createdAt,
+    required this.id,
+    required this.createdAt,
     this.label,
     this.description,
-    this.user,
+    required this.user,
   });
 
   @override
-  List<Object> get props => [
+  List<Object?> get props => [
         id,
         createdAt,
         label,

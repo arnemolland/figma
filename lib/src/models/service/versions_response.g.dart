@@ -8,7 +8,7 @@ part of 'versions_response.dart';
 
 extension VersionsResponseCopyWith on VersionsResponse {
   VersionsResponse copyWith({
-    List<Version> versions,
+    List<Version>? versions,
   }) {
     return VersionsResponse(
       versions: versions ?? this.versions,
@@ -22,10 +22,9 @@ extension VersionsResponseCopyWith on VersionsResponse {
 
 VersionsResponse _$VersionsResponseFromJson(Map<String, dynamic> json) {
   return VersionsResponse(
-    versions: (json['versions'] as List)
-        ?.map((e) =>
-            e == null ? null : Version.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
+    versions: (json['versions'] as List<dynamic>?)
+        ?.map((e) => Version.fromJson(e as Map<String, dynamic>))
+        .toList(),
   );
 }
 

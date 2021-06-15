@@ -22,18 +22,18 @@ enum ExportFormat {
 @CopyWith()
 class ExportSetting extends Equatable {
   /// File suffix to append to all filenames
-  final String suffix;
+  final String? suffix;
 
   // Image type, string enum that supports values JPG, PNG, and SVG
-  final ExportFormat format;
+  final ExportFormat? format;
 
   /// Constraint that determines sizing of exported asset
-  final Constraint constraint;
+  final Constraint? constraint;
 
   ExportSetting({this.suffix, this.format, this.constraint});
 
   @override
-  List<Object> get props => [suffix, format, constraint];
+  List<Object?> get props => [suffix, format, constraint];
 
   factory ExportSetting.fromJson(Map<String, dynamic> json) =>
       _$ExportSettingFromJson(json);

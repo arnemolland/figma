@@ -11,24 +11,25 @@ part 'paint.g.dart';
 @CopyWith()
 class Paint extends Equatable {
   /// Type of paint as a string enum
-  final PaintType type;
+  final PaintType? type;
 
   /// Is the paint enabled?
+  @JsonKey(defaultValue: true)
   final bool visible;
 
   /// Overall opacity of paint (colors within the paint can also have opacity
   /// values which would blend with this)
-  final double opacity;
+  final double? opacity;
 
   // For solid paints:
 
   /// Solid color of the paint
-  final Color color;
+  final Color? color;
 
   // for gradient paints:
 
   /// How this node blends with nodes behind it in the scene
-  final BlendMode blendMode;
+  final BlendMode? blendMode;
 
   /// This field contains three vectors, each of which are a position in
   /// normalized object space (normalized object space is if the top left
@@ -42,40 +43,40 @@ class Paint extends Equatable {
   /// ![angular example](https://www.figma.com/images/developer_app/angular.png)
   /// ![diamond example](https://www.figma.com/images/developer_app/diamond.png)
   /// ![radial example](https://www.figma.com/images/developer_app/radial.png)
-  final List<Vector2D> gradientHandlePositions;
+  final List<Vector2D>? gradientHandlePositions;
 
   /// Positions of key points along the gradient axis with the colors anchored
   /// there. Colors along the gradient are interpolated smoothly between
   /// neighboring gradient stops.
-  final List<ColorStop> gradientStops;
+  final List<ColorStop>? gradientStops;
 
   // For image paints:
 
   /// Image scaling mode
-  final ScaleMode scaleMode;
+  final ScaleMode? scaleMode;
 
   /// Affine transform applied to the image, only present if scaleMode is
   /// [ScaleMode.stretch]
-  final List<List<num>> imageTransform;
+  final List<List<num>>? imageTransform;
 
   /// Amount image is scaled by in tiling, only present if scaleMode is
   /// [ScaleMode.tile]
-  final num scalingFactor;
+  final num? scalingFactor;
 
   /// A reference to an image embedded in this node. To download the image
   /// using this reference, use the [FigmaClient.getImages()] method to retrieve the
   ///  mapping from image references to image URLs
-  final String imageRef;
+  final String? imageRef;
 
   /// A reference to the GIF embedded in this node, if the image is a GIF.
   /// To download the image using this reference, use the
   /// [FigmaClient.getImages()] method to retrieve the mapping from image
   /// references to image URLs
-  final String gifRef;
+  final String? gifRef;
 
   Paint({
     this.type,
-    this.visible,
+    required this.visible,
     this.opacity,
     this.color,
     this.blendMode,
@@ -89,7 +90,7 @@ class Paint extends Equatable {
   });
 
   @override
-  List<Object> get props => [
+  List<Object?> get props => [
         type,
         visible,
         opacity,

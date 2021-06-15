@@ -10,30 +10,30 @@ part 'layout_grid.g.dart';
 @CopyWith()
 class LayoutGrid extends Equatable {
   /// Orientation of the grid as a string enum
-  final LayoutPattern pattern;
+  final LayoutPattern? pattern;
 
   /// Width of column grid or height of row grid or square grid spacing
-  final double sectionSize;
+  final double? sectionSize;
 
   /// Is the grid currently visible?
-  final bool visible;
+  final bool? visible;
 
   /// Color of the grid
-  final Color color;
+  final Color? color;
 
   // The following properties are only meaningful for directional grids (COLUMNS or ROWS)
 
   /// Positioning of grid as a string enum
-  final LayoutAlign alignment;
+  final LayoutAlign? alignment;
 
   /// Spacing in between columns and rows
-  final double gutterSize;
+  final double? gutterSize;
 
   /// Spacing before the first column or row
-  final double offset;
+  final double? offset;
 
   /// Number of columns or rows
-  final int count;
+  final int? count;
 
   LayoutGrid({
     this.pattern,
@@ -47,7 +47,7 @@ class LayoutGrid extends Equatable {
   });
 
   @override
-  List<Object> get props => [
+  List<Object?> get props => [
         pattern,
         sectionSize,
         visible,

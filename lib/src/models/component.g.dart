@@ -8,17 +8,17 @@ part of 'component.dart';
 
 extension ComponentCopyWith on Component {
   Component copyWith({
-    FrameInfo containingFrame,
-    dynamic containingPage,
-    DateTime createdAt,
-    String description,
-    String fileKey,
-    String key,
-    String name,
-    String nodeId,
-    String thumbnailUrl,
-    DateTime updatedAt,
-    User user,
+    FrameInfo? containingFrame,
+    dynamic? containingPage,
+    DateTime? createdAt,
+    String? description,
+    String? fileKey,
+    String? key,
+    String? name,
+    String? nodeId,
+    String? thumbnailUrl,
+    DateTime? updatedAt,
+    User? user,
   }) {
     return Component(
       containingFrame: containingFrame ?? this.containingFrame,
@@ -42,12 +42,12 @@ extension ComponentCopyWith on Component {
 
 Component _$ComponentFromJson(Map<String, dynamic> json) {
   return Component(
-    key: json['key'] as String,
-    fileKey: json['file_key'] as String,
-    nodeId: json['node_id'] as String,
-    thumbnailUrl: json['thumbnail_url'] as String,
-    name: json['name'] as String,
-    description: json['description'] as String,
+    key: json['key'] as String?,
+    fileKey: json['file_key'] as String?,
+    nodeId: json['node_id'] as String?,
+    thumbnailUrl: json['thumbnail_url'] as String?,
+    name: json['name'] as String?,
+    description: json['description'] as String?,
     createdAt: json['created_at'] == null
         ? null
         : DateTime.parse(json['created_at'] as String),

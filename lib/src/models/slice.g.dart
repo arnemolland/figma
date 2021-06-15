@@ -8,15 +8,15 @@ part of 'slice.dart';
 
 extension SliceCopyWith on Slice {
   Slice copyWith({
-    SizeRectangle absoluteBoundingBox,
-    List<ExportSetting> exportSettings,
-    String id,
-    String name,
-    dynamic pluginData,
-    List<List<num>> relativeTransform,
-    dynamic sharedPluginData,
-    Vector2D size,
-    bool visible,
+    SizeRectangle? absoluteBoundingBox,
+    List<ExportSetting>? exportSettings,
+    String? id,
+    String? name,
+    dynamic? pluginData,
+    List<List<num>>? relativeTransform,
+    dynamic? sharedPluginData,
+    Vector2D? size,
+    bool? visible,
   }) {
     return Slice(
       absoluteBoundingBox: absoluteBoundingBox ?? this.absoluteBoundingBox,
@@ -39,15 +39,13 @@ extension SliceCopyWith on Slice {
 Slice _$SliceFromJson(Map<String, dynamic> json) {
   return Slice(
     id: json['id'] as String,
-    name: json['name'] as String,
-    visible: json['visible'] as bool,
+    name: json['name'] as String?,
+    visible: json['visible'] as bool? ?? true,
     pluginData: json['pluginData'],
     sharedPluginData: json['sharedPluginData'],
-    exportSettings: (json['exportSettings'] as List)
-        ?.map((e) => e == null
-            ? null
-            : ExportSetting.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
+    exportSettings: (json['exportSettings'] as List<dynamic>?)
+        ?.map((e) => ExportSetting.fromJson(e as Map<String, dynamic>))
+        .toList(),
     absoluteBoundingBox: json['absoluteBoundingBox'] == null
         ? null
         : SizeRectangle.fromJson(
@@ -55,9 +53,9 @@ Slice _$SliceFromJson(Map<String, dynamic> json) {
     size: json['size'] == null
         ? null
         : Vector2D.fromJson(json['size'] as Map<String, dynamic>),
-    relativeTransform: (json['relativeTransform'] as List)
-        ?.map((e) => (e as List)?.map((e) => e as num)?.toList())
-        ?.toList(),
+    relativeTransform: (json['relativeTransform'] as List<dynamic>?)
+        ?.map((e) => (e as List<dynamic>).map((e) => e as num).toList())
+        .toList(),
   );
 }
 

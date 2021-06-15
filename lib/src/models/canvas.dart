@@ -14,21 +14,21 @@ part 'canvas.g.dart';
 class Canvas extends Node {
   /// An array of top level layers on the canvas
   @NodeJsonConverter()
-  final List<Node> children;
+  final List<Node?>? children;
 
   /// Background color of the canvas.
-  final Color backgroundColor;
+  final Color? backgroundColor;
 
   /// Node ID that corresponds to the start frame for prototypes
-  final String prototypeStartNodeID;
+  final String? prototypeStartNodeID;
 
   /// An array of export settings representing images to export from the canvas
-  final List<ExportSetting> exportSettings;
+  final List<ExportSetting>? exportSettings;
 
   Canvas({
-    String id,
-    String name,
-    bool visible,
+    required String id,
+    String? name,
+    required bool visible,
     dynamic pluginData,
     dynamic sharedPluginData,
     this.children,
@@ -44,7 +44,7 @@ class Canvas extends Node {
         );
 
   @override
-  List<Object> get props => [
+  List<Object?> get props => [
         ...super.props,
         children,
         backgroundColor,

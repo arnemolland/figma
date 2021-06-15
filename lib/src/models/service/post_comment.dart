@@ -8,7 +8,7 @@ part 'post_comment.g.dart';
 @CopyWith()
 class PostComment extends Equatable {
   /// The text contents of the comment to post
-  final String message;
+  final String? message;
 
   /// The position of where to place the comment. This can either be
   /// an absolute canvas position or the relative position within a frame.
@@ -19,12 +19,12 @@ class PostComment extends Equatable {
   /// comment, that is, you cannot reply to a comment that is a reply
   /// itself (a reply has a parent_id).
   @JsonKey(name: 'comment_id')
-  final String commentId;
+  final String? commentId;
 
   PostComment({this.message, this.clientMeta, this.commentId});
 
   @override
-  List<Object> get props => [message, clientMeta, commentId];
+  List<Object?> get props => [message, clientMeta, commentId];
 
   factory PostComment.fromJson(Map<String, dynamic> json) =>
       _$PostCommentFromJson(json);

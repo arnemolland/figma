@@ -8,8 +8,8 @@ part of 'project_files_response.dart';
 
 extension ProjectFilesResponseCopyWith on ProjectFilesResponse {
   ProjectFilesResponse copyWith({
-    List<ProjectFile> files,
-    String name,
+    List<ProjectFile>? files,
+    String? name,
   }) {
     return ProjectFilesResponse(
       files: files ?? this.files,
@@ -24,11 +24,10 @@ extension ProjectFilesResponseCopyWith on ProjectFilesResponse {
 
 ProjectFilesResponse _$ProjectFilesResponseFromJson(Map<String, dynamic> json) {
   return ProjectFilesResponse(
-    name: json['name'] as String,
-    files: (json['files'] as List)
-        ?.map((e) =>
-            e == null ? null : ProjectFile.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
+    name: json['name'] as String?,
+    files: (json['files'] as List<dynamic>?)
+        ?.map((e) => ProjectFile.fromJson(e as Map<String, dynamic>))
+        .toList(),
   );
 }
 

@@ -9,19 +9,19 @@ part 'component_response.g.dart';
 @CopyWith()
 class ComponentResponse extends Equatable {
   /// Status code
-  final int status;
+  final int? status;
 
   /// If the operation ended in error
-  final bool error;
+  final bool? error;
 
   /// The requested component
   @JsonKey(name: 'meta')
-  final Component component;
+  final Component? component;
 
   ComponentResponse({this.status, this.error, this.component});
 
   @override
-  List<Object> get props => [status, error, component];
+  List<Object?> get props => [status, error, component];
 
   factory ComponentResponse.fromJson(Map<String, dynamic> json) =>
       _$ComponentResponseFromJson(json);

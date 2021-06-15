@@ -9,15 +9,15 @@ part 'project.g.dart';
 @CopyWith()
 class Project extends Equatable {
   /// The ID of the project
-  final String id;
+  final String? id;
 
   /// The name of the project
-  final String name;
+  final String? name;
 
   Project({this.id, this.name});
 
   @override
-  List<Object> get props => [id, name];
+  List<Object?> get props => [id, name];
 
   factory Project.fromJson(Map<String, dynamic> json) =>
       _$ProjectFromJson(json);

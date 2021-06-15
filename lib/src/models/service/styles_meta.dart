@@ -9,15 +9,15 @@ part 'styles_meta.g.dart';
 @CopyWith()
 class StylesMeta extends Equatable {
   /// List of [Style] objects
-  final List<Style> styles;
+  final List<Style>? styles;
 
   /// Pagination cursor
-  final Cursor cursor;
+  final Cursor? cursor;
 
   StylesMeta({this.styles, this.cursor});
 
   @override
-  List<Object> get props => [styles, cursor];
+  List<Object?> get props => [styles, cursor];
 
   factory StylesMeta.fromJson(Map<String, dynamic> json) =>
       _$StylesMetaFromJson(json);

@@ -8,10 +8,10 @@ part of 'project_file.dart';
 
 extension ProjectFileCopyWith on ProjectFile {
   ProjectFile copyWith({
-    String key,
-    DateTime lastModified,
-    String name,
-    String thumbnailUrl,
+    String? key,
+    DateTime? lastModified,
+    String? name,
+    String? thumbnailUrl,
   }) {
     return ProjectFile(
       key: key ?? this.key,
@@ -28,9 +28,9 @@ extension ProjectFileCopyWith on ProjectFile {
 
 ProjectFile _$ProjectFileFromJson(Map<String, dynamic> json) {
   return ProjectFile(
-    key: json['key'] as String,
-    name: json['name'] as String,
-    thumbnailUrl: json['thumbnail_url'] as String,
+    key: json['key'] as String?,
+    name: json['name'] as String?,
+    thumbnailUrl: json['thumbnail_url'] as String?,
     lastModified: json['last_modified'] == null
         ? null
         : DateTime.parse(json['last_modified'] as String),

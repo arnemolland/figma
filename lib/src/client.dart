@@ -32,7 +32,7 @@ class FigmaClient {
   }
 
   /// Retrieves the Figma file specified by [key]
-  Future<FileResponse> getFile(String key, [FigmaQuery query]) async {
+  Future<FileResponse> getFile(String key, [FigmaQuery? query]) async {
     return await _getFigma('/files/$key', query)
         .then((data) => FileResponse.fromJson(data));
   }
@@ -48,14 +48,14 @@ class FigmaClient {
           .then((data) => ImageResponse.fromJson(data));
 
   /// Retrieves the image fills specified
-  Future<ImageResponse> getImageFills(String key) async =>
+  Future<ImageResponse> getImageFills(String? key) async =>
       await _getFigma('/files/$key/images')
           .then((data) => ImageResponse.fromJson(data));
 
   /// Retrieves comments from the Figma file specified by [key]
   Future<List<Comment>> getComments(String key) async =>
       await _getFigma('/files/$key/comments')
-          .then((data) => CommentsResponse.fromJson(data).comments);
+          .then((data) => CommentsResponse.fromJson(data).comments!);
 
   /// Posts the given [Comment] to the Figma file specified by [key]
   Future<Comment> postComment(String key, PostComment comment) async =>
@@ -73,7 +73,7 @@ class FigmaClient {
   /// Retrieves all versions of the Figma file specified by [key]
   Future<List<Version>> getFileVersions(String key) async =>
       await _getFigma('/files/$key/versions')
-          .then((data) => VersionsResponse.fromJson(data).versions);
+          .then((data) => VersionsResponse.fromJson(data).versions!);
 
   /// Retrieves all projects for the specified [team]
   Future<TeamProjectsResponse> getTeamProjects(String team) async =>
@@ -87,13 +87,13 @@ class FigmaClient {
 
   /// Retrieives all components from the Figma team specified by [team]
   Future<ComponentsResponse> getTeamComponents(String team,
-          [FigmaQuery query]) async =>
+          [FigmaQuery? query]) async =>
       _getFigma('/teams/$team/components', query)
           .then((data) => ComponentsResponse.fromJson(data));
 
   /// Retrieves all components from the Figma file specified by [key]
   Future<ComponentsResponse> getFileComponents(String key,
-          [FigmaQuery query]) async =>
+          [FigmaQuery? query]) async =>
       _getFigma('/files/$key/components', query)
           .then((data) => ComponentsResponse.fromJson(data));
 
@@ -103,12 +103,12 @@ class FigmaClient {
           .then((data) => ComponentResponse.fromJson(data));
 
   /// Retrieves all styles for the Figma team specified by [team]
-  Future<StylesResponse> getTeamStyles(String team, [FigmaQuery query]) async =>
+  Future<StylesResponse> getTeamStyles(String team, [FigmaQuery? query]) async =>
       _getFigma('/teams/$team/styles', query)
           .then((data) => StylesResponse.fromJson(data));
 
   /// Retrieves all styles from the Figma file specified by [key]
-  Future<StylesResponse> getFileStyles(String key, [FigmaQuery query]) async =>
+  Future<StylesResponse> getFileStyles(String key, [FigmaQuery? query]) async =>
       _getFigma('/files/$key/styles', query)
           .then((data) => StylesResponse.fromJson(data));
 
@@ -118,7 +118,7 @@ class FigmaClient {
 
   /// Does a GET request towards the Figma API
   Future<Map<String, dynamic>> _getFigma(String path,
-      [FigmaQuery query]) async {
+      [FigmaQuery? query]) async {
     final uri = Uri.https(base, '$apiVersion$path', query?.params);
 
     return await _send('GET', uri, _authHeaders).then((res) {
@@ -157,7 +157,7 @@ class FigmaClient {
   }
 
   Future<_Response> _send(String method, Uri uri, Map<String, String> headers,
-      [String body]) async {
+      [String? body]) async {
     var transport = ClientTransportConnection.viaSocket(
       await SecureSocket.connect(
         uri.host,
@@ -216,10 +216,10 @@ class _Response {
 /// An error from the [Figma API docs](https://www.figma.com/developers/api#errors).
 class FigmaError extends Error {
   /// HTTP status code
-  final int code;
+  final int? code;
 
   /// Error message
-  final String message;
+  final String? message;
 
   FigmaError({this.code, this.message});
 
