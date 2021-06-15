@@ -9,31 +9,31 @@ part 'file_response.g.dart';
 @CopyWith()
 class FileResponse extends Equatable {
   /// Name of the file
-  final String name;
+  final String? name;
 
   /// Role
-  final String role;
+  final String? role;
 
   /// Last time file was modified
-  final DateTime lastModified;
+  final DateTime? lastModified;
 
   /// URL to file thumbnail
-  final String thumbnailUrl;
+  final String? thumbnailUrl;
 
   /// File version
-  final String version;
+  final String? version;
 
   /// File document (top-level node)
-  final Document document;
+  final Document? document;
 
   /// File components, if any
-  final Map<String, Component> components;
+  final Map<String, Component>? components;
 
   /// The schema version of the file
-  final int schemaVersion;
+  final int? schemaVersion;
 
   /// Map of styles within the file, if any
-  final Map<String, Style> styles;
+  final Map<String, Style>? styles;
 
   FileResponse({
     this.name,
@@ -48,7 +48,7 @@ class FileResponse extends Equatable {
   });
 
   @override
-  List<Object> get props => [
+  List<Object?> get props => [
         name,
         role,
         lastModified,

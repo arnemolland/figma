@@ -8,8 +8,8 @@ part of 'project.dart';
 
 extension ProjectCopyWith on Project {
   Project copyWith({
-    String id,
-    String name,
+    String? id,
+    String? name,
   }) {
     return Project(
       id: id ?? this.id,
@@ -24,8 +24,8 @@ extension ProjectCopyWith on Project {
 
 Project _$ProjectFromJson(Map<String, dynamic> json) {
   return Project(
-    id: json['id'] as String,
-    name: json['name'] as String,
+    id: json['id'] as String?,
+    name: json['name'] as String?,
   );
 }
 

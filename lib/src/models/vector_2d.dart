@@ -14,7 +14,7 @@ class Vector2D extends Equatable {
   /// Y coordinate of the vector
   final num y;
 
-  Vector2D({this.x, this.y});
+  Vector2D({required this.x, required this.y});
 
   @override
   List<Object> get props => [x, y];

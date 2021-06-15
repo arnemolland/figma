@@ -8,12 +8,12 @@ part of 'effect.dart';
 
 extension EffectCopyWith on Effect {
   Effect copyWith({
-    BlendMode blendMode,
-    Color color,
-    Vector2D offset,
-    num radius,
-    EffectType type,
-    bool visible,
+    BlendMode? blendMode,
+    Color? color,
+    Vector2D? offset,
+    num? radius,
+    EffectType? type,
+    bool? visible,
   }) {
     return Effect(
       blendMode: blendMode ?? this.blendMode,
@@ -33,8 +33,8 @@ extension EffectCopyWith on Effect {
 Effect _$EffectFromJson(Map<String, dynamic> json) {
   return Effect(
     type: _$enumDecodeNullable(_$EffectTypeEnumMap, json['type']),
-    visible: json['visible'] as bool,
-    radius: json['radius'] as num,
+    visible: json['visible'] as bool? ?? true,
+    radius: json['radius'] as num?,
     color: json['color'] == null
         ? null
         : Color.fromJson(json['color'] as Map<String, dynamic>),
@@ -54,36 +54,41 @@ Map<String, dynamic> _$EffectToJson(Effect instance) => <String, dynamic>{
       'offset': instance.offset,
     };
 
-T _$enumDecode<T>(
-  Map<T, dynamic> enumValues,
-  dynamic source, {
-  T unknownValue,
+K _$enumDecode<K, V>(
+  Map<K, V> enumValues,
+  Object? source, {
+  K? unknownValue,
 }) {
   if (source == null) {
-    throw ArgumentError('A value must be provided. Supported values: '
-        '${enumValues.values.join(', ')}');
+    throw ArgumentError(
+      'A value must be provided. Supported values: '
+      '${enumValues.values.join(', ')}',
+    );
   }
 
-  final value = enumValues.entries
-      .singleWhere((e) => e.value == source, orElse: () => null)
-      ?.key;
-
-  if (value == null && unknownValue == null) {
-    throw ArgumentError('`$source` is not one of the supported values: '
-        '${enumValues.values.join(', ')}');
-  }
-  return value ?? unknownValue;
+  return enumValues.entries.singleWhere(
+    (e) => e.value == source,
+    orElse: () {
+      if (unknownValue == null) {
+        throw ArgumentError(
+          '`$source` is not one of the supported values: '
+          '${enumValues.values.join(', ')}',
+        );
+      }
+      return MapEntry(unknownValue, enumValues.values.first);
+    },
+  ).key;
 }
 
-T _$enumDecodeNullable<T>(
-  Map<T, dynamic> enumValues,
+K? _$enumDecodeNullable<K, V>(
+  Map<K, V> enumValues,
   dynamic source, {
-  T unknownValue,
+  K? unknownValue,
 }) {
   if (source == null) {
     return null;
   }
-  return _$enumDecode<T>(enumValues, source, unknownValue: unknownValue);
+  return _$enumDecode<K, V>(enumValues, source, unknownValue: unknownValue);
 }
 
 const _$EffectTypeEnumMap = {

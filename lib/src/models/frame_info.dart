@@ -10,22 +10,22 @@ part 'frame_info.g.dart';
 class FrameInfo extends Equatable {
   /// Id of the frame node within the figma file
   @JsonKey(name: 'node:_id')
-  final String nodeId;
+  final String? nodeId;
 
   /// Name of the frame
-  final String name;
+  final String? name;
 
   /// Background color of the frame
   @JsonKey(name: 'background_color')
-  final String backgroundColor;
+  final String? backgroundColor;
 
   /// Id of the frame's residing page
   @JsonKey(name: 'page_id')
-  final String pageId;
+  final String? pageId;
 
   /// Name of the frame's residing page
   @JsonKey(name: 'page_name')
-  final String pageName;
+  final String? pageName;
 
   FrameInfo({
     this.nodeId,
@@ -36,7 +36,7 @@ class FrameInfo extends Equatable {
   });
 
   @override
-  List<Object> get props => [
+  List<Object?> get props => [
         nodeId,
         name,
         backgroundColor,

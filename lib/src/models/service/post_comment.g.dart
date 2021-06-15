@@ -8,9 +8,9 @@ part of 'post_comment.dart';
 
 extension PostCommentCopyWith on PostComment {
   PostComment copyWith({
-    dynamic clientMeta,
-    String commentId,
-    String message,
+    dynamic? clientMeta,
+    String? commentId,
+    String? message,
   }) {
     return PostComment(
       clientMeta: clientMeta ?? this.clientMeta,
@@ -26,9 +26,9 @@ extension PostCommentCopyWith on PostComment {
 
 PostComment _$PostCommentFromJson(Map<String, dynamic> json) {
   return PostComment(
-    message: json['message'] as String,
+    message: json['message'] as String?,
     clientMeta: json['client_meta'],
-    commentId: json['comment_id'] as String,
+    commentId: json['comment_id'] as String?,
   );
 }
 

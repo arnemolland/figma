@@ -10,15 +10,15 @@ part 'color_stop.g.dart';
 @CopyWith()
 class ColorStop extends Equatable {
   /// Value between 0 and 1 representing position along gradient axis
-  final double position;
+  final double? position;
 
   /// Color attached to corresponding position
-  final Color color;
+  final Color? color;
 
   ColorStop({this.position, this.color});
 
   @override
-  List<Object> get props => [position, color];
+  List<Object?> get props => [position, color];
 
   factory ColorStop.fromJson(Map<String, dynamic> json) =>
       _$ColorStopFromJson(json);

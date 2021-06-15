@@ -9,22 +9,22 @@ part 'nodes_response.g.dart';
 @CopyWith()
 class NodesResponse extends Equatable {
   /// File name
-  final String name;
+  final String? name;
 
   /// Role
-  final String role;
+  final String? role;
 
   /// Dte the file was last modified
-  final DateTime lastModified;
+  final DateTime? lastModified;
 
   /// URL to the thumbnail of the file
-  final String thumbnailUrl;
+  final String? thumbnailUrl;
 
   /// Error message
-  final String err;
+  final String? err;
 
   /// Map from each [Node] id to the corresponding object
-  final Map<String, FileResponse> nodes;
+  final Map<String, FileResponse>? nodes;
 
   NodesResponse({
     this.name,
@@ -36,7 +36,7 @@ class NodesResponse extends Equatable {
   });
 
   @override
-  List<Object> get props => [
+  List<Object?> get props => [
         name,
         role,
         lastModified,

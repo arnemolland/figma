@@ -8,9 +8,9 @@ part of 'components_response.dart';
 
 extension ComponentsResponseCopyWith on ComponentsResponse {
   ComponentsResponse copyWith({
-    bool error,
-    ComponentsMeta meta,
-    int status,
+    bool? error,
+    ComponentsMeta? meta,
+    int? status,
   }) {
     return ComponentsResponse(
       error: error ?? this.error,
@@ -26,8 +26,8 @@ extension ComponentsResponseCopyWith on ComponentsResponse {
 
 ComponentsResponse _$ComponentsResponseFromJson(Map<String, dynamic> json) {
   return ComponentsResponse(
-    status: json['status'] as int,
-    error: json['error'] as bool,
+    status: json['status'] as int?,
+    error: json['error'] as bool?,
     meta: json['meta'] == null
         ? null
         : ComponentsMeta.fromJson(json['meta'] as Map<String, dynamic>),

@@ -9,15 +9,15 @@ part 'team_projects_response.g.dart';
 @CopyWith()
 class TeamProjectsResponse extends Equatable {
   /// Team name
-  final String name;
+  final String? name;
 
   /// List of project of this team
-  final List<Project> projects;
+  final List<Project>? projects;
 
   TeamProjectsResponse({this.name, this.projects});
 
   @override
-  List<Object> get props => [name, projects];
+  List<Object?> get props => [name, projects];
 
   factory TeamProjectsResponse.fromJson(Map<String, dynamic> json) =>
       _$TeamProjectsResponseFromJson(json);

@@ -64,63 +64,63 @@ enum LineHeightUnit {
 @CopyWith()
 class TypeStyle extends Equatable {
   /// Font family of text (standard name)
-  final String fontFamily;
+  final String? fontFamily;
 
   /// PostScript font name
-  final String fontPostScriptName;
+  final String? fontPostScriptName;
 
   /// Space between paragraphs in px, 0 if not present
-  final num paragraphSpacing;
+  final num? paragraphSpacing;
 
   /// Paragraph indentation in px, 0 if not present
-  final num paragraphIndent;
+  final num? paragraphIndent;
 
   /// Whether or not text is italicized
-  final bool italic;
+  final bool? italic;
 
   /// Numeric font weight
-  final num fontWeight;
+  final num? fontWeight;
 
   /// Font size in px
-  final num fontSize;
+  final num? fontSize;
 
   /// Text casing applied to the node, default is the original casing
-  final TextCase textCase;
+  final TextCase? textCase;
 
   /// Text decoration applied to the node, default is none
-  final TextDecoration textDecoration;
+  final TextDecoration? textDecoration;
 
   /// Horizontal text alignment as string enum
-  final TextAlignHorizontal textAlignHorizontal;
+  final TextAlignHorizontal? textAlignHorizontal;
 
   /// Vertical text alignment as string enum
-  final TextAlignVertical textAlignVertical;
+  final TextAlignVertical? textAlignVertical;
 
   /// Space between characters in px
-  final num letterSpacing;
+  final num? letterSpacing;
 
   /// Paints applied to characters
-  final List<Paint> fills;
+  final List<Paint>? fills;
 
   /// A map of OpenType feature flags to 1 or 0, 1 if it is enabled and 0 if it
   /// is disabled. Note that some flags aren't reflected here. For example,
   /// SMCP (small caps) is still represented by the textCase field.
-  final Map<String, num> opentypeFlags;
+  final Map<String, num>? opentypeFlags;
 
   /// Line height in px
-  final num lineHeightPx;
+  final num? lineHeightPx;
 
   /// Line height as a percentage of normal line height. This is deprecated;
   /// in a future version of the API only lineHeightPx and
   /// lineHeightPercentFontSize will be returned.
-  final num lineHeightPercent;
+  final num? lineHeightPercent;
 
   /// Line height as a percentage of the font size. Only returned when
   /// lineHeightPercent is not 100.
-  final num lineHeightPercentFontSize;
+  final num? lineHeightPercentFontSize;
 
   /// The unit of the line height value specified by the user.
-  final LineHeightUnit lineHeightUnit;
+  final LineHeightUnit? lineHeightUnit;
 
   TypeStyle({
     this.fontFamily,
@@ -144,7 +144,7 @@ class TypeStyle extends Equatable {
   });
 
   @override
-  List<Object> get props => [
+  List<Object?> get props => [
         fontFamily,
         fontPostScriptName,
         paragraphSpacing,

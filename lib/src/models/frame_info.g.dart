@@ -8,11 +8,11 @@ part of 'frame_info.dart';
 
 extension FrameInfoCopyWith on FrameInfo {
   FrameInfo copyWith({
-    String backgroundColor,
-    String name,
-    String nodeId,
-    String pageId,
-    String pageName,
+    String? backgroundColor,
+    String? name,
+    String? nodeId,
+    String? pageId,
+    String? pageName,
   }) {
     return FrameInfo(
       backgroundColor: backgroundColor ?? this.backgroundColor,
@@ -30,11 +30,11 @@ extension FrameInfoCopyWith on FrameInfo {
 
 FrameInfo _$FrameInfoFromJson(Map<String, dynamic> json) {
   return FrameInfo(
-    nodeId: json['node:_id'] as String,
-    name: json['name'] as String,
-    backgroundColor: json['background_color'] as String,
-    pageId: json['page_id'] as String,
-    pageName: json['page_name'] as String,
+    nodeId: json['node:_id'] as String?,
+    name: json['name'] as String?,
+    backgroundColor: json['background_color'] as String?,
+    pageId: json['page_id'] as String?,
+    pageName: json['page_name'] as String?,
   );
 }
 

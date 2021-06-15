@@ -9,12 +9,12 @@ part 'versions_response.g.dart';
 @CopyWith()
 class VersionsResponse extends Equatable {
   /// List of versions
-  final List<Version> versions;
+  final List<Version>? versions;
 
   VersionsResponse({this.versions});
 
   @override
-  List<Object> get props => [versions];
+  List<Object?> get props => [versions];
 
   factory VersionsResponse.fromJson(Map<String, dynamic> json) =>
       _$VersionsResponseFromJson(json);

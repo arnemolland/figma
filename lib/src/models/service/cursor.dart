@@ -9,15 +9,15 @@ part 'cursor.g.dart';
 @CopyWith()
 class Cursor extends Equatable {
   /// Page before
-  final int before;
+  final int? before;
 
   /// Page after
-  final int after;
+  final int? after;
 
   Cursor({this.before, this.after});
 
   @override
-  List<Object> get props => [before, after];
+  List<Object?> get props => [before, after];
 
   factory Cursor.fromJson(Map<String, dynamic> json) => _$CursorFromJson(json);
 

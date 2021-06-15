@@ -8,12 +8,12 @@ part of 'node.dart';
 
 extension NodeCopyWith on Node {
   Node copyWith({
-    String id,
-    String name,
-    dynamic pluginData,
-    dynamic sharedPluginData,
-    String type,
-    bool visible,
+    String? id,
+    String? name,
+    dynamic? pluginData,
+    dynamic? sharedPluginData,
+    String? type,
+    bool? visible,
   }) {
     return Node(
       id: id ?? this.id,
@@ -33,9 +33,9 @@ extension NodeCopyWith on Node {
 Node _$NodeFromJson(Map<String, dynamic> json) {
   return Node(
     id: json['id'] as String,
-    name: json['name'] as String,
-    visible: json['visible'] as bool,
-    type: json['type'] as String,
+    name: json['name'] as String?,
+    visible: json['visible'] as bool? ?? true,
+    type: json['type'] as String?,
     pluginData: json['pluginData'],
     sharedPluginData: json['sharedPluginData'],
   );

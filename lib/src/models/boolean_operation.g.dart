@@ -8,40 +8,40 @@ part of 'boolean_operation.dart';
 
 extension BooleanOperationCopyWith on BooleanOperation {
   BooleanOperation copyWith({
-    SizeRectangle absoluteBoundingBox,
-    BlendMode blendMode,
-    List<Node> children,
-    LayoutConstraint constraints,
-    List<Effect> effects,
-    List<ExportSetting> exportSettings,
-    List<dynamic> fillGeometry,
-    List<Paint> fills,
-    String id,
-    bool isMask,
-    LayoutAlign layoutAlign,
-    double layoutGrow,
-    bool locked,
-    String name,
-    double opacity,
-    Operation operation,
-    dynamic pluginData,
-    bool preserveRatio,
-    List<List<num>> relativeTransform,
-    dynamic sharedPluginData,
-    Vector2D size,
-    StrokeAlign strokeAlign,
-    StrokeCap strokeCap,
-    List<double> strokeDashes,
-    List<dynamic> strokeGeometry,
-    StrokeJoin strokeJoin,
-    double strokeMiterAngle,
-    double strokeWeight,
-    List<Paint> strokes,
-    Map<StyleTypeKey, String> styles,
-    double transitionDuration,
-    EasingType transitionEasing,
-    String transitionNodeID,
-    bool visible,
+    SizeRectangle? absoluteBoundingBox,
+    BlendMode? blendMode,
+    List<Node>? children,
+    LayoutConstraint? constraints,
+    List<Effect>? effects,
+    List<ExportSetting>? exportSettings,
+    List<dynamic>? fillGeometry,
+    List<Paint>? fills,
+    String? id,
+    bool? isMask,
+    LayoutAlign? layoutAlign,
+    double? layoutGrow,
+    bool? locked,
+    String? name,
+    double? opacity,
+    Operation? operation,
+    dynamic? pluginData,
+    bool? preserveRatio,
+    List<List<num>>? relativeTransform,
+    dynamic? sharedPluginData,
+    Vector2D? size,
+    StrokeAlign? strokeAlign,
+    StrokeCap? strokeCap,
+    List<double>? strokeDashes,
+    List<dynamic>? strokeGeometry,
+    StrokeJoin? strokeJoin,
+    double? strokeMiterAngle,
+    double? strokeWeight,
+    List<Paint>? strokes,
+    Map<StyleTypeKey, String>? styles,
+    double? transitionDuration,
+    EasingType? transitionEasing,
+    String? transitionNodeID,
+    bool? visible,
   }) {
     return BooleanOperation(
       absoluteBoundingBox: absoluteBoundingBox ?? this.absoluteBoundingBox,
@@ -88,72 +88,66 @@ extension BooleanOperationCopyWith on BooleanOperation {
 
 BooleanOperation _$BooleanOperationFromJson(Map<String, dynamic> json) {
   return BooleanOperation(
-    children: (json['children'] as List)
+    children: (json['children'] as List<dynamic>?)
         ?.map(const NodeJsonConverter().fromJson)
-        ?.toList(),
+        .toList(),
     operation: _$enumDecodeNullable(_$OperationEnumMap, json['operation']),
     id: json['id'] as String,
-    name: json['name'] as String,
-    visible: json['visible'] as bool,
+    name: json['name'] as String?,
+    visible: json['visible'] as bool? ?? true,
     pluginData: json['pluginData'],
     sharedPluginData: json['sharedPluginData'],
-    locked: json['locked'] as bool,
-    exportSettings: (json['exportSettings'] as List)
-        ?.map((e) => e == null
-            ? null
-            : ExportSetting.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
+    locked: json['locked'] as bool?,
+    exportSettings: (json['exportSettings'] as List<dynamic>?)
+        ?.map((e) => ExportSetting.fromJson(e as Map<String, dynamic>))
+        .toList(),
     blendMode: _$enumDecodeNullable(_$BlendModeEnumMap, json['blendMode']),
-    preserveRatio: json['preserveRatio'] as bool,
+    preserveRatio: json['preserveRatio'] as bool?,
     layoutAlign:
         _$enumDecodeNullable(_$LayoutAlignEnumMap, json['layoutAlign']),
-    layoutGrow: (json['layoutGrow'] as num)?.toDouble(),
+    layoutGrow: (json['layoutGrow'] as num?)?.toDouble(),
     constraints: json['constraints'] == null
         ? null
         : LayoutConstraint.fromJson(
             json['constraints'] as Map<String, dynamic>),
-    transitionNodeID: json['transitionNodeID'] as String,
-    transitionDuration: (json['transitionDuration'] as num)?.toDouble(),
+    transitionNodeID: json['transitionNodeID'] as String?,
+    transitionDuration: (json['transitionDuration'] as num?)?.toDouble(),
     transitionEasing:
         _$enumDecodeNullable(_$EasingTypeEnumMap, json['transitionEasing']),
-    opacity: (json['opacity'] as num)?.toDouble(),
+    opacity: (json['opacity'] as num?)?.toDouble(),
     absoluteBoundingBox: json['absoluteBoundingBox'] == null
         ? null
         : SizeRectangle.fromJson(
             json['absoluteBoundingBox'] as Map<String, dynamic>),
-    effects: (json['effects'] as List)
-        ?.map((e) =>
-            e == null ? null : Effect.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
+    effects: (json['effects'] as List<dynamic>?)
+        ?.map((e) => Effect.fromJson(e as Map<String, dynamic>))
+        .toList(),
     size: json['size'] == null
         ? null
         : Vector2D.fromJson(json['size'] as Map<String, dynamic>),
-    relativeTransform: (json['relativeTransform'] as List)
-        ?.map((e) => (e as List)?.map((e) => e as num)?.toList())
-        ?.toList(),
-    isMask: json['isMask'] as bool,
-    fills: (json['fills'] as List)
-        ?.map(
-            (e) => e == null ? null : Paint.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
-    fillGeometry: json['fillGeometry'] as List,
-    strokes: (json['strokes'] as List)
-        ?.map(
-            (e) => e == null ? null : Paint.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
-    strokeWeight: (json['strokeWeight'] as num)?.toDouble(),
+    relativeTransform: (json['relativeTransform'] as List<dynamic>?)
+        ?.map((e) => (e as List<dynamic>).map((e) => e as num).toList())
+        .toList(),
+    isMask: json['isMask'] as bool?,
+    fills: (json['fills'] as List<dynamic>?)
+        ?.map((e) => Paint.fromJson(e as Map<String, dynamic>))
+        .toList(),
+    fillGeometry: json['fillGeometry'] as List<dynamic>?,
+    strokes: (json['strokes'] as List<dynamic>?)
+        ?.map((e) => Paint.fromJson(e as Map<String, dynamic>))
+        .toList(),
+    strokeWeight: (json['strokeWeight'] as num?)?.toDouble(),
     strokeCap: _$enumDecodeNullable(_$StrokeCapEnumMap, json['strokeCap']),
     strokeJoin: _$enumDecodeNullable(_$StrokeJoinEnumMap, json['strokeJoin']),
-    strokeDashes: (json['strokeDashes'] as List)
-        ?.map((e) => (e as num)?.toDouble())
-        ?.toList(),
-    strokeMiterAngle: (json['strokeMiterAngle'] as num)?.toDouble(),
-    strokeGeometry: json['strokeGeometry'] as List,
+    strokeDashes: (json['strokeDashes'] as List<dynamic>?)
+        ?.map((e) => (e as num).toDouble())
+        .toList(),
+    strokeMiterAngle: (json['strokeMiterAngle'] as num?)?.toDouble(),
+    strokeGeometry: json['strokeGeometry'] as List<dynamic>?,
     strokeAlign:
         _$enumDecodeNullable(_$StrokeAlignEnumMap, json['strokeAlign']),
-    styles: (json['styles'] as Map<String, dynamic>)?.map(
-      (k, e) =>
-          MapEntry(_$enumDecodeNullable(_$StyleTypeKeyEnumMap, k), e as String),
+    styles: (json['styles'] as Map<String, dynamic>?)?.map(
+      (k, e) => MapEntry(_$enumDecode(_$StyleTypeKeyEnumMap, k), e as String),
     ),
   );
 }
@@ -194,40 +188,45 @@ Map<String, dynamic> _$BooleanOperationToJson(BooleanOperation instance) =>
       'styles':
           instance.styles?.map((k, e) => MapEntry(_$StyleTypeKeyEnumMap[k], e)),
       'children':
-          instance.children?.map(const NodeJsonConverter().toJson)?.toList(),
+          instance.children?.map(const NodeJsonConverter().toJson).toList(),
       'operation': _$OperationEnumMap[instance.operation],
     };
 
-T _$enumDecode<T>(
-  Map<T, dynamic> enumValues,
-  dynamic source, {
-  T unknownValue,
+K _$enumDecode<K, V>(
+  Map<K, V> enumValues,
+  Object? source, {
+  K? unknownValue,
 }) {
   if (source == null) {
-    throw ArgumentError('A value must be provided. Supported values: '
-        '${enumValues.values.join(', ')}');
+    throw ArgumentError(
+      'A value must be provided. Supported values: '
+      '${enumValues.values.join(', ')}',
+    );
   }
 
-  final value = enumValues.entries
-      .singleWhere((e) => e.value == source, orElse: () => null)
-      ?.key;
-
-  if (value == null && unknownValue == null) {
-    throw ArgumentError('`$source` is not one of the supported values: '
-        '${enumValues.values.join(', ')}');
-  }
-  return value ?? unknownValue;
+  return enumValues.entries.singleWhere(
+    (e) => e.value == source,
+    orElse: () {
+      if (unknownValue == null) {
+        throw ArgumentError(
+          '`$source` is not one of the supported values: '
+          '${enumValues.values.join(', ')}',
+        );
+      }
+      return MapEntry(unknownValue, enumValues.values.first);
+    },
+  ).key;
 }
 
-T _$enumDecodeNullable<T>(
-  Map<T, dynamic> enumValues,
+K? _$enumDecodeNullable<K, V>(
+  Map<K, V> enumValues,
   dynamic source, {
-  T unknownValue,
+  K? unknownValue,
 }) {
   if (source == null) {
     return null;
   }
-  return _$enumDecode<T>(enumValues, source, unknownValue: unknownValue);
+  return _$enumDecode<K, V>(enumValues, source, unknownValue: unknownValue);
 }
 
 const _$OperationEnumMap = {

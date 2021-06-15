@@ -11,41 +11,41 @@ part 'component.g.dart';
 @CopyWith()
 class Component extends Equatable {
   /// The unique identifier of the component
-  final String key;
+  final String? key;
 
   /// The unique identifier of the figma file which contains the component
   @JsonKey(name: 'file_key')
-  final String fileKey;
+  final String? fileKey;
 
   /// Id of the component node within the figma file
   @JsonKey(name: 'node_id')
-  final String nodeId;
+  final String? nodeId;
 
   /// URL link to the component's thumbnail image
   @JsonKey(name: 'thumbnail_url')
-  final String thumbnailUrl;
+  final String? thumbnailUrl;
 
   /// Name of the component
-  final String name;
+  final String? name;
 
   /// The description of the component as entered by the publisher
-  final String description;
+  final String? description;
 
   /// The UTC ISO 8601 time at which the component was created
   @JsonKey(name: 'created_at')
-  final DateTime createdAt;
+  final DateTime? createdAt;
 
   /// The UTC ISO 8601 time at which the component was updated
   @JsonKey(name: 'updated_at')
-  final DateTime updatedAt;
+  final DateTime? updatedAt;
 
   /// The user who last updated the component
-  final User user;
+  final User? user;
 
   /// Data on component's containing frame,
   /// if component resides within a frame
   @JsonKey(name: 'containing_frame')
-  final FrameInfo containingFrame;
+  final FrameInfo? containingFrame;
 
   /// Data on component's containing page,
   /// if component resides in a multi-page file
@@ -67,7 +67,7 @@ class Component extends Equatable {
   });
 
   @override
-  List<Object> get props => [
+  List<Object?> get props => [
         key,
         fileKey,
         nodeId,

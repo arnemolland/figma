@@ -8,10 +8,10 @@ part of 'size_rectangle.dart';
 
 extension SizeRectangleCopyWith on SizeRectangle {
   SizeRectangle copyWith({
-    double height,
-    double width,
-    double x,
-    double y,
+    double? height,
+    double? width,
+    double? x,
+    double? y,
   }) {
     return SizeRectangle(
       height: height ?? this.height,
@@ -28,10 +28,10 @@ extension SizeRectangleCopyWith on SizeRectangle {
 
 SizeRectangle _$SizeRectangleFromJson(Map<String, dynamic> json) {
   return SizeRectangle(
-    x: (json['x'] as num)?.toDouble(),
-    y: (json['y'] as num)?.toDouble(),
-    width: (json['width'] as num)?.toDouble(),
-    height: (json['height'] as num)?.toDouble(),
+    x: (json['x'] as num?)?.toDouble(),
+    y: (json['y'] as num?)?.toDouble(),
+    width: (json['width'] as num?)?.toDouble(),
+    height: (json['height'] as num?)?.toDouble(),
   );
 }
 

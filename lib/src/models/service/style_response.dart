@@ -9,19 +9,19 @@ part 'style_response.g.dart';
 @CopyWith()
 class StyleResponse extends Equatable {
   /// Status code
-  final int status;
+  final int? status;
 
   /// If the operation ended in error
-  final bool error;
+  final bool? error;
 
   /// Requested [Style] object
   @JsonKey(name: 'meta')
-  final Style style;
+  final Style? style;
 
   StyleResponse({this.status, this.error, this.style});
 
   @override
-  List<Object> get props => [status, error, style];
+  List<Object?> get props => [status, error, style];
 
   factory StyleResponse.fromJson(Map<String, dynamic> json) =>
       _$StyleResponseFromJson(json);

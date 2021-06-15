@@ -8,8 +8,8 @@ part of 'vector_2d.dart';
 
 extension Vector2DCopyWith on Vector2D {
   Vector2D copyWith({
-    num x,
-    num y,
+    num? x,
+    num? y,
   }) {
     return Vector2D(
       x: x ?? this.x,

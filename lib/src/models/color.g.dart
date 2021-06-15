@@ -8,10 +8,10 @@ part of 'color.dart';
 
 extension ColorCopyWith on Color {
   Color copyWith({
-    double a,
-    double b,
-    double g,
-    double r,
+    double? a,
+    double? b,
+    double? g,
+    double? r,
   }) {
     return Color(
       a: a ?? this.a,
@@ -28,10 +28,10 @@ extension ColorCopyWith on Color {
 
 Color _$ColorFromJson(Map<String, dynamic> json) {
   return Color(
-    r: (json['r'] as num)?.toDouble(),
-    g: (json['g'] as num)?.toDouble(),
-    b: (json['b'] as num)?.toDouble(),
-    a: (json['a'] as num)?.toDouble(),
+    r: (json['r'] as num?)?.toDouble(),
+    g: (json['g'] as num?)?.toDouble(),
+    b: (json['b'] as num?)?.toDouble(),
+    a: (json['a'] as num?)?.toDouble(),
   );
 }
 

@@ -8,18 +8,18 @@ part 'image_response.g.dart';
 @CopyWith()
 class ImageResponse extends Equatable {
   /// Error message
-  final String err;
+  final String? err;
 
   /// Map where the keys are image IDs and the value is an image URL
-  final Map<String, String> images;
+  final Map<String, String>? images;
 
   /// Status code
-  final int status;
+  final int? status;
 
   ImageResponse({this.err, this.images, this.status});
 
   @override
-  List<Object> get props => [err, images, status];
+  List<Object?> get props => [err, images, status];
 
   factory ImageResponse.fromJson(Map<String, dynamic> json) =>
       _$ImageResponseFromJson(json);

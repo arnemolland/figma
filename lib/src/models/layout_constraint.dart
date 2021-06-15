@@ -64,15 +64,15 @@ enum VerticalConstraint {
 @CopyWith()
 class LayoutConstraint extends Equatable {
   /// Vertical constraint as an enum
-  final VerticalConstraint vertical;
+  final VerticalConstraint? vertical;
 
   /// Horizontal constraint as an enum
-  final HorizontalConstraint horizontal;
+  final HorizontalConstraint? horizontal;
 
   LayoutConstraint({this.vertical, this.horizontal});
 
   @override
-  List<Object> get props => [vertical, horizontal];
+  List<Object?> get props => [vertical, horizontal];
 
   factory LayoutConstraint.fromJson(Map<String, dynamic> json) =>
       _$LayoutConstraintFromJson(json);

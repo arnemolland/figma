@@ -9,47 +9,47 @@ part 'rectangle.g.dart';
 class Rectangle extends Vector {
   /// Radius of each corner of the rectangle if
   /// a single radius is set for all corners
-  final num cornerRadius;
+  final num? cornerRadius;
 
   /// Array of length 4 of the radius of each corner of the rectangle,
   /// starting in the top left and proceeding clockwise
-  final List<num> rectangleCornerRadii;
+  final List<num>? rectangleCornerRadii;
 
   Rectangle({
     this.cornerRadius,
     this.rectangleCornerRadii,
-    String id,
-    String name,
-    bool visible,
+    required String id,
+    String? name,
+    required bool visible,
     dynamic pluginData,
     dynamic sharedPluginData,
-    bool locked,
-    List<ExportSetting> exportSettings,
-    BlendMode blendMode,
-    bool preserveRatio,
-    LayoutAlign layoutAlign,
-    double layoutGrow,
-    LayoutConstraint constraints,
-    String transitionNodeID,
-    double transitionDuration,
-    EasingType transitionEasing,
-    double opacity,
-    SizeRectangle absoluteBoundingBox,
-    List<Effect> effects,
-    Vector2D size,
-    List<List<num>> relativeTransform,
-    bool isMask,
-    List<Paint> fills,
-    List<dynamic> fillGeometry,
-    List<Paint> strokes,
-    double strokeWeight,
-    StrokeCap strokeCap,
-    StrokeJoin strokeJoin,
-    List<double> strokeDashes,
-    double strokeMiterAngle,
-    List<dynamic> strokeGeometry,
-    StrokeAlign strokeAlign,
-    Map<StyleTypeKey, String> styles,
+    bool? locked,
+    List<ExportSetting>? exportSettings,
+    BlendMode? blendMode,
+    bool? preserveRatio,
+    LayoutAlign? layoutAlign,
+    double? layoutGrow,
+    LayoutConstraint? constraints,
+    String? transitionNodeID,
+    double? transitionDuration,
+    EasingType? transitionEasing,
+    double? opacity,
+    SizeRectangle? absoluteBoundingBox,
+    List<Effect>? effects,
+    Vector2D? size,
+    List<List<num>>? relativeTransform,
+    bool? isMask,
+    List<Paint>? fills,
+    List<dynamic>? fillGeometry,
+    List<Paint>? strokes,
+    double? strokeWeight,
+    StrokeCap? strokeCap,
+    StrokeJoin? strokeJoin,
+    List<double>? strokeDashes,
+    double? strokeMiterAngle,
+    List<dynamic>? strokeGeometry,
+    StrokeAlign? strokeAlign,
+    Map<StyleTypeKey, String>? styles,
   }) : super(
           id: id,
           name: name,
@@ -86,7 +86,7 @@ class Rectangle extends Vector {
         );
 
   @override
-  List<Object> get props => [
+  List<Object?> get props => [
         ...super.props,
         cornerRadius,
         rectangleCornerRadii,

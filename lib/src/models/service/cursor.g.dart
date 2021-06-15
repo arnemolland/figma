@@ -8,8 +8,8 @@ part of 'cursor.dart';
 
 extension CursorCopyWith on Cursor {
   Cursor copyWith({
-    int after,
-    int before,
+    int? after,
+    int? before,
   }) {
     return Cursor(
       after: after ?? this.after,
@@ -24,8 +24,8 @@ extension CursorCopyWith on Cursor {
 
 Cursor _$CursorFromJson(Map<String, dynamic> json) {
   return Cursor(
-    before: json['before'] as int,
-    after: json['after'] as int,
+    before: json['before'] as int?,
+    after: json['after'] as int?,
   );
 }
 

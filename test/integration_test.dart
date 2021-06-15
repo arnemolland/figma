@@ -7,18 +7,18 @@ void main() {
   load();
 
   group('#realData', () {
-    String testCommentId;
-    String testComponentKey;
-    String testStyleKey;
+    late String testCommentId;
+    late String? testComponentKey;
+    late String? testStyleKey;
 
     final client = FigmaClient(
-      env['FIGMA_ACCESS_TOKEN'],
+      env['FIGMA_ACCESS_TOKEN']!,
     );
 
-    final assetsFile = env['FIGMA_EUFEMIA_IOS_FILE'];
-    final testFile = env['FIGMA_TEST_FILE'];
-    final team = env['FIGMA_TEAM'];
-    final project = env['FIGMA_PROJECT'];
+    final assetsFile = env['FIGMA_EUFEMIA_IOS_FILE']!;
+    final testFile = env['FIGMA_TEST_FILE']!;
+    final team = env['FIGMA_TEAM']!;
+    final project = env['FIGMA_PROJECT']!;
     const assets = '0:1';
 
     const basicQuery = FigmaQuery(ids: [assets]);
@@ -38,7 +38,7 @@ void main() {
       'getFileNodes() retrieves file nodes',
       () => client
           .getFileNodes(assetsFile, basicQuery)
-          .then((res) => expect(res != null, true)),
+          .then((res) => expect(res, isA<NodesResponse>())),
     );
 
     test(
@@ -58,7 +58,7 @@ void main() {
     test(
       'getComments() retrieves comments',
       () =>
-          client.getComments(testFile).then((res) => expect(res != null, true)),
+          client.getComments(testFile).then((res) => expect(res.isNotEmpty, true)),
     );
 
     test(
@@ -72,7 +72,7 @@ void main() {
 
     test(
       'getMe() gets me',
-      () => client.getMe().then((res) => expect(res.id != null, true)),
+      () => client.getMe().then((res) => expect(res.id, isA<String>())),
     );
 
     test(
@@ -86,14 +86,14 @@ void main() {
       'getTeamProjects() gets team projects',
       () => client
           .getTeamProjects(team)
-          .then((res) => expect(res.projects.isNotEmpty, true)),
+          .then((res) => expect(res.projects?.isNotEmpty, true)),
     );
 
     test(
       'getProjectFiles() gets project files',
       () => client
           .getProjectFiles(project)
-          .then((res) => expect(res.files.isNotEmpty, true)),
+          .then((res) => expect(res.files?.isNotEmpty, true)),
     );
 
     test(
@@ -107,14 +107,14 @@ void main() {
       'getFileComponents() gets file components',
       () => client.getFileComponents(assetsFile).then((res) {
         expect(res.meta != null, true);
-        testComponentKey = res.meta.components.first.key;
+        testComponentKey = res.meta?.components?.first.key;
       }),
     );
 
     test(
       'getComponent() gets component',
       () => client
-          .getComponent(testComponentKey)
+          .getComponent(testComponentKey!)
           .then((res) => expect(res.component != null, true)),
     );
 
@@ -128,15 +128,15 @@ void main() {
     test(
       'getFileStyles() gets file styles',
       () => client.getFileStyles(assetsFile).then((res) {
-        expect(res.meta.styles.isNotEmpty, true);
-        testStyleKey = res.meta.styles.first.key;
+        expect(res.meta?.styles?.isNotEmpty, true);
+        testStyleKey = res.meta?.styles?.first.key;
       }),
     );
 
     test(
       'getStyle() gets style',
       () => client
-          .getStyle(testStyleKey)
+          .getStyle(testStyleKey!)
           .then((res) => expect(res.style != null, true)),
     );
   });

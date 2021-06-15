@@ -8,9 +8,9 @@ part of 'style_response.dart';
 
 extension StyleResponseCopyWith on StyleResponse {
   StyleResponse copyWith({
-    bool error,
-    int status,
-    Style style,
+    bool? error,
+    int? status,
+    Style? style,
   }) {
     return StyleResponse(
       error: error ?? this.error,
@@ -26,8 +26,8 @@ extension StyleResponseCopyWith on StyleResponse {
 
 StyleResponse _$StyleResponseFromJson(Map<String, dynamic> json) {
   return StyleResponse(
-    status: json['status'] as int,
-    error: json['error'] as bool,
+    status: json['status'] as int?,
+    error: json['error'] as bool?,
     style: json['meta'] == null
         ? null
         : Style.fromJson(json['meta'] as Map<String, dynamic>),

@@ -8,8 +8,8 @@ part of 'team_projects_response.dart';
 
 extension TeamProjectsResponseCopyWith on TeamProjectsResponse {
   TeamProjectsResponse copyWith({
-    String name,
-    List<Project> projects,
+    String? name,
+    List<Project>? projects,
   }) {
     return TeamProjectsResponse(
       name: name ?? this.name,
@@ -24,11 +24,10 @@ extension TeamProjectsResponseCopyWith on TeamProjectsResponse {
 
 TeamProjectsResponse _$TeamProjectsResponseFromJson(Map<String, dynamic> json) {
   return TeamProjectsResponse(
-    name: json['name'] as String,
-    projects: (json['projects'] as List)
-        ?.map((e) =>
-            e == null ? null : Project.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
+    name: json['name'] as String?,
+    projects: (json['projects'] as List<dynamic>?)
+        ?.map((e) => Project.fromJson(e as Map<String, dynamic>))
+        .toList(),
   );
 }
 

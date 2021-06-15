@@ -8,24 +8,24 @@ part of 'type_style.dart';
 
 extension TypeStyleCopyWith on TypeStyle {
   TypeStyle copyWith({
-    List<Paint> fills,
-    String fontFamily,
-    String fontPostScriptName,
-    num fontSize,
-    num fontWeight,
-    bool italic,
-    num letterSpacing,
-    num lineHeightPercent,
-    num lineHeightPercentFontSize,
-    num lineHeightPx,
-    LineHeightUnit lineHeightUnit,
-    Map<String, num> opentypeFlags,
-    num paragraphIndent,
-    num paragraphSpacing,
-    TextAlignHorizontal textAlignHorizontal,
-    TextAlignVertical textAlignVertical,
-    TextCase textCase,
-    TextDecoration textDecoration,
+    List<Paint>? fills,
+    String? fontFamily,
+    String? fontPostScriptName,
+    num? fontSize,
+    num? fontWeight,
+    bool? italic,
+    num? letterSpacing,
+    num? lineHeightPercent,
+    num? lineHeightPercentFontSize,
+    num? lineHeightPx,
+    LineHeightUnit? lineHeightUnit,
+    Map<String, num>? opentypeFlags,
+    num? paragraphIndent,
+    num? paragraphSpacing,
+    TextAlignHorizontal? textAlignHorizontal,
+    TextAlignVertical? textAlignVertical,
+    TextCase? textCase,
+    TextDecoration? textDecoration,
   }) {
     return TypeStyle(
       fills: fills ?? this.fills,
@@ -57,13 +57,13 @@ extension TypeStyleCopyWith on TypeStyle {
 
 TypeStyle _$TypeStyleFromJson(Map<String, dynamic> json) {
   return TypeStyle(
-    fontFamily: json['fontFamily'] as String,
-    fontPostScriptName: json['fontPostScriptName'] as String,
-    paragraphSpacing: json['paragraphSpacing'] as num,
-    paragraphIndent: json['paragraphIndent'] as num,
-    italic: json['italic'] as bool,
-    fontWeight: json['fontWeight'] as num,
-    fontSize: json['fontSize'] as num,
+    fontFamily: json['fontFamily'] as String?,
+    fontPostScriptName: json['fontPostScriptName'] as String?,
+    paragraphSpacing: json['paragraphSpacing'] as num?,
+    paragraphIndent: json['paragraphIndent'] as num?,
+    italic: json['italic'] as bool?,
+    fontWeight: json['fontWeight'] as num?,
+    fontSize: json['fontSize'] as num?,
     textCase: _$enumDecodeNullable(_$TextCaseEnumMap, json['textCase']),
     textDecoration:
         _$enumDecodeNullable(_$TextDecorationEnumMap, json['textDecoration']),
@@ -71,17 +71,16 @@ TypeStyle _$TypeStyleFromJson(Map<String, dynamic> json) {
         _$TextAlignHorizontalEnumMap, json['textAlignHorizontal']),
     textAlignVertical: _$enumDecodeNullable(
         _$TextAlignVerticalEnumMap, json['textAlignVertical']),
-    letterSpacing: json['letterSpacing'] as num,
-    fills: (json['fills'] as List)
-        ?.map(
-            (e) => e == null ? null : Paint.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
-    opentypeFlags: (json['opentypeFlags'] as Map<String, dynamic>)?.map(
+    letterSpacing: json['letterSpacing'] as num?,
+    fills: (json['fills'] as List<dynamic>?)
+        ?.map((e) => Paint.fromJson(e as Map<String, dynamic>))
+        .toList(),
+    opentypeFlags: (json['opentypeFlags'] as Map<String, dynamic>?)?.map(
       (k, e) => MapEntry(k, e as num),
     ),
-    lineHeightPx: json['lineHeightPx'] as num,
-    lineHeightPercent: json['lineHeightPercent'] as num,
-    lineHeightPercentFontSize: json['lineHeightPercentFontSize'] as num,
+    lineHeightPx: json['lineHeightPx'] as num?,
+    lineHeightPercent: json['lineHeightPercent'] as num?,
+    lineHeightPercentFontSize: json['lineHeightPercentFontSize'] as num?,
     lineHeightUnit:
         _$enumDecodeNullable(_$LineHeightUnitEnumMap, json['lineHeightUnit']),
   );
@@ -110,36 +109,41 @@ Map<String, dynamic> _$TypeStyleToJson(TypeStyle instance) => <String, dynamic>{
       'lineHeightUnit': _$LineHeightUnitEnumMap[instance.lineHeightUnit],
     };
 
-T _$enumDecode<T>(
-  Map<T, dynamic> enumValues,
-  dynamic source, {
-  T unknownValue,
+K _$enumDecode<K, V>(
+  Map<K, V> enumValues,
+  Object? source, {
+  K? unknownValue,
 }) {
   if (source == null) {
-    throw ArgumentError('A value must be provided. Supported values: '
-        '${enumValues.values.join(', ')}');
+    throw ArgumentError(
+      'A value must be provided. Supported values: '
+      '${enumValues.values.join(', ')}',
+    );
   }
 
-  final value = enumValues.entries
-      .singleWhere((e) => e.value == source, orElse: () => null)
-      ?.key;
-
-  if (value == null && unknownValue == null) {
-    throw ArgumentError('`$source` is not one of the supported values: '
-        '${enumValues.values.join(', ')}');
-  }
-  return value ?? unknownValue;
+  return enumValues.entries.singleWhere(
+    (e) => e.value == source,
+    orElse: () {
+      if (unknownValue == null) {
+        throw ArgumentError(
+          '`$source` is not one of the supported values: '
+          '${enumValues.values.join(', ')}',
+        );
+      }
+      return MapEntry(unknownValue, enumValues.values.first);
+    },
+  ).key;
 }
 
-T _$enumDecodeNullable<T>(
-  Map<T, dynamic> enumValues,
+K? _$enumDecodeNullable<K, V>(
+  Map<K, V> enumValues,
   dynamic source, {
-  T unknownValue,
+  K? unknownValue,
 }) {
   if (source == null) {
     return null;
   }
-  return _$enumDecode<T>(enumValues, source, unknownValue: unknownValue);
+  return _$enumDecode<K, V>(enumValues, source, unknownValue: unknownValue);
 }
 
 const _$TextCaseEnumMap = {
