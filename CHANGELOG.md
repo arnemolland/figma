@@ -1,5 +1,9 @@
 # Changelog
 
+# 3.0.0
+
+- Migrate to null-safety ([@bjartebore](https://github.com/bjartebore))
+
 # 2.1.0+1
 
 - Move repository from old org (dnb-asa) to new (arnemolland)

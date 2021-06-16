@@ -1,6 +1,6 @@
 name: figma
 description: A Figma API wrapper library for interacting with Figma documents, written in pure Dart.
-version: 2.1.0+1
+version: 3.0.0
 homepage: https://github.com/arnemolland/figma
 repository: https://github.com/arnemolland/figma
 issue_tracker: https://github.com/arnemolland/figma/issues
@@ -17,11 +17,8 @@ dependencies:
 
 dev_dependencies:
   pedantic: ^1.11.0
-  test: ^1.17.7
+  test: ^1.17.8
   build_runner: ^2.0.4
   json_serializable: ^4.1.3
   dotenv: ^3.0.0
-  copy_with_extension_gen: ^2.0.0
-
-dependency_overrides:
-  built_value: "8.0.6"
+  copy_with_extension_gen: ^2.0.1
