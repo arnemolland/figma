@@ -10,7 +10,7 @@ extension FrameCopyWith on Frame {
   Frame copyWith({
     SizeRectangle? absoluteBoundingBox,
     BlendMode? blendMode,
-    List<Node>? children,
+    List<Node?>? children,
     bool? clipsContent,
     LayoutConstraint? constraints,
     double? cornerRadius,

@@ -10,7 +10,7 @@ extension BooleanOperationCopyWith on BooleanOperation {
   BooleanOperation copyWith({
     SizeRectangle? absoluteBoundingBox,
     BlendMode? blendMode,
-    List<Node>? children,
+    List<Node?>? children,
     LayoutConstraint? constraints,
     List<Effect>? effects,
     List<ExportSetting>? exportSettings,

@@ -4,6 +4,7 @@ export 'canvas.dart';
 export 'color_stop.dart';
 export 'color.dart';
 export 'component.dart';
+export 'component_set.dart';
 export 'constraint.dart';
 export 'counter_axis_align_items.dart';
 export 'counter_axis_sizing_mode.dart';

@@ -9,7 +9,7 @@ part of 'canvas.dart';
 extension CanvasCopyWith on Canvas {
   Canvas copyWith({
     Color? backgroundColor,
-    List<Node>? children,
+    List<Node?>? children,
     List<ExportSetting>? exportSettings,
     String? id,
     String? name,

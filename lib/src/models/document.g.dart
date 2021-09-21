@@ -8,7 +8,7 @@ part of 'document.dart';
 
 extension DocumentCopyWith on Document {
   Document copyWith({
-    List<Node>? children,
+    List<Node?>? children,
     String? id,
     String? name,
     dynamic? pluginData,

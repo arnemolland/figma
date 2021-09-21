@@ -24,6 +24,7 @@ extension TypeStyleCopyWith on TypeStyle {
     num? paragraphSpacing,
     TextAlignHorizontal? textAlignHorizontal,
     TextAlignVertical? textAlignVertical,
+    TextAutoResize? textAutoResize,
     TextCase? textCase,
     TextDecoration? textDecoration,
   }) {
@@ -45,6 +46,7 @@ extension TypeStyleCopyWith on TypeStyle {
       paragraphSpacing: paragraphSpacing ?? this.paragraphSpacing,
       textAlignHorizontal: textAlignHorizontal ?? this.textAlignHorizontal,
       textAlignVertical: textAlignVertical ?? this.textAlignVertical,
+      textAutoResize: textAutoResize ?? this.textAutoResize,
       textCase: textCase ?? this.textCase,
       textDecoration: textDecoration ?? this.textDecoration,
     );
@@ -67,6 +69,8 @@ TypeStyle _$TypeStyleFromJson(Map<String, dynamic> json) {
     textCase: _$enumDecodeNullable(_$TextCaseEnumMap, json['textCase']),
     textDecoration:
         _$enumDecodeNullable(_$TextDecorationEnumMap, json['textDecoration']),
+    textAutoResize:
+        _$enumDecodeNullable(_$TextAutoResizeEnumMap, json['textAutoResize']),
     textAlignHorizontal: _$enumDecodeNullable(
         _$TextAlignHorizontalEnumMap, json['textAlignHorizontal']),
     textAlignVertical: _$enumDecodeNullable(
@@ -96,6 +100,7 @@ Map<String, dynamic> _$TypeStyleToJson(TypeStyle instance) => <String, dynamic>{
       'fontSize': instance.fontSize,
       'textCase': _$TextCaseEnumMap[instance.textCase],
       'textDecoration': _$TextDecorationEnumMap[instance.textDecoration],
+      'textAutoResize': _$TextAutoResizeEnumMap[instance.textAutoResize],
       'textAlignHorizontal':
           _$TextAlignHorizontalEnumMap[instance.textAlignHorizontal],
       'textAlignVertical':
@@ -157,6 +162,12 @@ const _$TextCaseEnumMap = {
 const _$TextDecorationEnumMap = {
   TextDecoration.strikeThrough: 'STRIKETHROUGH',
   TextDecoration.underline: 'UNDERLINE',
+};
+
+const _$TextAutoResizeEnumMap = {
+  TextAutoResize.none: 'NONE',
+  TextAutoResize.height: 'HEIGHT',
+  TextAutoResize.widthAndHeight: 'WIDTH_AND_HEIGHT',
 };
 
 const _$TextAlignHorizontalEnumMap = {

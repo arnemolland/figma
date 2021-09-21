@@ -59,6 +59,16 @@ enum LineHeightUnit {
   intrinsicPercent
 }
 
+/// Dimensions along which text will auto resize.
+enum TextAutoResize {
+  @JsonValue('NONE')
+  none,
+  @JsonValue('HEIGHT')
+  height,
+  @JsonValue('WIDTH_AND_HEIGHT')
+  widthAndHeight,
+}
+
 /// Metadata for character formatting
 @JsonSerializable()
 @CopyWith()
@@ -89,6 +99,10 @@ class TypeStyle extends Equatable {
 
   /// Text decoration applied to the node, default is none
   final TextDecoration? textDecoration;
+
+  /// Dimensions along which text will auto resize, default is
+  /// that the text does not auto-resize.
+  final TextAutoResize? textAutoResize;
 
   /// Horizontal text alignment as string enum
   final TextAlignHorizontal? textAlignHorizontal;
@@ -132,6 +146,7 @@ class TypeStyle extends Equatable {
     this.fontSize,
     this.textCase,
     this.textDecoration,
+    this.textAutoResize,
     this.textAlignHorizontal,
     this.textAlignVertical,
     this.letterSpacing,

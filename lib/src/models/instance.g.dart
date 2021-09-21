@@ -10,7 +10,7 @@ extension InstanceCopyWith on Instance {
   Instance copyWith({
     SizeRectangle? absoluteBoundingBox,
     BlendMode? blendMode,
-    List<Node>? children,
+    List<Node?>? children,
     bool? clipsContent,
     String? componentId,
     LayoutConstraint? constraints,
