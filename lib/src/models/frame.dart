@@ -49,6 +49,11 @@ class Frame extends Node {
   /// Keep height and width constrained to same ratio
   final bool? preserveRatio;
 
+  /// This property is applicable only for direct children of auto-layout frames,
+  /// ignored otherwise. Determines whether a layer should stretch along the parent’s
+  /// primary axis. A `0` corresponds to a fixed size and `1` corresponds to stretch
+  final double? layoutGrow;
+
   /// Horizontal and vertical layout constraints for node
   final LayoutConstraint? constraints;
 
@@ -178,6 +183,7 @@ class Frame extends Node {
     this.exportSettings,
     this.blendMode,
     this.preserveRatio,
+    this.layoutGrow,
     this.constraints,
     this.layoutAlign,
     this.transitionNodeID,
@@ -227,6 +233,7 @@ class Frame extends Node {
         exportSettings,
         blendMode,
         preserveRatio,
+        layoutGrow,
         constraints,
         layoutAlign,
         transitionNodeID,
