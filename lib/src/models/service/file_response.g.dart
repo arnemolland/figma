@@ -8,6 +8,7 @@ part of 'file_response.dart';
 
 extension FileResponseCopyWith on FileResponse {
   FileResponse copyWith({
+    Map<String, ComponentSet>? componentSets,
     Map<String, Component>? components,
     Document? document,
     DateTime? lastModified,
@@ -19,6 +20,7 @@ extension FileResponseCopyWith on FileResponse {
     String? version,
   }) {
     return FileResponse(
+      componentSets: componentSets ?? this.componentSets,
       components: components ?? this.components,
       document: document ?? this.document,
       lastModified: lastModified ?? this.lastModified,
@@ -51,6 +53,9 @@ FileResponse _$FileResponseFromJson(Map<String, dynamic> json) {
     components: (json['components'] as Map<String, dynamic>?)?.map(
       (k, e) => MapEntry(k, Component.fromJson(e as Map<String, dynamic>)),
     ),
+    componentSets: (json['componentSets'] as Map<String, dynamic>?)?.map(
+      (k, e) => MapEntry(k, ComponentSet.fromJson(e as Map<String, dynamic>)),
+    ),
     schemaVersion: json['schemaVersion'] as int?,
     styles: (json['styles'] as Map<String, dynamic>?)?.map(
       (k, e) => MapEntry(k, Style.fromJson(e as Map<String, dynamic>)),
@@ -67,6 +72,7 @@ Map<String, dynamic> _$FileResponseToJson(FileResponse instance) =>
       'version': instance.version,
       'document': instance.document,
       'components': instance.components,
+      'componentSets': instance.componentSets,
       'schemaVersion': instance.schemaVersion,
       'styles': instance.styles,
     };

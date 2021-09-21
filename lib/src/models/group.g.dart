@@ -10,7 +10,7 @@ extension GroupCopyWith on Group {
   Group copyWith({
     SizeRectangle? absoluteBoundingBox,
     BlendMode? blendMode,
-    List<Node>? children,
+    List<Node?>? children,
     bool? clipsContent,
     LayoutConstraint? constraints,
     double? cornerRadius,

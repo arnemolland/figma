@@ -29,6 +29,9 @@ class FileResponse extends Equatable {
   /// File components, if any
   final Map<String, Component>? components;
 
+  /// File component sets, if any
+  final Map<String, ComponentSet>? componentSets;
+
   /// The schema version of the file
   final int? schemaVersion;
 
@@ -43,6 +46,7 @@ class FileResponse extends Equatable {
     this.version,
     this.document,
     this.components,
+    this.componentSets,
     this.schemaVersion,
     this.styles,
   });
@@ -56,6 +60,7 @@ class FileResponse extends Equatable {
         version,
         document,
         components,
+        componentSets,
         schemaVersion,
         styles,
       ];
