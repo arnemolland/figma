@@ -1,5 +1,9 @@
 # Changelog
 
+# 3.1.0
+
+- Add component set types and text auto resize property on type style ([@aloisdeniel](https://github.com/aloisdeniel))
+
 # 3.0.0
 
 - Migrate to null-safety ([@bjartebore](https://github.com/bjartebore))
