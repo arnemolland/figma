@@ -26,6 +26,7 @@ extension FrameCopyWith on Frame {
     num? itemSpacing,
     LayoutAlign? layoutAlign,
     List<LayoutGrid>? layoutGrids,
+    double? layoutGrow,
     LayoutMode? layoutMode,
     bool? locked,
     String? name,
@@ -73,6 +74,7 @@ extension FrameCopyWith on Frame {
       itemSpacing: itemSpacing ?? this.itemSpacing,
       layoutAlign: layoutAlign ?? this.layoutAlign,
       layoutGrids: layoutGrids ?? this.layoutGrids,
+      layoutGrow: layoutGrow ?? this.layoutGrow,
       layoutMode: layoutMode ?? this.layoutMode,
       locked: locked ?? this.locked,
       name: name ?? this.name,
@@ -137,6 +139,7 @@ Frame _$FrameFromJson(Map<String, dynamic> json) {
         .toList(),
     blendMode: _$enumDecodeNullable(_$BlendModeEnumMap, json['blendMode']),
     preserveRatio: json['preserveRatio'] as bool?,
+    layoutGrow: (json['layoutGrow'] as num?)?.toDouble(),
     constraints: json['constraints'] == null
         ? null
         : LayoutConstraint.fromJson(
@@ -206,6 +209,7 @@ Map<String, dynamic> _$FrameToJson(Frame instance) => <String, dynamic>{
       'exportSettings': instance.exportSettings,
       'blendMode': _$BlendModeEnumMap[instance.blendMode],
       'preserveRatio': instance.preserveRatio,
+      'layoutGrow': instance.layoutGrow,
       'constraints': instance.constraints,
       'layoutAlign': _$LayoutAlignEnumMap[instance.layoutAlign],
       'primaryAxisAlignItems':
