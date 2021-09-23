@@ -15,6 +15,7 @@ extension InstanceCopyWith on Instance {
     String? componentId,
     LayoutConstraint? constraints,
     double? cornerRadius,
+    CounterAxisAlignItems? counterAxisAlignItems,
     CounterAxisSizingMode? counterAxisSizingMode,
     List<Effect>? effects,
     List<ExportSetting>? exportSettings,
@@ -26,6 +27,7 @@ extension InstanceCopyWith on Instance {
     num? itemSpacing,
     LayoutAlign? layoutAlign,
     List<LayoutGrid>? layoutGrids,
+    double? layoutGrow,
     LayoutMode? layoutMode,
     bool? locked,
     String? name,
@@ -33,6 +35,7 @@ extension InstanceCopyWith on Instance {
     OverflowDirection? overflowDirection,
     dynamic? pluginData,
     bool? preserveRatio,
+    PrimaryAxisAlignItems? primaryAxisAlignItems,
     List<num>? rectangleCornerRadii,
     List<List<num>>? relativeTransform,
     dynamic? sharedPluginData,
@@ -54,6 +57,8 @@ extension InstanceCopyWith on Instance {
       componentId: componentId ?? this.componentId,
       constraints: constraints ?? this.constraints,
       cornerRadius: cornerRadius ?? this.cornerRadius,
+      counterAxisAlignItems:
+          counterAxisAlignItems ?? this.counterAxisAlignItems,
       counterAxisSizingMode:
           counterAxisSizingMode ?? this.counterAxisSizingMode,
       effects: effects ?? this.effects,
@@ -66,6 +71,7 @@ extension InstanceCopyWith on Instance {
       itemSpacing: itemSpacing ?? this.itemSpacing,
       layoutAlign: layoutAlign ?? this.layoutAlign,
       layoutGrids: layoutGrids ?? this.layoutGrids,
+      layoutGrow: layoutGrow ?? this.layoutGrow,
       layoutMode: layoutMode ?? this.layoutMode,
       locked: locked ?? this.locked,
       name: name ?? this.name,
@@ -73,6 +79,8 @@ extension InstanceCopyWith on Instance {
       overflowDirection: overflowDirection ?? this.overflowDirection,
       pluginData: pluginData ?? this.pluginData,
       preserveRatio: preserveRatio ?? this.preserveRatio,
+      primaryAxisAlignItems:
+          primaryAxisAlignItems ?? this.primaryAxisAlignItems,
       rectangleCornerRadii: rectangleCornerRadii ?? this.rectangleCornerRadii,
       relativeTransform: relativeTransform ?? this.relativeTransform,
       sharedPluginData: sharedPluginData ?? this.sharedPluginData,
@@ -148,6 +156,10 @@ Instance _$InstanceFromJson(Map<String, dynamic> json) {
     layoutMode: _$enumDecodeNullable(_$LayoutModeEnumMap, json['layoutMode']),
     counterAxisSizingMode: _$enumDecodeNullable(
         _$CounterAxisSizingModeEnumMap, json['counterAxisSizingMode']),
+    primaryAxisAlignItems: _$enumDecodeNullable(
+        _$PrimaryAxisAlignItemsEnumMap, json['primaryAxisAlignItems']),
+    counterAxisAlignItems: _$enumDecodeNullable(
+        _$CounterAxisAlignItemsEnumMap, json['counterAxisAlignItems']),
     horizontalPadding: json['horizontalPadding'] as num?,
     verticalPadding: json['verticalPadding'] as num?,
     itemSpacing: json['itemSpacing'] as num?,
@@ -161,6 +173,7 @@ Instance _$InstanceFromJson(Map<String, dynamic> json) {
         .toList(),
     isMask: json['isMask'] as bool?,
     isMaskOutline: json['isMaskOutline'] as bool?,
+    layoutGrow: (json['layoutGrow'] as num?)?.toDouble(),
   );
 }
 
@@ -182,8 +195,13 @@ Map<String, dynamic> _$InstanceToJson(Instance instance) => <String, dynamic>{
       'exportSettings': instance.exportSettings,
       'blendMode': _$BlendModeEnumMap[instance.blendMode],
       'preserveRatio': instance.preserveRatio,
+      'layoutGrow': instance.layoutGrow,
       'constraints': instance.constraints,
       'layoutAlign': _$LayoutAlignEnumMap[instance.layoutAlign],
+      'primaryAxisAlignItems':
+          _$PrimaryAxisAlignItemsEnumMap[instance.primaryAxisAlignItems],
+      'counterAxisAlignItems':
+          _$CounterAxisAlignItemsEnumMap[instance.counterAxisAlignItems],
       'transitionNodeID': instance.transitionNodeID,
       'transitionDuration': instance.transitionDuration,
       'transitionEasing': _$EasingTypeEnumMap[instance.transitionEasing],
@@ -296,6 +314,19 @@ const _$LayoutModeEnumMap = {
 const _$CounterAxisSizingModeEnumMap = {
   CounterAxisSizingMode.fixed: 'FIXED',
   CounterAxisSizingMode.auto: 'AUTO',
+};
+
+const _$PrimaryAxisAlignItemsEnumMap = {
+  PrimaryAxisAlignItems.min: 'MIN',
+  PrimaryAxisAlignItems.center: 'CENTER',
+  PrimaryAxisAlignItems.max: 'MAX',
+  PrimaryAxisAlignItems.spaceBetween: 'SPACE_BETWEEN',
+};
+
+const _$CounterAxisAlignItemsEnumMap = {
+  CounterAxisAlignItems.min: 'MIN',
+  CounterAxisAlignItems.center: 'CENTER',
+  CounterAxisAlignItems.max: 'MAX',
 };
 
 const _$OverflowDirectionEnumMap = {
