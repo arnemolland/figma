@@ -40,9 +40,14 @@ class Instance extends Frame {
     List<List<num>>? relativeTransform,
     bool? clipsContent,
     LayoutMode? layoutMode,
+    PrimaryAxisSizingMode? primaryAxisSizingMode,
     CounterAxisSizingMode? counterAxisSizingMode,
     PrimaryAxisAlignItems? primaryAxisAlignItems,
     CounterAxisAlignItems? counterAxisAlignItems,
+    double? paddingLeft,
+    double? paddingTop,
+    double? paddingRight,
+    double? paddingBottom,
     num? horizontalPadding,
     num? verticalPadding,
     num? itemSpacing,
@@ -92,6 +97,11 @@ class Instance extends Frame {
           effects: effects,
           isMask: isMask,
           isMaskOutline: isMaskOutline,
+          paddingBottom: paddingBottom,
+          paddingLeft: paddingLeft,
+          paddingRight: paddingRight,
+          paddingTop: paddingTop,
+          primaryAxisSizingMode: primaryAxisSizingMode,
         );
 
   @override
