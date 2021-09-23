@@ -33,9 +33,14 @@ extension InstanceCopyWith on Instance {
     String? name,
     double? opacity,
     OverflowDirection? overflowDirection,
+    double? paddingBottom,
+    double? paddingLeft,
+    double? paddingRight,
+    double? paddingTop,
     dynamic? pluginData,
     bool? preserveRatio,
     PrimaryAxisAlignItems? primaryAxisAlignItems,
+    PrimaryAxisSizingMode? primaryAxisSizingMode,
     List<num>? rectangleCornerRadii,
     List<List<num>>? relativeTransform,
     dynamic? sharedPluginData,
@@ -77,10 +82,16 @@ extension InstanceCopyWith on Instance {
       name: name ?? this.name,
       opacity: opacity ?? this.opacity,
       overflowDirection: overflowDirection ?? this.overflowDirection,
+      paddingBottom: paddingBottom ?? this.paddingBottom,
+      paddingLeft: paddingLeft ?? this.paddingLeft,
+      paddingRight: paddingRight ?? this.paddingRight,
+      paddingTop: paddingTop ?? this.paddingTop,
       pluginData: pluginData ?? this.pluginData,
       preserveRatio: preserveRatio ?? this.preserveRatio,
       primaryAxisAlignItems:
           primaryAxisAlignItems ?? this.primaryAxisAlignItems,
+      primaryAxisSizingMode:
+          primaryAxisSizingMode ?? this.primaryAxisSizingMode,
       rectangleCornerRadii: rectangleCornerRadii ?? this.rectangleCornerRadii,
       relativeTransform: relativeTransform ?? this.relativeTransform,
       sharedPluginData: sharedPluginData ?? this.sharedPluginData,
@@ -154,12 +165,18 @@ Instance _$InstanceFromJson(Map<String, dynamic> json) {
         .toList(),
     clipsContent: json['clipsContent'] as bool?,
     layoutMode: _$enumDecodeNullable(_$LayoutModeEnumMap, json['layoutMode']),
+    primaryAxisSizingMode: _$enumDecodeNullable(
+        _$PrimaryAxisSizingModeEnumMap, json['primaryAxisSizingMode']),
     counterAxisSizingMode: _$enumDecodeNullable(
         _$CounterAxisSizingModeEnumMap, json['counterAxisSizingMode']),
     primaryAxisAlignItems: _$enumDecodeNullable(
         _$PrimaryAxisAlignItemsEnumMap, json['primaryAxisAlignItems']),
     counterAxisAlignItems: _$enumDecodeNullable(
         _$CounterAxisAlignItemsEnumMap, json['counterAxisAlignItems']),
+    paddingLeft: (json['paddingLeft'] as num?)?.toDouble(),
+    paddingTop: (json['paddingTop'] as num?)?.toDouble(),
+    paddingRight: (json['paddingRight'] as num?)?.toDouble(),
+    paddingBottom: (json['paddingBottom'] as num?)?.toDouble(),
     horizontalPadding: json['horizontalPadding'] as num?,
     verticalPadding: json['verticalPadding'] as num?,
     itemSpacing: json['itemSpacing'] as num?,
@@ -202,6 +219,10 @@ Map<String, dynamic> _$InstanceToJson(Instance instance) => <String, dynamic>{
           _$PrimaryAxisAlignItemsEnumMap[instance.primaryAxisAlignItems],
       'counterAxisAlignItems':
           _$CounterAxisAlignItemsEnumMap[instance.counterAxisAlignItems],
+      'paddingLeft': instance.paddingLeft,
+      'paddingTop': instance.paddingTop,
+      'paddingRight': instance.paddingRight,
+      'paddingBottom': instance.paddingBottom,
       'transitionNodeID': instance.transitionNodeID,
       'transitionDuration': instance.transitionDuration,
       'transitionEasing': _$EasingTypeEnumMap[instance.transitionEasing],
@@ -213,6 +234,8 @@ Map<String, dynamic> _$InstanceToJson(Instance instance) => <String, dynamic>{
       'layoutMode': _$LayoutModeEnumMap[instance.layoutMode],
       'counterAxisSizingMode':
           _$CounterAxisSizingModeEnumMap[instance.counterAxisSizingMode],
+      'primaryAxisSizingMode':
+          _$PrimaryAxisSizingModeEnumMap[instance.primaryAxisSizingMode],
       'horizontalPadding': instance.horizontalPadding,
       'verticalPadding': instance.verticalPadding,
       'itemSpacing': instance.itemSpacing,
@@ -309,6 +332,11 @@ const _$LayoutModeEnumMap = {
   LayoutMode.none: 'NONE',
   LayoutMode.horizontal: 'HORIZONTAL',
   LayoutMode.vertical: 'VERTICAL',
+};
+
+const _$PrimaryAxisSizingModeEnumMap = {
+  PrimaryAxisSizingMode.fixed: 'FIXED',
+  PrimaryAxisSizingMode.auto: 'AUTO',
 };
 
 const _$CounterAxisSizingModeEnumMap = {
