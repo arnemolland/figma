@@ -5,16 +5,23 @@ import 'package:figma/figma.dart';
 import 'package:figma/src/query.dart';
 import 'package:http/http.dart';
 import 'package:http2/http2.dart';
-import 'package:http/http.dart' as http;
 
 /// Figma API base URL
 const base = 'api.figma.com';
+
+/// A constant that is true if the application was compiled to run on the web.
+
+// This implementation takes advantage of the fact that JavaScript does not support integers.
+// In this environment, Dart's doubles and ints are backed by the same kind of object. Thus a
+// double 0.0 is identical to an integer 0. This is not true for Dart code running in
+// AOT or on the VM.
+const bool kIsWeb = identical(0, 0.0);
 
 class FigmaClient {
   FigmaClient(
     this.accessToken, {
     this.apiVersion = 'v1',
-    this.useHttp2 = true,
+    this.useHttp2 = !kIsWeb,
   });
 
   /// Use HTTP2 sockets for interacting with API.
