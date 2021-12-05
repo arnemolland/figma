@@ -3,20 +3,40 @@ import 'dart:io';
 
 import 'package:figma/figma.dart';
 import 'package:figma/src/query.dart';
+import 'package:http/http.dart';
 import 'package:http2/http2.dart';
 
 /// Figma API base URL
 const base = 'api.figma.com';
 
+/// A constant that is true if the application was compiled to run on the web.
+
+// This implementation takes advantage of the fact that JavaScript does not support integers.
+// In this environment, Dart's doubles and ints are backed by the same kind of object. Thus a
+// double 0.0 is identical to an integer 0. This is not true for Dart code running in
+// AOT or on the VM.
+const bool kIsWeb = identical(0, 0.0);
+
 class FigmaClient {
+  FigmaClient(
+    this.accessToken, {
+    this.apiVersion = 'v1',
+    this.useHttp2 = !kIsWeb,
+  });
+
+  /// Use HTTP2 sockets for interacting with API.
+  ///
+  /// This is the recommended way, but it may not work on certain platforms like web.
+  ///
+  /// If `false`, then the `http` package is used.
+  final bool useHttp2;
+
   /// The personal access token for the Figma Account to be used
   final String accessToken;
 
   /// Specifies the Figma API version to be used. Should only be
   /// specified if package is not updated with a new API release.
   final String apiVersion;
-
-  FigmaClient(this.accessToken, [this.apiVersion = 'v1']);
 
   /// Does an authenticated GET request towards the Figma API
   Future<Map<String, dynamic>> authenticatedGet(String url) async {
@@ -103,7 +123,8 @@ class FigmaClient {
           .then((data) => ComponentResponse.fromJson(data));
 
   /// Retrieves all styles for the Figma team specified by [team]
-  Future<StylesResponse> getTeamStyles(String team, [FigmaQuery? query]) async =>
+  Future<StylesResponse> getTeamStyles(String team,
+          [FigmaQuery? query]) async =>
       _getFigma('/teams/$team/styles', query)
           .then((data) => StylesResponse.fromJson(data));
 
@@ -158,6 +179,20 @@ class FigmaClient {
 
   Future<_Response> _send(String method, Uri uri, Map<String, String> headers,
       [String? body]) async {
+    /// Regular HTTP is used
+    if (!useHttp2) {
+      var client = Client();
+      try {
+        final request = Request(method, uri);
+        request.headers.addAll(headers);
+        final response = await client.send(request);
+        final body = await response.stream.toBytes();
+        return _Response(response.statusCode, utf8.decode(body));
+      } finally {
+        client.close();
+      }
+    }
+
     var transport = ClientTransportConnection.viaSocket(
       await SecureSocket.connect(
         uri.host,
