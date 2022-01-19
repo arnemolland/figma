@@ -12,6 +12,7 @@ extension EffectCopyWith on Effect {
     Color? color,
     Vector2D? offset,
     num? radius,
+    num? spread,
     EffectType? type,
     bool? visible,
   }) {
@@ -20,6 +21,7 @@ extension EffectCopyWith on Effect {
       color: color ?? this.color,
       offset: offset ?? this.offset,
       radius: radius ?? this.radius,
+      spread: spread ?? this.spread,
       type: type ?? this.type,
       visible: visible ?? this.visible,
     );
@@ -35,6 +37,7 @@ Effect _$EffectFromJson(Map<String, dynamic> json) {
     type: _$enumDecodeNullable(_$EffectTypeEnumMap, json['type']),
     visible: json['visible'] as bool? ?? true,
     radius: json['radius'] as num?,
+    spread: json['spread'] as num?,
     color: json['color'] == null
         ? null
         : Color.fromJson(json['color'] as Map<String, dynamic>),
@@ -49,6 +52,7 @@ Map<String, dynamic> _$EffectToJson(Effect instance) => <String, dynamic>{
       'type': _$EffectTypeEnumMap[instance.type],
       'visible': instance.visible,
       'radius': instance.radius,
+      'spread': instance.spread,
       'color': instance.color,
       'blendMode': _$BlendModeEnumMap[instance.blendMode],
       'offset': instance.offset,
