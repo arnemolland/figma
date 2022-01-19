@@ -33,6 +33,9 @@ class Effect extends Equatable {
 
   // The following properties are for shadows only:
 
+  // The radius of the shadow
+  final num? spread;
+
   /// The color of the shadow
   final Color? color;
 
@@ -46,6 +49,7 @@ class Effect extends Equatable {
     this.type,
     required this.visible,
     this.radius,
+    this.spread,
     this.color,
     this.blendMode,
     this.offset,
@@ -56,6 +60,7 @@ class Effect extends Equatable {
         type,
         visible,
         radius,
+        spread,
         color,
         blendMode,
         offset,
