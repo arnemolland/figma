@@ -33,12 +33,14 @@ class FigmaClient {
   final bool useHttp2;
 
   /// The personal access token for the Figma Account to be used
+  /// Or the OAuth token, if useOAuth is true
   final String accessToken;
 
   /// Specifies the Figma API version to be used. Should only be
   /// specified if package is not updated with a new API release.
   final String apiVersion;
 
+  // If true, then use accessToken as OAuth token when calling figma API
   final bool useOAuth;
 
   /// Does an authenticated GET request towards the Figma API
