@@ -22,6 +22,7 @@ class FigmaClient {
     this.accessToken, {
     this.apiVersion = 'v1',
     this.useHttp2 = !kIsWeb,
+    this.useOAuth = false,
   });
 
   /// Use HTTP2 sockets for interacting with API.
@@ -37,6 +38,8 @@ class FigmaClient {
   /// Specifies the Figma API version to be used. Should only be
   /// specified if package is not updated with a new API release.
   final String apiVersion;
+
+  final bool useOAuth;
 
   /// Does an authenticated GET request towards the Figma API
   Future<Map<String, dynamic>> authenticatedGet(String url) async {
@@ -236,10 +239,17 @@ class FigmaClient {
     return _Response(status, utf8.decode(buffer));
   }
 
-  Map<String, String> get _authHeaders => {
-        'X-Figma-Token': accessToken,
-        'Content-Type': 'application/json',
-      };
+  Map<String, String> get _authHeaders {
+    final headers = <String, String>{
+      'Content-Type': 'application/json',
+    };
+    if (useOAuth) {
+      headers['Authorization'] = 'Bearer $accessToken';
+    } else {
+      headers['X-Figma-Token'] = accessToken;
+    }
+    return headers;
+  }
 }
 
 class _Response {
