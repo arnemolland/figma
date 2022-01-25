@@ -1,5 +1,11 @@
 # Changelog
 
+# 3.3.0
+
+- Added spread for shadow effects ([@BigFlexLiu](https://github.com/BigFlexLiu))
+- Added support for OAuth token ([@BigFlexLiu](https://github.com/BigFlexLiu))
+- Removed unused imports
+
 # 3.2.0
 
 - Use `http` dependency on web, `http2` on other platforms ([@aloisdeniel](https://github.com/aloisdeniel))
