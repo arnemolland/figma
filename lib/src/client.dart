@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:figma/figma.dart';
-import 'package:figma/src/query.dart';
 import 'package:http/http.dart';
 import 'package:http2/http2.dart';
 

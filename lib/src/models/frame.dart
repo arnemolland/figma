@@ -1,9 +1,5 @@
 import 'package:figma/src/converters/converters.dart';
-import 'package:figma/src/models/primary_axis_align_items.dart';
-import 'package:figma/src/models/counter_axis_align_items.dart';
 import 'package:figma/src/models/models.dart';
-import 'package:figma/src/models/primary_axis_sizing_mode.dart';
-import 'package:figma/src/models/counter_axis_sizing_mode.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:copy_with_extension/copy_with_extension.dart';
 

@@ -1,6 +1,5 @@
 import 'package:dotenv/dotenv.dart';
 import 'package:figma/figma.dart';
-import 'package:figma/src/query.dart';
 import 'package:test/test.dart';
 
 void main() {
