@@ -45,6 +45,10 @@ class Effect extends Equatable {
   /// How far the shadow is projected in the x and y directions
   final Vector2D? offset;
 
+  /// Whether to show shadow behind the object
+  /// Applies only to drop shadow
+  final bool? showBehind;
+
   Effect({
     this.type,
     required this.visible,
@@ -53,6 +57,7 @@ class Effect extends Equatable {
     this.color,
     this.blendMode,
     this.offset,
+    this.showBehind,
   });
 
   @override
@@ -64,6 +69,7 @@ class Effect extends Equatable {
         color,
         blendMode,
         offset,
+        showBehind,
       ];
 
   factory Effect.fromJson(Map<String, dynamic> json) => _$EffectFromJson(json);
