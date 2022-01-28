@@ -12,6 +12,7 @@ extension EffectCopyWith on Effect {
     Color? color,
     Vector2D? offset,
     num? radius,
+    bool? showShadowBehindNode,
     num? spread,
     EffectType? type,
     bool? visible,
@@ -21,6 +22,7 @@ extension EffectCopyWith on Effect {
       color: color ?? this.color,
       offset: offset ?? this.offset,
       radius: radius ?? this.radius,
+      showShadowBehindNode: showShadowBehindNode ?? this.showShadowBehindNode,
       spread: spread ?? this.spread,
       type: type ?? this.type,
       visible: visible ?? this.visible,
@@ -45,6 +47,7 @@ Effect _$EffectFromJson(Map<String, dynamic> json) {
     offset: json['offset'] == null
         ? null
         : Vector2D.fromJson(json['offset'] as Map<String, dynamic>),
+    showShadowBehindNode: json['showShadowBehindNode'] as bool?,
   );
 }
 
@@ -56,6 +59,7 @@ Map<String, dynamic> _$EffectToJson(Effect instance) => <String, dynamic>{
       'color': instance.color,
       'blendMode': _$BlendModeEnumMap[instance.blendMode],
       'offset': instance.offset,
+      'showShadowBehindNode': instance.showShadowBehindNode,
     };
 
 K _$enumDecode<K, V>(
