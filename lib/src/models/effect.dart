@@ -47,7 +47,7 @@ class Effect extends Equatable {
 
   /// Whether to show shadow behind the object
   /// Applies only to drop shadow
-  final bool? showBehind;
+  final bool? showShadowBehindNode;
 
   Effect({
     this.type,
@@ -57,7 +57,7 @@ class Effect extends Equatable {
     this.color,
     this.blendMode,
     this.offset,
-    this.showBehind,
+    this.showShadowBehindNode,
   });
 
   @override
@@ -69,7 +69,7 @@ class Effect extends Equatable {
         color,
         blendMode,
         offset,
-        showBehind,
+        showShadowBehindNode,
       ];
 
   factory Effect.fromJson(Map<String, dynamic> json) => _$EffectFromJson(json);
