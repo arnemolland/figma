@@ -8,6 +8,7 @@ part of 'component.dart';
 
 extension ComponentCopyWith on Component {
   Component copyWith({
+    String? componentSetId,
     FrameInfo? containingFrame,
     dynamic? containingPage,
     DateTime? createdAt,
@@ -21,6 +22,7 @@ extension ComponentCopyWith on Component {
     User? user,
   }) {
     return Component(
+      componentSetId: componentSetId ?? this.componentSetId,
       containingFrame: containingFrame ?? this.containingFrame,
       containingPage: containingPage ?? this.containingPage,
       createdAt: createdAt ?? this.createdAt,
@@ -61,6 +63,7 @@ Component _$ComponentFromJson(Map<String, dynamic> json) {
         ? null
         : FrameInfo.fromJson(json['containing_frame'] as Map<String, dynamic>),
     containingPage: json['containing_page'],
+    componentSetId: json['componentSetId'] as String?,
   );
 }
 
@@ -76,4 +79,5 @@ Map<String, dynamic> _$ComponentToJson(Component instance) => <String, dynamic>{
       'user': instance.user,
       'containing_frame': instance.containingFrame,
       'containing_page': instance.containingPage,
+      'componentSetId': instance.componentSetId,
     };
