@@ -52,6 +52,10 @@ class Component extends Equatable {
   @JsonKey(name: 'containing_page')
   final dynamic containingPage;
 
+  /// the id of the componentset it belongs to
+  /// if any
+  final String? componentSetId;
+
   Component({
     this.key,
     this.fileKey,
@@ -64,6 +68,7 @@ class Component extends Equatable {
     this.user,
     this.containingFrame,
     this.containingPage,
+    this.componentSetId,
   });
 
   @override
@@ -79,6 +84,7 @@ class Component extends Equatable {
         user,
         containingFrame,
         containingPage,
+        componentSetId
       ];
 
   factory Component.fromJson(Map<String, dynamic> json) =>
