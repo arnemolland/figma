@@ -22,14 +22,14 @@ extension ProjectFilesResponseCopyWith on ProjectFilesResponse {
 // JsonSerializableGenerator
 // **************************************************************************
 
-ProjectFilesResponse _$ProjectFilesResponseFromJson(Map<String, dynamic> json) {
-  return ProjectFilesResponse(
-    name: json['name'] as String?,
-    files: (json['files'] as List<dynamic>?)
-        ?.map((e) => ProjectFile.fromJson(e as Map<String, dynamic>))
-        .toList(),
-  );
-}
+ProjectFilesResponse _$ProjectFilesResponseFromJson(
+        Map<String, dynamic> json) =>
+    ProjectFilesResponse(
+      name: json['name'] as String?,
+      files: (json['files'] as List<dynamic>?)
+          ?.map((e) => ProjectFile.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
 
 Map<String, dynamic> _$ProjectFilesResponseToJson(
         ProjectFilesResponse instance) =>

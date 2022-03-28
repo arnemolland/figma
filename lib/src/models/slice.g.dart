@@ -36,28 +36,26 @@ extension SliceCopyWith on Slice {
 // JsonSerializableGenerator
 // **************************************************************************
 
-Slice _$SliceFromJson(Map<String, dynamic> json) {
-  return Slice(
-    id: json['id'] as String,
-    name: json['name'] as String?,
-    visible: json['visible'] as bool? ?? true,
-    pluginData: json['pluginData'],
-    sharedPluginData: json['sharedPluginData'],
-    exportSettings: (json['exportSettings'] as List<dynamic>?)
-        ?.map((e) => ExportSetting.fromJson(e as Map<String, dynamic>))
-        .toList(),
-    absoluteBoundingBox: json['absoluteBoundingBox'] == null
-        ? null
-        : SizeRectangle.fromJson(
-            json['absoluteBoundingBox'] as Map<String, dynamic>),
-    size: json['size'] == null
-        ? null
-        : Vector2D.fromJson(json['size'] as Map<String, dynamic>),
-    relativeTransform: (json['relativeTransform'] as List<dynamic>?)
-        ?.map((e) => (e as List<dynamic>).map((e) => e as num).toList())
-        .toList(),
-  );
-}
+Slice _$SliceFromJson(Map<String, dynamic> json) => Slice(
+      id: json['id'] as String,
+      name: json['name'] as String?,
+      visible: json['visible'] as bool? ?? true,
+      pluginData: json['pluginData'],
+      sharedPluginData: json['sharedPluginData'],
+      exportSettings: (json['exportSettings'] as List<dynamic>?)
+          ?.map((e) => ExportSetting.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      absoluteBoundingBox: json['absoluteBoundingBox'] == null
+          ? null
+          : SizeRectangle.fromJson(
+              json['absoluteBoundingBox'] as Map<String, dynamic>),
+      size: json['size'] == null
+          ? null
+          : Vector2D.fromJson(json['size'] as Map<String, dynamic>),
+      relativeTransform: (json['relativeTransform'] as List<dynamic>?)
+          ?.map((e) => (e as List<dynamic>).map((e) => e as num).toList())
+          .toList(),
+    );
 
 Map<String, dynamic> _$SliceToJson(Slice instance) => <String, dynamic>{
       'id': instance.id,

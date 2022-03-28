@@ -34,22 +34,20 @@ extension EffectCopyWith on Effect {
 // JsonSerializableGenerator
 // **************************************************************************
 
-Effect _$EffectFromJson(Map<String, dynamic> json) {
-  return Effect(
-    type: _$enumDecodeNullable(_$EffectTypeEnumMap, json['type']),
-    visible: json['visible'] as bool? ?? true,
-    radius: json['radius'] as num?,
-    spread: json['spread'] as num?,
-    color: json['color'] == null
-        ? null
-        : Color.fromJson(json['color'] as Map<String, dynamic>),
-    blendMode: _$enumDecodeNullable(_$BlendModeEnumMap, json['blendMode']),
-    offset: json['offset'] == null
-        ? null
-        : Vector2D.fromJson(json['offset'] as Map<String, dynamic>),
-    showShadowBehindNode: json['showShadowBehindNode'] as bool?,
-  );
-}
+Effect _$EffectFromJson(Map<String, dynamic> json) => Effect(
+      type: $enumDecodeNullable(_$EffectTypeEnumMap, json['type']),
+      visible: json['visible'] as bool? ?? true,
+      radius: json['radius'] as num?,
+      spread: json['spread'] as num?,
+      color: json['color'] == null
+          ? null
+          : Color.fromJson(json['color'] as Map<String, dynamic>),
+      blendMode: $enumDecodeNullable(_$BlendModeEnumMap, json['blendMode']),
+      offset: json['offset'] == null
+          ? null
+          : Vector2D.fromJson(json['offset'] as Map<String, dynamic>),
+      showShadowBehindNode: json['showShadowBehindNode'] as bool?,
+    );
 
 Map<String, dynamic> _$EffectToJson(Effect instance) => <String, dynamic>{
       'type': _$EffectTypeEnumMap[instance.type],
@@ -61,43 +59,6 @@ Map<String, dynamic> _$EffectToJson(Effect instance) => <String, dynamic>{
       'offset': instance.offset,
       'showShadowBehindNode': instance.showShadowBehindNode,
     };
-
-K _$enumDecode<K, V>(
-  Map<K, V> enumValues,
-  Object? source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    throw ArgumentError(
-      'A value must be provided. Supported values: '
-      '${enumValues.values.join(', ')}',
-    );
-  }
-
-  return enumValues.entries.singleWhere(
-    (e) => e.value == source,
-    orElse: () {
-      if (unknownValue == null) {
-        throw ArgumentError(
-          '`$source` is not one of the supported values: '
-          '${enumValues.values.join(', ')}',
-        );
-      }
-      return MapEntry(unknownValue, enumValues.values.first);
-    },
-  ).key;
-}
-
-K? _$enumDecodeNullable<K, V>(
-  Map<K, V> enumValues,
-  dynamic source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    return null;
-  }
-  return _$enumDecode<K, V>(enumValues, source, unknownValue: unknownValue);
-}
 
 const _$EffectTypeEnumMap = {
   EffectType.innerShadow: 'INNER_SHADOW',

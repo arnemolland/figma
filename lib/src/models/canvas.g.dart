@@ -36,25 +36,23 @@ extension CanvasCopyWith on Canvas {
 // JsonSerializableGenerator
 // **************************************************************************
 
-Canvas _$CanvasFromJson(Map<String, dynamic> json) {
-  return Canvas(
-    id: json['id'] as String,
-    name: json['name'] as String?,
-    visible: json['visible'] as bool? ?? true,
-    pluginData: json['pluginData'],
-    sharedPluginData: json['sharedPluginData'],
-    children: (json['children'] as List<dynamic>?)
-        ?.map(const NodeJsonConverter().fromJson)
-        .toList(),
-    backgroundColor: json['backgroundColor'] == null
-        ? null
-        : Color.fromJson(json['backgroundColor'] as Map<String, dynamic>),
-    prototypeStartNodeID: json['prototypeStartNodeID'] as String?,
-    exportSettings: (json['exportSettings'] as List<dynamic>?)
-        ?.map((e) => ExportSetting.fromJson(e as Map<String, dynamic>))
-        .toList(),
-  );
-}
+Canvas _$CanvasFromJson(Map<String, dynamic> json) => Canvas(
+      id: json['id'] as String,
+      name: json['name'] as String?,
+      visible: json['visible'] as bool? ?? true,
+      pluginData: json['pluginData'],
+      sharedPluginData: json['sharedPluginData'],
+      children: (json['children'] as List<dynamic>?)
+          ?.map(const NodeJsonConverter().fromJson)
+          .toList(),
+      backgroundColor: json['backgroundColor'] == null
+          ? null
+          : Color.fromJson(json['backgroundColor'] as Map<String, dynamic>),
+      prototypeStartNodeID: json['prototypeStartNodeID'] as String?,
+      exportSettings: (json['exportSettings'] as List<dynamic>?)
+          ?.map((e) => ExportSetting.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
 
 Map<String, dynamic> _$CanvasToJson(Canvas instance) => <String, dynamic>{
       'id': instance.id,

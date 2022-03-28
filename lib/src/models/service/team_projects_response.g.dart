@@ -22,14 +22,14 @@ extension TeamProjectsResponseCopyWith on TeamProjectsResponse {
 // JsonSerializableGenerator
 // **************************************************************************
 
-TeamProjectsResponse _$TeamProjectsResponseFromJson(Map<String, dynamic> json) {
-  return TeamProjectsResponse(
-    name: json['name'] as String?,
-    projects: (json['projects'] as List<dynamic>?)
-        ?.map((e) => Project.fromJson(e as Map<String, dynamic>))
-        .toList(),
-  );
-}
+TeamProjectsResponse _$TeamProjectsResponseFromJson(
+        Map<String, dynamic> json) =>
+    TeamProjectsResponse(
+      name: json['name'] as String?,
+      projects: (json['projects'] as List<dynamic>?)
+          ?.map((e) => Project.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
 
 Map<String, dynamic> _$TeamProjectsResponseToJson(
         TeamProjectsResponse instance) =>
