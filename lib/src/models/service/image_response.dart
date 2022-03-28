@@ -10,19 +10,32 @@ class ImageResponse extends Equatable {
   /// Error message
   final String? err;
 
+  /// Images made by figma
   /// Map where the keys are image IDs and the value is an image URL
   final Map<String, String>? images;
+
+  /// Images imported by the user
+  /// Map where the keys are image IDs and the value is an image URL
+  @JsonKey(name: 'meta', readValue: _readValueWithString)
+  final Map<String, String>? imageFills;
 
   /// Status code
   final int? status;
 
-  ImageResponse({this.err, this.images, this.status});
+  ImageResponse({this.err, this.images, this.imageFills, this.status});
 
   @override
-  List<Object?> get props => [err, images, status];
+  List<Object?> get props => [err, images, imageFills, status];
 
   factory ImageResponse.fromJson(Map<String, dynamic> json) =>
       _$ImageResponseFromJson(json);
 
   Map<String, dynamic> toJson() => _$ImageResponseToJson(this);
+
+  static Map<String, String>? _readValueWithString(Map map, String key) {
+    if (map['meta'] == null) {
+      return null;
+    }
+    return Map<String, String>.from(map['meta']!['images']);
+  }
 }

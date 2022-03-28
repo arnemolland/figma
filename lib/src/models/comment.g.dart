@@ -34,18 +34,16 @@ extension CommentCopyWith on Comment {
 // JsonSerializableGenerator
 // **************************************************************************
 
-Comment _$CommentFromJson(Map<String, dynamic> json) {
-  return Comment(
-    id: json['id'] as String,
-    clientMeta: json['client_meta'],
-    fileKey: json['file_key'] as String,
-    parentId: json['parent_id'] as String?,
-    user: User.fromJson(json['user'] as Map<String, dynamic>),
-    createdAt: DateTime.parse(json['created_at'] as String),
-    resolvedAt: DateTime.parse(json['resolved_at'] as String),
-    orderId: json['order_id'] as String?,
-  );
-}
+Comment _$CommentFromJson(Map<String, dynamic> json) => Comment(
+      id: json['id'] as String,
+      clientMeta: json['client_meta'],
+      fileKey: json['file_key'] as String,
+      parentId: json['parent_id'] as String?,
+      user: User.fromJson(json['user'] as Map<String, dynamic>),
+      createdAt: DateTime.parse(json['created_at'] as String),
+      resolvedAt: DateTime.parse(json['resolved_at'] as String),
+      orderId: json['order_id'] as String?,
+    );
 
 Map<String, dynamic> _$CommentToJson(Comment instance) => <String, dynamic>{
       'id': instance.id,

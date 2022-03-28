@@ -43,30 +43,29 @@ extension PaintCopyWith on Paint {
 // JsonSerializableGenerator
 // **************************************************************************
 
-Paint _$PaintFromJson(Map<String, dynamic> json) {
-  return Paint(
-    type: _$enumDecodeNullable(_$PaintTypeEnumMap, json['type']),
-    visible: json['visible'] as bool? ?? true,
-    opacity: (json['opacity'] as num?)?.toDouble(),
-    color: json['color'] == null
-        ? null
-        : Color.fromJson(json['color'] as Map<String, dynamic>),
-    blendMode: _$enumDecodeNullable(_$BlendModeEnumMap, json['blendMode']),
-    gradientHandlePositions: (json['gradientHandlePositions'] as List<dynamic>?)
-        ?.map((e) => Vector2D.fromJson(e as Map<String, dynamic>))
-        .toList(),
-    gradientStops: (json['gradientStops'] as List<dynamic>?)
-        ?.map((e) => ColorStop.fromJson(e as Map<String, dynamic>))
-        .toList(),
-    scaleMode: _$enumDecodeNullable(_$ScaleModeEnumMap, json['scaleMode']),
-    imageTransform: (json['imageTransform'] as List<dynamic>?)
-        ?.map((e) => (e as List<dynamic>).map((e) => e as num).toList())
-        .toList(),
-    scalingFactor: json['scalingFactor'] as num?,
-    imageRef: json['imageRef'] as String?,
-    gifRef: json['gifRef'] as String?,
-  );
-}
+Paint _$PaintFromJson(Map<String, dynamic> json) => Paint(
+      type: $enumDecodeNullable(_$PaintTypeEnumMap, json['type']),
+      visible: json['visible'] as bool? ?? true,
+      opacity: (json['opacity'] as num?)?.toDouble(),
+      color: json['color'] == null
+          ? null
+          : Color.fromJson(json['color'] as Map<String, dynamic>),
+      blendMode: $enumDecodeNullable(_$BlendModeEnumMap, json['blendMode']),
+      gradientHandlePositions:
+          (json['gradientHandlePositions'] as List<dynamic>?)
+              ?.map((e) => Vector2D.fromJson(e as Map<String, dynamic>))
+              .toList(),
+      gradientStops: (json['gradientStops'] as List<dynamic>?)
+          ?.map((e) => ColorStop.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      scaleMode: $enumDecodeNullable(_$ScaleModeEnumMap, json['scaleMode']),
+      imageTransform: (json['imageTransform'] as List<dynamic>?)
+          ?.map((e) => (e as List<dynamic>).map((e) => e as num).toList())
+          .toList(),
+      scalingFactor: json['scalingFactor'] as num?,
+      imageRef: json['imageRef'] as String?,
+      gifRef: json['gifRef'] as String?,
+    );
 
 Map<String, dynamic> _$PaintToJson(Paint instance) => <String, dynamic>{
       'type': _$PaintTypeEnumMap[instance.type],
@@ -82,43 +81,6 @@ Map<String, dynamic> _$PaintToJson(Paint instance) => <String, dynamic>{
       'imageRef': instance.imageRef,
       'gifRef': instance.gifRef,
     };
-
-K _$enumDecode<K, V>(
-  Map<K, V> enumValues,
-  Object? source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    throw ArgumentError(
-      'A value must be provided. Supported values: '
-      '${enumValues.values.join(', ')}',
-    );
-  }
-
-  return enumValues.entries.singleWhere(
-    (e) => e.value == source,
-    orElse: () {
-      if (unknownValue == null) {
-        throw ArgumentError(
-          '`$source` is not one of the supported values: '
-          '${enumValues.values.join(', ')}',
-        );
-      }
-      return MapEntry(unknownValue, enumValues.values.first);
-    },
-  ).key;
-}
-
-K? _$enumDecodeNullable<K, V>(
-  Map<K, V> enumValues,
-  dynamic source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    return null;
-  }
-  return _$enumDecode<K, V>(enumValues, source, unknownValue: unknownValue);
-}
 
 const _$PaintTypeEnumMap = {
   PaintType.solid: 'SOLID',

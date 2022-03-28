@@ -91,79 +91,78 @@ extension TextCopyWith on Text {
 // JsonSerializableGenerator
 // **************************************************************************
 
-Text _$TextFromJson(Map<String, dynamic> json) {
-  return Text(
-    characters: json['characters'] as String?,
-    style: json['style'] == null
-        ? null
-        : TypeStyle.fromJson(json['style'] as Map<String, dynamic>),
-    characterStyleOverrides: (json['characterStyleOverrides'] as List<dynamic>?)
-        ?.map((e) => e as int)
-        .toList(),
-    styleOverrideTable:
-        (json['styleOverrideTable'] as Map<String, dynamic>?)?.map(
-      (k, e) =>
-          MapEntry(int.parse(k), TypeStyle.fromJson(e as Map<String, dynamic>)),
-    ),
-    id: json['id'] as String,
-    name: json['name'] as String?,
-    visible: json['visible'] as bool? ?? true,
-    pluginData: json['pluginData'],
-    sharedPluginData: json['sharedPluginData'],
-    locked: json['locked'] as bool?,
-    exportSettings: (json['exportSettings'] as List<dynamic>?)
-        ?.map((e) => ExportSetting.fromJson(e as Map<String, dynamic>))
-        .toList(),
-    blendMode: _$enumDecodeNullable(_$BlendModeEnumMap, json['blendMode']),
-    preserveRatio: json['preserveRatio'] as bool?,
-    layoutAlign:
-        _$enumDecodeNullable(_$LayoutAlignEnumMap, json['layoutAlign']),
-    layoutGrow: (json['layoutGrow'] as num?)?.toDouble(),
-    constraints: json['constraints'] == null
-        ? null
-        : LayoutConstraint.fromJson(
-            json['constraints'] as Map<String, dynamic>),
-    transitionNodeID: json['transitionNodeID'] as String?,
-    transitionDuration: (json['transitionDuration'] as num?)?.toDouble(),
-    transitionEasing:
-        _$enumDecodeNullable(_$EasingTypeEnumMap, json['transitionEasing']),
-    opacity: (json['opacity'] as num?)?.toDouble(),
-    absoluteBoundingBox: json['absoluteBoundingBox'] == null
-        ? null
-        : SizeRectangle.fromJson(
-            json['absoluteBoundingBox'] as Map<String, dynamic>),
-    effects: (json['effects'] as List<dynamic>?)
-        ?.map((e) => Effect.fromJson(e as Map<String, dynamic>))
-        .toList(),
-    size: json['size'] == null
-        ? null
-        : Vector2D.fromJson(json['size'] as Map<String, dynamic>),
-    relativeTransform: (json['relativeTransform'] as List<dynamic>?)
-        ?.map((e) => (e as List<dynamic>).map((e) => e as num).toList())
-        .toList(),
-    isMask: json['isMask'] as bool?,
-    fills: (json['fills'] as List<dynamic>?)
-        ?.map((e) => Paint.fromJson(e as Map<String, dynamic>))
-        .toList(),
-    fillGeometry: json['fillGeometry'] as List<dynamic>?,
-    strokes: (json['strokes'] as List<dynamic>?)
-        ?.map((e) => Paint.fromJson(e as Map<String, dynamic>))
-        .toList(),
-    strokeWeight: (json['strokeWeight'] as num?)?.toDouble(),
-    strokeCap: _$enumDecodeNullable(_$StrokeCapEnumMap, json['strokeCap']),
-    strokeJoin: _$enumDecodeNullable(_$StrokeJoinEnumMap, json['strokeJoin']),
-    strokeDashes: (json['strokeDashes'] as List<dynamic>?)
-        ?.map((e) => (e as num).toDouble())
-        .toList(),
-    strokeMiterAngle: (json['strokeMiterAngle'] as num?)?.toDouble(),
-    strokeGeometry: json['strokeGeometry'] as List<dynamic>?,
-    strokeAlign:
-        _$enumDecodeNullable(_$StrokeAlignEnumMap, json['strokeAlign']),
-    styles: (json['styles'] as Map<String, dynamic>?)?.map(
-      (k, e) => MapEntry(_$enumDecode(_$StyleTypeKeyEnumMap, k), e as String),
-    ),
-  );
-}
+Text _$TextFromJson(Map<String, dynamic> json) => Text(
+      characters: json['characters'] as String?,
+      style: json['style'] == null
+          ? null
+          : TypeStyle.fromJson(json['style'] as Map<String, dynamic>),
+      characterStyleOverrides:
+          (json['characterStyleOverrides'] as List<dynamic>?)
+              ?.map((e) => e as int)
+              .toList(),
+      styleOverrideTable:
+          (json['styleOverrideTable'] as Map<String, dynamic>?)?.map(
+        (k, e) => MapEntry(
+            int.parse(k), TypeStyle.fromJson(e as Map<String, dynamic>)),
+      ),
+      id: json['id'] as String,
+      name: json['name'] as String?,
+      visible: json['visible'] as bool? ?? true,
+      pluginData: json['pluginData'],
+      sharedPluginData: json['sharedPluginData'],
+      locked: json['locked'] as bool?,
+      exportSettings: (json['exportSettings'] as List<dynamic>?)
+          ?.map((e) => ExportSetting.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      blendMode: $enumDecodeNullable(_$BlendModeEnumMap, json['blendMode']),
+      preserveRatio: json['preserveRatio'] as bool?,
+      layoutAlign:
+          $enumDecodeNullable(_$LayoutAlignEnumMap, json['layoutAlign']),
+      layoutGrow: (json['layoutGrow'] as num?)?.toDouble(),
+      constraints: json['constraints'] == null
+          ? null
+          : LayoutConstraint.fromJson(
+              json['constraints'] as Map<String, dynamic>),
+      transitionNodeID: json['transitionNodeID'] as String?,
+      transitionDuration: (json['transitionDuration'] as num?)?.toDouble(),
+      transitionEasing:
+          $enumDecodeNullable(_$EasingTypeEnumMap, json['transitionEasing']),
+      opacity: (json['opacity'] as num?)?.toDouble(),
+      absoluteBoundingBox: json['absoluteBoundingBox'] == null
+          ? null
+          : SizeRectangle.fromJson(
+              json['absoluteBoundingBox'] as Map<String, dynamic>),
+      effects: (json['effects'] as List<dynamic>?)
+          ?.map((e) => Effect.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      size: json['size'] == null
+          ? null
+          : Vector2D.fromJson(json['size'] as Map<String, dynamic>),
+      relativeTransform: (json['relativeTransform'] as List<dynamic>?)
+          ?.map((e) => (e as List<dynamic>).map((e) => e as num).toList())
+          .toList(),
+      isMask: json['isMask'] as bool?,
+      fills: (json['fills'] as List<dynamic>?)
+          ?.map((e) => Paint.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      fillGeometry: json['fillGeometry'] as List<dynamic>?,
+      strokes: (json['strokes'] as List<dynamic>?)
+          ?.map((e) => Paint.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      strokeWeight: (json['strokeWeight'] as num?)?.toDouble(),
+      strokeCap: $enumDecodeNullable(_$StrokeCapEnumMap, json['strokeCap']),
+      strokeJoin: $enumDecodeNullable(_$StrokeJoinEnumMap, json['strokeJoin']),
+      strokeDashes: (json['strokeDashes'] as List<dynamic>?)
+          ?.map((e) => (e as num).toDouble())
+          .toList(),
+      strokeMiterAngle: (json['strokeMiterAngle'] as num?)?.toDouble(),
+      strokeGeometry: json['strokeGeometry'] as List<dynamic>?,
+      strokeAlign:
+          $enumDecodeNullable(_$StrokeAlignEnumMap, json['strokeAlign']),
+      styles: (json['styles'] as Map<String, dynamic>?)?.map(
+        (k, e) => MapEntry($enumDecode(_$StyleTypeKeyEnumMap, k), e as String),
+      ),
+    );
 
 Map<String, dynamic> _$TextToJson(Text instance) => <String, dynamic>{
       'id': instance.id,
@@ -205,43 +204,6 @@ Map<String, dynamic> _$TextToJson(Text instance) => <String, dynamic>{
       'styleOverrideTable':
           instance.styleOverrideTable?.map((k, e) => MapEntry(k.toString(), e)),
     };
-
-K _$enumDecode<K, V>(
-  Map<K, V> enumValues,
-  Object? source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    throw ArgumentError(
-      'A value must be provided. Supported values: '
-      '${enumValues.values.join(', ')}',
-    );
-  }
-
-  return enumValues.entries.singleWhere(
-    (e) => e.value == source,
-    orElse: () {
-      if (unknownValue == null) {
-        throw ArgumentError(
-          '`$source` is not one of the supported values: '
-          '${enumValues.values.join(', ')}',
-        );
-      }
-      return MapEntry(unknownValue, enumValues.values.first);
-    },
-  ).key;
-}
-
-K? _$enumDecodeNullable<K, V>(
-  Map<K, V> enumValues,
-  dynamic source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    return null;
-  }
-  return _$enumDecode<K, V>(enumValues, source, unknownValue: unknownValue);
-}
 
 const _$BlendModeEnumMap = {
   BlendMode.passThrough: 'PASS_THROUGH',

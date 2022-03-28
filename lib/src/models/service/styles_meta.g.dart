@@ -22,16 +22,14 @@ extension StylesMetaCopyWith on StylesMeta {
 // JsonSerializableGenerator
 // **************************************************************************
 
-StylesMeta _$StylesMetaFromJson(Map<String, dynamic> json) {
-  return StylesMeta(
-    styles: (json['styles'] as List<dynamic>?)
-        ?.map((e) => Style.fromJson(e as Map<String, dynamic>))
-        .toList(),
-    cursor: json['cursor'] == null
-        ? null
-        : Cursor.fromJson(json['cursor'] as Map<String, dynamic>),
-  );
-}
+StylesMeta _$StylesMetaFromJson(Map<String, dynamic> json) => StylesMeta(
+      styles: (json['styles'] as List<dynamic>?)
+          ?.map((e) => Style.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      cursor: json['cursor'] == null
+          ? null
+          : Cursor.fromJson(json['cursor'] as Map<String, dynamic>),
+    );
 
 Map<String, dynamic> _$StylesMetaToJson(StylesMeta instance) =>
     <String, dynamic>{

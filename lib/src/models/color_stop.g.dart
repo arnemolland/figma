@@ -22,14 +22,12 @@ extension ColorStopCopyWith on ColorStop {
 // JsonSerializableGenerator
 // **************************************************************************
 
-ColorStop _$ColorStopFromJson(Map<String, dynamic> json) {
-  return ColorStop(
-    position: (json['position'] as num?)?.toDouble(),
-    color: json['color'] == null
-        ? null
-        : Color.fromJson(json['color'] as Map<String, dynamic>),
-  );
-}
+ColorStop _$ColorStopFromJson(Map<String, dynamic> json) => ColorStop(
+      position: (json['position'] as num?)?.toDouble(),
+      color: json['color'] == null
+          ? null
+          : Color.fromJson(json['color'] as Map<String, dynamic>),
+    );
 
 Map<String, dynamic> _$ColorStopToJson(ColorStop instance) => <String, dynamic>{
       'position': instance.position,

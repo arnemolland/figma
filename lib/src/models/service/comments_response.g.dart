@@ -20,13 +20,12 @@ extension CommentsResponseCopyWith on CommentsResponse {
 // JsonSerializableGenerator
 // **************************************************************************
 
-CommentsResponse _$CommentsResponseFromJson(Map<String, dynamic> json) {
-  return CommentsResponse(
-    comments: (json['comments'] as List<dynamic>?)
-        ?.map((e) => Comment.fromJson(e as Map<String, dynamic>))
-        .toList(),
-  );
-}
+CommentsResponse _$CommentsResponseFromJson(Map<String, dynamic> json) =>
+    CommentsResponse(
+      comments: (json['comments'] as List<dynamic>?)
+          ?.map((e) => Comment.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
 
 Map<String, dynamic> _$CommentsResponseToJson(CommentsResponse instance) =>
     <String, dynamic>{

@@ -28,15 +28,13 @@ extension VersionCopyWith on Version {
 // JsonSerializableGenerator
 // **************************************************************************
 
-Version _$VersionFromJson(Map<String, dynamic> json) {
-  return Version(
-    id: json['id'] as String,
-    createdAt: DateTime.parse(json['created_at'] as String),
-    label: json['label'] as String?,
-    description: json['description'] as String?,
-    user: User.fromJson(json['user'] as Map<String, dynamic>),
-  );
-}
+Version _$VersionFromJson(Map<String, dynamic> json) => Version(
+      id: json['id'] as String,
+      createdAt: DateTime.parse(json['created_at'] as String),
+      label: json['label'] as String?,
+      description: json['description'] as String?,
+      user: User.fromJson(json['user'] as Map<String, dynamic>),
+    );
 
 Map<String, dynamic> _$VersionToJson(Version instance) => <String, dynamic>{
       'id': instance.id,

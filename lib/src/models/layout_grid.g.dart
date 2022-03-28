@@ -34,20 +34,18 @@ extension LayoutGridCopyWith on LayoutGrid {
 // JsonSerializableGenerator
 // **************************************************************************
 
-LayoutGrid _$LayoutGridFromJson(Map<String, dynamic> json) {
-  return LayoutGrid(
-    pattern: _$enumDecodeNullable(_$LayoutPatternEnumMap, json['pattern']),
-    sectionSize: (json['sectionSize'] as num?)?.toDouble(),
-    visible: json['visible'] as bool?,
-    color: json['color'] == null
-        ? null
-        : Color.fromJson(json['color'] as Map<String, dynamic>),
-    alignment: _$enumDecodeNullable(_$LayoutAlignEnumMap, json['alignment']),
-    gutterSize: (json['gutterSize'] as num?)?.toDouble(),
-    offset: (json['offset'] as num?)?.toDouble(),
-    count: json['count'] as int?,
-  );
-}
+LayoutGrid _$LayoutGridFromJson(Map<String, dynamic> json) => LayoutGrid(
+      pattern: $enumDecodeNullable(_$LayoutPatternEnumMap, json['pattern']),
+      sectionSize: (json['sectionSize'] as num?)?.toDouble(),
+      visible: json['visible'] as bool?,
+      color: json['color'] == null
+          ? null
+          : Color.fromJson(json['color'] as Map<String, dynamic>),
+      alignment: $enumDecodeNullable(_$LayoutAlignEnumMap, json['alignment']),
+      gutterSize: (json['gutterSize'] as num?)?.toDouble(),
+      offset: (json['offset'] as num?)?.toDouble(),
+      count: json['count'] as int?,
+    );
 
 Map<String, dynamic> _$LayoutGridToJson(LayoutGrid instance) =>
     <String, dynamic>{
@@ -60,43 +58,6 @@ Map<String, dynamic> _$LayoutGridToJson(LayoutGrid instance) =>
       'offset': instance.offset,
       'count': instance.count,
     };
-
-K _$enumDecode<K, V>(
-  Map<K, V> enumValues,
-  Object? source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    throw ArgumentError(
-      'A value must be provided. Supported values: '
-      '${enumValues.values.join(', ')}',
-    );
-  }
-
-  return enumValues.entries.singleWhere(
-    (e) => e.value == source,
-    orElse: () {
-      if (unknownValue == null) {
-        throw ArgumentError(
-          '`$source` is not one of the supported values: '
-          '${enumValues.values.join(', ')}',
-        );
-      }
-      return MapEntry(unknownValue, enumValues.values.first);
-    },
-  ).key;
-}
-
-K? _$enumDecodeNullable<K, V>(
-  Map<K, V> enumValues,
-  dynamic source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    return null;
-  }
-  return _$enumDecode<K, V>(enumValues, source, unknownValue: unknownValue);
-}
 
 const _$LayoutPatternEnumMap = {
   LayoutPattern.columns: 'COLUMNS',

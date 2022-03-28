@@ -38,30 +38,28 @@ extension FileResponseCopyWith on FileResponse {
 // JsonSerializableGenerator
 // **************************************************************************
 
-FileResponse _$FileResponseFromJson(Map<String, dynamic> json) {
-  return FileResponse(
-    name: json['name'] as String?,
-    role: json['role'] as String?,
-    lastModified: json['lastModified'] == null
-        ? null
-        : DateTime.parse(json['lastModified'] as String),
-    thumbnailUrl: json['thumbnailUrl'] as String?,
-    version: json['version'] as String?,
-    document: json['document'] == null
-        ? null
-        : Document.fromJson(json['document'] as Map<String, dynamic>),
-    components: (json['components'] as Map<String, dynamic>?)?.map(
-      (k, e) => MapEntry(k, Component.fromJson(e as Map<String, dynamic>)),
-    ),
-    componentSets: (json['componentSets'] as Map<String, dynamic>?)?.map(
-      (k, e) => MapEntry(k, ComponentSet.fromJson(e as Map<String, dynamic>)),
-    ),
-    schemaVersion: json['schemaVersion'] as int?,
-    styles: (json['styles'] as Map<String, dynamic>?)?.map(
-      (k, e) => MapEntry(k, Style.fromJson(e as Map<String, dynamic>)),
-    ),
-  );
-}
+FileResponse _$FileResponseFromJson(Map<String, dynamic> json) => FileResponse(
+      name: json['name'] as String?,
+      role: json['role'] as String?,
+      lastModified: json['lastModified'] == null
+          ? null
+          : DateTime.parse(json['lastModified'] as String),
+      thumbnailUrl: json['thumbnailUrl'] as String?,
+      version: json['version'] as String?,
+      document: json['document'] == null
+          ? null
+          : Document.fromJson(json['document'] as Map<String, dynamic>),
+      components: (json['components'] as Map<String, dynamic>?)?.map(
+        (k, e) => MapEntry(k, Component.fromJson(e as Map<String, dynamic>)),
+      ),
+      componentSets: (json['componentSets'] as Map<String, dynamic>?)?.map(
+        (k, e) => MapEntry(k, ComponentSet.fromJson(e as Map<String, dynamic>)),
+      ),
+      schemaVersion: json['schemaVersion'] as int?,
+      styles: (json['styles'] as Map<String, dynamic>?)?.map(
+        (k, e) => MapEntry(k, Style.fromJson(e as Map<String, dynamic>)),
+      ),
+    );
 
 Map<String, dynamic> _$FileResponseToJson(FileResponse instance) =>
     <String, dynamic>{

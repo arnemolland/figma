@@ -20,13 +20,12 @@ extension VersionsResponseCopyWith on VersionsResponse {
 // JsonSerializableGenerator
 // **************************************************************************
 
-VersionsResponse _$VersionsResponseFromJson(Map<String, dynamic> json) {
-  return VersionsResponse(
-    versions: (json['versions'] as List<dynamic>?)
-        ?.map((e) => Version.fromJson(e as Map<String, dynamic>))
-        .toList(),
-  );
-}
+VersionsResponse _$VersionsResponseFromJson(Map<String, dynamic> json) =>
+    VersionsResponse(
+      versions: (json['versions'] as List<dynamic>?)
+          ?.map((e) => Version.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
 
 Map<String, dynamic> _$VersionsResponseToJson(VersionsResponse instance) =>
     <String, dynamic>{

@@ -24,15 +24,14 @@ extension StylesResponseCopyWith on StylesResponse {
 // JsonSerializableGenerator
 // **************************************************************************
 
-StylesResponse _$StylesResponseFromJson(Map<String, dynamic> json) {
-  return StylesResponse(
-    status: json['status'] as int?,
-    error: json['error'] as bool?,
-    meta: json['meta'] == null
-        ? null
-        : StylesMeta.fromJson(json['meta'] as Map<String, dynamic>),
-  );
-}
+StylesResponse _$StylesResponseFromJson(Map<String, dynamic> json) =>
+    StylesResponse(
+      status: json['status'] as int?,
+      error: json['error'] as bool?,
+      meta: json['meta'] == null
+          ? null
+          : StylesMeta.fromJson(json['meta'] as Map<String, dynamic>),
+    );
 
 Map<String, dynamic> _$StylesResponseToJson(StylesResponse instance) =>
     <String, dynamic>{
