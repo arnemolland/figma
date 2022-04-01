@@ -1,5 +1,10 @@
 # Changelog
 
+# 3.4.0
+
+- Updated dependencies and added imageFills for image response ([@BigFlexLiu](https://github.com/BigFlexLiu))
+- Added componentSetId to component ([@BigFlexLiu](https://github.com/BigFlexLiu))
+
 # 3.3.0
 
 - Added spread for shadow effects ([@BigFlexLiu](https://github.com/BigFlexLiu))
