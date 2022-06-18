@@ -162,6 +162,11 @@ class Frame extends Node {
   /// Does this mask ignore fill style (like gradients) and effects?
   final bool? isMaskOutline;
 
+  /// A mapping of a StyleType to style ID (see [Style]) of styles present on
+  /// this node. The style ID can be used to look up more information about the
+  /// style in the top-level styles field.
+  final Map<StyleTypeKey, String>? styles;
+
   Frame({
     required String id,
     String? name,
@@ -207,6 +212,7 @@ class Frame extends Node {
     this.effects,
     this.isMask,
     this.isMaskOutline,
+    this.styles,
   }) : super(
           id: id,
           name: name,

@@ -47,6 +47,7 @@ extension FrameCopyWith on Frame {
     StrokeAlign? strokeAlign,
     num? strokeWeight,
     List<Paint>? strokes,
+    Map<StyleTypeKey, String>? styles,
     double? transitionDuration,
     EasingType? transitionEasing,
     String? transitionNodeID,
@@ -97,6 +98,7 @@ extension FrameCopyWith on Frame {
       strokeAlign: strokeAlign ?? this.strokeAlign,
       strokeWeight: strokeWeight ?? this.strokeWeight,
       strokes: strokes ?? this.strokes,
+      styles: styles ?? this.styles,
       transitionDuration: transitionDuration ?? this.transitionDuration,
       transitionEasing: transitionEasing ?? this.transitionEasing,
       transitionNodeID: transitionNodeID ?? this.transitionNodeID,
@@ -187,6 +189,9 @@ Frame _$FrameFromJson(Map<String, dynamic> json) => Frame(
           .toList(),
       isMask: json['isMask'] as bool?,
       isMaskOutline: json['isMaskOutline'] as bool?,
+      styles: (json['styles'] as Map<String, dynamic>?)?.map(
+        (k, e) => MapEntry($enumDecode(_$StyleTypeKeyEnumMap, k), e as String),
+      ),
     );
 
 Map<String, dynamic> _$FrameToJson(Frame instance) => <String, dynamic>{
@@ -240,6 +245,8 @@ Map<String, dynamic> _$FrameToJson(Frame instance) => <String, dynamic>{
       'effects': instance.effects,
       'isMask': instance.isMask,
       'isMaskOutline': instance.isMaskOutline,
+      'styles':
+          instance.styles?.map((k, e) => MapEntry(_$StyleTypeKeyEnumMap[k], e)),
     };
 
 const _$StrokeAlignEnumMap = {
@@ -319,4 +326,12 @@ const _$OverflowDirectionEnumMap = {
   OverflowDirection.verticalScrolling: 'VERTICAL_SCROLLING',
   OverflowDirection.horizontalVerticalScrolling:
       'HORIZONTAL_AND_VERICAL_SCROLLING',
+};
+
+const _$StyleTypeKeyEnumMap = {
+  StyleTypeKey.fill: 'fill',
+  StyleTypeKey.stroke: 'stroke',
+  StyleTypeKey.text: 'text',
+  StyleTypeKey.effect: 'effect',
+  StyleTypeKey.grid: 'grid',
 };
