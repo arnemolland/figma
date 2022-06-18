@@ -16,6 +16,8 @@ enum StyleType {
 enum StyleTypeKey {
   @JsonValue('fill')
   fill,
+  @JsonValue('fills')
+  fills,
   @JsonValue('stroke')
   stroke,
   @JsonValue('text')

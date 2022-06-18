@@ -330,6 +330,7 @@ const _$OverflowDirectionEnumMap = {
 
 const _$StyleTypeKeyEnumMap = {
   StyleTypeKey.fill: 'fill',
+  StyleTypeKey.fills: 'fills',
   StyleTypeKey.stroke: 'stroke',
   StyleTypeKey.text: 'text',
   StyleTypeKey.effect: 'effect',
