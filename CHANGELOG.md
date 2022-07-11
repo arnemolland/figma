@@ -1,37 +1,41 @@
 # Changelog
 
-# 3.4.0
+## 3.5.0
+
+- Add missing style-related properties ([@yzxben](https://github.com/yzxben)) 
+  
+## 3.4.0
 
 - Updated dependencies and added imageFills for image response ([@BigFlexLiu](https://github.com/BigFlexLiu))
 - Added componentSetId to component ([@BigFlexLiu](https://github.com/BigFlexLiu))
 
-# 3.3.0
+## 3.3.0
 
 - Added spread for shadow effects ([@BigFlexLiu](https://github.com/BigFlexLiu))
 - Added support for OAuth token ([@BigFlexLiu](https://github.com/BigFlexLiu))
 - Removed unused imports
 
-# 3.2.0
+## 3.2.0
 
 - Use `http` dependency on web, `http2` on other platforms ([@aloisdeniel](https://github.com/aloisdeniel))
 
-# 3.1.0
+## 3.1.0
 
 - Add component set types and text auto resize property on type style ([@aloisdeniel](https://github.com/aloisdeniel))
 
-# 3.0.0
+## 3.0.0
 
 - Migrate to null-safety ([@bjartebore](https://github.com/bjartebore))
 
-# 2.1.0+1
+## 2.1.0+1
 
 - Move repository from old org (dnb-asa) to new (arnemolland)
 
-# 2.1.0
+## 2.1.0
 
 - Add `copyWith` method on all data classes
 
-# 2.0.6
+## 2.0.6
 
 - Add `COMPONENT_SET` node type
 - Add new layout options ([@aloisdeniel](https://github.com/aloisdeniel))
