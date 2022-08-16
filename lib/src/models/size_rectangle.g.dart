@@ -26,14 +26,13 @@ extension SizeRectangleCopyWith on SizeRectangle {
 // JsonSerializableGenerator
 // **************************************************************************
 
-SizeRectangle _$SizeRectangleFromJson(Map<String, dynamic> json) {
-  return SizeRectangle(
-    x: (json['x'] as num?)?.toDouble(),
-    y: (json['y'] as num?)?.toDouble(),
-    width: (json['width'] as num?)?.toDouble(),
-    height: (json['height'] as num?)?.toDouble(),
-  );
-}
+SizeRectangle _$SizeRectangleFromJson(Map<String, dynamic> json) =>
+    SizeRectangle(
+      x: (json['x'] as num?)?.toDouble(),
+      y: (json['y'] as num?)?.toDouble(),
+      width: (json['width'] as num?)?.toDouble(),
+      height: (json['height'] as num?)?.toDouble(),
+    );
 
 Map<String, dynamic> _$SizeRectangleToJson(SizeRectangle instance) =>
     <String, dynamic>{

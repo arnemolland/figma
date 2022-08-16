@@ -20,5 +20,10 @@ enum EasingType {
   @JsonValue('LINEAR')
 
   /// No easing, similar to CSS linear.
-  linear
+  linear,
+
+  @JsonValue('CUSTOM_BEZIER')
+
+  /// Custom easing
+  customBezier
 }
