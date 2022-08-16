@@ -242,6 +242,7 @@ const _$EasingTypeEnumMap = {
   EasingType.easeOut: 'EASE_OUT',
   EasingType.easeInOut: 'EASE_IN_AND_OUT',
   EasingType.linear: 'LINEAR',
+  EasingType.customBezier: 'CUSTOM_BEZIER',
 };
 
 const _$LayoutModeEnumMap = {

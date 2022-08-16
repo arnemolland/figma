@@ -196,8 +196,8 @@ Map<String, dynamic> _$TextToJson(Text instance) => <String, dynamic>{
       'strokeMiterAngle': instance.strokeMiterAngle,
       'strokeGeometry': instance.strokeGeometry,
       'strokeAlign': _$StrokeAlignEnumMap[instance.strokeAlign],
-      'styles':
-          instance.styles?.map((k, e) => MapEntry(_$StyleTypeKeyEnumMap[k], e)),
+      'styles': instance.styles
+          ?.map((k, e) => MapEntry(_$StyleTypeKeyEnumMap[k]!, e)),
       'characters': instance.characters,
       'style': instance.style,
       'characterStyleOverrides': instance.characterStyleOverrides,
@@ -240,6 +240,7 @@ const _$EasingTypeEnumMap = {
   EasingType.easeOut: 'EASE_OUT',
   EasingType.easeInOut: 'EASE_IN_AND_OUT',
   EasingType.linear: 'LINEAR',
+  EasingType.customBezier: 'CUSTOM_BEZIER',
 };
 
 const _$StrokeCapEnumMap = {
