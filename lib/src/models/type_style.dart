@@ -67,6 +67,8 @@ enum TextAutoResize {
   height,
   @JsonValue('WIDTH_AND_HEIGHT')
   widthAndHeight,
+  @JsonValue('TRUNCATE')
+  truncate,
 }
 
 /// Metadata for character formatting

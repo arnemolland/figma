@@ -129,6 +129,7 @@ const _$TextAutoResizeEnumMap = {
   TextAutoResize.none: 'NONE',
   TextAutoResize.height: 'HEIGHT',
   TextAutoResize.widthAndHeight: 'WIDTH_AND_HEIGHT',
+  TextAutoResize.truncate: 'TRUNCATE',
 };
 
 const _$TextAlignHorizontalEnumMap = {
