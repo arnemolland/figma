@@ -26,16 +26,14 @@ extension ProjectFileCopyWith on ProjectFile {
 // JsonSerializableGenerator
 // **************************************************************************
 
-ProjectFile _$ProjectFileFromJson(Map<String, dynamic> json) {
-  return ProjectFile(
-    key: json['key'] as String?,
-    name: json['name'] as String?,
-    thumbnailUrl: json['thumbnail_url'] as String?,
-    lastModified: json['last_modified'] == null
-        ? null
-        : DateTime.parse(json['last_modified'] as String),
-  );
-}
+ProjectFile _$ProjectFileFromJson(Map<String, dynamic> json) => ProjectFile(
+      key: json['key'] as String?,
+      name: json['name'] as String?,
+      thumbnailUrl: json['thumbnail_url'] as String?,
+      lastModified: json['last_modified'] == null
+          ? null
+          : DateTime.parse(json['last_modified'] as String),
+    );
 
 Map<String, dynamic> _$ProjectFileToJson(ProjectFile instance) =>
     <String, dynamic>{

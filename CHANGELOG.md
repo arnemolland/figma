@@ -1,8 +1,13 @@
 # Changelog
 
+## 3.6.0
+
+- Add TRUNCATE to TextAutoResize ([@yzxben](https://github.com/yzxben))
+- Add CUSTOM_BEZIER easing type ([@jWinterDay](https://github.com/jWinterDay))
+
 ## 3.5.0
 
-- Add missing style-related properties ([@yzxben](https://github.com/yzxben)) 
+- Add missing style-related properties ([@yzxben](https://github.com/yzxben))
   
 ## 3.4.0
 

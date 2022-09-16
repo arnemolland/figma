@@ -30,16 +30,14 @@ extension NodeCopyWith on Node {
 // JsonSerializableGenerator
 // **************************************************************************
 
-Node _$NodeFromJson(Map<String, dynamic> json) {
-  return Node(
-    id: json['id'] as String,
-    name: json['name'] as String?,
-    visible: json['visible'] as bool? ?? true,
-    type: json['type'] as String?,
-    pluginData: json['pluginData'],
-    sharedPluginData: json['sharedPluginData'],
-  );
-}
+Node _$NodeFromJson(Map<String, dynamic> json) => Node(
+      id: json['id'] as String,
+      name: json['name'] as String?,
+      visible: json['visible'] as bool? ?? true,
+      type: json['type'] as String?,
+      pluginData: json['pluginData'],
+      sharedPluginData: json['sharedPluginData'],
+    );
 
 Map<String, dynamic> _$NodeToJson(Node instance) => <String, dynamic>{
       'id': instance.id,

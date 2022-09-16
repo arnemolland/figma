@@ -24,13 +24,11 @@ extension PostCommentCopyWith on PostComment {
 // JsonSerializableGenerator
 // **************************************************************************
 
-PostComment _$PostCommentFromJson(Map<String, dynamic> json) {
-  return PostComment(
-    message: json['message'] as String?,
-    clientMeta: json['client_meta'],
-    commentId: json['comment_id'] as String?,
-  );
-}
+PostComment _$PostCommentFromJson(Map<String, dynamic> json) => PostComment(
+      message: json['message'] as String?,
+      clientMeta: json['client_meta'],
+      commentId: json['comment_id'] as String?,
+    );
 
 Map<String, dynamic> _$PostCommentToJson(PostComment instance) =>
     <String, dynamic>{

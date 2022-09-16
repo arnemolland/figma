@@ -22,12 +22,10 @@ extension CursorCopyWith on Cursor {
 // JsonSerializableGenerator
 // **************************************************************************
 
-Cursor _$CursorFromJson(Map<String, dynamic> json) {
-  return Cursor(
-    before: json['before'] as int?,
-    after: json['after'] as int?,
-  );
-}
+Cursor _$CursorFromJson(Map<String, dynamic> json) => Cursor(
+      before: json['before'] as int?,
+      after: json['after'] as int?,
+    );
 
 Map<String, dynamic> _$CursorToJson(Cursor instance) => <String, dynamic>{
       'before': instance.before,
