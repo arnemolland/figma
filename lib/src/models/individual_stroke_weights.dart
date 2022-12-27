@@ -9,18 +9,18 @@ part 'individual_stroke_weights.g.dart';
 class IndividualStrokeWeights extends Equatable {
   final double top;
   final double right;
-  final double left;
   final double bottom;
+  final double left;
 
   IndividualStrokeWeights({
     required this.top,
     required this.right,
-    required this.left,
     required this.bottom,
+    required this.left,
   });
 
   @override
-  List<Object?> get props => [top, left, right, bottom];
+  List<Object?> get props => [top, right, bottom, left];
 
   factory IndividualStrokeWeights.fromJson(Map<String, dynamic> json) =>
       _$IndividualStrokeWeightsFromJson(json);
