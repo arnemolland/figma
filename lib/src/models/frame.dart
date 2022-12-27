@@ -1,4 +1,3 @@
-import 'package:equatable/equatable.dart';
 import 'package:figma/src/converters/converters.dart';
 import 'package:figma/src/models/models.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -182,6 +181,7 @@ class Frame extends Node {
     this.fills,
     this.strokes,
     this.strokeWeight,
+    this.individualStrokeWeights,
     this.strokeAlign,
     this.cornerRadius,
     this.rectangleCornerRadii,
@@ -233,6 +233,7 @@ class Frame extends Node {
         fills,
         strokes,
         strokeWeight,
+        individualStrokeWeights,
         strokeAlign,
         cornerRadius,
         rectangleCornerRadii,
@@ -273,29 +274,4 @@ class Frame extends Node {
 
   @override
   Map<String, dynamic> toJson() => _$FrameToJson(this);
-}
-
-@JsonSerializable()
-@CopyWith()
-class IndividualStrokeWeights extends Equatable {
-  final double top;
-  final double right;
-  final double left;
-  final double bottom;
-
-  IndividualStrokeWeights({
-    required this.top,
-    required this.right,
-    required this.left,
-    required this.bottom,
-  });
-
-  @override
-  List<Object?> get props => [top, left, right, bottom];
-
-  factory IndividualStrokeWeights.fromJson(Map<String, dynamic> json) =>
-      _$IndividualStrokeWeightsFromJson(json);
-
-  @override
-  Map<String, dynamic> toJson() => _$IndividualStrokeWeightsToJson(this);
 }

@@ -21,6 +21,7 @@ extension FrameCopyWith on Frame {
     List<Paint>? fills,
     num? horizontalPadding,
     String? id,
+    IndividualStrokeWeights? individualStrokeWeights,
     bool? isMask,
     bool? isMaskOutline,
     num? itemSpacing,
@@ -70,6 +71,8 @@ extension FrameCopyWith on Frame {
       fills: fills ?? this.fills,
       horizontalPadding: horizontalPadding ?? this.horizontalPadding,
       id: id ?? this.id,
+      individualStrokeWeights:
+          individualStrokeWeights ?? this.individualStrokeWeights,
       isMask: isMask ?? this.isMask,
       isMaskOutline: isMaskOutline ?? this.isMaskOutline,
       itemSpacing: itemSpacing ?? this.itemSpacing,
@@ -108,22 +111,6 @@ extension FrameCopyWith on Frame {
   }
 }
 
-extension IndividualStrokeWeightsCopyWith on IndividualStrokeWeights {
-  IndividualStrokeWeights copyWith({
-    double? bottom,
-    double? left,
-    double? right,
-    double? top,
-  }) {
-    return IndividualStrokeWeights(
-      bottom: bottom ?? this.bottom,
-      left: left ?? this.left,
-      right: right ?? this.right,
-      top: top ?? this.top,
-    );
-  }
-}
-
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
@@ -145,6 +132,10 @@ Frame _$FrameFromJson(Map<String, dynamic> json) => Frame(
           ?.map((e) => Paint.fromJson(e as Map<String, dynamic>))
           .toList(),
       strokeWeight: json['strokeWeight'] as num?,
+      individualStrokeWeights: json['individualStrokeWeights'] == null
+          ? null
+          : IndividualStrokeWeights.fromJson(
+              json['individualStrokeWeights'] as Map<String, dynamic>),
       strokeAlign:
           $enumDecodeNullable(_$StrokeAlignEnumMap, json['strokeAlign']),
       cornerRadius: (json['cornerRadius'] as num?)?.toDouble(),
@@ -222,6 +213,7 @@ Map<String, dynamic> _$FrameToJson(Frame instance) => <String, dynamic>{
       'fills': instance.fills,
       'strokes': instance.strokes,
       'strokeWeight': instance.strokeWeight,
+      'individualStrokeWeights': instance.individualStrokeWeights,
       'strokeAlign': _$StrokeAlignEnumMap[instance.strokeAlign],
       'cornerRadius': instance.cornerRadius,
       'rectangleCornerRadii': instance.rectangleCornerRadii,
@@ -261,8 +253,8 @@ Map<String, dynamic> _$FrameToJson(Frame instance) => <String, dynamic>{
       'effects': instance.effects,
       'isMask': instance.isMask,
       'isMaskOutline': instance.isMaskOutline,
-      'styles': instance.styles
-          ?.map((k, e) => MapEntry(_$StyleTypeKeyEnumMap[k]!, e)),
+      'styles':
+          instance.styles?.map((k, e) => MapEntry(_$StyleTypeKeyEnumMap[k], e)),
     };
 
 const _$StrokeAlignEnumMap = {
@@ -354,21 +346,3 @@ const _$StyleTypeKeyEnumMap = {
   StyleTypeKey.effect: 'effect',
   StyleTypeKey.grid: 'grid',
 };
-
-IndividualStrokeWeights _$IndividualStrokeWeightsFromJson(
-        Map<String, dynamic> json) =>
-    IndividualStrokeWeights(
-      top: (json['top'] as num).toDouble(),
-      right: (json['right'] as num).toDouble(),
-      left: (json['left'] as num).toDouble(),
-      bottom: (json['bottom'] as num).toDouble(),
-    );
-
-Map<String, dynamic> _$IndividualStrokeWeightsToJson(
-        IndividualStrokeWeights instance) =>
-    <String, dynamic>{
-      'top': instance.top,
-      'right': instance.right,
-      'left': instance.left,
-      'bottom': instance.bottom,
-    };
