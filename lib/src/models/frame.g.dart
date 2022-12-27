@@ -261,8 +261,8 @@ Map<String, dynamic> _$FrameToJson(Frame instance) => <String, dynamic>{
       'effects': instance.effects,
       'isMask': instance.isMask,
       'isMaskOutline': instance.isMaskOutline,
-      'styles':
-          instance.styles?.map((k, e) => MapEntry(_$StyleTypeKeyEnumMap[k], e)),
+      'styles': instance.styles
+          ?.map((k, e) => MapEntry(_$StyleTypeKeyEnumMap[k]!, e)),
     };
 
 const _$StrokeAlignEnumMap = {
@@ -306,6 +306,7 @@ const _$EasingTypeEnumMap = {
   EasingType.easeOut: 'EASE_OUT',
   EasingType.easeInOut: 'EASE_IN_AND_OUT',
   EasingType.linear: 'LINEAR',
+  EasingType.customBezier: 'CUSTOM_BEZIER',
 };
 
 const _$LayoutModeEnumMap = {

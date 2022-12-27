@@ -22,12 +22,10 @@ extension ProjectCopyWith on Project {
 // JsonSerializableGenerator
 // **************************************************************************
 
-Project _$ProjectFromJson(Map<String, dynamic> json) {
-  return Project(
-    id: json['id'] as String?,
-    name: json['name'] as String?,
-  );
-}
+Project _$ProjectFromJson(Map<String, dynamic> json) => Project(
+      id: json['id'] as String?,
+      name: json['name'] as String?,
+    );
 
 Map<String, dynamic> _$ProjectToJson(Project instance) => <String, dynamic>{
       'id': instance.id,

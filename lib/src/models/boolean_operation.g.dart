@@ -184,8 +184,8 @@ Map<String, dynamic> _$BooleanOperationToJson(BooleanOperation instance) =>
       'strokeMiterAngle': instance.strokeMiterAngle,
       'strokeGeometry': instance.strokeGeometry,
       'strokeAlign': _$StrokeAlignEnumMap[instance.strokeAlign],
-      'styles':
-          instance.styles?.map((k, e) => MapEntry(_$StyleTypeKeyEnumMap[k], e)),
+      'styles': instance.styles
+          ?.map((k, e) => MapEntry(_$StyleTypeKeyEnumMap[k]!, e)),
       'children':
           instance.children?.map(const NodeJsonConverter().toJson).toList(),
       'operation': _$OperationEnumMap[instance.operation],
@@ -233,6 +233,7 @@ const _$EasingTypeEnumMap = {
   EasingType.easeOut: 'EASE_OUT',
   EasingType.easeInOut: 'EASE_IN_AND_OUT',
   EasingType.linear: 'LINEAR',
+  EasingType.customBezier: 'CUSTOM_BEZIER',
 };
 
 const _$StrokeCapEnumMap = {

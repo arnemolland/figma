@@ -28,15 +28,13 @@ extension FrameInfoCopyWith on FrameInfo {
 // JsonSerializableGenerator
 // **************************************************************************
 
-FrameInfo _$FrameInfoFromJson(Map<String, dynamic> json) {
-  return FrameInfo(
-    nodeId: json['node:_id'] as String?,
-    name: json['name'] as String?,
-    backgroundColor: json['background_color'] as String?,
-    pageId: json['page_id'] as String?,
-    pageName: json['page_name'] as String?,
-  );
-}
+FrameInfo _$FrameInfoFromJson(Map<String, dynamic> json) => FrameInfo(
+      nodeId: json['node:_id'] as String?,
+      name: json['name'] as String?,
+      backgroundColor: json['background_color'] as String?,
+      pageId: json['page_id'] as String?,
+      pageName: json['page_name'] as String?,
+    );
 
 Map<String, dynamic> _$FrameInfoToJson(FrameInfo instance) => <String, dynamic>{
       'node:_id': instance.nodeId,
