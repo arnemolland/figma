@@ -31,8 +31,8 @@ IndividualStrokeWeights _$IndividualStrokeWeightsFromJson(
     IndividualStrokeWeights(
       top: (json['top'] as num).toDouble(),
       right: (json['right'] as num).toDouble(),
-      left: (json['left'] as num).toDouble(),
       bottom: (json['bottom'] as num).toDouble(),
+      left: (json['left'] as num).toDouble(),
     );
 
 Map<String, dynamic> _$IndividualStrokeWeightsToJson(
@@ -40,6 +40,6 @@ Map<String, dynamic> _$IndividualStrokeWeightsToJson(
     <String, dynamic>{
       'top': instance.top,
       'right': instance.right,
-      'left': instance.left,
       'bottom': instance.bottom,
+      'left': instance.left,
     };

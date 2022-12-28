@@ -17,6 +17,7 @@ extension RectangleCopyWith on Rectangle {
     List<dynamic>? fillGeometry,
     List<Paint>? fills,
     String? id,
+    IndividualStrokeWeights? individualStrokeWeights,
     bool? isMask,
     LayoutAlign? layoutAlign,
     double? layoutGrow,
@@ -53,6 +54,8 @@ extension RectangleCopyWith on Rectangle {
       fillGeometry: fillGeometry ?? this.fillGeometry,
       fills: fills ?? this.fills,
       id: id ?? this.id,
+      individualStrokeWeights:
+          individualStrokeWeights ?? this.individualStrokeWeights,
       isMask: isMask ?? this.isMask,
       layoutAlign: layoutAlign ?? this.layoutAlign,
       layoutGrow: layoutGrow ?? this.layoutGrow,
@@ -136,6 +139,10 @@ Rectangle _$RectangleFromJson(Map<String, dynamic> json) => Rectangle(
           ?.map((e) => Paint.fromJson(e as Map<String, dynamic>))
           .toList(),
       strokeWeight: (json['strokeWeight'] as num?)?.toDouble(),
+      individualStrokeWeights: json['individualStrokeWeights'] == null
+          ? null
+          : IndividualStrokeWeights.fromJson(
+              json['individualStrokeWeights'] as Map<String, dynamic>),
       strokeCap: $enumDecodeNullable(_$StrokeCapEnumMap, json['strokeCap']),
       strokeJoin: $enumDecodeNullable(_$StrokeJoinEnumMap, json['strokeJoin']),
       strokeDashes: (json['strokeDashes'] as List<dynamic>?)
@@ -176,14 +183,15 @@ Map<String, dynamic> _$RectangleToJson(Rectangle instance) => <String, dynamic>{
       'fillGeometry': instance.fillGeometry,
       'strokes': instance.strokes,
       'strokeWeight': instance.strokeWeight,
+      'individualStrokeWeights': instance.individualStrokeWeights,
       'strokeCap': _$StrokeCapEnumMap[instance.strokeCap],
       'strokeJoin': _$StrokeJoinEnumMap[instance.strokeJoin],
       'strokeDashes': instance.strokeDashes,
       'strokeMiterAngle': instance.strokeMiterAngle,
       'strokeGeometry': instance.strokeGeometry,
       'strokeAlign': _$StrokeAlignEnumMap[instance.strokeAlign],
-      'styles': instance.styles
-          ?.map((k, e) => MapEntry(_$StyleTypeKeyEnumMap[k]!, e)),
+      'styles':
+          instance.styles?.map((k, e) => MapEntry(_$StyleTypeKeyEnumMap[k], e)),
       'cornerRadius': instance.cornerRadius,
       'rectangleCornerRadii': instance.rectangleCornerRadii,
     };
