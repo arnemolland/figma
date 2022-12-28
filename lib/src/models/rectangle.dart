@@ -43,7 +43,7 @@ class Rectangle extends Vector {
     List<dynamic>? fillGeometry,
     List<Paint>? strokes,
     double? strokeWeight,
-    IndividualStrokeWeights? individualStrokeWeights,
+    StrokeWeights? individualStrokeWeights,
     StrokeCap? strokeCap,
     StrokeJoin? strokeJoin,
     List<double>? strokeDashes,
