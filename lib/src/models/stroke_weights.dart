@@ -4,6 +4,7 @@ import 'package:copy_with_extension/copy_with_extension.dart';
 
 part 'stroke_weights.g.dart';
 
+// Individual stroke weights for frames and vector nodes.
 @JsonSerializable()
 @CopyWith()
 class StrokeWeights extends Equatable {
