@@ -16,7 +16,7 @@ extension VectorCopyWith on Vector {
     List<dynamic>? fillGeometry,
     List<Paint>? fills,
     String? id,
-    IndividualStrokeWeights? individualStrokeWeights,
+    StrokeWeights? individualStrokeWeights,
     bool? isMask,
     LayoutAlign? layoutAlign,
     double? layoutGrow,
@@ -133,7 +133,7 @@ Vector _$VectorFromJson(Map<String, dynamic> json) => Vector(
       strokeWeight: (json['strokeWeight'] as num?)?.toDouble(),
       individualStrokeWeights: json['individualStrokeWeights'] == null
           ? null
-          : IndividualStrokeWeights.fromJson(
+          : StrokeWeights.fromJson(
               json['individualStrokeWeights'] as Map<String, dynamic>),
       strokeCap: $enumDecodeNullable(_$StrokeCapEnumMap, json['strokeCap']),
       strokeJoin: $enumDecodeNullable(_$StrokeJoinEnumMap, json['strokeJoin']),

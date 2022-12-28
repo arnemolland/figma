@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'individual_stroke_weights.dart';
+part of 'stroke_weights.dart';
 
 // **************************************************************************
 // CopyWithGenerator
 // **************************************************************************
 
-extension IndividualStrokeWeightsCopyWith on IndividualStrokeWeights {
-  IndividualStrokeWeights copyWith({
+extension StrokeWeightsCopyWith on StrokeWeights {
+  StrokeWeights copyWith({
     double? bottom,
     double? left,
     double? right,
     double? top,
   }) {
-    return IndividualStrokeWeights(
+    return StrokeWeights(
       bottom: bottom ?? this.bottom,
       left: left ?? this.left,
       right: right ?? this.right,
@@ -26,17 +26,15 @@ extension IndividualStrokeWeightsCopyWith on IndividualStrokeWeights {
 // JsonSerializableGenerator
 // **************************************************************************
 
-IndividualStrokeWeights _$IndividualStrokeWeightsFromJson(
-        Map<String, dynamic> json) =>
-    IndividualStrokeWeights(
+StrokeWeights _$StrokeWeightsFromJson(Map<String, dynamic> json) =>
+    StrokeWeights(
       top: (json['top'] as num).toDouble(),
       right: (json['right'] as num).toDouble(),
       bottom: (json['bottom'] as num).toDouble(),
       left: (json['left'] as num).toDouble(),
     );
 
-Map<String, dynamic> _$IndividualStrokeWeightsToJson(
-        IndividualStrokeWeights instance) =>
+Map<String, dynamic> _$StrokeWeightsToJson(StrokeWeights instance) =>
     <String, dynamic>{
       'top': instance.top,
       'right': instance.right,

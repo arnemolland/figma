@@ -21,7 +21,7 @@ extension FrameCopyWith on Frame {
     List<Paint>? fills,
     num? horizontalPadding,
     String? id,
-    IndividualStrokeWeights? individualStrokeWeights,
+    StrokeWeights? individualStrokeWeights,
     bool? isMask,
     bool? isMaskOutline,
     num? itemSpacing,
@@ -134,7 +134,7 @@ Frame _$FrameFromJson(Map<String, dynamic> json) => Frame(
       strokeWeight: json['strokeWeight'] as num?,
       individualStrokeWeights: json['individualStrokeWeights'] == null
           ? null
-          : IndividualStrokeWeights.fromJson(
+          : StrokeWeights.fromJson(
               json['individualStrokeWeights'] as Map<String, dynamic>),
       strokeAlign:
           $enumDecodeNullable(_$StrokeAlignEnumMap, json['strokeAlign']),

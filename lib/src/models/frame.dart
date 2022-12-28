@@ -27,7 +27,7 @@ class Frame extends Node {
   final num? strokeWeight;
 
   /// The weight of strokes on the node per side, if they vary
-  final IndividualStrokeWeights? individualStrokeWeights;
+  final StrokeWeights? individualStrokeWeights;
 
   /// Position of stroke relative to vector outline, as a string enum
   final StrokeAlign? strokeAlign;

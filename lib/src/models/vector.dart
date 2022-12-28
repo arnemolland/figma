@@ -78,7 +78,7 @@ class Vector extends Node {
   final double? strokeWeight;
 
   /// The weight of strokes on the node per side, if they vary
-  final IndividualStrokeWeights? individualStrokeWeights;
+  final StrokeWeights? individualStrokeWeights;
 
   /// A string enum with value of [StrokeCap.none], [StrokeCap.round],
   /// [StrokeCap.squary], [StrokeCap.lineArrow] or [StrokeCap.triangleArrow],
