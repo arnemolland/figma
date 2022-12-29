@@ -17,7 +17,7 @@ extension RectangleCopyWith on Rectangle {
     List<dynamic>? fillGeometry,
     List<Paint>? fills,
     String? id,
-    dynamic? individualStrokeWeights,
+    StrokeWeights? individualStrokeWeights,
     bool? isMask,
     LayoutAlign? layoutAlign,
     double? layoutGrow,
@@ -139,7 +139,10 @@ Rectangle _$RectangleFromJson(Map<String, dynamic> json) => Rectangle(
           ?.map((e) => Paint.fromJson(e as Map<String, dynamic>))
           .toList(),
       strokeWeight: (json['strokeWeight'] as num?)?.toDouble(),
-      individualStrokeWeights: json['individualStrokeWeights'],
+      individualStrokeWeights: json['individualStrokeWeights'] == null
+          ? null
+          : StrokeWeights.fromJson(
+              json['individualStrokeWeights'] as Map<String, dynamic>),
       strokeCap: $enumDecodeNullable(_$StrokeCapEnumMap, json['strokeCap']),
       strokeJoin: $enumDecodeNullable(_$StrokeJoinEnumMap, json['strokeJoin']),
       strokeDashes: (json['strokeDashes'] as List<dynamic>?)
