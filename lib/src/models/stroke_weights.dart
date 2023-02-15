@@ -26,6 +26,5 @@ class StrokeWeights extends Equatable {
   factory StrokeWeights.fromJson(Map<String, dynamic> json) =>
       _$StrokeWeightsFromJson(json);
 
-  @override
   Map<String, dynamic> toJson() => _$StrokeWeightsToJson(this);
 }
