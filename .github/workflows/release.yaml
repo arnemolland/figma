@@ -3,6 +3,25 @@ on:
     types: [published]
 
 jobs:
+  dryrun:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: dart-lang/setup-dart@v1
+        with:
+          sdk: beta
+      - name: Install dependencies
+        run: dart pub get
+
+      - uses: rlespinasse/github-slug-action@v4
+
+      - name: Set release version
+        run: echo RELEASE_VERSION=$(echo ${{ env.GITHUB_REF_SLUG }}|cut -c2-) >> $GITHUB_ENV
+
+      - name: Verify changelog exists
+        run: dart tools/validate.dart -t ${{ env.RELEASE_VERSION }}
+
   publish:
+    needs: dryrun
     # Docs found at https://dart.dev/tools/pub/automated-publishing
     uses: dart-lang/setup-dart/.github/workflows/publish.yml@v1

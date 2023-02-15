@@ -1,5 +1,3 @@
-# Changelog
-
 ## 4.0.0
 
 - **BREAKING:** Bumped all dependencies
