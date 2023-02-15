@@ -6,28 +6,132 @@ part of 'effect.dart';
 // CopyWithGenerator
 // **************************************************************************
 
-extension EffectCopyWith on Effect {
-  Effect copyWith({
-    BlendMode? blendMode,
-    Color? color,
-    Vector2D? offset,
-    num? radius,
-    bool? showShadowBehindNode,
-    num? spread,
+abstract class _$EffectCWProxy {
+  Effect type(EffectType? type);
+
+  Effect visible(bool visible);
+
+  Effect radius(num? radius);
+
+  Effect spread(num? spread);
+
+  Effect color(Color? color);
+
+  Effect blendMode(BlendMode? blendMode);
+
+  Effect offset(Vector2D? offset);
+
+  Effect showShadowBehindNode(bool? showShadowBehindNode);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Effect(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  ///
+  /// Usage
+  /// ```dart
+  /// Effect(...).copyWith(id: 12, name: "My name")
+  /// ````
+  Effect call({
     EffectType? type,
     bool? visible,
+    num? radius,
+    num? spread,
+    Color? color,
+    BlendMode? blendMode,
+    Vector2D? offset,
+    bool? showShadowBehindNode,
+  });
+}
+
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfEffect.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfEffect.copyWith.fieldName(...)`
+class _$EffectCWProxyImpl implements _$EffectCWProxy {
+  const _$EffectCWProxyImpl(this._value);
+
+  final Effect _value;
+
+  @override
+  Effect type(EffectType? type) => this(type: type);
+
+  @override
+  Effect visible(bool visible) => this(visible: visible);
+
+  @override
+  Effect radius(num? radius) => this(radius: radius);
+
+  @override
+  Effect spread(num? spread) => this(spread: spread);
+
+  @override
+  Effect color(Color? color) => this(color: color);
+
+  @override
+  Effect blendMode(BlendMode? blendMode) => this(blendMode: blendMode);
+
+  @override
+  Effect offset(Vector2D? offset) => this(offset: offset);
+
+  @override
+  Effect showShadowBehindNode(bool? showShadowBehindNode) =>
+      this(showShadowBehindNode: showShadowBehindNode);
+
+  @override
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Effect(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  ///
+  /// Usage
+  /// ```dart
+  /// Effect(...).copyWith(id: 12, name: "My name")
+  /// ````
+  Effect call({
+    Object? type = const $CopyWithPlaceholder(),
+    Object? visible = const $CopyWithPlaceholder(),
+    Object? radius = const $CopyWithPlaceholder(),
+    Object? spread = const $CopyWithPlaceholder(),
+    Object? color = const $CopyWithPlaceholder(),
+    Object? blendMode = const $CopyWithPlaceholder(),
+    Object? offset = const $CopyWithPlaceholder(),
+    Object? showShadowBehindNode = const $CopyWithPlaceholder(),
   }) {
     return Effect(
-      blendMode: blendMode ?? this.blendMode,
-      color: color ?? this.color,
-      offset: offset ?? this.offset,
-      radius: radius ?? this.radius,
-      showShadowBehindNode: showShadowBehindNode ?? this.showShadowBehindNode,
-      spread: spread ?? this.spread,
-      type: type ?? this.type,
-      visible: visible ?? this.visible,
+      type: type == const $CopyWithPlaceholder()
+          ? _value.type
+          // ignore: cast_nullable_to_non_nullable
+          : type as EffectType?,
+      visible: visible == const $CopyWithPlaceholder() || visible == null
+          // ignore: unnecessary_non_null_assertion
+          ? _value.visible!
+          // ignore: cast_nullable_to_non_nullable
+          : visible as bool,
+      radius: radius == const $CopyWithPlaceholder()
+          ? _value.radius
+          // ignore: cast_nullable_to_non_nullable
+          : radius as num?,
+      spread: spread == const $CopyWithPlaceholder()
+          ? _value.spread
+          // ignore: cast_nullable_to_non_nullable
+          : spread as num?,
+      color: color == const $CopyWithPlaceholder()
+          ? _value.color
+          // ignore: cast_nullable_to_non_nullable
+          : color as Color?,
+      blendMode: blendMode == const $CopyWithPlaceholder()
+          ? _value.blendMode
+          // ignore: cast_nullable_to_non_nullable
+          : blendMode as BlendMode?,
+      offset: offset == const $CopyWithPlaceholder()
+          ? _value.offset
+          // ignore: cast_nullable_to_non_nullable
+          : offset as Vector2D?,
+      showShadowBehindNode: showShadowBehindNode == const $CopyWithPlaceholder()
+          ? _value.showShadowBehindNode
+          // ignore: cast_nullable_to_non_nullable
+          : showShadowBehindNode as bool?,
     );
   }
+}
+
+extension $EffectCopyWith on Effect {
+  /// Returns a callable class that can be used as follows: `instanceOfEffect.copyWith(...)` or like so:`instanceOfEffect.copyWith.fieldName(...)`.
+  // ignore: library_private_types_in_public_api
+  _$EffectCWProxy get copyWith => _$EffectCWProxyImpl(this);
 }
 
 // **************************************************************************

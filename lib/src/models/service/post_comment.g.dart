@@ -6,18 +6,77 @@ part of 'post_comment.dart';
 // CopyWithGenerator
 // **************************************************************************
 
-extension PostCommentCopyWith on PostComment {
-  PostComment copyWith({
+abstract class _$PostCommentCWProxy {
+  PostComment message(String? message);
+
+  PostComment clientMeta(dynamic clientMeta);
+
+  PostComment commentId(String? commentId);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `PostComment(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  ///
+  /// Usage
+  /// ```dart
+  /// PostComment(...).copyWith(id: 12, name: "My name")
+  /// ````
+  PostComment call({
+    String? message,
     dynamic? clientMeta,
     String? commentId,
-    String? message,
+  });
+}
+
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfPostComment.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfPostComment.copyWith.fieldName(...)`
+class _$PostCommentCWProxyImpl implements _$PostCommentCWProxy {
+  const _$PostCommentCWProxyImpl(this._value);
+
+  final PostComment _value;
+
+  @override
+  PostComment message(String? message) => this(message: message);
+
+  @override
+  PostComment clientMeta(dynamic clientMeta) => this(clientMeta: clientMeta);
+
+  @override
+  PostComment commentId(String? commentId) => this(commentId: commentId);
+
+  @override
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `PostComment(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  ///
+  /// Usage
+  /// ```dart
+  /// PostComment(...).copyWith(id: 12, name: "My name")
+  /// ````
+  PostComment call({
+    Object? message = const $CopyWithPlaceholder(),
+    Object? clientMeta = const $CopyWithPlaceholder(),
+    Object? commentId = const $CopyWithPlaceholder(),
   }) {
     return PostComment(
-      clientMeta: clientMeta ?? this.clientMeta,
-      commentId: commentId ?? this.commentId,
-      message: message ?? this.message,
+      message: message == const $CopyWithPlaceholder()
+          ? _value.message
+          // ignore: cast_nullable_to_non_nullable
+          : message as String?,
+      clientMeta:
+          clientMeta == const $CopyWithPlaceholder() || clientMeta == null
+              // ignore: unnecessary_non_null_assertion
+              ? _value.clientMeta!
+              // ignore: cast_nullable_to_non_nullable
+              : clientMeta as dynamic,
+      commentId: commentId == const $CopyWithPlaceholder()
+          ? _value.commentId
+          // ignore: cast_nullable_to_non_nullable
+          : commentId as String?,
     );
   }
+}
+
+extension $PostCommentCopyWith on PostComment {
+  /// Returns a callable class that can be used as follows: `instanceOfPostComment.copyWith(...)` or like so:`instanceOfPostComment.copyWith.fieldName(...)`.
+  // ignore: library_private_types_in_public_api
+  _$PostCommentCWProxy get copyWith => _$PostCommentCWProxyImpl(this);
 }
 
 // **************************************************************************

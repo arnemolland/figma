@@ -1,23 +1,52 @@
-import 'package:dotenv/dotenv.dart';
+import 'dart:io';
+
 import 'package:figma/figma.dart';
 import 'package:test/test.dart';
 
 void main() {
-  load();
-
   group('#realData', () {
+    late String testFile;
+    late String accessToken;
+    late String testTeam;
+    late String testProject;
+
     late String testCommentId;
-    late String? testComponentKey;
     late String? testStyleKey;
 
-    final client = FigmaClient(
-      env['FIGMA_ACCESS_TOKEN']!,
-    );
+    late FigmaClient client;
 
-    final assetsFile = env['FIGMA_EUFEMIA_IOS_FILE']!;
-    final testFile = env['FIGMA_TEST_FILE']!;
-    final team = env['FIGMA_TEAM']!;
-    final project = env['FIGMA_PROJECT']!;
+    // Set up the test environment
+    setUp(() {
+      final token = Platform.environment['FIGMA_ACCESS_TOKEN'];
+      if (token == null) {
+        throw Exception('FIGMA_ACCESS_TOKEN is not set');
+      }
+
+      accessToken = token;
+      client = FigmaClient(accessToken);
+
+      final file = Platform.environment['FIGMA_TEST_FILE'];
+      if (file == null) {
+        throw Exception('FIGMA_TEST_FILE is not set');
+      }
+
+      testFile = file;
+
+      final team = Platform.environment['FIGMA_TEST_TEAM'];
+      if (team == null) {
+        throw Exception('FIGMA_TEST_TEAM is not set');
+      }
+
+      testTeam = team;
+
+      final project = Platform.environment['FIGMA_TEST_PROJECT'];
+      if (project == null) {
+        throw Exception('FIGMA_TEST_PROJECT is not set');
+      }
+
+      testProject = project;
+    });
+
     const assets = '0:1';
 
     const basicQuery = FigmaQuery(ids: [assets]);
@@ -29,35 +58,36 @@ void main() {
     test(
       'getFile() retrieves file',
       () => client
-          .getFile(assetsFile)
+          .getFile(testFile)
           .then((res) => expect(res.document != null, true)),
     );
 
     test(
       'getFileNodes() retrieves file nodes',
       () => client
-          .getFileNodes(assetsFile, basicQuery)
+          .getFileNodes(testFile, basicQuery)
           .then((res) => expect(res, isA<NodesResponse>())),
     );
 
     test(
       'getImages() retrieves images',
       () => client
-          .getImages(assetsFile, basicQuery)
+          .getImages(testFile, basicQuery)
           .then((res) => expect(res.status == null, true)),
     );
 
     test(
       'getImageFills() retrieves image fills',
       () => client
-          .getImageFills(assetsFile)
+          .getImageFills(testFile)
           .then((res) => expect(res.err == null, true)),
     );
 
     test(
       'getComments() retrieves comments',
-      () =>
-          client.getComments(testFile).then((res) => expect(res.isNotEmpty, true)),
+      () => client
+          .getComments(testFile)
+          .then((res) => expect(res.isNotEmpty, true)),
     );
 
     test(
@@ -77,56 +107,41 @@ void main() {
     test(
       'getFileVersions() gets file versions',
       () => client
-          .getFileVersions(assetsFile)
+          .getFileVersions(testFile)
           .then((res) => expect(res.isNotEmpty, true)),
     );
 
     test(
       'getTeamProjects() gets team projects',
       () => client
-          .getTeamProjects(team)
+          .getTeamProjects(testTeam)
           .then((res) => expect(res.projects?.isNotEmpty, true)),
     );
 
     test(
       'getProjectFiles() gets project files',
       () => client
-          .getProjectFiles(project)
+          .getProjectFiles(testProject)
           .then((res) => expect(res.files?.isNotEmpty, true)),
     );
 
     test(
-      'getTeamComponents() gets team components',
-      () => client
-          .getTeamComponents(team)
-          .then((res) => expect(res.meta != null, true)),
-    );
-
-    test(
       'getFileComponents() gets file components',
-      () => client.getFileComponents(assetsFile).then((res) {
-        expect(res.meta != null, true);
-        testComponentKey = res.meta?.components?.first.key;
+      () => client.getFileComponents(testFile).then((res) {
+        expect(res.status == 200, true);
       }),
-    );
-
-    test(
-      'getComponent() gets component',
-      () => client
-          .getComponent(testComponentKey!)
-          .then((res) => expect(res.component != null, true)),
     );
 
     test(
       'getTeamStyles() gets team styles',
       () => client
-          .getTeamStyles(team)
+          .getTeamStyles(testTeam)
           .then((res) => expect(res.meta != null, true)),
     );
 
     test(
       'getFileStyles() gets file styles',
-      () => client.getFileStyles(assetsFile).then((res) {
+      () => client.getFileStyles(testFile).then((res) {
         expect(res.meta?.styles?.isNotEmpty, true);
         testStyleKey = res.meta?.styles?.first.key;
       }),

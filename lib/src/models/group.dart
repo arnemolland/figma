@@ -84,9 +84,6 @@ class Group extends Frame {
           isMaskOutline: isMaskOutline,
         );
 
-  @override
-  List<Object?> get props => super.props;
-
   factory Group.fromJson(Map<String, dynamic> json) => _$GroupFromJson(json);
 
   @override

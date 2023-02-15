@@ -6,28 +6,130 @@ part of 'layout_grid.dart';
 // CopyWithGenerator
 // **************************************************************************
 
-extension LayoutGridCopyWith on LayoutGrid {
-  LayoutGrid copyWith({
-    LayoutAlign? alignment,
-    Color? color,
-    int? count,
-    double? gutterSize,
-    double? offset,
+abstract class _$LayoutGridCWProxy {
+  LayoutGrid pattern(LayoutPattern? pattern);
+
+  LayoutGrid sectionSize(double? sectionSize);
+
+  LayoutGrid visible(bool? visible);
+
+  LayoutGrid color(Color? color);
+
+  LayoutGrid alignment(LayoutAlign? alignment);
+
+  LayoutGrid gutterSize(double? gutterSize);
+
+  LayoutGrid offset(double? offset);
+
+  LayoutGrid count(int? count);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `LayoutGrid(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  ///
+  /// Usage
+  /// ```dart
+  /// LayoutGrid(...).copyWith(id: 12, name: "My name")
+  /// ````
+  LayoutGrid call({
     LayoutPattern? pattern,
     double? sectionSize,
     bool? visible,
+    Color? color,
+    LayoutAlign? alignment,
+    double? gutterSize,
+    double? offset,
+    int? count,
+  });
+}
+
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfLayoutGrid.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfLayoutGrid.copyWith.fieldName(...)`
+class _$LayoutGridCWProxyImpl implements _$LayoutGridCWProxy {
+  const _$LayoutGridCWProxyImpl(this._value);
+
+  final LayoutGrid _value;
+
+  @override
+  LayoutGrid pattern(LayoutPattern? pattern) => this(pattern: pattern);
+
+  @override
+  LayoutGrid sectionSize(double? sectionSize) => this(sectionSize: sectionSize);
+
+  @override
+  LayoutGrid visible(bool? visible) => this(visible: visible);
+
+  @override
+  LayoutGrid color(Color? color) => this(color: color);
+
+  @override
+  LayoutGrid alignment(LayoutAlign? alignment) => this(alignment: alignment);
+
+  @override
+  LayoutGrid gutterSize(double? gutterSize) => this(gutterSize: gutterSize);
+
+  @override
+  LayoutGrid offset(double? offset) => this(offset: offset);
+
+  @override
+  LayoutGrid count(int? count) => this(count: count);
+
+  @override
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `LayoutGrid(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  ///
+  /// Usage
+  /// ```dart
+  /// LayoutGrid(...).copyWith(id: 12, name: "My name")
+  /// ````
+  LayoutGrid call({
+    Object? pattern = const $CopyWithPlaceholder(),
+    Object? sectionSize = const $CopyWithPlaceholder(),
+    Object? visible = const $CopyWithPlaceholder(),
+    Object? color = const $CopyWithPlaceholder(),
+    Object? alignment = const $CopyWithPlaceholder(),
+    Object? gutterSize = const $CopyWithPlaceholder(),
+    Object? offset = const $CopyWithPlaceholder(),
+    Object? count = const $CopyWithPlaceholder(),
   }) {
     return LayoutGrid(
-      alignment: alignment ?? this.alignment,
-      color: color ?? this.color,
-      count: count ?? this.count,
-      gutterSize: gutterSize ?? this.gutterSize,
-      offset: offset ?? this.offset,
-      pattern: pattern ?? this.pattern,
-      sectionSize: sectionSize ?? this.sectionSize,
-      visible: visible ?? this.visible,
+      pattern: pattern == const $CopyWithPlaceholder()
+          ? _value.pattern
+          // ignore: cast_nullable_to_non_nullable
+          : pattern as LayoutPattern?,
+      sectionSize: sectionSize == const $CopyWithPlaceholder()
+          ? _value.sectionSize
+          // ignore: cast_nullable_to_non_nullable
+          : sectionSize as double?,
+      visible: visible == const $CopyWithPlaceholder()
+          ? _value.visible
+          // ignore: cast_nullable_to_non_nullable
+          : visible as bool?,
+      color: color == const $CopyWithPlaceholder()
+          ? _value.color
+          // ignore: cast_nullable_to_non_nullable
+          : color as Color?,
+      alignment: alignment == const $CopyWithPlaceholder()
+          ? _value.alignment
+          // ignore: cast_nullable_to_non_nullable
+          : alignment as LayoutAlign?,
+      gutterSize: gutterSize == const $CopyWithPlaceholder()
+          ? _value.gutterSize
+          // ignore: cast_nullable_to_non_nullable
+          : gutterSize as double?,
+      offset: offset == const $CopyWithPlaceholder()
+          ? _value.offset
+          // ignore: cast_nullable_to_non_nullable
+          : offset as double?,
+      count: count == const $CopyWithPlaceholder()
+          ? _value.count
+          // ignore: cast_nullable_to_non_nullable
+          : count as int?,
     );
   }
+}
+
+extension $LayoutGridCopyWith on LayoutGrid {
+  /// Returns a callable class that can be used as follows: `instanceOfLayoutGrid.copyWith(...)` or like so:`instanceOfLayoutGrid.copyWith.fieldName(...)`.
+  // ignore: library_private_types_in_public_api
+  _$LayoutGridCWProxy get copyWith => _$LayoutGridCWProxyImpl(this);
 }
 
 // **************************************************************************

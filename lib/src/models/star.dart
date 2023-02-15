@@ -75,9 +75,6 @@ class Star extends Vector {
           styles: styles,
         );
 
-  @override
-  List<Object?> get props => super.props;
-
   factory Star.fromJson(Map<String, dynamic> json) => _$StarFromJson(json);
 
   @override
