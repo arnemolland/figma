@@ -16,6 +16,7 @@ extension VectorCopyWith on Vector {
     List<dynamic>? fillGeometry,
     List<Paint>? fills,
     String? id,
+    StrokeWeights? individualStrokeWeights,
     bool? isMask,
     LayoutAlign? layoutAlign,
     double? layoutGrow,
@@ -50,6 +51,8 @@ extension VectorCopyWith on Vector {
       fillGeometry: fillGeometry ?? this.fillGeometry,
       fills: fills ?? this.fills,
       id: id ?? this.id,
+      individualStrokeWeights:
+          individualStrokeWeights ?? this.individualStrokeWeights,
       isMask: isMask ?? this.isMask,
       layoutAlign: layoutAlign ?? this.layoutAlign,
       layoutGrow: layoutGrow ?? this.layoutGrow,
@@ -128,6 +131,10 @@ Vector _$VectorFromJson(Map<String, dynamic> json) => Vector(
           ?.map((e) => Paint.fromJson(e as Map<String, dynamic>))
           .toList(),
       strokeWeight: (json['strokeWeight'] as num?)?.toDouble(),
+      individualStrokeWeights: json['individualStrokeWeights'] == null
+          ? null
+          : StrokeWeights.fromJson(
+              json['individualStrokeWeights'] as Map<String, dynamic>),
       strokeCap: $enumDecodeNullable(_$StrokeCapEnumMap, json['strokeCap']),
       strokeJoin: $enumDecodeNullable(_$StrokeJoinEnumMap, json['strokeJoin']),
       strokeDashes: (json['strokeDashes'] as List<dynamic>?)
@@ -168,14 +175,15 @@ Map<String, dynamic> _$VectorToJson(Vector instance) => <String, dynamic>{
       'fillGeometry': instance.fillGeometry,
       'strokes': instance.strokes,
       'strokeWeight': instance.strokeWeight,
+      'individualStrokeWeights': instance.individualStrokeWeights,
       'strokeCap': _$StrokeCapEnumMap[instance.strokeCap],
       'strokeJoin': _$StrokeJoinEnumMap[instance.strokeJoin],
       'strokeDashes': instance.strokeDashes,
       'strokeMiterAngle': instance.strokeMiterAngle,
       'strokeGeometry': instance.strokeGeometry,
       'strokeAlign': _$StrokeAlignEnumMap[instance.strokeAlign],
-      'styles': instance.styles
-          ?.map((k, e) => MapEntry(_$StyleTypeKeyEnumMap[k]!, e)),
+      'styles':
+          instance.styles?.map((k, e) => MapEntry(_$StyleTypeKeyEnumMap[k], e)),
     };
 
 const _$BlendModeEnumMap = {

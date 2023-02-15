@@ -15,6 +15,7 @@ export 'ellipse.dart';
 export 'export_setting.dart';
 export 'frame.dart';
 export 'group.dart';
+export 'stroke_weights.dart';
 export 'instance.dart';
 export 'layout_align.dart';
 export 'layout_constraint.dart';

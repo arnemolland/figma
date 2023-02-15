@@ -26,6 +26,9 @@ class Frame extends Node {
   /// The weight of strokes on the node
   final num? strokeWeight;
 
+  /// The weight of strokes on the node per side, if they vary
+  final StrokeWeights? individualStrokeWeights;
+
   /// Position of stroke relative to vector outline, as a string enum
   final StrokeAlign? strokeAlign;
 
@@ -178,6 +181,7 @@ class Frame extends Node {
     this.fills,
     this.strokes,
     this.strokeWeight,
+    this.individualStrokeWeights,
     this.strokeAlign,
     this.cornerRadius,
     this.rectangleCornerRadii,
@@ -229,6 +233,7 @@ class Frame extends Node {
         fills,
         strokes,
         strokeWeight,
+        individualStrokeWeights,
         strokeAlign,
         cornerRadius,
         rectangleCornerRadii,

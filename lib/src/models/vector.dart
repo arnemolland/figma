@@ -77,6 +77,9 @@ class Vector extends Node {
   /// The weight of strokes on the node
   final double? strokeWeight;
 
+  /// The weight of strokes on the node per side, if they vary
+  final StrokeWeights? individualStrokeWeights;
+
   /// A string enum with value of [StrokeCap.none], [StrokeCap.round],
   /// [StrokeCap.squary], [StrokeCap.lineArrow] or [StrokeCap.triangleArrow],
   /// describing the end caps of vector paths.
@@ -135,6 +138,7 @@ class Vector extends Node {
     this.fillGeometry,
     this.strokes,
     this.strokeWeight,
+    this.individualStrokeWeights,
     this.strokeCap,
     this.strokeJoin,
     this.strokeDashes,
@@ -173,6 +177,7 @@ class Vector extends Node {
         fillGeometry,
         strokes,
         strokeWeight,
+        individualStrokeWeights,
         strokeCap,
         strokeJoin,
         strokeDashes,

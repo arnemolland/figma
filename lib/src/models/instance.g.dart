@@ -22,6 +22,7 @@ extension InstanceCopyWith on Instance {
     List<Paint>? fills,
     num? horizontalPadding,
     String? id,
+    StrokeWeights? individualStrokeWeights,
     bool? isMask,
     bool? isMaskOutline,
     num? itemSpacing,
@@ -71,6 +72,8 @@ extension InstanceCopyWith on Instance {
       fills: fills ?? this.fills,
       horizontalPadding: horizontalPadding ?? this.horizontalPadding,
       id: id ?? this.id,
+      individualStrokeWeights:
+          individualStrokeWeights ?? this.individualStrokeWeights,
       isMask: isMask ?? this.isMask,
       isMaskOutline: isMaskOutline ?? this.isMaskOutline,
       itemSpacing: itemSpacing ?? this.itemSpacing,
@@ -130,6 +133,10 @@ Instance _$InstanceFromJson(Map<String, dynamic> json) => Instance(
           ?.map((e) => Paint.fromJson(e as Map<String, dynamic>))
           .toList(),
       strokeWeight: json['strokeWeight'] as num?,
+      individualStrokeWeights: json['individualStrokeWeights'] == null
+          ? null
+          : StrokeWeights.fromJson(
+              json['individualStrokeWeights'] as Map<String, dynamic>),
       strokeAlign:
           $enumDecodeNullable(_$StrokeAlignEnumMap, json['strokeAlign']),
       cornerRadius: (json['cornerRadius'] as num?)?.toDouble(),
@@ -204,6 +211,7 @@ Map<String, dynamic> _$InstanceToJson(Instance instance) => <String, dynamic>{
       'fills': instance.fills,
       'strokes': instance.strokes,
       'strokeWeight': instance.strokeWeight,
+      'individualStrokeWeights': instance.individualStrokeWeights,
       'strokeAlign': _$StrokeAlignEnumMap[instance.strokeAlign],
       'cornerRadius': instance.cornerRadius,
       'rectangleCornerRadii': instance.rectangleCornerRadii,

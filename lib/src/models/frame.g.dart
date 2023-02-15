@@ -21,6 +21,7 @@ extension FrameCopyWith on Frame {
     List<Paint>? fills,
     num? horizontalPadding,
     String? id,
+    StrokeWeights? individualStrokeWeights,
     bool? isMask,
     bool? isMaskOutline,
     num? itemSpacing,
@@ -70,6 +71,8 @@ extension FrameCopyWith on Frame {
       fills: fills ?? this.fills,
       horizontalPadding: horizontalPadding ?? this.horizontalPadding,
       id: id ?? this.id,
+      individualStrokeWeights:
+          individualStrokeWeights ?? this.individualStrokeWeights,
       isMask: isMask ?? this.isMask,
       isMaskOutline: isMaskOutline ?? this.isMaskOutline,
       itemSpacing: itemSpacing ?? this.itemSpacing,
@@ -129,6 +132,10 @@ Frame _$FrameFromJson(Map<String, dynamic> json) => Frame(
           ?.map((e) => Paint.fromJson(e as Map<String, dynamic>))
           .toList(),
       strokeWeight: json['strokeWeight'] as num?,
+      individualStrokeWeights: json['individualStrokeWeights'] == null
+          ? null
+          : StrokeWeights.fromJson(
+              json['individualStrokeWeights'] as Map<String, dynamic>),
       strokeAlign:
           $enumDecodeNullable(_$StrokeAlignEnumMap, json['strokeAlign']),
       cornerRadius: (json['cornerRadius'] as num?)?.toDouble(),
@@ -206,6 +213,7 @@ Map<String, dynamic> _$FrameToJson(Frame instance) => <String, dynamic>{
       'fills': instance.fills,
       'strokes': instance.strokes,
       'strokeWeight': instance.strokeWeight,
+      'individualStrokeWeights': instance.individualStrokeWeights,
       'strokeAlign': _$StrokeAlignEnumMap[instance.strokeAlign],
       'cornerRadius': instance.cornerRadius,
       'rectangleCornerRadii': instance.rectangleCornerRadii,
@@ -245,8 +253,8 @@ Map<String, dynamic> _$FrameToJson(Frame instance) => <String, dynamic>{
       'effects': instance.effects,
       'isMask': instance.isMask,
       'isMaskOutline': instance.isMaskOutline,
-      'styles': instance.styles
-          ?.map((k, e) => MapEntry(_$StyleTypeKeyEnumMap[k]!, e)),
+      'styles':
+          instance.styles?.map((k, e) => MapEntry(_$StyleTypeKeyEnumMap[k], e)),
     };
 
 const _$StrokeAlignEnumMap = {
