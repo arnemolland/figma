@@ -19,7 +19,7 @@ jobs:
         run: echo RELEASE_VERSION=$(echo ${{ env.GITHUB_REF_SLUG }}|cut -c2-) >> $GITHUB_ENV
 
       - name: Verify changelog exists
-        run: dart tools/validate.dart -t ${{ env.RELEASE_VERSION }}
+        run: dart tool/validate.dart -t ${{ env.RELEASE_VERSION }}
 
   publish:
     needs: dryrun
