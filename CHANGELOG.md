@@ -1,5 +1,13 @@
 # Changelog
 
+## 4.0.0
+
+- **BREAKING:** Bumped all dependencies
+- Regenerated all models with updated generators
+- Updated integration tests
+- Enhanced CI pipeline and release workflow
+- Changed analyzer config to use [lints/recommended](https://pub.dev/packages/lints) as base
+
 ## 3.7.0
 
 - Add individualStrokeWeights to frame and vector nodes ([@yzxben](https://github.com/yzxben))
