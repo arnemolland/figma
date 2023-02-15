@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.7.0
+
+- Add individualStrokeWeights to frame and vector nodes ([@yzxben](https://github.com/yzxben))
+
 ## 3.6.0
 
 - Add TRUNCATE to TextAutoResize ([@yzxben](https://github.com/yzxben))
