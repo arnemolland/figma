@@ -76,9 +76,6 @@ class Line extends Vector {
           styles: styles,
         );
 
-  @override
-  List<Object?> get props => super.props;
-
   factory Line.fromJson(Map<String, dynamic> json) => _$LineFromJson(json);
 
   @override

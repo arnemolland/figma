@@ -25,9 +25,9 @@ class NodeJsonConverter implements JsonConverter<Node?, Object?> {
       case 'BOOLEAN_OPERATION':
         return BooleanOperation.fromJson(json);
       case 'COMPONENT':
-        return Frame.fromJson(json); // FIXME create a Component node type
+        return Frame.fromJson(json); // FIXME: create a Component node type
       case 'COMPONENT_SET':
-        return Frame.fromJson(json); // FIXME create a ComponentSet node type
+        return Frame.fromJson(json); // FIXME: create a ComponentSet node type
       case 'LINE':
         return Line.fromJson(json);
       case 'TEXT':

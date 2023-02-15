@@ -6,109 +6,581 @@ part of 'frame.dart';
 // CopyWithGenerator
 // **************************************************************************
 
-extension FrameCopyWith on Frame {
-  Frame copyWith({
-    SizeRectangle? absoluteBoundingBox,
-    BlendMode? blendMode,
-    List<Node?>? children,
-    bool? clipsContent,
-    LayoutConstraint? constraints,
-    double? cornerRadius,
-    CounterAxisAlignItems? counterAxisAlignItems,
-    CounterAxisSizingMode? counterAxisSizingMode,
-    List<Effect>? effects,
-    List<ExportSetting>? exportSettings,
-    List<Paint>? fills,
-    num? horizontalPadding,
+abstract class _$FrameCWProxy {
+  Frame id(String id);
+
+  Frame name(String? name);
+
+  Frame visible(bool visible);
+
+  Frame pluginData(dynamic pluginData);
+
+  Frame sharedPluginData(dynamic sharedPluginData);
+
+  Frame children(List<Node?>? children);
+
+  Frame locked(bool locked);
+
+  Frame fills(List<Paint>? fills);
+
+  Frame strokes(List<Paint>? strokes);
+
+  Frame strokeWeight(num? strokeWeight);
+
+  Frame individualStrokeWeights(StrokeWeights? individualStrokeWeights);
+
+  Frame strokeAlign(StrokeAlign? strokeAlign);
+
+  Frame cornerRadius(double? cornerRadius);
+
+  Frame rectangleCornerRadii(List<num>? rectangleCornerRadii);
+
+  Frame exportSettings(List<ExportSetting>? exportSettings);
+
+  Frame blendMode(BlendMode? blendMode);
+
+  Frame preserveRatio(bool? preserveRatio);
+
+  Frame layoutGrow(double? layoutGrow);
+
+  Frame constraints(LayoutConstraint? constraints);
+
+  Frame layoutAlign(LayoutAlign? layoutAlign);
+
+  Frame transitionNodeID(String? transitionNodeID);
+
+  Frame transitionDuration(double? transitionDuration);
+
+  Frame transitionEasing(EasingType? transitionEasing);
+
+  Frame opacity(double? opacity);
+
+  Frame absoluteBoundingBox(SizeRectangle? absoluteBoundingBox);
+
+  Frame size(Vector2D? size);
+
+  Frame relativeTransform(List<List<num>>? relativeTransform);
+
+  Frame clipsContent(bool? clipsContent);
+
+  Frame layoutMode(LayoutMode? layoutMode);
+
+  Frame primaryAxisAlignItems(PrimaryAxisAlignItems? primaryAxisAlignItems);
+
+  Frame counterAxisAlignItems(CounterAxisAlignItems? counterAxisAlignItems);
+
+  Frame primaryAxisSizingMode(PrimaryAxisSizingMode? primaryAxisSizingMode);
+
+  Frame counterAxisSizingMode(CounterAxisSizingMode? counterAxisSizingMode);
+
+  Frame paddingBottom(double? paddingBottom);
+
+  Frame paddingLeft(double? paddingLeft);
+
+  Frame paddingRight(double? paddingRight);
+
+  Frame paddingTop(double? paddingTop);
+
+  Frame horizontalPadding(num? horizontalPadding);
+
+  Frame verticalPadding(num? verticalPadding);
+
+  Frame itemSpacing(num? itemSpacing);
+
+  Frame layoutGrids(List<LayoutGrid>? layoutGrids);
+
+  Frame overflowDirection(OverflowDirection? overflowDirection);
+
+  Frame effects(List<Effect>? effects);
+
+  Frame isMask(bool? isMask);
+
+  Frame isMaskOutline(bool? isMaskOutline);
+
+  Frame styles(Map<StyleTypeKey, String>? styles);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Frame(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  ///
+  /// Usage
+  /// ```dart
+  /// Frame(...).copyWith(id: 12, name: "My name")
+  /// ````
+  Frame call({
     String? id,
-    StrokeWeights? individualStrokeWeights,
-    bool? isMask,
-    bool? isMaskOutline,
-    num? itemSpacing,
-    LayoutAlign? layoutAlign,
-    List<LayoutGrid>? layoutGrids,
-    double? layoutGrow,
-    LayoutMode? layoutMode,
-    bool? locked,
     String? name,
+    bool? visible,
+    dynamic? pluginData,
+    dynamic? sharedPluginData,
+    List<Node?>? children,
+    bool? locked,
+    List<Paint>? fills,
+    List<Paint>? strokes,
+    num? strokeWeight,
+    StrokeWeights? individualStrokeWeights,
+    StrokeAlign? strokeAlign,
+    double? cornerRadius,
+    List<num>? rectangleCornerRadii,
+    List<ExportSetting>? exportSettings,
+    BlendMode? blendMode,
+    bool? preserveRatio,
+    double? layoutGrow,
+    LayoutConstraint? constraints,
+    LayoutAlign? layoutAlign,
+    String? transitionNodeID,
+    double? transitionDuration,
+    EasingType? transitionEasing,
     double? opacity,
-    OverflowDirection? overflowDirection,
+    SizeRectangle? absoluteBoundingBox,
+    Vector2D? size,
+    List<List<num>>? relativeTransform,
+    bool? clipsContent,
+    LayoutMode? layoutMode,
+    PrimaryAxisAlignItems? primaryAxisAlignItems,
+    CounterAxisAlignItems? counterAxisAlignItems,
+    PrimaryAxisSizingMode? primaryAxisSizingMode,
+    CounterAxisSizingMode? counterAxisSizingMode,
     double? paddingBottom,
     double? paddingLeft,
     double? paddingRight,
     double? paddingTop,
-    dynamic? pluginData,
-    bool? preserveRatio,
-    PrimaryAxisAlignItems? primaryAxisAlignItems,
-    PrimaryAxisSizingMode? primaryAxisSizingMode,
-    List<num>? rectangleCornerRadii,
-    List<List<num>>? relativeTransform,
-    dynamic? sharedPluginData,
-    Vector2D? size,
-    StrokeAlign? strokeAlign,
-    num? strokeWeight,
-    List<Paint>? strokes,
-    Map<StyleTypeKey, String>? styles,
-    double? transitionDuration,
-    EasingType? transitionEasing,
-    String? transitionNodeID,
+    num? horizontalPadding,
     num? verticalPadding,
-    bool? visible,
+    num? itemSpacing,
+    List<LayoutGrid>? layoutGrids,
+    OverflowDirection? overflowDirection,
+    List<Effect>? effects,
+    bool? isMask,
+    bool? isMaskOutline,
+    Map<StyleTypeKey, String>? styles,
+  });
+}
+
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfFrame.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfFrame.copyWith.fieldName(...)`
+class _$FrameCWProxyImpl implements _$FrameCWProxy {
+  const _$FrameCWProxyImpl(this._value);
+
+  final Frame _value;
+
+  @override
+  Frame id(String id) => this(id: id);
+
+  @override
+  Frame name(String? name) => this(name: name);
+
+  @override
+  Frame visible(bool visible) => this(visible: visible);
+
+  @override
+  Frame pluginData(dynamic pluginData) => this(pluginData: pluginData);
+
+  @override
+  Frame sharedPluginData(dynamic sharedPluginData) =>
+      this(sharedPluginData: sharedPluginData);
+
+  @override
+  Frame children(List<Node?>? children) => this(children: children);
+
+  @override
+  Frame locked(bool locked) => this(locked: locked);
+
+  @override
+  Frame fills(List<Paint>? fills) => this(fills: fills);
+
+  @override
+  Frame strokes(List<Paint>? strokes) => this(strokes: strokes);
+
+  @override
+  Frame strokeWeight(num? strokeWeight) => this(strokeWeight: strokeWeight);
+
+  @override
+  Frame individualStrokeWeights(StrokeWeights? individualStrokeWeights) =>
+      this(individualStrokeWeights: individualStrokeWeights);
+
+  @override
+  Frame strokeAlign(StrokeAlign? strokeAlign) => this(strokeAlign: strokeAlign);
+
+  @override
+  Frame cornerRadius(double? cornerRadius) => this(cornerRadius: cornerRadius);
+
+  @override
+  Frame rectangleCornerRadii(List<num>? rectangleCornerRadii) =>
+      this(rectangleCornerRadii: rectangleCornerRadii);
+
+  @override
+  Frame exportSettings(List<ExportSetting>? exportSettings) =>
+      this(exportSettings: exportSettings);
+
+  @override
+  Frame blendMode(BlendMode? blendMode) => this(blendMode: blendMode);
+
+  @override
+  Frame preserveRatio(bool? preserveRatio) =>
+      this(preserveRatio: preserveRatio);
+
+  @override
+  Frame layoutGrow(double? layoutGrow) => this(layoutGrow: layoutGrow);
+
+  @override
+  Frame constraints(LayoutConstraint? constraints) =>
+      this(constraints: constraints);
+
+  @override
+  Frame layoutAlign(LayoutAlign? layoutAlign) => this(layoutAlign: layoutAlign);
+
+  @override
+  Frame transitionNodeID(String? transitionNodeID) =>
+      this(transitionNodeID: transitionNodeID);
+
+  @override
+  Frame transitionDuration(double? transitionDuration) =>
+      this(transitionDuration: transitionDuration);
+
+  @override
+  Frame transitionEasing(EasingType? transitionEasing) =>
+      this(transitionEasing: transitionEasing);
+
+  @override
+  Frame opacity(double? opacity) => this(opacity: opacity);
+
+  @override
+  Frame absoluteBoundingBox(SizeRectangle? absoluteBoundingBox) =>
+      this(absoluteBoundingBox: absoluteBoundingBox);
+
+  @override
+  Frame size(Vector2D? size) => this(size: size);
+
+  @override
+  Frame relativeTransform(List<List<num>>? relativeTransform) =>
+      this(relativeTransform: relativeTransform);
+
+  @override
+  Frame clipsContent(bool? clipsContent) => this(clipsContent: clipsContent);
+
+  @override
+  Frame layoutMode(LayoutMode? layoutMode) => this(layoutMode: layoutMode);
+
+  @override
+  Frame primaryAxisAlignItems(PrimaryAxisAlignItems? primaryAxisAlignItems) =>
+      this(primaryAxisAlignItems: primaryAxisAlignItems);
+
+  @override
+  Frame counterAxisAlignItems(CounterAxisAlignItems? counterAxisAlignItems) =>
+      this(counterAxisAlignItems: counterAxisAlignItems);
+
+  @override
+  Frame primaryAxisSizingMode(PrimaryAxisSizingMode? primaryAxisSizingMode) =>
+      this(primaryAxisSizingMode: primaryAxisSizingMode);
+
+  @override
+  Frame counterAxisSizingMode(CounterAxisSizingMode? counterAxisSizingMode) =>
+      this(counterAxisSizingMode: counterAxisSizingMode);
+
+  @override
+  Frame paddingBottom(double? paddingBottom) =>
+      this(paddingBottom: paddingBottom);
+
+  @override
+  Frame paddingLeft(double? paddingLeft) => this(paddingLeft: paddingLeft);
+
+  @override
+  Frame paddingRight(double? paddingRight) => this(paddingRight: paddingRight);
+
+  @override
+  Frame paddingTop(double? paddingTop) => this(paddingTop: paddingTop);
+
+  @override
+  Frame horizontalPadding(num? horizontalPadding) =>
+      this(horizontalPadding: horizontalPadding);
+
+  @override
+  Frame verticalPadding(num? verticalPadding) =>
+      this(verticalPadding: verticalPadding);
+
+  @override
+  Frame itemSpacing(num? itemSpacing) => this(itemSpacing: itemSpacing);
+
+  @override
+  Frame layoutGrids(List<LayoutGrid>? layoutGrids) =>
+      this(layoutGrids: layoutGrids);
+
+  @override
+  Frame overflowDirection(OverflowDirection? overflowDirection) =>
+      this(overflowDirection: overflowDirection);
+
+  @override
+  Frame effects(List<Effect>? effects) => this(effects: effects);
+
+  @override
+  Frame isMask(bool? isMask) => this(isMask: isMask);
+
+  @override
+  Frame isMaskOutline(bool? isMaskOutline) =>
+      this(isMaskOutline: isMaskOutline);
+
+  @override
+  Frame styles(Map<StyleTypeKey, String>? styles) => this(styles: styles);
+
+  @override
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Frame(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  ///
+  /// Usage
+  /// ```dart
+  /// Frame(...).copyWith(id: 12, name: "My name")
+  /// ````
+  Frame call({
+    Object? id = const $CopyWithPlaceholder(),
+    Object? name = const $CopyWithPlaceholder(),
+    Object? visible = const $CopyWithPlaceholder(),
+    Object? pluginData = const $CopyWithPlaceholder(),
+    Object? sharedPluginData = const $CopyWithPlaceholder(),
+    Object? children = const $CopyWithPlaceholder(),
+    Object? locked = const $CopyWithPlaceholder(),
+    Object? fills = const $CopyWithPlaceholder(),
+    Object? strokes = const $CopyWithPlaceholder(),
+    Object? strokeWeight = const $CopyWithPlaceholder(),
+    Object? individualStrokeWeights = const $CopyWithPlaceholder(),
+    Object? strokeAlign = const $CopyWithPlaceholder(),
+    Object? cornerRadius = const $CopyWithPlaceholder(),
+    Object? rectangleCornerRadii = const $CopyWithPlaceholder(),
+    Object? exportSettings = const $CopyWithPlaceholder(),
+    Object? blendMode = const $CopyWithPlaceholder(),
+    Object? preserveRatio = const $CopyWithPlaceholder(),
+    Object? layoutGrow = const $CopyWithPlaceholder(),
+    Object? constraints = const $CopyWithPlaceholder(),
+    Object? layoutAlign = const $CopyWithPlaceholder(),
+    Object? transitionNodeID = const $CopyWithPlaceholder(),
+    Object? transitionDuration = const $CopyWithPlaceholder(),
+    Object? transitionEasing = const $CopyWithPlaceholder(),
+    Object? opacity = const $CopyWithPlaceholder(),
+    Object? absoluteBoundingBox = const $CopyWithPlaceholder(),
+    Object? size = const $CopyWithPlaceholder(),
+    Object? relativeTransform = const $CopyWithPlaceholder(),
+    Object? clipsContent = const $CopyWithPlaceholder(),
+    Object? layoutMode = const $CopyWithPlaceholder(),
+    Object? primaryAxisAlignItems = const $CopyWithPlaceholder(),
+    Object? counterAxisAlignItems = const $CopyWithPlaceholder(),
+    Object? primaryAxisSizingMode = const $CopyWithPlaceholder(),
+    Object? counterAxisSizingMode = const $CopyWithPlaceholder(),
+    Object? paddingBottom = const $CopyWithPlaceholder(),
+    Object? paddingLeft = const $CopyWithPlaceholder(),
+    Object? paddingRight = const $CopyWithPlaceholder(),
+    Object? paddingTop = const $CopyWithPlaceholder(),
+    Object? horizontalPadding = const $CopyWithPlaceholder(),
+    Object? verticalPadding = const $CopyWithPlaceholder(),
+    Object? itemSpacing = const $CopyWithPlaceholder(),
+    Object? layoutGrids = const $CopyWithPlaceholder(),
+    Object? overflowDirection = const $CopyWithPlaceholder(),
+    Object? effects = const $CopyWithPlaceholder(),
+    Object? isMask = const $CopyWithPlaceholder(),
+    Object? isMaskOutline = const $CopyWithPlaceholder(),
+    Object? styles = const $CopyWithPlaceholder(),
   }) {
     return Frame(
-      absoluteBoundingBox: absoluteBoundingBox ?? this.absoluteBoundingBox,
-      blendMode: blendMode ?? this.blendMode,
-      children: children ?? this.children,
-      clipsContent: clipsContent ?? this.clipsContent,
-      constraints: constraints ?? this.constraints,
-      cornerRadius: cornerRadius ?? this.cornerRadius,
-      counterAxisAlignItems:
-          counterAxisAlignItems ?? this.counterAxisAlignItems,
-      counterAxisSizingMode:
-          counterAxisSizingMode ?? this.counterAxisSizingMode,
-      effects: effects ?? this.effects,
-      exportSettings: exportSettings ?? this.exportSettings,
-      fills: fills ?? this.fills,
-      horizontalPadding: horizontalPadding ?? this.horizontalPadding,
-      id: id ?? this.id,
+      id: id == const $CopyWithPlaceholder() || id == null
+          // ignore: unnecessary_non_null_assertion
+          ? _value.id!
+          // ignore: cast_nullable_to_non_nullable
+          : id as String,
+      name: name == const $CopyWithPlaceholder()
+          ? _value.name
+          // ignore: cast_nullable_to_non_nullable
+          : name as String?,
+      visible: visible == const $CopyWithPlaceholder() || visible == null
+          // ignore: unnecessary_non_null_assertion
+          ? _value.visible!
+          // ignore: cast_nullable_to_non_nullable
+          : visible as bool,
+      pluginData:
+          pluginData == const $CopyWithPlaceholder() || pluginData == null
+              // ignore: unnecessary_non_null_assertion
+              ? _value.pluginData!
+              // ignore: cast_nullable_to_non_nullable
+              : pluginData as dynamic,
+      sharedPluginData: sharedPluginData == const $CopyWithPlaceholder() ||
+              sharedPluginData == null
+          // ignore: unnecessary_non_null_assertion
+          ? _value.sharedPluginData!
+          // ignore: cast_nullable_to_non_nullable
+          : sharedPluginData as dynamic,
+      children: children == const $CopyWithPlaceholder()
+          ? _value.children
+          // ignore: cast_nullable_to_non_nullable
+          : children as List<Node?>?,
+      locked: locked == const $CopyWithPlaceholder() || locked == null
+          // ignore: unnecessary_non_null_assertion
+          ? _value.locked!
+          // ignore: cast_nullable_to_non_nullable
+          : locked as bool,
+      fills: fills == const $CopyWithPlaceholder()
+          ? _value.fills
+          // ignore: cast_nullable_to_non_nullable
+          : fills as List<Paint>?,
+      strokes: strokes == const $CopyWithPlaceholder()
+          ? _value.strokes
+          // ignore: cast_nullable_to_non_nullable
+          : strokes as List<Paint>?,
+      strokeWeight: strokeWeight == const $CopyWithPlaceholder()
+          ? _value.strokeWeight
+          // ignore: cast_nullable_to_non_nullable
+          : strokeWeight as num?,
       individualStrokeWeights:
-          individualStrokeWeights ?? this.individualStrokeWeights,
-      isMask: isMask ?? this.isMask,
-      isMaskOutline: isMaskOutline ?? this.isMaskOutline,
-      itemSpacing: itemSpacing ?? this.itemSpacing,
-      layoutAlign: layoutAlign ?? this.layoutAlign,
-      layoutGrids: layoutGrids ?? this.layoutGrids,
-      layoutGrow: layoutGrow ?? this.layoutGrow,
-      layoutMode: layoutMode ?? this.layoutMode,
-      locked: locked ?? this.locked,
-      name: name ?? this.name,
-      opacity: opacity ?? this.opacity,
-      overflowDirection: overflowDirection ?? this.overflowDirection,
-      paddingBottom: paddingBottom ?? this.paddingBottom,
-      paddingLeft: paddingLeft ?? this.paddingLeft,
-      paddingRight: paddingRight ?? this.paddingRight,
-      paddingTop: paddingTop ?? this.paddingTop,
-      pluginData: pluginData ?? this.pluginData,
-      preserveRatio: preserveRatio ?? this.preserveRatio,
+          individualStrokeWeights == const $CopyWithPlaceholder()
+              ? _value.individualStrokeWeights
+              // ignore: cast_nullable_to_non_nullable
+              : individualStrokeWeights as StrokeWeights?,
+      strokeAlign: strokeAlign == const $CopyWithPlaceholder()
+          ? _value.strokeAlign
+          // ignore: cast_nullable_to_non_nullable
+          : strokeAlign as StrokeAlign?,
+      cornerRadius: cornerRadius == const $CopyWithPlaceholder()
+          ? _value.cornerRadius
+          // ignore: cast_nullable_to_non_nullable
+          : cornerRadius as double?,
+      rectangleCornerRadii: rectangleCornerRadii == const $CopyWithPlaceholder()
+          ? _value.rectangleCornerRadii
+          // ignore: cast_nullable_to_non_nullable
+          : rectangleCornerRadii as List<num>?,
+      exportSettings: exportSettings == const $CopyWithPlaceholder()
+          ? _value.exportSettings
+          // ignore: cast_nullable_to_non_nullable
+          : exportSettings as List<ExportSetting>?,
+      blendMode: blendMode == const $CopyWithPlaceholder()
+          ? _value.blendMode
+          // ignore: cast_nullable_to_non_nullable
+          : blendMode as BlendMode?,
+      preserveRatio: preserveRatio == const $CopyWithPlaceholder()
+          ? _value.preserveRatio
+          // ignore: cast_nullable_to_non_nullable
+          : preserveRatio as bool?,
+      layoutGrow: layoutGrow == const $CopyWithPlaceholder()
+          ? _value.layoutGrow
+          // ignore: cast_nullable_to_non_nullable
+          : layoutGrow as double?,
+      constraints: constraints == const $CopyWithPlaceholder()
+          ? _value.constraints
+          // ignore: cast_nullable_to_non_nullable
+          : constraints as LayoutConstraint?,
+      layoutAlign: layoutAlign == const $CopyWithPlaceholder()
+          ? _value.layoutAlign
+          // ignore: cast_nullable_to_non_nullable
+          : layoutAlign as LayoutAlign?,
+      transitionNodeID: transitionNodeID == const $CopyWithPlaceholder()
+          ? _value.transitionNodeID
+          // ignore: cast_nullable_to_non_nullable
+          : transitionNodeID as String?,
+      transitionDuration: transitionDuration == const $CopyWithPlaceholder()
+          ? _value.transitionDuration
+          // ignore: cast_nullable_to_non_nullable
+          : transitionDuration as double?,
+      transitionEasing: transitionEasing == const $CopyWithPlaceholder()
+          ? _value.transitionEasing
+          // ignore: cast_nullable_to_non_nullable
+          : transitionEasing as EasingType?,
+      opacity: opacity == const $CopyWithPlaceholder()
+          ? _value.opacity
+          // ignore: cast_nullable_to_non_nullable
+          : opacity as double?,
+      absoluteBoundingBox: absoluteBoundingBox == const $CopyWithPlaceholder()
+          ? _value.absoluteBoundingBox
+          // ignore: cast_nullable_to_non_nullable
+          : absoluteBoundingBox as SizeRectangle?,
+      size: size == const $CopyWithPlaceholder()
+          ? _value.size
+          // ignore: cast_nullable_to_non_nullable
+          : size as Vector2D?,
+      relativeTransform: relativeTransform == const $CopyWithPlaceholder()
+          ? _value.relativeTransform
+          // ignore: cast_nullable_to_non_nullable
+          : relativeTransform as List<List<num>>?,
+      clipsContent: clipsContent == const $CopyWithPlaceholder()
+          ? _value.clipsContent
+          // ignore: cast_nullable_to_non_nullable
+          : clipsContent as bool?,
+      layoutMode: layoutMode == const $CopyWithPlaceholder()
+          ? _value.layoutMode
+          // ignore: cast_nullable_to_non_nullable
+          : layoutMode as LayoutMode?,
       primaryAxisAlignItems:
-          primaryAxisAlignItems ?? this.primaryAxisAlignItems,
+          primaryAxisAlignItems == const $CopyWithPlaceholder()
+              ? _value.primaryAxisAlignItems
+              // ignore: cast_nullable_to_non_nullable
+              : primaryAxisAlignItems as PrimaryAxisAlignItems?,
+      counterAxisAlignItems:
+          counterAxisAlignItems == const $CopyWithPlaceholder()
+              ? _value.counterAxisAlignItems
+              // ignore: cast_nullable_to_non_nullable
+              : counterAxisAlignItems as CounterAxisAlignItems?,
       primaryAxisSizingMode:
-          primaryAxisSizingMode ?? this.primaryAxisSizingMode,
-      rectangleCornerRadii: rectangleCornerRadii ?? this.rectangleCornerRadii,
-      relativeTransform: relativeTransform ?? this.relativeTransform,
-      sharedPluginData: sharedPluginData ?? this.sharedPluginData,
-      size: size ?? this.size,
-      strokeAlign: strokeAlign ?? this.strokeAlign,
-      strokeWeight: strokeWeight ?? this.strokeWeight,
-      strokes: strokes ?? this.strokes,
-      styles: styles ?? this.styles,
-      transitionDuration: transitionDuration ?? this.transitionDuration,
-      transitionEasing: transitionEasing ?? this.transitionEasing,
-      transitionNodeID: transitionNodeID ?? this.transitionNodeID,
-      verticalPadding: verticalPadding ?? this.verticalPadding,
-      visible: visible ?? this.visible,
+          primaryAxisSizingMode == const $CopyWithPlaceholder()
+              ? _value.primaryAxisSizingMode
+              // ignore: cast_nullable_to_non_nullable
+              : primaryAxisSizingMode as PrimaryAxisSizingMode?,
+      counterAxisSizingMode:
+          counterAxisSizingMode == const $CopyWithPlaceholder()
+              ? _value.counterAxisSizingMode
+              // ignore: cast_nullable_to_non_nullable
+              : counterAxisSizingMode as CounterAxisSizingMode?,
+      paddingBottom: paddingBottom == const $CopyWithPlaceholder()
+          ? _value.paddingBottom
+          // ignore: cast_nullable_to_non_nullable
+          : paddingBottom as double?,
+      paddingLeft: paddingLeft == const $CopyWithPlaceholder()
+          ? _value.paddingLeft
+          // ignore: cast_nullable_to_non_nullable
+          : paddingLeft as double?,
+      paddingRight: paddingRight == const $CopyWithPlaceholder()
+          ? _value.paddingRight
+          // ignore: cast_nullable_to_non_nullable
+          : paddingRight as double?,
+      paddingTop: paddingTop == const $CopyWithPlaceholder()
+          ? _value.paddingTop
+          // ignore: cast_nullable_to_non_nullable
+          : paddingTop as double?,
+      horizontalPadding: horizontalPadding == const $CopyWithPlaceholder()
+          ? _value.horizontalPadding
+          // ignore: cast_nullable_to_non_nullable
+          : horizontalPadding as num?,
+      verticalPadding: verticalPadding == const $CopyWithPlaceholder()
+          ? _value.verticalPadding
+          // ignore: cast_nullable_to_non_nullable
+          : verticalPadding as num?,
+      itemSpacing: itemSpacing == const $CopyWithPlaceholder()
+          ? _value.itemSpacing
+          // ignore: cast_nullable_to_non_nullable
+          : itemSpacing as num?,
+      layoutGrids: layoutGrids == const $CopyWithPlaceholder()
+          ? _value.layoutGrids
+          // ignore: cast_nullable_to_non_nullable
+          : layoutGrids as List<LayoutGrid>?,
+      overflowDirection: overflowDirection == const $CopyWithPlaceholder()
+          ? _value.overflowDirection
+          // ignore: cast_nullable_to_non_nullable
+          : overflowDirection as OverflowDirection?,
+      effects: effects == const $CopyWithPlaceholder()
+          ? _value.effects
+          // ignore: cast_nullable_to_non_nullable
+          : effects as List<Effect>?,
+      isMask: isMask == const $CopyWithPlaceholder()
+          ? _value.isMask
+          // ignore: cast_nullable_to_non_nullable
+          : isMask as bool?,
+      isMaskOutline: isMaskOutline == const $CopyWithPlaceholder()
+          ? _value.isMaskOutline
+          // ignore: cast_nullable_to_non_nullable
+          : isMaskOutline as bool?,
+      styles: styles == const $CopyWithPlaceholder()
+          ? _value.styles
+          // ignore: cast_nullable_to_non_nullable
+          : styles as Map<StyleTypeKey, String>?,
     );
   }
+}
+
+extension $FrameCopyWith on Frame {
+  /// Returns a callable class that can be used as follows: `instanceOfFrame.copyWith(...)` or like so:`instanceOfFrame.copyWith.fieldName(...)`.
+  // ignore: library_private_types_in_public_api
+  _$FrameCWProxy get copyWith => _$FrameCWProxyImpl(this);
 }
 
 // **************************************************************************
@@ -253,8 +725,8 @@ Map<String, dynamic> _$FrameToJson(Frame instance) => <String, dynamic>{
       'effects': instance.effects,
       'isMask': instance.isMask,
       'isMaskOutline': instance.isMaskOutline,
-      'styles':
-          instance.styles?.map((k, e) => MapEntry(_$StyleTypeKeyEnumMap[k], e)),
+      'styles': instance.styles
+          ?.map((k, e) => MapEntry(_$StyleTypeKeyEnumMap[k]!, e)),
     };
 
 const _$StrokeAlignEnumMap = {

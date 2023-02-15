@@ -6,32 +6,157 @@ part of 'file_response.dart';
 // CopyWithGenerator
 // **************************************************************************
 
-extension FileResponseCopyWith on FileResponse {
-  FileResponse copyWith({
-    Map<String, ComponentSet>? componentSets,
-    Map<String, Component>? components,
-    Document? document,
-    DateTime? lastModified,
+abstract class _$FileResponseCWProxy {
+  FileResponse name(String? name);
+
+  FileResponse role(String? role);
+
+  FileResponse lastModified(DateTime? lastModified);
+
+  FileResponse thumbnailUrl(String? thumbnailUrl);
+
+  FileResponse version(String? version);
+
+  FileResponse document(Document? document);
+
+  FileResponse components(Map<String, Component>? components);
+
+  FileResponse componentSets(Map<String, ComponentSet>? componentSets);
+
+  FileResponse schemaVersion(int? schemaVersion);
+
+  FileResponse styles(Map<String, Style>? styles);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `FileResponse(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  ///
+  /// Usage
+  /// ```dart
+  /// FileResponse(...).copyWith(id: 12, name: "My name")
+  /// ````
+  FileResponse call({
     String? name,
     String? role,
-    int? schemaVersion,
-    Map<String, Style>? styles,
+    DateTime? lastModified,
     String? thumbnailUrl,
     String? version,
+    Document? document,
+    Map<String, Component>? components,
+    Map<String, ComponentSet>? componentSets,
+    int? schemaVersion,
+    Map<String, Style>? styles,
+  });
+}
+
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfFileResponse.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfFileResponse.copyWith.fieldName(...)`
+class _$FileResponseCWProxyImpl implements _$FileResponseCWProxy {
+  const _$FileResponseCWProxyImpl(this._value);
+
+  final FileResponse _value;
+
+  @override
+  FileResponse name(String? name) => this(name: name);
+
+  @override
+  FileResponse role(String? role) => this(role: role);
+
+  @override
+  FileResponse lastModified(DateTime? lastModified) =>
+      this(lastModified: lastModified);
+
+  @override
+  FileResponse thumbnailUrl(String? thumbnailUrl) =>
+      this(thumbnailUrl: thumbnailUrl);
+
+  @override
+  FileResponse version(String? version) => this(version: version);
+
+  @override
+  FileResponse document(Document? document) => this(document: document);
+
+  @override
+  FileResponse components(Map<String, Component>? components) =>
+      this(components: components);
+
+  @override
+  FileResponse componentSets(Map<String, ComponentSet>? componentSets) =>
+      this(componentSets: componentSets);
+
+  @override
+  FileResponse schemaVersion(int? schemaVersion) =>
+      this(schemaVersion: schemaVersion);
+
+  @override
+  FileResponse styles(Map<String, Style>? styles) => this(styles: styles);
+
+  @override
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `FileResponse(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  ///
+  /// Usage
+  /// ```dart
+  /// FileResponse(...).copyWith(id: 12, name: "My name")
+  /// ````
+  FileResponse call({
+    Object? name = const $CopyWithPlaceholder(),
+    Object? role = const $CopyWithPlaceholder(),
+    Object? lastModified = const $CopyWithPlaceholder(),
+    Object? thumbnailUrl = const $CopyWithPlaceholder(),
+    Object? version = const $CopyWithPlaceholder(),
+    Object? document = const $CopyWithPlaceholder(),
+    Object? components = const $CopyWithPlaceholder(),
+    Object? componentSets = const $CopyWithPlaceholder(),
+    Object? schemaVersion = const $CopyWithPlaceholder(),
+    Object? styles = const $CopyWithPlaceholder(),
   }) {
     return FileResponse(
-      componentSets: componentSets ?? this.componentSets,
-      components: components ?? this.components,
-      document: document ?? this.document,
-      lastModified: lastModified ?? this.lastModified,
-      name: name ?? this.name,
-      role: role ?? this.role,
-      schemaVersion: schemaVersion ?? this.schemaVersion,
-      styles: styles ?? this.styles,
-      thumbnailUrl: thumbnailUrl ?? this.thumbnailUrl,
-      version: version ?? this.version,
+      name: name == const $CopyWithPlaceholder()
+          ? _value.name
+          // ignore: cast_nullable_to_non_nullable
+          : name as String?,
+      role: role == const $CopyWithPlaceholder()
+          ? _value.role
+          // ignore: cast_nullable_to_non_nullable
+          : role as String?,
+      lastModified: lastModified == const $CopyWithPlaceholder()
+          ? _value.lastModified
+          // ignore: cast_nullable_to_non_nullable
+          : lastModified as DateTime?,
+      thumbnailUrl: thumbnailUrl == const $CopyWithPlaceholder()
+          ? _value.thumbnailUrl
+          // ignore: cast_nullable_to_non_nullable
+          : thumbnailUrl as String?,
+      version: version == const $CopyWithPlaceholder()
+          ? _value.version
+          // ignore: cast_nullable_to_non_nullable
+          : version as String?,
+      document: document == const $CopyWithPlaceholder()
+          ? _value.document
+          // ignore: cast_nullable_to_non_nullable
+          : document as Document?,
+      components: components == const $CopyWithPlaceholder()
+          ? _value.components
+          // ignore: cast_nullable_to_non_nullable
+          : components as Map<String, Component>?,
+      componentSets: componentSets == const $CopyWithPlaceholder()
+          ? _value.componentSets
+          // ignore: cast_nullable_to_non_nullable
+          : componentSets as Map<String, ComponentSet>?,
+      schemaVersion: schemaVersion == const $CopyWithPlaceholder()
+          ? _value.schemaVersion
+          // ignore: cast_nullable_to_non_nullable
+          : schemaVersion as int?,
+      styles: styles == const $CopyWithPlaceholder()
+          ? _value.styles
+          // ignore: cast_nullable_to_non_nullable
+          : styles as Map<String, Style>?,
     );
   }
+}
+
+extension $FileResponseCopyWith on FileResponse {
+  /// Returns a callable class that can be used as follows: `instanceOfFileResponse.copyWith(...)` or like so:`instanceOfFileResponse.copyWith.fieldName(...)`.
+  // ignore: library_private_types_in_public_api
+  _$FileResponseCWProxy get copyWith => _$FileResponseCWProxyImpl(this);
 }
 
 // **************************************************************************

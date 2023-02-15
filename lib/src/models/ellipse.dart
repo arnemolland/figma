@@ -75,9 +75,6 @@ class Ellipse extends Vector {
           styles: styles,
         );
 
-  @override
-  List<Object?> get props => super.props;
-
   factory Ellipse.fromJson(Map<String, dynamic> json) =>
       _$EllipseFromJson(json);
 

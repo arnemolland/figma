@@ -6,24 +6,110 @@ part of 'nodes_response.dart';
 // CopyWithGenerator
 // **************************************************************************
 
-extension NodesResponseCopyWith on NodesResponse {
-  NodesResponse copyWith({
-    String? err,
-    DateTime? lastModified,
+abstract class _$NodesResponseCWProxy {
+  NodesResponse name(String? name);
+
+  NodesResponse role(String? role);
+
+  NodesResponse lastModified(DateTime? lastModified);
+
+  NodesResponse thumbnailUrl(String? thumbnailUrl);
+
+  NodesResponse err(String? err);
+
+  NodesResponse nodes(Map<String, FileResponse>? nodes);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `NodesResponse(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  ///
+  /// Usage
+  /// ```dart
+  /// NodesResponse(...).copyWith(id: 12, name: "My name")
+  /// ````
+  NodesResponse call({
     String? name,
-    Map<String, FileResponse>? nodes,
     String? role,
+    DateTime? lastModified,
     String? thumbnailUrl,
+    String? err,
+    Map<String, FileResponse>? nodes,
+  });
+}
+
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfNodesResponse.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfNodesResponse.copyWith.fieldName(...)`
+class _$NodesResponseCWProxyImpl implements _$NodesResponseCWProxy {
+  const _$NodesResponseCWProxyImpl(this._value);
+
+  final NodesResponse _value;
+
+  @override
+  NodesResponse name(String? name) => this(name: name);
+
+  @override
+  NodesResponse role(String? role) => this(role: role);
+
+  @override
+  NodesResponse lastModified(DateTime? lastModified) =>
+      this(lastModified: lastModified);
+
+  @override
+  NodesResponse thumbnailUrl(String? thumbnailUrl) =>
+      this(thumbnailUrl: thumbnailUrl);
+
+  @override
+  NodesResponse err(String? err) => this(err: err);
+
+  @override
+  NodesResponse nodes(Map<String, FileResponse>? nodes) => this(nodes: nodes);
+
+  @override
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `NodesResponse(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  ///
+  /// Usage
+  /// ```dart
+  /// NodesResponse(...).copyWith(id: 12, name: "My name")
+  /// ````
+  NodesResponse call({
+    Object? name = const $CopyWithPlaceholder(),
+    Object? role = const $CopyWithPlaceholder(),
+    Object? lastModified = const $CopyWithPlaceholder(),
+    Object? thumbnailUrl = const $CopyWithPlaceholder(),
+    Object? err = const $CopyWithPlaceholder(),
+    Object? nodes = const $CopyWithPlaceholder(),
   }) {
     return NodesResponse(
-      err: err ?? this.err,
-      lastModified: lastModified ?? this.lastModified,
-      name: name ?? this.name,
-      nodes: nodes ?? this.nodes,
-      role: role ?? this.role,
-      thumbnailUrl: thumbnailUrl ?? this.thumbnailUrl,
+      name: name == const $CopyWithPlaceholder()
+          ? _value.name
+          // ignore: cast_nullable_to_non_nullable
+          : name as String?,
+      role: role == const $CopyWithPlaceholder()
+          ? _value.role
+          // ignore: cast_nullable_to_non_nullable
+          : role as String?,
+      lastModified: lastModified == const $CopyWithPlaceholder()
+          ? _value.lastModified
+          // ignore: cast_nullable_to_non_nullable
+          : lastModified as DateTime?,
+      thumbnailUrl: thumbnailUrl == const $CopyWithPlaceholder()
+          ? _value.thumbnailUrl
+          // ignore: cast_nullable_to_non_nullable
+          : thumbnailUrl as String?,
+      err: err == const $CopyWithPlaceholder()
+          ? _value.err
+          // ignore: cast_nullable_to_non_nullable
+          : err as String?,
+      nodes: nodes == const $CopyWithPlaceholder()
+          ? _value.nodes
+          // ignore: cast_nullable_to_non_nullable
+          : nodes as Map<String, FileResponse>?,
     );
   }
+}
+
+extension $NodesResponseCopyWith on NodesResponse {
+  /// Returns a callable class that can be used as follows: `instanceOfNodesResponse.copyWith(...)` or like so:`instanceOfNodesResponse.copyWith.fieldName(...)`.
+  // ignore: library_private_types_in_public_api
+  _$NodesResponseCWProxy get copyWith => _$NodesResponseCWProxyImpl(this);
 }
 
 // **************************************************************************

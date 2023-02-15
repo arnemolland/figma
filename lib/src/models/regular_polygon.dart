@@ -75,9 +75,6 @@ class RegularPolygon extends Vector {
           styles: styles,
         );
 
-  @override
-  List<Object?> get props => super.props;
-
   factory RegularPolygon.fromJson(Map<String, dynamic> json) =>
       _$RegularPolygonFromJson(json);
 

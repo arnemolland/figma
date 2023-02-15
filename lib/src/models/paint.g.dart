@@ -6,37 +6,179 @@ part of 'paint.dart';
 // CopyWithGenerator
 // **************************************************************************
 
-extension PaintCopyWith on Paint {
-  Paint copyWith({
-    BlendMode? blendMode,
-    Color? color,
-    String? gifRef,
-    List<Vector2D>? gradientHandlePositions,
-    List<ColorStop>? gradientStops,
-    String? imageRef,
-    List<List<num>>? imageTransform,
-    double? opacity,
-    ScaleMode? scaleMode,
-    num? scalingFactor,
+abstract class _$PaintCWProxy {
+  Paint type(PaintType? type);
+
+  Paint visible(bool visible);
+
+  Paint opacity(double? opacity);
+
+  Paint color(Color? color);
+
+  Paint blendMode(BlendMode? blendMode);
+
+  Paint gradientHandlePositions(List<Vector2D>? gradientHandlePositions);
+
+  Paint gradientStops(List<ColorStop>? gradientStops);
+
+  Paint scaleMode(ScaleMode? scaleMode);
+
+  Paint imageTransform(List<List<num>>? imageTransform);
+
+  Paint scalingFactor(num? scalingFactor);
+
+  Paint imageRef(String? imageRef);
+
+  Paint gifRef(String? gifRef);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Paint(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  ///
+  /// Usage
+  /// ```dart
+  /// Paint(...).copyWith(id: 12, name: "My name")
+  /// ````
+  Paint call({
     PaintType? type,
     bool? visible,
+    double? opacity,
+    Color? color,
+    BlendMode? blendMode,
+    List<Vector2D>? gradientHandlePositions,
+    List<ColorStop>? gradientStops,
+    ScaleMode? scaleMode,
+    List<List<num>>? imageTransform,
+    num? scalingFactor,
+    String? imageRef,
+    String? gifRef,
+  });
+}
+
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfPaint.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfPaint.copyWith.fieldName(...)`
+class _$PaintCWProxyImpl implements _$PaintCWProxy {
+  const _$PaintCWProxyImpl(this._value);
+
+  final Paint _value;
+
+  @override
+  Paint type(PaintType? type) => this(type: type);
+
+  @override
+  Paint visible(bool visible) => this(visible: visible);
+
+  @override
+  Paint opacity(double? opacity) => this(opacity: opacity);
+
+  @override
+  Paint color(Color? color) => this(color: color);
+
+  @override
+  Paint blendMode(BlendMode? blendMode) => this(blendMode: blendMode);
+
+  @override
+  Paint gradientHandlePositions(List<Vector2D>? gradientHandlePositions) =>
+      this(gradientHandlePositions: gradientHandlePositions);
+
+  @override
+  Paint gradientStops(List<ColorStop>? gradientStops) =>
+      this(gradientStops: gradientStops);
+
+  @override
+  Paint scaleMode(ScaleMode? scaleMode) => this(scaleMode: scaleMode);
+
+  @override
+  Paint imageTransform(List<List<num>>? imageTransform) =>
+      this(imageTransform: imageTransform);
+
+  @override
+  Paint scalingFactor(num? scalingFactor) => this(scalingFactor: scalingFactor);
+
+  @override
+  Paint imageRef(String? imageRef) => this(imageRef: imageRef);
+
+  @override
+  Paint gifRef(String? gifRef) => this(gifRef: gifRef);
+
+  @override
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Paint(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  ///
+  /// Usage
+  /// ```dart
+  /// Paint(...).copyWith(id: 12, name: "My name")
+  /// ````
+  Paint call({
+    Object? type = const $CopyWithPlaceholder(),
+    Object? visible = const $CopyWithPlaceholder(),
+    Object? opacity = const $CopyWithPlaceholder(),
+    Object? color = const $CopyWithPlaceholder(),
+    Object? blendMode = const $CopyWithPlaceholder(),
+    Object? gradientHandlePositions = const $CopyWithPlaceholder(),
+    Object? gradientStops = const $CopyWithPlaceholder(),
+    Object? scaleMode = const $CopyWithPlaceholder(),
+    Object? imageTransform = const $CopyWithPlaceholder(),
+    Object? scalingFactor = const $CopyWithPlaceholder(),
+    Object? imageRef = const $CopyWithPlaceholder(),
+    Object? gifRef = const $CopyWithPlaceholder(),
   }) {
     return Paint(
-      blendMode: blendMode ?? this.blendMode,
-      color: color ?? this.color,
-      gifRef: gifRef ?? this.gifRef,
+      type: type == const $CopyWithPlaceholder()
+          ? _value.type
+          // ignore: cast_nullable_to_non_nullable
+          : type as PaintType?,
+      visible: visible == const $CopyWithPlaceholder() || visible == null
+          // ignore: unnecessary_non_null_assertion
+          ? _value.visible!
+          // ignore: cast_nullable_to_non_nullable
+          : visible as bool,
+      opacity: opacity == const $CopyWithPlaceholder()
+          ? _value.opacity
+          // ignore: cast_nullable_to_non_nullable
+          : opacity as double?,
+      color: color == const $CopyWithPlaceholder()
+          ? _value.color
+          // ignore: cast_nullable_to_non_nullable
+          : color as Color?,
+      blendMode: blendMode == const $CopyWithPlaceholder()
+          ? _value.blendMode
+          // ignore: cast_nullable_to_non_nullable
+          : blendMode as BlendMode?,
       gradientHandlePositions:
-          gradientHandlePositions ?? this.gradientHandlePositions,
-      gradientStops: gradientStops ?? this.gradientStops,
-      imageRef: imageRef ?? this.imageRef,
-      imageTransform: imageTransform ?? this.imageTransform,
-      opacity: opacity ?? this.opacity,
-      scaleMode: scaleMode ?? this.scaleMode,
-      scalingFactor: scalingFactor ?? this.scalingFactor,
-      type: type ?? this.type,
-      visible: visible ?? this.visible,
+          gradientHandlePositions == const $CopyWithPlaceholder()
+              ? _value.gradientHandlePositions
+              // ignore: cast_nullable_to_non_nullable
+              : gradientHandlePositions as List<Vector2D>?,
+      gradientStops: gradientStops == const $CopyWithPlaceholder()
+          ? _value.gradientStops
+          // ignore: cast_nullable_to_non_nullable
+          : gradientStops as List<ColorStop>?,
+      scaleMode: scaleMode == const $CopyWithPlaceholder()
+          ? _value.scaleMode
+          // ignore: cast_nullable_to_non_nullable
+          : scaleMode as ScaleMode?,
+      imageTransform: imageTransform == const $CopyWithPlaceholder()
+          ? _value.imageTransform
+          // ignore: cast_nullable_to_non_nullable
+          : imageTransform as List<List<num>>?,
+      scalingFactor: scalingFactor == const $CopyWithPlaceholder()
+          ? _value.scalingFactor
+          // ignore: cast_nullable_to_non_nullable
+          : scalingFactor as num?,
+      imageRef: imageRef == const $CopyWithPlaceholder()
+          ? _value.imageRef
+          // ignore: cast_nullable_to_non_nullable
+          : imageRef as String?,
+      gifRef: gifRef == const $CopyWithPlaceholder()
+          ? _value.gifRef
+          // ignore: cast_nullable_to_non_nullable
+          : gifRef as String?,
     );
   }
+}
+
+extension $PaintCopyWith on Paint {
+  /// Returns a callable class that can be used as follows: `instanceOfPaint.copyWith(...)` or like so:`instanceOfPaint.copyWith.fieldName(...)`.
+  // ignore: library_private_types_in_public_api
+  _$PaintCWProxy get copyWith => _$PaintCWProxyImpl(this);
 }
 
 // **************************************************************************

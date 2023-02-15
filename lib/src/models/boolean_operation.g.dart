@@ -6,80 +6,445 @@ part of 'boolean_operation.dart';
 // CopyWithGenerator
 // **************************************************************************
 
-extension BooleanOperationCopyWith on BooleanOperation {
-  BooleanOperation copyWith({
-    SizeRectangle? absoluteBoundingBox,
-    BlendMode? blendMode,
+abstract class _$BooleanOperationCWProxy {
+  BooleanOperation children(List<Node?>? children);
+
+  BooleanOperation operation(Operation? operation);
+
+  BooleanOperation id(String id);
+
+  BooleanOperation name(String? name);
+
+  BooleanOperation visible(bool visible);
+
+  BooleanOperation pluginData(dynamic pluginData);
+
+  BooleanOperation sharedPluginData(dynamic sharedPluginData);
+
+  BooleanOperation locked(bool? locked);
+
+  BooleanOperation exportSettings(List<ExportSetting>? exportSettings);
+
+  BooleanOperation blendMode(BlendMode? blendMode);
+
+  BooleanOperation preserveRatio(bool? preserveRatio);
+
+  BooleanOperation layoutAlign(LayoutAlign? layoutAlign);
+
+  BooleanOperation layoutGrow(double? layoutGrow);
+
+  BooleanOperation constraints(LayoutConstraint? constraints);
+
+  BooleanOperation transitionNodeID(String? transitionNodeID);
+
+  BooleanOperation transitionDuration(double? transitionDuration);
+
+  BooleanOperation transitionEasing(EasingType? transitionEasing);
+
+  BooleanOperation opacity(double? opacity);
+
+  BooleanOperation absoluteBoundingBox(SizeRectangle? absoluteBoundingBox);
+
+  BooleanOperation effects(List<Effect>? effects);
+
+  BooleanOperation size(Vector2D? size);
+
+  BooleanOperation relativeTransform(List<List<num>>? relativeTransform);
+
+  BooleanOperation isMask(bool? isMask);
+
+  BooleanOperation fills(List<Paint>? fills);
+
+  BooleanOperation fillGeometry(List<dynamic>? fillGeometry);
+
+  BooleanOperation strokes(List<Paint>? strokes);
+
+  BooleanOperation strokeWeight(double? strokeWeight);
+
+  BooleanOperation strokeCap(StrokeCap? strokeCap);
+
+  BooleanOperation strokeJoin(StrokeJoin? strokeJoin);
+
+  BooleanOperation strokeDashes(List<double>? strokeDashes);
+
+  BooleanOperation strokeMiterAngle(double? strokeMiterAngle);
+
+  BooleanOperation strokeGeometry(List<dynamic>? strokeGeometry);
+
+  BooleanOperation strokeAlign(StrokeAlign? strokeAlign);
+
+  BooleanOperation styles(Map<StyleTypeKey, String>? styles);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `BooleanOperation(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  ///
+  /// Usage
+  /// ```dart
+  /// BooleanOperation(...).copyWith(id: 12, name: "My name")
+  /// ````
+  BooleanOperation call({
     List<Node?>? children,
-    LayoutConstraint? constraints,
-    List<Effect>? effects,
-    List<ExportSetting>? exportSettings,
-    List<dynamic>? fillGeometry,
-    List<Paint>? fills,
+    Operation? operation,
     String? id,
-    bool? isMask,
+    String? name,
+    bool? visible,
+    dynamic? pluginData,
+    dynamic? sharedPluginData,
+    bool? locked,
+    List<ExportSetting>? exportSettings,
+    BlendMode? blendMode,
+    bool? preserveRatio,
     LayoutAlign? layoutAlign,
     double? layoutGrow,
-    bool? locked,
-    String? name,
-    double? opacity,
-    Operation? operation,
-    dynamic? pluginData,
-    bool? preserveRatio,
-    List<List<num>>? relativeTransform,
-    dynamic? sharedPluginData,
-    Vector2D? size,
-    StrokeAlign? strokeAlign,
-    StrokeCap? strokeCap,
-    List<double>? strokeDashes,
-    List<dynamic>? strokeGeometry,
-    StrokeJoin? strokeJoin,
-    double? strokeMiterAngle,
-    double? strokeWeight,
-    List<Paint>? strokes,
-    Map<StyleTypeKey, String>? styles,
+    LayoutConstraint? constraints,
+    String? transitionNodeID,
     double? transitionDuration,
     EasingType? transitionEasing,
-    String? transitionNodeID,
-    bool? visible,
+    double? opacity,
+    SizeRectangle? absoluteBoundingBox,
+    List<Effect>? effects,
+    Vector2D? size,
+    List<List<num>>? relativeTransform,
+    bool? isMask,
+    List<Paint>? fills,
+    List<dynamic>? fillGeometry,
+    List<Paint>? strokes,
+    double? strokeWeight,
+    StrokeCap? strokeCap,
+    StrokeJoin? strokeJoin,
+    List<double>? strokeDashes,
+    double? strokeMiterAngle,
+    List<dynamic>? strokeGeometry,
+    StrokeAlign? strokeAlign,
+    Map<StyleTypeKey, String>? styles,
+  });
+}
+
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfBooleanOperation.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfBooleanOperation.copyWith.fieldName(...)`
+class _$BooleanOperationCWProxyImpl implements _$BooleanOperationCWProxy {
+  const _$BooleanOperationCWProxyImpl(this._value);
+
+  final BooleanOperation _value;
+
+  @override
+  BooleanOperation children(List<Node?>? children) => this(children: children);
+
+  @override
+  BooleanOperation operation(Operation? operation) =>
+      this(operation: operation);
+
+  @override
+  BooleanOperation id(String id) => this(id: id);
+
+  @override
+  BooleanOperation name(String? name) => this(name: name);
+
+  @override
+  BooleanOperation visible(bool visible) => this(visible: visible);
+
+  @override
+  BooleanOperation pluginData(dynamic pluginData) =>
+      this(pluginData: pluginData);
+
+  @override
+  BooleanOperation sharedPluginData(dynamic sharedPluginData) =>
+      this(sharedPluginData: sharedPluginData);
+
+  @override
+  BooleanOperation locked(bool? locked) => this(locked: locked);
+
+  @override
+  BooleanOperation exportSettings(List<ExportSetting>? exportSettings) =>
+      this(exportSettings: exportSettings);
+
+  @override
+  BooleanOperation blendMode(BlendMode? blendMode) =>
+      this(blendMode: blendMode);
+
+  @override
+  BooleanOperation preserveRatio(bool? preserveRatio) =>
+      this(preserveRatio: preserveRatio);
+
+  @override
+  BooleanOperation layoutAlign(LayoutAlign? layoutAlign) =>
+      this(layoutAlign: layoutAlign);
+
+  @override
+  BooleanOperation layoutGrow(double? layoutGrow) =>
+      this(layoutGrow: layoutGrow);
+
+  @override
+  BooleanOperation constraints(LayoutConstraint? constraints) =>
+      this(constraints: constraints);
+
+  @override
+  BooleanOperation transitionNodeID(String? transitionNodeID) =>
+      this(transitionNodeID: transitionNodeID);
+
+  @override
+  BooleanOperation transitionDuration(double? transitionDuration) =>
+      this(transitionDuration: transitionDuration);
+
+  @override
+  BooleanOperation transitionEasing(EasingType? transitionEasing) =>
+      this(transitionEasing: transitionEasing);
+
+  @override
+  BooleanOperation opacity(double? opacity) => this(opacity: opacity);
+
+  @override
+  BooleanOperation absoluteBoundingBox(SizeRectangle? absoluteBoundingBox) =>
+      this(absoluteBoundingBox: absoluteBoundingBox);
+
+  @override
+  BooleanOperation effects(List<Effect>? effects) => this(effects: effects);
+
+  @override
+  BooleanOperation size(Vector2D? size) => this(size: size);
+
+  @override
+  BooleanOperation relativeTransform(List<List<num>>? relativeTransform) =>
+      this(relativeTransform: relativeTransform);
+
+  @override
+  BooleanOperation isMask(bool? isMask) => this(isMask: isMask);
+
+  @override
+  BooleanOperation fills(List<Paint>? fills) => this(fills: fills);
+
+  @override
+  BooleanOperation fillGeometry(List<dynamic>? fillGeometry) =>
+      this(fillGeometry: fillGeometry);
+
+  @override
+  BooleanOperation strokes(List<Paint>? strokes) => this(strokes: strokes);
+
+  @override
+  BooleanOperation strokeWeight(double? strokeWeight) =>
+      this(strokeWeight: strokeWeight);
+
+  @override
+  BooleanOperation strokeCap(StrokeCap? strokeCap) =>
+      this(strokeCap: strokeCap);
+
+  @override
+  BooleanOperation strokeJoin(StrokeJoin? strokeJoin) =>
+      this(strokeJoin: strokeJoin);
+
+  @override
+  BooleanOperation strokeDashes(List<double>? strokeDashes) =>
+      this(strokeDashes: strokeDashes);
+
+  @override
+  BooleanOperation strokeMiterAngle(double? strokeMiterAngle) =>
+      this(strokeMiterAngle: strokeMiterAngle);
+
+  @override
+  BooleanOperation strokeGeometry(List<dynamic>? strokeGeometry) =>
+      this(strokeGeometry: strokeGeometry);
+
+  @override
+  BooleanOperation strokeAlign(StrokeAlign? strokeAlign) =>
+      this(strokeAlign: strokeAlign);
+
+  @override
+  BooleanOperation styles(Map<StyleTypeKey, String>? styles) =>
+      this(styles: styles);
+
+  @override
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `BooleanOperation(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  ///
+  /// Usage
+  /// ```dart
+  /// BooleanOperation(...).copyWith(id: 12, name: "My name")
+  /// ````
+  BooleanOperation call({
+    Object? children = const $CopyWithPlaceholder(),
+    Object? operation = const $CopyWithPlaceholder(),
+    Object? id = const $CopyWithPlaceholder(),
+    Object? name = const $CopyWithPlaceholder(),
+    Object? visible = const $CopyWithPlaceholder(),
+    Object? pluginData = const $CopyWithPlaceholder(),
+    Object? sharedPluginData = const $CopyWithPlaceholder(),
+    Object? locked = const $CopyWithPlaceholder(),
+    Object? exportSettings = const $CopyWithPlaceholder(),
+    Object? blendMode = const $CopyWithPlaceholder(),
+    Object? preserveRatio = const $CopyWithPlaceholder(),
+    Object? layoutAlign = const $CopyWithPlaceholder(),
+    Object? layoutGrow = const $CopyWithPlaceholder(),
+    Object? constraints = const $CopyWithPlaceholder(),
+    Object? transitionNodeID = const $CopyWithPlaceholder(),
+    Object? transitionDuration = const $CopyWithPlaceholder(),
+    Object? transitionEasing = const $CopyWithPlaceholder(),
+    Object? opacity = const $CopyWithPlaceholder(),
+    Object? absoluteBoundingBox = const $CopyWithPlaceholder(),
+    Object? effects = const $CopyWithPlaceholder(),
+    Object? size = const $CopyWithPlaceholder(),
+    Object? relativeTransform = const $CopyWithPlaceholder(),
+    Object? isMask = const $CopyWithPlaceholder(),
+    Object? fills = const $CopyWithPlaceholder(),
+    Object? fillGeometry = const $CopyWithPlaceholder(),
+    Object? strokes = const $CopyWithPlaceholder(),
+    Object? strokeWeight = const $CopyWithPlaceholder(),
+    Object? strokeCap = const $CopyWithPlaceholder(),
+    Object? strokeJoin = const $CopyWithPlaceholder(),
+    Object? strokeDashes = const $CopyWithPlaceholder(),
+    Object? strokeMiterAngle = const $CopyWithPlaceholder(),
+    Object? strokeGeometry = const $CopyWithPlaceholder(),
+    Object? strokeAlign = const $CopyWithPlaceholder(),
+    Object? styles = const $CopyWithPlaceholder(),
   }) {
     return BooleanOperation(
-      absoluteBoundingBox: absoluteBoundingBox ?? this.absoluteBoundingBox,
-      blendMode: blendMode ?? this.blendMode,
-      children: children ?? this.children,
-      constraints: constraints ?? this.constraints,
-      effects: effects ?? this.effects,
-      exportSettings: exportSettings ?? this.exportSettings,
-      fillGeometry: fillGeometry ?? this.fillGeometry,
-      fills: fills ?? this.fills,
-      id: id ?? this.id,
-      isMask: isMask ?? this.isMask,
-      layoutAlign: layoutAlign ?? this.layoutAlign,
-      layoutGrow: layoutGrow ?? this.layoutGrow,
-      locked: locked ?? this.locked,
-      name: name ?? this.name,
-      opacity: opacity ?? this.opacity,
-      operation: operation ?? this.operation,
-      pluginData: pluginData ?? this.pluginData,
-      preserveRatio: preserveRatio ?? this.preserveRatio,
-      relativeTransform: relativeTransform ?? this.relativeTransform,
-      sharedPluginData: sharedPluginData ?? this.sharedPluginData,
-      size: size ?? this.size,
-      strokeAlign: strokeAlign ?? this.strokeAlign,
-      strokeCap: strokeCap ?? this.strokeCap,
-      strokeDashes: strokeDashes ?? this.strokeDashes,
-      strokeGeometry: strokeGeometry ?? this.strokeGeometry,
-      strokeJoin: strokeJoin ?? this.strokeJoin,
-      strokeMiterAngle: strokeMiterAngle ?? this.strokeMiterAngle,
-      strokeWeight: strokeWeight ?? this.strokeWeight,
-      strokes: strokes ?? this.strokes,
-      styles: styles ?? this.styles,
-      transitionDuration: transitionDuration ?? this.transitionDuration,
-      transitionEasing: transitionEasing ?? this.transitionEasing,
-      transitionNodeID: transitionNodeID ?? this.transitionNodeID,
-      visible: visible ?? this.visible,
+      children: children == const $CopyWithPlaceholder()
+          ? _value.children
+          // ignore: cast_nullable_to_non_nullable
+          : children as List<Node?>?,
+      operation: operation == const $CopyWithPlaceholder()
+          ? _value.operation
+          // ignore: cast_nullable_to_non_nullable
+          : operation as Operation?,
+      id: id == const $CopyWithPlaceholder() || id == null
+          // ignore: unnecessary_non_null_assertion
+          ? _value.id!
+          // ignore: cast_nullable_to_non_nullable
+          : id as String,
+      name: name == const $CopyWithPlaceholder()
+          ? _value.name
+          // ignore: cast_nullable_to_non_nullable
+          : name as String?,
+      visible: visible == const $CopyWithPlaceholder() || visible == null
+          // ignore: unnecessary_non_null_assertion
+          ? _value.visible!
+          // ignore: cast_nullable_to_non_nullable
+          : visible as bool,
+      pluginData:
+          pluginData == const $CopyWithPlaceholder() || pluginData == null
+              // ignore: unnecessary_non_null_assertion
+              ? _value.pluginData!
+              // ignore: cast_nullable_to_non_nullable
+              : pluginData as dynamic,
+      sharedPluginData: sharedPluginData == const $CopyWithPlaceholder() ||
+              sharedPluginData == null
+          // ignore: unnecessary_non_null_assertion
+          ? _value.sharedPluginData!
+          // ignore: cast_nullable_to_non_nullable
+          : sharedPluginData as dynamic,
+      locked: locked == const $CopyWithPlaceholder()
+          ? _value.locked
+          // ignore: cast_nullable_to_non_nullable
+          : locked as bool?,
+      exportSettings: exportSettings == const $CopyWithPlaceholder()
+          ? _value.exportSettings
+          // ignore: cast_nullable_to_non_nullable
+          : exportSettings as List<ExportSetting>?,
+      blendMode: blendMode == const $CopyWithPlaceholder()
+          ? _value.blendMode
+          // ignore: cast_nullable_to_non_nullable
+          : blendMode as BlendMode?,
+      preserveRatio: preserveRatio == const $CopyWithPlaceholder()
+          ? _value.preserveRatio
+          // ignore: cast_nullable_to_non_nullable
+          : preserveRatio as bool?,
+      layoutAlign: layoutAlign == const $CopyWithPlaceholder()
+          ? _value.layoutAlign
+          // ignore: cast_nullable_to_non_nullable
+          : layoutAlign as LayoutAlign?,
+      layoutGrow: layoutGrow == const $CopyWithPlaceholder()
+          ? _value.layoutGrow
+          // ignore: cast_nullable_to_non_nullable
+          : layoutGrow as double?,
+      constraints: constraints == const $CopyWithPlaceholder()
+          ? _value.constraints
+          // ignore: cast_nullable_to_non_nullable
+          : constraints as LayoutConstraint?,
+      transitionNodeID: transitionNodeID == const $CopyWithPlaceholder()
+          ? _value.transitionNodeID
+          // ignore: cast_nullable_to_non_nullable
+          : transitionNodeID as String?,
+      transitionDuration: transitionDuration == const $CopyWithPlaceholder()
+          ? _value.transitionDuration
+          // ignore: cast_nullable_to_non_nullable
+          : transitionDuration as double?,
+      transitionEasing: transitionEasing == const $CopyWithPlaceholder()
+          ? _value.transitionEasing
+          // ignore: cast_nullable_to_non_nullable
+          : transitionEasing as EasingType?,
+      opacity: opacity == const $CopyWithPlaceholder()
+          ? _value.opacity
+          // ignore: cast_nullable_to_non_nullable
+          : opacity as double?,
+      absoluteBoundingBox: absoluteBoundingBox == const $CopyWithPlaceholder()
+          ? _value.absoluteBoundingBox
+          // ignore: cast_nullable_to_non_nullable
+          : absoluteBoundingBox as SizeRectangle?,
+      effects: effects == const $CopyWithPlaceholder()
+          ? _value.effects
+          // ignore: cast_nullable_to_non_nullable
+          : effects as List<Effect>?,
+      size: size == const $CopyWithPlaceholder()
+          ? _value.size
+          // ignore: cast_nullable_to_non_nullable
+          : size as Vector2D?,
+      relativeTransform: relativeTransform == const $CopyWithPlaceholder()
+          ? _value.relativeTransform
+          // ignore: cast_nullable_to_non_nullable
+          : relativeTransform as List<List<num>>?,
+      isMask: isMask == const $CopyWithPlaceholder()
+          ? _value.isMask
+          // ignore: cast_nullable_to_non_nullable
+          : isMask as bool?,
+      fills: fills == const $CopyWithPlaceholder()
+          ? _value.fills
+          // ignore: cast_nullable_to_non_nullable
+          : fills as List<Paint>?,
+      fillGeometry: fillGeometry == const $CopyWithPlaceholder()
+          ? _value.fillGeometry
+          // ignore: cast_nullable_to_non_nullable
+          : fillGeometry as List<dynamic>?,
+      strokes: strokes == const $CopyWithPlaceholder()
+          ? _value.strokes
+          // ignore: cast_nullable_to_non_nullable
+          : strokes as List<Paint>?,
+      strokeWeight: strokeWeight == const $CopyWithPlaceholder()
+          ? _value.strokeWeight
+          // ignore: cast_nullable_to_non_nullable
+          : strokeWeight as double?,
+      strokeCap: strokeCap == const $CopyWithPlaceholder()
+          ? _value.strokeCap
+          // ignore: cast_nullable_to_non_nullable
+          : strokeCap as StrokeCap?,
+      strokeJoin: strokeJoin == const $CopyWithPlaceholder()
+          ? _value.strokeJoin
+          // ignore: cast_nullable_to_non_nullable
+          : strokeJoin as StrokeJoin?,
+      strokeDashes: strokeDashes == const $CopyWithPlaceholder()
+          ? _value.strokeDashes
+          // ignore: cast_nullable_to_non_nullable
+          : strokeDashes as List<double>?,
+      strokeMiterAngle: strokeMiterAngle == const $CopyWithPlaceholder()
+          ? _value.strokeMiterAngle
+          // ignore: cast_nullable_to_non_nullable
+          : strokeMiterAngle as double?,
+      strokeGeometry: strokeGeometry == const $CopyWithPlaceholder()
+          ? _value.strokeGeometry
+          // ignore: cast_nullable_to_non_nullable
+          : strokeGeometry as List<dynamic>?,
+      strokeAlign: strokeAlign == const $CopyWithPlaceholder()
+          ? _value.strokeAlign
+          // ignore: cast_nullable_to_non_nullable
+          : strokeAlign as StrokeAlign?,
+      styles: styles == const $CopyWithPlaceholder()
+          ? _value.styles
+          // ignore: cast_nullable_to_non_nullable
+          : styles as Map<StyleTypeKey, String>?,
     );
   }
+}
+
+extension $BooleanOperationCopyWith on BooleanOperation {
+  /// Returns a callable class that can be used as follows: `instanceOfBooleanOperation.copyWith(...)` or like so:`instanceOfBooleanOperation.copyWith.fieldName(...)`.
+  // ignore: library_private_types_in_public_api
+  _$BooleanOperationCWProxy get copyWith => _$BooleanOperationCWProxyImpl(this);
 }
 
 // **************************************************************************

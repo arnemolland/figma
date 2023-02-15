@@ -6,20 +6,20 @@ repository: https://github.com/arnemolland/figma
 issue_tracker: https://github.com/arnemolland/figma/issues
 
 environment:
-  sdk: '>=2.12.0 <3.0.0'
+  sdk: ">=2.12.0 <4.0.0"
 
 dependencies:
-  http: ^0.13.4
-  http2: ^2.0.0
-  json_annotation: ^4.4.0
-  equatable: ^2.0.3
-  collection: ^1.15.0
-  copy_with_extension: ^2.0.0
+  http: ^0.13.5
+  http2: ^2.0.1
+  json_annotation: ^4.8.0
+  equatable: ^2.0.5
+  collection: ^1.17.1
+  copy_with_extension: ^5.0.0
 
 dev_dependencies:
-  pedantic: ^1.11.0
-  test: ^1.17.8
-  build_runner: ^2.0.4
-  json_serializable: ^6.1.5
-  dotenv: ^3.0.0
-  copy_with_extension_gen: ^2.0.1
+  pedantic: ^1.11.1
+  test: ^1.23.1
+  build_runner: ^2.3.3
+  json_serializable: ^6.6.1
+  copy_with_extension_gen: ^5.0.0
+  lints: ^2.0.1

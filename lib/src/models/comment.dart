@@ -34,7 +34,7 @@ class Comment extends Equatable {
 
   /// The UTC ISO 8601 time at which the comment was resolved
   @JsonKey(name: 'resolved_at')
-  final DateTime resolvedAt;
+  final DateTime? resolvedAt;
 
   /// Only set for top level comments.
   /// The number displayed with the comment in the UI
