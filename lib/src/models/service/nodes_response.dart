@@ -5,25 +5,26 @@ import 'package:copy_with_extension/copy_with_extension.dart';
 
 part 'nodes_response.g.dart';
 
+/// A response object containing a list of a project's files.
 @JsonSerializable()
 @CopyWith()
 class NodesResponse extends Equatable {
-  /// File name
+  /// File name.
   final String? name;
 
-  /// Role
+  /// Role.
   final String? role;
 
-  /// Dte the file was last modified
+  /// Date the file was last modified.
   final DateTime? lastModified;
 
-  /// URL to the thumbnail of the file
+  /// URL to the thumbnail of the file.
   final String? thumbnailUrl;
 
-  /// Error message
+  /// Error message.
   final String? err;
 
-  /// Map from each [Node] id to the corresponding object
+  /// Map from each [Node] id to the corresponding object.
   final Map<String, FileResponse>? nodes;
 
   NodesResponse({

@@ -5,13 +5,14 @@ import 'package:copy_with_extension/copy_with_extension.dart';
 
 part 'project_files_response.g.dart';
 
+/// A response object containing a list of a project's files.
 @JsonSerializable()
 @CopyWith()
 class ProjectFilesResponse extends Equatable {
-  /// Project name
+  /// Project name.
   final String? name;
 
-  /// [ProjectFile] list belonging to the project
+  /// List of [ProjectFile] belonging to the project.
   final List<ProjectFile>? files;
 
   ProjectFilesResponse({this.name, this.files});

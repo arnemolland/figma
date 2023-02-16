@@ -6,29 +6,29 @@ import 'package:copy_with_extension/copy_with_extension.dart';
 part 'paint.g.dart';
 
 /// A solid color, gradient, or image texture that
-/// can be applied as fills or strokes
+/// can be applied as fills or strokes.
 @JsonSerializable()
 @CopyWith()
 class Paint extends Equatable {
-  /// Type of paint as a string enum
+  /// Type of paint as a string enum.
   final PaintType? type;
 
-  /// Is the paint enabled?
+  /// Whether or not the paint is enabled.
   @JsonKey(defaultValue: true)
   final bool visible;
 
   /// Overall opacity of paint (colors within the paint can also have opacity
-  /// values which would blend with this)
+  /// values which would blend with this).
   final double? opacity;
 
   // For solid paints:
 
-  /// Solid color of the paint
+  /// Solid color of the paint.
   final Color? color;
 
   // for gradient paints:
 
-  /// How this node blends with nodes behind it in the scene
+  /// How this node blends with nodes behind it in the scene.
   final BlendMode? blendMode;
 
   /// This field contains three vectors, each of which are a position in
@@ -52,26 +52,26 @@ class Paint extends Equatable {
 
   // For image paints:
 
-  /// Image scaling mode
+  /// Image scaling mode.
   final ScaleMode? scaleMode;
 
   /// Affine transform applied to the image, only present if scaleMode is
-  /// [ScaleMode.stretch]
+  /// [ScaleMode.stretch].
   final List<List<num>>? imageTransform;
 
   /// Amount image is scaled by in tiling, only present if scaleMode is
-  /// [ScaleMode.tile]
+  /// [ScaleMode.tile].
   final num? scalingFactor;
 
   /// A reference to an image embedded in this node. To download the image
   /// using this reference, use the [FigmaClient.getImages()] method to retrieve the
-  ///  mapping from image references to image URLs
+  ///  mapping from image references to image URLs.
   final String? imageRef;
 
   /// A reference to the GIF embedded in this node, if the image is a GIF.
   /// To download the image using this reference, use the
   /// [FigmaClient.getImages()] method to retrieve the mapping from image
-  /// references to image URLs
+  /// references to image URLs.
   final String? gifRef;
 
   Paint({

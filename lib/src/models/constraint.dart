@@ -3,33 +3,29 @@ import 'package:json_annotation/json_annotation.dart';
 import 'package:copy_with_extension/copy_with_extension.dart';
 part 'constraint.g.dart';
 
-/// Type of constraint to apply
+/// Type of constraint to apply.
 enum ConstraintType {
+  /// Scale by value.
   @JsonValue('SCALE')
-
-  /// Scale by [value]
   scale,
 
+  /// Scale proportionally and set width to value.
   @JsonValue('WIDTH')
-
-  /// Scale proportionally and set width to [value]
   width,
 
+  /// Scale proportionally and set height to value.
   @JsonValue('HEIGHT')
-
-  /// Scale proportionally and set height to [value]
-
   height
 }
 
-/// Sizing constraint for exports
+/// Sizing constraint for exports.
 @JsonSerializable()
 @CopyWith()
 class Constraint extends Equatable {
-  /// Type of constraint to apply
+  /// Type of constraint to apply.
   final ConstraintType? type;
 
-  /// See type property for effect of this field
+  /// See type property for effect of this field.
   final num? value;
 
   Constraint({this.type, this.value});

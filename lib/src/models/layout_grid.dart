@@ -5,34 +5,34 @@ import 'package:copy_with_extension/copy_with_extension.dart';
 
 part 'layout_grid.g.dart';
 
-/// Guides to align and place objects within a frame
+/// Guides to align and place objects within a frame.
 @JsonSerializable()
 @CopyWith()
 class LayoutGrid extends Equatable {
-  /// Orientation of the grid as a string enum
+  /// Orientation of the grid as a string enum.
   final LayoutPattern? pattern;
 
-  /// Width of column grid or height of row grid or square grid spacing
+  /// Width of column grid or height of row grid or square grid spacing.
   final double? sectionSize;
 
   /// Is the grid currently visible?
   final bool? visible;
 
-  /// Color of the grid
+  /// Color of the grid.
   final Color? color;
 
-  // The following properties are only meaningful for directional grids (COLUMNS or ROWS)
+  // The following properties are only meaningful for directional grids (COLUMNS or ROWS).
 
-  /// Positioning of grid as a string enum
+  /// Positioning of grid as a string enum.
   final LayoutAlign? alignment;
 
-  /// Spacing in between columns and rows
+  /// Spacing in between columns and rows.
   final double? gutterSize;
 
-  /// Spacing before the first column or row
+  /// Spacing before the first column or row.
   final double? offset;
 
-  /// Number of columns or rows
+  /// Number of columns or rows.
   final int? count;
 
   LayoutGrid({

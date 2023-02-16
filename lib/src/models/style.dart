@@ -11,16 +11,16 @@ part 'style.g.dart';
 @JsonSerializable()
 @CopyWith()
 class Style extends Equatable {
-  /// The key of the style
+  /// The key of the style.
   final String? key;
 
-  /// The name of the style
+  /// The name of the style.
   final String? name;
 
-  /// The description of the style
+  /// The description of the style.
   final String? description;
 
-  /// The type of style as string enum
+  /// The type of style as string enum.
   @JsonKey(name: 'style_type')
   final StyleType? type;
 

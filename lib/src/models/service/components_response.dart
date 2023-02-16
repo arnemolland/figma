@@ -5,16 +5,17 @@ import 'package:copy_with_extension/copy_with_extension.dart';
 
 part 'components_response.g.dart';
 
+/// Response wrapper containing a list of [Component]s from the [Figma API docs](https://www.figma.com/developers/api#components-endpoints).
 @JsonSerializable()
 @CopyWith()
 class ComponentsResponse extends Equatable {
-  /// Status code
+  /// Status code.
   final int? status;
 
-  /// If the operation ended in error
+  /// If the operation ended in error.
   final bool? error;
 
-  /// List of components, if any, along with metadata
+  /// List of components, if any, along with metadata.
   final ComponentsMeta? meta;
 
   ComponentsResponse({this.status, this.error, this.meta});

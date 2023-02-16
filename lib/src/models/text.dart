@@ -4,22 +4,24 @@ import 'package:copy_with_extension/copy_with_extension.dart';
 
 part 'text.g.dart';
 
+/// A text node, represented as a [Vector] and modified by a [TypeStyle].
 @JsonSerializable()
 @CopyWith()
 class Text extends Vector {
-  /// Text contained within text box
+  /// Text contained within a text box. Newline characters are preserved and map
+  /// to a new line in the UI when rendered.
   final String? characters;
 
-  /// Style of text including font family and weight (see [TypeStyle])
+  /// Style of text including font family and weight (see [TypeStyle]).
   final TypeStyle? style;
 
   /// Array with same number of elements as characeters in text box, each
   /// element is a reference to the styleOverrideTable defined below and maps
   /// to the corresponding character in the characters field. Elements with
-  /// value 0 have the default type style
+  /// value 0 have the default type style.
   final List<int>? characterStyleOverrides;
 
-  /// Map from ID to [TypeStyle] for looking up style overrides
+  /// Map from ID to [TypeStyle] for looking up style overrides.
   final Map<int, TypeStyle>? styleOverrideTable;
 
   Text({

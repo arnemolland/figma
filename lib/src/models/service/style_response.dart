@@ -5,16 +5,17 @@ import 'package:copy_with_extension/copy_with_extension.dart';
 
 part 'style_response.g.dart';
 
+/// A response object containing a [Style] object.
 @JsonSerializable()
 @CopyWith()
 class StyleResponse extends Equatable {
-  /// Status code
+  /// Status code.
   final int? status;
 
-  /// If the operation ended in error
+  /// If the operation ended in error.
   final bool? error;
 
-  /// Requested [Style] object
+  /// Requested [Style] object.
   @JsonKey(name: 'meta')
   final Style? style;
 

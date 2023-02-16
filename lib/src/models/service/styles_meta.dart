@@ -5,13 +5,14 @@ import 'package:copy_with_extension/copy_with_extension.dart';
 
 part 'styles_meta.g.dart';
 
+/// Wrapper containing a [Style] list along some metadata.
 @JsonSerializable()
 @CopyWith()
 class StylesMeta extends Equatable {
-  /// List of [Style] objects
+  /// List of [Style] objects.
   final List<Style>? styles;
 
-  /// Pagination cursor
+  /// Pagination cursor.
   final Cursor? cursor;
 
   StylesMeta({this.styles, this.cursor});

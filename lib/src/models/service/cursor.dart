@@ -4,14 +4,14 @@ import 'package:copy_with_extension/copy_with_extension.dart';
 
 part 'cursor.g.dart';
 
-/// Figma pagination cursor
+/// Pagination cursor.
 @JsonSerializable()
 @CopyWith()
 class Cursor extends Equatable {
-  /// Page before
+  /// Page before.
   final int? before;
 
-  /// Page after
+  /// Page after.
   final int? after;
 
   Cursor({this.before, this.after});

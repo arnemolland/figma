@@ -6,7 +6,7 @@ import 'package:json_annotation/json_annotation.dart';
 class NodeJsonConverter implements JsonConverter<Node?, Object?> {
   const NodeJsonConverter();
 
-  /// Parses a JSON object into a [Node] object
+  /// Parses a JSON object into a [Node] object.
   @override
   Node? fromJson(Object? json) {
     if (json == null) {

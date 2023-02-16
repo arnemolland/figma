@@ -5,10 +5,11 @@ import 'package:copy_with_extension/copy_with_extension.dart';
 
 part 'versions_response.g.dart';
 
+/// A response object containing a list of versions.
 @JsonSerializable()
 @CopyWith()
 class VersionsResponse extends Equatable {
-  /// List of versions
+  /// List of versions.
   final List<Version>? versions;
 
   VersionsResponse({this.versions});

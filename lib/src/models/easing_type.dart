@@ -1,6 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
-/// Enum describing animation easing curves
+/// Enum describing animation easing curves.
 enum EasingType {
   @JsonValue('EASE_IN')
 
@@ -24,6 +24,7 @@ enum EasingType {
 
   @JsonValue('CUSTOM_BEZIER')
 
-  /// Custom easing
+  /// Custom easing. The value is an array of four numbers, each between
+  /// 0 and 1, specifying the control points of a cubic bezier curve.
   customBezier
 }

@@ -5,55 +5,55 @@ import 'package:copy_with_extension/copy_with_extension.dart';
 
 part 'frame.g.dart';
 
-/// A Figma Frame
+/// A Figma frame.
 @JsonSerializable()
 @CopyWith()
 class Frame extends Node {
-  /// An array of nodes that are direct children of this node
+  /// An array of nodes that are direct children of this node.
   @NodeJsonConverter()
   final List<Node?>? children;
 
-  /// If true, layer is locked and cannot be edited
+  /// If true, layer is locked and cannot be edited.
   @JsonKey(defaultValue: false)
   final bool locked;
 
-  /// An array of fill paints applied to the node
+  /// An array of fill paints applied to the node.
   final List<Paint>? fills;
 
-  /// An array of stroke paints applied to the node
+  /// An array of stroke paints applied to the node.
   final List<Paint>? strokes;
 
-  /// The weight of strokes on the node
+  /// The weight of strokes on the node.
   final num? strokeWeight;
 
-  /// The weight of strokes on the node per side, if they vary
+  /// The weight of strokes on the node per side, if they vary.
   final StrokeWeights? individualStrokeWeights;
 
-  /// Position of stroke relative to vector outline, as a string enum
+  /// Position of stroke relative to vector outline, as a string enum.
   final StrokeAlign? strokeAlign;
 
-  /// Radius of each corner of the frame if a single radius is set for all corners
+  /// Radius of each corner of the frame if a single radius is set for all corners.
   final double? cornerRadius;
 
   /// Array of length 4 of the radius of each corner of the frame,
-  /// starting in the top left and proceeding clockwise
+  /// starting in the top left and proceeding clockwise.
   final List<num>? rectangleCornerRadii;
 
-  /// An array of export settings representing images to export from node
+  /// An array of export settings representing images to export from node.
   final List<ExportSetting>? exportSettings;
 
-  /// How this node blends with nodes behind it in the scene
+  /// How this node blends with nodes behind it in the scene.
   final BlendMode? blendMode;
 
-  /// Keep height and width constrained to same ratio
+  /// Keep height and width constrained to same ratio.
   final bool? preserveRatio;
 
   /// This property is applicable only for direct children of auto-layout frames,
   /// ignored otherwise. Determines whether a layer should stretch along the parent’s
-  /// primary axis. A `0` corresponds to a fixed size and `1` corresponds to stretch
+  /// primary axis. A `0` corresponds to a fixed size and `1` corresponds to stretch.
   final double? layoutGrow;
 
-  /// Horizontal and vertical layout constraints for node
+  /// Horizontal and vertical layout constraints for node.
   final LayoutConstraint? constraints;
 
   /// How the layer is aligned inside an auto-layout frame.
@@ -91,34 +91,34 @@ class Frame extends Node {
   /// This property is only applicable for auto-layout frames.
   final double? paddingBottom;
 
-  /// Node ID of node to transition to in prototyping
+  /// Node ID of node to transition to in prototyping.
   final String? transitionNodeID;
 
-  /// The duration of the prototyping transition on this node (in milliseconds)
+  /// The duration of the prototyping transition on this node (in milliseconds).
   final double? transitionDuration;
 
-  /// The easing curve used in the prototyping transition on this node
+  /// The easing curve used in the prototyping transition on this node.
   final EasingType? transitionEasing;
 
-  /// Opacity of the node
+  /// Opacity of the node.
   final double? opacity;
 
-  /// Bounding box of the node in absolute space coordinates
+  /// Bounding box of the node in absolute space coordinates.
   final SizeRectangle? absoluteBoundingBox;
 
   /// Width and height of element. This is different from the width and height
   /// of the bounding box in that the absolute bounding box represents the
   /// element after scaling and rotation. Only present if geometry=paths
-  /// is passed
+  /// is passed.
   final Vector2D? size;
 
   /// The top two rows of a matrix that represents the 2D transform of this
   /// node relative to its parent. The bottom row of the matrix is implicitly
   /// always (0, 0, 1). Use to transform coordinates in geometry. Only present
-  /// if `geometry=paths` is passed
+  /// if `geometry=paths` is passed.
   final List<List<num>>? relativeTransform;
 
-  /// Whether or not this node clip content outside of its bounds
+  /// Whether or not this node clip content outside of its bounds.
   final bool? clipsContent;
 
   /// Whether this layer uses auto-layout to position its children.
@@ -147,7 +147,7 @@ class Frame extends Node {
   final num? itemSpacing;
 
   /// An array of layout grids attached to this node. [Group] nodes do not
-  /// have this attribute
+  /// have this attribute.
   final List<LayoutGrid>? layoutGrids;
 
   /// Defines the scrolling behavior of the frame, if there exist contents
@@ -156,7 +156,7 @@ class Frame extends Node {
   /// contained within it. This behavior can be observed in a prototype.
   final OverflowDirection? overflowDirection;
 
-  /// An array of effects attached to this node
+  /// An array of effects attached to this node.
   final List<Effect>? effects;
 
   /// Does this node mask sibling nodes in front of it?

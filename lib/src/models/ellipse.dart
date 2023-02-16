@@ -4,6 +4,7 @@ import 'package:copy_with_extension/copy_with_extension.dart';
 
 part 'ellipse.g.dart';
 
+/// An ellipse shaped vector.
 @JsonSerializable()
 @CopyWith()
 class Ellipse extends Vector {

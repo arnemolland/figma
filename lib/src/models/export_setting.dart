@@ -5,7 +5,7 @@ import 'package:copy_with_extension/copy_with_extension.dart';
 
 part 'export_setting.g.dart';
 
-/// Image type, supports JPG, PDF, PNG and SVG
+/// Image type, supports JPG, PDF, PNG and SVG formats.
 enum ExportFormat {
   @JsonValue('JPG')
   jpg,
@@ -17,17 +17,17 @@ enum ExportFormat {
   pdf,
 }
 
-/// Format and size to export an asset at
+/// Format and size to export an asset at.
 @JsonSerializable()
 @CopyWith()
 class ExportSetting extends Equatable {
-  /// File suffix to append to all filenames
+  /// File suffix to append to all filenames.
   final String? suffix;
 
-  // Image type, string enum that supports values JPG, PNG, and SVG
+  // Image type, string enum that supports values JPG, PNG, and SVG.
   final ExportFormat? format;
 
-  /// Constraint that determines sizing of exported asset
+  /// Constraint that determines sizing of exported asset.
   final Constraint? constraint;
 
   ExportSetting({this.suffix, this.format, this.constraint});
