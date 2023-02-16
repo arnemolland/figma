@@ -12,17 +12,17 @@ part 'canvas.g.dart';
 @JsonSerializable()
 @CopyWith()
 class Canvas extends Node {
-  /// An array of top level layers on the canvas
+  /// An array of top level layers on the canvas.
   @NodeJsonConverter()
   final List<Node?>? children;
 
   /// Background color of the canvas.
   final Color? backgroundColor;
 
-  /// Node ID that corresponds to the start frame for prototypes
+  /// Node ID that corresponds to the start frame for prototypes.
   final String? prototypeStartNodeID;
 
-  /// An array of export settings representing images to export from the canvas
+  /// An array of export settings representing images to export from the canvas.
   final List<ExportSetting>? exportSettings;
 
   Canvas({

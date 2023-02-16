@@ -9,7 +9,7 @@ part 'instance.g.dart';
 @CopyWith()
 class Instance extends Frame {
   /// ID of component that this instance came from, refers to components
-  /// table (see endpoints section below)
+  /// table (see endpoints section below).
   final String? componentId;
   Instance({
     this.componentId,

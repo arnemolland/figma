@@ -4,15 +4,17 @@ import 'package:copy_with_extension/copy_with_extension.dart';
 
 part 'rectangle.g.dart';
 
+/// A rectangle is a rectangular-shaped vector that has a width and height and
+/// may have rounded corners.
 @JsonSerializable()
 @CopyWith()
 class Rectangle extends Vector {
   /// Radius of each corner of the rectangle if
-  /// a single radius is set for all corners
+  /// a single radius is set for all corners.
   final num? cornerRadius;
 
   /// Array of length 4 of the radius of each corner of the rectangle,
-  /// starting in the top left and proceeding clockwise
+  /// starting in the top left and proceeding clockwise.
   final List<num>? rectangleCornerRadii;
 
   Rectangle({

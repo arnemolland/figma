@@ -5,37 +5,38 @@ import 'package:copy_with_extension/copy_with_extension.dart';
 
 part 'file_response.g.dart';
 
+/// A response object containing a file.
 @JsonSerializable()
 @CopyWith()
 class FileResponse extends Equatable {
-  /// Name of the file
+  /// Name of the file.
   final String? name;
 
-  /// Role
+  /// Role.
   final String? role;
 
-  /// Last time file was modified
+  /// Last time file was modified.
   final DateTime? lastModified;
 
-  /// URL to file thumbnail
+  /// URL to file thumbnail.
   final String? thumbnailUrl;
 
-  /// File version
+  /// File version.
   final String? version;
 
-  /// File document (top-level node)
+  /// File document (top-level node).
   final Document? document;
 
-  /// File components, if any
+  /// File components, if any.
   final Map<String, Component>? components;
 
-  /// File component sets, if any
+  /// File component sets, if any.
   final Map<String, ComponentSet>? componentSets;
 
-  /// The schema version of the file
+  /// The schema version of the file.
   final int? schemaVersion;
 
-  /// Map of styles within the file, if any
+  /// Map of styles within the file, if any.
   final Map<String, Style>? styles;
 
   FileResponse({

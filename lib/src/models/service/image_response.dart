@@ -4,22 +4,23 @@ import 'package:copy_with_extension/copy_with_extension.dart';
 
 part 'image_response.g.dart';
 
+/// A response object containing a list of images.
 @JsonSerializable()
 @CopyWith()
 class ImageResponse extends Equatable {
-  /// Error message
+  /// Error message.
   final String? err;
 
-  /// Images made by figma
-  /// Map where the keys are image IDs and the value is an image URL
+  /// Images made by Figma.
+  /// Map where the keys are image IDs and the value is an image URL.
   final Map<String, String>? images;
 
-  /// Images imported by the user
-  /// Map where the keys are image IDs and the value is an image URL
+  /// Images imported by the user.
+  /// Map where the keys are image IDs and the value is an image URL.
   @JsonKey(name: 'meta', readValue: _readValueWithString)
   final Map<String, String>? imageFills;
 
-  /// Status code
+  /// Status code.
   final int? status;
 
   ImageResponse({this.err, this.images, this.imageFills, this.status});

@@ -1,6 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
-/// Enum describing how layer blends with layers below
+/// Enum describing how layer blends with layers below.
 enum BlendMode {
   @JsonValue('PASS_THROUGH')
   passThrough,

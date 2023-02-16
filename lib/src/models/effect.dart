@@ -5,48 +5,55 @@ import 'package:copy_with_extension/copy_with_extension.dart';
 
 part 'effect.g.dart';
 
-/// Type of effect
+/// Type of effect.
 enum EffectType {
+  /// Inner shadow effect.
   @JsonValue('INNER_SHADOW')
   innerShadow,
+
+  /// Outer shadow effect.
   @JsonValue('DROP_SHADOW')
   dropShadow,
+
+  /// Layer blur effect.
   @JsonValue('LAYER_BLUR')
   layerBlur,
+
+  /// Background blur effect.
   @JsonValue('BACKGROUND_BLUR')
   backgroundBlur
 }
 
-/// A visual effect such as a shadow or blur
+/// A visual effect such as a shadow or blur.
 @JsonSerializable()
 @CopyWith()
 class Effect extends Equatable {
-  /// Type of effect as a string enum
+  /// Type of effect as a string enum.
   final EffectType? type;
 
   /// Is the effect active?
   @JsonKey(defaultValue: true)
   final bool visible;
 
-  /// Radius of the blur effect (applies to shadows as well)
+  /// Radius of the blur effect (applies to shadows as well).
   final num? radius;
 
   // The following properties are for shadows only:
 
-  // The radius of the shadow
+  // The radius of the shadow.
   final num? spread;
 
-  /// The color of the shadow
+  /// The color of the shadow.
   final Color? color;
 
-  /// Blend mode of the shadow
+  /// Blend mode of the shadow.
   final BlendMode? blendMode;
 
-  /// How far the shadow is projected in the x and y directions
+  /// How far the shadow is projected in the x and y directions.
   final Vector2D? offset;
 
-  /// Whether to show shadow behind the object
-  /// Applies only to drop shadow
+  /// Whether to show shadow behind the object.
+  /// Applies only to drop shadow.
   final bool? showShadowBehindNode;
 
   Effect({

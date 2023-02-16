@@ -5,7 +5,7 @@ import 'package:copy_with_extension/copy_with_extension.dart';
 
 part 'boolean_operation.g.dart';
 
-/// A string enum indicating the type of boolean operation applied
+/// A string enum indicating the type of boolean operation applied.
 enum Operation {
   @JsonValue('UNION')
   union,
@@ -17,15 +17,17 @@ enum Operation {
   exclude
 }
 
+/// Boolean operations combine any set of shape layers through one of four
+/// formulas: Union, Subtract, Intersect, and Exclude.
 @JsonSerializable()
 @CopyWith()
 class BooleanOperation extends Vector {
-  /// An array of nodes that are being boolean operated on
+  /// An array of nodes that are being boolean operated on.
   @NodeJsonConverter()
   final List<Node?>? children;
 
   /// A string enum with value of "UNION", "INTERSECT", "SUBTRACT", or "EXCLUDE"
-  ///  indicating the type of boolean operation applied
+  /// indicating the type of boolean operation applied.
   final Operation? operation;
 
   BooleanOperation({

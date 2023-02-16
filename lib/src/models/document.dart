@@ -10,7 +10,7 @@ part 'document.g.dart';
 @JsonSerializable()
 @CopyWith()
 class Document extends Node {
-  /// An array of canvases attached to the document
+  /// An array of canvases attached to the document.
   @NodeJsonConverter()
   final List<Node?>? children;
 

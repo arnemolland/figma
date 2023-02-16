@@ -4,6 +4,7 @@ import 'package:copy_with_extension/copy_with_extension.dart';
 
 part 'star.g.dart';
 
+/// A star shape represented as a [Vector].
 @JsonSerializable()
 @CopyWith()
 class Star extends Vector {

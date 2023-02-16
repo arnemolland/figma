@@ -4,14 +4,14 @@ import 'package:copy_with_extension/copy_with_extension.dart';
 
 part 'vector_2d.g.dart';
 
-/// A 2d vector
+/// A 2D vector, represented by an x and y coordinate.
 @JsonSerializable()
 @CopyWith()
 class Vector2D extends Equatable {
-  /// X coordinate of the vector
+  /// X coordinate of the vector.
   final num x;
 
-  /// Y coordinate of the vector
+  /// Y coordinate of the vector.
   final num y;
 
   Vector2D({required this.x, required this.y});

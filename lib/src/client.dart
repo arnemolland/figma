@@ -5,7 +5,7 @@ import 'package:figma/figma.dart';
 import 'package:http/http.dart';
 import 'package:http2/http2.dart';
 
-/// Figma API base URL
+/// Figma API base URL.
 const base = 'api.figma.com';
 
 /// A constant that is true if the application was compiled to run on the web.
@@ -16,6 +16,7 @@ const base = 'api.figma.com';
 // AOT or on the VM.
 const bool kIsWeb = identical(0, 0.0);
 
+/// A client for interacting with the Figma API.
 class FigmaClient {
   FigmaClient(
     this.accessToken, {
@@ -32,17 +33,17 @@ class FigmaClient {
   final bool useHttp2;
 
   /// The personal access token for the Figma Account to be used
-  /// Or the OAuth token, if useOAuth is true
+  /// Or the OAuth token, if useOAuth is true.
   final String accessToken;
 
   /// Specifies the Figma API version to be used. Should only be
   /// specified if package is not updated with a new API release.
   final String apiVersion;
 
-  // If true, then use accessToken as OAuth token when calling figma API
+  // If true, then use accessToken as OAuth token when calling figma API.
   final bool useOAuth;
 
-  /// Does an authenticated GET request towards the Figma API
+  /// Does an authenticated GET request towards the Figma API.
   Future<Map<String, dynamic>> authenticatedGet(String url) async {
     final uri = Uri.parse(url);
 
@@ -55,93 +56,93 @@ class FigmaClient {
     });
   }
 
-  /// Retrieves the Figma file specified by [key]
+  /// Retrieves the Figma file specified by [key].
   Future<FileResponse> getFile(String key, [FigmaQuery? query]) async {
     return await _getFigma('/files/$key', query)
         .then((data) => FileResponse.fromJson(data));
   }
 
-  /// Retrieves the file nodes specified
+  /// Retrieves the file nodes specified.
   Future<NodesResponse> getFileNodes(String key, FigmaQuery query) async =>
       await _getFigma('/files/$key/nodes', query)
           .then((data) => NodesResponse.fromJson(data));
 
-  /// Retrieves the images specified
+  /// Retrieves the images specified.
   Future<ImageResponse> getImages(String key, FigmaQuery query) async =>
       await _getFigma('/images/$key', query)
           .then((data) => ImageResponse.fromJson(data));
 
-  /// Retrieves the image fills specified
+  /// Retrieves the image fills specified.
   Future<ImageResponse> getImageFills(String? key) async =>
       await _getFigma('/files/$key/images')
           .then((data) => ImageResponse.fromJson(data));
 
-  /// Retrieves comments from the Figma file specified by [key]
+  /// Retrieves comments from the Figma file specified by [key].
   Future<List<Comment>> getComments(String key) async =>
       await _getFigma('/files/$key/comments')
           .then((data) => CommentsResponse.fromJson(data).comments!);
 
-  /// Posts the given [Comment] to the Figma file specified by [key]
+  /// Posts the given [Comment] to the Figma file specified by [key].
   Future<Comment> postComment(String key, PostComment comment) async =>
       await _postFigma('/files/$key/comments', jsonEncode(comment))
           .then((data) => Comment.fromJson(data));
 
-  /// Deletes the comment given by [id] from the Figma file specified by [key]
+  /// Deletes the comment given by [id] from the Figma file specified by [key].
   Future<void> deleteComment(String key, String id) async =>
       await _deleteFigma('/files/$key/comments/$id');
 
-  /// Retrieves the Figma [User] in ownership of the currently used access token
+  /// Retrieves the Figma [User] in ownership of the currently used access token.
   Future<User> getMe() async =>
       await _getFigma('/me').then((data) => User.fromJson(data));
 
-  /// Retrieves all versions of the Figma file specified by [key]
+  /// Retrieves all versions of the Figma file specified by [key].
   Future<List<Version>> getFileVersions(String key) async =>
       await _getFigma('/files/$key/versions')
           .then((data) => VersionsResponse.fromJson(data).versions!);
 
-  /// Retrieves all projects for the specified [team]
+  /// Retrieves all projects for the specified [team].
   Future<TeamProjectsResponse> getTeamProjects(String team) async =>
       await _getFigma('/teams/$team/projects')
           .then((data) => TeamProjectsResponse.fromJson(data));
 
-  /// Retrieives all project files specified by [project]
+  /// Retrieives all project files specified by [project].
   Future<ProjectFilesResponse> getProjectFiles(String project) async =>
       _getFigma('/projects/$project/files')
           .then((data) => ProjectFilesResponse.fromJson(data));
 
-  /// Retrieives all components from the Figma team specified by [team]
+  /// Retrieives all components from the Figma team specified by [team].
   Future<ComponentsResponse> getTeamComponents(String team,
           [FigmaQuery? query]) async =>
       _getFigma('/teams/$team/components', query)
           .then((data) => ComponentsResponse.fromJson(data));
 
-  /// Retrieves all components from the Figma file specified by [key]
+  /// Retrieves all components from the Figma file specified by [key].
   Future<ComponentsResponse> getFileComponents(String key,
           [FigmaQuery? query]) async =>
       _getFigma('/files/$key/components', query)
           .then((data) => ComponentsResponse.fromJson(data));
 
-  /// Retrivies a specific component specified by [key]
+  /// Retrivies a specific component specified by [key].
   Future<ComponentResponse> getComponent(String key) async =>
       _getFigma('/components/$key')
           .then((data) => ComponentResponse.fromJson(data));
 
-  /// Retrieves all styles for the Figma team specified by [team]
+  /// Retrieves all styles for the Figma team specified by [team].
   Future<StylesResponse> getTeamStyles(String team,
           [FigmaQuery? query]) async =>
       _getFigma('/teams/$team/styles', query)
           .then((data) => StylesResponse.fromJson(data));
 
-  /// Retrieves all styles from the Figma file specified by [key]
+  /// Retrieves all styles from the Figma file specified by [key].
   Future<StylesResponse> getFileStyles(String key, [FigmaQuery? query]) async =>
       _getFigma('/files/$key/styles', query)
           .then((data) => StylesResponse.fromJson(data));
 
-  /// Retrieves a specific style specified by [key]
+  /// Retrieves a specific style specified by [key].
   Future<StyleResponse> getStyle(String key) async =>
       _getFigma('/styles/$key').then((data) => StyleResponse.fromJson(data));
 
-  /// Does a GET request towards the Figma API
+  /// Does a GET request towards the Figma API.
   Future<Map<String, dynamic>> _getFigma(String path,
       [FigmaQuery? query]) async {
     final uri = Uri.https(base, '$apiVersion$path', query?.params);
@@ -155,7 +156,7 @@ class FigmaClient {
     });
   }
 
-  /// Does a POST request towards the Figma API
+  /// Does a POST request towards the Figma API.
   Future<dynamic> _postFigma(String path, String body) async {
     final uri = Uri.https(base, '$apiVersion$path');
 
@@ -168,7 +169,7 @@ class FigmaClient {
     });
   }
 
-  /// Does a DELETE request towards the Figma API
+  /// Does a DELETE request towards the Figma API.
   Future<dynamic> _deleteFigma(String path) async {
     final uri = Uri.https(base, '$apiVersion$path');
 
@@ -183,7 +184,8 @@ class FigmaClient {
 
   Future<_Response> _send(String method, Uri uri, Map<String, String> headers,
       [String? body]) async {
-    /// Regular HTTP is used
+    // HTTP/2 is not supported on all platforms, so we need to fallback to
+    // HTTP/1.1 in that case.
     if (!useHttp2) {
       var client = Client();
       try {
@@ -261,14 +263,11 @@ class _Response {
 
 /// An error from the [Figma API docs](https://www.figma.com/developers/api#errors).
 class FigmaError extends Error {
-  /// HTTP status code
+  /// HTTP status code.
   final int? code;
 
-  /// Error message
+  /// Error message.
   final String? message;
 
   FigmaError({this.code, this.message});
-
-  @override
-  String toString() => '{code: $code, message: $message}';
 }

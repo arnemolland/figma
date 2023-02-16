@@ -4,20 +4,20 @@ import 'package:copy_with_extension/copy_with_extension.dart';
 
 part 'color.g.dart';
 
-/// An RGBA color
+/// An RGBA color, represented by float values for each channel.
 @JsonSerializable()
 @CopyWith()
 class Color extends Equatable {
-  /// Red channel value, between 0 and 1
+  /// Red channel value, between 0 and 1.
   final double? r;
 
-  /// Green channel value, between 0 and 1
+  /// Green channel value, between 0 and 1.
   final double? g;
 
-  /// Blue channel value, between 0 and 1
+  /// Blue channel value, between 0 and 1.
   final double? b;
 
-  /// Alpha channel value, between 0 and 1
+  /// Alpha channel value, between 0 and 1.
   final double? a;
 
   Color({this.r, this.g, this.b, this.a});

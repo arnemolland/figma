@@ -4,6 +4,7 @@ import 'package:copy_with_extension/copy_with_extension.dart';
 
 part 'node.g.dart';
 
+/// A generic node in the document.
 @JsonSerializable()
 @CopyWith()
 class Node extends Equatable {
@@ -17,7 +18,9 @@ class Node extends Equatable {
   @JsonKey(defaultValue: true)
   final bool visible;
 
-  /// The type of the node
+  /// The type of the node. This is usually the same as the Node subtype classes
+  /// (e.g. [Frame], [Component] etc.), but can be different in the case of
+  /// foreign nodes.
   final String? type;
 
   /// Data written by plugins that is visible only to the plugin that wrote

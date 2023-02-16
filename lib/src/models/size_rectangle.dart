@@ -4,20 +4,20 @@ import 'package:copy_with_extension/copy_with_extension.dart';
 
 part 'size_rectangle.g.dart';
 
-/// A rectangle that expresses a bounding box in absolute coordinates
+/// A rectangle that expresses a bounding box in absolute coordinates.
 @JsonSerializable()
 @CopyWith()
 class SizeRectangle extends Equatable {
-  /// X coordinate of top left corner of the rectangle
+  /// X coordinate of top left corner of the rectangle.
   final double? x;
 
-  /// Y coordinate of top left corner of the rectangle
+  /// Y coordinate of top left corner of the rectangle.
   final double? y;
 
-  /// Width of the rectangle
+  /// Width of the rectangle.
   final double? width;
 
-  /// Height of the rectangle
+  /// Height of the rectangle.
   final double? height;
 
   SizeRectangle({this.x, this.y, this.width, this.height});

@@ -5,14 +5,14 @@ import 'package:copy_with_extension/copy_with_extension.dart';
 
 part 'color_stop.g.dart';
 
-/// A position color pair representing a gradient stop
+/// A position color pair representing a gradient stop.
 @JsonSerializable()
 @CopyWith()
 class ColorStop extends Equatable {
-  /// Value between 0 and 1 representing position along gradient axis
+  /// Value between 0 and 1 representing position along gradient axis.
   final double? position;
 
-  /// Color attached to corresponding position
+  /// Color attached to corresponding position.
   final Color? color;
 
   ColorStop({this.position, this.color});

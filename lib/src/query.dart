@@ -1,28 +1,28 @@
-/// A wrapper that wraps all available query values for the Figma API
+/// A wrapper that wraps all available query values for the Figma API.
 class FigmaQuery {
   /// Comma separated list of nodes that you care about in the document.
   /// If specified, only a subset of the document will be returned corresponding
   /// to the nodes listed, their children, and everything between the root node
-  /// and the listed nodes
+  /// and the listed nodes.
   final List<String>? ids;
 
-  /// A number between 0.01 and 4, the image scaling factor
+  /// A number between 0.01 and 4, the image scaling factor.
   final double? scale;
 
-  /// A string enum for the image output format, can be jpg, png, svg, or pdf
+  /// A string enum for the image output format, can be jpg, png, svg, or pdf.
   final String? format;
 
   /// A specific version ID to get. Omitting this will get the current version
-  /// of the file
+  /// of the file.
   final String? version;
 
   /// Positive integer representing how deep into the document tree to traverse.
   /// For example, setting this to 1 returns only Pages, setting it to 2 returns
   /// Pages and all top level objects on each page. Not setting this parameter
-  /// returns all nodes
+  /// returns all nodes.
   final int? depth;
 
-  /// Set to "paths" to export vector data
+  /// Set to "paths" to export vector data.
   final String? geometry;
 
   /// Whether to include id attributes for all SVG elements. Default: false.
@@ -42,7 +42,7 @@ class FigmaQuery {
 
   /// A map that indicates the starting/ending point from which objects are
   /// returned. The cursor value is an internally tracked integer that doesn't
-  /// correspond to any Ids
+  /// correspond to any IDs.
   final Map<String, int>? cursor;
 
   /// A comma separated list of plugin IDs and/or the string "shared". Any data

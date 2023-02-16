@@ -5,23 +5,24 @@ import 'package:copy_with_extension/copy_with_extension.dart';
 
 part 'version.g.dart';
 
+/// A version of a file.
 @JsonSerializable()
 @CopyWith()
 class Version extends Equatable {
-  /// Unique identifier for version
+  /// Unique identifier for version.
   final String id;
 
-  /// The UTC ISO 8601 time at which the version was created
+  /// The UTC ISO 8601 time at which the version was created.
   @JsonKey(name: 'created_at')
   final DateTime createdAt;
 
-  /// The label given to the version in the editor
+  /// The label given to the version in the editor.
   final String? label;
 
-  /// The description of the version as entered in the editor
+  /// The description of the version as entered in the editor.
   final String? description;
 
-  /// The user that created the version
+  /// The user that created the version.
   final User user;
 
   Version({

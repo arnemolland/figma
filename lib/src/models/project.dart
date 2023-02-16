@@ -8,10 +8,10 @@ part 'project.g.dart';
 @JsonSerializable()
 @CopyWith()
 class Project extends Equatable {
-  /// The ID of the project
+  /// The ID of the project.
   final String? id;
 
-  /// The name of the project
+  /// The name of the project.
   final String? name;
 
   Project({this.id, this.name});

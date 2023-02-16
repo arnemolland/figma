@@ -4,10 +4,11 @@ import 'package:copy_with_extension/copy_with_extension.dart';
 
 part 'post_comment.g.dart';
 
+/// A request object for posting a comment.
 @JsonSerializable()
 @CopyWith()
 class PostComment extends Equatable {
-  /// The text contents of the comment to post
+  /// The text contents of the comment to post.
   final String? message;
 
   /// The position of where to place the comment. This can either be
