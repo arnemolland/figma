@@ -1,3 +1,8 @@
+## 4.0.1
+
+- Added missing docstrings
+- Updated lacking docstrings
+
 ## 4.0.0
 
 - **BREAKING:** Bumped all dependencies
