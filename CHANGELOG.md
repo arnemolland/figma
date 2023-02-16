@@ -1,4 +1,4 @@
-## 4.0.1+1
+## 4.0.2
 
 - Updated license copyright holder
 - Updated README
