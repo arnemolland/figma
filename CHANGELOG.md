@@ -1,3 +1,8 @@
+## 4.0.1+1
+
+- Updated license copyright holder
+- Updated README
+
 ## 4.0.1
 
 - Added missing docstrings
