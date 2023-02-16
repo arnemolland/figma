@@ -1,11 +1,8 @@
 # figma
 
-![figma](https://github.com/arnemolland/figma/workflows/Dart%20CI/badge.svg) ![pub](https://img.shields.io/pub/v/figma.svg) [![style: pedantic](https://img.shields.io/badge/style-pedantic-9cf)](https://github.com/dart-lang/pedantic) ![license](https://img.shields.io/github/license/arnemolland/figma.svg)
+![figma](https://github.com/arnemolland/figma/workflows/Dart%20CI/badge.svg) ![pub](https://img.shields.io/pub/v/figma.svg) [![style: lints](https://img.shields.io/badge/style-lints-9cf)](https://github.com/dart-lang/pedantic) ![license](https://img.shields.io/github/license/arnemolland/figma.svg)
 
-A library for interacting with Figma APIs.
-
-Created from templates made available by Stagehand under a BSD-style
-[license](https://github.com/dart-lang/stagehand/blob/main/LICENSE).
+A library for interacting with Figma APIs with typed responses and data structures.
 
 ## Usage
 
