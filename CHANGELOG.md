@@ -1,3 +1,9 @@
+## 5.0.0
+
+- **BREAKING:** Changed minimum Dart version to 2.17.0
+- Updated all Figma data classes
+- Removed deprecated fields
+
 ## 4.0.2
 
 - Updated license copyright holder
