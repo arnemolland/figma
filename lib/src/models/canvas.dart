@@ -1,5 +1,5 @@
 import 'package:figma/src/converters/converters.dart';
-import 'package:figma/src/models/models.dart';
+import 'package:figma/src/models.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:copy_with_extension/copy_with_extension.dart';
 
@@ -19,37 +19,41 @@ class Canvas extends Node {
   /// Background color of the canvas.
   final Color? backgroundColor;
 
-  /// Node ID that corresponds to the start frame for prototypes.
-  final String? prototypeStartNodeID;
-
   /// An array of export settings representing images to export from the canvas.
-  final List<ExportSetting>? exportSettings;
+  @JsonKey(defaultValue: [])
+  final List<ExportSetting> exportSettings;
+
+  /// An array of starting points for flows attached to the canvas.
+  @JsonKey(defaultValue: [])
+  final List<FlowStartingPoint> flowStartingPoints;
+
+  /// The device that this canvas is a prototype for.
+  final PrototypeDevice prototypeDevice;
 
   Canvas({
-    required String id,
-    String? name,
-    required bool visible,
-    dynamic pluginData,
-    dynamic sharedPluginData,
+    required super.id,
+    required super.visible,
+    super.componentPropertyReferencesMap,
+    super.name,
+    super.rotation,
+    super.pluginData,
+    super.sharedPluginData,
+    super.type,
+    required this.prototypeDevice,
+    required this.flowStartingPoints,
+    required this.exportSettings,
     this.children,
     this.backgroundColor,
-    this.prototypeStartNodeID,
-    this.exportSettings,
-  }) : super(
-          id: id,
-          name: name,
-          visible: visible,
-          pluginData: pluginData,
-          sharedPluginData: sharedPluginData,
-        );
+  });
 
   @override
   List<Object?> get props => [
         ...super.props,
         children,
         backgroundColor,
-        prototypeStartNodeID,
         exportSettings,
+        flowStartingPoints,
+        prototypeDevice,
       ];
 
   @override

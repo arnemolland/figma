@@ -6,4 +6,4 @@ library figma;
 
 export 'src/client.dart';
 export 'src/query.dart';
-export 'src/models/models.dart';
+export 'src/models.dart';

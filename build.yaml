@@ -1,0 +1,8 @@
+targets:
+  $default:
+    builders:
+      copy_with_extension_gen:
+        enabled: true
+        options:
+          copy_with_null: true
+          skip_fields: true

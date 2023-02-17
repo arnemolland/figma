@@ -1,5 +1,4 @@
-import 'package:figma/src/converters/converters.dart';
-import 'package:figma/src/models/models.dart';
+import 'package:figma/src/models.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:copy_with_extension/copy_with_extension.dart';
 
@@ -8,103 +7,80 @@ part 'instance.g.dart';
 @JsonSerializable()
 @CopyWith()
 class Instance extends Frame {
-  /// ID of component that this instance came from, refers to components
-  /// table (see endpoints section below).
-  final String? componentId;
   Instance({
+    required super.id,
+    required super.visible,
+    required super.locked,
+    required super.fills,
+    required super.strokes,
+    required super.exportSettings,
+    required super.children,
+    required super.opacity,
+    required super.layoutPositioning,
+    required super.itemReverseZIndex,
+    required super.strokesIncludedInLayout,
+    required super.counterAxisSizingMode,
+    required super.horizontalPadding,
+    required super.verticalPadding,
+    required super.itemSpacing,
+    required super.layoutGrids,
+    required super.overflowDirection,
+    required super.effects,
+    required super.isMask,
+    required super.isMaskOutline,
+    required super.counterAxisAlignItems,
+    required super.primaryAxisAlignItems,
+    required super.primaryAxisSizingMode,
+    required super.paddingBottom,
+    required super.paddingLeft,
+    required super.paddingRight,
+    required super.paddingTop,
+    required super.size,
+    super.styles,
+    super.componentPropertyReferencesMap,
+    super.absoluteBoundingBox,
+    super.absoluteRenderBounds,
+    super.rotation,
+    super.name,
+    super.pluginData,
+    super.sharedPluginData,
+    super.type,
+    super.strokeWeight,
+    super.strokeAlign,
+    super.cornerRadius,
+    super.rectangleCornerRadii,
+    super.blendMode,
+    super.preserveRatio,
+    super.constraints,
+    super.layoutAlign,
+    super.transitionNodeID,
+    super.transitionDuration,
+    super.relativeTransform,
+    super.clipsContent,
+    super.layoutMode,
+    super.individualStrokeWeights,
+    required this.isExposedInstance,
+    required this.exposedInstances,
+    required this.componentProperties,
     this.componentId,
-    required String id,
-    String? name,
-    required bool visible,
-    dynamic pluginData,
-    dynamic sharedPluginData,
-    List<Node?>? children,
-    required bool locked,
-    List<Paint>? fills,
-    List<Paint>? strokes,
-    num? strokeWeight,
-    StrokeWeights? individualStrokeWeights,
-    StrokeAlign? strokeAlign,
-    double? cornerRadius,
-    List<num>? rectangleCornerRadii,
-    List<ExportSetting>? exportSettings,
-    BlendMode? blendMode,
-    bool? preserveRatio,
-    LayoutConstraint? constraints,
-    LayoutAlign? layoutAlign,
-    String? transitionNodeID,
-    double? transitionDuration,
-    EasingType? transitionEasing,
-    double? opacity,
-    SizeRectangle? absoluteBoundingBox,
-    Vector2D? size,
-    List<List<num>>? relativeTransform,
-    bool? clipsContent,
-    LayoutMode? layoutMode,
-    PrimaryAxisSizingMode? primaryAxisSizingMode,
-    CounterAxisSizingMode? counterAxisSizingMode,
-    PrimaryAxisAlignItems? primaryAxisAlignItems,
-    CounterAxisAlignItems? counterAxisAlignItems,
-    double? paddingLeft,
-    double? paddingTop,
-    double? paddingRight,
-    double? paddingBottom,
-    num? horizontalPadding,
-    num? verticalPadding,
-    num? itemSpacing,
-    List<LayoutGrid>? layoutGrids,
-    OverflowDirection? overflowDirection,
-    List<Effect>? effects,
-    bool? isMask,
-    bool? isMaskOutline,
-    double? layoutGrow,
-  }) : super(
-          id: id,
-          name: name,
-          visible: visible,
-          pluginData: pluginData,
-          sharedPluginData: sharedPluginData,
-          children: children,
-          layoutGrow: layoutGrow,
-          locked: locked,
-          fills: fills,
-          strokes: strokes,
-          strokeWeight: strokeWeight,
-          individualStrokeWeights: individualStrokeWeights,
-          strokeAlign: strokeAlign,
-          cornerRadius: cornerRadius,
-          rectangleCornerRadii: rectangleCornerRadii,
-          exportSettings: exportSettings,
-          primaryAxisAlignItems: primaryAxisAlignItems,
-          counterAxisAlignItems: counterAxisAlignItems,
-          blendMode: blendMode,
-          preserveRatio: preserveRatio,
-          constraints: constraints,
-          layoutAlign: layoutAlign,
-          transitionNodeID: transitionNodeID,
-          transitionDuration: transitionDuration,
-          transitionEasing: transitionEasing,
-          opacity: opacity,
-          absoluteBoundingBox: absoluteBoundingBox,
-          size: size,
-          relativeTransform: relativeTransform,
-          clipsContent: clipsContent,
-          layoutMode: layoutMode,
-          counterAxisSizingMode: counterAxisSizingMode,
-          horizontalPadding: horizontalPadding,
-          verticalPadding: verticalPadding,
-          itemSpacing: itemSpacing,
-          layoutGrids: layoutGrids,
-          overflowDirection: overflowDirection,
-          effects: effects,
-          isMask: isMask,
-          isMaskOutline: isMaskOutline,
-          paddingBottom: paddingBottom,
-          paddingLeft: paddingLeft,
-          paddingRight: paddingRight,
-          paddingTop: paddingTop,
-          primaryAxisSizingMode: primaryAxisSizingMode,
-        );
+  });
+
+  /// ID of component that this instance came from, refers to components
+  /// table.
+  final String? componentId;
+
+  /// If true, this node has been marked as exposed to its containing component or component set
+  @JsonKey(defaultValue: false)
+  final bool isExposedInstance;
+
+  /// IDs of instances that have been exposed to this node's level
+  @JsonKey(defaultValue: [])
+  final List<String> exposedInstances;
+
+  /// A mapping of name to ComponentProperty for all component properties on
+  /// this instance. Each property has a type, value, and other optional values.
+  @JsonKey(defaultValue: {})
+  final Map<String, ComponentProperty> componentProperties;
 
   @override
   List<Object?> get props => [

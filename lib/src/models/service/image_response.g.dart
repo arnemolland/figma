@@ -7,15 +7,7 @@ part of 'image_response.dart';
 // **************************************************************************
 
 abstract class _$ImageResponseCWProxy {
-  ImageResponse err(String? err);
-
-  ImageResponse images(Map<String, String>? images);
-
-  ImageResponse imageFills(Map<String, String>? imageFills);
-
-  ImageResponse status(int? status);
-
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ImageResponse(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
   ///
   /// Usage
   /// ```dart
@@ -29,28 +21,15 @@ abstract class _$ImageResponseCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfImageResponse.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfImageResponse.copyWith.fieldName(...)`
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfImageResponse.copyWith(...)`.
 class _$ImageResponseCWProxyImpl implements _$ImageResponseCWProxy {
   const _$ImageResponseCWProxyImpl(this._value);
 
   final ImageResponse _value;
 
   @override
-  ImageResponse err(String? err) => this(err: err);
 
-  @override
-  ImageResponse images(Map<String, String>? images) => this(images: images);
-
-  @override
-  ImageResponse imageFills(Map<String, String>? imageFills) =>
-      this(imageFills: imageFills);
-
-  @override
-  ImageResponse status(int? status) => this(status: status);
-
-  @override
-
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ImageResponse(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
   ///
   /// Usage
   /// ```dart
@@ -84,9 +63,29 @@ class _$ImageResponseCWProxyImpl implements _$ImageResponseCWProxy {
 }
 
 extension $ImageResponseCopyWith on ImageResponse {
-  /// Returns a callable class that can be used as follows: `instanceOfImageResponse.copyWith(...)` or like so:`instanceOfImageResponse.copyWith.fieldName(...)`.
+  /// Returns a callable class that can be used as follows: `instanceOfImageResponse.copyWith(...)`.
   // ignore: library_private_types_in_public_api
   _$ImageResponseCWProxy get copyWith => _$ImageResponseCWProxyImpl(this);
+
+  /// Copies the object with the specific fields set to `null`. If you pass `false` as a parameter, nothing will be done and it will be ignored. Don't do it. Prefer `copyWith(field: null)`.
+  ///
+  /// Usage
+  /// ```dart
+  /// ImageResponse(...).copyWithNull(firstField: true, secondField: true)
+  /// ````
+  ImageResponse copyWithNull({
+    bool err = false,
+    bool images = false,
+    bool imageFills = false,
+    bool status = false,
+  }) {
+    return ImageResponse(
+      err: err == true ? null : this.err,
+      images: images == true ? null : this.images,
+      imageFills: imageFills == true ? null : this.imageFills,
+      status: status == true ? null : this.status,
+    );
+  }
 }
 
 // **************************************************************************
@@ -99,6 +98,7 @@ ImageResponse _$ImageResponseFromJson(Map<String, dynamic> json) =>
       images: (json['images'] as Map<String, dynamic>?)?.map(
         (k, e) => MapEntry(k, e as String),
       ),
+      // ignore: unnecessary_cast
       imageFills: (ImageResponse._readValueWithString(json, 'meta')
               as Map<String, dynamic>?)
           ?.map(

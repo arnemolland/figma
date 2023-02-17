@@ -7,31 +7,7 @@ part of 'paint.dart';
 // **************************************************************************
 
 abstract class _$PaintCWProxy {
-  Paint type(PaintType? type);
-
-  Paint visible(bool visible);
-
-  Paint opacity(double? opacity);
-
-  Paint color(Color? color);
-
-  Paint blendMode(BlendMode? blendMode);
-
-  Paint gradientHandlePositions(List<Vector2D>? gradientHandlePositions);
-
-  Paint gradientStops(List<ColorStop>? gradientStops);
-
-  Paint scaleMode(ScaleMode? scaleMode);
-
-  Paint imageTransform(List<List<num>>? imageTransform);
-
-  Paint scalingFactor(num? scalingFactor);
-
-  Paint imageRef(String? imageRef);
-
-  Paint gifRef(String? gifRef);
-
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Paint(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
   ///
   /// Usage
   /// ```dart
@@ -53,54 +29,15 @@ abstract class _$PaintCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfPaint.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfPaint.copyWith.fieldName(...)`
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfPaint.copyWith(...)`.
 class _$PaintCWProxyImpl implements _$PaintCWProxy {
   const _$PaintCWProxyImpl(this._value);
 
   final Paint _value;
 
   @override
-  Paint type(PaintType? type) => this(type: type);
 
-  @override
-  Paint visible(bool visible) => this(visible: visible);
-
-  @override
-  Paint opacity(double? opacity) => this(opacity: opacity);
-
-  @override
-  Paint color(Color? color) => this(color: color);
-
-  @override
-  Paint blendMode(BlendMode? blendMode) => this(blendMode: blendMode);
-
-  @override
-  Paint gradientHandlePositions(List<Vector2D>? gradientHandlePositions) =>
-      this(gradientHandlePositions: gradientHandlePositions);
-
-  @override
-  Paint gradientStops(List<ColorStop>? gradientStops) =>
-      this(gradientStops: gradientStops);
-
-  @override
-  Paint scaleMode(ScaleMode? scaleMode) => this(scaleMode: scaleMode);
-
-  @override
-  Paint imageTransform(List<List<num>>? imageTransform) =>
-      this(imageTransform: imageTransform);
-
-  @override
-  Paint scalingFactor(num? scalingFactor) => this(scalingFactor: scalingFactor);
-
-  @override
-  Paint imageRef(String? imageRef) => this(imageRef: imageRef);
-
-  @override
-  Paint gifRef(String? gifRef) => this(gifRef: gifRef);
-
-  @override
-
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Paint(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
   ///
   /// Usage
   /// ```dart
@@ -176,9 +113,45 @@ class _$PaintCWProxyImpl implements _$PaintCWProxy {
 }
 
 extension $PaintCopyWith on Paint {
-  /// Returns a callable class that can be used as follows: `instanceOfPaint.copyWith(...)` or like so:`instanceOfPaint.copyWith.fieldName(...)`.
+  /// Returns a callable class that can be used as follows: `instanceOfPaint.copyWith(...)`.
   // ignore: library_private_types_in_public_api
   _$PaintCWProxy get copyWith => _$PaintCWProxyImpl(this);
+
+  /// Copies the object with the specific fields set to `null`. If you pass `false` as a parameter, nothing will be done and it will be ignored. Don't do it. Prefer `copyWith(field: null)`.
+  ///
+  /// Usage
+  /// ```dart
+  /// Paint(...).copyWithNull(firstField: true, secondField: true)
+  /// ````
+  Paint copyWithNull({
+    bool type = false,
+    bool opacity = false,
+    bool color = false,
+    bool blendMode = false,
+    bool gradientHandlePositions = false,
+    bool gradientStops = false,
+    bool scaleMode = false,
+    bool imageTransform = false,
+    bool scalingFactor = false,
+    bool imageRef = false,
+    bool gifRef = false,
+  }) {
+    return Paint(
+      type: type == true ? null : this.type,
+      visible: visible,
+      opacity: opacity == true ? null : this.opacity,
+      color: color == true ? null : this.color,
+      blendMode: blendMode == true ? null : this.blendMode,
+      gradientHandlePositions:
+          gradientHandlePositions == true ? null : this.gradientHandlePositions,
+      gradientStops: gradientStops == true ? null : this.gradientStops,
+      scaleMode: scaleMode == true ? null : this.scaleMode,
+      imageTransform: imageTransform == true ? null : this.imageTransform,
+      scalingFactor: scalingFactor == true ? null : this.scalingFactor,
+      imageRef: imageRef == true ? null : this.imageRef,
+      gifRef: gifRef == true ? null : this.gifRef,
+    );
+  }
 }
 
 // **************************************************************************

@@ -7,373 +7,98 @@ part of 'instance.dart';
 // **************************************************************************
 
 abstract class _$InstanceCWProxy {
-  Instance componentId(String? componentId);
-
-  Instance id(String id);
-
-  Instance name(String? name);
-
-  Instance visible(bool visible);
-
-  Instance pluginData(dynamic pluginData);
-
-  Instance sharedPluginData(dynamic sharedPluginData);
-
-  Instance children(List<Node?>? children);
-
-  Instance locked(bool locked);
-
-  Instance fills(List<Paint>? fills);
-
-  Instance strokes(List<Paint>? strokes);
-
-  Instance strokeWeight(num? strokeWeight);
-
-  Instance individualStrokeWeights(StrokeWeights? individualStrokeWeights);
-
-  Instance strokeAlign(StrokeAlign? strokeAlign);
-
-  Instance cornerRadius(double? cornerRadius);
-
-  Instance rectangleCornerRadii(List<num>? rectangleCornerRadii);
-
-  Instance exportSettings(List<ExportSetting>? exportSettings);
-
-  Instance blendMode(BlendMode? blendMode);
-
-  Instance preserveRatio(bool? preserveRatio);
-
-  Instance constraints(LayoutConstraint? constraints);
-
-  Instance layoutAlign(LayoutAlign? layoutAlign);
-
-  Instance transitionNodeID(String? transitionNodeID);
-
-  Instance transitionDuration(double? transitionDuration);
-
-  Instance transitionEasing(EasingType? transitionEasing);
-
-  Instance opacity(double? opacity);
-
-  Instance absoluteBoundingBox(SizeRectangle? absoluteBoundingBox);
-
-  Instance size(Vector2D? size);
-
-  Instance relativeTransform(List<List<num>>? relativeTransform);
-
-  Instance clipsContent(bool? clipsContent);
-
-  Instance layoutMode(LayoutMode? layoutMode);
-
-  Instance primaryAxisSizingMode(PrimaryAxisSizingMode? primaryAxisSizingMode);
-
-  Instance counterAxisSizingMode(CounterAxisSizingMode? counterAxisSizingMode);
-
-  Instance primaryAxisAlignItems(PrimaryAxisAlignItems? primaryAxisAlignItems);
-
-  Instance counterAxisAlignItems(CounterAxisAlignItems? counterAxisAlignItems);
-
-  Instance paddingLeft(double? paddingLeft);
-
-  Instance paddingTop(double? paddingTop);
-
-  Instance paddingRight(double? paddingRight);
-
-  Instance paddingBottom(double? paddingBottom);
-
-  Instance horizontalPadding(num? horizontalPadding);
-
-  Instance verticalPadding(num? verticalPadding);
-
-  Instance itemSpacing(num? itemSpacing);
-
-  Instance layoutGrids(List<LayoutGrid>? layoutGrids);
-
-  Instance overflowDirection(OverflowDirection? overflowDirection);
-
-  Instance effects(List<Effect>? effects);
-
-  Instance isMask(bool? isMask);
-
-  Instance isMaskOutline(bool? isMaskOutline);
-
-  Instance layoutGrow(double? layoutGrow);
-
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Instance(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
   ///
   /// Usage
   /// ```dart
   /// Instance(...).copyWith(id: 12, name: "My name")
   /// ````
   Instance call({
-    String? componentId,
     String? id,
-    String? name,
     bool? visible,
-    dynamic? pluginData,
-    dynamic? sharedPluginData,
-    List<Node?>? children,
     bool? locked,
     List<Paint>? fills,
     List<Paint>? strokes,
-    num? strokeWeight,
-    StrokeWeights? individualStrokeWeights,
+    List<ExportSetting>? exportSettings,
+    List<Node>? children,
+    double? opacity,
+    LayoutPositioning? layoutPositioning,
+    bool? itemReverseZIndex,
+    bool? strokesIncludedInLayout,
+    CounterAxisSizingMode? counterAxisSizingMode,
+    double? horizontalPadding,
+    double? verticalPadding,
+    double? itemSpacing,
+    List<LayoutGrid>? layoutGrids,
+    OverflowDirection? overflowDirection,
+    List<Effect>? effects,
+    bool? isMask,
+    bool? isMaskOutline,
+    CounterAxisAlignItems? counterAxisAlignItems,
+    PrimaryAxisAlignItems? primaryAxisAlignItems,
+    PrimaryAxisSizingMode? primaryAxisSizingMode,
+    double? paddingBottom,
+    double? paddingLeft,
+    double? paddingRight,
+    double? paddingTop,
+    Vector2D? size,
+    Map<StyleTypeKey, String>? styles,
+    Map<String, String>? componentPropertyReferencesMap,
+    SizeRectangle? absoluteBoundingBox,
+    SizeRectangle? absoluteRenderBounds,
+    double? rotation,
+    String? name,
+    dynamic pluginData,
+    dynamic sharedPluginData,
+    String? type,
+    double? strokeWeight,
     StrokeAlign? strokeAlign,
     double? cornerRadius,
-    List<num>? rectangleCornerRadii,
-    List<ExportSetting>? exportSettings,
+    List<double>? rectangleCornerRadii,
     BlendMode? blendMode,
     bool? preserveRatio,
     LayoutConstraint? constraints,
     LayoutAlign? layoutAlign,
     String? transitionNodeID,
     double? transitionDuration,
-    EasingType? transitionEasing,
-    double? opacity,
-    SizeRectangle? absoluteBoundingBox,
-    Vector2D? size,
-    List<List<num>>? relativeTransform,
+    List<List<double>>? relativeTransform,
     bool? clipsContent,
     LayoutMode? layoutMode,
-    PrimaryAxisSizingMode? primaryAxisSizingMode,
-    CounterAxisSizingMode? counterAxisSizingMode,
-    PrimaryAxisAlignItems? primaryAxisAlignItems,
-    CounterAxisAlignItems? counterAxisAlignItems,
-    double? paddingLeft,
-    double? paddingTop,
-    double? paddingRight,
-    double? paddingBottom,
-    num? horizontalPadding,
-    num? verticalPadding,
-    num? itemSpacing,
-    List<LayoutGrid>? layoutGrids,
-    OverflowDirection? overflowDirection,
-    List<Effect>? effects,
-    bool? isMask,
-    bool? isMaskOutline,
-    double? layoutGrow,
+    StrokeWeights? individualStrokeWeights,
+    bool? isExposedInstance,
+    List<String>? exposedInstances,
+    Map<String, ComponentProperty>? componentProperties,
+    String? componentId,
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfInstance.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfInstance.copyWith.fieldName(...)`
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfInstance.copyWith(...)`.
 class _$InstanceCWProxyImpl implements _$InstanceCWProxy {
   const _$InstanceCWProxyImpl(this._value);
 
   final Instance _value;
 
   @override
-  Instance componentId(String? componentId) => this(componentId: componentId);
 
-  @override
-  Instance id(String id) => this(id: id);
-
-  @override
-  Instance name(String? name) => this(name: name);
-
-  @override
-  Instance visible(bool visible) => this(visible: visible);
-
-  @override
-  Instance pluginData(dynamic pluginData) => this(pluginData: pluginData);
-
-  @override
-  Instance sharedPluginData(dynamic sharedPluginData) =>
-      this(sharedPluginData: sharedPluginData);
-
-  @override
-  Instance children(List<Node?>? children) => this(children: children);
-
-  @override
-  Instance locked(bool locked) => this(locked: locked);
-
-  @override
-  Instance fills(List<Paint>? fills) => this(fills: fills);
-
-  @override
-  Instance strokes(List<Paint>? strokes) => this(strokes: strokes);
-
-  @override
-  Instance strokeWeight(num? strokeWeight) => this(strokeWeight: strokeWeight);
-
-  @override
-  Instance individualStrokeWeights(StrokeWeights? individualStrokeWeights) =>
-      this(individualStrokeWeights: individualStrokeWeights);
-
-  @override
-  Instance strokeAlign(StrokeAlign? strokeAlign) =>
-      this(strokeAlign: strokeAlign);
-
-  @override
-  Instance cornerRadius(double? cornerRadius) =>
-      this(cornerRadius: cornerRadius);
-
-  @override
-  Instance rectangleCornerRadii(List<num>? rectangleCornerRadii) =>
-      this(rectangleCornerRadii: rectangleCornerRadii);
-
-  @override
-  Instance exportSettings(List<ExportSetting>? exportSettings) =>
-      this(exportSettings: exportSettings);
-
-  @override
-  Instance blendMode(BlendMode? blendMode) => this(blendMode: blendMode);
-
-  @override
-  Instance preserveRatio(bool? preserveRatio) =>
-      this(preserveRatio: preserveRatio);
-
-  @override
-  Instance constraints(LayoutConstraint? constraints) =>
-      this(constraints: constraints);
-
-  @override
-  Instance layoutAlign(LayoutAlign? layoutAlign) =>
-      this(layoutAlign: layoutAlign);
-
-  @override
-  Instance transitionNodeID(String? transitionNodeID) =>
-      this(transitionNodeID: transitionNodeID);
-
-  @override
-  Instance transitionDuration(double? transitionDuration) =>
-      this(transitionDuration: transitionDuration);
-
-  @override
-  Instance transitionEasing(EasingType? transitionEasing) =>
-      this(transitionEasing: transitionEasing);
-
-  @override
-  Instance opacity(double? opacity) => this(opacity: opacity);
-
-  @override
-  Instance absoluteBoundingBox(SizeRectangle? absoluteBoundingBox) =>
-      this(absoluteBoundingBox: absoluteBoundingBox);
-
-  @override
-  Instance size(Vector2D? size) => this(size: size);
-
-  @override
-  Instance relativeTransform(List<List<num>>? relativeTransform) =>
-      this(relativeTransform: relativeTransform);
-
-  @override
-  Instance clipsContent(bool? clipsContent) => this(clipsContent: clipsContent);
-
-  @override
-  Instance layoutMode(LayoutMode? layoutMode) => this(layoutMode: layoutMode);
-
-  @override
-  Instance primaryAxisSizingMode(
-          PrimaryAxisSizingMode? primaryAxisSizingMode) =>
-      this(primaryAxisSizingMode: primaryAxisSizingMode);
-
-  @override
-  Instance counterAxisSizingMode(
-          CounterAxisSizingMode? counterAxisSizingMode) =>
-      this(counterAxisSizingMode: counterAxisSizingMode);
-
-  @override
-  Instance primaryAxisAlignItems(
-          PrimaryAxisAlignItems? primaryAxisAlignItems) =>
-      this(primaryAxisAlignItems: primaryAxisAlignItems);
-
-  @override
-  Instance counterAxisAlignItems(
-          CounterAxisAlignItems? counterAxisAlignItems) =>
-      this(counterAxisAlignItems: counterAxisAlignItems);
-
-  @override
-  Instance paddingLeft(double? paddingLeft) => this(paddingLeft: paddingLeft);
-
-  @override
-  Instance paddingTop(double? paddingTop) => this(paddingTop: paddingTop);
-
-  @override
-  Instance paddingRight(double? paddingRight) =>
-      this(paddingRight: paddingRight);
-
-  @override
-  Instance paddingBottom(double? paddingBottom) =>
-      this(paddingBottom: paddingBottom);
-
-  @override
-  Instance horizontalPadding(num? horizontalPadding) =>
-      this(horizontalPadding: horizontalPadding);
-
-  @override
-  Instance verticalPadding(num? verticalPadding) =>
-      this(verticalPadding: verticalPadding);
-
-  @override
-  Instance itemSpacing(num? itemSpacing) => this(itemSpacing: itemSpacing);
-
-  @override
-  Instance layoutGrids(List<LayoutGrid>? layoutGrids) =>
-      this(layoutGrids: layoutGrids);
-
-  @override
-  Instance overflowDirection(OverflowDirection? overflowDirection) =>
-      this(overflowDirection: overflowDirection);
-
-  @override
-  Instance effects(List<Effect>? effects) => this(effects: effects);
-
-  @override
-  Instance isMask(bool? isMask) => this(isMask: isMask);
-
-  @override
-  Instance isMaskOutline(bool? isMaskOutline) =>
-      this(isMaskOutline: isMaskOutline);
-
-  @override
-  Instance layoutGrow(double? layoutGrow) => this(layoutGrow: layoutGrow);
-
-  @override
-
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Instance(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
   ///
   /// Usage
   /// ```dart
   /// Instance(...).copyWith(id: 12, name: "My name")
   /// ````
   Instance call({
-    Object? componentId = const $CopyWithPlaceholder(),
     Object? id = const $CopyWithPlaceholder(),
-    Object? name = const $CopyWithPlaceholder(),
     Object? visible = const $CopyWithPlaceholder(),
-    Object? pluginData = const $CopyWithPlaceholder(),
-    Object? sharedPluginData = const $CopyWithPlaceholder(),
-    Object? children = const $CopyWithPlaceholder(),
     Object? locked = const $CopyWithPlaceholder(),
     Object? fills = const $CopyWithPlaceholder(),
     Object? strokes = const $CopyWithPlaceholder(),
-    Object? strokeWeight = const $CopyWithPlaceholder(),
-    Object? individualStrokeWeights = const $CopyWithPlaceholder(),
-    Object? strokeAlign = const $CopyWithPlaceholder(),
-    Object? cornerRadius = const $CopyWithPlaceholder(),
-    Object? rectangleCornerRadii = const $CopyWithPlaceholder(),
     Object? exportSettings = const $CopyWithPlaceholder(),
-    Object? blendMode = const $CopyWithPlaceholder(),
-    Object? preserveRatio = const $CopyWithPlaceholder(),
-    Object? constraints = const $CopyWithPlaceholder(),
-    Object? layoutAlign = const $CopyWithPlaceholder(),
-    Object? transitionNodeID = const $CopyWithPlaceholder(),
-    Object? transitionDuration = const $CopyWithPlaceholder(),
-    Object? transitionEasing = const $CopyWithPlaceholder(),
+    Object? children = const $CopyWithPlaceholder(),
     Object? opacity = const $CopyWithPlaceholder(),
-    Object? absoluteBoundingBox = const $CopyWithPlaceholder(),
-    Object? size = const $CopyWithPlaceholder(),
-    Object? relativeTransform = const $CopyWithPlaceholder(),
-    Object? clipsContent = const $CopyWithPlaceholder(),
-    Object? layoutMode = const $CopyWithPlaceholder(),
-    Object? primaryAxisSizingMode = const $CopyWithPlaceholder(),
+    Object? layoutPositioning = const $CopyWithPlaceholder(),
+    Object? itemReverseZIndex = const $CopyWithPlaceholder(),
+    Object? strokesIncludedInLayout = const $CopyWithPlaceholder(),
     Object? counterAxisSizingMode = const $CopyWithPlaceholder(),
-    Object? primaryAxisAlignItems = const $CopyWithPlaceholder(),
-    Object? counterAxisAlignItems = const $CopyWithPlaceholder(),
-    Object? paddingLeft = const $CopyWithPlaceholder(),
-    Object? paddingTop = const $CopyWithPlaceholder(),
-    Object? paddingRight = const $CopyWithPlaceholder(),
-    Object? paddingBottom = const $CopyWithPlaceholder(),
     Object? horizontalPadding = const $CopyWithPlaceholder(),
     Object? verticalPadding = const $CopyWithPlaceholder(),
     Object? itemSpacing = const $CopyWithPlaceholder(),
@@ -382,27 +107,230 @@ class _$InstanceCWProxyImpl implements _$InstanceCWProxy {
     Object? effects = const $CopyWithPlaceholder(),
     Object? isMask = const $CopyWithPlaceholder(),
     Object? isMaskOutline = const $CopyWithPlaceholder(),
-    Object? layoutGrow = const $CopyWithPlaceholder(),
+    Object? counterAxisAlignItems = const $CopyWithPlaceholder(),
+    Object? primaryAxisAlignItems = const $CopyWithPlaceholder(),
+    Object? primaryAxisSizingMode = const $CopyWithPlaceholder(),
+    Object? paddingBottom = const $CopyWithPlaceholder(),
+    Object? paddingLeft = const $CopyWithPlaceholder(),
+    Object? paddingRight = const $CopyWithPlaceholder(),
+    Object? paddingTop = const $CopyWithPlaceholder(),
+    Object? size = const $CopyWithPlaceholder(),
+    Object? styles = const $CopyWithPlaceholder(),
+    Object? componentPropertyReferencesMap = const $CopyWithPlaceholder(),
+    Object? absoluteBoundingBox = const $CopyWithPlaceholder(),
+    Object? absoluteRenderBounds = const $CopyWithPlaceholder(),
+    Object? rotation = const $CopyWithPlaceholder(),
+    Object? name = const $CopyWithPlaceholder(),
+    Object? pluginData = const $CopyWithPlaceholder(),
+    Object? sharedPluginData = const $CopyWithPlaceholder(),
+    Object? type = const $CopyWithPlaceholder(),
+    Object? strokeWeight = const $CopyWithPlaceholder(),
+    Object? strokeAlign = const $CopyWithPlaceholder(),
+    Object? cornerRadius = const $CopyWithPlaceholder(),
+    Object? rectangleCornerRadii = const $CopyWithPlaceholder(),
+    Object? blendMode = const $CopyWithPlaceholder(),
+    Object? preserveRatio = const $CopyWithPlaceholder(),
+    Object? constraints = const $CopyWithPlaceholder(),
+    Object? layoutAlign = const $CopyWithPlaceholder(),
+    Object? transitionNodeID = const $CopyWithPlaceholder(),
+    Object? transitionDuration = const $CopyWithPlaceholder(),
+    Object? relativeTransform = const $CopyWithPlaceholder(),
+    Object? clipsContent = const $CopyWithPlaceholder(),
+    Object? layoutMode = const $CopyWithPlaceholder(),
+    Object? individualStrokeWeights = const $CopyWithPlaceholder(),
+    Object? isExposedInstance = const $CopyWithPlaceholder(),
+    Object? exposedInstances = const $CopyWithPlaceholder(),
+    Object? componentProperties = const $CopyWithPlaceholder(),
+    Object? componentId = const $CopyWithPlaceholder(),
   }) {
     return Instance(
-      componentId: componentId == const $CopyWithPlaceholder()
-          ? _value.componentId
-          // ignore: cast_nullable_to_non_nullable
-          : componentId as String?,
       id: id == const $CopyWithPlaceholder() || id == null
           // ignore: unnecessary_non_null_assertion
           ? _value.id!
           // ignore: cast_nullable_to_non_nullable
           : id as String,
-      name: name == const $CopyWithPlaceholder()
-          ? _value.name
-          // ignore: cast_nullable_to_non_nullable
-          : name as String?,
       visible: visible == const $CopyWithPlaceholder() || visible == null
           // ignore: unnecessary_non_null_assertion
           ? _value.visible!
           // ignore: cast_nullable_to_non_nullable
           : visible as bool,
+      locked: locked == const $CopyWithPlaceholder() || locked == null
+          // ignore: unnecessary_non_null_assertion
+          ? _value.locked!
+          // ignore: cast_nullable_to_non_nullable
+          : locked as bool,
+      fills: fills == const $CopyWithPlaceholder() || fills == null
+          // ignore: unnecessary_non_null_assertion
+          ? _value.fills!
+          // ignore: cast_nullable_to_non_nullable
+          : fills as List<Paint>,
+      strokes: strokes == const $CopyWithPlaceholder() || strokes == null
+          // ignore: unnecessary_non_null_assertion
+          ? _value.strokes!
+          // ignore: cast_nullable_to_non_nullable
+          : strokes as List<Paint>,
+      exportSettings: exportSettings == const $CopyWithPlaceholder() ||
+              exportSettings == null
+          // ignore: unnecessary_non_null_assertion
+          ? _value.exportSettings!
+          // ignore: cast_nullable_to_non_nullable
+          : exportSettings as List<ExportSetting>,
+      children: children == const $CopyWithPlaceholder() || children == null
+          // ignore: unnecessary_non_null_assertion
+          ? _value.children!
+          // ignore: cast_nullable_to_non_nullable
+          : children as List<Node>,
+      opacity: opacity == const $CopyWithPlaceholder() || opacity == null
+          // ignore: unnecessary_non_null_assertion
+          ? _value.opacity!
+          // ignore: cast_nullable_to_non_nullable
+          : opacity as double,
+      layoutPositioning: layoutPositioning == const $CopyWithPlaceholder() ||
+              layoutPositioning == null
+          // ignore: unnecessary_non_null_assertion
+          ? _value.layoutPositioning!
+          // ignore: cast_nullable_to_non_nullable
+          : layoutPositioning as LayoutPositioning,
+      itemReverseZIndex: itemReverseZIndex == const $CopyWithPlaceholder() ||
+              itemReverseZIndex == null
+          // ignore: unnecessary_non_null_assertion
+          ? _value.itemReverseZIndex!
+          // ignore: cast_nullable_to_non_nullable
+          : itemReverseZIndex as bool,
+      strokesIncludedInLayout:
+          strokesIncludedInLayout == const $CopyWithPlaceholder() ||
+                  strokesIncludedInLayout == null
+              // ignore: unnecessary_non_null_assertion
+              ? _value.strokesIncludedInLayout!
+              // ignore: cast_nullable_to_non_nullable
+              : strokesIncludedInLayout as bool,
+      counterAxisSizingMode:
+          counterAxisSizingMode == const $CopyWithPlaceholder() ||
+                  counterAxisSizingMode == null
+              // ignore: unnecessary_non_null_assertion
+              ? _value.counterAxisSizingMode!
+              // ignore: cast_nullable_to_non_nullable
+              : counterAxisSizingMode as CounterAxisSizingMode,
+      horizontalPadding: horizontalPadding == const $CopyWithPlaceholder() ||
+              horizontalPadding == null
+          // ignore: unnecessary_non_null_assertion
+          ? _value.horizontalPadding!
+          // ignore: cast_nullable_to_non_nullable
+          : horizontalPadding as double,
+      verticalPadding: verticalPadding == const $CopyWithPlaceholder() ||
+              verticalPadding == null
+          // ignore: unnecessary_non_null_assertion
+          ? _value.verticalPadding!
+          // ignore: cast_nullable_to_non_nullable
+          : verticalPadding as double,
+      itemSpacing:
+          itemSpacing == const $CopyWithPlaceholder() || itemSpacing == null
+              // ignore: unnecessary_non_null_assertion
+              ? _value.itemSpacing!
+              // ignore: cast_nullable_to_non_nullable
+              : itemSpacing as double,
+      layoutGrids:
+          layoutGrids == const $CopyWithPlaceholder() || layoutGrids == null
+              // ignore: unnecessary_non_null_assertion
+              ? _value.layoutGrids!
+              // ignore: cast_nullable_to_non_nullable
+              : layoutGrids as List<LayoutGrid>,
+      overflowDirection: overflowDirection == const $CopyWithPlaceholder() ||
+              overflowDirection == null
+          // ignore: unnecessary_non_null_assertion
+          ? _value.overflowDirection!
+          // ignore: cast_nullable_to_non_nullable
+          : overflowDirection as OverflowDirection,
+      effects: effects == const $CopyWithPlaceholder() || effects == null
+          // ignore: unnecessary_non_null_assertion
+          ? _value.effects!
+          // ignore: cast_nullable_to_non_nullable
+          : effects as List<Effect>,
+      isMask: isMask == const $CopyWithPlaceholder() || isMask == null
+          // ignore: unnecessary_non_null_assertion
+          ? _value.isMask!
+          // ignore: cast_nullable_to_non_nullable
+          : isMask as bool,
+      isMaskOutline:
+          isMaskOutline == const $CopyWithPlaceholder() || isMaskOutline == null
+              // ignore: unnecessary_non_null_assertion
+              ? _value.isMaskOutline!
+              // ignore: cast_nullable_to_non_nullable
+              : isMaskOutline as bool,
+      counterAxisAlignItems:
+          counterAxisAlignItems == const $CopyWithPlaceholder() ||
+                  counterAxisAlignItems == null
+              // ignore: unnecessary_non_null_assertion
+              ? _value.counterAxisAlignItems!
+              // ignore: cast_nullable_to_non_nullable
+              : counterAxisAlignItems as CounterAxisAlignItems,
+      primaryAxisAlignItems:
+          primaryAxisAlignItems == const $CopyWithPlaceholder() ||
+                  primaryAxisAlignItems == null
+              // ignore: unnecessary_non_null_assertion
+              ? _value.primaryAxisAlignItems!
+              // ignore: cast_nullable_to_non_nullable
+              : primaryAxisAlignItems as PrimaryAxisAlignItems,
+      primaryAxisSizingMode:
+          primaryAxisSizingMode == const $CopyWithPlaceholder() ||
+                  primaryAxisSizingMode == null
+              // ignore: unnecessary_non_null_assertion
+              ? _value.primaryAxisSizingMode!
+              // ignore: cast_nullable_to_non_nullable
+              : primaryAxisSizingMode as PrimaryAxisSizingMode,
+      paddingBottom:
+          paddingBottom == const $CopyWithPlaceholder() || paddingBottom == null
+              // ignore: unnecessary_non_null_assertion
+              ? _value.paddingBottom!
+              // ignore: cast_nullable_to_non_nullable
+              : paddingBottom as double,
+      paddingLeft:
+          paddingLeft == const $CopyWithPlaceholder() || paddingLeft == null
+              // ignore: unnecessary_non_null_assertion
+              ? _value.paddingLeft!
+              // ignore: cast_nullable_to_non_nullable
+              : paddingLeft as double,
+      paddingRight:
+          paddingRight == const $CopyWithPlaceholder() || paddingRight == null
+              // ignore: unnecessary_non_null_assertion
+              ? _value.paddingRight!
+              // ignore: cast_nullable_to_non_nullable
+              : paddingRight as double,
+      paddingTop:
+          paddingTop == const $CopyWithPlaceholder() || paddingTop == null
+              // ignore: unnecessary_non_null_assertion
+              ? _value.paddingTop!
+              // ignore: cast_nullable_to_non_nullable
+              : paddingTop as double,
+      size: size == const $CopyWithPlaceholder()
+          ? _value.size
+          // ignore: cast_nullable_to_non_nullable
+          : size as Vector2D?,
+      styles: styles == const $CopyWithPlaceholder()
+          ? _value.styles
+          // ignore: cast_nullable_to_non_nullable
+          : styles as Map<StyleTypeKey, String>?,
+      componentPropertyReferencesMap:
+          componentPropertyReferencesMap == const $CopyWithPlaceholder()
+              ? _value.componentPropertyReferencesMap
+              // ignore: cast_nullable_to_non_nullable
+              : componentPropertyReferencesMap as Map<String, String>?,
+      absoluteBoundingBox: absoluteBoundingBox == const $CopyWithPlaceholder()
+          ? _value.absoluteBoundingBox
+          // ignore: cast_nullable_to_non_nullable
+          : absoluteBoundingBox as SizeRectangle?,
+      absoluteRenderBounds: absoluteRenderBounds == const $CopyWithPlaceholder()
+          ? _value.absoluteRenderBounds
+          // ignore: cast_nullable_to_non_nullable
+          : absoluteRenderBounds as SizeRectangle?,
+      rotation: rotation == const $CopyWithPlaceholder()
+          ? _value.rotation
+          // ignore: cast_nullable_to_non_nullable
+          : rotation as double?,
+      name: name == const $CopyWithPlaceholder()
+          ? _value.name
+          // ignore: cast_nullable_to_non_nullable
+          : name as String?,
       pluginData:
           pluginData == const $CopyWithPlaceholder() || pluginData == null
               // ignore: unnecessary_non_null_assertion
@@ -415,32 +343,14 @@ class _$InstanceCWProxyImpl implements _$InstanceCWProxy {
           ? _value.sharedPluginData!
           // ignore: cast_nullable_to_non_nullable
           : sharedPluginData as dynamic,
-      children: children == const $CopyWithPlaceholder()
-          ? _value.children
+      type: type == const $CopyWithPlaceholder()
+          ? _value.type
           // ignore: cast_nullable_to_non_nullable
-          : children as List<Node?>?,
-      locked: locked == const $CopyWithPlaceholder() || locked == null
-          // ignore: unnecessary_non_null_assertion
-          ? _value.locked!
-          // ignore: cast_nullable_to_non_nullable
-          : locked as bool,
-      fills: fills == const $CopyWithPlaceholder()
-          ? _value.fills
-          // ignore: cast_nullable_to_non_nullable
-          : fills as List<Paint>?,
-      strokes: strokes == const $CopyWithPlaceholder()
-          ? _value.strokes
-          // ignore: cast_nullable_to_non_nullable
-          : strokes as List<Paint>?,
+          : type as String?,
       strokeWeight: strokeWeight == const $CopyWithPlaceholder()
           ? _value.strokeWeight
           // ignore: cast_nullable_to_non_nullable
-          : strokeWeight as num?,
-      individualStrokeWeights:
-          individualStrokeWeights == const $CopyWithPlaceholder()
-              ? _value.individualStrokeWeights
-              // ignore: cast_nullable_to_non_nullable
-              : individualStrokeWeights as StrokeWeights?,
+          : strokeWeight as double?,
       strokeAlign: strokeAlign == const $CopyWithPlaceholder()
           ? _value.strokeAlign
           // ignore: cast_nullable_to_non_nullable
@@ -452,11 +362,7 @@ class _$InstanceCWProxyImpl implements _$InstanceCWProxy {
       rectangleCornerRadii: rectangleCornerRadii == const $CopyWithPlaceholder()
           ? _value.rectangleCornerRadii
           // ignore: cast_nullable_to_non_nullable
-          : rectangleCornerRadii as List<num>?,
-      exportSettings: exportSettings == const $CopyWithPlaceholder()
-          ? _value.exportSettings
-          // ignore: cast_nullable_to_non_nullable
-          : exportSettings as List<ExportSetting>?,
+          : rectangleCornerRadii as List<double>?,
       blendMode: blendMode == const $CopyWithPlaceholder()
           ? _value.blendMode
           // ignore: cast_nullable_to_non_nullable
@@ -481,26 +387,10 @@ class _$InstanceCWProxyImpl implements _$InstanceCWProxy {
           ? _value.transitionDuration
           // ignore: cast_nullable_to_non_nullable
           : transitionDuration as double?,
-      transitionEasing: transitionEasing == const $CopyWithPlaceholder()
-          ? _value.transitionEasing
-          // ignore: cast_nullable_to_non_nullable
-          : transitionEasing as EasingType?,
-      opacity: opacity == const $CopyWithPlaceholder()
-          ? _value.opacity
-          // ignore: cast_nullable_to_non_nullable
-          : opacity as double?,
-      absoluteBoundingBox: absoluteBoundingBox == const $CopyWithPlaceholder()
-          ? _value.absoluteBoundingBox
-          // ignore: cast_nullable_to_non_nullable
-          : absoluteBoundingBox as SizeRectangle?,
-      size: size == const $CopyWithPlaceholder()
-          ? _value.size
-          // ignore: cast_nullable_to_non_nullable
-          : size as Vector2D?,
       relativeTransform: relativeTransform == const $CopyWithPlaceholder()
           ? _value.relativeTransform
           // ignore: cast_nullable_to_non_nullable
-          : relativeTransform as List<List<num>>?,
+          : relativeTransform as List<List<double>>?,
       clipsContent: clipsContent == const $CopyWithPlaceholder()
           ? _value.clipsContent
           // ignore: cast_nullable_to_non_nullable
@@ -509,86 +399,140 @@ class _$InstanceCWProxyImpl implements _$InstanceCWProxy {
           ? _value.layoutMode
           // ignore: cast_nullable_to_non_nullable
           : layoutMode as LayoutMode?,
-      primaryAxisSizingMode:
-          primaryAxisSizingMode == const $CopyWithPlaceholder()
-              ? _value.primaryAxisSizingMode
+      individualStrokeWeights:
+          individualStrokeWeights == const $CopyWithPlaceholder()
+              ? _value.individualStrokeWeights
               // ignore: cast_nullable_to_non_nullable
-              : primaryAxisSizingMode as PrimaryAxisSizingMode?,
-      counterAxisSizingMode:
-          counterAxisSizingMode == const $CopyWithPlaceholder()
-              ? _value.counterAxisSizingMode
+              : individualStrokeWeights as StrokeWeights?,
+      isExposedInstance: isExposedInstance == const $CopyWithPlaceholder() ||
+              isExposedInstance == null
+          // ignore: unnecessary_non_null_assertion
+          ? _value.isExposedInstance!
+          // ignore: cast_nullable_to_non_nullable
+          : isExposedInstance as bool,
+      exposedInstances: exposedInstances == const $CopyWithPlaceholder() ||
+              exposedInstances == null
+          // ignore: unnecessary_non_null_assertion
+          ? _value.exposedInstances!
+          // ignore: cast_nullable_to_non_nullable
+          : exposedInstances as List<String>,
+      componentProperties:
+          componentProperties == const $CopyWithPlaceholder() ||
+                  componentProperties == null
+              // ignore: unnecessary_non_null_assertion
+              ? _value.componentProperties!
               // ignore: cast_nullable_to_non_nullable
-              : counterAxisSizingMode as CounterAxisSizingMode?,
-      primaryAxisAlignItems:
-          primaryAxisAlignItems == const $CopyWithPlaceholder()
-              ? _value.primaryAxisAlignItems
-              // ignore: cast_nullable_to_non_nullable
-              : primaryAxisAlignItems as PrimaryAxisAlignItems?,
-      counterAxisAlignItems:
-          counterAxisAlignItems == const $CopyWithPlaceholder()
-              ? _value.counterAxisAlignItems
-              // ignore: cast_nullable_to_non_nullable
-              : counterAxisAlignItems as CounterAxisAlignItems?,
-      paddingLeft: paddingLeft == const $CopyWithPlaceholder()
-          ? _value.paddingLeft
+              : componentProperties as Map<String, ComponentProperty>,
+      componentId: componentId == const $CopyWithPlaceholder()
+          ? _value.componentId
           // ignore: cast_nullable_to_non_nullable
-          : paddingLeft as double?,
-      paddingTop: paddingTop == const $CopyWithPlaceholder()
-          ? _value.paddingTop
-          // ignore: cast_nullable_to_non_nullable
-          : paddingTop as double?,
-      paddingRight: paddingRight == const $CopyWithPlaceholder()
-          ? _value.paddingRight
-          // ignore: cast_nullable_to_non_nullable
-          : paddingRight as double?,
-      paddingBottom: paddingBottom == const $CopyWithPlaceholder()
-          ? _value.paddingBottom
-          // ignore: cast_nullable_to_non_nullable
-          : paddingBottom as double?,
-      horizontalPadding: horizontalPadding == const $CopyWithPlaceholder()
-          ? _value.horizontalPadding
-          // ignore: cast_nullable_to_non_nullable
-          : horizontalPadding as num?,
-      verticalPadding: verticalPadding == const $CopyWithPlaceholder()
-          ? _value.verticalPadding
-          // ignore: cast_nullable_to_non_nullable
-          : verticalPadding as num?,
-      itemSpacing: itemSpacing == const $CopyWithPlaceholder()
-          ? _value.itemSpacing
-          // ignore: cast_nullable_to_non_nullable
-          : itemSpacing as num?,
-      layoutGrids: layoutGrids == const $CopyWithPlaceholder()
-          ? _value.layoutGrids
-          // ignore: cast_nullable_to_non_nullable
-          : layoutGrids as List<LayoutGrid>?,
-      overflowDirection: overflowDirection == const $CopyWithPlaceholder()
-          ? _value.overflowDirection
-          // ignore: cast_nullable_to_non_nullable
-          : overflowDirection as OverflowDirection?,
-      effects: effects == const $CopyWithPlaceholder()
-          ? _value.effects
-          // ignore: cast_nullable_to_non_nullable
-          : effects as List<Effect>?,
-      isMask: isMask == const $CopyWithPlaceholder()
-          ? _value.isMask
-          // ignore: cast_nullable_to_non_nullable
-          : isMask as bool?,
-      isMaskOutline: isMaskOutline == const $CopyWithPlaceholder()
-          ? _value.isMaskOutline
-          // ignore: cast_nullable_to_non_nullable
-          : isMaskOutline as bool?,
-      layoutGrow: layoutGrow == const $CopyWithPlaceholder()
-          ? _value.layoutGrow
-          // ignore: cast_nullable_to_non_nullable
-          : layoutGrow as double?,
+          : componentId as String?,
     );
   }
 }
 
 extension $InstanceCopyWith on Instance {
-  /// Returns a callable class that can be used as follows: `instanceOfInstance.copyWith(...)` or like so:`instanceOfInstance.copyWith.fieldName(...)`.
+  /// Returns a callable class that can be used as follows: `instanceOfInstance.copyWith(...)`.
   // ignore: library_private_types_in_public_api
   _$InstanceCWProxy get copyWith => _$InstanceCWProxyImpl(this);
+
+  /// Copies the object with the specific fields set to `null`. If you pass `false` as a parameter, nothing will be done and it will be ignored. Don't do it. Prefer `copyWith(field: null)`.
+  ///
+  /// Usage
+  /// ```dart
+  /// Instance(...).copyWithNull(firstField: true, secondField: true)
+  /// ````
+  Instance copyWithNull({
+    bool size = false,
+    bool styles = false,
+    bool componentPropertyReferencesMap = false,
+    bool absoluteBoundingBox = false,
+    bool absoluteRenderBounds = false,
+    bool rotation = false,
+    bool name = false,
+    bool type = false,
+    bool strokeWeight = false,
+    bool strokeAlign = false,
+    bool cornerRadius = false,
+    bool rectangleCornerRadii = false,
+    bool blendMode = false,
+    bool preserveRatio = false,
+    bool constraints = false,
+    bool layoutAlign = false,
+    bool transitionNodeID = false,
+    bool transitionDuration = false,
+    bool relativeTransform = false,
+    bool clipsContent = false,
+    bool layoutMode = false,
+    bool individualStrokeWeights = false,
+    bool componentId = false,
+  }) {
+    return Instance(
+      id: id,
+      visible: visible,
+      locked: locked,
+      fills: fills,
+      strokes: strokes,
+      exportSettings: exportSettings,
+      children: children,
+      opacity: opacity,
+      layoutPositioning: layoutPositioning,
+      itemReverseZIndex: itemReverseZIndex,
+      strokesIncludedInLayout: strokesIncludedInLayout,
+      counterAxisSizingMode: counterAxisSizingMode,
+      horizontalPadding: horizontalPadding,
+      verticalPadding: verticalPadding,
+      itemSpacing: itemSpacing,
+      layoutGrids: layoutGrids,
+      overflowDirection: overflowDirection,
+      effects: effects,
+      isMask: isMask,
+      isMaskOutline: isMaskOutline,
+      counterAxisAlignItems: counterAxisAlignItems,
+      primaryAxisAlignItems: primaryAxisAlignItems,
+      primaryAxisSizingMode: primaryAxisSizingMode,
+      paddingBottom: paddingBottom,
+      paddingLeft: paddingLeft,
+      paddingRight: paddingRight,
+      paddingTop: paddingTop,
+      size: size == true ? null : this.size,
+      styles: styles == true ? null : this.styles,
+      componentPropertyReferencesMap: componentPropertyReferencesMap == true
+          ? null
+          : this.componentPropertyReferencesMap,
+      absoluteBoundingBox:
+          absoluteBoundingBox == true ? null : this.absoluteBoundingBox,
+      absoluteRenderBounds:
+          absoluteRenderBounds == true ? null : this.absoluteRenderBounds,
+      rotation: rotation == true ? null : this.rotation,
+      name: name == true ? null : this.name,
+      pluginData: pluginData,
+      sharedPluginData: sharedPluginData,
+      type: type == true ? null : this.type,
+      strokeWeight: strokeWeight == true ? null : this.strokeWeight,
+      strokeAlign: strokeAlign == true ? null : this.strokeAlign,
+      cornerRadius: cornerRadius == true ? null : this.cornerRadius,
+      rectangleCornerRadii:
+          rectangleCornerRadii == true ? null : this.rectangleCornerRadii,
+      blendMode: blendMode == true ? null : this.blendMode,
+      preserveRatio: preserveRatio == true ? null : this.preserveRatio,
+      constraints: constraints == true ? null : this.constraints,
+      layoutAlign: layoutAlign == true ? null : this.layoutAlign,
+      transitionNodeID: transitionNodeID == true ? null : this.transitionNodeID,
+      transitionDuration:
+          transitionDuration == true ? null : this.transitionDuration,
+      relativeTransform:
+          relativeTransform == true ? null : this.relativeTransform,
+      clipsContent: clipsContent == true ? null : this.clipsContent,
+      layoutMode: layoutMode == true ? null : this.layoutMode,
+      individualStrokeWeights:
+          individualStrokeWeights == true ? null : this.individualStrokeWeights,
+      isExposedInstance: isExposedInstance,
+      exposedInstances: exposedInstances,
+      componentProperties: componentProperties,
+      componentId: componentId == true ? null : this.componentId,
+    );
+  }
 }
 
 // **************************************************************************
@@ -596,38 +540,96 @@ extension $InstanceCopyWith on Instance {
 // **************************************************************************
 
 Instance _$InstanceFromJson(Map<String, dynamic> json) => Instance(
-      componentId: json['componentId'] as String?,
       id: json['id'] as String,
-      name: json['name'] as String?,
       visible: json['visible'] as bool? ?? true,
-      pluginData: json['pluginData'],
-      sharedPluginData: json['sharedPluginData'],
-      children: (json['children'] as List<dynamic>?)
-          ?.map(const NodeJsonConverter().fromJson)
-          .toList(),
       locked: json['locked'] as bool? ?? false,
       fills: (json['fills'] as List<dynamic>?)
-          ?.map((e) => Paint.fromJson(e as Map<String, dynamic>))
-          .toList(),
+              ?.map((e) => Paint.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          [],
       strokes: (json['strokes'] as List<dynamic>?)
-          ?.map((e) => Paint.fromJson(e as Map<String, dynamic>))
+              ?.map((e) => Paint.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          [],
+      exportSettings: (json['exportSettings'] as List<dynamic>?)
+              ?.map((e) => ExportSetting.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          [],
+      children: (json['children'] as List<dynamic>)
+          .map((e) => Node.fromJson(e as Map<String, dynamic>))
           .toList(),
-      strokeWeight: json['strokeWeight'] as num?,
-      individualStrokeWeights: json['individualStrokeWeights'] == null
+      opacity: (json['opacity'] as num?)?.toDouble() ?? 1.0,
+      layoutPositioning: $enumDecodeNullable(
+              _$LayoutPositioningEnumMap, json['layoutPositioning']) ??
+          LayoutPositioning.auto,
+      itemReverseZIndex: json['itemReverseZIndex'] as bool? ?? false,
+      strokesIncludedInLayout:
+          json['strokesIncludedInLayout'] as bool? ?? false,
+      counterAxisSizingMode: $enumDecodeNullable(
+              _$CounterAxisSizingModeEnumMap, json['counterAxisSizingMode']) ??
+          CounterAxisSizingMode.auto,
+      horizontalPadding: (json['horizontalPadding'] as num?)?.toDouble() ?? 0.0,
+      verticalPadding: (json['verticalPadding'] as num?)?.toDouble() ?? 0.0,
+      itemSpacing: (json['itemSpacing'] as num?)?.toDouble() ?? 0.0,
+      layoutGrids: (json['layoutGrids'] as List<dynamic>?)
+              ?.map((e) => LayoutGrid.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          [],
+      overflowDirection: $enumDecodeNullable(
+              _$OverflowDirectionEnumMap, json['overflowDirection']) ??
+          OverflowDirection.none,
+      effects: (json['effects'] as List<dynamic>?)
+              ?.map((e) => Effect.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          [],
+      isMask: json['isMask'] as bool? ?? false,
+      isMaskOutline: json['isMaskOutline'] as bool? ?? false,
+      counterAxisAlignItems: $enumDecodeNullable(
+              _$CounterAxisAlignItemsEnumMap, json['counterAxisAlignItems']) ??
+          CounterAxisAlignItems.min,
+      primaryAxisAlignItems: $enumDecodeNullable(
+              _$PrimaryAxisAlignItemsEnumMap, json['primaryAxisAlignItems']) ??
+          PrimaryAxisAlignItems.min,
+      primaryAxisSizingMode: $enumDecodeNullable(
+              _$PrimaryAxisSizingModeEnumMap, json['primaryAxisSizingMode']) ??
+          PrimaryAxisSizingMode.auto,
+      paddingBottom: (json['paddingBottom'] as num?)?.toDouble() ?? 0.0,
+      paddingLeft: (json['paddingLeft'] as num?)?.toDouble() ?? 0.0,
+      paddingRight: (json['paddingRight'] as num?)?.toDouble() ?? 0.0,
+      paddingTop: (json['paddingTop'] as num?)?.toDouble() ?? 0.0,
+      size: json['size'] == null
           ? null
-          : StrokeWeights.fromJson(
-              json['individualStrokeWeights'] as Map<String, dynamic>),
+          : Vector2D.fromJson(json['size'] as Map<String, dynamic>),
+      styles: (json['styles'] as Map<String, dynamic>?)?.map(
+        (k, e) => MapEntry($enumDecode(_$StyleTypeKeyEnumMap, k), e as String),
+      ),
+      componentPropertyReferencesMap:
+          (json['componentPropertyReferencesMap'] as Map<String, dynamic>?)
+              ?.map(
+        (k, e) => MapEntry(k, e as String),
+      ),
+      absoluteBoundingBox: json['absoluteBoundingBox'] == null
+          ? null
+          : SizeRectangle.fromJson(
+              json['absoluteBoundingBox'] as Map<String, dynamic>),
+      absoluteRenderBounds: json['absoluteRenderBounds'] == null
+          ? null
+          : SizeRectangle.fromJson(
+              json['absoluteRenderBounds'] as Map<String, dynamic>),
+      rotation: (json['rotation'] as num?)?.toDouble(),
+      name: json['name'] as String?,
+      pluginData: json['pluginData'],
+      sharedPluginData: json['sharedPluginData'],
+      type: json['type'] as String?,
+      strokeWeight: (json['strokeWeight'] as num?)?.toDouble(),
       strokeAlign:
           $enumDecodeNullable(_$StrokeAlignEnumMap, json['strokeAlign']),
       cornerRadius: (json['cornerRadius'] as num?)?.toDouble(),
       rectangleCornerRadii: (json['rectangleCornerRadii'] as List<dynamic>?)
-          ?.map((e) => e as num)
-          .toList(),
-      exportSettings: (json['exportSettings'] as List<dynamic>?)
-          ?.map((e) => ExportSetting.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => (e as num).toDouble())
           .toList(),
       blendMode: $enumDecodeNullable(_$BlendModeEnumMap, json['blendMode']),
-      preserveRatio: json['preserveRatio'] as bool?,
+      preserveRatio: json['preserveRatio'] as bool? ?? false,
       constraints: json['constraints'] == null
           ? null
           : LayoutConstraint.fromJson(
@@ -636,57 +638,42 @@ Instance _$InstanceFromJson(Map<String, dynamic> json) => Instance(
           $enumDecodeNullable(_$LayoutAlignEnumMap, json['layoutAlign']),
       transitionNodeID: json['transitionNodeID'] as String?,
       transitionDuration: (json['transitionDuration'] as num?)?.toDouble(),
-      transitionEasing:
-          $enumDecodeNullable(_$EasingTypeEnumMap, json['transitionEasing']),
-      opacity: (json['opacity'] as num?)?.toDouble(),
-      absoluteBoundingBox: json['absoluteBoundingBox'] == null
-          ? null
-          : SizeRectangle.fromJson(
-              json['absoluteBoundingBox'] as Map<String, dynamic>),
-      size: json['size'] == null
-          ? null
-          : Vector2D.fromJson(json['size'] as Map<String, dynamic>),
       relativeTransform: (json['relativeTransform'] as List<dynamic>?)
-          ?.map((e) => (e as List<dynamic>).map((e) => e as num).toList())
+          ?.map((e) =>
+              (e as List<dynamic>).map((e) => (e as num).toDouble()).toList())
           .toList(),
       clipsContent: json['clipsContent'] as bool?,
-      layoutMode: $enumDecodeNullable(_$LayoutModeEnumMap, json['layoutMode']),
-      primaryAxisSizingMode: $enumDecodeNullable(
-          _$PrimaryAxisSizingModeEnumMap, json['primaryAxisSizingMode']),
-      counterAxisSizingMode: $enumDecodeNullable(
-          _$CounterAxisSizingModeEnumMap, json['counterAxisSizingMode']),
-      primaryAxisAlignItems: $enumDecodeNullable(
-          _$PrimaryAxisAlignItemsEnumMap, json['primaryAxisAlignItems']),
-      counterAxisAlignItems: $enumDecodeNullable(
-          _$CounterAxisAlignItemsEnumMap, json['counterAxisAlignItems']),
-      paddingLeft: (json['paddingLeft'] as num?)?.toDouble(),
-      paddingTop: (json['paddingTop'] as num?)?.toDouble(),
-      paddingRight: (json['paddingRight'] as num?)?.toDouble(),
-      paddingBottom: (json['paddingBottom'] as num?)?.toDouble(),
-      horizontalPadding: json['horizontalPadding'] as num?,
-      verticalPadding: json['verticalPadding'] as num?,
-      itemSpacing: json['itemSpacing'] as num?,
-      layoutGrids: (json['layoutGrids'] as List<dynamic>?)
-          ?.map((e) => LayoutGrid.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      overflowDirection: $enumDecodeNullable(
-          _$OverflowDirectionEnumMap, json['overflowDirection']),
-      effects: (json['effects'] as List<dynamic>?)
-          ?.map((e) => Effect.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      isMask: json['isMask'] as bool?,
-      isMaskOutline: json['isMaskOutline'] as bool?,
-      layoutGrow: (json['layoutGrow'] as num?)?.toDouble(),
+      layoutMode:
+          $enumDecodeNullable(_$LayoutModeEnumMap, json['layoutMode']) ??
+              LayoutMode.none,
+      individualStrokeWeights: json['individualStrokeWeights'] == null
+          ? null
+          : StrokeWeights.fromJson(
+              json['individualStrokeWeights'] as Map<String, dynamic>),
+      isExposedInstance: json['isExposedInstance'] as bool? ?? false,
+      exposedInstances: (json['exposedInstances'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          [],
+      componentProperties:
+          (json['componentProperties'] as Map<String, dynamic>?)?.map(
+                (k, e) => MapEntry(
+                    k, ComponentProperty.fromJson(e as Map<String, dynamic>)),
+              ) ??
+              {},
+      componentId: json['componentId'] as String?,
     );
 
 Map<String, dynamic> _$InstanceToJson(Instance instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'visible': instance.visible,
+      'type': instance.type,
       'pluginData': instance.pluginData,
       'sharedPluginData': instance.sharedPluginData,
-      'children':
-          instance.children?.map(const NodeJsonConverter().toJson).toList(),
+      'rotation': instance.rotation,
+      'componentPropertyReferencesMap': instance.componentPropertyReferencesMap,
+      'children': instance.children,
       'locked': instance.locked,
       'fills': instance.fills,
       'strokes': instance.strokes,
@@ -698,41 +685,95 @@ Map<String, dynamic> _$InstanceToJson(Instance instance) => <String, dynamic>{
       'exportSettings': instance.exportSettings,
       'blendMode': _$BlendModeEnumMap[instance.blendMode],
       'preserveRatio': instance.preserveRatio,
-      'layoutGrow': instance.layoutGrow,
       'constraints': instance.constraints,
       'layoutAlign': _$LayoutAlignEnumMap[instance.layoutAlign],
-      'primaryAxisAlignItems':
-          _$PrimaryAxisAlignItemsEnumMap[instance.primaryAxisAlignItems],
-      'counterAxisAlignItems':
-          _$CounterAxisAlignItemsEnumMap[instance.counterAxisAlignItems],
-      'paddingLeft': instance.paddingLeft,
-      'paddingTop': instance.paddingTop,
-      'paddingRight': instance.paddingRight,
-      'paddingBottom': instance.paddingBottom,
       'transitionNodeID': instance.transitionNodeID,
       'transitionDuration': instance.transitionDuration,
-      'transitionEasing': _$EasingTypeEnumMap[instance.transitionEasing],
       'opacity': instance.opacity,
       'absoluteBoundingBox': instance.absoluteBoundingBox,
+      'absoluteRenderBounds': instance.absoluteRenderBounds,
       'size': instance.size,
       'relativeTransform': instance.relativeTransform,
       'clipsContent': instance.clipsContent,
       'layoutMode': _$LayoutModeEnumMap[instance.layoutMode],
       'counterAxisSizingMode':
-          _$CounterAxisSizingModeEnumMap[instance.counterAxisSizingMode],
+          _$CounterAxisSizingModeEnumMap[instance.counterAxisSizingMode]!,
       'primaryAxisSizingMode':
-          _$PrimaryAxisSizingModeEnumMap[instance.primaryAxisSizingMode],
+          _$PrimaryAxisSizingModeEnumMap[instance.primaryAxisSizingMode]!,
+      'primaryAxisAlignItems':
+          _$PrimaryAxisAlignItemsEnumMap[instance.primaryAxisAlignItems]!,
+      'counterAxisAlignItems':
+          _$CounterAxisAlignItemsEnumMap[instance.counterAxisAlignItems]!,
+      'paddingLeft': instance.paddingLeft,
+      'paddingTop': instance.paddingTop,
+      'paddingRight': instance.paddingRight,
+      'paddingBottom': instance.paddingBottom,
       'horizontalPadding': instance.horizontalPadding,
       'verticalPadding': instance.verticalPadding,
       'itemSpacing': instance.itemSpacing,
+      'layoutPositioning':
+          _$LayoutPositioningEnumMap[instance.layoutPositioning]!,
+      'itemReverseZIndex': instance.itemReverseZIndex,
+      'strokesIncludedInLayout': instance.strokesIncludedInLayout,
       'layoutGrids': instance.layoutGrids,
       'overflowDirection':
-          _$OverflowDirectionEnumMap[instance.overflowDirection],
+          _$OverflowDirectionEnumMap[instance.overflowDirection]!,
       'effects': instance.effects,
       'isMask': instance.isMask,
       'isMaskOutline': instance.isMaskOutline,
+      'styles': instance.styles
+          ?.map((k, e) => MapEntry(_$StyleTypeKeyEnumMap[k]!, e)),
       'componentId': instance.componentId,
+      'isExposedInstance': instance.isExposedInstance,
+      'exposedInstances': instance.exposedInstances,
+      'componentProperties': instance.componentProperties,
     };
+
+const _$LayoutPositioningEnumMap = {
+  LayoutPositioning.auto: 'AUTO',
+  LayoutPositioning.absolute: 'ABSOLUTE',
+};
+
+const _$CounterAxisSizingModeEnumMap = {
+  CounterAxisSizingMode.fixed: 'FIXED',
+  CounterAxisSizingMode.auto: 'AUTO',
+};
+
+const _$OverflowDirectionEnumMap = {
+  OverflowDirection.none: 'NONE',
+  OverflowDirection.horizontalScrolling: 'HORIZONTAL_SCROLLING',
+  OverflowDirection.verticalScrolling: 'VERTICAL_SCROLLING',
+  OverflowDirection.horizontalVerticalScrolling:
+      'HORIZONTAL_AND_VERICAL_SCROLLING',
+};
+
+const _$CounterAxisAlignItemsEnumMap = {
+  CounterAxisAlignItems.min: 'MIN',
+  CounterAxisAlignItems.center: 'CENTER',
+  CounterAxisAlignItems.max: 'MAX',
+};
+
+const _$PrimaryAxisAlignItemsEnumMap = {
+  PrimaryAxisAlignItems.min: 'MIN',
+  PrimaryAxisAlignItems.center: 'CENTER',
+  PrimaryAxisAlignItems.max: 'MAX',
+  PrimaryAxisAlignItems.spaceBetween: 'SPACE_BETWEEN',
+};
+
+const _$PrimaryAxisSizingModeEnumMap = {
+  PrimaryAxisSizingMode.fixed: 'FIXED',
+  PrimaryAxisSizingMode.auto: 'AUTO',
+};
+
+const _$StyleTypeKeyEnumMap = {
+  StyleTypeKey.fill: 'fill',
+  StyleTypeKey.fills: 'fills',
+  StyleTypeKey.stroke: 'stroke',
+  StyleTypeKey.strokes: 'strokes',
+  StyleTypeKey.text: 'text',
+  StyleTypeKey.effect: 'effect',
+  StyleTypeKey.grid: 'grid',
+};
 
 const _$StrokeAlignEnumMap = {
   StrokeAlign.inside: 'INSIDE',
@@ -770,46 +811,8 @@ const _$LayoutAlignEnumMap = {
   LayoutAlign.inherit: 'INHERIT',
 };
 
-const _$EasingTypeEnumMap = {
-  EasingType.easeIn: 'EASE_IN',
-  EasingType.easeOut: 'EASE_OUT',
-  EasingType.easeInOut: 'EASE_IN_AND_OUT',
-  EasingType.linear: 'LINEAR',
-  EasingType.customBezier: 'CUSTOM_BEZIER',
-};
-
 const _$LayoutModeEnumMap = {
   LayoutMode.none: 'NONE',
   LayoutMode.horizontal: 'HORIZONTAL',
   LayoutMode.vertical: 'VERTICAL',
-};
-
-const _$PrimaryAxisSizingModeEnumMap = {
-  PrimaryAxisSizingMode.fixed: 'FIXED',
-  PrimaryAxisSizingMode.auto: 'AUTO',
-};
-
-const _$CounterAxisSizingModeEnumMap = {
-  CounterAxisSizingMode.fixed: 'FIXED',
-  CounterAxisSizingMode.auto: 'AUTO',
-};
-
-const _$PrimaryAxisAlignItemsEnumMap = {
-  PrimaryAxisAlignItems.min: 'MIN',
-  PrimaryAxisAlignItems.center: 'CENTER',
-  PrimaryAxisAlignItems.max: 'MAX',
-  PrimaryAxisAlignItems.spaceBetween: 'SPACE_BETWEEN',
-};
-
-const _$CounterAxisAlignItemsEnumMap = {
-  CounterAxisAlignItems.min: 'MIN',
-  CounterAxisAlignItems.center: 'CENTER',
-  CounterAxisAlignItems.max: 'MAX',
-};
-
-const _$OverflowDirectionEnumMap = {
-  OverflowDirection.horizontalScrolling: 'HORIZONTAL_SCROLLING',
-  OverflowDirection.verticalScrolling: 'VERTICAL_SCROLLING',
-  OverflowDirection.horizontalVerticalScrolling:
-      'HORIZONTAL_AND_VERICAL_SCROLLING',
 };

@@ -7,13 +7,7 @@ part of 'export_setting.dart';
 // **************************************************************************
 
 abstract class _$ExportSettingCWProxy {
-  ExportSetting suffix(String? suffix);
-
-  ExportSetting format(ExportFormat? format);
-
-  ExportSetting constraint(Constraint? constraint);
-
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ExportSetting(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
   ///
   /// Usage
   /// ```dart
@@ -26,25 +20,15 @@ abstract class _$ExportSettingCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfExportSetting.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfExportSetting.copyWith.fieldName(...)`
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfExportSetting.copyWith(...)`.
 class _$ExportSettingCWProxyImpl implements _$ExportSettingCWProxy {
   const _$ExportSettingCWProxyImpl(this._value);
 
   final ExportSetting _value;
 
   @override
-  ExportSetting suffix(String? suffix) => this(suffix: suffix);
 
-  @override
-  ExportSetting format(ExportFormat? format) => this(format: format);
-
-  @override
-  ExportSetting constraint(Constraint? constraint) =>
-      this(constraint: constraint);
-
-  @override
-
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ExportSetting(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
   ///
   /// Usage
   /// ```dart
@@ -73,9 +57,27 @@ class _$ExportSettingCWProxyImpl implements _$ExportSettingCWProxy {
 }
 
 extension $ExportSettingCopyWith on ExportSetting {
-  /// Returns a callable class that can be used as follows: `instanceOfExportSetting.copyWith(...)` or like so:`instanceOfExportSetting.copyWith.fieldName(...)`.
+  /// Returns a callable class that can be used as follows: `instanceOfExportSetting.copyWith(...)`.
   // ignore: library_private_types_in_public_api
   _$ExportSettingCWProxy get copyWith => _$ExportSettingCWProxyImpl(this);
+
+  /// Copies the object with the specific fields set to `null`. If you pass `false` as a parameter, nothing will be done and it will be ignored. Don't do it. Prefer `copyWith(field: null)`.
+  ///
+  /// Usage
+  /// ```dart
+  /// ExportSetting(...).copyWithNull(firstField: true, secondField: true)
+  /// ````
+  ExportSetting copyWithNull({
+    bool suffix = false,
+    bool format = false,
+    bool constraint = false,
+  }) {
+    return ExportSetting(
+      suffix: suffix == true ? null : this.suffix,
+      format: format == true ? null : this.format,
+      constraint: constraint == true ? null : this.constraint,
+    );
+  }
 }
 
 // **************************************************************************

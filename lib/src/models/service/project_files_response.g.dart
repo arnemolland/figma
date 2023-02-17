@@ -7,11 +7,7 @@ part of 'project_files_response.dart';
 // **************************************************************************
 
 abstract class _$ProjectFilesResponseCWProxy {
-  ProjectFilesResponse name(String? name);
-
-  ProjectFilesResponse files(List<ProjectFile>? files);
-
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ProjectFilesResponse(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
   ///
   /// Usage
   /// ```dart
@@ -23,7 +19,7 @@ abstract class _$ProjectFilesResponseCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfProjectFilesResponse.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfProjectFilesResponse.copyWith.fieldName(...)`
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfProjectFilesResponse.copyWith(...)`.
 class _$ProjectFilesResponseCWProxyImpl
     implements _$ProjectFilesResponseCWProxy {
   const _$ProjectFilesResponseCWProxyImpl(this._value);
@@ -31,14 +27,8 @@ class _$ProjectFilesResponseCWProxyImpl
   final ProjectFilesResponse _value;
 
   @override
-  ProjectFilesResponse name(String? name) => this(name: name);
 
-  @override
-  ProjectFilesResponse files(List<ProjectFile>? files) => this(files: files);
-
-  @override
-
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ProjectFilesResponse(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
   ///
   /// Usage
   /// ```dart
@@ -62,10 +52,26 @@ class _$ProjectFilesResponseCWProxyImpl
 }
 
 extension $ProjectFilesResponseCopyWith on ProjectFilesResponse {
-  /// Returns a callable class that can be used as follows: `instanceOfProjectFilesResponse.copyWith(...)` or like so:`instanceOfProjectFilesResponse.copyWith.fieldName(...)`.
+  /// Returns a callable class that can be used as follows: `instanceOfProjectFilesResponse.copyWith(...)`.
   // ignore: library_private_types_in_public_api
   _$ProjectFilesResponseCWProxy get copyWith =>
       _$ProjectFilesResponseCWProxyImpl(this);
+
+  /// Copies the object with the specific fields set to `null`. If you pass `false` as a parameter, nothing will be done and it will be ignored. Don't do it. Prefer `copyWith(field: null)`.
+  ///
+  /// Usage
+  /// ```dart
+  /// ProjectFilesResponse(...).copyWithNull(firstField: true, secondField: true)
+  /// ````
+  ProjectFilesResponse copyWithNull({
+    bool name = false,
+    bool files = false,
+  }) {
+    return ProjectFilesResponse(
+      name: name == true ? null : this.name,
+      files: files == true ? null : this.files,
+    );
+  }
 }
 
 // **************************************************************************

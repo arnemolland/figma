@@ -1,4 +1,4 @@
-import 'package:figma/src/models/models.dart';
+import 'package:figma/src/models.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:copy_with_extension/copy_with_extension.dart';
 
@@ -11,25 +11,29 @@ part 'vector.g.dart';
 @CopyWith()
 class Vector extends Node {
   /// If true, layer is locked and cannot be edited.
-  final bool? locked;
+  @JsonKey(defaultValue: false)
+  final bool locked;
 
   /// An array of export settings representing images to export from node.
-  final List<ExportSetting>? exportSettings;
+  @JsonKey(defaultValue: [])
+  final List<ExportSetting> exportSettings;
 
   /// How this node blends with nodes behind it in the scene (see [BlendMode]).
   final BlendMode? blendMode;
 
   /// Keep height and width constrained to same ratio.
-  final bool? preserveRatio;
-
-  /// This property is applicable only for direct children of auto-layout frames,
-  /// ignored otherwise. Determines whether a layer should stretch along the parent’s
-  /// primary axis. A `0` corresponds to a fixed size and `1` corresponds to stretch.
-  final double? layoutGrow;
+  @JsonKey(defaultValue: false)
+  final bool preserveRatio;
 
   /// How the layer is aligned inside an auto-layout frame. This property is
   /// only provided for direct children of auto-layout frames.
   final LayoutAlign? layoutAlign;
+
+  /// This property is applicable only for direct children of auto-layout frames,
+  /// ignored otherwise. Determines whether a layer should stretch along the parent’s
+  /// primary axis. A `0` corresponds to a fixed size and `1` corresponds to stretch.
+  @JsonKey(defaultValue: 0.0)
+  final double layoutGrow;
 
   /// Horizontal and vertical layout constraints for node.
   final LayoutConstraint? constraints;
@@ -44,10 +48,14 @@ class Vector extends Node {
   final EasingType? transitionEasing;
 
   /// Opacity of the node.
-  final double? opacity;
+  @JsonKey(defaultValue: 1.0)
+  final double opacity;
 
   /// Bounding box of the node in absolute space coordinates.
   final SizeRectangle? absoluteBoundingBox;
+
+  /// The bounds of the rendered node in the file in absolute space coordinates.
+  final SizeRectangle? absoluteRenderBounds;
 
   /// An array of effects attached to this node (see [Effect]).
   final List<Effect>? effects;
@@ -62,20 +70,29 @@ class Vector extends Node {
   /// relative to its parent. The bottom row of the matrix is implicitly always
   /// (0, 0, 1). Use to transform coordinates in geometry. Only present if
   /// geometry=paths is passed.
-  final List<List<num>>? relativeTransform;
+  final List<List<double>>? relativeTransform;
 
   /// Does this node mask sibling nodes in front of it?
-  final bool? isMask;
+  @JsonKey(defaultValue: false)
+  final bool isMask;
 
   /// An array of fill paints applied to the node.
-  final List<Paint>? fills;
+  @JsonKey(defaultValue: [])
+  final List<Paint> fills;
 
   /// Only specified if parameter geometry=paths is used. An array of paths
   /// representing the object fill.
-  final List<dynamic>? fillGeometry;
+  @JsonKey(defaultValue: [])
+  final List<Path> fillGeometry;
+
+  /// Map from ID to PaintOverride for looking up fill overrides. To see which
+  /// regions are overriden, you must use the geometry=paths option. Each path
+  /// returned may have an overrideId which maps to this table.
+  final Map<int, PaintOverride>? fillOverrideTable;
 
   /// An array of stroke paints applied to the node.
-  final List<Paint>? strokes;
+  @JsonKey(defaultValue: [])
+  final List<Paint> strokes;
 
   /// The weight of strokes on the node.
   final double? strokeWeight;
@@ -86,22 +103,26 @@ class Vector extends Node {
   /// A string enum with value of [StrokeCap.none], [StrokeCap.round],
   /// [StrokeCap.square], [StrokeCap.lineArrow] or [StrokeCap.triangleArrow],
   /// describing the end caps of vector paths.
-  final StrokeCap? strokeCap;
+  @JsonKey(defaultValue: StrokeCap.none)
+  final StrokeCap strokeCap;
 
   /// A string enum with value of [StrokeJoin.miter], [StrokeJoin.bevel], or
   /// [StrokeCap.round], describing how corners in vector paths are rendered.
-  final StrokeJoin? strokeJoin;
+  @JsonKey(defaultValue: StrokeJoin.miter)
+  final StrokeJoin strokeJoin;
 
   /// An array of floating point numbers describing the pattern of dash length
   /// and gap lengths that the vector path follows. For example a value of
   /// `[1, 2]` indicates that the path has a dash of length 1 followed by a gap
   /// of length 2, repeated.
-  final List<double>? strokeDashes;
+  @JsonKey(defaultValue: [])
+  final List<double> strokeDashes;
 
   /// Only valid if strokeJoin is [StrokeJoin.miter]. The corner angle, in
   /// degrees, below which strokeJoin will be set to [StrokeJoin.bevel] to
   /// avoid super sharp corners. By default this is 28.96 degrees.
-  final double? strokeMiterAngle;
+  @JsonKey(defaultValue: 28.96)
+  final double strokeMiterAngle;
 
   /// Only specified if parameter geometry=paths is used. An array of paths
   /// representing the object stroke.
@@ -116,46 +137,44 @@ class Vector extends Node {
   final Map<StyleTypeKey, String>? styles;
 
   Vector({
-    required String id,
-    String? name,
-    required bool visible,
-    dynamic pluginData,
-    dynamic sharedPluginData,
-    this.locked,
-    this.exportSettings,
+    required super.id,
+    required super.visible,
+    super.componentPropertyReferencesMap,
+    super.name,
+    super.rotation,
+    super.pluginData,
+    super.sharedPluginData,
+    required this.locked,
+    required this.exportSettings,
+    required this.preserveRatio,
+    required this.layoutGrow,
+    required this.strokeCap,
+    required this.strokeJoin,
+    required this.strokeDashes,
+    required this.strokeMiterAngle,
+    required this.opacity,
+    required this.isMask,
+    required this.fills,
+    required this.fillGeometry,
+    required this.strokes,
     this.blendMode,
-    this.preserveRatio,
     this.layoutAlign,
-    this.layoutGrow,
     this.constraints,
     this.transitionNodeID,
     this.transitionDuration,
     this.transitionEasing,
-    this.opacity,
     this.absoluteBoundingBox,
     this.effects,
     this.size,
     this.relativeTransform,
-    this.isMask,
-    this.fills,
-    this.fillGeometry,
-    this.strokes,
     this.strokeWeight,
     this.individualStrokeWeights,
-    this.strokeCap,
-    this.strokeJoin,
-    this.strokeDashes,
-    this.strokeMiterAngle,
     this.strokeGeometry,
     this.strokeAlign,
     this.styles,
-  }) : super(
-          id: id,
-          name: name,
-          visible: visible,
-          pluginData: pluginData,
-          sharedPluginData: sharedPluginData,
-        );
+    this.absoluteRenderBounds,
+    this.fillOverrideTable,
+  });
 
   @override
   List<Object?> get props => [
@@ -188,6 +207,8 @@ class Vector extends Node {
         strokeGeometry,
         strokeAlign,
         styles,
+        absoluteRenderBounds,
+        fillOverrideTable,
       ];
 
   factory Vector.fromJson(Map<String, dynamic> json) => _$VectorFromJson(json);

@@ -1,4 +1,4 @@
-import 'package:figma/src/models/models.dart';
+import 'package:figma/src/models.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 /// Converts a JSON decoded object to a [Node] specific instance regarding
@@ -25,9 +25,9 @@ class NodeJsonConverter implements JsonConverter<Node?, Object?> {
       case 'BOOLEAN_OPERATION':
         return BooleanOperation.fromJson(json);
       case 'COMPONENT':
-        return Frame.fromJson(json); // FIXME: create a Component node type
+        return ComponentNode.fromJson(json);
       case 'COMPONENT_SET':
-        return Frame.fromJson(json); // FIXME: create a ComponentSet node type
+        return ComponentNode.fromJson(json);
       case 'LINE':
         return Line.fromJson(json);
       case 'TEXT':

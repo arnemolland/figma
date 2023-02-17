@@ -7,23 +7,7 @@ part of 'effect.dart';
 // **************************************************************************
 
 abstract class _$EffectCWProxy {
-  Effect type(EffectType? type);
-
-  Effect visible(bool visible);
-
-  Effect radius(num? radius);
-
-  Effect spread(num? spread);
-
-  Effect color(Color? color);
-
-  Effect blendMode(BlendMode? blendMode);
-
-  Effect offset(Vector2D? offset);
-
-  Effect showShadowBehindNode(bool? showShadowBehindNode);
-
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Effect(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
   ///
   /// Usage
   /// ```dart
@@ -41,40 +25,15 @@ abstract class _$EffectCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfEffect.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfEffect.copyWith.fieldName(...)`
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfEffect.copyWith(...)`.
 class _$EffectCWProxyImpl implements _$EffectCWProxy {
   const _$EffectCWProxyImpl(this._value);
 
   final Effect _value;
 
   @override
-  Effect type(EffectType? type) => this(type: type);
 
-  @override
-  Effect visible(bool visible) => this(visible: visible);
-
-  @override
-  Effect radius(num? radius) => this(radius: radius);
-
-  @override
-  Effect spread(num? spread) => this(spread: spread);
-
-  @override
-  Effect color(Color? color) => this(color: color);
-
-  @override
-  Effect blendMode(BlendMode? blendMode) => this(blendMode: blendMode);
-
-  @override
-  Effect offset(Vector2D? offset) => this(offset: offset);
-
-  @override
-  Effect showShadowBehindNode(bool? showShadowBehindNode) =>
-      this(showShadowBehindNode: showShadowBehindNode);
-
-  @override
-
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Effect(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
   ///
   /// Usage
   /// ```dart
@@ -129,9 +88,37 @@ class _$EffectCWProxyImpl implements _$EffectCWProxy {
 }
 
 extension $EffectCopyWith on Effect {
-  /// Returns a callable class that can be used as follows: `instanceOfEffect.copyWith(...)` or like so:`instanceOfEffect.copyWith.fieldName(...)`.
+  /// Returns a callable class that can be used as follows: `instanceOfEffect.copyWith(...)`.
   // ignore: library_private_types_in_public_api
   _$EffectCWProxy get copyWith => _$EffectCWProxyImpl(this);
+
+  /// Copies the object with the specific fields set to `null`. If you pass `false` as a parameter, nothing will be done and it will be ignored. Don't do it. Prefer `copyWith(field: null)`.
+  ///
+  /// Usage
+  /// ```dart
+  /// Effect(...).copyWithNull(firstField: true, secondField: true)
+  /// ````
+  Effect copyWithNull({
+    bool type = false,
+    bool radius = false,
+    bool spread = false,
+    bool color = false,
+    bool blendMode = false,
+    bool offset = false,
+    bool showShadowBehindNode = false,
+  }) {
+    return Effect(
+      type: type == true ? null : this.type,
+      visible: visible,
+      radius: radius == true ? null : this.radius,
+      spread: spread == true ? null : this.spread,
+      color: color == true ? null : this.color,
+      blendMode: blendMode == true ? null : this.blendMode,
+      offset: offset == true ? null : this.offset,
+      showShadowBehindNode:
+          showShadowBehindNode == true ? null : this.showShadowBehindNode,
+    );
+  }
 }
 
 // **************************************************************************

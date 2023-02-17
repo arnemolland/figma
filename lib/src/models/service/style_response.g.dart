@@ -7,13 +7,7 @@ part of 'style_response.dart';
 // **************************************************************************
 
 abstract class _$StyleResponseCWProxy {
-  StyleResponse status(int? status);
-
-  StyleResponse error(bool? error);
-
-  StyleResponse style(Style? style);
-
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `StyleResponse(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
   ///
   /// Usage
   /// ```dart
@@ -26,24 +20,15 @@ abstract class _$StyleResponseCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfStyleResponse.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfStyleResponse.copyWith.fieldName(...)`
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfStyleResponse.copyWith(...)`.
 class _$StyleResponseCWProxyImpl implements _$StyleResponseCWProxy {
   const _$StyleResponseCWProxyImpl(this._value);
 
   final StyleResponse _value;
 
   @override
-  StyleResponse status(int? status) => this(status: status);
 
-  @override
-  StyleResponse error(bool? error) => this(error: error);
-
-  @override
-  StyleResponse style(Style? style) => this(style: style);
-
-  @override
-
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `StyleResponse(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
   ///
   /// Usage
   /// ```dart
@@ -72,9 +57,27 @@ class _$StyleResponseCWProxyImpl implements _$StyleResponseCWProxy {
 }
 
 extension $StyleResponseCopyWith on StyleResponse {
-  /// Returns a callable class that can be used as follows: `instanceOfStyleResponse.copyWith(...)` or like so:`instanceOfStyleResponse.copyWith.fieldName(...)`.
+  /// Returns a callable class that can be used as follows: `instanceOfStyleResponse.copyWith(...)`.
   // ignore: library_private_types_in_public_api
   _$StyleResponseCWProxy get copyWith => _$StyleResponseCWProxyImpl(this);
+
+  /// Copies the object with the specific fields set to `null`. If you pass `false` as a parameter, nothing will be done and it will be ignored. Don't do it. Prefer `copyWith(field: null)`.
+  ///
+  /// Usage
+  /// ```dart
+  /// StyleResponse(...).copyWithNull(firstField: true, secondField: true)
+  /// ````
+  StyleResponse copyWithNull({
+    bool status = false,
+    bool error = false,
+    bool style = false,
+  }) {
+    return StyleResponse(
+      status: status == true ? null : this.status,
+      error: error == true ? null : this.error,
+      style: style == true ? null : this.style,
+    );
+  }
 }
 
 // **************************************************************************

@@ -22,7 +22,12 @@ class User extends Equatable {
   /// This will only be present on the /v1/me endpoint.
   final String? email;
 
-  User({required this.id, required this.handle, this.imageUrl, this.email});
+  User({
+    required this.id,
+    required this.handle,
+    this.imageUrl,
+    this.email,
+  });
 
   @override
   List<Object?> get props => [id, handle, imageUrl, email];

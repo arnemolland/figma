@@ -31,6 +31,15 @@ class Node extends Equatable {
   /// `pluginData` parameter to include the string "shared".
   final dynamic sharedPluginData;
 
+  /// The rotation of the node, if not 0.
+  final double? rotation;
+
+  /// A mapping of a layer's property to component property name of component
+  /// properties attached to this node. The component property name can be used
+  /// to look up more information on the corresponding component's or component
+  /// set's componentPropertyDefinitions.
+  final Map<String, String>? componentPropertyReferencesMap;
+
   Node({
     required this.id,
     this.name,
@@ -38,6 +47,8 @@ class Node extends Equatable {
     this.type,
     this.pluginData,
     this.sharedPluginData,
+    this.rotation,
+    this.componentPropertyReferencesMap,
   });
 
   @override
@@ -48,6 +59,8 @@ class Node extends Equatable {
         type,
         pluginData,
         sharedPluginData,
+        rotation,
+        componentPropertyReferencesMap,
       ];
 
   factory Node.fromJson(Map<String, dynamic> json) => _$NodeFromJson(json);

@@ -7,299 +7,295 @@ part of 'text.dart';
 // **************************************************************************
 
 abstract class _$TextCWProxy {
-  Text characters(String? characters);
-
-  Text style(TypeStyle? style);
-
-  Text characterStyleOverrides(List<int>? characterStyleOverrides);
-
-  Text styleOverrideTable(Map<int, TypeStyle>? styleOverrideTable);
-
-  Text id(String id);
-
-  Text name(String? name);
-
-  Text visible(bool visible);
-
-  Text pluginData(dynamic pluginData);
-
-  Text sharedPluginData(dynamic sharedPluginData);
-
-  Text locked(bool? locked);
-
-  Text exportSettings(List<ExportSetting>? exportSettings);
-
-  Text blendMode(BlendMode? blendMode);
-
-  Text preserveRatio(bool? preserveRatio);
-
-  Text layoutAlign(LayoutAlign? layoutAlign);
-
-  Text layoutGrow(double? layoutGrow);
-
-  Text constraints(LayoutConstraint? constraints);
-
-  Text transitionNodeID(String? transitionNodeID);
-
-  Text transitionDuration(double? transitionDuration);
-
-  Text transitionEasing(EasingType? transitionEasing);
-
-  Text opacity(double? opacity);
-
-  Text absoluteBoundingBox(SizeRectangle? absoluteBoundingBox);
-
-  Text effects(List<Effect>? effects);
-
-  Text size(Vector2D? size);
-
-  Text relativeTransform(List<List<num>>? relativeTransform);
-
-  Text isMask(bool? isMask);
-
-  Text fills(List<Paint>? fills);
-
-  Text fillGeometry(List<dynamic>? fillGeometry);
-
-  Text strokes(List<Paint>? strokes);
-
-  Text strokeWeight(double? strokeWeight);
-
-  Text strokeCap(StrokeCap? strokeCap);
-
-  Text strokeJoin(StrokeJoin? strokeJoin);
-
-  Text strokeDashes(List<double>? strokeDashes);
-
-  Text strokeMiterAngle(double? strokeMiterAngle);
-
-  Text strokeGeometry(List<dynamic>? strokeGeometry);
-
-  Text strokeAlign(StrokeAlign? strokeAlign);
-
-  Text styles(Map<StyleTypeKey, String>? styles);
-
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Text(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
   ///
   /// Usage
   /// ```dart
   /// Text(...).copyWith(id: 12, name: "My name")
   /// ````
   Text call({
-    String? characters,
-    TypeStyle? style,
-    List<int>? characterStyleOverrides,
-    Map<int, TypeStyle>? styleOverrideTable,
     String? id,
-    String? name,
     bool? visible,
-    dynamic? pluginData,
-    dynamic? sharedPluginData,
     bool? locked,
     List<ExportSetting>? exportSettings,
-    BlendMode? blendMode,
     bool? preserveRatio,
-    LayoutAlign? layoutAlign,
     double? layoutGrow,
-    LayoutConstraint? constraints,
-    String? transitionNodeID,
-    double? transitionDuration,
-    EasingType? transitionEasing,
     double? opacity,
-    SizeRectangle? absoluteBoundingBox,
-    List<Effect>? effects,
-    Vector2D? size,
-    List<List<num>>? relativeTransform,
     bool? isMask,
     List<Paint>? fills,
-    List<dynamic>? fillGeometry,
+    List<Path>? fillGeometry,
     List<Paint>? strokes,
-    double? strokeWeight,
     StrokeCap? strokeCap,
     StrokeJoin? strokeJoin,
     List<double>? strokeDashes,
     double? strokeMiterAngle,
+    Map<String, String>? componentPropertyReferencesMap,
+    String? name,
+    double? rotation,
+    dynamic pluginData,
+    dynamic sharedPluginData,
+    BlendMode? blendMode,
+    LayoutAlign? layoutAlign,
+    LayoutConstraint? constraints,
+    String? transitionNodeID,
+    double? transitionDuration,
+    EasingType? transitionEasing,
+    SizeRectangle? absoluteBoundingBox,
+    List<Effect>? effects,
+    Vector2D? size,
+    List<List<double>>? relativeTransform,
+    double? strokeWeight,
     List<dynamic>? strokeGeometry,
     StrokeAlign? strokeAlign,
     Map<StyleTypeKey, String>? styles,
+    SizeRectangle? absoluteRenderBounds,
+    Map<int, PaintOverride>? fillOverrideTable,
+    StrokeWeights? individualStrokeWeights,
+    String? characters,
+    TypeStyle? style,
+    List<int>? characterStyleOverrides,
+    Map<int, TypeStyle>? styleOverrideTable,
+    List<LineType>? lineTypes,
+    List<int>? lineIndentations,
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfText.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfText.copyWith.fieldName(...)`
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfText.copyWith(...)`.
 class _$TextCWProxyImpl implements _$TextCWProxy {
   const _$TextCWProxyImpl(this._value);
 
   final Text _value;
 
   @override
-  Text characters(String? characters) => this(characters: characters);
 
-  @override
-  Text style(TypeStyle? style) => this(style: style);
-
-  @override
-  Text characterStyleOverrides(List<int>? characterStyleOverrides) =>
-      this(characterStyleOverrides: characterStyleOverrides);
-
-  @override
-  Text styleOverrideTable(Map<int, TypeStyle>? styleOverrideTable) =>
-      this(styleOverrideTable: styleOverrideTable);
-
-  @override
-  Text id(String id) => this(id: id);
-
-  @override
-  Text name(String? name) => this(name: name);
-
-  @override
-  Text visible(bool visible) => this(visible: visible);
-
-  @override
-  Text pluginData(dynamic pluginData) => this(pluginData: pluginData);
-
-  @override
-  Text sharedPluginData(dynamic sharedPluginData) =>
-      this(sharedPluginData: sharedPluginData);
-
-  @override
-  Text locked(bool? locked) => this(locked: locked);
-
-  @override
-  Text exportSettings(List<ExportSetting>? exportSettings) =>
-      this(exportSettings: exportSettings);
-
-  @override
-  Text blendMode(BlendMode? blendMode) => this(blendMode: blendMode);
-
-  @override
-  Text preserveRatio(bool? preserveRatio) => this(preserveRatio: preserveRatio);
-
-  @override
-  Text layoutAlign(LayoutAlign? layoutAlign) => this(layoutAlign: layoutAlign);
-
-  @override
-  Text layoutGrow(double? layoutGrow) => this(layoutGrow: layoutGrow);
-
-  @override
-  Text constraints(LayoutConstraint? constraints) =>
-      this(constraints: constraints);
-
-  @override
-  Text transitionNodeID(String? transitionNodeID) =>
-      this(transitionNodeID: transitionNodeID);
-
-  @override
-  Text transitionDuration(double? transitionDuration) =>
-      this(transitionDuration: transitionDuration);
-
-  @override
-  Text transitionEasing(EasingType? transitionEasing) =>
-      this(transitionEasing: transitionEasing);
-
-  @override
-  Text opacity(double? opacity) => this(opacity: opacity);
-
-  @override
-  Text absoluteBoundingBox(SizeRectangle? absoluteBoundingBox) =>
-      this(absoluteBoundingBox: absoluteBoundingBox);
-
-  @override
-  Text effects(List<Effect>? effects) => this(effects: effects);
-
-  @override
-  Text size(Vector2D? size) => this(size: size);
-
-  @override
-  Text relativeTransform(List<List<num>>? relativeTransform) =>
-      this(relativeTransform: relativeTransform);
-
-  @override
-  Text isMask(bool? isMask) => this(isMask: isMask);
-
-  @override
-  Text fills(List<Paint>? fills) => this(fills: fills);
-
-  @override
-  Text fillGeometry(List<dynamic>? fillGeometry) =>
-      this(fillGeometry: fillGeometry);
-
-  @override
-  Text strokes(List<Paint>? strokes) => this(strokes: strokes);
-
-  @override
-  Text strokeWeight(double? strokeWeight) => this(strokeWeight: strokeWeight);
-
-  @override
-  Text strokeCap(StrokeCap? strokeCap) => this(strokeCap: strokeCap);
-
-  @override
-  Text strokeJoin(StrokeJoin? strokeJoin) => this(strokeJoin: strokeJoin);
-
-  @override
-  Text strokeDashes(List<double>? strokeDashes) =>
-      this(strokeDashes: strokeDashes);
-
-  @override
-  Text strokeMiterAngle(double? strokeMiterAngle) =>
-      this(strokeMiterAngle: strokeMiterAngle);
-
-  @override
-  Text strokeGeometry(List<dynamic>? strokeGeometry) =>
-      this(strokeGeometry: strokeGeometry);
-
-  @override
-  Text strokeAlign(StrokeAlign? strokeAlign) => this(strokeAlign: strokeAlign);
-
-  @override
-  Text styles(Map<StyleTypeKey, String>? styles) => this(styles: styles);
-
-  @override
-
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Text(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
   ///
   /// Usage
   /// ```dart
   /// Text(...).copyWith(id: 12, name: "My name")
   /// ````
   Text call({
-    Object? characters = const $CopyWithPlaceholder(),
-    Object? style = const $CopyWithPlaceholder(),
-    Object? characterStyleOverrides = const $CopyWithPlaceholder(),
-    Object? styleOverrideTable = const $CopyWithPlaceholder(),
     Object? id = const $CopyWithPlaceholder(),
-    Object? name = const $CopyWithPlaceholder(),
     Object? visible = const $CopyWithPlaceholder(),
-    Object? pluginData = const $CopyWithPlaceholder(),
-    Object? sharedPluginData = const $CopyWithPlaceholder(),
     Object? locked = const $CopyWithPlaceholder(),
     Object? exportSettings = const $CopyWithPlaceholder(),
-    Object? blendMode = const $CopyWithPlaceholder(),
     Object? preserveRatio = const $CopyWithPlaceholder(),
-    Object? layoutAlign = const $CopyWithPlaceholder(),
     Object? layoutGrow = const $CopyWithPlaceholder(),
-    Object? constraints = const $CopyWithPlaceholder(),
-    Object? transitionNodeID = const $CopyWithPlaceholder(),
-    Object? transitionDuration = const $CopyWithPlaceholder(),
-    Object? transitionEasing = const $CopyWithPlaceholder(),
     Object? opacity = const $CopyWithPlaceholder(),
-    Object? absoluteBoundingBox = const $CopyWithPlaceholder(),
-    Object? effects = const $CopyWithPlaceholder(),
-    Object? size = const $CopyWithPlaceholder(),
-    Object? relativeTransform = const $CopyWithPlaceholder(),
     Object? isMask = const $CopyWithPlaceholder(),
     Object? fills = const $CopyWithPlaceholder(),
     Object? fillGeometry = const $CopyWithPlaceholder(),
     Object? strokes = const $CopyWithPlaceholder(),
-    Object? strokeWeight = const $CopyWithPlaceholder(),
     Object? strokeCap = const $CopyWithPlaceholder(),
     Object? strokeJoin = const $CopyWithPlaceholder(),
     Object? strokeDashes = const $CopyWithPlaceholder(),
     Object? strokeMiterAngle = const $CopyWithPlaceholder(),
+    Object? componentPropertyReferencesMap = const $CopyWithPlaceholder(),
+    Object? name = const $CopyWithPlaceholder(),
+    Object? rotation = const $CopyWithPlaceholder(),
+    Object? pluginData = const $CopyWithPlaceholder(),
+    Object? sharedPluginData = const $CopyWithPlaceholder(),
+    Object? blendMode = const $CopyWithPlaceholder(),
+    Object? layoutAlign = const $CopyWithPlaceholder(),
+    Object? constraints = const $CopyWithPlaceholder(),
+    Object? transitionNodeID = const $CopyWithPlaceholder(),
+    Object? transitionDuration = const $CopyWithPlaceholder(),
+    Object? transitionEasing = const $CopyWithPlaceholder(),
+    Object? absoluteBoundingBox = const $CopyWithPlaceholder(),
+    Object? effects = const $CopyWithPlaceholder(),
+    Object? size = const $CopyWithPlaceholder(),
+    Object? relativeTransform = const $CopyWithPlaceholder(),
+    Object? strokeWeight = const $CopyWithPlaceholder(),
     Object? strokeGeometry = const $CopyWithPlaceholder(),
     Object? strokeAlign = const $CopyWithPlaceholder(),
     Object? styles = const $CopyWithPlaceholder(),
+    Object? absoluteRenderBounds = const $CopyWithPlaceholder(),
+    Object? fillOverrideTable = const $CopyWithPlaceholder(),
+    Object? individualStrokeWeights = const $CopyWithPlaceholder(),
+    Object? characters = const $CopyWithPlaceholder(),
+    Object? style = const $CopyWithPlaceholder(),
+    Object? characterStyleOverrides = const $CopyWithPlaceholder(),
+    Object? styleOverrideTable = const $CopyWithPlaceholder(),
+    Object? lineTypes = const $CopyWithPlaceholder(),
+    Object? lineIndentations = const $CopyWithPlaceholder(),
   }) {
     return Text(
+      id: id == const $CopyWithPlaceholder() || id == null
+          // ignore: unnecessary_non_null_assertion
+          ? _value.id!
+          // ignore: cast_nullable_to_non_nullable
+          : id as String,
+      visible: visible == const $CopyWithPlaceholder() || visible == null
+          // ignore: unnecessary_non_null_assertion
+          ? _value.visible!
+          // ignore: cast_nullable_to_non_nullable
+          : visible as bool,
+      locked: locked == const $CopyWithPlaceholder() || locked == null
+          // ignore: unnecessary_non_null_assertion
+          ? _value.locked!
+          // ignore: cast_nullable_to_non_nullable
+          : locked as bool,
+      exportSettings: exportSettings == const $CopyWithPlaceholder() ||
+              exportSettings == null
+          // ignore: unnecessary_non_null_assertion
+          ? _value.exportSettings!
+          // ignore: cast_nullable_to_non_nullable
+          : exportSettings as List<ExportSetting>,
+      preserveRatio:
+          preserveRatio == const $CopyWithPlaceholder() || preserveRatio == null
+              // ignore: unnecessary_non_null_assertion
+              ? _value.preserveRatio!
+              // ignore: cast_nullable_to_non_nullable
+              : preserveRatio as bool,
+      layoutGrow:
+          layoutGrow == const $CopyWithPlaceholder() || layoutGrow == null
+              // ignore: unnecessary_non_null_assertion
+              ? _value.layoutGrow!
+              // ignore: cast_nullable_to_non_nullable
+              : layoutGrow as double,
+      opacity: opacity == const $CopyWithPlaceholder() || opacity == null
+          // ignore: unnecessary_non_null_assertion
+          ? _value.opacity!
+          // ignore: cast_nullable_to_non_nullable
+          : opacity as double,
+      isMask: isMask == const $CopyWithPlaceholder() || isMask == null
+          // ignore: unnecessary_non_null_assertion
+          ? _value.isMask!
+          // ignore: cast_nullable_to_non_nullable
+          : isMask as bool,
+      fills: fills == const $CopyWithPlaceholder() || fills == null
+          // ignore: unnecessary_non_null_assertion
+          ? _value.fills!
+          // ignore: cast_nullable_to_non_nullable
+          : fills as List<Paint>,
+      fillGeometry:
+          fillGeometry == const $CopyWithPlaceholder() || fillGeometry == null
+              // ignore: unnecessary_non_null_assertion
+              ? _value.fillGeometry!
+              // ignore: cast_nullable_to_non_nullable
+              : fillGeometry as List<Path>,
+      strokes: strokes == const $CopyWithPlaceholder() || strokes == null
+          // ignore: unnecessary_non_null_assertion
+          ? _value.strokes!
+          // ignore: cast_nullable_to_non_nullable
+          : strokes as List<Paint>,
+      strokeCap: strokeCap == const $CopyWithPlaceholder() || strokeCap == null
+          // ignore: unnecessary_non_null_assertion
+          ? _value.strokeCap!
+          // ignore: cast_nullable_to_non_nullable
+          : strokeCap as StrokeCap,
+      strokeJoin:
+          strokeJoin == const $CopyWithPlaceholder() || strokeJoin == null
+              // ignore: unnecessary_non_null_assertion
+              ? _value.strokeJoin!
+              // ignore: cast_nullable_to_non_nullable
+              : strokeJoin as StrokeJoin,
+      strokeDashes:
+          strokeDashes == const $CopyWithPlaceholder() || strokeDashes == null
+              // ignore: unnecessary_non_null_assertion
+              ? _value.strokeDashes!
+              // ignore: cast_nullable_to_non_nullable
+              : strokeDashes as List<double>,
+      strokeMiterAngle: strokeMiterAngle == const $CopyWithPlaceholder() ||
+              strokeMiterAngle == null
+          // ignore: unnecessary_non_null_assertion
+          ? _value.strokeMiterAngle!
+          // ignore: cast_nullable_to_non_nullable
+          : strokeMiterAngle as double,
+      componentPropertyReferencesMap:
+          componentPropertyReferencesMap == const $CopyWithPlaceholder()
+              ? _value.componentPropertyReferencesMap
+              // ignore: cast_nullable_to_non_nullable
+              : componentPropertyReferencesMap as Map<String, String>?,
+      name: name == const $CopyWithPlaceholder()
+          ? _value.name
+          // ignore: cast_nullable_to_non_nullable
+          : name as String?,
+      rotation: rotation == const $CopyWithPlaceholder()
+          ? _value.rotation
+          // ignore: cast_nullable_to_non_nullable
+          : rotation as double?,
+      pluginData:
+          pluginData == const $CopyWithPlaceholder() || pluginData == null
+              // ignore: unnecessary_non_null_assertion
+              ? _value.pluginData!
+              // ignore: cast_nullable_to_non_nullable
+              : pluginData as dynamic,
+      sharedPluginData: sharedPluginData == const $CopyWithPlaceholder() ||
+              sharedPluginData == null
+          // ignore: unnecessary_non_null_assertion
+          ? _value.sharedPluginData!
+          // ignore: cast_nullable_to_non_nullable
+          : sharedPluginData as dynamic,
+      blendMode: blendMode == const $CopyWithPlaceholder()
+          ? _value.blendMode
+          // ignore: cast_nullable_to_non_nullable
+          : blendMode as BlendMode?,
+      layoutAlign: layoutAlign == const $CopyWithPlaceholder()
+          ? _value.layoutAlign
+          // ignore: cast_nullable_to_non_nullable
+          : layoutAlign as LayoutAlign?,
+      constraints: constraints == const $CopyWithPlaceholder()
+          ? _value.constraints
+          // ignore: cast_nullable_to_non_nullable
+          : constraints as LayoutConstraint?,
+      transitionNodeID: transitionNodeID == const $CopyWithPlaceholder()
+          ? _value.transitionNodeID
+          // ignore: cast_nullable_to_non_nullable
+          : transitionNodeID as String?,
+      transitionDuration: transitionDuration == const $CopyWithPlaceholder()
+          ? _value.transitionDuration
+          // ignore: cast_nullable_to_non_nullable
+          : transitionDuration as double?,
+      transitionEasing: transitionEasing == const $CopyWithPlaceholder()
+          ? _value.transitionEasing
+          // ignore: cast_nullable_to_non_nullable
+          : transitionEasing as EasingType?,
+      absoluteBoundingBox: absoluteBoundingBox == const $CopyWithPlaceholder()
+          ? _value.absoluteBoundingBox
+          // ignore: cast_nullable_to_non_nullable
+          : absoluteBoundingBox as SizeRectangle?,
+      effects: effects == const $CopyWithPlaceholder()
+          ? _value.effects
+          // ignore: cast_nullable_to_non_nullable
+          : effects as List<Effect>?,
+      size: size == const $CopyWithPlaceholder()
+          ? _value.size
+          // ignore: cast_nullable_to_non_nullable
+          : size as Vector2D?,
+      relativeTransform: relativeTransform == const $CopyWithPlaceholder()
+          ? _value.relativeTransform
+          // ignore: cast_nullable_to_non_nullable
+          : relativeTransform as List<List<double>>?,
+      strokeWeight: strokeWeight == const $CopyWithPlaceholder()
+          ? _value.strokeWeight
+          // ignore: cast_nullable_to_non_nullable
+          : strokeWeight as double?,
+      strokeGeometry: strokeGeometry == const $CopyWithPlaceholder()
+          ? _value.strokeGeometry
+          // ignore: cast_nullable_to_non_nullable
+          : strokeGeometry as List<dynamic>?,
+      strokeAlign: strokeAlign == const $CopyWithPlaceholder()
+          ? _value.strokeAlign
+          // ignore: cast_nullable_to_non_nullable
+          : strokeAlign as StrokeAlign?,
+      styles: styles == const $CopyWithPlaceholder()
+          ? _value.styles
+          // ignore: cast_nullable_to_non_nullable
+          : styles as Map<StyleTypeKey, String>?,
+      absoluteRenderBounds: absoluteRenderBounds == const $CopyWithPlaceholder()
+          ? _value.absoluteRenderBounds
+          // ignore: cast_nullable_to_non_nullable
+          : absoluteRenderBounds as SizeRectangle?,
+      fillOverrideTable: fillOverrideTable == const $CopyWithPlaceholder()
+          ? _value.fillOverrideTable
+          // ignore: cast_nullable_to_non_nullable
+          : fillOverrideTable as Map<int, PaintOverride>?,
+      individualStrokeWeights:
+          individualStrokeWeights == const $CopyWithPlaceholder()
+              ? _value.individualStrokeWeights
+              // ignore: cast_nullable_to_non_nullable
+              : individualStrokeWeights as StrokeWeights?,
       characters: characters == const $CopyWithPlaceholder()
           ? _value.characters
           // ignore: cast_nullable_to_non_nullable
@@ -317,148 +313,113 @@ class _$TextCWProxyImpl implements _$TextCWProxy {
           ? _value.styleOverrideTable
           // ignore: cast_nullable_to_non_nullable
           : styleOverrideTable as Map<int, TypeStyle>?,
-      id: id == const $CopyWithPlaceholder() || id == null
-          // ignore: unnecessary_non_null_assertion
-          ? _value.id!
+      lineTypes: lineTypes == const $CopyWithPlaceholder()
+          ? _value.lineTypes
           // ignore: cast_nullable_to_non_nullable
-          : id as String,
-      name: name == const $CopyWithPlaceholder()
-          ? _value.name
+          : lineTypes as List<LineType>?,
+      lineIndentations: lineIndentations == const $CopyWithPlaceholder()
+          ? _value.lineIndentations
           // ignore: cast_nullable_to_non_nullable
-          : name as String?,
-      visible: visible == const $CopyWithPlaceholder() || visible == null
-          // ignore: unnecessary_non_null_assertion
-          ? _value.visible!
-          // ignore: cast_nullable_to_non_nullable
-          : visible as bool,
-      pluginData:
-          pluginData == const $CopyWithPlaceholder() || pluginData == null
-              // ignore: unnecessary_non_null_assertion
-              ? _value.pluginData!
-              // ignore: cast_nullable_to_non_nullable
-              : pluginData as dynamic,
-      sharedPluginData: sharedPluginData == const $CopyWithPlaceholder() ||
-              sharedPluginData == null
-          // ignore: unnecessary_non_null_assertion
-          ? _value.sharedPluginData!
-          // ignore: cast_nullable_to_non_nullable
-          : sharedPluginData as dynamic,
-      locked: locked == const $CopyWithPlaceholder()
-          ? _value.locked
-          // ignore: cast_nullable_to_non_nullable
-          : locked as bool?,
-      exportSettings: exportSettings == const $CopyWithPlaceholder()
-          ? _value.exportSettings
-          // ignore: cast_nullable_to_non_nullable
-          : exportSettings as List<ExportSetting>?,
-      blendMode: blendMode == const $CopyWithPlaceholder()
-          ? _value.blendMode
-          // ignore: cast_nullable_to_non_nullable
-          : blendMode as BlendMode?,
-      preserveRatio: preserveRatio == const $CopyWithPlaceholder()
-          ? _value.preserveRatio
-          // ignore: cast_nullable_to_non_nullable
-          : preserveRatio as bool?,
-      layoutAlign: layoutAlign == const $CopyWithPlaceholder()
-          ? _value.layoutAlign
-          // ignore: cast_nullable_to_non_nullable
-          : layoutAlign as LayoutAlign?,
-      layoutGrow: layoutGrow == const $CopyWithPlaceholder()
-          ? _value.layoutGrow
-          // ignore: cast_nullable_to_non_nullable
-          : layoutGrow as double?,
-      constraints: constraints == const $CopyWithPlaceholder()
-          ? _value.constraints
-          // ignore: cast_nullable_to_non_nullable
-          : constraints as LayoutConstraint?,
-      transitionNodeID: transitionNodeID == const $CopyWithPlaceholder()
-          ? _value.transitionNodeID
-          // ignore: cast_nullable_to_non_nullable
-          : transitionNodeID as String?,
-      transitionDuration: transitionDuration == const $CopyWithPlaceholder()
-          ? _value.transitionDuration
-          // ignore: cast_nullable_to_non_nullable
-          : transitionDuration as double?,
-      transitionEasing: transitionEasing == const $CopyWithPlaceholder()
-          ? _value.transitionEasing
-          // ignore: cast_nullable_to_non_nullable
-          : transitionEasing as EasingType?,
-      opacity: opacity == const $CopyWithPlaceholder()
-          ? _value.opacity
-          // ignore: cast_nullable_to_non_nullable
-          : opacity as double?,
-      absoluteBoundingBox: absoluteBoundingBox == const $CopyWithPlaceholder()
-          ? _value.absoluteBoundingBox
-          // ignore: cast_nullable_to_non_nullable
-          : absoluteBoundingBox as SizeRectangle?,
-      effects: effects == const $CopyWithPlaceholder()
-          ? _value.effects
-          // ignore: cast_nullable_to_non_nullable
-          : effects as List<Effect>?,
-      size: size == const $CopyWithPlaceholder()
-          ? _value.size
-          // ignore: cast_nullable_to_non_nullable
-          : size as Vector2D?,
-      relativeTransform: relativeTransform == const $CopyWithPlaceholder()
-          ? _value.relativeTransform
-          // ignore: cast_nullable_to_non_nullable
-          : relativeTransform as List<List<num>>?,
-      isMask: isMask == const $CopyWithPlaceholder()
-          ? _value.isMask
-          // ignore: cast_nullable_to_non_nullable
-          : isMask as bool?,
-      fills: fills == const $CopyWithPlaceholder()
-          ? _value.fills
-          // ignore: cast_nullable_to_non_nullable
-          : fills as List<Paint>?,
-      fillGeometry: fillGeometry == const $CopyWithPlaceholder()
-          ? _value.fillGeometry
-          // ignore: cast_nullable_to_non_nullable
-          : fillGeometry as List<dynamic>?,
-      strokes: strokes == const $CopyWithPlaceholder()
-          ? _value.strokes
-          // ignore: cast_nullable_to_non_nullable
-          : strokes as List<Paint>?,
-      strokeWeight: strokeWeight == const $CopyWithPlaceholder()
-          ? _value.strokeWeight
-          // ignore: cast_nullable_to_non_nullable
-          : strokeWeight as double?,
-      strokeCap: strokeCap == const $CopyWithPlaceholder()
-          ? _value.strokeCap
-          // ignore: cast_nullable_to_non_nullable
-          : strokeCap as StrokeCap?,
-      strokeJoin: strokeJoin == const $CopyWithPlaceholder()
-          ? _value.strokeJoin
-          // ignore: cast_nullable_to_non_nullable
-          : strokeJoin as StrokeJoin?,
-      strokeDashes: strokeDashes == const $CopyWithPlaceholder()
-          ? _value.strokeDashes
-          // ignore: cast_nullable_to_non_nullable
-          : strokeDashes as List<double>?,
-      strokeMiterAngle: strokeMiterAngle == const $CopyWithPlaceholder()
-          ? _value.strokeMiterAngle
-          // ignore: cast_nullable_to_non_nullable
-          : strokeMiterAngle as double?,
-      strokeGeometry: strokeGeometry == const $CopyWithPlaceholder()
-          ? _value.strokeGeometry
-          // ignore: cast_nullable_to_non_nullable
-          : strokeGeometry as List<dynamic>?,
-      strokeAlign: strokeAlign == const $CopyWithPlaceholder()
-          ? _value.strokeAlign
-          // ignore: cast_nullable_to_non_nullable
-          : strokeAlign as StrokeAlign?,
-      styles: styles == const $CopyWithPlaceholder()
-          ? _value.styles
-          // ignore: cast_nullable_to_non_nullable
-          : styles as Map<StyleTypeKey, String>?,
+          : lineIndentations as List<int>?,
     );
   }
 }
 
 extension $TextCopyWith on Text {
-  /// Returns a callable class that can be used as follows: `instanceOfText.copyWith(...)` or like so:`instanceOfText.copyWith.fieldName(...)`.
+  /// Returns a callable class that can be used as follows: `instanceOfText.copyWith(...)`.
   // ignore: library_private_types_in_public_api
   _$TextCWProxy get copyWith => _$TextCWProxyImpl(this);
+
+  /// Copies the object with the specific fields set to `null`. If you pass `false` as a parameter, nothing will be done and it will be ignored. Don't do it. Prefer `copyWith(field: null)`.
+  ///
+  /// Usage
+  /// ```dart
+  /// Text(...).copyWithNull(firstField: true, secondField: true)
+  /// ````
+  Text copyWithNull({
+    bool componentPropertyReferencesMap = false,
+    bool name = false,
+    bool rotation = false,
+    bool blendMode = false,
+    bool layoutAlign = false,
+    bool constraints = false,
+    bool transitionNodeID = false,
+    bool transitionDuration = false,
+    bool transitionEasing = false,
+    bool absoluteBoundingBox = false,
+    bool effects = false,
+    bool size = false,
+    bool relativeTransform = false,
+    bool strokeWeight = false,
+    bool strokeGeometry = false,
+    bool strokeAlign = false,
+    bool styles = false,
+    bool absoluteRenderBounds = false,
+    bool fillOverrideTable = false,
+    bool individualStrokeWeights = false,
+    bool characters = false,
+    bool style = false,
+    bool characterStyleOverrides = false,
+    bool styleOverrideTable = false,
+    bool lineTypes = false,
+    bool lineIndentations = false,
+  }) {
+    return Text(
+      id: id,
+      visible: visible,
+      locked: locked,
+      exportSettings: exportSettings,
+      preserveRatio: preserveRatio,
+      layoutGrow: layoutGrow,
+      opacity: opacity,
+      isMask: isMask,
+      fills: fills,
+      fillGeometry: fillGeometry,
+      strokes: strokes,
+      strokeCap: strokeCap,
+      strokeJoin: strokeJoin,
+      strokeDashes: strokeDashes,
+      strokeMiterAngle: strokeMiterAngle,
+      componentPropertyReferencesMap: componentPropertyReferencesMap == true
+          ? null
+          : this.componentPropertyReferencesMap,
+      name: name == true ? null : this.name,
+      rotation: rotation == true ? null : this.rotation,
+      pluginData: pluginData,
+      sharedPluginData: sharedPluginData,
+      blendMode: blendMode == true ? null : this.blendMode,
+      layoutAlign: layoutAlign == true ? null : this.layoutAlign,
+      constraints: constraints == true ? null : this.constraints,
+      transitionNodeID: transitionNodeID == true ? null : this.transitionNodeID,
+      transitionDuration:
+          transitionDuration == true ? null : this.transitionDuration,
+      transitionEasing: transitionEasing == true ? null : this.transitionEasing,
+      absoluteBoundingBox:
+          absoluteBoundingBox == true ? null : this.absoluteBoundingBox,
+      effects: effects == true ? null : this.effects,
+      size: size == true ? null : this.size,
+      relativeTransform:
+          relativeTransform == true ? null : this.relativeTransform,
+      strokeWeight: strokeWeight == true ? null : this.strokeWeight,
+      strokeGeometry: strokeGeometry == true ? null : this.strokeGeometry,
+      strokeAlign: strokeAlign == true ? null : this.strokeAlign,
+      styles: styles == true ? null : this.styles,
+      absoluteRenderBounds:
+          absoluteRenderBounds == true ? null : this.absoluteRenderBounds,
+      fillOverrideTable:
+          fillOverrideTable == true ? null : this.fillOverrideTable,
+      individualStrokeWeights:
+          individualStrokeWeights == true ? null : this.individualStrokeWeights,
+      characters: characters == true ? null : this.characters,
+      style: style == true ? null : this.style,
+      characterStyleOverrides:
+          characterStyleOverrides == true ? null : this.characterStyleOverrides,
+      styleOverrideTable:
+          styleOverrideTable == true ? null : this.styleOverrideTable,
+      lineTypes: lineTypes == true ? null : this.lineTypes,
+      lineIndentations: lineIndentations == true ? null : this.lineIndentations,
+    );
+  }
 }
 
 // **************************************************************************
@@ -466,6 +427,93 @@ extension $TextCopyWith on Text {
 // **************************************************************************
 
 Text _$TextFromJson(Map<String, dynamic> json) => Text(
+      id: json['id'] as String,
+      visible: json['visible'] as bool? ?? true,
+      locked: json['locked'] as bool? ?? false,
+      exportSettings: (json['exportSettings'] as List<dynamic>?)
+              ?.map((e) => ExportSetting.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          [],
+      preserveRatio: json['preserveRatio'] as bool? ?? false,
+      layoutGrow: (json['layoutGrow'] as num?)?.toDouble() ?? 0.0,
+      opacity: (json['opacity'] as num?)?.toDouble() ?? 1.0,
+      isMask: json['isMask'] as bool? ?? false,
+      fills: (json['fills'] as List<dynamic>?)
+              ?.map((e) => Paint.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          [],
+      fillGeometry: (json['fillGeometry'] as List<dynamic>?)
+              ?.map((e) => Path.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          [],
+      strokes: (json['strokes'] as List<dynamic>?)
+              ?.map((e) => Paint.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          [],
+      strokeCap: $enumDecodeNullable(_$StrokeCapEnumMap, json['strokeCap']) ??
+          StrokeCap.none,
+      strokeJoin:
+          $enumDecodeNullable(_$StrokeJoinEnumMap, json['strokeJoin']) ??
+              StrokeJoin.miter,
+      strokeDashes: (json['strokeDashes'] as List<dynamic>?)
+              ?.map((e) => (e as num).toDouble())
+              .toList() ??
+          [],
+      strokeMiterAngle: (json['strokeMiterAngle'] as num?)?.toDouble() ?? 28.96,
+      componentPropertyReferencesMap:
+          (json['componentPropertyReferencesMap'] as Map<String, dynamic>?)
+              ?.map(
+        (k, e) => MapEntry(k, e as String),
+      ),
+      name: json['name'] as String?,
+      rotation: (json['rotation'] as num?)?.toDouble(),
+      pluginData: json['pluginData'],
+      sharedPluginData: json['sharedPluginData'],
+      blendMode: $enumDecodeNullable(_$BlendModeEnumMap, json['blendMode']),
+      layoutAlign:
+          $enumDecodeNullable(_$LayoutAlignEnumMap, json['layoutAlign']),
+      constraints: json['constraints'] == null
+          ? null
+          : LayoutConstraint.fromJson(
+              json['constraints'] as Map<String, dynamic>),
+      transitionNodeID: json['transitionNodeID'] as String?,
+      transitionDuration: (json['transitionDuration'] as num?)?.toDouble(),
+      transitionEasing:
+          $enumDecodeNullable(_$EasingTypeEnumMap, json['transitionEasing']),
+      absoluteBoundingBox: json['absoluteBoundingBox'] == null
+          ? null
+          : SizeRectangle.fromJson(
+              json['absoluteBoundingBox'] as Map<String, dynamic>),
+      effects: (json['effects'] as List<dynamic>?)
+          ?.map((e) => Effect.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      size: json['size'] == null
+          ? null
+          : Vector2D.fromJson(json['size'] as Map<String, dynamic>),
+      relativeTransform: (json['relativeTransform'] as List<dynamic>?)
+          ?.map((e) =>
+              (e as List<dynamic>).map((e) => (e as num).toDouble()).toList())
+          .toList(),
+      strokeWeight: (json['strokeWeight'] as num?)?.toDouble(),
+      strokeGeometry: json['strokeGeometry'] as List<dynamic>?,
+      strokeAlign:
+          $enumDecodeNullable(_$StrokeAlignEnumMap, json['strokeAlign']),
+      styles: (json['styles'] as Map<String, dynamic>?)?.map(
+        (k, e) => MapEntry($enumDecode(_$StyleTypeKeyEnumMap, k), e as String),
+      ),
+      absoluteRenderBounds: json['absoluteRenderBounds'] == null
+          ? null
+          : SizeRectangle.fromJson(
+              json['absoluteRenderBounds'] as Map<String, dynamic>),
+      fillOverrideTable:
+          (json['fillOverrideTable'] as Map<String, dynamic>?)?.map(
+        (k, e) => MapEntry(
+            int.parse(k), PaintOverride.fromJson(e as Map<String, dynamic>)),
+      ),
+      individualStrokeWeights: json['individualStrokeWeights'] == null
+          ? null
+          : StrokeWeights.fromJson(
+              json['individualStrokeWeights'] as Map<String, dynamic>),
       characters: json['characters'] as String?,
       style: json['style'] == null
           ? null
@@ -479,63 +527,12 @@ Text _$TextFromJson(Map<String, dynamic> json) => Text(
         (k, e) => MapEntry(
             int.parse(k), TypeStyle.fromJson(e as Map<String, dynamic>)),
       ),
-      id: json['id'] as String,
-      name: json['name'] as String?,
-      visible: json['visible'] as bool? ?? true,
-      pluginData: json['pluginData'],
-      sharedPluginData: json['sharedPluginData'],
-      locked: json['locked'] as bool?,
-      exportSettings: (json['exportSettings'] as List<dynamic>?)
-          ?.map((e) => ExportSetting.fromJson(e as Map<String, dynamic>))
+      lineTypes: (json['lineTypes'] as List<dynamic>?)
+          ?.map((e) => $enumDecode(_$LineTypeEnumMap, e))
           .toList(),
-      blendMode: $enumDecodeNullable(_$BlendModeEnumMap, json['blendMode']),
-      preserveRatio: json['preserveRatio'] as bool?,
-      layoutAlign:
-          $enumDecodeNullable(_$LayoutAlignEnumMap, json['layoutAlign']),
-      layoutGrow: (json['layoutGrow'] as num?)?.toDouble(),
-      constraints: json['constraints'] == null
-          ? null
-          : LayoutConstraint.fromJson(
-              json['constraints'] as Map<String, dynamic>),
-      transitionNodeID: json['transitionNodeID'] as String?,
-      transitionDuration: (json['transitionDuration'] as num?)?.toDouble(),
-      transitionEasing:
-          $enumDecodeNullable(_$EasingTypeEnumMap, json['transitionEasing']),
-      opacity: (json['opacity'] as num?)?.toDouble(),
-      absoluteBoundingBox: json['absoluteBoundingBox'] == null
-          ? null
-          : SizeRectangle.fromJson(
-              json['absoluteBoundingBox'] as Map<String, dynamic>),
-      effects: (json['effects'] as List<dynamic>?)
-          ?.map((e) => Effect.fromJson(e as Map<String, dynamic>))
+      lineIndentations: (json['lineIndentations'] as List<dynamic>?)
+          ?.map((e) => e as int)
           .toList(),
-      size: json['size'] == null
-          ? null
-          : Vector2D.fromJson(json['size'] as Map<String, dynamic>),
-      relativeTransform: (json['relativeTransform'] as List<dynamic>?)
-          ?.map((e) => (e as List<dynamic>).map((e) => e as num).toList())
-          .toList(),
-      isMask: json['isMask'] as bool?,
-      fills: (json['fills'] as List<dynamic>?)
-          ?.map((e) => Paint.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      fillGeometry: json['fillGeometry'] as List<dynamic>?,
-      strokes: (json['strokes'] as List<dynamic>?)
-          ?.map((e) => Paint.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      strokeWeight: (json['strokeWeight'] as num?)?.toDouble(),
-      strokeCap: $enumDecodeNullable(_$StrokeCapEnumMap, json['strokeCap']),
-      strokeJoin: $enumDecodeNullable(_$StrokeJoinEnumMap, json['strokeJoin']),
-      strokeDashes: (json['strokeDashes'] as List<dynamic>?)
-          ?.map((e) => (e as num).toDouble())
-          .toList(),
-      strokeMiterAngle: (json['strokeMiterAngle'] as num?)?.toDouble(),
-      strokeGeometry: json['strokeGeometry'] as List<dynamic>?,
-      strokeAlign:
-          $enumDecodeNullable(_$StrokeAlignEnumMap, json['strokeAlign']),
-      styles: (json['styles'] as Map<String, dynamic>?)?.map(
-        (k, e) => MapEntry($enumDecode(_$StyleTypeKeyEnumMap, k), e as String),
-      ),
     );
 
 Map<String, dynamic> _$TextToJson(Text instance) => <String, dynamic>{
@@ -544,28 +541,34 @@ Map<String, dynamic> _$TextToJson(Text instance) => <String, dynamic>{
       'visible': instance.visible,
       'pluginData': instance.pluginData,
       'sharedPluginData': instance.sharedPluginData,
+      'rotation': instance.rotation,
+      'componentPropertyReferencesMap': instance.componentPropertyReferencesMap,
       'locked': instance.locked,
       'exportSettings': instance.exportSettings,
       'blendMode': _$BlendModeEnumMap[instance.blendMode],
       'preserveRatio': instance.preserveRatio,
-      'layoutGrow': instance.layoutGrow,
       'layoutAlign': _$LayoutAlignEnumMap[instance.layoutAlign],
+      'layoutGrow': instance.layoutGrow,
       'constraints': instance.constraints,
       'transitionNodeID': instance.transitionNodeID,
       'transitionDuration': instance.transitionDuration,
       'transitionEasing': _$EasingTypeEnumMap[instance.transitionEasing],
       'opacity': instance.opacity,
       'absoluteBoundingBox': instance.absoluteBoundingBox,
+      'absoluteRenderBounds': instance.absoluteRenderBounds,
       'effects': instance.effects,
       'size': instance.size,
       'relativeTransform': instance.relativeTransform,
       'isMask': instance.isMask,
       'fills': instance.fills,
       'fillGeometry': instance.fillGeometry,
+      'fillOverrideTable':
+          instance.fillOverrideTable?.map((k, e) => MapEntry(k.toString(), e)),
       'strokes': instance.strokes,
       'strokeWeight': instance.strokeWeight,
-      'strokeCap': _$StrokeCapEnumMap[instance.strokeCap],
-      'strokeJoin': _$StrokeJoinEnumMap[instance.strokeJoin],
+      'individualStrokeWeights': instance.individualStrokeWeights,
+      'strokeCap': _$StrokeCapEnumMap[instance.strokeCap]!,
+      'strokeJoin': _$StrokeJoinEnumMap[instance.strokeJoin]!,
       'strokeDashes': instance.strokeDashes,
       'strokeMiterAngle': instance.strokeMiterAngle,
       'strokeGeometry': instance.strokeGeometry,
@@ -577,7 +580,24 @@ Map<String, dynamic> _$TextToJson(Text instance) => <String, dynamic>{
       'characterStyleOverrides': instance.characterStyleOverrides,
       'styleOverrideTable':
           instance.styleOverrideTable?.map((k, e) => MapEntry(k.toString(), e)),
+      'lineTypes':
+          instance.lineTypes?.map((e) => _$LineTypeEnumMap[e]!).toList(),
+      'lineIndentations': instance.lineIndentations,
     };
+
+const _$StrokeCapEnumMap = {
+  StrokeCap.none: 'NONE',
+  StrokeCap.round: 'ROUND',
+  StrokeCap.square: 'SQUARE',
+  StrokeCap.lineArrow: 'LINE_ARROW',
+  StrokeCap.triangleArrow: 'TRIANGLE_ARROW',
+};
+
+const _$StrokeJoinEnumMap = {
+  StrokeJoin.miter: 'MITER',
+  StrokeJoin.bevel: 'BEVEL',
+  StrokeJoin.round: 'ROUND',
+};
 
 const _$BlendModeEnumMap = {
   BlendMode.passThrough: 'PASS_THROUGH',
@@ -617,20 +637,6 @@ const _$EasingTypeEnumMap = {
   EasingType.customBezier: 'CUSTOM_BEZIER',
 };
 
-const _$StrokeCapEnumMap = {
-  StrokeCap.none: 'NONE',
-  StrokeCap.round: 'ROUND',
-  StrokeCap.square: 'SQUARE',
-  StrokeCap.lineArrow: 'LINE_ARROW',
-  StrokeCap.triangleArrow: 'TRIANGLE_ARROW',
-};
-
-const _$StrokeJoinEnumMap = {
-  StrokeJoin.miter: 'MITER',
-  StrokeJoin.bevel: 'BEVEL',
-  StrokeJoin.round: 'ROUND',
-};
-
 const _$StrokeAlignEnumMap = {
   StrokeAlign.inside: 'INSIDE',
   StrokeAlign.outside: 'OUTSIDE',
@@ -645,4 +651,10 @@ const _$StyleTypeKeyEnumMap = {
   StyleTypeKey.text: 'text',
   StyleTypeKey.effect: 'effect',
   StyleTypeKey.grid: 'grid',
+};
+
+const _$LineTypeEnumMap = {
+  LineType.ordered: 'ORDERED',
+  LineType.unordered: 'UNORDERED',
+  LineType.none: 'NONE',
 };

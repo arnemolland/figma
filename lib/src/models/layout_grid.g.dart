@@ -7,23 +7,7 @@ part of 'layout_grid.dart';
 // **************************************************************************
 
 abstract class _$LayoutGridCWProxy {
-  LayoutGrid pattern(LayoutPattern? pattern);
-
-  LayoutGrid sectionSize(double? sectionSize);
-
-  LayoutGrid visible(bool? visible);
-
-  LayoutGrid color(Color? color);
-
-  LayoutGrid alignment(LayoutAlign? alignment);
-
-  LayoutGrid gutterSize(double? gutterSize);
-
-  LayoutGrid offset(double? offset);
-
-  LayoutGrid count(int? count);
-
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `LayoutGrid(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
   ///
   /// Usage
   /// ```dart
@@ -41,39 +25,15 @@ abstract class _$LayoutGridCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfLayoutGrid.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfLayoutGrid.copyWith.fieldName(...)`
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfLayoutGrid.copyWith(...)`.
 class _$LayoutGridCWProxyImpl implements _$LayoutGridCWProxy {
   const _$LayoutGridCWProxyImpl(this._value);
 
   final LayoutGrid _value;
 
   @override
-  LayoutGrid pattern(LayoutPattern? pattern) => this(pattern: pattern);
 
-  @override
-  LayoutGrid sectionSize(double? sectionSize) => this(sectionSize: sectionSize);
-
-  @override
-  LayoutGrid visible(bool? visible) => this(visible: visible);
-
-  @override
-  LayoutGrid color(Color? color) => this(color: color);
-
-  @override
-  LayoutGrid alignment(LayoutAlign? alignment) => this(alignment: alignment);
-
-  @override
-  LayoutGrid gutterSize(double? gutterSize) => this(gutterSize: gutterSize);
-
-  @override
-  LayoutGrid offset(double? offset) => this(offset: offset);
-
-  @override
-  LayoutGrid count(int? count) => this(count: count);
-
-  @override
-
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `LayoutGrid(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
   ///
   /// Usage
   /// ```dart
@@ -127,9 +87,37 @@ class _$LayoutGridCWProxyImpl implements _$LayoutGridCWProxy {
 }
 
 extension $LayoutGridCopyWith on LayoutGrid {
-  /// Returns a callable class that can be used as follows: `instanceOfLayoutGrid.copyWith(...)` or like so:`instanceOfLayoutGrid.copyWith.fieldName(...)`.
+  /// Returns a callable class that can be used as follows: `instanceOfLayoutGrid.copyWith(...)`.
   // ignore: library_private_types_in_public_api
   _$LayoutGridCWProxy get copyWith => _$LayoutGridCWProxyImpl(this);
+
+  /// Copies the object with the specific fields set to `null`. If you pass `false` as a parameter, nothing will be done and it will be ignored. Don't do it. Prefer `copyWith(field: null)`.
+  ///
+  /// Usage
+  /// ```dart
+  /// LayoutGrid(...).copyWithNull(firstField: true, secondField: true)
+  /// ````
+  LayoutGrid copyWithNull({
+    bool pattern = false,
+    bool sectionSize = false,
+    bool visible = false,
+    bool color = false,
+    bool alignment = false,
+    bool gutterSize = false,
+    bool offset = false,
+    bool count = false,
+  }) {
+    return LayoutGrid(
+      pattern: pattern == true ? null : this.pattern,
+      sectionSize: sectionSize == true ? null : this.sectionSize,
+      visible: visible == true ? null : this.visible,
+      color: color == true ? null : this.color,
+      alignment: alignment == true ? null : this.alignment,
+      gutterSize: gutterSize == true ? null : this.gutterSize,
+      offset: offset == true ? null : this.offset,
+      count: count == true ? null : this.count,
+    );
+  }
 }
 
 // **************************************************************************

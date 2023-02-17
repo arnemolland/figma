@@ -1,8 +1,22 @@
-import 'package:figma/src/models/models.dart';
+import 'package:figma/src/models.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:copy_with_extension/copy_with_extension.dart';
 
 part 'text.g.dart';
+
+enum LineType {
+  /// Text is an ordered list (numbered).
+  @JsonValue('ORDERED')
+  ordered,
+
+  /// Text is an unordered list (bulleted).
+  @JsonValue('UNORDERED')
+  unordered,
+
+  /// Text is plain text and not part of any list.
+  @JsonValue('NONE')
+  none,
+}
 
 /// A text node, represented as a [Vector] and modified by a [TypeStyle].
 @JsonSerializable()
@@ -24,77 +38,62 @@ class Text extends Vector {
   /// Map from ID to [TypeStyle] for looking up style overrides.
   final Map<int, TypeStyle>? styleOverrideTable;
 
+  /// An array with the same number of elements as lines in the text node, where
+  /// lines are delimited by newline or paragraph separator characters. Each
+  /// element in the array corresponds to the list type of a specific line.
+  final List<LineType>? lineTypes;
+
+  /// An array with the same number of elements as lines in the text node, where
+  /// lines are delimited by newline or paragraph separator characters. Each
+  /// element in the array corresponds to the indentation level of a specific
+  /// line.
+  final List<int>? lineIndentations;
+
   Text({
+    required super.id,
+    required super.visible,
+    required super.locked,
+    required super.exportSettings,
+    required super.preserveRatio,
+    required super.layoutGrow,
+    required super.opacity,
+    required super.isMask,
+    required super.fills,
+    required super.fillGeometry,
+    required super.strokes,
+    required super.strokeCap,
+    required super.strokeJoin,
+    required super.strokeDashes,
+    required super.strokeMiterAngle,
+    super.componentPropertyReferencesMap,
+    super.name,
+    super.rotation,
+    super.pluginData,
+    super.sharedPluginData,
+    super.blendMode,
+    super.layoutAlign,
+    super.constraints,
+    super.transitionNodeID,
+    super.transitionDuration,
+    super.transitionEasing,
+    super.absoluteBoundingBox,
+    super.effects,
+    super.size,
+    super.relativeTransform,
+    super.strokeWeight,
+    super.strokeGeometry,
+    super.strokeAlign,
+    super.styles,
+    super.absoluteRenderBounds,
+    super.fillOverrideTable,
+    super.individualStrokeWeights,
     this.characters,
     this.style,
     this.characterStyleOverrides,
     this.styleOverrideTable,
-    required String id,
-    String? name,
-    required bool visible,
-    dynamic pluginData,
-    dynamic sharedPluginData,
-    bool? locked,
-    List<ExportSetting>? exportSettings,
-    BlendMode? blendMode,
-    bool? preserveRatio,
-    LayoutAlign? layoutAlign,
-    double? layoutGrow,
-    LayoutConstraint? constraints,
-    String? transitionNodeID,
-    double? transitionDuration,
-    EasingType? transitionEasing,
-    double? opacity,
-    SizeRectangle? absoluteBoundingBox,
-    List<Effect>? effects,
-    Vector2D? size,
-    List<List<num>>? relativeTransform,
-    bool? isMask,
-    List<Paint>? fills,
-    List<dynamic>? fillGeometry,
-    List<Paint>? strokes,
-    double? strokeWeight,
-    StrokeCap? strokeCap,
-    StrokeJoin? strokeJoin,
-    List<double>? strokeDashes,
-    double? strokeMiterAngle,
-    List<dynamic>? strokeGeometry,
-    StrokeAlign? strokeAlign,
-    Map<StyleTypeKey, String>? styles,
-  }) : super(
-          id: id,
-          name: name,
-          visible: visible,
-          pluginData: pluginData,
-          sharedPluginData: sharedPluginData,
-          locked: locked,
-          exportSettings: exportSettings,
-          blendMode: blendMode,
-          preserveRatio: preserveRatio,
-          layoutAlign: layoutAlign,
-          layoutGrow: layoutGrow,
-          constraints: constraints,
-          transitionNodeID: transitionNodeID,
-          transitionDuration: transitionDuration,
-          transitionEasing: transitionEasing,
-          opacity: opacity,
-          absoluteBoundingBox: absoluteBoundingBox,
-          effects: effects,
-          size: size,
-          relativeTransform: relativeTransform,
-          isMask: isMask,
-          fills: fills,
-          fillGeometry: fillGeometry,
-          strokes: strokes,
-          strokeWeight: strokeWeight,
-          strokeCap: strokeCap,
-          strokeJoin: strokeJoin,
-          strokeDashes: strokeDashes,
-          strokeMiterAngle: strokeMiterAngle,
-          strokeGeometry: strokeGeometry,
-          strokeAlign: strokeAlign,
-          styles: styles,
-        );
+    this.lineTypes,
+    this.lineIndentations,
+  });
 
   @override
   List<Object?> get props => [

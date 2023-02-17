@@ -1,5 +1,5 @@
 import 'package:figma/src/converters/converters.dart';
-import 'package:figma/src/models/node.dart';
+import 'package:figma/src/models.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:copy_with_extension/copy_with_extension.dart';
 
@@ -15,19 +15,16 @@ class Document extends Node {
   final List<Node?>? children;
 
   Document({
-    required String id,
-    String? name,
-    required bool visible,
-    dynamic pluginData,
-    dynamic sharedPluginData,
+    required super.id,
+    required super.visible,
+    super.componentPropertyReferencesMap,
+    super.rotation,
+    super.type,
+    super.name,
+    super.pluginData,
+    super.sharedPluginData,
     this.children,
-  }) : super(
-          id: id,
-          name: name,
-          visible: visible,
-          pluginData: pluginData,
-          sharedPluginData: sharedPluginData,
-        );
+  });
 
   @override
   List<Object?> get props => [

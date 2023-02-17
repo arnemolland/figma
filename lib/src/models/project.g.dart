@@ -7,11 +7,7 @@ part of 'project.dart';
 // **************************************************************************
 
 abstract class _$ProjectCWProxy {
-  Project id(String? id);
-
-  Project name(String? name);
-
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Project(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
   ///
   /// Usage
   /// ```dart
@@ -23,21 +19,15 @@ abstract class _$ProjectCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfProject.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfProject.copyWith.fieldName(...)`
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfProject.copyWith(...)`.
 class _$ProjectCWProxyImpl implements _$ProjectCWProxy {
   const _$ProjectCWProxyImpl(this._value);
 
   final Project _value;
 
   @override
-  Project id(String? id) => this(id: id);
 
-  @override
-  Project name(String? name) => this(name: name);
-
-  @override
-
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Project(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
   ///
   /// Usage
   /// ```dart
@@ -61,9 +51,25 @@ class _$ProjectCWProxyImpl implements _$ProjectCWProxy {
 }
 
 extension $ProjectCopyWith on Project {
-  /// Returns a callable class that can be used as follows: `instanceOfProject.copyWith(...)` or like so:`instanceOfProject.copyWith.fieldName(...)`.
+  /// Returns a callable class that can be used as follows: `instanceOfProject.copyWith(...)`.
   // ignore: library_private_types_in_public_api
   _$ProjectCWProxy get copyWith => _$ProjectCWProxyImpl(this);
+
+  /// Copies the object with the specific fields set to `null`. If you pass `false` as a parameter, nothing will be done and it will be ignored. Don't do it. Prefer `copyWith(field: null)`.
+  ///
+  /// Usage
+  /// ```dart
+  /// Project(...).copyWithNull(firstField: true, secondField: true)
+  /// ````
+  Project copyWithNull({
+    bool id = false,
+    bool name = false,
+  }) {
+    return Project(
+      id: id == true ? null : this.id,
+      name: name == true ? null : this.name,
+    );
+  }
 }
 
 // **************************************************************************

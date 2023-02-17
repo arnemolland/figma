@@ -1,4 +1,4 @@
-import 'package:figma/src/models/models.dart';
+import 'package:figma/src/models.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:copy_with_extension/copy_with_extension.dart';
 
@@ -20,6 +20,9 @@ class Slice extends Node {
   /// Bounding box of the node in absolute space coordinates.
   final SizeRectangle? absoluteBoundingBox;
 
+  /// The bounds of the rendered node in the file in absolute space coordinates.
+  final SizeRectangle? absoluteRenderBounds;
+
   /// Width and height of element. This is different from the width and height
   /// of the bounding box in that the absolute bounding box represents the
   /// element after scaling and rotation. Only present if geometry=paths is
@@ -33,28 +36,27 @@ class Slice extends Node {
   final List<List<num>>? relativeTransform;
 
   Slice({
-    required String id,
-    String? name,
-    required bool visible,
-    dynamic pluginData,
-    dynamic sharedPluginData,
+    required super.id,
+    required super.visible,
+    super.componentPropertyReferencesMap,
+    super.rotation,
+    super.name,
+    super.type,
+    super.pluginData,
+    super.sharedPluginData,
     this.exportSettings,
     this.absoluteBoundingBox,
+    this.absoluteRenderBounds,
     this.size,
     this.relativeTransform,
-  }) : super(
-          id: id,
-          name: name,
-          visible: visible,
-          pluginData: pluginData,
-          sharedPluginData: sharedPluginData,
-        );
+  });
 
   @override
   List<Object?> get props => [
         ...super.props,
         exportSettings,
         absoluteBoundingBox,
+        absoluteRenderBounds,
         size,
         relativeTransform,
       ];

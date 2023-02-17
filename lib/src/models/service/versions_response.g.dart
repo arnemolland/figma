@@ -7,9 +7,7 @@ part of 'versions_response.dart';
 // **************************************************************************
 
 abstract class _$VersionsResponseCWProxy {
-  VersionsResponse versions(List<Version>? versions);
-
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `VersionsResponse(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
   ///
   /// Usage
   /// ```dart
@@ -20,19 +18,15 @@ abstract class _$VersionsResponseCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfVersionsResponse.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfVersionsResponse.copyWith.fieldName(...)`
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfVersionsResponse.copyWith(...)`.
 class _$VersionsResponseCWProxyImpl implements _$VersionsResponseCWProxy {
   const _$VersionsResponseCWProxyImpl(this._value);
 
   final VersionsResponse _value;
 
   @override
-  VersionsResponse versions(List<Version>? versions) =>
-      this(versions: versions);
 
-  @override
-
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `VersionsResponse(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
   ///
   /// Usage
   /// ```dart
@@ -51,9 +45,23 @@ class _$VersionsResponseCWProxyImpl implements _$VersionsResponseCWProxy {
 }
 
 extension $VersionsResponseCopyWith on VersionsResponse {
-  /// Returns a callable class that can be used as follows: `instanceOfVersionsResponse.copyWith(...)` or like so:`instanceOfVersionsResponse.copyWith.fieldName(...)`.
+  /// Returns a callable class that can be used as follows: `instanceOfVersionsResponse.copyWith(...)`.
   // ignore: library_private_types_in_public_api
   _$VersionsResponseCWProxy get copyWith => _$VersionsResponseCWProxyImpl(this);
+
+  /// Copies the object with the specific fields set to `null`. If you pass `false` as a parameter, nothing will be done and it will be ignored. Don't do it. Prefer `copyWith(field: null)`.
+  ///
+  /// Usage
+  /// ```dart
+  /// VersionsResponse(...).copyWithNull(firstField: true, secondField: true)
+  /// ````
+  VersionsResponse copyWithNull({
+    bool versions = false,
+  }) {
+    return VersionsResponse(
+      versions: versions == true ? null : this.versions,
+    );
+  }
 }
 
 // **************************************************************************

@@ -7,29 +7,7 @@ part of 'component_set.dart';
 // **************************************************************************
 
 abstract class _$ComponentSetCWProxy {
-  ComponentSet key(String? key);
-
-  ComponentSet fileKey(String? fileKey);
-
-  ComponentSet nodeId(String? nodeId);
-
-  ComponentSet thumbnailUrl(String? thumbnailUrl);
-
-  ComponentSet name(String? name);
-
-  ComponentSet description(String? description);
-
-  ComponentSet createdAt(DateTime? createdAt);
-
-  ComponentSet updatedAt(DateTime? updatedAt);
-
-  ComponentSet user(User? user);
-
-  ComponentSet containingFrame(FrameInfo? containingFrame);
-
-  ComponentSet containingPage(dynamic containingPage);
-
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ComponentSet(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
   ///
   /// Usage
   /// ```dart
@@ -46,56 +24,19 @@ abstract class _$ComponentSetCWProxy {
     DateTime? updatedAt,
     User? user,
     FrameInfo? containingFrame,
-    dynamic? containingPage,
+    dynamic containingPage,
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfComponentSet.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfComponentSet.copyWith.fieldName(...)`
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfComponentSet.copyWith(...)`.
 class _$ComponentSetCWProxyImpl implements _$ComponentSetCWProxy {
   const _$ComponentSetCWProxyImpl(this._value);
 
   final ComponentSet _value;
 
   @override
-  ComponentSet key(String? key) => this(key: key);
 
-  @override
-  ComponentSet fileKey(String? fileKey) => this(fileKey: fileKey);
-
-  @override
-  ComponentSet nodeId(String? nodeId) => this(nodeId: nodeId);
-
-  @override
-  ComponentSet thumbnailUrl(String? thumbnailUrl) =>
-      this(thumbnailUrl: thumbnailUrl);
-
-  @override
-  ComponentSet name(String? name) => this(name: name);
-
-  @override
-  ComponentSet description(String? description) =>
-      this(description: description);
-
-  @override
-  ComponentSet createdAt(DateTime? createdAt) => this(createdAt: createdAt);
-
-  @override
-  ComponentSet updatedAt(DateTime? updatedAt) => this(updatedAt: updatedAt);
-
-  @override
-  ComponentSet user(User? user) => this(user: user);
-
-  @override
-  ComponentSet containingFrame(FrameInfo? containingFrame) =>
-      this(containingFrame: containingFrame);
-
-  @override
-  ComponentSet containingPage(dynamic containingPage) =>
-      this(containingPage: containingPage);
-
-  @override
-
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ComponentSet(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
   ///
   /// Usage
   /// ```dart
@@ -166,9 +107,42 @@ class _$ComponentSetCWProxyImpl implements _$ComponentSetCWProxy {
 }
 
 extension $ComponentSetCopyWith on ComponentSet {
-  /// Returns a callable class that can be used as follows: `instanceOfComponentSet.copyWith(...)` or like so:`instanceOfComponentSet.copyWith.fieldName(...)`.
+  /// Returns a callable class that can be used as follows: `instanceOfComponentSet.copyWith(...)`.
   // ignore: library_private_types_in_public_api
   _$ComponentSetCWProxy get copyWith => _$ComponentSetCWProxyImpl(this);
+
+  /// Copies the object with the specific fields set to `null`. If you pass `false` as a parameter, nothing will be done and it will be ignored. Don't do it. Prefer `copyWith(field: null)`.
+  ///
+  /// Usage
+  /// ```dart
+  /// ComponentSet(...).copyWithNull(firstField: true, secondField: true)
+  /// ````
+  ComponentSet copyWithNull({
+    bool key = false,
+    bool fileKey = false,
+    bool nodeId = false,
+    bool thumbnailUrl = false,
+    bool name = false,
+    bool description = false,
+    bool createdAt = false,
+    bool updatedAt = false,
+    bool user = false,
+    bool containingFrame = false,
+  }) {
+    return ComponentSet(
+      key: key == true ? null : this.key,
+      fileKey: fileKey == true ? null : this.fileKey,
+      nodeId: nodeId == true ? null : this.nodeId,
+      thumbnailUrl: thumbnailUrl == true ? null : this.thumbnailUrl,
+      name: name == true ? null : this.name,
+      description: description == true ? null : this.description,
+      createdAt: createdAt == true ? null : this.createdAt,
+      updatedAt: updatedAt == true ? null : this.updatedAt,
+      user: user == true ? null : this.user,
+      containingFrame: containingFrame == true ? null : this.containingFrame,
+      containingPage: containingPage,
+    );
+  }
 }
 
 // **************************************************************************

@@ -7,11 +7,7 @@ part of 'styles_meta.dart';
 // **************************************************************************
 
 abstract class _$StylesMetaCWProxy {
-  StylesMeta styles(List<Style>? styles);
-
-  StylesMeta cursor(Cursor? cursor);
-
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `StylesMeta(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
   ///
   /// Usage
   /// ```dart
@@ -23,21 +19,15 @@ abstract class _$StylesMetaCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfStylesMeta.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfStylesMeta.copyWith.fieldName(...)`
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfStylesMeta.copyWith(...)`.
 class _$StylesMetaCWProxyImpl implements _$StylesMetaCWProxy {
   const _$StylesMetaCWProxyImpl(this._value);
 
   final StylesMeta _value;
 
   @override
-  StylesMeta styles(List<Style>? styles) => this(styles: styles);
 
-  @override
-  StylesMeta cursor(Cursor? cursor) => this(cursor: cursor);
-
-  @override
-
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `StylesMeta(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
   ///
   /// Usage
   /// ```dart
@@ -61,9 +51,25 @@ class _$StylesMetaCWProxyImpl implements _$StylesMetaCWProxy {
 }
 
 extension $StylesMetaCopyWith on StylesMeta {
-  /// Returns a callable class that can be used as follows: `instanceOfStylesMeta.copyWith(...)` or like so:`instanceOfStylesMeta.copyWith.fieldName(...)`.
+  /// Returns a callable class that can be used as follows: `instanceOfStylesMeta.copyWith(...)`.
   // ignore: library_private_types_in_public_api
   _$StylesMetaCWProxy get copyWith => _$StylesMetaCWProxyImpl(this);
+
+  /// Copies the object with the specific fields set to `null`. If you pass `false` as a parameter, nothing will be done and it will be ignored. Don't do it. Prefer `copyWith(field: null)`.
+  ///
+  /// Usage
+  /// ```dart
+  /// StylesMeta(...).copyWithNull(firstField: true, secondField: true)
+  /// ````
+  StylesMeta copyWithNull({
+    bool styles = false,
+    bool cursor = false,
+  }) {
+    return StylesMeta(
+      styles: styles == true ? null : this.styles,
+      cursor: cursor == true ? null : this.cursor,
+    );
+  }
 }
 
 // **************************************************************************

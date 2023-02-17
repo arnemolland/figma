@@ -5,6 +5,10 @@ import 'package:json_annotation/json_annotation.dart';
 /// horizontally, or in both directions to the extents of the content
 /// contained within it. This behavior can be observed in a prototype.
 enum OverflowDirection {
+  /// No scrolling.
+  @JsonValue('NONE')
+  none,
+
   /// Only horizontal scrolling.
   @JsonValue('HORIZONTAL_SCROLLING')
   horizontalScrolling,

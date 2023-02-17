@@ -7,11 +7,7 @@ part of 'constraint.dart';
 // **************************************************************************
 
 abstract class _$ConstraintCWProxy {
-  Constraint type(ConstraintType? type);
-
-  Constraint value(num? value);
-
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Constraint(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
   ///
   /// Usage
   /// ```dart
@@ -23,21 +19,15 @@ abstract class _$ConstraintCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfConstraint.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfConstraint.copyWith.fieldName(...)`
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfConstraint.copyWith(...)`.
 class _$ConstraintCWProxyImpl implements _$ConstraintCWProxy {
   const _$ConstraintCWProxyImpl(this._value);
 
   final Constraint _value;
 
   @override
-  Constraint type(ConstraintType? type) => this(type: type);
 
-  @override
-  Constraint value(num? value) => this(value: value);
-
-  @override
-
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Constraint(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
   ///
   /// Usage
   /// ```dart
@@ -61,9 +51,25 @@ class _$ConstraintCWProxyImpl implements _$ConstraintCWProxy {
 }
 
 extension $ConstraintCopyWith on Constraint {
-  /// Returns a callable class that can be used as follows: `instanceOfConstraint.copyWith(...)` or like so:`instanceOfConstraint.copyWith.fieldName(...)`.
+  /// Returns a callable class that can be used as follows: `instanceOfConstraint.copyWith(...)`.
   // ignore: library_private_types_in_public_api
   _$ConstraintCWProxy get copyWith => _$ConstraintCWProxyImpl(this);
+
+  /// Copies the object with the specific fields set to `null`. If you pass `false` as a parameter, nothing will be done and it will be ignored. Don't do it. Prefer `copyWith(field: null)`.
+  ///
+  /// Usage
+  /// ```dart
+  /// Constraint(...).copyWithNull(firstField: true, secondField: true)
+  /// ````
+  Constraint copyWithNull({
+    bool type = false,
+    bool value = false,
+  }) {
+    return Constraint(
+      type: type == true ? null : this.type,
+      value: value == true ? null : this.value,
+    );
+  }
 }
 
 // **************************************************************************

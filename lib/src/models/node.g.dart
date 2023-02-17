@@ -7,19 +7,7 @@ part of 'node.dart';
 // **************************************************************************
 
 abstract class _$NodeCWProxy {
-  Node id(String id);
-
-  Node name(String? name);
-
-  Node visible(bool visible);
-
-  Node type(String? type);
-
-  Node pluginData(dynamic pluginData);
-
-  Node sharedPluginData(dynamic sharedPluginData);
-
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Node(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
   ///
   /// Usage
   /// ```dart
@@ -30,39 +18,22 @@ abstract class _$NodeCWProxy {
     String? name,
     bool? visible,
     String? type,
-    dynamic? pluginData,
-    dynamic? sharedPluginData,
+    dynamic pluginData,
+    dynamic sharedPluginData,
+    double? rotation,
+    Map<String, String>? componentPropertyReferencesMap,
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfNode.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfNode.copyWith.fieldName(...)`
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfNode.copyWith(...)`.
 class _$NodeCWProxyImpl implements _$NodeCWProxy {
   const _$NodeCWProxyImpl(this._value);
 
   final Node _value;
 
   @override
-  Node id(String id) => this(id: id);
 
-  @override
-  Node name(String? name) => this(name: name);
-
-  @override
-  Node visible(bool visible) => this(visible: visible);
-
-  @override
-  Node type(String? type) => this(type: type);
-
-  @override
-  Node pluginData(dynamic pluginData) => this(pluginData: pluginData);
-
-  @override
-  Node sharedPluginData(dynamic sharedPluginData) =>
-      this(sharedPluginData: sharedPluginData);
-
-  @override
-
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Node(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
   ///
   /// Usage
   /// ```dart
@@ -75,6 +46,8 @@ class _$NodeCWProxyImpl implements _$NodeCWProxy {
     Object? type = const $CopyWithPlaceholder(),
     Object? pluginData = const $CopyWithPlaceholder(),
     Object? sharedPluginData = const $CopyWithPlaceholder(),
+    Object? rotation = const $CopyWithPlaceholder(),
+    Object? componentPropertyReferencesMap = const $CopyWithPlaceholder(),
   }) {
     return Node(
       id: id == const $CopyWithPlaceholder() || id == null
@@ -107,14 +80,49 @@ class _$NodeCWProxyImpl implements _$NodeCWProxy {
           ? _value.sharedPluginData!
           // ignore: cast_nullable_to_non_nullable
           : sharedPluginData as dynamic,
+      rotation: rotation == const $CopyWithPlaceholder()
+          ? _value.rotation
+          // ignore: cast_nullable_to_non_nullable
+          : rotation as double?,
+      componentPropertyReferencesMap:
+          componentPropertyReferencesMap == const $CopyWithPlaceholder()
+              ? _value.componentPropertyReferencesMap
+              // ignore: cast_nullable_to_non_nullable
+              : componentPropertyReferencesMap as Map<String, String>?,
     );
   }
 }
 
 extension $NodeCopyWith on Node {
-  /// Returns a callable class that can be used as follows: `instanceOfNode.copyWith(...)` or like so:`instanceOfNode.copyWith.fieldName(...)`.
+  /// Returns a callable class that can be used as follows: `instanceOfNode.copyWith(...)`.
   // ignore: library_private_types_in_public_api
   _$NodeCWProxy get copyWith => _$NodeCWProxyImpl(this);
+
+  /// Copies the object with the specific fields set to `null`. If you pass `false` as a parameter, nothing will be done and it will be ignored. Don't do it. Prefer `copyWith(field: null)`.
+  ///
+  /// Usage
+  /// ```dart
+  /// Node(...).copyWithNull(firstField: true, secondField: true)
+  /// ````
+  Node copyWithNull({
+    bool name = false,
+    bool type = false,
+    bool rotation = false,
+    bool componentPropertyReferencesMap = false,
+  }) {
+    return Node(
+      id: id,
+      name: name == true ? null : this.name,
+      visible: visible,
+      type: type == true ? null : this.type,
+      pluginData: pluginData,
+      sharedPluginData: sharedPluginData,
+      rotation: rotation == true ? null : this.rotation,
+      componentPropertyReferencesMap: componentPropertyReferencesMap == true
+          ? null
+          : this.componentPropertyReferencesMap,
+    );
+  }
 }
 
 // **************************************************************************
@@ -128,6 +136,12 @@ Node _$NodeFromJson(Map<String, dynamic> json) => Node(
       type: json['type'] as String?,
       pluginData: json['pluginData'],
       sharedPluginData: json['sharedPluginData'],
+      rotation: (json['rotation'] as num?)?.toDouble(),
+      componentPropertyReferencesMap:
+          (json['componentPropertyReferencesMap'] as Map<String, dynamic>?)
+              ?.map(
+        (k, e) => MapEntry(k, e as String),
+      ),
     );
 
 Map<String, dynamic> _$NodeToJson(Node instance) => <String, dynamic>{
@@ -137,4 +151,6 @@ Map<String, dynamic> _$NodeToJson(Node instance) => <String, dynamic>{
       'type': instance.type,
       'pluginData': instance.pluginData,
       'sharedPluginData': instance.sharedPluginData,
+      'rotation': instance.rotation,
+      'componentPropertyReferencesMap': instance.componentPropertyReferencesMap,
     };
