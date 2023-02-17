@@ -12,11 +12,11 @@ A simple usage example:
 import 'package:figma/figma.dart';
 
 main() {
-  final client = FigmaClient('token');
-
-  final file = await client.getFile('file_key');
+  final file = FigmaClient('token').getFile('key');
 }
 ```
+
+More intricate and detail usage can be found in the [examples](https://github.com/arnemolland/figma/blob/main/example).
 
 ## Features and bugs
 
