@@ -1,3 +1,7 @@
+## 5.0.3
+
+- Updated `PrototypeDevice.presetIdentifier` to be nullable
+
 ## 5.0.2
 
 - Removed unnecessary null operators in generated files
