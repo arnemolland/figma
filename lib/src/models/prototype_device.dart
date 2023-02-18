@@ -40,21 +40,23 @@ enum PrototypeDeviceRotation {
 class PrototypeDevice {
   PrototypeDevice({
     required this.type,
-    required this.size,
-    required this.presetIdentifier,
     required this.rotation,
+    this.size,
+    this.presetIdentifier,
   });
 
   /// Device type used for the prototype.
+  @JsonKey(defaultValue: PrototypeDeviceType.none)
   final PrototypeDeviceType type;
 
   /// Size of the device.
   final Size? size;
 
   /// Identifier of the preset device type.
-  final String presetIdentifier;
+  final String? presetIdentifier;
 
   /// Device rotation.
+  @JsonKey(defaultValue: PrototypeDeviceRotation.none)
   final PrototypeDeviceRotation rotation;
 
   factory PrototypeDevice.fromJson(Map<String, dynamic> json) =>
