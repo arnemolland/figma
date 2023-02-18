@@ -7,7 +7,86 @@ part of 'rectangle.dart';
 // **************************************************************************
 
 abstract class _$RectangleCWProxy {
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  Rectangle id(String id);
+
+  Rectangle visible(bool visible);
+
+  Rectangle locked(bool locked);
+
+  Rectangle exportSettings(List<ExportSetting> exportSettings);
+
+  Rectangle preserveRatio(bool preserveRatio);
+
+  Rectangle layoutGrow(double layoutGrow);
+
+  Rectangle opacity(double opacity);
+
+  Rectangle isMask(bool isMask);
+
+  Rectangle fills(List<Paint> fills);
+
+  Rectangle fillGeometry(List<Path> fillGeometry);
+
+  Rectangle strokes(List<Paint> strokes);
+
+  Rectangle strokeCap(StrokeCap strokeCap);
+
+  Rectangle strokeJoin(StrokeJoin strokeJoin);
+
+  Rectangle strokeDashes(List<double> strokeDashes);
+
+  Rectangle strokeMiterAngle(double strokeMiterAngle);
+
+  Rectangle componentPropertyReferencesMap(
+      Map<String, String>? componentPropertyReferencesMap);
+
+  Rectangle name(String? name);
+
+  Rectangle rotation(double? rotation);
+
+  Rectangle pluginData(dynamic pluginData);
+
+  Rectangle sharedPluginData(dynamic sharedPluginData);
+
+  Rectangle blendMode(BlendMode? blendMode);
+
+  Rectangle layoutAlign(LayoutAlign? layoutAlign);
+
+  Rectangle constraints(LayoutConstraint? constraints);
+
+  Rectangle transitionNodeID(String? transitionNodeID);
+
+  Rectangle transitionDuration(double? transitionDuration);
+
+  Rectangle transitionEasing(EasingType? transitionEasing);
+
+  Rectangle absoluteBoundingBox(SizeRectangle? absoluteBoundingBox);
+
+  Rectangle effects(List<Effect>? effects);
+
+  Rectangle size(Vector2D? size);
+
+  Rectangle relativeTransform(List<List<double>>? relativeTransform);
+
+  Rectangle strokeWeight(double? strokeWeight);
+
+  Rectangle strokeGeometry(List<dynamic>? strokeGeometry);
+
+  Rectangle strokeAlign(StrokeAlign? strokeAlign);
+
+  Rectangle styles(Map<StyleTypeKey, String>? styles);
+
+  Rectangle absoluteRenderBounds(SizeRectangle? absoluteRenderBounds);
+
+  Rectangle fillOverrideTable(Map<int, PaintOverride>? fillOverrideTable);
+
+  Rectangle individualStrokeWeights(StrokeWeights? individualStrokeWeights);
+
+  Rectangle cornerRadius(double? cornerRadius);
+
+  Rectangle rectangleCornerRadii(List<double>? rectangleCornerRadii);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Rectangle(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -32,8 +111,8 @@ abstract class _$RectangleCWProxy {
     Map<String, String>? componentPropertyReferencesMap,
     String? name,
     double? rotation,
-    dynamic pluginData,
-    dynamic sharedPluginData,
+    dynamic? pluginData,
+    dynamic? sharedPluginData,
     BlendMode? blendMode,
     LayoutAlign? layoutAlign,
     LayoutConstraint? constraints,
@@ -56,15 +135,155 @@ abstract class _$RectangleCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfRectangle.copyWith(...)`.
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfRectangle.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfRectangle.copyWith.fieldName(...)`
 class _$RectangleCWProxyImpl implements _$RectangleCWProxy {
   const _$RectangleCWProxyImpl(this._value);
 
   final Rectangle _value;
 
   @override
+  Rectangle id(String id) => this(id: id);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  @override
+  Rectangle visible(bool visible) => this(visible: visible);
+
+  @override
+  Rectangle locked(bool locked) => this(locked: locked);
+
+  @override
+  Rectangle exportSettings(List<ExportSetting> exportSettings) =>
+      this(exportSettings: exportSettings);
+
+  @override
+  Rectangle preserveRatio(bool preserveRatio) =>
+      this(preserveRatio: preserveRatio);
+
+  @override
+  Rectangle layoutGrow(double layoutGrow) => this(layoutGrow: layoutGrow);
+
+  @override
+  Rectangle opacity(double opacity) => this(opacity: opacity);
+
+  @override
+  Rectangle isMask(bool isMask) => this(isMask: isMask);
+
+  @override
+  Rectangle fills(List<Paint> fills) => this(fills: fills);
+
+  @override
+  Rectangle fillGeometry(List<Path> fillGeometry) =>
+      this(fillGeometry: fillGeometry);
+
+  @override
+  Rectangle strokes(List<Paint> strokes) => this(strokes: strokes);
+
+  @override
+  Rectangle strokeCap(StrokeCap strokeCap) => this(strokeCap: strokeCap);
+
+  @override
+  Rectangle strokeJoin(StrokeJoin strokeJoin) => this(strokeJoin: strokeJoin);
+
+  @override
+  Rectangle strokeDashes(List<double> strokeDashes) =>
+      this(strokeDashes: strokeDashes);
+
+  @override
+  Rectangle strokeMiterAngle(double strokeMiterAngle) =>
+      this(strokeMiterAngle: strokeMiterAngle);
+
+  @override
+  Rectangle componentPropertyReferencesMap(
+          Map<String, String>? componentPropertyReferencesMap) =>
+      this(componentPropertyReferencesMap: componentPropertyReferencesMap);
+
+  @override
+  Rectangle name(String? name) => this(name: name);
+
+  @override
+  Rectangle rotation(double? rotation) => this(rotation: rotation);
+
+  @override
+  Rectangle pluginData(dynamic pluginData) => this(pluginData: pluginData);
+
+  @override
+  Rectangle sharedPluginData(dynamic sharedPluginData) =>
+      this(sharedPluginData: sharedPluginData);
+
+  @override
+  Rectangle blendMode(BlendMode? blendMode) => this(blendMode: blendMode);
+
+  @override
+  Rectangle layoutAlign(LayoutAlign? layoutAlign) =>
+      this(layoutAlign: layoutAlign);
+
+  @override
+  Rectangle constraints(LayoutConstraint? constraints) =>
+      this(constraints: constraints);
+
+  @override
+  Rectangle transitionNodeID(String? transitionNodeID) =>
+      this(transitionNodeID: transitionNodeID);
+
+  @override
+  Rectangle transitionDuration(double? transitionDuration) =>
+      this(transitionDuration: transitionDuration);
+
+  @override
+  Rectangle transitionEasing(EasingType? transitionEasing) =>
+      this(transitionEasing: transitionEasing);
+
+  @override
+  Rectangle absoluteBoundingBox(SizeRectangle? absoluteBoundingBox) =>
+      this(absoluteBoundingBox: absoluteBoundingBox);
+
+  @override
+  Rectangle effects(List<Effect>? effects) => this(effects: effects);
+
+  @override
+  Rectangle size(Vector2D? size) => this(size: size);
+
+  @override
+  Rectangle relativeTransform(List<List<double>>? relativeTransform) =>
+      this(relativeTransform: relativeTransform);
+
+  @override
+  Rectangle strokeWeight(double? strokeWeight) =>
+      this(strokeWeight: strokeWeight);
+
+  @override
+  Rectangle strokeGeometry(List<dynamic>? strokeGeometry) =>
+      this(strokeGeometry: strokeGeometry);
+
+  @override
+  Rectangle strokeAlign(StrokeAlign? strokeAlign) =>
+      this(strokeAlign: strokeAlign);
+
+  @override
+  Rectangle styles(Map<StyleTypeKey, String>? styles) => this(styles: styles);
+
+  @override
+  Rectangle absoluteRenderBounds(SizeRectangle? absoluteRenderBounds) =>
+      this(absoluteRenderBounds: absoluteRenderBounds);
+
+  @override
+  Rectangle fillOverrideTable(Map<int, PaintOverride>? fillOverrideTable) =>
+      this(fillOverrideTable: fillOverrideTable);
+
+  @override
+  Rectangle individualStrokeWeights(StrokeWeights? individualStrokeWeights) =>
+      this(individualStrokeWeights: individualStrokeWeights);
+
+  @override
+  Rectangle cornerRadius(double? cornerRadius) =>
+      this(cornerRadius: cornerRadius);
+
+  @override
+  Rectangle rectangleCornerRadii(List<double>? rectangleCornerRadii) =>
+      this(rectangleCornerRadii: rectangleCornerRadii);
+
+  @override
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Rectangle(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -301,91 +520,9 @@ class _$RectangleCWProxyImpl implements _$RectangleCWProxy {
 }
 
 extension $RectangleCopyWith on Rectangle {
-  /// Returns a callable class that can be used as follows: `instanceOfRectangle.copyWith(...)`.
+  /// Returns a callable class that can be used as follows: `instanceOfRectangle.copyWith(...)` or like so:`instanceOfRectangle.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$RectangleCWProxy get copyWith => _$RectangleCWProxyImpl(this);
-
-  /// Copies the object with the specific fields set to `null`. If you pass `false` as a parameter, nothing will be done and it will be ignored. Don't do it. Prefer `copyWith(field: null)`.
-  ///
-  /// Usage
-  /// ```dart
-  /// Rectangle(...).copyWithNull(firstField: true, secondField: true)
-  /// ````
-  Rectangle copyWithNull({
-    bool componentPropertyReferencesMap = false,
-    bool name = false,
-    bool rotation = false,
-    bool blendMode = false,
-    bool layoutAlign = false,
-    bool constraints = false,
-    bool transitionNodeID = false,
-    bool transitionDuration = false,
-    bool transitionEasing = false,
-    bool absoluteBoundingBox = false,
-    bool effects = false,
-    bool size = false,
-    bool relativeTransform = false,
-    bool strokeWeight = false,
-    bool strokeGeometry = false,
-    bool strokeAlign = false,
-    bool styles = false,
-    bool absoluteRenderBounds = false,
-    bool fillOverrideTable = false,
-    bool individualStrokeWeights = false,
-    bool cornerRadius = false,
-    bool rectangleCornerRadii = false,
-  }) {
-    return Rectangle(
-      id: id,
-      visible: visible,
-      locked: locked,
-      exportSettings: exportSettings,
-      preserveRatio: preserveRatio,
-      layoutGrow: layoutGrow,
-      opacity: opacity,
-      isMask: isMask,
-      fills: fills,
-      fillGeometry: fillGeometry,
-      strokes: strokes,
-      strokeCap: strokeCap,
-      strokeJoin: strokeJoin,
-      strokeDashes: strokeDashes,
-      strokeMiterAngle: strokeMiterAngle,
-      componentPropertyReferencesMap: componentPropertyReferencesMap == true
-          ? null
-          : this.componentPropertyReferencesMap,
-      name: name == true ? null : this.name,
-      rotation: rotation == true ? null : this.rotation,
-      pluginData: pluginData,
-      sharedPluginData: sharedPluginData,
-      blendMode: blendMode == true ? null : this.blendMode,
-      layoutAlign: layoutAlign == true ? null : this.layoutAlign,
-      constraints: constraints == true ? null : this.constraints,
-      transitionNodeID: transitionNodeID == true ? null : this.transitionNodeID,
-      transitionDuration:
-          transitionDuration == true ? null : this.transitionDuration,
-      transitionEasing: transitionEasing == true ? null : this.transitionEasing,
-      absoluteBoundingBox:
-          absoluteBoundingBox == true ? null : this.absoluteBoundingBox,
-      effects: effects == true ? null : this.effects,
-      size: size == true ? null : this.size,
-      relativeTransform:
-          relativeTransform == true ? null : this.relativeTransform,
-      strokeWeight: strokeWeight == true ? null : this.strokeWeight,
-      strokeGeometry: strokeGeometry == true ? null : this.strokeGeometry,
-      strokeAlign: strokeAlign == true ? null : this.strokeAlign,
-      styles: styles == true ? null : this.styles,
-      absoluteRenderBounds:
-          absoluteRenderBounds == true ? null : this.absoluteRenderBounds,
-      fillOverrideTable:
-          fillOverrideTable == true ? null : this.fillOverrideTable,
-      individualStrokeWeights:
-          individualStrokeWeights == true ? null : this.individualStrokeWeights,
-      cornerRadius: cornerRadius == true ? null : this.cornerRadius,
-      rectangleCornerRadii:
-          rectangleCornerRadii == true ? null : this.rectangleCornerRadii,
-    );
-  }
 }
 
 // **************************************************************************

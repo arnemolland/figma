@@ -7,7 +7,31 @@ part of 'component.dart';
 // **************************************************************************
 
 abstract class _$ComponentCWProxy {
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  Component key(String? key);
+
+  Component fileKey(String? fileKey);
+
+  Component nodeId(String? nodeId);
+
+  Component thumbnailUrl(String? thumbnailUrl);
+
+  Component name(String? name);
+
+  Component description(String? description);
+
+  Component createdAt(DateTime? createdAt);
+
+  Component updatedAt(DateTime? updatedAt);
+
+  Component user(User? user);
+
+  Component containingFrame(FrameInfo? containingFrame);
+
+  Component containingPage(dynamic containingPage);
+
+  Component componentSetId(String? componentSetId);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Component(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -24,20 +48,60 @@ abstract class _$ComponentCWProxy {
     DateTime? updatedAt,
     User? user,
     FrameInfo? containingFrame,
-    dynamic containingPage,
+    dynamic? containingPage,
     String? componentSetId,
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfComponent.copyWith(...)`.
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfComponent.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfComponent.copyWith.fieldName(...)`
 class _$ComponentCWProxyImpl implements _$ComponentCWProxy {
   const _$ComponentCWProxyImpl(this._value);
 
   final Component _value;
 
   @override
+  Component key(String? key) => this(key: key);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  @override
+  Component fileKey(String? fileKey) => this(fileKey: fileKey);
+
+  @override
+  Component nodeId(String? nodeId) => this(nodeId: nodeId);
+
+  @override
+  Component thumbnailUrl(String? thumbnailUrl) =>
+      this(thumbnailUrl: thumbnailUrl);
+
+  @override
+  Component name(String? name) => this(name: name);
+
+  @override
+  Component description(String? description) => this(description: description);
+
+  @override
+  Component createdAt(DateTime? createdAt) => this(createdAt: createdAt);
+
+  @override
+  Component updatedAt(DateTime? updatedAt) => this(updatedAt: updatedAt);
+
+  @override
+  Component user(User? user) => this(user: user);
+
+  @override
+  Component containingFrame(FrameInfo? containingFrame) =>
+      this(containingFrame: containingFrame);
+
+  @override
+  Component containingPage(dynamic containingPage) =>
+      this(containingPage: containingPage);
+
+  @override
+  Component componentSetId(String? componentSetId) =>
+      this(componentSetId: componentSetId);
+
+  @override
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Component(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -113,44 +177,9 @@ class _$ComponentCWProxyImpl implements _$ComponentCWProxy {
 }
 
 extension $ComponentCopyWith on Component {
-  /// Returns a callable class that can be used as follows: `instanceOfComponent.copyWith(...)`.
+  /// Returns a callable class that can be used as follows: `instanceOfComponent.copyWith(...)` or like so:`instanceOfComponent.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$ComponentCWProxy get copyWith => _$ComponentCWProxyImpl(this);
-
-  /// Copies the object with the specific fields set to `null`. If you pass `false` as a parameter, nothing will be done and it will be ignored. Don't do it. Prefer `copyWith(field: null)`.
-  ///
-  /// Usage
-  /// ```dart
-  /// Component(...).copyWithNull(firstField: true, secondField: true)
-  /// ````
-  Component copyWithNull({
-    bool key = false,
-    bool fileKey = false,
-    bool nodeId = false,
-    bool thumbnailUrl = false,
-    bool name = false,
-    bool description = false,
-    bool createdAt = false,
-    bool updatedAt = false,
-    bool user = false,
-    bool containingFrame = false,
-    bool componentSetId = false,
-  }) {
-    return Component(
-      key: key == true ? null : this.key,
-      fileKey: fileKey == true ? null : this.fileKey,
-      nodeId: nodeId == true ? null : this.nodeId,
-      thumbnailUrl: thumbnailUrl == true ? null : this.thumbnailUrl,
-      name: name == true ? null : this.name,
-      description: description == true ? null : this.description,
-      createdAt: createdAt == true ? null : this.createdAt,
-      updatedAt: updatedAt == true ? null : this.updatedAt,
-      user: user == true ? null : this.user,
-      containingFrame: containingFrame == true ? null : this.containingFrame,
-      containingPage: containingPage,
-      componentSetId: componentSetId == true ? null : this.componentSetId,
-    );
-  }
 }
 
 // **************************************************************************

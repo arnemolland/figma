@@ -7,7 +7,68 @@ part of 'component_node.dart';
 // **************************************************************************
 
 abstract class _$ComponentNodeCWProxy {
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  ComponentNode id(String id);
+
+  ComponentNode visible(bool visible);
+
+  ComponentNode locked(bool locked);
+
+  ComponentNode fills(List<Paint> fills);
+
+  ComponentNode strokes(List<Paint> strokes);
+
+  ComponentNode exportSettings(List<ExportSetting> exportSettings);
+
+  ComponentNode children(List<Node> children);
+
+  ComponentNode opacity(double opacity);
+
+  ComponentNode primaryAxisAlignItems(
+      PrimaryAxisAlignItems primaryAxisAlignItems);
+
+  ComponentNode counterAxisAlignItems(
+      CounterAxisAlignItems counterAxisAlignItems);
+
+  ComponentNode primaryAxisSizingMode(
+      PrimaryAxisSizingMode primaryAxisSizingMode);
+
+  ComponentNode counterAxisSizingMode(
+      CounterAxisSizingMode counterAxisSizingMode);
+
+  ComponentNode paddingBottom(double paddingBottom);
+
+  ComponentNode paddingLeft(double paddingLeft);
+
+  ComponentNode paddingRight(double paddingRight);
+
+  ComponentNode paddingTop(double paddingTop);
+
+  ComponentNode horizontalPadding(double horizontalPadding);
+
+  ComponentNode verticalPadding(double verticalPadding);
+
+  ComponentNode itemSpacing(double itemSpacing);
+
+  ComponentNode layoutGrids(List<LayoutGrid> layoutGrids);
+
+  ComponentNode overflowDirection(OverflowDirection overflowDirection);
+
+  ComponentNode effects(List<Effect> effects);
+
+  ComponentNode isMask(bool isMask);
+
+  ComponentNode isMaskOutline(bool isMaskOutline);
+
+  ComponentNode layoutPositioning(LayoutPositioning layoutPositioning);
+
+  ComponentNode itemReverseZIndex(bool itemReverseZIndex);
+
+  ComponentNode strokesIncludedInLayout(bool strokesIncludedInLayout);
+
+  ComponentNode componentPropertyDefinitions(
+      Map<String, ComponentPropertyDefinition> componentPropertyDefinitions);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ComponentNode(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -45,15 +106,123 @@ abstract class _$ComponentNodeCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfComponentNode.copyWith(...)`.
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfComponentNode.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfComponentNode.copyWith.fieldName(...)`
 class _$ComponentNodeCWProxyImpl implements _$ComponentNodeCWProxy {
   const _$ComponentNodeCWProxyImpl(this._value);
 
   final ComponentNode _value;
 
   @override
+  ComponentNode id(String id) => this(id: id);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  @override
+  ComponentNode visible(bool visible) => this(visible: visible);
+
+  @override
+  ComponentNode locked(bool locked) => this(locked: locked);
+
+  @override
+  ComponentNode fills(List<Paint> fills) => this(fills: fills);
+
+  @override
+  ComponentNode strokes(List<Paint> strokes) => this(strokes: strokes);
+
+  @override
+  ComponentNode exportSettings(List<ExportSetting> exportSettings) =>
+      this(exportSettings: exportSettings);
+
+  @override
+  ComponentNode children(List<Node> children) => this(children: children);
+
+  @override
+  ComponentNode opacity(double opacity) => this(opacity: opacity);
+
+  @override
+  ComponentNode primaryAxisAlignItems(
+          PrimaryAxisAlignItems primaryAxisAlignItems) =>
+      this(primaryAxisAlignItems: primaryAxisAlignItems);
+
+  @override
+  ComponentNode counterAxisAlignItems(
+          CounterAxisAlignItems counterAxisAlignItems) =>
+      this(counterAxisAlignItems: counterAxisAlignItems);
+
+  @override
+  ComponentNode primaryAxisSizingMode(
+          PrimaryAxisSizingMode primaryAxisSizingMode) =>
+      this(primaryAxisSizingMode: primaryAxisSizingMode);
+
+  @override
+  ComponentNode counterAxisSizingMode(
+          CounterAxisSizingMode counterAxisSizingMode) =>
+      this(counterAxisSizingMode: counterAxisSizingMode);
+
+  @override
+  ComponentNode paddingBottom(double paddingBottom) =>
+      this(paddingBottom: paddingBottom);
+
+  @override
+  ComponentNode paddingLeft(double paddingLeft) =>
+      this(paddingLeft: paddingLeft);
+
+  @override
+  ComponentNode paddingRight(double paddingRight) =>
+      this(paddingRight: paddingRight);
+
+  @override
+  ComponentNode paddingTop(double paddingTop) => this(paddingTop: paddingTop);
+
+  @override
+  ComponentNode horizontalPadding(double horizontalPadding) =>
+      this(horizontalPadding: horizontalPadding);
+
+  @override
+  ComponentNode verticalPadding(double verticalPadding) =>
+      this(verticalPadding: verticalPadding);
+
+  @override
+  ComponentNode itemSpacing(double itemSpacing) =>
+      this(itemSpacing: itemSpacing);
+
+  @override
+  ComponentNode layoutGrids(List<LayoutGrid> layoutGrids) =>
+      this(layoutGrids: layoutGrids);
+
+  @override
+  ComponentNode overflowDirection(OverflowDirection overflowDirection) =>
+      this(overflowDirection: overflowDirection);
+
+  @override
+  ComponentNode effects(List<Effect> effects) => this(effects: effects);
+
+  @override
+  ComponentNode isMask(bool isMask) => this(isMask: isMask);
+
+  @override
+  ComponentNode isMaskOutline(bool isMaskOutline) =>
+      this(isMaskOutline: isMaskOutline);
+
+  @override
+  ComponentNode layoutPositioning(LayoutPositioning layoutPositioning) =>
+      this(layoutPositioning: layoutPositioning);
+
+  @override
+  ComponentNode itemReverseZIndex(bool itemReverseZIndex) =>
+      this(itemReverseZIndex: itemReverseZIndex);
+
+  @override
+  ComponentNode strokesIncludedInLayout(bool strokesIncludedInLayout) =>
+      this(strokesIncludedInLayout: strokesIncludedInLayout);
+
+  @override
+  ComponentNode componentPropertyDefinitions(
+          Map<String, ComponentPropertyDefinition>
+              componentPropertyDefinitions) =>
+      this(componentPropertyDefinitions: componentPropertyDefinitions);
+
+  @override
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ComponentNode(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -261,7 +430,7 @@ class _$ComponentNodeCWProxyImpl implements _$ComponentNodeCWProxy {
 }
 
 extension $ComponentNodeCopyWith on ComponentNode {
-  /// Returns a callable class that can be used as follows: `instanceOfComponentNode.copyWith(...)`.
+  /// Returns a callable class that can be used as follows: `instanceOfComponentNode.copyWith(...)` or like so:`instanceOfComponentNode.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$ComponentNodeCWProxy get copyWith => _$ComponentNodeCWProxyImpl(this);
 }

@@ -7,7 +7,88 @@ part of 'boolean_operation.dart';
 // **************************************************************************
 
 abstract class _$BooleanOperationCWProxy {
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  BooleanOperation id(String id);
+
+  BooleanOperation visible(bool visible);
+
+  BooleanOperation locked(bool locked);
+
+  BooleanOperation exportSettings(List<ExportSetting> exportSettings);
+
+  BooleanOperation preserveRatio(bool preserveRatio);
+
+  BooleanOperation layoutGrow(double layoutGrow);
+
+  BooleanOperation opacity(double opacity);
+
+  BooleanOperation isMask(bool isMask);
+
+  BooleanOperation fills(List<Paint> fills);
+
+  BooleanOperation fillGeometry(List<Path> fillGeometry);
+
+  BooleanOperation strokes(List<Paint> strokes);
+
+  BooleanOperation strokeCap(StrokeCap strokeCap);
+
+  BooleanOperation strokeJoin(StrokeJoin strokeJoin);
+
+  BooleanOperation strokeDashes(List<double> strokeDashes);
+
+  BooleanOperation strokeMiterAngle(double strokeMiterAngle);
+
+  BooleanOperation componentPropertyReferencesMap(
+      Map<String, String>? componentPropertyReferencesMap);
+
+  BooleanOperation name(String? name);
+
+  BooleanOperation rotation(double? rotation);
+
+  BooleanOperation pluginData(dynamic pluginData);
+
+  BooleanOperation sharedPluginData(dynamic sharedPluginData);
+
+  BooleanOperation blendMode(BlendMode? blendMode);
+
+  BooleanOperation layoutAlign(LayoutAlign? layoutAlign);
+
+  BooleanOperation constraints(LayoutConstraint? constraints);
+
+  BooleanOperation transitionNodeID(String? transitionNodeID);
+
+  BooleanOperation transitionDuration(double? transitionDuration);
+
+  BooleanOperation transitionEasing(EasingType? transitionEasing);
+
+  BooleanOperation absoluteBoundingBox(SizeRectangle? absoluteBoundingBox);
+
+  BooleanOperation effects(List<Effect>? effects);
+
+  BooleanOperation size(Vector2D? size);
+
+  BooleanOperation relativeTransform(List<List<double>>? relativeTransform);
+
+  BooleanOperation strokeWeight(double? strokeWeight);
+
+  BooleanOperation strokeGeometry(List<dynamic>? strokeGeometry);
+
+  BooleanOperation strokeAlign(StrokeAlign? strokeAlign);
+
+  BooleanOperation styles(Map<StyleTypeKey, String>? styles);
+
+  BooleanOperation absoluteRenderBounds(SizeRectangle? absoluteRenderBounds);
+
+  BooleanOperation fillOverrideTable(
+      Map<int, PaintOverride>? fillOverrideTable);
+
+  BooleanOperation individualStrokeWeights(
+      StrokeWeights? individualStrokeWeights);
+
+  BooleanOperation children(List<Node?>? children);
+
+  BooleanOperation operation(Operation? operation);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `BooleanOperation(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -32,8 +113,8 @@ abstract class _$BooleanOperationCWProxy {
     Map<String, String>? componentPropertyReferencesMap,
     String? name,
     double? rotation,
-    dynamic pluginData,
-    dynamic sharedPluginData,
+    dynamic? pluginData,
+    dynamic? sharedPluginData,
     BlendMode? blendMode,
     LayoutAlign? layoutAlign,
     LayoutConstraint? constraints,
@@ -56,15 +137,161 @@ abstract class _$BooleanOperationCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfBooleanOperation.copyWith(...)`.
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfBooleanOperation.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfBooleanOperation.copyWith.fieldName(...)`
 class _$BooleanOperationCWProxyImpl implements _$BooleanOperationCWProxy {
   const _$BooleanOperationCWProxyImpl(this._value);
 
   final BooleanOperation _value;
 
   @override
+  BooleanOperation id(String id) => this(id: id);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  @override
+  BooleanOperation visible(bool visible) => this(visible: visible);
+
+  @override
+  BooleanOperation locked(bool locked) => this(locked: locked);
+
+  @override
+  BooleanOperation exportSettings(List<ExportSetting> exportSettings) =>
+      this(exportSettings: exportSettings);
+
+  @override
+  BooleanOperation preserveRatio(bool preserveRatio) =>
+      this(preserveRatio: preserveRatio);
+
+  @override
+  BooleanOperation layoutGrow(double layoutGrow) =>
+      this(layoutGrow: layoutGrow);
+
+  @override
+  BooleanOperation opacity(double opacity) => this(opacity: opacity);
+
+  @override
+  BooleanOperation isMask(bool isMask) => this(isMask: isMask);
+
+  @override
+  BooleanOperation fills(List<Paint> fills) => this(fills: fills);
+
+  @override
+  BooleanOperation fillGeometry(List<Path> fillGeometry) =>
+      this(fillGeometry: fillGeometry);
+
+  @override
+  BooleanOperation strokes(List<Paint> strokes) => this(strokes: strokes);
+
+  @override
+  BooleanOperation strokeCap(StrokeCap strokeCap) => this(strokeCap: strokeCap);
+
+  @override
+  BooleanOperation strokeJoin(StrokeJoin strokeJoin) =>
+      this(strokeJoin: strokeJoin);
+
+  @override
+  BooleanOperation strokeDashes(List<double> strokeDashes) =>
+      this(strokeDashes: strokeDashes);
+
+  @override
+  BooleanOperation strokeMiterAngle(double strokeMiterAngle) =>
+      this(strokeMiterAngle: strokeMiterAngle);
+
+  @override
+  BooleanOperation componentPropertyReferencesMap(
+          Map<String, String>? componentPropertyReferencesMap) =>
+      this(componentPropertyReferencesMap: componentPropertyReferencesMap);
+
+  @override
+  BooleanOperation name(String? name) => this(name: name);
+
+  @override
+  BooleanOperation rotation(double? rotation) => this(rotation: rotation);
+
+  @override
+  BooleanOperation pluginData(dynamic pluginData) =>
+      this(pluginData: pluginData);
+
+  @override
+  BooleanOperation sharedPluginData(dynamic sharedPluginData) =>
+      this(sharedPluginData: sharedPluginData);
+
+  @override
+  BooleanOperation blendMode(BlendMode? blendMode) =>
+      this(blendMode: blendMode);
+
+  @override
+  BooleanOperation layoutAlign(LayoutAlign? layoutAlign) =>
+      this(layoutAlign: layoutAlign);
+
+  @override
+  BooleanOperation constraints(LayoutConstraint? constraints) =>
+      this(constraints: constraints);
+
+  @override
+  BooleanOperation transitionNodeID(String? transitionNodeID) =>
+      this(transitionNodeID: transitionNodeID);
+
+  @override
+  BooleanOperation transitionDuration(double? transitionDuration) =>
+      this(transitionDuration: transitionDuration);
+
+  @override
+  BooleanOperation transitionEasing(EasingType? transitionEasing) =>
+      this(transitionEasing: transitionEasing);
+
+  @override
+  BooleanOperation absoluteBoundingBox(SizeRectangle? absoluteBoundingBox) =>
+      this(absoluteBoundingBox: absoluteBoundingBox);
+
+  @override
+  BooleanOperation effects(List<Effect>? effects) => this(effects: effects);
+
+  @override
+  BooleanOperation size(Vector2D? size) => this(size: size);
+
+  @override
+  BooleanOperation relativeTransform(List<List<double>>? relativeTransform) =>
+      this(relativeTransform: relativeTransform);
+
+  @override
+  BooleanOperation strokeWeight(double? strokeWeight) =>
+      this(strokeWeight: strokeWeight);
+
+  @override
+  BooleanOperation strokeGeometry(List<dynamic>? strokeGeometry) =>
+      this(strokeGeometry: strokeGeometry);
+
+  @override
+  BooleanOperation strokeAlign(StrokeAlign? strokeAlign) =>
+      this(strokeAlign: strokeAlign);
+
+  @override
+  BooleanOperation styles(Map<StyleTypeKey, String>? styles) =>
+      this(styles: styles);
+
+  @override
+  BooleanOperation absoluteRenderBounds(SizeRectangle? absoluteRenderBounds) =>
+      this(absoluteRenderBounds: absoluteRenderBounds);
+
+  @override
+  BooleanOperation fillOverrideTable(
+          Map<int, PaintOverride>? fillOverrideTable) =>
+      this(fillOverrideTable: fillOverrideTable);
+
+  @override
+  BooleanOperation individualStrokeWeights(
+          StrokeWeights? individualStrokeWeights) =>
+      this(individualStrokeWeights: individualStrokeWeights);
+
+  @override
+  BooleanOperation children(List<Node?>? children) => this(children: children);
+
+  @override
+  BooleanOperation operation(Operation? operation) =>
+      this(operation: operation);
+
+  @override
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `BooleanOperation(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -301,90 +528,9 @@ class _$BooleanOperationCWProxyImpl implements _$BooleanOperationCWProxy {
 }
 
 extension $BooleanOperationCopyWith on BooleanOperation {
-  /// Returns a callable class that can be used as follows: `instanceOfBooleanOperation.copyWith(...)`.
+  /// Returns a callable class that can be used as follows: `instanceOfBooleanOperation.copyWith(...)` or like so:`instanceOfBooleanOperation.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$BooleanOperationCWProxy get copyWith => _$BooleanOperationCWProxyImpl(this);
-
-  /// Copies the object with the specific fields set to `null`. If you pass `false` as a parameter, nothing will be done and it will be ignored. Don't do it. Prefer `copyWith(field: null)`.
-  ///
-  /// Usage
-  /// ```dart
-  /// BooleanOperation(...).copyWithNull(firstField: true, secondField: true)
-  /// ````
-  BooleanOperation copyWithNull({
-    bool componentPropertyReferencesMap = false,
-    bool name = false,
-    bool rotation = false,
-    bool blendMode = false,
-    bool layoutAlign = false,
-    bool constraints = false,
-    bool transitionNodeID = false,
-    bool transitionDuration = false,
-    bool transitionEasing = false,
-    bool absoluteBoundingBox = false,
-    bool effects = false,
-    bool size = false,
-    bool relativeTransform = false,
-    bool strokeWeight = false,
-    bool strokeGeometry = false,
-    bool strokeAlign = false,
-    bool styles = false,
-    bool absoluteRenderBounds = false,
-    bool fillOverrideTable = false,
-    bool individualStrokeWeights = false,
-    bool children = false,
-    bool operation = false,
-  }) {
-    return BooleanOperation(
-      id: id,
-      visible: visible,
-      locked: locked,
-      exportSettings: exportSettings,
-      preserveRatio: preserveRatio,
-      layoutGrow: layoutGrow,
-      opacity: opacity,
-      isMask: isMask,
-      fills: fills,
-      fillGeometry: fillGeometry,
-      strokes: strokes,
-      strokeCap: strokeCap,
-      strokeJoin: strokeJoin,
-      strokeDashes: strokeDashes,
-      strokeMiterAngle: strokeMiterAngle,
-      componentPropertyReferencesMap: componentPropertyReferencesMap == true
-          ? null
-          : this.componentPropertyReferencesMap,
-      name: name == true ? null : this.name,
-      rotation: rotation == true ? null : this.rotation,
-      pluginData: pluginData,
-      sharedPluginData: sharedPluginData,
-      blendMode: blendMode == true ? null : this.blendMode,
-      layoutAlign: layoutAlign == true ? null : this.layoutAlign,
-      constraints: constraints == true ? null : this.constraints,
-      transitionNodeID: transitionNodeID == true ? null : this.transitionNodeID,
-      transitionDuration:
-          transitionDuration == true ? null : this.transitionDuration,
-      transitionEasing: transitionEasing == true ? null : this.transitionEasing,
-      absoluteBoundingBox:
-          absoluteBoundingBox == true ? null : this.absoluteBoundingBox,
-      effects: effects == true ? null : this.effects,
-      size: size == true ? null : this.size,
-      relativeTransform:
-          relativeTransform == true ? null : this.relativeTransform,
-      strokeWeight: strokeWeight == true ? null : this.strokeWeight,
-      strokeGeometry: strokeGeometry == true ? null : this.strokeGeometry,
-      strokeAlign: strokeAlign == true ? null : this.strokeAlign,
-      styles: styles == true ? null : this.styles,
-      absoluteRenderBounds:
-          absoluteRenderBounds == true ? null : this.absoluteRenderBounds,
-      fillOverrideTable:
-          fillOverrideTable == true ? null : this.fillOverrideTable,
-      individualStrokeWeights:
-          individualStrokeWeights == true ? null : this.individualStrokeWeights,
-      children: children == true ? null : this.children,
-      operation: operation == true ? null : this.operation,
-    );
-  }
 }
 
 // **************************************************************************

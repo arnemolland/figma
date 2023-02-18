@@ -7,7 +7,11 @@ part of 'vector_2d.dart';
 // **************************************************************************
 
 abstract class _$Vector2DCWProxy {
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  Vector2D x(num x);
+
+  Vector2D y(num y);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Vector2D(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -19,15 +23,21 @@ abstract class _$Vector2DCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfVector2D.copyWith(...)`.
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfVector2D.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfVector2D.copyWith.fieldName(...)`
 class _$Vector2DCWProxyImpl implements _$Vector2DCWProxy {
   const _$Vector2DCWProxyImpl(this._value);
 
   final Vector2D _value;
 
   @override
+  Vector2D x(num x) => this(x: x);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  @override
+  Vector2D y(num y) => this(y: y);
+
+  @override
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Vector2D(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -53,7 +63,7 @@ class _$Vector2DCWProxyImpl implements _$Vector2DCWProxy {
 }
 
 extension $Vector2DCopyWith on Vector2D {
-  /// Returns a callable class that can be used as follows: `instanceOfVector2D.copyWith(...)`.
+  /// Returns a callable class that can be used as follows: `instanceOfVector2D.copyWith(...)` or like so:`instanceOfVector2D.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$Vector2DCWProxy get copyWith => _$Vector2DCWProxyImpl(this);
 }

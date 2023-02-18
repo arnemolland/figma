@@ -7,7 +7,83 @@ part of 'regular_polygon.dart';
 // **************************************************************************
 
 abstract class _$RegularPolygonCWProxy {
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  RegularPolygon id(String id);
+
+  RegularPolygon visible(bool visible);
+
+  RegularPolygon locked(bool locked);
+
+  RegularPolygon exportSettings(List<ExportSetting> exportSettings);
+
+  RegularPolygon preserveRatio(bool preserveRatio);
+
+  RegularPolygon layoutGrow(double layoutGrow);
+
+  RegularPolygon opacity(double opacity);
+
+  RegularPolygon isMask(bool isMask);
+
+  RegularPolygon fills(List<Paint> fills);
+
+  RegularPolygon fillGeometry(List<Path> fillGeometry);
+
+  RegularPolygon strokes(List<Paint> strokes);
+
+  RegularPolygon strokeCap(StrokeCap strokeCap);
+
+  RegularPolygon strokeJoin(StrokeJoin strokeJoin);
+
+  RegularPolygon strokeDashes(List<double> strokeDashes);
+
+  RegularPolygon strokeMiterAngle(double strokeMiterAngle);
+
+  RegularPolygon componentPropertyReferencesMap(
+      Map<String, String>? componentPropertyReferencesMap);
+
+  RegularPolygon name(String? name);
+
+  RegularPolygon rotation(double? rotation);
+
+  RegularPolygon pluginData(dynamic pluginData);
+
+  RegularPolygon sharedPluginData(dynamic sharedPluginData);
+
+  RegularPolygon blendMode(BlendMode? blendMode);
+
+  RegularPolygon layoutAlign(LayoutAlign? layoutAlign);
+
+  RegularPolygon constraints(LayoutConstraint? constraints);
+
+  RegularPolygon transitionNodeID(String? transitionNodeID);
+
+  RegularPolygon transitionDuration(double? transitionDuration);
+
+  RegularPolygon transitionEasing(EasingType? transitionEasing);
+
+  RegularPolygon absoluteBoundingBox(SizeRectangle? absoluteBoundingBox);
+
+  RegularPolygon effects(List<Effect>? effects);
+
+  RegularPolygon size(Vector2D? size);
+
+  RegularPolygon relativeTransform(List<List<double>>? relativeTransform);
+
+  RegularPolygon strokeWeight(double? strokeWeight);
+
+  RegularPolygon strokeGeometry(List<dynamic>? strokeGeometry);
+
+  RegularPolygon strokeAlign(StrokeAlign? strokeAlign);
+
+  RegularPolygon styles(Map<StyleTypeKey, String>? styles);
+
+  RegularPolygon absoluteRenderBounds(SizeRectangle? absoluteRenderBounds);
+
+  RegularPolygon fillOverrideTable(Map<int, PaintOverride>? fillOverrideTable);
+
+  RegularPolygon individualStrokeWeights(
+      StrokeWeights? individualStrokeWeights);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `RegularPolygon(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -32,8 +108,8 @@ abstract class _$RegularPolygonCWProxy {
     Map<String, String>? componentPropertyReferencesMap,
     String? name,
     double? rotation,
-    dynamic pluginData,
-    dynamic sharedPluginData,
+    dynamic? pluginData,
+    dynamic? sharedPluginData,
     BlendMode? blendMode,
     LayoutAlign? layoutAlign,
     LayoutConstraint? constraints,
@@ -54,15 +130,151 @@ abstract class _$RegularPolygonCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfRegularPolygon.copyWith(...)`.
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfRegularPolygon.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfRegularPolygon.copyWith.fieldName(...)`
 class _$RegularPolygonCWProxyImpl implements _$RegularPolygonCWProxy {
   const _$RegularPolygonCWProxyImpl(this._value);
 
   final RegularPolygon _value;
 
   @override
+  RegularPolygon id(String id) => this(id: id);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  @override
+  RegularPolygon visible(bool visible) => this(visible: visible);
+
+  @override
+  RegularPolygon locked(bool locked) => this(locked: locked);
+
+  @override
+  RegularPolygon exportSettings(List<ExportSetting> exportSettings) =>
+      this(exportSettings: exportSettings);
+
+  @override
+  RegularPolygon preserveRatio(bool preserveRatio) =>
+      this(preserveRatio: preserveRatio);
+
+  @override
+  RegularPolygon layoutGrow(double layoutGrow) => this(layoutGrow: layoutGrow);
+
+  @override
+  RegularPolygon opacity(double opacity) => this(opacity: opacity);
+
+  @override
+  RegularPolygon isMask(bool isMask) => this(isMask: isMask);
+
+  @override
+  RegularPolygon fills(List<Paint> fills) => this(fills: fills);
+
+  @override
+  RegularPolygon fillGeometry(List<Path> fillGeometry) =>
+      this(fillGeometry: fillGeometry);
+
+  @override
+  RegularPolygon strokes(List<Paint> strokes) => this(strokes: strokes);
+
+  @override
+  RegularPolygon strokeCap(StrokeCap strokeCap) => this(strokeCap: strokeCap);
+
+  @override
+  RegularPolygon strokeJoin(StrokeJoin strokeJoin) =>
+      this(strokeJoin: strokeJoin);
+
+  @override
+  RegularPolygon strokeDashes(List<double> strokeDashes) =>
+      this(strokeDashes: strokeDashes);
+
+  @override
+  RegularPolygon strokeMiterAngle(double strokeMiterAngle) =>
+      this(strokeMiterAngle: strokeMiterAngle);
+
+  @override
+  RegularPolygon componentPropertyReferencesMap(
+          Map<String, String>? componentPropertyReferencesMap) =>
+      this(componentPropertyReferencesMap: componentPropertyReferencesMap);
+
+  @override
+  RegularPolygon name(String? name) => this(name: name);
+
+  @override
+  RegularPolygon rotation(double? rotation) => this(rotation: rotation);
+
+  @override
+  RegularPolygon pluginData(dynamic pluginData) => this(pluginData: pluginData);
+
+  @override
+  RegularPolygon sharedPluginData(dynamic sharedPluginData) =>
+      this(sharedPluginData: sharedPluginData);
+
+  @override
+  RegularPolygon blendMode(BlendMode? blendMode) => this(blendMode: blendMode);
+
+  @override
+  RegularPolygon layoutAlign(LayoutAlign? layoutAlign) =>
+      this(layoutAlign: layoutAlign);
+
+  @override
+  RegularPolygon constraints(LayoutConstraint? constraints) =>
+      this(constraints: constraints);
+
+  @override
+  RegularPolygon transitionNodeID(String? transitionNodeID) =>
+      this(transitionNodeID: transitionNodeID);
+
+  @override
+  RegularPolygon transitionDuration(double? transitionDuration) =>
+      this(transitionDuration: transitionDuration);
+
+  @override
+  RegularPolygon transitionEasing(EasingType? transitionEasing) =>
+      this(transitionEasing: transitionEasing);
+
+  @override
+  RegularPolygon absoluteBoundingBox(SizeRectangle? absoluteBoundingBox) =>
+      this(absoluteBoundingBox: absoluteBoundingBox);
+
+  @override
+  RegularPolygon effects(List<Effect>? effects) => this(effects: effects);
+
+  @override
+  RegularPolygon size(Vector2D? size) => this(size: size);
+
+  @override
+  RegularPolygon relativeTransform(List<List<double>>? relativeTransform) =>
+      this(relativeTransform: relativeTransform);
+
+  @override
+  RegularPolygon strokeWeight(double? strokeWeight) =>
+      this(strokeWeight: strokeWeight);
+
+  @override
+  RegularPolygon strokeGeometry(List<dynamic>? strokeGeometry) =>
+      this(strokeGeometry: strokeGeometry);
+
+  @override
+  RegularPolygon strokeAlign(StrokeAlign? strokeAlign) =>
+      this(strokeAlign: strokeAlign);
+
+  @override
+  RegularPolygon styles(Map<StyleTypeKey, String>? styles) =>
+      this(styles: styles);
+
+  @override
+  RegularPolygon absoluteRenderBounds(SizeRectangle? absoluteRenderBounds) =>
+      this(absoluteRenderBounds: absoluteRenderBounds);
+
+  @override
+  RegularPolygon fillOverrideTable(
+          Map<int, PaintOverride>? fillOverrideTable) =>
+      this(fillOverrideTable: fillOverrideTable);
+
+  @override
+  RegularPolygon individualStrokeWeights(
+          StrokeWeights? individualStrokeWeights) =>
+      this(individualStrokeWeights: individualStrokeWeights);
+
+  @override
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `RegularPolygon(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -289,86 +501,9 @@ class _$RegularPolygonCWProxyImpl implements _$RegularPolygonCWProxy {
 }
 
 extension $RegularPolygonCopyWith on RegularPolygon {
-  /// Returns a callable class that can be used as follows: `instanceOfRegularPolygon.copyWith(...)`.
+  /// Returns a callable class that can be used as follows: `instanceOfRegularPolygon.copyWith(...)` or like so:`instanceOfRegularPolygon.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$RegularPolygonCWProxy get copyWith => _$RegularPolygonCWProxyImpl(this);
-
-  /// Copies the object with the specific fields set to `null`. If you pass `false` as a parameter, nothing will be done and it will be ignored. Don't do it. Prefer `copyWith(field: null)`.
-  ///
-  /// Usage
-  /// ```dart
-  /// RegularPolygon(...).copyWithNull(firstField: true, secondField: true)
-  /// ````
-  RegularPolygon copyWithNull({
-    bool componentPropertyReferencesMap = false,
-    bool name = false,
-    bool rotation = false,
-    bool blendMode = false,
-    bool layoutAlign = false,
-    bool constraints = false,
-    bool transitionNodeID = false,
-    bool transitionDuration = false,
-    bool transitionEasing = false,
-    bool absoluteBoundingBox = false,
-    bool effects = false,
-    bool size = false,
-    bool relativeTransform = false,
-    bool strokeWeight = false,
-    bool strokeGeometry = false,
-    bool strokeAlign = false,
-    bool styles = false,
-    bool absoluteRenderBounds = false,
-    bool fillOverrideTable = false,
-    bool individualStrokeWeights = false,
-  }) {
-    return RegularPolygon(
-      id: id,
-      visible: visible,
-      locked: locked,
-      exportSettings: exportSettings,
-      preserveRatio: preserveRatio,
-      layoutGrow: layoutGrow,
-      opacity: opacity,
-      isMask: isMask,
-      fills: fills,
-      fillGeometry: fillGeometry,
-      strokes: strokes,
-      strokeCap: strokeCap,
-      strokeJoin: strokeJoin,
-      strokeDashes: strokeDashes,
-      strokeMiterAngle: strokeMiterAngle,
-      componentPropertyReferencesMap: componentPropertyReferencesMap == true
-          ? null
-          : this.componentPropertyReferencesMap,
-      name: name == true ? null : this.name,
-      rotation: rotation == true ? null : this.rotation,
-      pluginData: pluginData,
-      sharedPluginData: sharedPluginData,
-      blendMode: blendMode == true ? null : this.blendMode,
-      layoutAlign: layoutAlign == true ? null : this.layoutAlign,
-      constraints: constraints == true ? null : this.constraints,
-      transitionNodeID: transitionNodeID == true ? null : this.transitionNodeID,
-      transitionDuration:
-          transitionDuration == true ? null : this.transitionDuration,
-      transitionEasing: transitionEasing == true ? null : this.transitionEasing,
-      absoluteBoundingBox:
-          absoluteBoundingBox == true ? null : this.absoluteBoundingBox,
-      effects: effects == true ? null : this.effects,
-      size: size == true ? null : this.size,
-      relativeTransform:
-          relativeTransform == true ? null : this.relativeTransform,
-      strokeWeight: strokeWeight == true ? null : this.strokeWeight,
-      strokeGeometry: strokeGeometry == true ? null : this.strokeGeometry,
-      strokeAlign: strokeAlign == true ? null : this.strokeAlign,
-      styles: styles == true ? null : this.styles,
-      absoluteRenderBounds:
-          absoluteRenderBounds == true ? null : this.absoluteRenderBounds,
-      fillOverrideTable:
-          fillOverrideTable == true ? null : this.fillOverrideTable,
-      individualStrokeWeights:
-          individualStrokeWeights == true ? null : this.individualStrokeWeights,
-    );
-  }
 }
 
 // **************************************************************************

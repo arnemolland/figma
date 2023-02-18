@@ -7,7 +7,11 @@ part of 'path.dart';
 // **************************************************************************
 
 abstract class _$PathCWProxy {
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  Path path(String path);
+
+  Path windingRule(WindingRule windingRule);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Path(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -19,15 +23,21 @@ abstract class _$PathCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfPath.copyWith(...)`.
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfPath.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfPath.copyWith.fieldName(...)`
 class _$PathCWProxyImpl implements _$PathCWProxy {
   const _$PathCWProxyImpl(this._value);
 
   final Path _value;
 
   @override
+  Path path(String path) => this(path: path);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  @override
+  Path windingRule(WindingRule windingRule) => this(windingRule: windingRule);
+
+  @override
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Path(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -54,7 +64,7 @@ class _$PathCWProxyImpl implements _$PathCWProxy {
 }
 
 extension $PathCopyWith on Path {
-  /// Returns a callable class that can be used as follows: `instanceOfPath.copyWith(...)`.
+  /// Returns a callable class that can be used as follows: `instanceOfPath.copyWith(...)` or like so:`instanceOfPath.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$PathCWProxy get copyWith => _$PathCWProxyImpl(this);
 }

@@ -7,7 +7,94 @@ part of 'text.dart';
 // **************************************************************************
 
 abstract class _$TextCWProxy {
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  Text id(String id);
+
+  Text visible(bool visible);
+
+  Text locked(bool locked);
+
+  Text exportSettings(List<ExportSetting> exportSettings);
+
+  Text preserveRatio(bool preserveRatio);
+
+  Text layoutGrow(double layoutGrow);
+
+  Text opacity(double opacity);
+
+  Text isMask(bool isMask);
+
+  Text fills(List<Paint> fills);
+
+  Text fillGeometry(List<Path> fillGeometry);
+
+  Text strokes(List<Paint> strokes);
+
+  Text strokeCap(StrokeCap strokeCap);
+
+  Text strokeJoin(StrokeJoin strokeJoin);
+
+  Text strokeDashes(List<double> strokeDashes);
+
+  Text strokeMiterAngle(double strokeMiterAngle);
+
+  Text componentPropertyReferencesMap(
+      Map<String, String>? componentPropertyReferencesMap);
+
+  Text name(String? name);
+
+  Text rotation(double? rotation);
+
+  Text pluginData(dynamic pluginData);
+
+  Text sharedPluginData(dynamic sharedPluginData);
+
+  Text blendMode(BlendMode? blendMode);
+
+  Text layoutAlign(LayoutAlign? layoutAlign);
+
+  Text constraints(LayoutConstraint? constraints);
+
+  Text transitionNodeID(String? transitionNodeID);
+
+  Text transitionDuration(double? transitionDuration);
+
+  Text transitionEasing(EasingType? transitionEasing);
+
+  Text absoluteBoundingBox(SizeRectangle? absoluteBoundingBox);
+
+  Text effects(List<Effect>? effects);
+
+  Text size(Vector2D? size);
+
+  Text relativeTransform(List<List<double>>? relativeTransform);
+
+  Text strokeWeight(double? strokeWeight);
+
+  Text strokeGeometry(List<dynamic>? strokeGeometry);
+
+  Text strokeAlign(StrokeAlign? strokeAlign);
+
+  Text styles(Map<StyleTypeKey, String>? styles);
+
+  Text absoluteRenderBounds(SizeRectangle? absoluteRenderBounds);
+
+  Text fillOverrideTable(Map<int, PaintOverride>? fillOverrideTable);
+
+  Text individualStrokeWeights(StrokeWeights? individualStrokeWeights);
+
+  Text characters(String? characters);
+
+  Text style(TypeStyle? style);
+
+  Text characterStyleOverrides(List<int>? characterStyleOverrides);
+
+  Text styleOverrideTable(Map<int, TypeStyle>? styleOverrideTable);
+
+  Text lineTypes(List<LineType>? lineTypes);
+
+  Text lineIndentations(List<int>? lineIndentations);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Text(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -32,8 +119,8 @@ abstract class _$TextCWProxy {
     Map<String, String>? componentPropertyReferencesMap,
     String? name,
     double? rotation,
-    dynamic pluginData,
-    dynamic sharedPluginData,
+    dynamic? pluginData,
+    dynamic? sharedPluginData,
     BlendMode? blendMode,
     LayoutAlign? layoutAlign,
     LayoutConstraint? constraints,
@@ -60,15 +147,164 @@ abstract class _$TextCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfText.copyWith(...)`.
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfText.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfText.copyWith.fieldName(...)`
 class _$TextCWProxyImpl implements _$TextCWProxy {
   const _$TextCWProxyImpl(this._value);
 
   final Text _value;
 
   @override
+  Text id(String id) => this(id: id);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  @override
+  Text visible(bool visible) => this(visible: visible);
+
+  @override
+  Text locked(bool locked) => this(locked: locked);
+
+  @override
+  Text exportSettings(List<ExportSetting> exportSettings) =>
+      this(exportSettings: exportSettings);
+
+  @override
+  Text preserveRatio(bool preserveRatio) => this(preserveRatio: preserveRatio);
+
+  @override
+  Text layoutGrow(double layoutGrow) => this(layoutGrow: layoutGrow);
+
+  @override
+  Text opacity(double opacity) => this(opacity: opacity);
+
+  @override
+  Text isMask(bool isMask) => this(isMask: isMask);
+
+  @override
+  Text fills(List<Paint> fills) => this(fills: fills);
+
+  @override
+  Text fillGeometry(List<Path> fillGeometry) =>
+      this(fillGeometry: fillGeometry);
+
+  @override
+  Text strokes(List<Paint> strokes) => this(strokes: strokes);
+
+  @override
+  Text strokeCap(StrokeCap strokeCap) => this(strokeCap: strokeCap);
+
+  @override
+  Text strokeJoin(StrokeJoin strokeJoin) => this(strokeJoin: strokeJoin);
+
+  @override
+  Text strokeDashes(List<double> strokeDashes) =>
+      this(strokeDashes: strokeDashes);
+
+  @override
+  Text strokeMiterAngle(double strokeMiterAngle) =>
+      this(strokeMiterAngle: strokeMiterAngle);
+
+  @override
+  Text componentPropertyReferencesMap(
+          Map<String, String>? componentPropertyReferencesMap) =>
+      this(componentPropertyReferencesMap: componentPropertyReferencesMap);
+
+  @override
+  Text name(String? name) => this(name: name);
+
+  @override
+  Text rotation(double? rotation) => this(rotation: rotation);
+
+  @override
+  Text pluginData(dynamic pluginData) => this(pluginData: pluginData);
+
+  @override
+  Text sharedPluginData(dynamic sharedPluginData) =>
+      this(sharedPluginData: sharedPluginData);
+
+  @override
+  Text blendMode(BlendMode? blendMode) => this(blendMode: blendMode);
+
+  @override
+  Text layoutAlign(LayoutAlign? layoutAlign) => this(layoutAlign: layoutAlign);
+
+  @override
+  Text constraints(LayoutConstraint? constraints) =>
+      this(constraints: constraints);
+
+  @override
+  Text transitionNodeID(String? transitionNodeID) =>
+      this(transitionNodeID: transitionNodeID);
+
+  @override
+  Text transitionDuration(double? transitionDuration) =>
+      this(transitionDuration: transitionDuration);
+
+  @override
+  Text transitionEasing(EasingType? transitionEasing) =>
+      this(transitionEasing: transitionEasing);
+
+  @override
+  Text absoluteBoundingBox(SizeRectangle? absoluteBoundingBox) =>
+      this(absoluteBoundingBox: absoluteBoundingBox);
+
+  @override
+  Text effects(List<Effect>? effects) => this(effects: effects);
+
+  @override
+  Text size(Vector2D? size) => this(size: size);
+
+  @override
+  Text relativeTransform(List<List<double>>? relativeTransform) =>
+      this(relativeTransform: relativeTransform);
+
+  @override
+  Text strokeWeight(double? strokeWeight) => this(strokeWeight: strokeWeight);
+
+  @override
+  Text strokeGeometry(List<dynamic>? strokeGeometry) =>
+      this(strokeGeometry: strokeGeometry);
+
+  @override
+  Text strokeAlign(StrokeAlign? strokeAlign) => this(strokeAlign: strokeAlign);
+
+  @override
+  Text styles(Map<StyleTypeKey, String>? styles) => this(styles: styles);
+
+  @override
+  Text absoluteRenderBounds(SizeRectangle? absoluteRenderBounds) =>
+      this(absoluteRenderBounds: absoluteRenderBounds);
+
+  @override
+  Text fillOverrideTable(Map<int, PaintOverride>? fillOverrideTable) =>
+      this(fillOverrideTable: fillOverrideTable);
+
+  @override
+  Text individualStrokeWeights(StrokeWeights? individualStrokeWeights) =>
+      this(individualStrokeWeights: individualStrokeWeights);
+
+  @override
+  Text characters(String? characters) => this(characters: characters);
+
+  @override
+  Text style(TypeStyle? style) => this(style: style);
+
+  @override
+  Text characterStyleOverrides(List<int>? characterStyleOverrides) =>
+      this(characterStyleOverrides: characterStyleOverrides);
+
+  @override
+  Text styleOverrideTable(Map<int, TypeStyle>? styleOverrideTable) =>
+      this(styleOverrideTable: styleOverrideTable);
+
+  @override
+  Text lineTypes(List<LineType>? lineTypes) => this(lineTypes: lineTypes);
+
+  @override
+  Text lineIndentations(List<int>? lineIndentations) =>
+      this(lineIndentations: lineIndentations);
+
+  @override
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Text(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -326,100 +562,9 @@ class _$TextCWProxyImpl implements _$TextCWProxy {
 }
 
 extension $TextCopyWith on Text {
-  /// Returns a callable class that can be used as follows: `instanceOfText.copyWith(...)`.
+  /// Returns a callable class that can be used as follows: `instanceOfText.copyWith(...)` or like so:`instanceOfText.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$TextCWProxy get copyWith => _$TextCWProxyImpl(this);
-
-  /// Copies the object with the specific fields set to `null`. If you pass `false` as a parameter, nothing will be done and it will be ignored. Don't do it. Prefer `copyWith(field: null)`.
-  ///
-  /// Usage
-  /// ```dart
-  /// Text(...).copyWithNull(firstField: true, secondField: true)
-  /// ````
-  Text copyWithNull({
-    bool componentPropertyReferencesMap = false,
-    bool name = false,
-    bool rotation = false,
-    bool blendMode = false,
-    bool layoutAlign = false,
-    bool constraints = false,
-    bool transitionNodeID = false,
-    bool transitionDuration = false,
-    bool transitionEasing = false,
-    bool absoluteBoundingBox = false,
-    bool effects = false,
-    bool size = false,
-    bool relativeTransform = false,
-    bool strokeWeight = false,
-    bool strokeGeometry = false,
-    bool strokeAlign = false,
-    bool styles = false,
-    bool absoluteRenderBounds = false,
-    bool fillOverrideTable = false,
-    bool individualStrokeWeights = false,
-    bool characters = false,
-    bool style = false,
-    bool characterStyleOverrides = false,
-    bool styleOverrideTable = false,
-    bool lineTypes = false,
-    bool lineIndentations = false,
-  }) {
-    return Text(
-      id: id,
-      visible: visible,
-      locked: locked,
-      exportSettings: exportSettings,
-      preserveRatio: preserveRatio,
-      layoutGrow: layoutGrow,
-      opacity: opacity,
-      isMask: isMask,
-      fills: fills,
-      fillGeometry: fillGeometry,
-      strokes: strokes,
-      strokeCap: strokeCap,
-      strokeJoin: strokeJoin,
-      strokeDashes: strokeDashes,
-      strokeMiterAngle: strokeMiterAngle,
-      componentPropertyReferencesMap: componentPropertyReferencesMap == true
-          ? null
-          : this.componentPropertyReferencesMap,
-      name: name == true ? null : this.name,
-      rotation: rotation == true ? null : this.rotation,
-      pluginData: pluginData,
-      sharedPluginData: sharedPluginData,
-      blendMode: blendMode == true ? null : this.blendMode,
-      layoutAlign: layoutAlign == true ? null : this.layoutAlign,
-      constraints: constraints == true ? null : this.constraints,
-      transitionNodeID: transitionNodeID == true ? null : this.transitionNodeID,
-      transitionDuration:
-          transitionDuration == true ? null : this.transitionDuration,
-      transitionEasing: transitionEasing == true ? null : this.transitionEasing,
-      absoluteBoundingBox:
-          absoluteBoundingBox == true ? null : this.absoluteBoundingBox,
-      effects: effects == true ? null : this.effects,
-      size: size == true ? null : this.size,
-      relativeTransform:
-          relativeTransform == true ? null : this.relativeTransform,
-      strokeWeight: strokeWeight == true ? null : this.strokeWeight,
-      strokeGeometry: strokeGeometry == true ? null : this.strokeGeometry,
-      strokeAlign: strokeAlign == true ? null : this.strokeAlign,
-      styles: styles == true ? null : this.styles,
-      absoluteRenderBounds:
-          absoluteRenderBounds == true ? null : this.absoluteRenderBounds,
-      fillOverrideTable:
-          fillOverrideTable == true ? null : this.fillOverrideTable,
-      individualStrokeWeights:
-          individualStrokeWeights == true ? null : this.individualStrokeWeights,
-      characters: characters == true ? null : this.characters,
-      style: style == true ? null : this.style,
-      characterStyleOverrides:
-          characterStyleOverrides == true ? null : this.characterStyleOverrides,
-      styleOverrideTable:
-          styleOverrideTable == true ? null : this.styleOverrideTable,
-      lineTypes: lineTypes == true ? null : this.lineTypes,
-      lineIndentations: lineIndentations == true ? null : this.lineIndentations,
-    );
-  }
 }
 
 // **************************************************************************

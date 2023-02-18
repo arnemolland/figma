@@ -7,7 +7,45 @@ part of 'type_style.dart';
 // **************************************************************************
 
 abstract class _$TypeStyleCWProxy {
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  TypeStyle fontFamily(String? fontFamily);
+
+  TypeStyle fontPostScriptName(String? fontPostScriptName);
+
+  TypeStyle paragraphSpacing(num? paragraphSpacing);
+
+  TypeStyle paragraphIndent(num? paragraphIndent);
+
+  TypeStyle italic(bool? italic);
+
+  TypeStyle fontWeight(num? fontWeight);
+
+  TypeStyle fontSize(num? fontSize);
+
+  TypeStyle textCase(TextCase? textCase);
+
+  TypeStyle textDecoration(TextDecoration? textDecoration);
+
+  TypeStyle textAutoResize(TextAutoResize? textAutoResize);
+
+  TypeStyle textAlignHorizontal(TextAlignHorizontal? textAlignHorizontal);
+
+  TypeStyle textAlignVertical(TextAlignVertical? textAlignVertical);
+
+  TypeStyle letterSpacing(num? letterSpacing);
+
+  TypeStyle fills(List<Paint>? fills);
+
+  TypeStyle opentypeFlags(Map<String, num>? opentypeFlags);
+
+  TypeStyle lineHeightPx(num? lineHeightPx);
+
+  TypeStyle lineHeightPercent(num? lineHeightPercent);
+
+  TypeStyle lineHeightPercentFontSize(num? lineHeightPercentFontSize);
+
+  TypeStyle lineHeightUnit(LineHeightUnit? lineHeightUnit);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `TypeStyle(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -36,15 +74,84 @@ abstract class _$TypeStyleCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfTypeStyle.copyWith(...)`.
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfTypeStyle.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfTypeStyle.copyWith.fieldName(...)`
 class _$TypeStyleCWProxyImpl implements _$TypeStyleCWProxy {
   const _$TypeStyleCWProxyImpl(this._value);
 
   final TypeStyle _value;
 
   @override
+  TypeStyle fontFamily(String? fontFamily) => this(fontFamily: fontFamily);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  @override
+  TypeStyle fontPostScriptName(String? fontPostScriptName) =>
+      this(fontPostScriptName: fontPostScriptName);
+
+  @override
+  TypeStyle paragraphSpacing(num? paragraphSpacing) =>
+      this(paragraphSpacing: paragraphSpacing);
+
+  @override
+  TypeStyle paragraphIndent(num? paragraphIndent) =>
+      this(paragraphIndent: paragraphIndent);
+
+  @override
+  TypeStyle italic(bool? italic) => this(italic: italic);
+
+  @override
+  TypeStyle fontWeight(num? fontWeight) => this(fontWeight: fontWeight);
+
+  @override
+  TypeStyle fontSize(num? fontSize) => this(fontSize: fontSize);
+
+  @override
+  TypeStyle textCase(TextCase? textCase) => this(textCase: textCase);
+
+  @override
+  TypeStyle textDecoration(TextDecoration? textDecoration) =>
+      this(textDecoration: textDecoration);
+
+  @override
+  TypeStyle textAutoResize(TextAutoResize? textAutoResize) =>
+      this(textAutoResize: textAutoResize);
+
+  @override
+  TypeStyle textAlignHorizontal(TextAlignHorizontal? textAlignHorizontal) =>
+      this(textAlignHorizontal: textAlignHorizontal);
+
+  @override
+  TypeStyle textAlignVertical(TextAlignVertical? textAlignVertical) =>
+      this(textAlignVertical: textAlignVertical);
+
+  @override
+  TypeStyle letterSpacing(num? letterSpacing) =>
+      this(letterSpacing: letterSpacing);
+
+  @override
+  TypeStyle fills(List<Paint>? fills) => this(fills: fills);
+
+  @override
+  TypeStyle opentypeFlags(Map<String, num>? opentypeFlags) =>
+      this(opentypeFlags: opentypeFlags);
+
+  @override
+  TypeStyle lineHeightPx(num? lineHeightPx) => this(lineHeightPx: lineHeightPx);
+
+  @override
+  TypeStyle lineHeightPercent(num? lineHeightPercent) =>
+      this(lineHeightPercent: lineHeightPercent);
+
+  @override
+  TypeStyle lineHeightPercentFontSize(num? lineHeightPercentFontSize) =>
+      this(lineHeightPercentFontSize: lineHeightPercentFontSize);
+
+  @override
+  TypeStyle lineHeightUnit(LineHeightUnit? lineHeightUnit) =>
+      this(lineHeightUnit: lineHeightUnit);
+
+  @override
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `TypeStyle(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -154,65 +261,9 @@ class _$TypeStyleCWProxyImpl implements _$TypeStyleCWProxy {
 }
 
 extension $TypeStyleCopyWith on TypeStyle {
-  /// Returns a callable class that can be used as follows: `instanceOfTypeStyle.copyWith(...)`.
+  /// Returns a callable class that can be used as follows: `instanceOfTypeStyle.copyWith(...)` or like so:`instanceOfTypeStyle.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$TypeStyleCWProxy get copyWith => _$TypeStyleCWProxyImpl(this);
-
-  /// Copies the object with the specific fields set to `null`. If you pass `false` as a parameter, nothing will be done and it will be ignored. Don't do it. Prefer `copyWith(field: null)`.
-  ///
-  /// Usage
-  /// ```dart
-  /// TypeStyle(...).copyWithNull(firstField: true, secondField: true)
-  /// ````
-  TypeStyle copyWithNull({
-    bool fontFamily = false,
-    bool fontPostScriptName = false,
-    bool paragraphSpacing = false,
-    bool paragraphIndent = false,
-    bool italic = false,
-    bool fontWeight = false,
-    bool fontSize = false,
-    bool textCase = false,
-    bool textDecoration = false,
-    bool textAutoResize = false,
-    bool textAlignHorizontal = false,
-    bool textAlignVertical = false,
-    bool letterSpacing = false,
-    bool fills = false,
-    bool opentypeFlags = false,
-    bool lineHeightPx = false,
-    bool lineHeightPercent = false,
-    bool lineHeightPercentFontSize = false,
-    bool lineHeightUnit = false,
-  }) {
-    return TypeStyle(
-      fontFamily: fontFamily == true ? null : this.fontFamily,
-      fontPostScriptName:
-          fontPostScriptName == true ? null : this.fontPostScriptName,
-      paragraphSpacing: paragraphSpacing == true ? null : this.paragraphSpacing,
-      paragraphIndent: paragraphIndent == true ? null : this.paragraphIndent,
-      italic: italic == true ? null : this.italic,
-      fontWeight: fontWeight == true ? null : this.fontWeight,
-      fontSize: fontSize == true ? null : this.fontSize,
-      textCase: textCase == true ? null : this.textCase,
-      textDecoration: textDecoration == true ? null : this.textDecoration,
-      textAutoResize: textAutoResize == true ? null : this.textAutoResize,
-      textAlignHorizontal:
-          textAlignHorizontal == true ? null : this.textAlignHorizontal,
-      textAlignVertical:
-          textAlignVertical == true ? null : this.textAlignVertical,
-      letterSpacing: letterSpacing == true ? null : this.letterSpacing,
-      fills: fills == true ? null : this.fills,
-      opentypeFlags: opentypeFlags == true ? null : this.opentypeFlags,
-      lineHeightPx: lineHeightPx == true ? null : this.lineHeightPx,
-      lineHeightPercent:
-          lineHeightPercent == true ? null : this.lineHeightPercent,
-      lineHeightPercentFontSize: lineHeightPercentFontSize == true
-          ? null
-          : this.lineHeightPercentFontSize,
-      lineHeightUnit: lineHeightUnit == true ? null : this.lineHeightUnit,
-    );
-  }
 }
 
 // **************************************************************************

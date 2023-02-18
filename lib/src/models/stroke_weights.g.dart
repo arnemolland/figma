@@ -7,7 +7,15 @@ part of 'stroke_weights.dart';
 // **************************************************************************
 
 abstract class _$StrokeWeightsCWProxy {
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  StrokeWeights top(double top);
+
+  StrokeWeights right(double right);
+
+  StrokeWeights bottom(double bottom);
+
+  StrokeWeights left(double left);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `StrokeWeights(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -21,15 +29,27 @@ abstract class _$StrokeWeightsCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfStrokeWeights.copyWith(...)`.
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfStrokeWeights.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfStrokeWeights.copyWith.fieldName(...)`
 class _$StrokeWeightsCWProxyImpl implements _$StrokeWeightsCWProxy {
   const _$StrokeWeightsCWProxyImpl(this._value);
 
   final StrokeWeights _value;
 
   @override
+  StrokeWeights top(double top) => this(top: top);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  @override
+  StrokeWeights right(double right) => this(right: right);
+
+  @override
+  StrokeWeights bottom(double bottom) => this(bottom: bottom);
+
+  @override
+  StrokeWeights left(double left) => this(left: left);
+
+  @override
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `StrokeWeights(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -67,7 +87,7 @@ class _$StrokeWeightsCWProxyImpl implements _$StrokeWeightsCWProxy {
 }
 
 extension $StrokeWeightsCopyWith on StrokeWeights {
-  /// Returns a callable class that can be used as follows: `instanceOfStrokeWeights.copyWith(...)`.
+  /// Returns a callable class that can be used as follows: `instanceOfStrokeWeights.copyWith(...)` or like so:`instanceOfStrokeWeights.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$StrokeWeightsCWProxy get copyWith => _$StrokeWeightsCWProxyImpl(this);
 }

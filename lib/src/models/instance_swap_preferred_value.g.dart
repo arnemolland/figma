@@ -7,7 +7,11 @@ part of 'instance_swap_preferred_value.dart';
 // **************************************************************************
 
 abstract class _$InstanceSwapPreferredValueCWProxy {
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  InstanceSwapPreferredValue type(InstanceSwapPreferredValueType type);
+
+  InstanceSwapPreferredValue key(String key);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `InstanceSwapPreferredValue(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -19,7 +23,7 @@ abstract class _$InstanceSwapPreferredValueCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfInstanceSwapPreferredValue.copyWith(...)`.
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfInstanceSwapPreferredValue.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfInstanceSwapPreferredValue.copyWith.fieldName(...)`
 class _$InstanceSwapPreferredValueCWProxyImpl
     implements _$InstanceSwapPreferredValueCWProxy {
   const _$InstanceSwapPreferredValueCWProxyImpl(this._value);
@@ -27,8 +31,15 @@ class _$InstanceSwapPreferredValueCWProxyImpl
   final InstanceSwapPreferredValue _value;
 
   @override
+  InstanceSwapPreferredValue type(InstanceSwapPreferredValueType type) =>
+      this(type: type);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  @override
+  InstanceSwapPreferredValue key(String key) => this(key: key);
+
+  @override
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `InstanceSwapPreferredValue(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -54,7 +65,7 @@ class _$InstanceSwapPreferredValueCWProxyImpl
 }
 
 extension $InstanceSwapPreferredValueCopyWith on InstanceSwapPreferredValue {
-  /// Returns a callable class that can be used as follows: `instanceOfInstanceSwapPreferredValue.copyWith(...)`.
+  /// Returns a callable class that can be used as follows: `instanceOfInstanceSwapPreferredValue.copyWith(...)` or like so:`instanceOfInstanceSwapPreferredValue.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$InstanceSwapPreferredValueCWProxy get copyWith =>
       _$InstanceSwapPreferredValueCWProxyImpl(this);

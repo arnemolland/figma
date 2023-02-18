@@ -7,7 +7,34 @@ part of 'slice.dart';
 // **************************************************************************
 
 abstract class _$SliceCWProxy {
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  Slice id(String id);
+
+  Slice visible(bool visible);
+
+  Slice componentPropertyReferencesMap(
+      Map<String, String>? componentPropertyReferencesMap);
+
+  Slice rotation(double? rotation);
+
+  Slice name(String? name);
+
+  Slice type(String? type);
+
+  Slice pluginData(dynamic pluginData);
+
+  Slice sharedPluginData(dynamic sharedPluginData);
+
+  Slice exportSettings(List<ExportSetting>? exportSettings);
+
+  Slice absoluteBoundingBox(SizeRectangle? absoluteBoundingBox);
+
+  Slice absoluteRenderBounds(SizeRectangle? absoluteRenderBounds);
+
+  Slice size(Vector2D? size);
+
+  Slice relativeTransform(List<List<num>>? relativeTransform);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Slice(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -20,8 +47,8 @@ abstract class _$SliceCWProxy {
     double? rotation,
     String? name,
     String? type,
-    dynamic pluginData,
-    dynamic sharedPluginData,
+    dynamic? pluginData,
+    dynamic? sharedPluginData,
     List<ExportSetting>? exportSettings,
     SizeRectangle? absoluteBoundingBox,
     SizeRectangle? absoluteRenderBounds,
@@ -30,15 +57,61 @@ abstract class _$SliceCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfSlice.copyWith(...)`.
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfSlice.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfSlice.copyWith.fieldName(...)`
 class _$SliceCWProxyImpl implements _$SliceCWProxy {
   const _$SliceCWProxyImpl(this._value);
 
   final Slice _value;
 
   @override
+  Slice id(String id) => this(id: id);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  @override
+  Slice visible(bool visible) => this(visible: visible);
+
+  @override
+  Slice componentPropertyReferencesMap(
+          Map<String, String>? componentPropertyReferencesMap) =>
+      this(componentPropertyReferencesMap: componentPropertyReferencesMap);
+
+  @override
+  Slice rotation(double? rotation) => this(rotation: rotation);
+
+  @override
+  Slice name(String? name) => this(name: name);
+
+  @override
+  Slice type(String? type) => this(type: type);
+
+  @override
+  Slice pluginData(dynamic pluginData) => this(pluginData: pluginData);
+
+  @override
+  Slice sharedPluginData(dynamic sharedPluginData) =>
+      this(sharedPluginData: sharedPluginData);
+
+  @override
+  Slice exportSettings(List<ExportSetting>? exportSettings) =>
+      this(exportSettings: exportSettings);
+
+  @override
+  Slice absoluteBoundingBox(SizeRectangle? absoluteBoundingBox) =>
+      this(absoluteBoundingBox: absoluteBoundingBox);
+
+  @override
+  Slice absoluteRenderBounds(SizeRectangle? absoluteRenderBounds) =>
+      this(absoluteRenderBounds: absoluteRenderBounds);
+
+  @override
+  Slice size(Vector2D? size) => this(size: size);
+
+  @override
+  Slice relativeTransform(List<List<num>>? relativeTransform) =>
+      this(relativeTransform: relativeTransform);
+
+  @override
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Slice(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -124,48 +197,9 @@ class _$SliceCWProxyImpl implements _$SliceCWProxy {
 }
 
 extension $SliceCopyWith on Slice {
-  /// Returns a callable class that can be used as follows: `instanceOfSlice.copyWith(...)`.
+  /// Returns a callable class that can be used as follows: `instanceOfSlice.copyWith(...)` or like so:`instanceOfSlice.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$SliceCWProxy get copyWith => _$SliceCWProxyImpl(this);
-
-  /// Copies the object with the specific fields set to `null`. If you pass `false` as a parameter, nothing will be done and it will be ignored. Don't do it. Prefer `copyWith(field: null)`.
-  ///
-  /// Usage
-  /// ```dart
-  /// Slice(...).copyWithNull(firstField: true, secondField: true)
-  /// ````
-  Slice copyWithNull({
-    bool componentPropertyReferencesMap = false,
-    bool rotation = false,
-    bool name = false,
-    bool type = false,
-    bool exportSettings = false,
-    bool absoluteBoundingBox = false,
-    bool absoluteRenderBounds = false,
-    bool size = false,
-    bool relativeTransform = false,
-  }) {
-    return Slice(
-      id: id,
-      visible: visible,
-      componentPropertyReferencesMap: componentPropertyReferencesMap == true
-          ? null
-          : this.componentPropertyReferencesMap,
-      rotation: rotation == true ? null : this.rotation,
-      name: name == true ? null : this.name,
-      type: type == true ? null : this.type,
-      pluginData: pluginData,
-      sharedPluginData: sharedPluginData,
-      exportSettings: exportSettings == true ? null : this.exportSettings,
-      absoluteBoundingBox:
-          absoluteBoundingBox == true ? null : this.absoluteBoundingBox,
-      absoluteRenderBounds:
-          absoluteRenderBounds == true ? null : this.absoluteRenderBounds,
-      size: size == true ? null : this.size,
-      relativeTransform:
-          relativeTransform == true ? null : this.relativeTransform,
-    );
-  }
 }
 
 // **************************************************************************

@@ -7,7 +7,119 @@ part of 'instance.dart';
 // **************************************************************************
 
 abstract class _$InstanceCWProxy {
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  Instance id(String id);
+
+  Instance visible(bool visible);
+
+  Instance locked(bool locked);
+
+  Instance fills(List<Paint> fills);
+
+  Instance strokes(List<Paint> strokes);
+
+  Instance exportSettings(List<ExportSetting> exportSettings);
+
+  Instance children(List<Node> children);
+
+  Instance opacity(double opacity);
+
+  Instance layoutPositioning(LayoutPositioning layoutPositioning);
+
+  Instance itemReverseZIndex(bool itemReverseZIndex);
+
+  Instance strokesIncludedInLayout(bool strokesIncludedInLayout);
+
+  Instance counterAxisSizingMode(CounterAxisSizingMode counterAxisSizingMode);
+
+  Instance horizontalPadding(double horizontalPadding);
+
+  Instance verticalPadding(double verticalPadding);
+
+  Instance itemSpacing(double itemSpacing);
+
+  Instance layoutGrids(List<LayoutGrid> layoutGrids);
+
+  Instance overflowDirection(OverflowDirection overflowDirection);
+
+  Instance effects(List<Effect> effects);
+
+  Instance isMask(bool isMask);
+
+  Instance isMaskOutline(bool isMaskOutline);
+
+  Instance counterAxisAlignItems(CounterAxisAlignItems counterAxisAlignItems);
+
+  Instance primaryAxisAlignItems(PrimaryAxisAlignItems primaryAxisAlignItems);
+
+  Instance primaryAxisSizingMode(PrimaryAxisSizingMode primaryAxisSizingMode);
+
+  Instance paddingBottom(double paddingBottom);
+
+  Instance paddingLeft(double paddingLeft);
+
+  Instance paddingRight(double paddingRight);
+
+  Instance paddingTop(double paddingTop);
+
+  Instance size(Vector2D? size);
+
+  Instance styles(Map<StyleTypeKey, String>? styles);
+
+  Instance componentPropertyReferencesMap(
+      Map<String, String>? componentPropertyReferencesMap);
+
+  Instance absoluteBoundingBox(SizeRectangle? absoluteBoundingBox);
+
+  Instance absoluteRenderBounds(SizeRectangle? absoluteRenderBounds);
+
+  Instance rotation(double? rotation);
+
+  Instance name(String? name);
+
+  Instance pluginData(dynamic pluginData);
+
+  Instance sharedPluginData(dynamic sharedPluginData);
+
+  Instance type(String? type);
+
+  Instance strokeWeight(double? strokeWeight);
+
+  Instance strokeAlign(StrokeAlign? strokeAlign);
+
+  Instance cornerRadius(double? cornerRadius);
+
+  Instance rectangleCornerRadii(List<double>? rectangleCornerRadii);
+
+  Instance blendMode(BlendMode? blendMode);
+
+  Instance preserveRatio(bool? preserveRatio);
+
+  Instance constraints(LayoutConstraint? constraints);
+
+  Instance layoutAlign(LayoutAlign? layoutAlign);
+
+  Instance transitionNodeID(String? transitionNodeID);
+
+  Instance transitionDuration(double? transitionDuration);
+
+  Instance relativeTransform(List<List<double>>? relativeTransform);
+
+  Instance clipsContent(bool? clipsContent);
+
+  Instance layoutMode(LayoutMode? layoutMode);
+
+  Instance individualStrokeWeights(StrokeWeights? individualStrokeWeights);
+
+  Instance isExposedInstance(bool isExposedInstance);
+
+  Instance exposedInstances(List<String> exposedInstances);
+
+  Instance componentProperties(
+      Map<String, ComponentProperty> componentProperties);
+
+  Instance componentId(String? componentId);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Instance(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -48,8 +160,8 @@ abstract class _$InstanceCWProxy {
     SizeRectangle? absoluteRenderBounds,
     double? rotation,
     String? name,
-    dynamic pluginData,
-    dynamic sharedPluginData,
+    dynamic? pluginData,
+    dynamic? sharedPluginData,
     String? type,
     double? strokeWeight,
     StrokeAlign? strokeAlign,
@@ -72,15 +184,215 @@ abstract class _$InstanceCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfInstance.copyWith(...)`.
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfInstance.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfInstance.copyWith.fieldName(...)`
 class _$InstanceCWProxyImpl implements _$InstanceCWProxy {
   const _$InstanceCWProxyImpl(this._value);
 
   final Instance _value;
 
   @override
+  Instance id(String id) => this(id: id);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  @override
+  Instance visible(bool visible) => this(visible: visible);
+
+  @override
+  Instance locked(bool locked) => this(locked: locked);
+
+  @override
+  Instance fills(List<Paint> fills) => this(fills: fills);
+
+  @override
+  Instance strokes(List<Paint> strokes) => this(strokes: strokes);
+
+  @override
+  Instance exportSettings(List<ExportSetting> exportSettings) =>
+      this(exportSettings: exportSettings);
+
+  @override
+  Instance children(List<Node> children) => this(children: children);
+
+  @override
+  Instance opacity(double opacity) => this(opacity: opacity);
+
+  @override
+  Instance layoutPositioning(LayoutPositioning layoutPositioning) =>
+      this(layoutPositioning: layoutPositioning);
+
+  @override
+  Instance itemReverseZIndex(bool itemReverseZIndex) =>
+      this(itemReverseZIndex: itemReverseZIndex);
+
+  @override
+  Instance strokesIncludedInLayout(bool strokesIncludedInLayout) =>
+      this(strokesIncludedInLayout: strokesIncludedInLayout);
+
+  @override
+  Instance counterAxisSizingMode(CounterAxisSizingMode counterAxisSizingMode) =>
+      this(counterAxisSizingMode: counterAxisSizingMode);
+
+  @override
+  Instance horizontalPadding(double horizontalPadding) =>
+      this(horizontalPadding: horizontalPadding);
+
+  @override
+  Instance verticalPadding(double verticalPadding) =>
+      this(verticalPadding: verticalPadding);
+
+  @override
+  Instance itemSpacing(double itemSpacing) => this(itemSpacing: itemSpacing);
+
+  @override
+  Instance layoutGrids(List<LayoutGrid> layoutGrids) =>
+      this(layoutGrids: layoutGrids);
+
+  @override
+  Instance overflowDirection(OverflowDirection overflowDirection) =>
+      this(overflowDirection: overflowDirection);
+
+  @override
+  Instance effects(List<Effect> effects) => this(effects: effects);
+
+  @override
+  Instance isMask(bool isMask) => this(isMask: isMask);
+
+  @override
+  Instance isMaskOutline(bool isMaskOutline) =>
+      this(isMaskOutline: isMaskOutline);
+
+  @override
+  Instance counterAxisAlignItems(CounterAxisAlignItems counterAxisAlignItems) =>
+      this(counterAxisAlignItems: counterAxisAlignItems);
+
+  @override
+  Instance primaryAxisAlignItems(PrimaryAxisAlignItems primaryAxisAlignItems) =>
+      this(primaryAxisAlignItems: primaryAxisAlignItems);
+
+  @override
+  Instance primaryAxisSizingMode(PrimaryAxisSizingMode primaryAxisSizingMode) =>
+      this(primaryAxisSizingMode: primaryAxisSizingMode);
+
+  @override
+  Instance paddingBottom(double paddingBottom) =>
+      this(paddingBottom: paddingBottom);
+
+  @override
+  Instance paddingLeft(double paddingLeft) => this(paddingLeft: paddingLeft);
+
+  @override
+  Instance paddingRight(double paddingRight) =>
+      this(paddingRight: paddingRight);
+
+  @override
+  Instance paddingTop(double paddingTop) => this(paddingTop: paddingTop);
+
+  @override
+  Instance size(Vector2D? size) => this(size: size);
+
+  @override
+  Instance styles(Map<StyleTypeKey, String>? styles) => this(styles: styles);
+
+  @override
+  Instance componentPropertyReferencesMap(
+          Map<String, String>? componentPropertyReferencesMap) =>
+      this(componentPropertyReferencesMap: componentPropertyReferencesMap);
+
+  @override
+  Instance absoluteBoundingBox(SizeRectangle? absoluteBoundingBox) =>
+      this(absoluteBoundingBox: absoluteBoundingBox);
+
+  @override
+  Instance absoluteRenderBounds(SizeRectangle? absoluteRenderBounds) =>
+      this(absoluteRenderBounds: absoluteRenderBounds);
+
+  @override
+  Instance rotation(double? rotation) => this(rotation: rotation);
+
+  @override
+  Instance name(String? name) => this(name: name);
+
+  @override
+  Instance pluginData(dynamic pluginData) => this(pluginData: pluginData);
+
+  @override
+  Instance sharedPluginData(dynamic sharedPluginData) =>
+      this(sharedPluginData: sharedPluginData);
+
+  @override
+  Instance type(String? type) => this(type: type);
+
+  @override
+  Instance strokeWeight(double? strokeWeight) =>
+      this(strokeWeight: strokeWeight);
+
+  @override
+  Instance strokeAlign(StrokeAlign? strokeAlign) =>
+      this(strokeAlign: strokeAlign);
+
+  @override
+  Instance cornerRadius(double? cornerRadius) =>
+      this(cornerRadius: cornerRadius);
+
+  @override
+  Instance rectangleCornerRadii(List<double>? rectangleCornerRadii) =>
+      this(rectangleCornerRadii: rectangleCornerRadii);
+
+  @override
+  Instance blendMode(BlendMode? blendMode) => this(blendMode: blendMode);
+
+  @override
+  Instance preserveRatio(bool? preserveRatio) =>
+      this(preserveRatio: preserveRatio);
+
+  @override
+  Instance constraints(LayoutConstraint? constraints) =>
+      this(constraints: constraints);
+
+  @override
+  Instance layoutAlign(LayoutAlign? layoutAlign) =>
+      this(layoutAlign: layoutAlign);
+
+  @override
+  Instance transitionNodeID(String? transitionNodeID) =>
+      this(transitionNodeID: transitionNodeID);
+
+  @override
+  Instance transitionDuration(double? transitionDuration) =>
+      this(transitionDuration: transitionDuration);
+
+  @override
+  Instance relativeTransform(List<List<double>>? relativeTransform) =>
+      this(relativeTransform: relativeTransform);
+
+  @override
+  Instance clipsContent(bool? clipsContent) => this(clipsContent: clipsContent);
+
+  @override
+  Instance layoutMode(LayoutMode? layoutMode) => this(layoutMode: layoutMode);
+
+  @override
+  Instance individualStrokeWeights(StrokeWeights? individualStrokeWeights) =>
+      this(individualStrokeWeights: individualStrokeWeights);
+
+  @override
+  Instance isExposedInstance(bool isExposedInstance) =>
+      this(isExposedInstance: isExposedInstance);
+
+  @override
+  Instance exposedInstances(List<String> exposedInstances) =>
+      this(exposedInstances: exposedInstances);
+
+  @override
+  Instance componentProperties(
+          Map<String, ComponentProperty> componentProperties) =>
+      this(componentProperties: componentProperties);
+
+  @override
+  Instance componentId(String? componentId) => this(componentId: componentId);
+
+  @override
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Instance(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -432,107 +744,9 @@ class _$InstanceCWProxyImpl implements _$InstanceCWProxy {
 }
 
 extension $InstanceCopyWith on Instance {
-  /// Returns a callable class that can be used as follows: `instanceOfInstance.copyWith(...)`.
+  /// Returns a callable class that can be used as follows: `instanceOfInstance.copyWith(...)` or like so:`instanceOfInstance.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$InstanceCWProxy get copyWith => _$InstanceCWProxyImpl(this);
-
-  /// Copies the object with the specific fields set to `null`. If you pass `false` as a parameter, nothing will be done and it will be ignored. Don't do it. Prefer `copyWith(field: null)`.
-  ///
-  /// Usage
-  /// ```dart
-  /// Instance(...).copyWithNull(firstField: true, secondField: true)
-  /// ````
-  Instance copyWithNull({
-    bool size = false,
-    bool styles = false,
-    bool componentPropertyReferencesMap = false,
-    bool absoluteBoundingBox = false,
-    bool absoluteRenderBounds = false,
-    bool rotation = false,
-    bool name = false,
-    bool type = false,
-    bool strokeWeight = false,
-    bool strokeAlign = false,
-    bool cornerRadius = false,
-    bool rectangleCornerRadii = false,
-    bool blendMode = false,
-    bool preserveRatio = false,
-    bool constraints = false,
-    bool layoutAlign = false,
-    bool transitionNodeID = false,
-    bool transitionDuration = false,
-    bool relativeTransform = false,
-    bool clipsContent = false,
-    bool layoutMode = false,
-    bool individualStrokeWeights = false,
-    bool componentId = false,
-  }) {
-    return Instance(
-      id: id,
-      visible: visible,
-      locked: locked,
-      fills: fills,
-      strokes: strokes,
-      exportSettings: exportSettings,
-      children: children,
-      opacity: opacity,
-      layoutPositioning: layoutPositioning,
-      itemReverseZIndex: itemReverseZIndex,
-      strokesIncludedInLayout: strokesIncludedInLayout,
-      counterAxisSizingMode: counterAxisSizingMode,
-      horizontalPadding: horizontalPadding,
-      verticalPadding: verticalPadding,
-      itemSpacing: itemSpacing,
-      layoutGrids: layoutGrids,
-      overflowDirection: overflowDirection,
-      effects: effects,
-      isMask: isMask,
-      isMaskOutline: isMaskOutline,
-      counterAxisAlignItems: counterAxisAlignItems,
-      primaryAxisAlignItems: primaryAxisAlignItems,
-      primaryAxisSizingMode: primaryAxisSizingMode,
-      paddingBottom: paddingBottom,
-      paddingLeft: paddingLeft,
-      paddingRight: paddingRight,
-      paddingTop: paddingTop,
-      size: size == true ? null : this.size,
-      styles: styles == true ? null : this.styles,
-      componentPropertyReferencesMap: componentPropertyReferencesMap == true
-          ? null
-          : this.componentPropertyReferencesMap,
-      absoluteBoundingBox:
-          absoluteBoundingBox == true ? null : this.absoluteBoundingBox,
-      absoluteRenderBounds:
-          absoluteRenderBounds == true ? null : this.absoluteRenderBounds,
-      rotation: rotation == true ? null : this.rotation,
-      name: name == true ? null : this.name,
-      pluginData: pluginData,
-      sharedPluginData: sharedPluginData,
-      type: type == true ? null : this.type,
-      strokeWeight: strokeWeight == true ? null : this.strokeWeight,
-      strokeAlign: strokeAlign == true ? null : this.strokeAlign,
-      cornerRadius: cornerRadius == true ? null : this.cornerRadius,
-      rectangleCornerRadii:
-          rectangleCornerRadii == true ? null : this.rectangleCornerRadii,
-      blendMode: blendMode == true ? null : this.blendMode,
-      preserveRatio: preserveRatio == true ? null : this.preserveRatio,
-      constraints: constraints == true ? null : this.constraints,
-      layoutAlign: layoutAlign == true ? null : this.layoutAlign,
-      transitionNodeID: transitionNodeID == true ? null : this.transitionNodeID,
-      transitionDuration:
-          transitionDuration == true ? null : this.transitionDuration,
-      relativeTransform:
-          relativeTransform == true ? null : this.relativeTransform,
-      clipsContent: clipsContent == true ? null : this.clipsContent,
-      layoutMode: layoutMode == true ? null : this.layoutMode,
-      individualStrokeWeights:
-          individualStrokeWeights == true ? null : this.individualStrokeWeights,
-      isExposedInstance: isExposedInstance,
-      exposedInstances: exposedInstances,
-      componentProperties: componentProperties,
-      componentId: componentId == true ? null : this.componentId,
-    );
-  }
 }
 
 // **************************************************************************

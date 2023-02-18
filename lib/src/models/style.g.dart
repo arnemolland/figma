@@ -7,7 +7,15 @@ part of 'style.dart';
 // **************************************************************************
 
 abstract class _$StyleCWProxy {
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  Style key(String? key);
+
+  Style name(String? name);
+
+  Style description(String? description);
+
+  Style type(StyleType? type);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Style(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -21,15 +29,27 @@ abstract class _$StyleCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfStyle.copyWith(...)`.
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfStyle.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfStyle.copyWith.fieldName(...)`
 class _$StyleCWProxyImpl implements _$StyleCWProxy {
   const _$StyleCWProxyImpl(this._value);
 
   final Style _value;
 
   @override
+  Style key(String? key) => this(key: key);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  @override
+  Style name(String? name) => this(name: name);
+
+  @override
+  Style description(String? description) => this(description: description);
+
+  @override
+  Style type(StyleType? type) => this(type: type);
+
+  @override
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Style(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -63,29 +83,9 @@ class _$StyleCWProxyImpl implements _$StyleCWProxy {
 }
 
 extension $StyleCopyWith on Style {
-  /// Returns a callable class that can be used as follows: `instanceOfStyle.copyWith(...)`.
+  /// Returns a callable class that can be used as follows: `instanceOfStyle.copyWith(...)` or like so:`instanceOfStyle.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$StyleCWProxy get copyWith => _$StyleCWProxyImpl(this);
-
-  /// Copies the object with the specific fields set to `null`. If you pass `false` as a parameter, nothing will be done and it will be ignored. Don't do it. Prefer `copyWith(field: null)`.
-  ///
-  /// Usage
-  /// ```dart
-  /// Style(...).copyWithNull(firstField: true, secondField: true)
-  /// ````
-  Style copyWithNull({
-    bool key = false,
-    bool name = false,
-    bool description = false,
-    bool type = false,
-  }) {
-    return Style(
-      key: key == true ? null : this.key,
-      name: name == true ? null : this.name,
-      description: description == true ? null : this.description,
-      type: type == true ? null : this.type,
-    );
-  }
 }
 
 // **************************************************************************

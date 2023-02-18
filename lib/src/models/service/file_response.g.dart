@@ -7,7 +7,27 @@ part of 'file_response.dart';
 // **************************************************************************
 
 abstract class _$FileResponseCWProxy {
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  FileResponse name(String? name);
+
+  FileResponse role(String? role);
+
+  FileResponse lastModified(DateTime? lastModified);
+
+  FileResponse thumbnailUrl(String? thumbnailUrl);
+
+  FileResponse version(String? version);
+
+  FileResponse document(Document? document);
+
+  FileResponse components(Map<String, Component>? components);
+
+  FileResponse componentSets(Map<String, ComponentSet>? componentSets);
+
+  FileResponse schemaVersion(int? schemaVersion);
+
+  FileResponse styles(Map<String, Style>? styles);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `FileResponse(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -27,15 +47,50 @@ abstract class _$FileResponseCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfFileResponse.copyWith(...)`.
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfFileResponse.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfFileResponse.copyWith.fieldName(...)`
 class _$FileResponseCWProxyImpl implements _$FileResponseCWProxy {
   const _$FileResponseCWProxyImpl(this._value);
 
   final FileResponse _value;
 
   @override
+  FileResponse name(String? name) => this(name: name);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  @override
+  FileResponse role(String? role) => this(role: role);
+
+  @override
+  FileResponse lastModified(DateTime? lastModified) =>
+      this(lastModified: lastModified);
+
+  @override
+  FileResponse thumbnailUrl(String? thumbnailUrl) =>
+      this(thumbnailUrl: thumbnailUrl);
+
+  @override
+  FileResponse version(String? version) => this(version: version);
+
+  @override
+  FileResponse document(Document? document) => this(document: document);
+
+  @override
+  FileResponse components(Map<String, Component>? components) =>
+      this(components: components);
+
+  @override
+  FileResponse componentSets(Map<String, ComponentSet>? componentSets) =>
+      this(componentSets: componentSets);
+
+  @override
+  FileResponse schemaVersion(int? schemaVersion) =>
+      this(schemaVersion: schemaVersion);
+
+  @override
+  FileResponse styles(Map<String, Style>? styles) => this(styles: styles);
+
+  @override
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `FileResponse(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -99,41 +154,9 @@ class _$FileResponseCWProxyImpl implements _$FileResponseCWProxy {
 }
 
 extension $FileResponseCopyWith on FileResponse {
-  /// Returns a callable class that can be used as follows: `instanceOfFileResponse.copyWith(...)`.
+  /// Returns a callable class that can be used as follows: `instanceOfFileResponse.copyWith(...)` or like so:`instanceOfFileResponse.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$FileResponseCWProxy get copyWith => _$FileResponseCWProxyImpl(this);
-
-  /// Copies the object with the specific fields set to `null`. If you pass `false` as a parameter, nothing will be done and it will be ignored. Don't do it. Prefer `copyWith(field: null)`.
-  ///
-  /// Usage
-  /// ```dart
-  /// FileResponse(...).copyWithNull(firstField: true, secondField: true)
-  /// ````
-  FileResponse copyWithNull({
-    bool name = false,
-    bool role = false,
-    bool lastModified = false,
-    bool thumbnailUrl = false,
-    bool version = false,
-    bool document = false,
-    bool components = false,
-    bool componentSets = false,
-    bool schemaVersion = false,
-    bool styles = false,
-  }) {
-    return FileResponse(
-      name: name == true ? null : this.name,
-      role: role == true ? null : this.role,
-      lastModified: lastModified == true ? null : this.lastModified,
-      thumbnailUrl: thumbnailUrl == true ? null : this.thumbnailUrl,
-      version: version == true ? null : this.version,
-      document: document == true ? null : this.document,
-      components: components == true ? null : this.components,
-      componentSets: componentSets == true ? null : this.componentSets,
-      schemaVersion: schemaVersion == true ? null : this.schemaVersion,
-      styles: styles == true ? null : this.styles,
-    );
-  }
 }
 
 // **************************************************************************

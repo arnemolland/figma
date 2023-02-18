@@ -7,7 +7,11 @@ part of 'layout_constraint.dart';
 // **************************************************************************
 
 abstract class _$LayoutConstraintCWProxy {
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  LayoutConstraint vertical(VerticalConstraint? vertical);
+
+  LayoutConstraint horizontal(HorizontalConstraint? horizontal);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `LayoutConstraint(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -19,15 +23,23 @@ abstract class _$LayoutConstraintCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfLayoutConstraint.copyWith(...)`.
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfLayoutConstraint.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfLayoutConstraint.copyWith.fieldName(...)`
 class _$LayoutConstraintCWProxyImpl implements _$LayoutConstraintCWProxy {
   const _$LayoutConstraintCWProxyImpl(this._value);
 
   final LayoutConstraint _value;
 
   @override
+  LayoutConstraint vertical(VerticalConstraint? vertical) =>
+      this(vertical: vertical);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  @override
+  LayoutConstraint horizontal(HorizontalConstraint? horizontal) =>
+      this(horizontal: horizontal);
+
+  @override
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `LayoutConstraint(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -51,25 +63,9 @@ class _$LayoutConstraintCWProxyImpl implements _$LayoutConstraintCWProxy {
 }
 
 extension $LayoutConstraintCopyWith on LayoutConstraint {
-  /// Returns a callable class that can be used as follows: `instanceOfLayoutConstraint.copyWith(...)`.
+  /// Returns a callable class that can be used as follows: `instanceOfLayoutConstraint.copyWith(...)` or like so:`instanceOfLayoutConstraint.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$LayoutConstraintCWProxy get copyWith => _$LayoutConstraintCWProxyImpl(this);
-
-  /// Copies the object with the specific fields set to `null`. If you pass `false` as a parameter, nothing will be done and it will be ignored. Don't do it. Prefer `copyWith(field: null)`.
-  ///
-  /// Usage
-  /// ```dart
-  /// LayoutConstraint(...).copyWithNull(firstField: true, secondField: true)
-  /// ````
-  LayoutConstraint copyWithNull({
-    bool vertical = false,
-    bool horizontal = false,
-  }) {
-    return LayoutConstraint(
-      vertical: vertical == true ? null : this.vertical,
-      horizontal: horizontal == true ? null : this.horizontal,
-    );
-  }
 }
 
 // **************************************************************************

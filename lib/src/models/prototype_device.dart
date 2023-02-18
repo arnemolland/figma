@@ -49,7 +49,7 @@ class PrototypeDevice {
   final PrototypeDeviceType type;
 
   /// Size of the device.
-  final Size size;
+  final Size? size;
 
   /// Identifier of the preset device type.
   final String presetIdentifier;

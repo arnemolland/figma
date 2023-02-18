@@ -7,7 +7,15 @@ part of 'size_rectangle.dart';
 // **************************************************************************
 
 abstract class _$SizeRectangleCWProxy {
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  SizeRectangle x(double? x);
+
+  SizeRectangle y(double? y);
+
+  SizeRectangle width(double? width);
+
+  SizeRectangle height(double? height);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `SizeRectangle(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -21,15 +29,27 @@ abstract class _$SizeRectangleCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfSizeRectangle.copyWith(...)`.
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfSizeRectangle.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfSizeRectangle.copyWith.fieldName(...)`
 class _$SizeRectangleCWProxyImpl implements _$SizeRectangleCWProxy {
   const _$SizeRectangleCWProxyImpl(this._value);
 
   final SizeRectangle _value;
 
   @override
+  SizeRectangle x(double? x) => this(x: x);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  @override
+  SizeRectangle y(double? y) => this(y: y);
+
+  @override
+  SizeRectangle width(double? width) => this(width: width);
+
+  @override
+  SizeRectangle height(double? height) => this(height: height);
+
+  @override
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `SizeRectangle(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -63,29 +83,9 @@ class _$SizeRectangleCWProxyImpl implements _$SizeRectangleCWProxy {
 }
 
 extension $SizeRectangleCopyWith on SizeRectangle {
-  /// Returns a callable class that can be used as follows: `instanceOfSizeRectangle.copyWith(...)`.
+  /// Returns a callable class that can be used as follows: `instanceOfSizeRectangle.copyWith(...)` or like so:`instanceOfSizeRectangle.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$SizeRectangleCWProxy get copyWith => _$SizeRectangleCWProxyImpl(this);
-
-  /// Copies the object with the specific fields set to `null`. If you pass `false` as a parameter, nothing will be done and it will be ignored. Don't do it. Prefer `copyWith(field: null)`.
-  ///
-  /// Usage
-  /// ```dart
-  /// SizeRectangle(...).copyWithNull(firstField: true, secondField: true)
-  /// ````
-  SizeRectangle copyWithNull({
-    bool x = false,
-    bool y = false,
-    bool width = false,
-    bool height = false,
-  }) {
-    return SizeRectangle(
-      x: x == true ? null : this.x,
-      y: y == true ? null : this.y,
-      width: width == true ? null : this.width,
-      height: height == true ? null : this.height,
-    );
-  }
 }
 
 // **************************************************************************

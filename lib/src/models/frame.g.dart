@@ -7,7 +7,110 @@ part of 'frame.dart';
 // **************************************************************************
 
 abstract class _$FrameCWProxy {
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  Frame id(String id);
+
+  Frame visible(bool visible);
+
+  Frame componentPropertyReferencesMap(
+      Map<String, String>? componentPropertyReferencesMap);
+
+  Frame name(String? name);
+
+  Frame rotation(double? rotation);
+
+  Frame pluginData(dynamic pluginData);
+
+  Frame sharedPluginData(dynamic sharedPluginData);
+
+  Frame type(String? type);
+
+  Frame locked(bool locked);
+
+  Frame fills(List<Paint> fills);
+
+  Frame strokes(List<Paint> strokes);
+
+  Frame exportSettings(List<ExportSetting> exportSettings);
+
+  Frame children(List<Node> children);
+
+  Frame opacity(double opacity);
+
+  Frame primaryAxisAlignItems(PrimaryAxisAlignItems primaryAxisAlignItems);
+
+  Frame counterAxisAlignItems(CounterAxisAlignItems counterAxisAlignItems);
+
+  Frame primaryAxisSizingMode(PrimaryAxisSizingMode primaryAxisSizingMode);
+
+  Frame counterAxisSizingMode(CounterAxisSizingMode counterAxisSizingMode);
+
+  Frame paddingBottom(double paddingBottom);
+
+  Frame paddingLeft(double paddingLeft);
+
+  Frame paddingRight(double paddingRight);
+
+  Frame paddingTop(double paddingTop);
+
+  Frame horizontalPadding(double horizontalPadding);
+
+  Frame verticalPadding(double verticalPadding);
+
+  Frame itemSpacing(double itemSpacing);
+
+  Frame layoutGrids(List<LayoutGrid> layoutGrids);
+
+  Frame overflowDirection(OverflowDirection overflowDirection);
+
+  Frame effects(List<Effect> effects);
+
+  Frame isMask(bool isMask);
+
+  Frame isMaskOutline(bool isMaskOutline);
+
+  Frame layoutPositioning(LayoutPositioning layoutPositioning);
+
+  Frame itemReverseZIndex(bool itemReverseZIndex);
+
+  Frame strokesIncludedInLayout(bool strokesIncludedInLayout);
+
+  Frame absoluteBoundingBox(SizeRectangle? absoluteBoundingBox);
+
+  Frame absoluteRenderBounds(SizeRectangle? absoluteRenderBounds);
+
+  Frame size(Vector2D? size);
+
+  Frame strokeWeight(double? strokeWeight);
+
+  Frame individualStrokeWeights(StrokeWeights? individualStrokeWeights);
+
+  Frame strokeAlign(StrokeAlign? strokeAlign);
+
+  Frame cornerRadius(double? cornerRadius);
+
+  Frame rectangleCornerRadii(List<double>? rectangleCornerRadii);
+
+  Frame blendMode(BlendMode? blendMode);
+
+  Frame preserveRatio(bool? preserveRatio);
+
+  Frame constraints(LayoutConstraint? constraints);
+
+  Frame layoutAlign(LayoutAlign? layoutAlign);
+
+  Frame transitionNodeID(String? transitionNodeID);
+
+  Frame transitionDuration(double? transitionDuration);
+
+  Frame relativeTransform(List<List<double>>? relativeTransform);
+
+  Frame clipsContent(bool? clipsContent);
+
+  Frame layoutMode(LayoutMode? layoutMode);
+
+  Frame styles(Map<StyleTypeKey, String>? styles);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Frame(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -19,8 +122,8 @@ abstract class _$FrameCWProxy {
     Map<String, String>? componentPropertyReferencesMap,
     String? name,
     double? rotation,
-    dynamic pluginData,
-    dynamic sharedPluginData,
+    dynamic? pluginData,
+    dynamic? sharedPluginData,
     String? type,
     bool? locked,
     List<Paint>? fills,
@@ -68,15 +171,193 @@ abstract class _$FrameCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfFrame.copyWith(...)`.
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfFrame.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfFrame.copyWith.fieldName(...)`
 class _$FrameCWProxyImpl implements _$FrameCWProxy {
   const _$FrameCWProxyImpl(this._value);
 
   final Frame _value;
 
   @override
+  Frame id(String id) => this(id: id);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  @override
+  Frame visible(bool visible) => this(visible: visible);
+
+  @override
+  Frame componentPropertyReferencesMap(
+          Map<String, String>? componentPropertyReferencesMap) =>
+      this(componentPropertyReferencesMap: componentPropertyReferencesMap);
+
+  @override
+  Frame name(String? name) => this(name: name);
+
+  @override
+  Frame rotation(double? rotation) => this(rotation: rotation);
+
+  @override
+  Frame pluginData(dynamic pluginData) => this(pluginData: pluginData);
+
+  @override
+  Frame sharedPluginData(dynamic sharedPluginData) =>
+      this(sharedPluginData: sharedPluginData);
+
+  @override
+  Frame type(String? type) => this(type: type);
+
+  @override
+  Frame locked(bool locked) => this(locked: locked);
+
+  @override
+  Frame fills(List<Paint> fills) => this(fills: fills);
+
+  @override
+  Frame strokes(List<Paint> strokes) => this(strokes: strokes);
+
+  @override
+  Frame exportSettings(List<ExportSetting> exportSettings) =>
+      this(exportSettings: exportSettings);
+
+  @override
+  Frame children(List<Node> children) => this(children: children);
+
+  @override
+  Frame opacity(double opacity) => this(opacity: opacity);
+
+  @override
+  Frame primaryAxisAlignItems(PrimaryAxisAlignItems primaryAxisAlignItems) =>
+      this(primaryAxisAlignItems: primaryAxisAlignItems);
+
+  @override
+  Frame counterAxisAlignItems(CounterAxisAlignItems counterAxisAlignItems) =>
+      this(counterAxisAlignItems: counterAxisAlignItems);
+
+  @override
+  Frame primaryAxisSizingMode(PrimaryAxisSizingMode primaryAxisSizingMode) =>
+      this(primaryAxisSizingMode: primaryAxisSizingMode);
+
+  @override
+  Frame counterAxisSizingMode(CounterAxisSizingMode counterAxisSizingMode) =>
+      this(counterAxisSizingMode: counterAxisSizingMode);
+
+  @override
+  Frame paddingBottom(double paddingBottom) =>
+      this(paddingBottom: paddingBottom);
+
+  @override
+  Frame paddingLeft(double paddingLeft) => this(paddingLeft: paddingLeft);
+
+  @override
+  Frame paddingRight(double paddingRight) => this(paddingRight: paddingRight);
+
+  @override
+  Frame paddingTop(double paddingTop) => this(paddingTop: paddingTop);
+
+  @override
+  Frame horizontalPadding(double horizontalPadding) =>
+      this(horizontalPadding: horizontalPadding);
+
+  @override
+  Frame verticalPadding(double verticalPadding) =>
+      this(verticalPadding: verticalPadding);
+
+  @override
+  Frame itemSpacing(double itemSpacing) => this(itemSpacing: itemSpacing);
+
+  @override
+  Frame layoutGrids(List<LayoutGrid> layoutGrids) =>
+      this(layoutGrids: layoutGrids);
+
+  @override
+  Frame overflowDirection(OverflowDirection overflowDirection) =>
+      this(overflowDirection: overflowDirection);
+
+  @override
+  Frame effects(List<Effect> effects) => this(effects: effects);
+
+  @override
+  Frame isMask(bool isMask) => this(isMask: isMask);
+
+  @override
+  Frame isMaskOutline(bool isMaskOutline) => this(isMaskOutline: isMaskOutline);
+
+  @override
+  Frame layoutPositioning(LayoutPositioning layoutPositioning) =>
+      this(layoutPositioning: layoutPositioning);
+
+  @override
+  Frame itemReverseZIndex(bool itemReverseZIndex) =>
+      this(itemReverseZIndex: itemReverseZIndex);
+
+  @override
+  Frame strokesIncludedInLayout(bool strokesIncludedInLayout) =>
+      this(strokesIncludedInLayout: strokesIncludedInLayout);
+
+  @override
+  Frame absoluteBoundingBox(SizeRectangle? absoluteBoundingBox) =>
+      this(absoluteBoundingBox: absoluteBoundingBox);
+
+  @override
+  Frame absoluteRenderBounds(SizeRectangle? absoluteRenderBounds) =>
+      this(absoluteRenderBounds: absoluteRenderBounds);
+
+  @override
+  Frame size(Vector2D? size) => this(size: size);
+
+  @override
+  Frame strokeWeight(double? strokeWeight) => this(strokeWeight: strokeWeight);
+
+  @override
+  Frame individualStrokeWeights(StrokeWeights? individualStrokeWeights) =>
+      this(individualStrokeWeights: individualStrokeWeights);
+
+  @override
+  Frame strokeAlign(StrokeAlign? strokeAlign) => this(strokeAlign: strokeAlign);
+
+  @override
+  Frame cornerRadius(double? cornerRadius) => this(cornerRadius: cornerRadius);
+
+  @override
+  Frame rectangleCornerRadii(List<double>? rectangleCornerRadii) =>
+      this(rectangleCornerRadii: rectangleCornerRadii);
+
+  @override
+  Frame blendMode(BlendMode? blendMode) => this(blendMode: blendMode);
+
+  @override
+  Frame preserveRatio(bool? preserveRatio) =>
+      this(preserveRatio: preserveRatio);
+
+  @override
+  Frame constraints(LayoutConstraint? constraints) =>
+      this(constraints: constraints);
+
+  @override
+  Frame layoutAlign(LayoutAlign? layoutAlign) => this(layoutAlign: layoutAlign);
+
+  @override
+  Frame transitionNodeID(String? transitionNodeID) =>
+      this(transitionNodeID: transitionNodeID);
+
+  @override
+  Frame transitionDuration(double? transitionDuration) =>
+      this(transitionDuration: transitionDuration);
+
+  @override
+  Frame relativeTransform(List<List<double>>? relativeTransform) =>
+      this(relativeTransform: relativeTransform);
+
+  @override
+  Frame clipsContent(bool? clipsContent) => this(clipsContent: clipsContent);
+
+  @override
+  Frame layoutMode(LayoutMode? layoutMode) => this(layoutMode: layoutMode);
+
+  @override
+  Frame styles(Map<StyleTypeKey, String>? styles) => this(styles: styles);
+
+  @override
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Frame(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -401,102 +682,9 @@ class _$FrameCWProxyImpl implements _$FrameCWProxy {
 }
 
 extension $FrameCopyWith on Frame {
-  /// Returns a callable class that can be used as follows: `instanceOfFrame.copyWith(...)`.
+  /// Returns a callable class that can be used as follows: `instanceOfFrame.copyWith(...)` or like so:`instanceOfFrame.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$FrameCWProxy get copyWith => _$FrameCWProxyImpl(this);
-
-  /// Copies the object with the specific fields set to `null`. If you pass `false` as a parameter, nothing will be done and it will be ignored. Don't do it. Prefer `copyWith(field: null)`.
-  ///
-  /// Usage
-  /// ```dart
-  /// Frame(...).copyWithNull(firstField: true, secondField: true)
-  /// ````
-  Frame copyWithNull({
-    bool componentPropertyReferencesMap = false,
-    bool name = false,
-    bool rotation = false,
-    bool type = false,
-    bool absoluteBoundingBox = false,
-    bool absoluteRenderBounds = false,
-    bool size = false,
-    bool strokeWeight = false,
-    bool individualStrokeWeights = false,
-    bool strokeAlign = false,
-    bool cornerRadius = false,
-    bool rectangleCornerRadii = false,
-    bool blendMode = false,
-    bool preserveRatio = false,
-    bool constraints = false,
-    bool layoutAlign = false,
-    bool transitionNodeID = false,
-    bool transitionDuration = false,
-    bool relativeTransform = false,
-    bool clipsContent = false,
-    bool layoutMode = false,
-    bool styles = false,
-  }) {
-    return Frame(
-      id: id,
-      visible: visible,
-      componentPropertyReferencesMap: componentPropertyReferencesMap == true
-          ? null
-          : this.componentPropertyReferencesMap,
-      name: name == true ? null : this.name,
-      rotation: rotation == true ? null : this.rotation,
-      pluginData: pluginData,
-      sharedPluginData: sharedPluginData,
-      type: type == true ? null : this.type,
-      locked: locked,
-      fills: fills,
-      strokes: strokes,
-      exportSettings: exportSettings,
-      children: children,
-      opacity: opacity,
-      primaryAxisAlignItems: primaryAxisAlignItems,
-      counterAxisAlignItems: counterAxisAlignItems,
-      primaryAxisSizingMode: primaryAxisSizingMode,
-      counterAxisSizingMode: counterAxisSizingMode,
-      paddingBottom: paddingBottom,
-      paddingLeft: paddingLeft,
-      paddingRight: paddingRight,
-      paddingTop: paddingTop,
-      horizontalPadding: horizontalPadding,
-      verticalPadding: verticalPadding,
-      itemSpacing: itemSpacing,
-      layoutGrids: layoutGrids,
-      overflowDirection: overflowDirection,
-      effects: effects,
-      isMask: isMask,
-      isMaskOutline: isMaskOutline,
-      layoutPositioning: layoutPositioning,
-      itemReverseZIndex: itemReverseZIndex,
-      strokesIncludedInLayout: strokesIncludedInLayout,
-      absoluteBoundingBox:
-          absoluteBoundingBox == true ? null : this.absoluteBoundingBox,
-      absoluteRenderBounds:
-          absoluteRenderBounds == true ? null : this.absoluteRenderBounds,
-      size: size == true ? null : this.size,
-      strokeWeight: strokeWeight == true ? null : this.strokeWeight,
-      individualStrokeWeights:
-          individualStrokeWeights == true ? null : this.individualStrokeWeights,
-      strokeAlign: strokeAlign == true ? null : this.strokeAlign,
-      cornerRadius: cornerRadius == true ? null : this.cornerRadius,
-      rectangleCornerRadii:
-          rectangleCornerRadii == true ? null : this.rectangleCornerRadii,
-      blendMode: blendMode == true ? null : this.blendMode,
-      preserveRatio: preserveRatio == true ? null : this.preserveRatio,
-      constraints: constraints == true ? null : this.constraints,
-      layoutAlign: layoutAlign == true ? null : this.layoutAlign,
-      transitionNodeID: transitionNodeID == true ? null : this.transitionNodeID,
-      transitionDuration:
-          transitionDuration == true ? null : this.transitionDuration,
-      relativeTransform:
-          relativeTransform == true ? null : this.relativeTransform,
-      clipsContent: clipsContent == true ? null : this.clipsContent,
-      layoutMode: layoutMode == true ? null : this.layoutMode,
-      styles: styles == true ? null : this.styles,
-    );
-  }
 }
 
 // **************************************************************************

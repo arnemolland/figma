@@ -7,7 +7,11 @@ part of 'overrides.dart';
 // **************************************************************************
 
 abstract class _$OverridesCWProxy {
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  Overrides id(String id);
+
+  Overrides overriddenFields(List<String> overriddenFields);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Overrides(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -19,15 +23,22 @@ abstract class _$OverridesCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfOverrides.copyWith(...)`.
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfOverrides.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfOverrides.copyWith.fieldName(...)`
 class _$OverridesCWProxyImpl implements _$OverridesCWProxy {
   const _$OverridesCWProxyImpl(this._value);
 
   final Overrides _value;
 
   @override
+  Overrides id(String id) => this(id: id);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  @override
+  Overrides overriddenFields(List<String> overriddenFields) =>
+      this(overriddenFields: overriddenFields);
+
+  @override
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Overrides(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -54,7 +65,7 @@ class _$OverridesCWProxyImpl implements _$OverridesCWProxy {
 }
 
 extension $OverridesCopyWith on Overrides {
-  /// Returns a callable class that can be used as follows: `instanceOfOverrides.copyWith(...)`.
+  /// Returns a callable class that can be used as follows: `instanceOfOverrides.copyWith(...)` or like so:`instanceOfOverrides.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$OverridesCWProxy get copyWith => _$OverridesCWProxyImpl(this);
 }

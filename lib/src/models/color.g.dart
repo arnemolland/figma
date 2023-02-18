@@ -7,7 +7,15 @@ part of 'color.dart';
 // **************************************************************************
 
 abstract class _$ColorCWProxy {
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  Color r(double? r);
+
+  Color g(double? g);
+
+  Color b(double? b);
+
+  Color a(double? a);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Color(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -21,15 +29,27 @@ abstract class _$ColorCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfColor.copyWith(...)`.
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfColor.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfColor.copyWith.fieldName(...)`
 class _$ColorCWProxyImpl implements _$ColorCWProxy {
   const _$ColorCWProxyImpl(this._value);
 
   final Color _value;
 
   @override
+  Color r(double? r) => this(r: r);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  @override
+  Color g(double? g) => this(g: g);
+
+  @override
+  Color b(double? b) => this(b: b);
+
+  @override
+  Color a(double? a) => this(a: a);
+
+  @override
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Color(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -63,29 +83,9 @@ class _$ColorCWProxyImpl implements _$ColorCWProxy {
 }
 
 extension $ColorCopyWith on Color {
-  /// Returns a callable class that can be used as follows: `instanceOfColor.copyWith(...)`.
+  /// Returns a callable class that can be used as follows: `instanceOfColor.copyWith(...)` or like so:`instanceOfColor.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$ColorCWProxy get copyWith => _$ColorCWProxyImpl(this);
-
-  /// Copies the object with the specific fields set to `null`. If you pass `false` as a parameter, nothing will be done and it will be ignored. Don't do it. Prefer `copyWith(field: null)`.
-  ///
-  /// Usage
-  /// ```dart
-  /// Color(...).copyWithNull(firstField: true, secondField: true)
-  /// ````
-  Color copyWithNull({
-    bool r = false,
-    bool g = false,
-    bool b = false,
-    bool a = false,
-  }) {
-    return Color(
-      r: r == true ? null : this.r,
-      g: g == true ? null : this.g,
-      b: b == true ? null : this.b,
-      a: a == true ? null : this.a,
-    );
-  }
 }
 
 // **************************************************************************

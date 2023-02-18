@@ -7,7 +7,82 @@ part of 'star.dart';
 // **************************************************************************
 
 abstract class _$StarCWProxy {
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  Star id(String id);
+
+  Star visible(bool visible);
+
+  Star locked(bool locked);
+
+  Star exportSettings(List<ExportSetting> exportSettings);
+
+  Star preserveRatio(bool preserveRatio);
+
+  Star layoutGrow(double layoutGrow);
+
+  Star opacity(double opacity);
+
+  Star isMask(bool isMask);
+
+  Star fills(List<Paint> fills);
+
+  Star fillGeometry(List<Path> fillGeometry);
+
+  Star strokes(List<Paint> strokes);
+
+  Star strokeCap(StrokeCap strokeCap);
+
+  Star strokeJoin(StrokeJoin strokeJoin);
+
+  Star strokeDashes(List<double> strokeDashes);
+
+  Star strokeMiterAngle(double strokeMiterAngle);
+
+  Star componentPropertyReferencesMap(
+      Map<String, String>? componentPropertyReferencesMap);
+
+  Star name(String? name);
+
+  Star rotation(double? rotation);
+
+  Star pluginData(dynamic pluginData);
+
+  Star sharedPluginData(dynamic sharedPluginData);
+
+  Star blendMode(BlendMode? blendMode);
+
+  Star layoutAlign(LayoutAlign? layoutAlign);
+
+  Star constraints(LayoutConstraint? constraints);
+
+  Star transitionNodeID(String? transitionNodeID);
+
+  Star transitionDuration(double? transitionDuration);
+
+  Star transitionEasing(EasingType? transitionEasing);
+
+  Star absoluteBoundingBox(SizeRectangle? absoluteBoundingBox);
+
+  Star effects(List<Effect>? effects);
+
+  Star size(Vector2D? size);
+
+  Star relativeTransform(List<List<double>>? relativeTransform);
+
+  Star strokeWeight(double? strokeWeight);
+
+  Star strokeGeometry(List<dynamic>? strokeGeometry);
+
+  Star strokeAlign(StrokeAlign? strokeAlign);
+
+  Star styles(Map<StyleTypeKey, String>? styles);
+
+  Star absoluteRenderBounds(SizeRectangle? absoluteRenderBounds);
+
+  Star fillOverrideTable(Map<int, PaintOverride>? fillOverrideTable);
+
+  Star individualStrokeWeights(StrokeWeights? individualStrokeWeights);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Star(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -32,8 +107,8 @@ abstract class _$StarCWProxy {
     Map<String, String>? componentPropertyReferencesMap,
     String? name,
     double? rotation,
-    dynamic pluginData,
-    dynamic sharedPluginData,
+    dynamic? pluginData,
+    dynamic? sharedPluginData,
     BlendMode? blendMode,
     LayoutAlign? layoutAlign,
     LayoutConstraint? constraints,
@@ -54,15 +129,143 @@ abstract class _$StarCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfStar.copyWith(...)`.
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfStar.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfStar.copyWith.fieldName(...)`
 class _$StarCWProxyImpl implements _$StarCWProxy {
   const _$StarCWProxyImpl(this._value);
 
   final Star _value;
 
   @override
+  Star id(String id) => this(id: id);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  @override
+  Star visible(bool visible) => this(visible: visible);
+
+  @override
+  Star locked(bool locked) => this(locked: locked);
+
+  @override
+  Star exportSettings(List<ExportSetting> exportSettings) =>
+      this(exportSettings: exportSettings);
+
+  @override
+  Star preserveRatio(bool preserveRatio) => this(preserveRatio: preserveRatio);
+
+  @override
+  Star layoutGrow(double layoutGrow) => this(layoutGrow: layoutGrow);
+
+  @override
+  Star opacity(double opacity) => this(opacity: opacity);
+
+  @override
+  Star isMask(bool isMask) => this(isMask: isMask);
+
+  @override
+  Star fills(List<Paint> fills) => this(fills: fills);
+
+  @override
+  Star fillGeometry(List<Path> fillGeometry) =>
+      this(fillGeometry: fillGeometry);
+
+  @override
+  Star strokes(List<Paint> strokes) => this(strokes: strokes);
+
+  @override
+  Star strokeCap(StrokeCap strokeCap) => this(strokeCap: strokeCap);
+
+  @override
+  Star strokeJoin(StrokeJoin strokeJoin) => this(strokeJoin: strokeJoin);
+
+  @override
+  Star strokeDashes(List<double> strokeDashes) =>
+      this(strokeDashes: strokeDashes);
+
+  @override
+  Star strokeMiterAngle(double strokeMiterAngle) =>
+      this(strokeMiterAngle: strokeMiterAngle);
+
+  @override
+  Star componentPropertyReferencesMap(
+          Map<String, String>? componentPropertyReferencesMap) =>
+      this(componentPropertyReferencesMap: componentPropertyReferencesMap);
+
+  @override
+  Star name(String? name) => this(name: name);
+
+  @override
+  Star rotation(double? rotation) => this(rotation: rotation);
+
+  @override
+  Star pluginData(dynamic pluginData) => this(pluginData: pluginData);
+
+  @override
+  Star sharedPluginData(dynamic sharedPluginData) =>
+      this(sharedPluginData: sharedPluginData);
+
+  @override
+  Star blendMode(BlendMode? blendMode) => this(blendMode: blendMode);
+
+  @override
+  Star layoutAlign(LayoutAlign? layoutAlign) => this(layoutAlign: layoutAlign);
+
+  @override
+  Star constraints(LayoutConstraint? constraints) =>
+      this(constraints: constraints);
+
+  @override
+  Star transitionNodeID(String? transitionNodeID) =>
+      this(transitionNodeID: transitionNodeID);
+
+  @override
+  Star transitionDuration(double? transitionDuration) =>
+      this(transitionDuration: transitionDuration);
+
+  @override
+  Star transitionEasing(EasingType? transitionEasing) =>
+      this(transitionEasing: transitionEasing);
+
+  @override
+  Star absoluteBoundingBox(SizeRectangle? absoluteBoundingBox) =>
+      this(absoluteBoundingBox: absoluteBoundingBox);
+
+  @override
+  Star effects(List<Effect>? effects) => this(effects: effects);
+
+  @override
+  Star size(Vector2D? size) => this(size: size);
+
+  @override
+  Star relativeTransform(List<List<double>>? relativeTransform) =>
+      this(relativeTransform: relativeTransform);
+
+  @override
+  Star strokeWeight(double? strokeWeight) => this(strokeWeight: strokeWeight);
+
+  @override
+  Star strokeGeometry(List<dynamic>? strokeGeometry) =>
+      this(strokeGeometry: strokeGeometry);
+
+  @override
+  Star strokeAlign(StrokeAlign? strokeAlign) => this(strokeAlign: strokeAlign);
+
+  @override
+  Star styles(Map<StyleTypeKey, String>? styles) => this(styles: styles);
+
+  @override
+  Star absoluteRenderBounds(SizeRectangle? absoluteRenderBounds) =>
+      this(absoluteRenderBounds: absoluteRenderBounds);
+
+  @override
+  Star fillOverrideTable(Map<int, PaintOverride>? fillOverrideTable) =>
+      this(fillOverrideTable: fillOverrideTable);
+
+  @override
+  Star individualStrokeWeights(StrokeWeights? individualStrokeWeights) =>
+      this(individualStrokeWeights: individualStrokeWeights);
+
+  @override
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Star(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -289,86 +492,9 @@ class _$StarCWProxyImpl implements _$StarCWProxy {
 }
 
 extension $StarCopyWith on Star {
-  /// Returns a callable class that can be used as follows: `instanceOfStar.copyWith(...)`.
+  /// Returns a callable class that can be used as follows: `instanceOfStar.copyWith(...)` or like so:`instanceOfStar.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$StarCWProxy get copyWith => _$StarCWProxyImpl(this);
-
-  /// Copies the object with the specific fields set to `null`. If you pass `false` as a parameter, nothing will be done and it will be ignored. Don't do it. Prefer `copyWith(field: null)`.
-  ///
-  /// Usage
-  /// ```dart
-  /// Star(...).copyWithNull(firstField: true, secondField: true)
-  /// ````
-  Star copyWithNull({
-    bool componentPropertyReferencesMap = false,
-    bool name = false,
-    bool rotation = false,
-    bool blendMode = false,
-    bool layoutAlign = false,
-    bool constraints = false,
-    bool transitionNodeID = false,
-    bool transitionDuration = false,
-    bool transitionEasing = false,
-    bool absoluteBoundingBox = false,
-    bool effects = false,
-    bool size = false,
-    bool relativeTransform = false,
-    bool strokeWeight = false,
-    bool strokeGeometry = false,
-    bool strokeAlign = false,
-    bool styles = false,
-    bool absoluteRenderBounds = false,
-    bool fillOverrideTable = false,
-    bool individualStrokeWeights = false,
-  }) {
-    return Star(
-      id: id,
-      visible: visible,
-      locked: locked,
-      exportSettings: exportSettings,
-      preserveRatio: preserveRatio,
-      layoutGrow: layoutGrow,
-      opacity: opacity,
-      isMask: isMask,
-      fills: fills,
-      fillGeometry: fillGeometry,
-      strokes: strokes,
-      strokeCap: strokeCap,
-      strokeJoin: strokeJoin,
-      strokeDashes: strokeDashes,
-      strokeMiterAngle: strokeMiterAngle,
-      componentPropertyReferencesMap: componentPropertyReferencesMap == true
-          ? null
-          : this.componentPropertyReferencesMap,
-      name: name == true ? null : this.name,
-      rotation: rotation == true ? null : this.rotation,
-      pluginData: pluginData,
-      sharedPluginData: sharedPluginData,
-      blendMode: blendMode == true ? null : this.blendMode,
-      layoutAlign: layoutAlign == true ? null : this.layoutAlign,
-      constraints: constraints == true ? null : this.constraints,
-      transitionNodeID: transitionNodeID == true ? null : this.transitionNodeID,
-      transitionDuration:
-          transitionDuration == true ? null : this.transitionDuration,
-      transitionEasing: transitionEasing == true ? null : this.transitionEasing,
-      absoluteBoundingBox:
-          absoluteBoundingBox == true ? null : this.absoluteBoundingBox,
-      effects: effects == true ? null : this.effects,
-      size: size == true ? null : this.size,
-      relativeTransform:
-          relativeTransform == true ? null : this.relativeTransform,
-      strokeWeight: strokeWeight == true ? null : this.strokeWeight,
-      strokeGeometry: strokeGeometry == true ? null : this.strokeGeometry,
-      strokeAlign: strokeAlign == true ? null : this.strokeAlign,
-      styles: styles == true ? null : this.styles,
-      absoluteRenderBounds:
-          absoluteRenderBounds == true ? null : this.absoluteRenderBounds,
-      fillOverrideTable:
-          fillOverrideTable == true ? null : this.fillOverrideTable,
-      individualStrokeWeights:
-          individualStrokeWeights == true ? null : this.individualStrokeWeights,
-    );
-  }
 }
 
 // **************************************************************************

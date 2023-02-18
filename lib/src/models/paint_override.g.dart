@@ -7,7 +7,11 @@ part of 'paint_override.dart';
 // **************************************************************************
 
 abstract class _$PaintOverrideCWProxy {
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  PaintOverride fills(List<Paint> fills);
+
+  PaintOverride inheritFillStyleId(String? inheritFillStyleId);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `PaintOverride(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -19,15 +23,22 @@ abstract class _$PaintOverrideCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfPaintOverride.copyWith(...)`.
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfPaintOverride.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfPaintOverride.copyWith.fieldName(...)`
 class _$PaintOverrideCWProxyImpl implements _$PaintOverrideCWProxy {
   const _$PaintOverrideCWProxyImpl(this._value);
 
   final PaintOverride _value;
 
   @override
+  PaintOverride fills(List<Paint> fills) => this(fills: fills);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  @override
+  PaintOverride inheritFillStyleId(String? inheritFillStyleId) =>
+      this(inheritFillStyleId: inheritFillStyleId);
+
+  @override
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `PaintOverride(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -52,25 +63,9 @@ class _$PaintOverrideCWProxyImpl implements _$PaintOverrideCWProxy {
 }
 
 extension $PaintOverrideCopyWith on PaintOverride {
-  /// Returns a callable class that can be used as follows: `instanceOfPaintOverride.copyWith(...)`.
+  /// Returns a callable class that can be used as follows: `instanceOfPaintOverride.copyWith(...)` or like so:`instanceOfPaintOverride.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$PaintOverrideCWProxy get copyWith => _$PaintOverrideCWProxyImpl(this);
-
-  /// Copies the object with the specific fields set to `null`. If you pass `false` as a parameter, nothing will be done and it will be ignored. Don't do it. Prefer `copyWith(field: null)`.
-  ///
-  /// Usage
-  /// ```dart
-  /// PaintOverride(...).copyWithNull(firstField: true, secondField: true)
-  /// ````
-  PaintOverride copyWithNull({
-    bool inheritFillStyleId = false,
-  }) {
-    return PaintOverride(
-      fills: fills,
-      inheritFillStyleId:
-          inheritFillStyleId == true ? null : this.inheritFillStyleId,
-    );
-  }
 }
 
 // **************************************************************************

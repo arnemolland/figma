@@ -7,7 +7,11 @@ part of 'color_stop.dart';
 // **************************************************************************
 
 abstract class _$ColorStopCWProxy {
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  ColorStop position(double? position);
+
+  ColorStop color(Color? color);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ColorStop(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -19,15 +23,21 @@ abstract class _$ColorStopCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfColorStop.copyWith(...)`.
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfColorStop.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfColorStop.copyWith.fieldName(...)`
 class _$ColorStopCWProxyImpl implements _$ColorStopCWProxy {
   const _$ColorStopCWProxyImpl(this._value);
 
   final ColorStop _value;
 
   @override
+  ColorStop position(double? position) => this(position: position);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  @override
+  ColorStop color(Color? color) => this(color: color);
+
+  @override
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ColorStop(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -51,25 +61,9 @@ class _$ColorStopCWProxyImpl implements _$ColorStopCWProxy {
 }
 
 extension $ColorStopCopyWith on ColorStop {
-  /// Returns a callable class that can be used as follows: `instanceOfColorStop.copyWith(...)`.
+  /// Returns a callable class that can be used as follows: `instanceOfColorStop.copyWith(...)` or like so:`instanceOfColorStop.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$ColorStopCWProxy get copyWith => _$ColorStopCWProxyImpl(this);
-
-  /// Copies the object with the specific fields set to `null`. If you pass `false` as a parameter, nothing will be done and it will be ignored. Don't do it. Prefer `copyWith(field: null)`.
-  ///
-  /// Usage
-  /// ```dart
-  /// ColorStop(...).copyWithNull(firstField: true, secondField: true)
-  /// ````
-  ColorStop copyWithNull({
-    bool position = false,
-    bool color = false,
-  }) {
-    return ColorStop(
-      position: position == true ? null : this.position,
-      color: color == true ? null : this.color,
-    );
-  }
 }
 
 // **************************************************************************

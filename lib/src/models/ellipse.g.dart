@@ -7,7 +7,84 @@ part of 'ellipse.dart';
 // **************************************************************************
 
 abstract class _$EllipseCWProxy {
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  Ellipse id(String id);
+
+  Ellipse visible(bool visible);
+
+  Ellipse locked(bool locked);
+
+  Ellipse exportSettings(List<ExportSetting> exportSettings);
+
+  Ellipse preserveRatio(bool preserveRatio);
+
+  Ellipse layoutGrow(double layoutGrow);
+
+  Ellipse opacity(double opacity);
+
+  Ellipse isMask(bool isMask);
+
+  Ellipse fills(List<Paint> fills);
+
+  Ellipse fillGeometry(List<Path> fillGeometry);
+
+  Ellipse strokes(List<Paint> strokes);
+
+  Ellipse strokeCap(StrokeCap strokeCap);
+
+  Ellipse strokeJoin(StrokeJoin strokeJoin);
+
+  Ellipse strokeDashes(List<double> strokeDashes);
+
+  Ellipse strokeMiterAngle(double strokeMiterAngle);
+
+  Ellipse componentPropertyReferencesMap(
+      Map<String, String>? componentPropertyReferencesMap);
+
+  Ellipse name(String? name);
+
+  Ellipse rotation(double? rotation);
+
+  Ellipse pluginData(dynamic pluginData);
+
+  Ellipse sharedPluginData(dynamic sharedPluginData);
+
+  Ellipse blendMode(BlendMode? blendMode);
+
+  Ellipse layoutAlign(LayoutAlign? layoutAlign);
+
+  Ellipse constraints(LayoutConstraint? constraints);
+
+  Ellipse transitionNodeID(String? transitionNodeID);
+
+  Ellipse transitionDuration(double? transitionDuration);
+
+  Ellipse transitionEasing(EasingType? transitionEasing);
+
+  Ellipse absoluteBoundingBox(SizeRectangle? absoluteBoundingBox);
+
+  Ellipse effects(List<Effect>? effects);
+
+  Ellipse size(Vector2D? size);
+
+  Ellipse relativeTransform(List<List<double>>? relativeTransform);
+
+  Ellipse strokeWeight(double? strokeWeight);
+
+  Ellipse strokeGeometry(List<dynamic>? strokeGeometry);
+
+  Ellipse strokeAlign(StrokeAlign? strokeAlign);
+
+  Ellipse styles(Map<StyleTypeKey, String>? styles);
+
+  Ellipse absoluteRenderBounds(SizeRectangle? absoluteRenderBounds);
+
+  Ellipse fillOverrideTable(Map<int, PaintOverride>? fillOverrideTable);
+
+  Ellipse individualStrokeWeights(StrokeWeights? individualStrokeWeights);
+
+  Ellipse arcData(ArcData arcData);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Ellipse(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -32,8 +109,8 @@ abstract class _$EllipseCWProxy {
     Map<String, String>? componentPropertyReferencesMap,
     String? name,
     double? rotation,
-    dynamic pluginData,
-    dynamic sharedPluginData,
+    dynamic? pluginData,
+    dynamic? sharedPluginData,
     BlendMode? blendMode,
     LayoutAlign? layoutAlign,
     LayoutConstraint? constraints,
@@ -55,15 +132,150 @@ abstract class _$EllipseCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfEllipse.copyWith(...)`.
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfEllipse.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfEllipse.copyWith.fieldName(...)`
 class _$EllipseCWProxyImpl implements _$EllipseCWProxy {
   const _$EllipseCWProxyImpl(this._value);
 
   final Ellipse _value;
 
   @override
+  Ellipse id(String id) => this(id: id);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  @override
+  Ellipse visible(bool visible) => this(visible: visible);
+
+  @override
+  Ellipse locked(bool locked) => this(locked: locked);
+
+  @override
+  Ellipse exportSettings(List<ExportSetting> exportSettings) =>
+      this(exportSettings: exportSettings);
+
+  @override
+  Ellipse preserveRatio(bool preserveRatio) =>
+      this(preserveRatio: preserveRatio);
+
+  @override
+  Ellipse layoutGrow(double layoutGrow) => this(layoutGrow: layoutGrow);
+
+  @override
+  Ellipse opacity(double opacity) => this(opacity: opacity);
+
+  @override
+  Ellipse isMask(bool isMask) => this(isMask: isMask);
+
+  @override
+  Ellipse fills(List<Paint> fills) => this(fills: fills);
+
+  @override
+  Ellipse fillGeometry(List<Path> fillGeometry) =>
+      this(fillGeometry: fillGeometry);
+
+  @override
+  Ellipse strokes(List<Paint> strokes) => this(strokes: strokes);
+
+  @override
+  Ellipse strokeCap(StrokeCap strokeCap) => this(strokeCap: strokeCap);
+
+  @override
+  Ellipse strokeJoin(StrokeJoin strokeJoin) => this(strokeJoin: strokeJoin);
+
+  @override
+  Ellipse strokeDashes(List<double> strokeDashes) =>
+      this(strokeDashes: strokeDashes);
+
+  @override
+  Ellipse strokeMiterAngle(double strokeMiterAngle) =>
+      this(strokeMiterAngle: strokeMiterAngle);
+
+  @override
+  Ellipse componentPropertyReferencesMap(
+          Map<String, String>? componentPropertyReferencesMap) =>
+      this(componentPropertyReferencesMap: componentPropertyReferencesMap);
+
+  @override
+  Ellipse name(String? name) => this(name: name);
+
+  @override
+  Ellipse rotation(double? rotation) => this(rotation: rotation);
+
+  @override
+  Ellipse pluginData(dynamic pluginData) => this(pluginData: pluginData);
+
+  @override
+  Ellipse sharedPluginData(dynamic sharedPluginData) =>
+      this(sharedPluginData: sharedPluginData);
+
+  @override
+  Ellipse blendMode(BlendMode? blendMode) => this(blendMode: blendMode);
+
+  @override
+  Ellipse layoutAlign(LayoutAlign? layoutAlign) =>
+      this(layoutAlign: layoutAlign);
+
+  @override
+  Ellipse constraints(LayoutConstraint? constraints) =>
+      this(constraints: constraints);
+
+  @override
+  Ellipse transitionNodeID(String? transitionNodeID) =>
+      this(transitionNodeID: transitionNodeID);
+
+  @override
+  Ellipse transitionDuration(double? transitionDuration) =>
+      this(transitionDuration: transitionDuration);
+
+  @override
+  Ellipse transitionEasing(EasingType? transitionEasing) =>
+      this(transitionEasing: transitionEasing);
+
+  @override
+  Ellipse absoluteBoundingBox(SizeRectangle? absoluteBoundingBox) =>
+      this(absoluteBoundingBox: absoluteBoundingBox);
+
+  @override
+  Ellipse effects(List<Effect>? effects) => this(effects: effects);
+
+  @override
+  Ellipse size(Vector2D? size) => this(size: size);
+
+  @override
+  Ellipse relativeTransform(List<List<double>>? relativeTransform) =>
+      this(relativeTransform: relativeTransform);
+
+  @override
+  Ellipse strokeWeight(double? strokeWeight) =>
+      this(strokeWeight: strokeWeight);
+
+  @override
+  Ellipse strokeGeometry(List<dynamic>? strokeGeometry) =>
+      this(strokeGeometry: strokeGeometry);
+
+  @override
+  Ellipse strokeAlign(StrokeAlign? strokeAlign) =>
+      this(strokeAlign: strokeAlign);
+
+  @override
+  Ellipse styles(Map<StyleTypeKey, String>? styles) => this(styles: styles);
+
+  @override
+  Ellipse absoluteRenderBounds(SizeRectangle? absoluteRenderBounds) =>
+      this(absoluteRenderBounds: absoluteRenderBounds);
+
+  @override
+  Ellipse fillOverrideTable(Map<int, PaintOverride>? fillOverrideTable) =>
+      this(fillOverrideTable: fillOverrideTable);
+
+  @override
+  Ellipse individualStrokeWeights(StrokeWeights? individualStrokeWeights) =>
+      this(individualStrokeWeights: individualStrokeWeights);
+
+  @override
+  Ellipse arcData(ArcData arcData) => this(arcData: arcData);
+
+  @override
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Ellipse(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -296,87 +508,9 @@ class _$EllipseCWProxyImpl implements _$EllipseCWProxy {
 }
 
 extension $EllipseCopyWith on Ellipse {
-  /// Returns a callable class that can be used as follows: `instanceOfEllipse.copyWith(...)`.
+  /// Returns a callable class that can be used as follows: `instanceOfEllipse.copyWith(...)` or like so:`instanceOfEllipse.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$EllipseCWProxy get copyWith => _$EllipseCWProxyImpl(this);
-
-  /// Copies the object with the specific fields set to `null`. If you pass `false` as a parameter, nothing will be done and it will be ignored. Don't do it. Prefer `copyWith(field: null)`.
-  ///
-  /// Usage
-  /// ```dart
-  /// Ellipse(...).copyWithNull(firstField: true, secondField: true)
-  /// ````
-  Ellipse copyWithNull({
-    bool componentPropertyReferencesMap = false,
-    bool name = false,
-    bool rotation = false,
-    bool blendMode = false,
-    bool layoutAlign = false,
-    bool constraints = false,
-    bool transitionNodeID = false,
-    bool transitionDuration = false,
-    bool transitionEasing = false,
-    bool absoluteBoundingBox = false,
-    bool effects = false,
-    bool size = false,
-    bool relativeTransform = false,
-    bool strokeWeight = false,
-    bool strokeGeometry = false,
-    bool strokeAlign = false,
-    bool styles = false,
-    bool absoluteRenderBounds = false,
-    bool fillOverrideTable = false,
-    bool individualStrokeWeights = false,
-  }) {
-    return Ellipse(
-      id: id,
-      visible: visible,
-      locked: locked,
-      exportSettings: exportSettings,
-      preserveRatio: preserveRatio,
-      layoutGrow: layoutGrow,
-      opacity: opacity,
-      isMask: isMask,
-      fills: fills,
-      fillGeometry: fillGeometry,
-      strokes: strokes,
-      strokeCap: strokeCap,
-      strokeJoin: strokeJoin,
-      strokeDashes: strokeDashes,
-      strokeMiterAngle: strokeMiterAngle,
-      componentPropertyReferencesMap: componentPropertyReferencesMap == true
-          ? null
-          : this.componentPropertyReferencesMap,
-      name: name == true ? null : this.name,
-      rotation: rotation == true ? null : this.rotation,
-      pluginData: pluginData,
-      sharedPluginData: sharedPluginData,
-      blendMode: blendMode == true ? null : this.blendMode,
-      layoutAlign: layoutAlign == true ? null : this.layoutAlign,
-      constraints: constraints == true ? null : this.constraints,
-      transitionNodeID: transitionNodeID == true ? null : this.transitionNodeID,
-      transitionDuration:
-          transitionDuration == true ? null : this.transitionDuration,
-      transitionEasing: transitionEasing == true ? null : this.transitionEasing,
-      absoluteBoundingBox:
-          absoluteBoundingBox == true ? null : this.absoluteBoundingBox,
-      effects: effects == true ? null : this.effects,
-      size: size == true ? null : this.size,
-      relativeTransform:
-          relativeTransform == true ? null : this.relativeTransform,
-      strokeWeight: strokeWeight == true ? null : this.strokeWeight,
-      strokeGeometry: strokeGeometry == true ? null : this.strokeGeometry,
-      strokeAlign: strokeAlign == true ? null : this.strokeAlign,
-      styles: styles == true ? null : this.styles,
-      absoluteRenderBounds:
-          absoluteRenderBounds == true ? null : this.absoluteRenderBounds,
-      fillOverrideTable:
-          fillOverrideTable == true ? null : this.fillOverrideTable,
-      individualStrokeWeights:
-          individualStrokeWeights == true ? null : this.individualStrokeWeights,
-      arcData: arcData,
-    );
-  }
 }
 
 // **************************************************************************

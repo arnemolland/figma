@@ -7,7 +7,13 @@ part of 'arc_data.dart';
 // **************************************************************************
 
 abstract class _$ArcDataCWProxy {
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  ArcData start(double start);
+
+  ArcData end(double end);
+
+  ArcData innerRadius(double innerRadius);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ArcData(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -20,15 +26,24 @@ abstract class _$ArcDataCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfArcData.copyWith(...)`.
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfArcData.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfArcData.copyWith.fieldName(...)`
 class _$ArcDataCWProxyImpl implements _$ArcDataCWProxy {
   const _$ArcDataCWProxyImpl(this._value);
 
   final ArcData _value;
 
   @override
+  ArcData start(double start) => this(start: start);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  @override
+  ArcData end(double end) => this(end: end);
+
+  @override
+  ArcData innerRadius(double innerRadius) => this(innerRadius: innerRadius);
+
+  @override
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ArcData(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -61,7 +76,7 @@ class _$ArcDataCWProxyImpl implements _$ArcDataCWProxy {
 }
 
 extension $ArcDataCopyWith on ArcData {
-  /// Returns a callable class that can be used as follows: `instanceOfArcData.copyWith(...)`.
+  /// Returns a callable class that can be used as follows: `instanceOfArcData.copyWith(...)` or like so:`instanceOfArcData.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$ArcDataCWProxy get copyWith => _$ArcDataCWProxyImpl(this);
 }

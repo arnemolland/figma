@@ -7,7 +7,34 @@ part of 'canvas.dart';
 // **************************************************************************
 
 abstract class _$CanvasCWProxy {
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  Canvas id(String id);
+
+  Canvas visible(bool visible);
+
+  Canvas componentPropertyReferencesMap(
+      Map<String, String>? componentPropertyReferencesMap);
+
+  Canvas name(String? name);
+
+  Canvas rotation(double? rotation);
+
+  Canvas pluginData(dynamic pluginData);
+
+  Canvas sharedPluginData(dynamic sharedPluginData);
+
+  Canvas type(String? type);
+
+  Canvas prototypeDevice(PrototypeDevice prototypeDevice);
+
+  Canvas flowStartingPoints(List<FlowStartingPoint> flowStartingPoints);
+
+  Canvas exportSettings(List<ExportSetting> exportSettings);
+
+  Canvas children(List<Node?>? children);
+
+  Canvas backgroundColor(Color? backgroundColor);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Canvas(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -19,8 +46,8 @@ abstract class _$CanvasCWProxy {
     Map<String, String>? componentPropertyReferencesMap,
     String? name,
     double? rotation,
-    dynamic pluginData,
-    dynamic sharedPluginData,
+    dynamic? pluginData,
+    dynamic? sharedPluginData,
     String? type,
     PrototypeDevice? prototypeDevice,
     List<FlowStartingPoint>? flowStartingPoints,
@@ -30,15 +57,61 @@ abstract class _$CanvasCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfCanvas.copyWith(...)`.
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfCanvas.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfCanvas.copyWith.fieldName(...)`
 class _$CanvasCWProxyImpl implements _$CanvasCWProxy {
   const _$CanvasCWProxyImpl(this._value);
 
   final Canvas _value;
 
   @override
+  Canvas id(String id) => this(id: id);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  @override
+  Canvas visible(bool visible) => this(visible: visible);
+
+  @override
+  Canvas componentPropertyReferencesMap(
+          Map<String, String>? componentPropertyReferencesMap) =>
+      this(componentPropertyReferencesMap: componentPropertyReferencesMap);
+
+  @override
+  Canvas name(String? name) => this(name: name);
+
+  @override
+  Canvas rotation(double? rotation) => this(rotation: rotation);
+
+  @override
+  Canvas pluginData(dynamic pluginData) => this(pluginData: pluginData);
+
+  @override
+  Canvas sharedPluginData(dynamic sharedPluginData) =>
+      this(sharedPluginData: sharedPluginData);
+
+  @override
+  Canvas type(String? type) => this(type: type);
+
+  @override
+  Canvas prototypeDevice(PrototypeDevice prototypeDevice) =>
+      this(prototypeDevice: prototypeDevice);
+
+  @override
+  Canvas flowStartingPoints(List<FlowStartingPoint> flowStartingPoints) =>
+      this(flowStartingPoints: flowStartingPoints);
+
+  @override
+  Canvas exportSettings(List<ExportSetting> exportSettings) =>
+      this(exportSettings: exportSettings);
+
+  @override
+  Canvas children(List<Node?>? children) => this(children: children);
+
+  @override
+  Canvas backgroundColor(Color? backgroundColor) =>
+      this(backgroundColor: backgroundColor);
+
+  @override
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Canvas(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -130,42 +203,9 @@ class _$CanvasCWProxyImpl implements _$CanvasCWProxy {
 }
 
 extension $CanvasCopyWith on Canvas {
-  /// Returns a callable class that can be used as follows: `instanceOfCanvas.copyWith(...)`.
+  /// Returns a callable class that can be used as follows: `instanceOfCanvas.copyWith(...)` or like so:`instanceOfCanvas.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$CanvasCWProxy get copyWith => _$CanvasCWProxyImpl(this);
-
-  /// Copies the object with the specific fields set to `null`. If you pass `false` as a parameter, nothing will be done and it will be ignored. Don't do it. Prefer `copyWith(field: null)`.
-  ///
-  /// Usage
-  /// ```dart
-  /// Canvas(...).copyWithNull(firstField: true, secondField: true)
-  /// ````
-  Canvas copyWithNull({
-    bool componentPropertyReferencesMap = false,
-    bool name = false,
-    bool rotation = false,
-    bool type = false,
-    bool children = false,
-    bool backgroundColor = false,
-  }) {
-    return Canvas(
-      id: id,
-      visible: visible,
-      componentPropertyReferencesMap: componentPropertyReferencesMap == true
-          ? null
-          : this.componentPropertyReferencesMap,
-      name: name == true ? null : this.name,
-      rotation: rotation == true ? null : this.rotation,
-      pluginData: pluginData,
-      sharedPluginData: sharedPluginData,
-      type: type == true ? null : this.type,
-      prototypeDevice: prototypeDevice,
-      flowStartingPoints: flowStartingPoints,
-      exportSettings: exportSettings,
-      children: children == true ? null : this.children,
-      backgroundColor: backgroundColor == true ? null : this.backgroundColor,
-    );
-  }
 }
 
 // **************************************************************************

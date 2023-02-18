@@ -7,7 +7,82 @@ part of 'vector.dart';
 // **************************************************************************
 
 abstract class _$VectorCWProxy {
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  Vector id(String id);
+
+  Vector visible(bool visible);
+
+  Vector componentPropertyReferencesMap(
+      Map<String, String>? componentPropertyReferencesMap);
+
+  Vector name(String? name);
+
+  Vector rotation(double? rotation);
+
+  Vector pluginData(dynamic pluginData);
+
+  Vector sharedPluginData(dynamic sharedPluginData);
+
+  Vector locked(bool locked);
+
+  Vector exportSettings(List<ExportSetting> exportSettings);
+
+  Vector preserveRatio(bool preserveRatio);
+
+  Vector layoutGrow(double layoutGrow);
+
+  Vector strokeCap(StrokeCap strokeCap);
+
+  Vector strokeJoin(StrokeJoin strokeJoin);
+
+  Vector strokeDashes(List<double> strokeDashes);
+
+  Vector strokeMiterAngle(double strokeMiterAngle);
+
+  Vector opacity(double opacity);
+
+  Vector isMask(bool isMask);
+
+  Vector fills(List<Paint> fills);
+
+  Vector fillGeometry(List<Path> fillGeometry);
+
+  Vector strokes(List<Paint> strokes);
+
+  Vector blendMode(BlendMode? blendMode);
+
+  Vector layoutAlign(LayoutAlign? layoutAlign);
+
+  Vector constraints(LayoutConstraint? constraints);
+
+  Vector transitionNodeID(String? transitionNodeID);
+
+  Vector transitionDuration(double? transitionDuration);
+
+  Vector transitionEasing(EasingType? transitionEasing);
+
+  Vector absoluteBoundingBox(SizeRectangle? absoluteBoundingBox);
+
+  Vector effects(List<Effect>? effects);
+
+  Vector size(Vector2D? size);
+
+  Vector relativeTransform(List<List<double>>? relativeTransform);
+
+  Vector strokeWeight(double? strokeWeight);
+
+  Vector individualStrokeWeights(StrokeWeights? individualStrokeWeights);
+
+  Vector strokeGeometry(List<dynamic>? strokeGeometry);
+
+  Vector strokeAlign(StrokeAlign? strokeAlign);
+
+  Vector styles(Map<StyleTypeKey, String>? styles);
+
+  Vector absoluteRenderBounds(SizeRectangle? absoluteRenderBounds);
+
+  Vector fillOverrideTable(Map<int, PaintOverride>? fillOverrideTable);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Vector(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -19,8 +94,8 @@ abstract class _$VectorCWProxy {
     Map<String, String>? componentPropertyReferencesMap,
     String? name,
     double? rotation,
-    dynamic pluginData,
-    dynamic sharedPluginData,
+    dynamic? pluginData,
+    dynamic? sharedPluginData,
     bool? locked,
     List<ExportSetting>? exportSettings,
     bool? preserveRatio,
@@ -54,15 +129,146 @@ abstract class _$VectorCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfVector.copyWith(...)`.
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfVector.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfVector.copyWith.fieldName(...)`
 class _$VectorCWProxyImpl implements _$VectorCWProxy {
   const _$VectorCWProxyImpl(this._value);
 
   final Vector _value;
 
   @override
+  Vector id(String id) => this(id: id);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  @override
+  Vector visible(bool visible) => this(visible: visible);
+
+  @override
+  Vector componentPropertyReferencesMap(
+          Map<String, String>? componentPropertyReferencesMap) =>
+      this(componentPropertyReferencesMap: componentPropertyReferencesMap);
+
+  @override
+  Vector name(String? name) => this(name: name);
+
+  @override
+  Vector rotation(double? rotation) => this(rotation: rotation);
+
+  @override
+  Vector pluginData(dynamic pluginData) => this(pluginData: pluginData);
+
+  @override
+  Vector sharedPluginData(dynamic sharedPluginData) =>
+      this(sharedPluginData: sharedPluginData);
+
+  @override
+  Vector locked(bool locked) => this(locked: locked);
+
+  @override
+  Vector exportSettings(List<ExportSetting> exportSettings) =>
+      this(exportSettings: exportSettings);
+
+  @override
+  Vector preserveRatio(bool preserveRatio) =>
+      this(preserveRatio: preserveRatio);
+
+  @override
+  Vector layoutGrow(double layoutGrow) => this(layoutGrow: layoutGrow);
+
+  @override
+  Vector strokeCap(StrokeCap strokeCap) => this(strokeCap: strokeCap);
+
+  @override
+  Vector strokeJoin(StrokeJoin strokeJoin) => this(strokeJoin: strokeJoin);
+
+  @override
+  Vector strokeDashes(List<double> strokeDashes) =>
+      this(strokeDashes: strokeDashes);
+
+  @override
+  Vector strokeMiterAngle(double strokeMiterAngle) =>
+      this(strokeMiterAngle: strokeMiterAngle);
+
+  @override
+  Vector opacity(double opacity) => this(opacity: opacity);
+
+  @override
+  Vector isMask(bool isMask) => this(isMask: isMask);
+
+  @override
+  Vector fills(List<Paint> fills) => this(fills: fills);
+
+  @override
+  Vector fillGeometry(List<Path> fillGeometry) =>
+      this(fillGeometry: fillGeometry);
+
+  @override
+  Vector strokes(List<Paint> strokes) => this(strokes: strokes);
+
+  @override
+  Vector blendMode(BlendMode? blendMode) => this(blendMode: blendMode);
+
+  @override
+  Vector layoutAlign(LayoutAlign? layoutAlign) =>
+      this(layoutAlign: layoutAlign);
+
+  @override
+  Vector constraints(LayoutConstraint? constraints) =>
+      this(constraints: constraints);
+
+  @override
+  Vector transitionNodeID(String? transitionNodeID) =>
+      this(transitionNodeID: transitionNodeID);
+
+  @override
+  Vector transitionDuration(double? transitionDuration) =>
+      this(transitionDuration: transitionDuration);
+
+  @override
+  Vector transitionEasing(EasingType? transitionEasing) =>
+      this(transitionEasing: transitionEasing);
+
+  @override
+  Vector absoluteBoundingBox(SizeRectangle? absoluteBoundingBox) =>
+      this(absoluteBoundingBox: absoluteBoundingBox);
+
+  @override
+  Vector effects(List<Effect>? effects) => this(effects: effects);
+
+  @override
+  Vector size(Vector2D? size) => this(size: size);
+
+  @override
+  Vector relativeTransform(List<List<double>>? relativeTransform) =>
+      this(relativeTransform: relativeTransform);
+
+  @override
+  Vector strokeWeight(double? strokeWeight) => this(strokeWeight: strokeWeight);
+
+  @override
+  Vector individualStrokeWeights(StrokeWeights? individualStrokeWeights) =>
+      this(individualStrokeWeights: individualStrokeWeights);
+
+  @override
+  Vector strokeGeometry(List<dynamic>? strokeGeometry) =>
+      this(strokeGeometry: strokeGeometry);
+
+  @override
+  Vector strokeAlign(StrokeAlign? strokeAlign) =>
+      this(strokeAlign: strokeAlign);
+
+  @override
+  Vector styles(Map<StyleTypeKey, String>? styles) => this(styles: styles);
+
+  @override
+  Vector absoluteRenderBounds(SizeRectangle? absoluteRenderBounds) =>
+      this(absoluteRenderBounds: absoluteRenderBounds);
+
+  @override
+  Vector fillOverrideTable(Map<int, PaintOverride>? fillOverrideTable) =>
+      this(fillOverrideTable: fillOverrideTable);
+
+  @override
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Vector(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -289,86 +495,9 @@ class _$VectorCWProxyImpl implements _$VectorCWProxy {
 }
 
 extension $VectorCopyWith on Vector {
-  /// Returns a callable class that can be used as follows: `instanceOfVector.copyWith(...)`.
+  /// Returns a callable class that can be used as follows: `instanceOfVector.copyWith(...)` or like so:`instanceOfVector.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$VectorCWProxy get copyWith => _$VectorCWProxyImpl(this);
-
-  /// Copies the object with the specific fields set to `null`. If you pass `false` as a parameter, nothing will be done and it will be ignored. Don't do it. Prefer `copyWith(field: null)`.
-  ///
-  /// Usage
-  /// ```dart
-  /// Vector(...).copyWithNull(firstField: true, secondField: true)
-  /// ````
-  Vector copyWithNull({
-    bool componentPropertyReferencesMap = false,
-    bool name = false,
-    bool rotation = false,
-    bool blendMode = false,
-    bool layoutAlign = false,
-    bool constraints = false,
-    bool transitionNodeID = false,
-    bool transitionDuration = false,
-    bool transitionEasing = false,
-    bool absoluteBoundingBox = false,
-    bool effects = false,
-    bool size = false,
-    bool relativeTransform = false,
-    bool strokeWeight = false,
-    bool individualStrokeWeights = false,
-    bool strokeGeometry = false,
-    bool strokeAlign = false,
-    bool styles = false,
-    bool absoluteRenderBounds = false,
-    bool fillOverrideTable = false,
-  }) {
-    return Vector(
-      id: id,
-      visible: visible,
-      componentPropertyReferencesMap: componentPropertyReferencesMap == true
-          ? null
-          : this.componentPropertyReferencesMap,
-      name: name == true ? null : this.name,
-      rotation: rotation == true ? null : this.rotation,
-      pluginData: pluginData,
-      sharedPluginData: sharedPluginData,
-      locked: locked,
-      exportSettings: exportSettings,
-      preserveRatio: preserveRatio,
-      layoutGrow: layoutGrow,
-      strokeCap: strokeCap,
-      strokeJoin: strokeJoin,
-      strokeDashes: strokeDashes,
-      strokeMiterAngle: strokeMiterAngle,
-      opacity: opacity,
-      isMask: isMask,
-      fills: fills,
-      fillGeometry: fillGeometry,
-      strokes: strokes,
-      blendMode: blendMode == true ? null : this.blendMode,
-      layoutAlign: layoutAlign == true ? null : this.layoutAlign,
-      constraints: constraints == true ? null : this.constraints,
-      transitionNodeID: transitionNodeID == true ? null : this.transitionNodeID,
-      transitionDuration:
-          transitionDuration == true ? null : this.transitionDuration,
-      transitionEasing: transitionEasing == true ? null : this.transitionEasing,
-      absoluteBoundingBox:
-          absoluteBoundingBox == true ? null : this.absoluteBoundingBox,
-      effects: effects == true ? null : this.effects,
-      size: size == true ? null : this.size,
-      relativeTransform:
-          relativeTransform == true ? null : this.relativeTransform,
-      strokeWeight: strokeWeight == true ? null : this.strokeWeight,
-      individualStrokeWeights:
-          individualStrokeWeights == true ? null : this.individualStrokeWeights,
-      strokeGeometry: strokeGeometry == true ? null : this.strokeGeometry,
-      strokeAlign: strokeAlign == true ? null : this.strokeAlign,
-      styles: styles == true ? null : this.styles,
-      absoluteRenderBounds:
-          absoluteRenderBounds == true ? null : this.absoluteRenderBounds,
-      fillOverrideTable:
-          fillOverrideTable == true ? null : this.fillOverrideTable,
-    );
-  }
 }
 
 // **************************************************************************

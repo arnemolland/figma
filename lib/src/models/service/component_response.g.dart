@@ -7,7 +7,13 @@ part of 'component_response.dart';
 // **************************************************************************
 
 abstract class _$ComponentResponseCWProxy {
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  ComponentResponse status(int? status);
+
+  ComponentResponse error(bool? error);
+
+  ComponentResponse component(Component? component);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ComponentResponse(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -20,15 +26,25 @@ abstract class _$ComponentResponseCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfComponentResponse.copyWith(...)`.
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfComponentResponse.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfComponentResponse.copyWith.fieldName(...)`
 class _$ComponentResponseCWProxyImpl implements _$ComponentResponseCWProxy {
   const _$ComponentResponseCWProxyImpl(this._value);
 
   final ComponentResponse _value;
 
   @override
+  ComponentResponse status(int? status) => this(status: status);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  @override
+  ComponentResponse error(bool? error) => this(error: error);
+
+  @override
+  ComponentResponse component(Component? component) =>
+      this(component: component);
+
+  @override
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ComponentResponse(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -57,28 +73,10 @@ class _$ComponentResponseCWProxyImpl implements _$ComponentResponseCWProxy {
 }
 
 extension $ComponentResponseCopyWith on ComponentResponse {
-  /// Returns a callable class that can be used as follows: `instanceOfComponentResponse.copyWith(...)`.
+  /// Returns a callable class that can be used as follows: `instanceOfComponentResponse.copyWith(...)` or like so:`instanceOfComponentResponse.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$ComponentResponseCWProxy get copyWith =>
       _$ComponentResponseCWProxyImpl(this);
-
-  /// Copies the object with the specific fields set to `null`. If you pass `false` as a parameter, nothing will be done and it will be ignored. Don't do it. Prefer `copyWith(field: null)`.
-  ///
-  /// Usage
-  /// ```dart
-  /// ComponentResponse(...).copyWithNull(firstField: true, secondField: true)
-  /// ````
-  ComponentResponse copyWithNull({
-    bool status = false,
-    bool error = false,
-    bool component = false,
-  }) {
-    return ComponentResponse(
-      status: status == true ? null : this.status,
-      error: error == true ? null : this.error,
-      component: component == true ? null : this.component,
-    );
-  }
 }
 
 // **************************************************************************

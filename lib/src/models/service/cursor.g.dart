@@ -7,7 +7,11 @@ part of 'cursor.dart';
 // **************************************************************************
 
 abstract class _$CursorCWProxy {
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  Cursor before(int? before);
+
+  Cursor after(int? after);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Cursor(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -19,15 +23,21 @@ abstract class _$CursorCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfCursor.copyWith(...)`.
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfCursor.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfCursor.copyWith.fieldName(...)`
 class _$CursorCWProxyImpl implements _$CursorCWProxy {
   const _$CursorCWProxyImpl(this._value);
 
   final Cursor _value;
 
   @override
+  Cursor before(int? before) => this(before: before);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  @override
+  Cursor after(int? after) => this(after: after);
+
+  @override
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Cursor(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -51,25 +61,9 @@ class _$CursorCWProxyImpl implements _$CursorCWProxy {
 }
 
 extension $CursorCopyWith on Cursor {
-  /// Returns a callable class that can be used as follows: `instanceOfCursor.copyWith(...)`.
+  /// Returns a callable class that can be used as follows: `instanceOfCursor.copyWith(...)` or like so:`instanceOfCursor.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$CursorCWProxy get copyWith => _$CursorCWProxyImpl(this);
-
-  /// Copies the object with the specific fields set to `null`. If you pass `false` as a parameter, nothing will be done and it will be ignored. Don't do it. Prefer `copyWith(field: null)`.
-  ///
-  /// Usage
-  /// ```dart
-  /// Cursor(...).copyWithNull(firstField: true, secondField: true)
-  /// ````
-  Cursor copyWithNull({
-    bool before = false,
-    bool after = false,
-  }) {
-    return Cursor(
-      before: before == true ? null : this.before,
-      after: after == true ? null : this.after,
-    );
-  }
 }
 
 // **************************************************************************

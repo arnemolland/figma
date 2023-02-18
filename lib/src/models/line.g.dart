@@ -7,7 +7,82 @@ part of 'line.dart';
 // **************************************************************************
 
 abstract class _$LineCWProxy {
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  Line id(String id);
+
+  Line visible(bool visible);
+
+  Line locked(bool locked);
+
+  Line exportSettings(List<ExportSetting> exportSettings);
+
+  Line preserveRatio(bool preserveRatio);
+
+  Line layoutGrow(double layoutGrow);
+
+  Line opacity(double opacity);
+
+  Line isMask(bool isMask);
+
+  Line fills(List<Paint> fills);
+
+  Line fillGeometry(List<Path> fillGeometry);
+
+  Line strokes(List<Paint> strokes);
+
+  Line strokeCap(StrokeCap strokeCap);
+
+  Line strokeJoin(StrokeJoin strokeJoin);
+
+  Line strokeDashes(List<double> strokeDashes);
+
+  Line strokeMiterAngle(double strokeMiterAngle);
+
+  Line componentPropertyReferencesMap(
+      Map<String, String>? componentPropertyReferencesMap);
+
+  Line name(String? name);
+
+  Line rotation(double? rotation);
+
+  Line pluginData(dynamic pluginData);
+
+  Line sharedPluginData(dynamic sharedPluginData);
+
+  Line blendMode(BlendMode? blendMode);
+
+  Line layoutAlign(LayoutAlign? layoutAlign);
+
+  Line constraints(LayoutConstraint? constraints);
+
+  Line transitionNodeID(String? transitionNodeID);
+
+  Line transitionDuration(double? transitionDuration);
+
+  Line transitionEasing(EasingType? transitionEasing);
+
+  Line absoluteBoundingBox(SizeRectangle? absoluteBoundingBox);
+
+  Line effects(List<Effect>? effects);
+
+  Line size(Vector2D? size);
+
+  Line relativeTransform(List<List<double>>? relativeTransform);
+
+  Line strokeWeight(double? strokeWeight);
+
+  Line strokeGeometry(List<dynamic>? strokeGeometry);
+
+  Line strokeAlign(StrokeAlign? strokeAlign);
+
+  Line styles(Map<StyleTypeKey, String>? styles);
+
+  Line absoluteRenderBounds(SizeRectangle? absoluteRenderBounds);
+
+  Line fillOverrideTable(Map<int, PaintOverride>? fillOverrideTable);
+
+  Line individualStrokeWeights(StrokeWeights? individualStrokeWeights);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Line(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -32,8 +107,8 @@ abstract class _$LineCWProxy {
     Map<String, String>? componentPropertyReferencesMap,
     String? name,
     double? rotation,
-    dynamic pluginData,
-    dynamic sharedPluginData,
+    dynamic? pluginData,
+    dynamic? sharedPluginData,
     BlendMode? blendMode,
     LayoutAlign? layoutAlign,
     LayoutConstraint? constraints,
@@ -54,15 +129,143 @@ abstract class _$LineCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfLine.copyWith(...)`.
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfLine.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfLine.copyWith.fieldName(...)`
 class _$LineCWProxyImpl implements _$LineCWProxy {
   const _$LineCWProxyImpl(this._value);
 
   final Line _value;
 
   @override
+  Line id(String id) => this(id: id);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  @override
+  Line visible(bool visible) => this(visible: visible);
+
+  @override
+  Line locked(bool locked) => this(locked: locked);
+
+  @override
+  Line exportSettings(List<ExportSetting> exportSettings) =>
+      this(exportSettings: exportSettings);
+
+  @override
+  Line preserveRatio(bool preserveRatio) => this(preserveRatio: preserveRatio);
+
+  @override
+  Line layoutGrow(double layoutGrow) => this(layoutGrow: layoutGrow);
+
+  @override
+  Line opacity(double opacity) => this(opacity: opacity);
+
+  @override
+  Line isMask(bool isMask) => this(isMask: isMask);
+
+  @override
+  Line fills(List<Paint> fills) => this(fills: fills);
+
+  @override
+  Line fillGeometry(List<Path> fillGeometry) =>
+      this(fillGeometry: fillGeometry);
+
+  @override
+  Line strokes(List<Paint> strokes) => this(strokes: strokes);
+
+  @override
+  Line strokeCap(StrokeCap strokeCap) => this(strokeCap: strokeCap);
+
+  @override
+  Line strokeJoin(StrokeJoin strokeJoin) => this(strokeJoin: strokeJoin);
+
+  @override
+  Line strokeDashes(List<double> strokeDashes) =>
+      this(strokeDashes: strokeDashes);
+
+  @override
+  Line strokeMiterAngle(double strokeMiterAngle) =>
+      this(strokeMiterAngle: strokeMiterAngle);
+
+  @override
+  Line componentPropertyReferencesMap(
+          Map<String, String>? componentPropertyReferencesMap) =>
+      this(componentPropertyReferencesMap: componentPropertyReferencesMap);
+
+  @override
+  Line name(String? name) => this(name: name);
+
+  @override
+  Line rotation(double? rotation) => this(rotation: rotation);
+
+  @override
+  Line pluginData(dynamic pluginData) => this(pluginData: pluginData);
+
+  @override
+  Line sharedPluginData(dynamic sharedPluginData) =>
+      this(sharedPluginData: sharedPluginData);
+
+  @override
+  Line blendMode(BlendMode? blendMode) => this(blendMode: blendMode);
+
+  @override
+  Line layoutAlign(LayoutAlign? layoutAlign) => this(layoutAlign: layoutAlign);
+
+  @override
+  Line constraints(LayoutConstraint? constraints) =>
+      this(constraints: constraints);
+
+  @override
+  Line transitionNodeID(String? transitionNodeID) =>
+      this(transitionNodeID: transitionNodeID);
+
+  @override
+  Line transitionDuration(double? transitionDuration) =>
+      this(transitionDuration: transitionDuration);
+
+  @override
+  Line transitionEasing(EasingType? transitionEasing) =>
+      this(transitionEasing: transitionEasing);
+
+  @override
+  Line absoluteBoundingBox(SizeRectangle? absoluteBoundingBox) =>
+      this(absoluteBoundingBox: absoluteBoundingBox);
+
+  @override
+  Line effects(List<Effect>? effects) => this(effects: effects);
+
+  @override
+  Line size(Vector2D? size) => this(size: size);
+
+  @override
+  Line relativeTransform(List<List<double>>? relativeTransform) =>
+      this(relativeTransform: relativeTransform);
+
+  @override
+  Line strokeWeight(double? strokeWeight) => this(strokeWeight: strokeWeight);
+
+  @override
+  Line strokeGeometry(List<dynamic>? strokeGeometry) =>
+      this(strokeGeometry: strokeGeometry);
+
+  @override
+  Line strokeAlign(StrokeAlign? strokeAlign) => this(strokeAlign: strokeAlign);
+
+  @override
+  Line styles(Map<StyleTypeKey, String>? styles) => this(styles: styles);
+
+  @override
+  Line absoluteRenderBounds(SizeRectangle? absoluteRenderBounds) =>
+      this(absoluteRenderBounds: absoluteRenderBounds);
+
+  @override
+  Line fillOverrideTable(Map<int, PaintOverride>? fillOverrideTable) =>
+      this(fillOverrideTable: fillOverrideTable);
+
+  @override
+  Line individualStrokeWeights(StrokeWeights? individualStrokeWeights) =>
+      this(individualStrokeWeights: individualStrokeWeights);
+
+  @override
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Line(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -289,86 +492,9 @@ class _$LineCWProxyImpl implements _$LineCWProxy {
 }
 
 extension $LineCopyWith on Line {
-  /// Returns a callable class that can be used as follows: `instanceOfLine.copyWith(...)`.
+  /// Returns a callable class that can be used as follows: `instanceOfLine.copyWith(...)` or like so:`instanceOfLine.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$LineCWProxy get copyWith => _$LineCWProxyImpl(this);
-
-  /// Copies the object with the specific fields set to `null`. If you pass `false` as a parameter, nothing will be done and it will be ignored. Don't do it. Prefer `copyWith(field: null)`.
-  ///
-  /// Usage
-  /// ```dart
-  /// Line(...).copyWithNull(firstField: true, secondField: true)
-  /// ````
-  Line copyWithNull({
-    bool componentPropertyReferencesMap = false,
-    bool name = false,
-    bool rotation = false,
-    bool blendMode = false,
-    bool layoutAlign = false,
-    bool constraints = false,
-    bool transitionNodeID = false,
-    bool transitionDuration = false,
-    bool transitionEasing = false,
-    bool absoluteBoundingBox = false,
-    bool effects = false,
-    bool size = false,
-    bool relativeTransform = false,
-    bool strokeWeight = false,
-    bool strokeGeometry = false,
-    bool strokeAlign = false,
-    bool styles = false,
-    bool absoluteRenderBounds = false,
-    bool fillOverrideTable = false,
-    bool individualStrokeWeights = false,
-  }) {
-    return Line(
-      id: id,
-      visible: visible,
-      locked: locked,
-      exportSettings: exportSettings,
-      preserveRatio: preserveRatio,
-      layoutGrow: layoutGrow,
-      opacity: opacity,
-      isMask: isMask,
-      fills: fills,
-      fillGeometry: fillGeometry,
-      strokes: strokes,
-      strokeCap: strokeCap,
-      strokeJoin: strokeJoin,
-      strokeDashes: strokeDashes,
-      strokeMiterAngle: strokeMiterAngle,
-      componentPropertyReferencesMap: componentPropertyReferencesMap == true
-          ? null
-          : this.componentPropertyReferencesMap,
-      name: name == true ? null : this.name,
-      rotation: rotation == true ? null : this.rotation,
-      pluginData: pluginData,
-      sharedPluginData: sharedPluginData,
-      blendMode: blendMode == true ? null : this.blendMode,
-      layoutAlign: layoutAlign == true ? null : this.layoutAlign,
-      constraints: constraints == true ? null : this.constraints,
-      transitionNodeID: transitionNodeID == true ? null : this.transitionNodeID,
-      transitionDuration:
-          transitionDuration == true ? null : this.transitionDuration,
-      transitionEasing: transitionEasing == true ? null : this.transitionEasing,
-      absoluteBoundingBox:
-          absoluteBoundingBox == true ? null : this.absoluteBoundingBox,
-      effects: effects == true ? null : this.effects,
-      size: size == true ? null : this.size,
-      relativeTransform:
-          relativeTransform == true ? null : this.relativeTransform,
-      strokeWeight: strokeWeight == true ? null : this.strokeWeight,
-      strokeGeometry: strokeGeometry == true ? null : this.strokeGeometry,
-      strokeAlign: strokeAlign == true ? null : this.strokeAlign,
-      styles: styles == true ? null : this.styles,
-      absoluteRenderBounds:
-          absoluteRenderBounds == true ? null : this.absoluteRenderBounds,
-      fillOverrideTable:
-          fillOverrideTable == true ? null : this.fillOverrideTable,
-      individualStrokeWeights:
-          individualStrokeWeights == true ? null : this.individualStrokeWeights,
-    );
-  }
 }
 
 // **************************************************************************

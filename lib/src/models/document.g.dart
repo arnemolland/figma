@@ -7,7 +7,26 @@ part of 'document.dart';
 // **************************************************************************
 
 abstract class _$DocumentCWProxy {
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  Document id(String id);
+
+  Document visible(bool visible);
+
+  Document componentPropertyReferencesMap(
+      Map<String, String>? componentPropertyReferencesMap);
+
+  Document rotation(double? rotation);
+
+  Document type(String? type);
+
+  Document name(String? name);
+
+  Document pluginData(dynamic pluginData);
+
+  Document sharedPluginData(dynamic sharedPluginData);
+
+  Document children(List<Node?>? children);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Document(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -20,21 +39,51 @@ abstract class _$DocumentCWProxy {
     double? rotation,
     String? type,
     String? name,
-    dynamic pluginData,
-    dynamic sharedPluginData,
+    dynamic? pluginData,
+    dynamic? sharedPluginData,
     List<Node?>? children,
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfDocument.copyWith(...)`.
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfDocument.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfDocument.copyWith.fieldName(...)`
 class _$DocumentCWProxyImpl implements _$DocumentCWProxy {
   const _$DocumentCWProxyImpl(this._value);
 
   final Document _value;
 
   @override
+  Document id(String id) => this(id: id);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  @override
+  Document visible(bool visible) => this(visible: visible);
+
+  @override
+  Document componentPropertyReferencesMap(
+          Map<String, String>? componentPropertyReferencesMap) =>
+      this(componentPropertyReferencesMap: componentPropertyReferencesMap);
+
+  @override
+  Document rotation(double? rotation) => this(rotation: rotation);
+
+  @override
+  Document type(String? type) => this(type: type);
+
+  @override
+  Document name(String? name) => this(name: name);
+
+  @override
+  Document pluginData(dynamic pluginData) => this(pluginData: pluginData);
+
+  @override
+  Document sharedPluginData(dynamic sharedPluginData) =>
+      this(sharedPluginData: sharedPluginData);
+
+  @override
+  Document children(List<Node?>? children) => this(children: children);
+
+  @override
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Document(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -100,37 +149,9 @@ class _$DocumentCWProxyImpl implements _$DocumentCWProxy {
 }
 
 extension $DocumentCopyWith on Document {
-  /// Returns a callable class that can be used as follows: `instanceOfDocument.copyWith(...)`.
+  /// Returns a callable class that can be used as follows: `instanceOfDocument.copyWith(...)` or like so:`instanceOfDocument.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$DocumentCWProxy get copyWith => _$DocumentCWProxyImpl(this);
-
-  /// Copies the object with the specific fields set to `null`. If you pass `false` as a parameter, nothing will be done and it will be ignored. Don't do it. Prefer `copyWith(field: null)`.
-  ///
-  /// Usage
-  /// ```dart
-  /// Document(...).copyWithNull(firstField: true, secondField: true)
-  /// ````
-  Document copyWithNull({
-    bool componentPropertyReferencesMap = false,
-    bool rotation = false,
-    bool type = false,
-    bool name = false,
-    bool children = false,
-  }) {
-    return Document(
-      id: id,
-      visible: visible,
-      componentPropertyReferencesMap: componentPropertyReferencesMap == true
-          ? null
-          : this.componentPropertyReferencesMap,
-      rotation: rotation == true ? null : this.rotation,
-      type: type == true ? null : this.type,
-      name: name == true ? null : this.name,
-      pluginData: pluginData,
-      sharedPluginData: sharedPluginData,
-      children: children == true ? null : this.children,
-    );
-  }
 }
 
 // **************************************************************************

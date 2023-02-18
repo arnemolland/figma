@@ -7,7 +7,17 @@ part of 'version.dart';
 // **************************************************************************
 
 abstract class _$VersionCWProxy {
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  Version id(String id);
+
+  Version createdAt(DateTime createdAt);
+
+  Version label(String? label);
+
+  Version description(String? description);
+
+  Version user(User user);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Version(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -22,15 +32,30 @@ abstract class _$VersionCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfVersion.copyWith(...)`.
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfVersion.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfVersion.copyWith.fieldName(...)`
 class _$VersionCWProxyImpl implements _$VersionCWProxy {
   const _$VersionCWProxyImpl(this._value);
 
   final Version _value;
 
   @override
+  Version id(String id) => this(id: id);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  @override
+  Version createdAt(DateTime createdAt) => this(createdAt: createdAt);
+
+  @override
+  Version label(String? label) => this(label: label);
+
+  @override
+  Version description(String? description) => this(description: description);
+
+  @override
+  Version user(User user) => this(user: user);
+
+  @override
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Version(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -72,28 +97,9 @@ class _$VersionCWProxyImpl implements _$VersionCWProxy {
 }
 
 extension $VersionCopyWith on Version {
-  /// Returns a callable class that can be used as follows: `instanceOfVersion.copyWith(...)`.
+  /// Returns a callable class that can be used as follows: `instanceOfVersion.copyWith(...)` or like so:`instanceOfVersion.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$VersionCWProxy get copyWith => _$VersionCWProxyImpl(this);
-
-  /// Copies the object with the specific fields set to `null`. If you pass `false` as a parameter, nothing will be done and it will be ignored. Don't do it. Prefer `copyWith(field: null)`.
-  ///
-  /// Usage
-  /// ```dart
-  /// Version(...).copyWithNull(firstField: true, secondField: true)
-  /// ````
-  Version copyWithNull({
-    bool label = false,
-    bool description = false,
-  }) {
-    return Version(
-      id: id,
-      createdAt: createdAt,
-      label: label == true ? null : this.label,
-      description: description == true ? null : this.description,
-      user: user,
-    );
-  }
 }
 
 // **************************************************************************

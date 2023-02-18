@@ -7,7 +7,24 @@ part of 'node.dart';
 // **************************************************************************
 
 abstract class _$NodeCWProxy {
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  Node id(String id);
+
+  Node name(String? name);
+
+  Node visible(bool visible);
+
+  Node type(String? type);
+
+  Node pluginData(dynamic pluginData);
+
+  Node sharedPluginData(dynamic sharedPluginData);
+
+  Node rotation(double? rotation);
+
+  Node componentPropertyReferencesMap(
+      Map<String, String>? componentPropertyReferencesMap);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Node(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -18,22 +35,49 @@ abstract class _$NodeCWProxy {
     String? name,
     bool? visible,
     String? type,
-    dynamic pluginData,
-    dynamic sharedPluginData,
+    dynamic? pluginData,
+    dynamic? sharedPluginData,
     double? rotation,
     Map<String, String>? componentPropertyReferencesMap,
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfNode.copyWith(...)`.
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfNode.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfNode.copyWith.fieldName(...)`
 class _$NodeCWProxyImpl implements _$NodeCWProxy {
   const _$NodeCWProxyImpl(this._value);
 
   final Node _value;
 
   @override
+  Node id(String id) => this(id: id);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  @override
+  Node name(String? name) => this(name: name);
+
+  @override
+  Node visible(bool visible) => this(visible: visible);
+
+  @override
+  Node type(String? type) => this(type: type);
+
+  @override
+  Node pluginData(dynamic pluginData) => this(pluginData: pluginData);
+
+  @override
+  Node sharedPluginData(dynamic sharedPluginData) =>
+      this(sharedPluginData: sharedPluginData);
+
+  @override
+  Node rotation(double? rotation) => this(rotation: rotation);
+
+  @override
+  Node componentPropertyReferencesMap(
+          Map<String, String>? componentPropertyReferencesMap) =>
+      this(componentPropertyReferencesMap: componentPropertyReferencesMap);
+
+  @override
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Node(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -94,35 +138,9 @@ class _$NodeCWProxyImpl implements _$NodeCWProxy {
 }
 
 extension $NodeCopyWith on Node {
-  /// Returns a callable class that can be used as follows: `instanceOfNode.copyWith(...)`.
+  /// Returns a callable class that can be used as follows: `instanceOfNode.copyWith(...)` or like so:`instanceOfNode.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$NodeCWProxy get copyWith => _$NodeCWProxyImpl(this);
-
-  /// Copies the object with the specific fields set to `null`. If you pass `false` as a parameter, nothing will be done and it will be ignored. Don't do it. Prefer `copyWith(field: null)`.
-  ///
-  /// Usage
-  /// ```dart
-  /// Node(...).copyWithNull(firstField: true, secondField: true)
-  /// ````
-  Node copyWithNull({
-    bool name = false,
-    bool type = false,
-    bool rotation = false,
-    bool componentPropertyReferencesMap = false,
-  }) {
-    return Node(
-      id: id,
-      name: name == true ? null : this.name,
-      visible: visible,
-      type: type == true ? null : this.type,
-      pluginData: pluginData,
-      sharedPluginData: sharedPluginData,
-      rotation: rotation == true ? null : this.rotation,
-      componentPropertyReferencesMap: componentPropertyReferencesMap == true
-          ? null
-          : this.componentPropertyReferencesMap,
-    );
-  }
 }
 
 // **************************************************************************

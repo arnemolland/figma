@@ -7,7 +7,11 @@ part of 'size.dart';
 // **************************************************************************
 
 abstract class _$SizeCWProxy {
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  Size width(double width);
+
+  Size height(double height);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Size(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -19,15 +23,21 @@ abstract class _$SizeCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfSize.copyWith(...)`.
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfSize.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfSize.copyWith.fieldName(...)`
 class _$SizeCWProxyImpl implements _$SizeCWProxy {
   const _$SizeCWProxyImpl(this._value);
 
   final Size _value;
 
   @override
+  Size width(double width) => this(width: width);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  @override
+  Size height(double height) => this(height: height);
+
+  @override
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Size(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -53,7 +63,7 @@ class _$SizeCWProxyImpl implements _$SizeCWProxy {
 }
 
 extension $SizeCopyWith on Size {
-  /// Returns a callable class that can be used as follows: `instanceOfSize.copyWith(...)`.
+  /// Returns a callable class that can be used as follows: `instanceOfSize.copyWith(...)` or like so:`instanceOfSize.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$SizeCWProxy get copyWith => _$SizeCWProxyImpl(this);
 }

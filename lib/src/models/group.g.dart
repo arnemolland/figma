@@ -7,7 +7,110 @@ part of 'group.dart';
 // **************************************************************************
 
 abstract class _$GroupCWProxy {
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  Group id(String id);
+
+  Group visible(bool visible);
+
+  Group locked(bool locked);
+
+  Group fills(List<Paint> fills);
+
+  Group strokes(List<Paint> strokes);
+
+  Group exportSettings(List<ExportSetting> exportSettings);
+
+  Group children(List<Node> children);
+
+  Group opacity(double opacity);
+
+  Group layoutPositioning(LayoutPositioning layoutPositioning);
+
+  Group itemReverseZIndex(bool itemReverseZIndex);
+
+  Group strokesIncludedInLayout(bool strokesIncludedInLayout);
+
+  Group counterAxisSizingMode(CounterAxisSizingMode counterAxisSizingMode);
+
+  Group horizontalPadding(double horizontalPadding);
+
+  Group verticalPadding(double verticalPadding);
+
+  Group itemSpacing(double itemSpacing);
+
+  Group layoutGrids(List<LayoutGrid> layoutGrids);
+
+  Group overflowDirection(OverflowDirection overflowDirection);
+
+  Group effects(List<Effect> effects);
+
+  Group isMask(bool isMask);
+
+  Group isMaskOutline(bool isMaskOutline);
+
+  Group counterAxisAlignItems(CounterAxisAlignItems counterAxisAlignItems);
+
+  Group primaryAxisAlignItems(PrimaryAxisAlignItems primaryAxisAlignItems);
+
+  Group primaryAxisSizingMode(PrimaryAxisSizingMode primaryAxisSizingMode);
+
+  Group paddingBottom(double paddingBottom);
+
+  Group paddingLeft(double paddingLeft);
+
+  Group paddingRight(double paddingRight);
+
+  Group paddingTop(double paddingTop);
+
+  Group size(Vector2D? size);
+
+  Group styles(Map<StyleTypeKey, String>? styles);
+
+  Group componentPropertyReferencesMap(
+      Map<String, String>? componentPropertyReferencesMap);
+
+  Group absoluteBoundingBox(SizeRectangle? absoluteBoundingBox);
+
+  Group absoluteRenderBounds(SizeRectangle? absoluteRenderBounds);
+
+  Group rotation(double? rotation);
+
+  Group name(String? name);
+
+  Group pluginData(dynamic pluginData);
+
+  Group sharedPluginData(dynamic sharedPluginData);
+
+  Group type(String? type);
+
+  Group strokeWeight(double? strokeWeight);
+
+  Group strokeAlign(StrokeAlign? strokeAlign);
+
+  Group cornerRadius(double? cornerRadius);
+
+  Group rectangleCornerRadii(List<double>? rectangleCornerRadii);
+
+  Group blendMode(BlendMode? blendMode);
+
+  Group preserveRatio(bool? preserveRatio);
+
+  Group constraints(LayoutConstraint? constraints);
+
+  Group layoutAlign(LayoutAlign? layoutAlign);
+
+  Group transitionNodeID(String? transitionNodeID);
+
+  Group transitionDuration(double? transitionDuration);
+
+  Group relativeTransform(List<List<double>>? relativeTransform);
+
+  Group clipsContent(bool? clipsContent);
+
+  Group layoutMode(LayoutMode? layoutMode);
+
+  Group individualStrokeWeights(StrokeWeights? individualStrokeWeights);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Group(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -48,8 +151,8 @@ abstract class _$GroupCWProxy {
     SizeRectangle? absoluteRenderBounds,
     double? rotation,
     String? name,
-    dynamic pluginData,
-    dynamic sharedPluginData,
+    dynamic? pluginData,
+    dynamic? sharedPluginData,
     String? type,
     double? strokeWeight,
     StrokeAlign? strokeAlign,
@@ -68,15 +171,193 @@ abstract class _$GroupCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfGroup.copyWith(...)`.
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfGroup.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfGroup.copyWith.fieldName(...)`
 class _$GroupCWProxyImpl implements _$GroupCWProxy {
   const _$GroupCWProxyImpl(this._value);
 
   final Group _value;
 
   @override
+  Group id(String id) => this(id: id);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  @override
+  Group visible(bool visible) => this(visible: visible);
+
+  @override
+  Group locked(bool locked) => this(locked: locked);
+
+  @override
+  Group fills(List<Paint> fills) => this(fills: fills);
+
+  @override
+  Group strokes(List<Paint> strokes) => this(strokes: strokes);
+
+  @override
+  Group exportSettings(List<ExportSetting> exportSettings) =>
+      this(exportSettings: exportSettings);
+
+  @override
+  Group children(List<Node> children) => this(children: children);
+
+  @override
+  Group opacity(double opacity) => this(opacity: opacity);
+
+  @override
+  Group layoutPositioning(LayoutPositioning layoutPositioning) =>
+      this(layoutPositioning: layoutPositioning);
+
+  @override
+  Group itemReverseZIndex(bool itemReverseZIndex) =>
+      this(itemReverseZIndex: itemReverseZIndex);
+
+  @override
+  Group strokesIncludedInLayout(bool strokesIncludedInLayout) =>
+      this(strokesIncludedInLayout: strokesIncludedInLayout);
+
+  @override
+  Group counterAxisSizingMode(CounterAxisSizingMode counterAxisSizingMode) =>
+      this(counterAxisSizingMode: counterAxisSizingMode);
+
+  @override
+  Group horizontalPadding(double horizontalPadding) =>
+      this(horizontalPadding: horizontalPadding);
+
+  @override
+  Group verticalPadding(double verticalPadding) =>
+      this(verticalPadding: verticalPadding);
+
+  @override
+  Group itemSpacing(double itemSpacing) => this(itemSpacing: itemSpacing);
+
+  @override
+  Group layoutGrids(List<LayoutGrid> layoutGrids) =>
+      this(layoutGrids: layoutGrids);
+
+  @override
+  Group overflowDirection(OverflowDirection overflowDirection) =>
+      this(overflowDirection: overflowDirection);
+
+  @override
+  Group effects(List<Effect> effects) => this(effects: effects);
+
+  @override
+  Group isMask(bool isMask) => this(isMask: isMask);
+
+  @override
+  Group isMaskOutline(bool isMaskOutline) => this(isMaskOutline: isMaskOutline);
+
+  @override
+  Group counterAxisAlignItems(CounterAxisAlignItems counterAxisAlignItems) =>
+      this(counterAxisAlignItems: counterAxisAlignItems);
+
+  @override
+  Group primaryAxisAlignItems(PrimaryAxisAlignItems primaryAxisAlignItems) =>
+      this(primaryAxisAlignItems: primaryAxisAlignItems);
+
+  @override
+  Group primaryAxisSizingMode(PrimaryAxisSizingMode primaryAxisSizingMode) =>
+      this(primaryAxisSizingMode: primaryAxisSizingMode);
+
+  @override
+  Group paddingBottom(double paddingBottom) =>
+      this(paddingBottom: paddingBottom);
+
+  @override
+  Group paddingLeft(double paddingLeft) => this(paddingLeft: paddingLeft);
+
+  @override
+  Group paddingRight(double paddingRight) => this(paddingRight: paddingRight);
+
+  @override
+  Group paddingTop(double paddingTop) => this(paddingTop: paddingTop);
+
+  @override
+  Group size(Vector2D? size) => this(size: size);
+
+  @override
+  Group styles(Map<StyleTypeKey, String>? styles) => this(styles: styles);
+
+  @override
+  Group componentPropertyReferencesMap(
+          Map<String, String>? componentPropertyReferencesMap) =>
+      this(componentPropertyReferencesMap: componentPropertyReferencesMap);
+
+  @override
+  Group absoluteBoundingBox(SizeRectangle? absoluteBoundingBox) =>
+      this(absoluteBoundingBox: absoluteBoundingBox);
+
+  @override
+  Group absoluteRenderBounds(SizeRectangle? absoluteRenderBounds) =>
+      this(absoluteRenderBounds: absoluteRenderBounds);
+
+  @override
+  Group rotation(double? rotation) => this(rotation: rotation);
+
+  @override
+  Group name(String? name) => this(name: name);
+
+  @override
+  Group pluginData(dynamic pluginData) => this(pluginData: pluginData);
+
+  @override
+  Group sharedPluginData(dynamic sharedPluginData) =>
+      this(sharedPluginData: sharedPluginData);
+
+  @override
+  Group type(String? type) => this(type: type);
+
+  @override
+  Group strokeWeight(double? strokeWeight) => this(strokeWeight: strokeWeight);
+
+  @override
+  Group strokeAlign(StrokeAlign? strokeAlign) => this(strokeAlign: strokeAlign);
+
+  @override
+  Group cornerRadius(double? cornerRadius) => this(cornerRadius: cornerRadius);
+
+  @override
+  Group rectangleCornerRadii(List<double>? rectangleCornerRadii) =>
+      this(rectangleCornerRadii: rectangleCornerRadii);
+
+  @override
+  Group blendMode(BlendMode? blendMode) => this(blendMode: blendMode);
+
+  @override
+  Group preserveRatio(bool? preserveRatio) =>
+      this(preserveRatio: preserveRatio);
+
+  @override
+  Group constraints(LayoutConstraint? constraints) =>
+      this(constraints: constraints);
+
+  @override
+  Group layoutAlign(LayoutAlign? layoutAlign) => this(layoutAlign: layoutAlign);
+
+  @override
+  Group transitionNodeID(String? transitionNodeID) =>
+      this(transitionNodeID: transitionNodeID);
+
+  @override
+  Group transitionDuration(double? transitionDuration) =>
+      this(transitionDuration: transitionDuration);
+
+  @override
+  Group relativeTransform(List<List<double>>? relativeTransform) =>
+      this(relativeTransform: relativeTransform);
+
+  @override
+  Group clipsContent(bool? clipsContent) => this(clipsContent: clipsContent);
+
+  @override
+  Group layoutMode(LayoutMode? layoutMode) => this(layoutMode: layoutMode);
+
+  @override
+  Group individualStrokeWeights(StrokeWeights? individualStrokeWeights) =>
+      this(individualStrokeWeights: individualStrokeWeights);
+
+  @override
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Group(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -401,102 +682,9 @@ class _$GroupCWProxyImpl implements _$GroupCWProxy {
 }
 
 extension $GroupCopyWith on Group {
-  /// Returns a callable class that can be used as follows: `instanceOfGroup.copyWith(...)`.
+  /// Returns a callable class that can be used as follows: `instanceOfGroup.copyWith(...)` or like so:`instanceOfGroup.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$GroupCWProxy get copyWith => _$GroupCWProxyImpl(this);
-
-  /// Copies the object with the specific fields set to `null`. If you pass `false` as a parameter, nothing will be done and it will be ignored. Don't do it. Prefer `copyWith(field: null)`.
-  ///
-  /// Usage
-  /// ```dart
-  /// Group(...).copyWithNull(firstField: true, secondField: true)
-  /// ````
-  Group copyWithNull({
-    bool size = false,
-    bool styles = false,
-    bool componentPropertyReferencesMap = false,
-    bool absoluteBoundingBox = false,
-    bool absoluteRenderBounds = false,
-    bool rotation = false,
-    bool name = false,
-    bool type = false,
-    bool strokeWeight = false,
-    bool strokeAlign = false,
-    bool cornerRadius = false,
-    bool rectangleCornerRadii = false,
-    bool blendMode = false,
-    bool preserveRatio = false,
-    bool constraints = false,
-    bool layoutAlign = false,
-    bool transitionNodeID = false,
-    bool transitionDuration = false,
-    bool relativeTransform = false,
-    bool clipsContent = false,
-    bool layoutMode = false,
-    bool individualStrokeWeights = false,
-  }) {
-    return Group(
-      id: id,
-      visible: visible,
-      locked: locked,
-      fills: fills,
-      strokes: strokes,
-      exportSettings: exportSettings,
-      children: children,
-      opacity: opacity,
-      layoutPositioning: layoutPositioning,
-      itemReverseZIndex: itemReverseZIndex,
-      strokesIncludedInLayout: strokesIncludedInLayout,
-      counterAxisSizingMode: counterAxisSizingMode,
-      horizontalPadding: horizontalPadding,
-      verticalPadding: verticalPadding,
-      itemSpacing: itemSpacing,
-      layoutGrids: layoutGrids,
-      overflowDirection: overflowDirection,
-      effects: effects,
-      isMask: isMask,
-      isMaskOutline: isMaskOutline,
-      counterAxisAlignItems: counterAxisAlignItems,
-      primaryAxisAlignItems: primaryAxisAlignItems,
-      primaryAxisSizingMode: primaryAxisSizingMode,
-      paddingBottom: paddingBottom,
-      paddingLeft: paddingLeft,
-      paddingRight: paddingRight,
-      paddingTop: paddingTop,
-      size: size == true ? null : this.size,
-      styles: styles == true ? null : this.styles,
-      componentPropertyReferencesMap: componentPropertyReferencesMap == true
-          ? null
-          : this.componentPropertyReferencesMap,
-      absoluteBoundingBox:
-          absoluteBoundingBox == true ? null : this.absoluteBoundingBox,
-      absoluteRenderBounds:
-          absoluteRenderBounds == true ? null : this.absoluteRenderBounds,
-      rotation: rotation == true ? null : this.rotation,
-      name: name == true ? null : this.name,
-      pluginData: pluginData,
-      sharedPluginData: sharedPluginData,
-      type: type == true ? null : this.type,
-      strokeWeight: strokeWeight == true ? null : this.strokeWeight,
-      strokeAlign: strokeAlign == true ? null : this.strokeAlign,
-      cornerRadius: cornerRadius == true ? null : this.cornerRadius,
-      rectangleCornerRadii:
-          rectangleCornerRadii == true ? null : this.rectangleCornerRadii,
-      blendMode: blendMode == true ? null : this.blendMode,
-      preserveRatio: preserveRatio == true ? null : this.preserveRatio,
-      constraints: constraints == true ? null : this.constraints,
-      layoutAlign: layoutAlign == true ? null : this.layoutAlign,
-      transitionNodeID: transitionNodeID == true ? null : this.transitionNodeID,
-      transitionDuration:
-          transitionDuration == true ? null : this.transitionDuration,
-      relativeTransform:
-          relativeTransform == true ? null : this.relativeTransform,
-      clipsContent: clipsContent == true ? null : this.clipsContent,
-      layoutMode: layoutMode == true ? null : this.layoutMode,
-      individualStrokeWeights:
-          individualStrokeWeights == true ? null : this.individualStrokeWeights,
-    );
-  }
 }
 
 // **************************************************************************

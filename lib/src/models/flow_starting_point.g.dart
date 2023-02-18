@@ -7,7 +7,11 @@ part of 'flow_starting_point.dart';
 // **************************************************************************
 
 abstract class _$FlowStartingPointCWProxy {
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  FlowStartingPoint nodeId(String nodeId);
+
+  FlowStartingPoint name(String name);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `FlowStartingPoint(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -19,15 +23,21 @@ abstract class _$FlowStartingPointCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfFlowStartingPoint.copyWith(...)`.
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfFlowStartingPoint.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfFlowStartingPoint.copyWith.fieldName(...)`
 class _$FlowStartingPointCWProxyImpl implements _$FlowStartingPointCWProxy {
   const _$FlowStartingPointCWProxyImpl(this._value);
 
   final FlowStartingPoint _value;
 
   @override
+  FlowStartingPoint nodeId(String nodeId) => this(nodeId: nodeId);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  @override
+  FlowStartingPoint name(String name) => this(name: name);
+
+  @override
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `FlowStartingPoint(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -53,7 +63,7 @@ class _$FlowStartingPointCWProxyImpl implements _$FlowStartingPointCWProxy {
 }
 
 extension $FlowStartingPointCopyWith on FlowStartingPoint {
-  /// Returns a callable class that can be used as follows: `instanceOfFlowStartingPoint.copyWith(...)`.
+  /// Returns a callable class that can be used as follows: `instanceOfFlowStartingPoint.copyWith(...)` or like so:`instanceOfFlowStartingPoint.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$FlowStartingPointCWProxy get copyWith =>
       _$FlowStartingPointCWProxyImpl(this);

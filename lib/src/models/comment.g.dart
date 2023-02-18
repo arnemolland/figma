@@ -7,7 +7,23 @@ part of 'comment.dart';
 // **************************************************************************
 
 abstract class _$CommentCWProxy {
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  Comment id(String id);
+
+  Comment clientMeta(dynamic clientMeta);
+
+  Comment fileKey(String fileKey);
+
+  Comment parentId(String? parentId);
+
+  Comment user(User user);
+
+  Comment createdAt(DateTime createdAt);
+
+  Comment resolvedAt(DateTime? resolvedAt);
+
+  Comment orderId(String? orderId);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Comment(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -15,7 +31,7 @@ abstract class _$CommentCWProxy {
   /// ````
   Comment call({
     String? id,
-    dynamic clientMeta,
+    dynamic? clientMeta,
     String? fileKey,
     String? parentId,
     User? user,
@@ -25,15 +41,39 @@ abstract class _$CommentCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfComment.copyWith(...)`.
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfComment.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfComment.copyWith.fieldName(...)`
 class _$CommentCWProxyImpl implements _$CommentCWProxy {
   const _$CommentCWProxyImpl(this._value);
 
   final Comment _value;
 
   @override
+  Comment id(String id) => this(id: id);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  @override
+  Comment clientMeta(dynamic clientMeta) => this(clientMeta: clientMeta);
+
+  @override
+  Comment fileKey(String fileKey) => this(fileKey: fileKey);
+
+  @override
+  Comment parentId(String? parentId) => this(parentId: parentId);
+
+  @override
+  Comment user(User user) => this(user: user);
+
+  @override
+  Comment createdAt(DateTime createdAt) => this(createdAt: createdAt);
+
+  @override
+  Comment resolvedAt(DateTime? resolvedAt) => this(resolvedAt: resolvedAt);
+
+  @override
+  Comment orderId(String? orderId) => this(orderId: orderId);
+
+  @override
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Comment(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -93,32 +133,9 @@ class _$CommentCWProxyImpl implements _$CommentCWProxy {
 }
 
 extension $CommentCopyWith on Comment {
-  /// Returns a callable class that can be used as follows: `instanceOfComment.copyWith(...)`.
+  /// Returns a callable class that can be used as follows: `instanceOfComment.copyWith(...)` or like so:`instanceOfComment.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$CommentCWProxy get copyWith => _$CommentCWProxyImpl(this);
-
-  /// Copies the object with the specific fields set to `null`. If you pass `false` as a parameter, nothing will be done and it will be ignored. Don't do it. Prefer `copyWith(field: null)`.
-  ///
-  /// Usage
-  /// ```dart
-  /// Comment(...).copyWithNull(firstField: true, secondField: true)
-  /// ````
-  Comment copyWithNull({
-    bool parentId = false,
-    bool resolvedAt = false,
-    bool orderId = false,
-  }) {
-    return Comment(
-      id: id,
-      clientMeta: clientMeta,
-      fileKey: fileKey,
-      parentId: parentId == true ? null : this.parentId,
-      user: user,
-      createdAt: createdAt,
-      resolvedAt: resolvedAt == true ? null : this.resolvedAt,
-      orderId: orderId == true ? null : this.orderId,
-    );
-  }
 }
 
 // **************************************************************************

@@ -7,7 +7,16 @@ part of 'component_property_definition.dart';
 // **************************************************************************
 
 abstract class _$ComponentPropertyDefinitionCWProxy {
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  ComponentPropertyDefinition type(String type);
+
+  ComponentPropertyDefinition defaultValue(dynamic defaultValue);
+
+  ComponentPropertyDefinition variantOptions(List<String>? variantOptions);
+
+  ComponentPropertyDefinition preferredValues(
+      List<InstanceSwapPreferredValue>? preferredValues);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ComponentPropertyDefinition(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -15,13 +24,13 @@ abstract class _$ComponentPropertyDefinitionCWProxy {
   /// ````
   ComponentPropertyDefinition call({
     String? type,
-    dynamic defaultValue,
+    dynamic? defaultValue,
     List<String>? variantOptions,
     List<InstanceSwapPreferredValue>? preferredValues,
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfComponentPropertyDefinition.copyWith(...)`.
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfComponentPropertyDefinition.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfComponentPropertyDefinition.copyWith.fieldName(...)`
 class _$ComponentPropertyDefinitionCWProxyImpl
     implements _$ComponentPropertyDefinitionCWProxy {
   const _$ComponentPropertyDefinitionCWProxyImpl(this._value);
@@ -29,8 +38,24 @@ class _$ComponentPropertyDefinitionCWProxyImpl
   final ComponentPropertyDefinition _value;
 
   @override
+  ComponentPropertyDefinition type(String type) => this(type: type);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored.
+  @override
+  ComponentPropertyDefinition defaultValue(dynamic defaultValue) =>
+      this(defaultValue: defaultValue);
+
+  @override
+  ComponentPropertyDefinition variantOptions(List<String>? variantOptions) =>
+      this(variantOptions: variantOptions);
+
+  @override
+  ComponentPropertyDefinition preferredValues(
+          List<InstanceSwapPreferredValue>? preferredValues) =>
+      this(preferredValues: preferredValues);
+
+  @override
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ComponentPropertyDefinition(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
@@ -67,28 +92,10 @@ class _$ComponentPropertyDefinitionCWProxyImpl
 }
 
 extension $ComponentPropertyDefinitionCopyWith on ComponentPropertyDefinition {
-  /// Returns a callable class that can be used as follows: `instanceOfComponentPropertyDefinition.copyWith(...)`.
+  /// Returns a callable class that can be used as follows: `instanceOfComponentPropertyDefinition.copyWith(...)` or like so:`instanceOfComponentPropertyDefinition.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$ComponentPropertyDefinitionCWProxy get copyWith =>
       _$ComponentPropertyDefinitionCWProxyImpl(this);
-
-  /// Copies the object with the specific fields set to `null`. If you pass `false` as a parameter, nothing will be done and it will be ignored. Don't do it. Prefer `copyWith(field: null)`.
-  ///
-  /// Usage
-  /// ```dart
-  /// ComponentPropertyDefinition(...).copyWithNull(firstField: true, secondField: true)
-  /// ````
-  ComponentPropertyDefinition copyWithNull({
-    bool variantOptions = false,
-    bool preferredValues = false,
-  }) {
-    return ComponentPropertyDefinition(
-      type: type,
-      defaultValue: defaultValue,
-      variantOptions: variantOptions == true ? null : this.variantOptions,
-      preferredValues: preferredValues == true ? null : this.preferredValues,
-    );
-  }
 }
 
 // **************************************************************************
