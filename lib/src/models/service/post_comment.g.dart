@@ -21,7 +21,7 @@ abstract class _$PostCommentCWProxy {
   /// ````
   PostComment call({
     String? message,
-    dynamic? clientMeta,
+    dynamic clientMeta,
     String? commentId,
   });
 }

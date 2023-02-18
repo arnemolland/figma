@@ -1,3 +1,7 @@
+## 5.0.2
+
+- Removed unnecessary null operators in generated files
+
 ## 5.0.1
 
 - Updated `PrototypeDevice.size` to be nullable

@@ -31,7 +31,7 @@ abstract class _$CommentCWProxy {
   /// ````
   Comment call({
     String? id,
-    dynamic? clientMeta,
+    dynamic clientMeta,
     String? fileKey,
     String? parentId,
     User? user,

@@ -35,8 +35,8 @@ abstract class _$NodeCWProxy {
     String? name,
     bool? visible,
     String? type,
-    dynamic? pluginData,
-    dynamic? sharedPluginData,
+    dynamic pluginData,
+    dynamic sharedPluginData,
     double? rotation,
     Map<String, String>? componentPropertyReferencesMap,
   });

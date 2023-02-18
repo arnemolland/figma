@@ -22,7 +22,7 @@ abstract class _$ComponentPropertyCWProxy {
   /// ````
   ComponentProperty call({
     String? type,
-    dynamic? value,
+    dynamic value,
     List<InstanceSwapPreferredValue>? preferredValues,
   });
 }

@@ -24,7 +24,7 @@ abstract class _$ComponentPropertyDefinitionCWProxy {
   /// ````
   ComponentPropertyDefinition call({
     String? type,
-    dynamic? defaultValue,
+    dynamic defaultValue,
     List<String>? variantOptions,
     List<InstanceSwapPreferredValue>? preferredValues,
   });

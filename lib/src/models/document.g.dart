@@ -39,8 +39,8 @@ abstract class _$DocumentCWProxy {
     double? rotation,
     String? type,
     String? name,
-    dynamic? pluginData,
-    dynamic? sharedPluginData,
+    dynamic pluginData,
+    dynamic sharedPluginData,
     List<Node?>? children,
   });
 }
