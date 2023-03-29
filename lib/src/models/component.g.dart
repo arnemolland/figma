@@ -48,7 +48,7 @@ abstract class _$ComponentCWProxy {
     DateTime? updatedAt,
     User? user,
     FrameInfo? containingFrame,
-    dynamic containingPage,
+    dynamic? containingPage,
     String? componentSetId,
   });
 }
