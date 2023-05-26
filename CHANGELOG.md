@@ -1,3 +1,10 @@
+## 6.0.0
+
+- **BREAKING:** Updated Dart SDK constraints to 3.0 or later
+- Updated all dependencies
+- Re-generated files with updated json_serializable
+- Removed `getFileVersions` test due to Figma limitations (30-day history in free plan)
+
 ## 5.0.3
 
 - Updated `PrototypeDevice.presetIdentifier` to be nullable
