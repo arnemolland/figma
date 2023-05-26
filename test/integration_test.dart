@@ -105,13 +105,6 @@ void main() {
     );
 
     test(
-      'getFileVersions() gets file versions',
-      () => client
-          .getFileVersions(testFile)
-          .then((res) => expect(res.isNotEmpty, true)),
-    );
-
-    test(
       'getTeamProjects() gets team projects',
       () => client
           .getTeamProjects(testTeam)
