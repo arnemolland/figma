@@ -21,7 +21,7 @@ abstract class _$PostCommentCWProxy {
   /// ````
   PostComment call({
     String? message,
-    dynamic? clientMeta,
+    dynamic clientMeta,
     String? commentId,
   });
 }
@@ -61,8 +61,7 @@ class _$PostCommentCWProxyImpl implements _$PostCommentCWProxy {
           : message as String?,
       clientMeta:
           clientMeta == const $CopyWithPlaceholder() || clientMeta == null
-              // ignore: unnecessary_non_null_assertion
-              ? _value.clientMeta!
+              ? _value.clientMeta
               // ignore: cast_nullable_to_non_nullable
               : clientMeta as dynamic,
       commentId: commentId == const $CopyWithPlaceholder()

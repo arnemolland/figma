@@ -46,7 +46,7 @@ abstract class _$ComponentSetCWProxy {
     DateTime? updatedAt,
     User? user,
     FrameInfo? containingFrame,
-    dynamic? containingPage,
+    dynamic containingPage,
   });
 }
 
@@ -157,8 +157,7 @@ class _$ComponentSetCWProxyImpl implements _$ComponentSetCWProxy {
           : containingFrame as FrameInfo?,
       containingPage: containingPage == const $CopyWithPlaceholder() ||
               containingPage == null
-          // ignore: unnecessary_non_null_assertion
-          ? _value.containingPage!
+          ? _value.containingPage
           // ignore: cast_nullable_to_non_nullable
           : containingPage as dynamic,
     );

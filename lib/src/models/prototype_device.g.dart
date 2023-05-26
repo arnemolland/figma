@@ -65,13 +65,11 @@ class _$PrototypeDeviceCWProxyImpl implements _$PrototypeDeviceCWProxy {
   }) {
     return PrototypeDevice(
       type: type == const $CopyWithPlaceholder() || type == null
-          // ignore: unnecessary_non_null_assertion
-          ? _value.type!
+          ? _value.type
           // ignore: cast_nullable_to_non_nullable
           : type as PrototypeDeviceType,
       rotation: rotation == const $CopyWithPlaceholder() || rotation == null
-          // ignore: unnecessary_non_null_assertion
-          ? _value.rotation!
+          ? _value.rotation
           // ignore: cast_nullable_to_non_nullable
           : rotation as PrototypeDeviceRotation,
       size: size == const $CopyWithPlaceholder()

@@ -51,13 +51,11 @@ class _$InstanceSwapPreferredValueCWProxyImpl
   }) {
     return InstanceSwapPreferredValue(
       type: type == const $CopyWithPlaceholder() || type == null
-          // ignore: unnecessary_non_null_assertion
-          ? _value.type!
+          ? _value.type
           // ignore: cast_nullable_to_non_nullable
           : type as InstanceSwapPreferredValueType,
       key: key == const $CopyWithPlaceholder() || key == null
-          // ignore: unnecessary_non_null_assertion
-          ? _value.key!
+          ? _value.key
           // ignore: cast_nullable_to_non_nullable
           : key as String,
     );

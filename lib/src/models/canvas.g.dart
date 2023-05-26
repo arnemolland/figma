@@ -46,8 +46,8 @@ abstract class _$CanvasCWProxy {
     Map<String, String>? componentPropertyReferencesMap,
     String? name,
     double? rotation,
-    dynamic? pluginData,
-    dynamic? sharedPluginData,
+    dynamic pluginData,
+    dynamic sharedPluginData,
     String? type,
     PrototypeDevice? prototypeDevice,
     List<FlowStartingPoint>? flowStartingPoints,
@@ -134,13 +134,11 @@ class _$CanvasCWProxyImpl implements _$CanvasCWProxy {
   }) {
     return Canvas(
       id: id == const $CopyWithPlaceholder() || id == null
-          // ignore: unnecessary_non_null_assertion
-          ? _value.id!
+          ? _value.id
           // ignore: cast_nullable_to_non_nullable
           : id as String,
       visible: visible == const $CopyWithPlaceholder() || visible == null
-          // ignore: unnecessary_non_null_assertion
-          ? _value.visible!
+          ? _value.visible
           // ignore: cast_nullable_to_non_nullable
           : visible as bool,
       componentPropertyReferencesMap:
@@ -158,14 +156,12 @@ class _$CanvasCWProxyImpl implements _$CanvasCWProxy {
           : rotation as double?,
       pluginData:
           pluginData == const $CopyWithPlaceholder() || pluginData == null
-              // ignore: unnecessary_non_null_assertion
-              ? _value.pluginData!
+              ? _value.pluginData
               // ignore: cast_nullable_to_non_nullable
               : pluginData as dynamic,
       sharedPluginData: sharedPluginData == const $CopyWithPlaceholder() ||
               sharedPluginData == null
-          // ignore: unnecessary_non_null_assertion
-          ? _value.sharedPluginData!
+          ? _value.sharedPluginData
           // ignore: cast_nullable_to_non_nullable
           : sharedPluginData as dynamic,
       type: type == const $CopyWithPlaceholder()
@@ -174,20 +170,17 @@ class _$CanvasCWProxyImpl implements _$CanvasCWProxy {
           : type as String?,
       prototypeDevice: prototypeDevice == const $CopyWithPlaceholder() ||
               prototypeDevice == null
-          // ignore: unnecessary_non_null_assertion
-          ? _value.prototypeDevice!
+          ? _value.prototypeDevice
           // ignore: cast_nullable_to_non_nullable
           : prototypeDevice as PrototypeDevice,
       flowStartingPoints: flowStartingPoints == const $CopyWithPlaceholder() ||
               flowStartingPoints == null
-          // ignore: unnecessary_non_null_assertion
-          ? _value.flowStartingPoints!
+          ? _value.flowStartingPoints
           // ignore: cast_nullable_to_non_nullable
           : flowStartingPoints as List<FlowStartingPoint>,
       exportSettings: exportSettings == const $CopyWithPlaceholder() ||
               exportSettings == null
-          // ignore: unnecessary_non_null_assertion
-          ? _value.exportSettings!
+          ? _value.exportSettings
           // ignore: cast_nullable_to_non_nullable
           : exportSettings as List<ExportSetting>,
       children: children == const $CopyWithPlaceholder()

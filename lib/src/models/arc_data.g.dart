@@ -56,19 +56,16 @@ class _$ArcDataCWProxyImpl implements _$ArcDataCWProxy {
   }) {
     return ArcData(
       start: start == const $CopyWithPlaceholder() || start == null
-          // ignore: unnecessary_non_null_assertion
-          ? _value.start!
+          ? _value.start
           // ignore: cast_nullable_to_non_nullable
           : start as double,
       end: end == const $CopyWithPlaceholder() || end == null
-          // ignore: unnecessary_non_null_assertion
-          ? _value.end!
+          ? _value.end
           // ignore: cast_nullable_to_non_nullable
           : end as double,
       innerRadius:
           innerRadius == const $CopyWithPlaceholder() || innerRadius == null
-              // ignore: unnecessary_non_null_assertion
-              ? _value.innerRadius!
+              ? _value.innerRadius
               // ignore: cast_nullable_to_non_nullable
               : innerRadius as double,
     );

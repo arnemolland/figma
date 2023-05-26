@@ -70,13 +70,11 @@ class _$VersionCWProxyImpl implements _$VersionCWProxy {
   }) {
     return Version(
       id: id == const $CopyWithPlaceholder() || id == null
-          // ignore: unnecessary_non_null_assertion
-          ? _value.id!
+          ? _value.id
           // ignore: cast_nullable_to_non_nullable
           : id as String,
       createdAt: createdAt == const $CopyWithPlaceholder() || createdAt == null
-          // ignore: unnecessary_non_null_assertion
-          ? _value.createdAt!
+          ? _value.createdAt
           // ignore: cast_nullable_to_non_nullable
           : createdAt as DateTime,
       label: label == const $CopyWithPlaceholder()
@@ -88,8 +86,7 @@ class _$VersionCWProxyImpl implements _$VersionCWProxy {
           // ignore: cast_nullable_to_non_nullable
           : description as String?,
       user: user == const $CopyWithPlaceholder() || user == null
-          // ignore: unnecessary_non_null_assertion
-          ? _value.user!
+          ? _value.user
           // ignore: cast_nullable_to_non_nullable
           : user as User,
     );

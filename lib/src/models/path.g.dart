@@ -49,14 +49,12 @@ class _$PathCWProxyImpl implements _$PathCWProxy {
   }) {
     return Path(
       path: path == const $CopyWithPlaceholder() || path == null
-          // ignore: unnecessary_non_null_assertion
-          ? _value.path!
+          ? _value.path
           // ignore: cast_nullable_to_non_nullable
           : path as String,
       windingRule:
           windingRule == const $CopyWithPlaceholder() || windingRule == null
-              // ignore: unnecessary_non_null_assertion
-              ? _value.windingRule!
+              ? _value.windingRule
               // ignore: cast_nullable_to_non_nullable
               : windingRule as WindingRule,
     );

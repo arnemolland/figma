@@ -31,7 +31,7 @@ abstract class _$CommentCWProxy {
   /// ````
   Comment call({
     String? id,
-    dynamic? clientMeta,
+    dynamic clientMeta,
     String? fileKey,
     String? parentId,
     User? user,
@@ -91,19 +91,16 @@ class _$CommentCWProxyImpl implements _$CommentCWProxy {
   }) {
     return Comment(
       id: id == const $CopyWithPlaceholder() || id == null
-          // ignore: unnecessary_non_null_assertion
-          ? _value.id!
+          ? _value.id
           // ignore: cast_nullable_to_non_nullable
           : id as String,
       clientMeta:
           clientMeta == const $CopyWithPlaceholder() || clientMeta == null
-              // ignore: unnecessary_non_null_assertion
-              ? _value.clientMeta!
+              ? _value.clientMeta
               // ignore: cast_nullable_to_non_nullable
               : clientMeta as dynamic,
       fileKey: fileKey == const $CopyWithPlaceholder() || fileKey == null
-          // ignore: unnecessary_non_null_assertion
-          ? _value.fileKey!
+          ? _value.fileKey
           // ignore: cast_nullable_to_non_nullable
           : fileKey as String,
       parentId: parentId == const $CopyWithPlaceholder()
@@ -111,13 +108,11 @@ class _$CommentCWProxyImpl implements _$CommentCWProxy {
           // ignore: cast_nullable_to_non_nullable
           : parentId as String?,
       user: user == const $CopyWithPlaceholder() || user == null
-          // ignore: unnecessary_non_null_assertion
-          ? _value.user!
+          ? _value.user
           // ignore: cast_nullable_to_non_nullable
           : user as User,
       createdAt: createdAt == const $CopyWithPlaceholder() || createdAt == null
-          // ignore: unnecessary_non_null_assertion
-          ? _value.createdAt!
+          ? _value.createdAt
           // ignore: cast_nullable_to_non_nullable
           : createdAt as DateTime,
       resolvedAt: resolvedAt == const $CopyWithPlaceholder()

@@ -49,13 +49,11 @@ class _$Vector2DCWProxyImpl implements _$Vector2DCWProxy {
   }) {
     return Vector2D(
       x: x == const $CopyWithPlaceholder() || x == null
-          // ignore: unnecessary_non_null_assertion
-          ? _value.x!
+          ? _value.x
           // ignore: cast_nullable_to_non_nullable
           : x as num,
       y: y == const $CopyWithPlaceholder() || y == null
-          // ignore: unnecessary_non_null_assertion
-          ? _value.y!
+          ? _value.y
           // ignore: cast_nullable_to_non_nullable
           : y as num,
     );

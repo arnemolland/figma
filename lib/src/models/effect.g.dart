@@ -96,8 +96,7 @@ class _$EffectCWProxyImpl implements _$EffectCWProxy {
           // ignore: cast_nullable_to_non_nullable
           : type as EffectType?,
       visible: visible == const $CopyWithPlaceholder() || visible == null
-          // ignore: unnecessary_non_null_assertion
-          ? _value.visible!
+          ? _value.visible
           // ignore: cast_nullable_to_non_nullable
           : visible as bool,
       radius: radius == const $CopyWithPlaceholder()

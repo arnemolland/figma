@@ -49,13 +49,11 @@ class _$SizeCWProxyImpl implements _$SizeCWProxy {
   }) {
     return Size(
       width: width == const $CopyWithPlaceholder() || width == null
-          // ignore: unnecessary_non_null_assertion
-          ? _value.width!
+          ? _value.width
           // ignore: cast_nullable_to_non_nullable
           : width as double,
       height: height == const $CopyWithPlaceholder() || height == null
-          // ignore: unnecessary_non_null_assertion
-          ? _value.height!
+          ? _value.height
           // ignore: cast_nullable_to_non_nullable
           : height as double,
     );

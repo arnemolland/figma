@@ -63,23 +63,19 @@ class _$StrokeWeightsCWProxyImpl implements _$StrokeWeightsCWProxy {
   }) {
     return StrokeWeights(
       top: top == const $CopyWithPlaceholder() || top == null
-          // ignore: unnecessary_non_null_assertion
-          ? _value.top!
+          ? _value.top
           // ignore: cast_nullable_to_non_nullable
           : top as double,
       right: right == const $CopyWithPlaceholder() || right == null
-          // ignore: unnecessary_non_null_assertion
-          ? _value.right!
+          ? _value.right
           // ignore: cast_nullable_to_non_nullable
           : right as double,
       bottom: bottom == const $CopyWithPlaceholder() || bottom == null
-          // ignore: unnecessary_non_null_assertion
-          ? _value.bottom!
+          ? _value.bottom
           // ignore: cast_nullable_to_non_nullable
           : bottom as double,
       left: left == const $CopyWithPlaceholder() || left == null
-          // ignore: unnecessary_non_null_assertion
-          ? _value.left!
+          ? _value.left
           // ignore: cast_nullable_to_non_nullable
           : left as double,
     );

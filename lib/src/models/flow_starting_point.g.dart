@@ -49,13 +49,11 @@ class _$FlowStartingPointCWProxyImpl implements _$FlowStartingPointCWProxy {
   }) {
     return FlowStartingPoint(
       nodeId: nodeId == const $CopyWithPlaceholder() || nodeId == null
-          // ignore: unnecessary_non_null_assertion
-          ? _value.nodeId!
+          ? _value.nodeId
           // ignore: cast_nullable_to_non_nullable
           : nodeId as String,
       name: name == const $CopyWithPlaceholder() || name == null
-          // ignore: unnecessary_non_null_assertion
-          ? _value.name!
+          ? _value.name
           // ignore: cast_nullable_to_non_nullable
           : name as String,
     );

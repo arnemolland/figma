@@ -22,7 +22,7 @@ abstract class _$ComponentPropertyCWProxy {
   /// ````
   ComponentProperty call({
     String? type,
-    dynamic? value,
+    dynamic value,
     List<InstanceSwapPreferredValue>? preferredValues,
   });
 }
@@ -59,13 +59,11 @@ class _$ComponentPropertyCWProxyImpl implements _$ComponentPropertyCWProxy {
   }) {
     return ComponentProperty(
       type: type == const $CopyWithPlaceholder() || type == null
-          // ignore: unnecessary_non_null_assertion
-          ? _value.type!
+          ? _value.type
           // ignore: cast_nullable_to_non_nullable
           : type as String,
       value: value == const $CopyWithPlaceholder() || value == null
-          // ignore: unnecessary_non_null_assertion
-          ? _value.value!
+          ? _value.value
           // ignore: cast_nullable_to_non_nullable
           : value as dynamic,
       preferredValues: preferredValues == const $CopyWithPlaceholder()

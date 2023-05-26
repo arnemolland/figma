@@ -50,14 +50,12 @@ class _$OverridesCWProxyImpl implements _$OverridesCWProxy {
   }) {
     return Overrides(
       id: id == const $CopyWithPlaceholder() || id == null
-          // ignore: unnecessary_non_null_assertion
-          ? _value.id!
+          ? _value.id
           // ignore: cast_nullable_to_non_nullable
           : id as String,
       overriddenFields: overriddenFields == const $CopyWithPlaceholder() ||
               overriddenFields == null
-          // ignore: unnecessary_non_null_assertion
-          ? _value.overriddenFields!
+          ? _value.overriddenFields
           // ignore: cast_nullable_to_non_nullable
           : overriddenFields as List<String>,
     );

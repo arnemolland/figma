@@ -50,8 +50,7 @@ class _$PaintOverrideCWProxyImpl implements _$PaintOverrideCWProxy {
   }) {
     return PaintOverride(
       fills: fills == const $CopyWithPlaceholder() || fills == null
-          // ignore: unnecessary_non_null_assertion
-          ? _value.fills!
+          ? _value.fills
           // ignore: cast_nullable_to_non_nullable
           : fills as List<Paint>,
       inheritFillStyleId: inheritFillStyleId == const $CopyWithPlaceholder()

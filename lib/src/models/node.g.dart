@@ -35,8 +35,8 @@ abstract class _$NodeCWProxy {
     String? name,
     bool? visible,
     String? type,
-    dynamic? pluginData,
-    dynamic? sharedPluginData,
+    dynamic pluginData,
+    dynamic sharedPluginData,
     double? rotation,
     Map<String, String>? componentPropertyReferencesMap,
   });
@@ -95,8 +95,7 @@ class _$NodeCWProxyImpl implements _$NodeCWProxy {
   }) {
     return Node(
       id: id == const $CopyWithPlaceholder() || id == null
-          // ignore: unnecessary_non_null_assertion
-          ? _value.id!
+          ? _value.id
           // ignore: cast_nullable_to_non_nullable
           : id as String,
       name: name == const $CopyWithPlaceholder()
@@ -104,8 +103,7 @@ class _$NodeCWProxyImpl implements _$NodeCWProxy {
           // ignore: cast_nullable_to_non_nullable
           : name as String?,
       visible: visible == const $CopyWithPlaceholder() || visible == null
-          // ignore: unnecessary_non_null_assertion
-          ? _value.visible!
+          ? _value.visible
           // ignore: cast_nullable_to_non_nullable
           : visible as bool,
       type: type == const $CopyWithPlaceholder()
@@ -114,14 +112,12 @@ class _$NodeCWProxyImpl implements _$NodeCWProxy {
           : type as String?,
       pluginData:
           pluginData == const $CopyWithPlaceholder() || pluginData == null
-              // ignore: unnecessary_non_null_assertion
-              ? _value.pluginData!
+              ? _value.pluginData
               // ignore: cast_nullable_to_non_nullable
               : pluginData as dynamic,
       sharedPluginData: sharedPluginData == const $CopyWithPlaceholder() ||
               sharedPluginData == null
-          // ignore: unnecessary_non_null_assertion
-          ? _value.sharedPluginData!
+          ? _value.sharedPluginData
           // ignore: cast_nullable_to_non_nullable
           : sharedPluginData as dynamic,
       rotation: rotation == const $CopyWithPlaceholder()

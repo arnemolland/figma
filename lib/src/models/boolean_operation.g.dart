@@ -113,8 +113,8 @@ abstract class _$BooleanOperationCWProxy {
     Map<String, String>? componentPropertyReferencesMap,
     String? name,
     double? rotation,
-    dynamic? pluginData,
-    dynamic? sharedPluginData,
+    dynamic pluginData,
+    dynamic sharedPluginData,
     BlendMode? blendMode,
     LayoutAlign? layoutAlign,
     LayoutConstraint? constraints,
@@ -340,85 +340,70 @@ class _$BooleanOperationCWProxyImpl implements _$BooleanOperationCWProxy {
   }) {
     return BooleanOperation(
       id: id == const $CopyWithPlaceholder() || id == null
-          // ignore: unnecessary_non_null_assertion
-          ? _value.id!
+          ? _value.id
           // ignore: cast_nullable_to_non_nullable
           : id as String,
       visible: visible == const $CopyWithPlaceholder() || visible == null
-          // ignore: unnecessary_non_null_assertion
-          ? _value.visible!
+          ? _value.visible
           // ignore: cast_nullable_to_non_nullable
           : visible as bool,
       locked: locked == const $CopyWithPlaceholder() || locked == null
-          // ignore: unnecessary_non_null_assertion
-          ? _value.locked!
+          ? _value.locked
           // ignore: cast_nullable_to_non_nullable
           : locked as bool,
       exportSettings: exportSettings == const $CopyWithPlaceholder() ||
               exportSettings == null
-          // ignore: unnecessary_non_null_assertion
-          ? _value.exportSettings!
+          ? _value.exportSettings
           // ignore: cast_nullable_to_non_nullable
           : exportSettings as List<ExportSetting>,
       preserveRatio:
           preserveRatio == const $CopyWithPlaceholder() || preserveRatio == null
-              // ignore: unnecessary_non_null_assertion
-              ? _value.preserveRatio!
+              ? _value.preserveRatio
               // ignore: cast_nullable_to_non_nullable
               : preserveRatio as bool,
       layoutGrow:
           layoutGrow == const $CopyWithPlaceholder() || layoutGrow == null
-              // ignore: unnecessary_non_null_assertion
-              ? _value.layoutGrow!
+              ? _value.layoutGrow
               // ignore: cast_nullable_to_non_nullable
               : layoutGrow as double,
       opacity: opacity == const $CopyWithPlaceholder() || opacity == null
-          // ignore: unnecessary_non_null_assertion
-          ? _value.opacity!
+          ? _value.opacity
           // ignore: cast_nullable_to_non_nullable
           : opacity as double,
       isMask: isMask == const $CopyWithPlaceholder() || isMask == null
-          // ignore: unnecessary_non_null_assertion
-          ? _value.isMask!
+          ? _value.isMask
           // ignore: cast_nullable_to_non_nullable
           : isMask as bool,
       fills: fills == const $CopyWithPlaceholder() || fills == null
-          // ignore: unnecessary_non_null_assertion
-          ? _value.fills!
+          ? _value.fills
           // ignore: cast_nullable_to_non_nullable
           : fills as List<Paint>,
       fillGeometry:
           fillGeometry == const $CopyWithPlaceholder() || fillGeometry == null
-              // ignore: unnecessary_non_null_assertion
-              ? _value.fillGeometry!
+              ? _value.fillGeometry
               // ignore: cast_nullable_to_non_nullable
               : fillGeometry as List<Path>,
       strokes: strokes == const $CopyWithPlaceholder() || strokes == null
-          // ignore: unnecessary_non_null_assertion
-          ? _value.strokes!
+          ? _value.strokes
           // ignore: cast_nullable_to_non_nullable
           : strokes as List<Paint>,
       strokeCap: strokeCap == const $CopyWithPlaceholder() || strokeCap == null
-          // ignore: unnecessary_non_null_assertion
-          ? _value.strokeCap!
+          ? _value.strokeCap
           // ignore: cast_nullable_to_non_nullable
           : strokeCap as StrokeCap,
       strokeJoin:
           strokeJoin == const $CopyWithPlaceholder() || strokeJoin == null
-              // ignore: unnecessary_non_null_assertion
-              ? _value.strokeJoin!
+              ? _value.strokeJoin
               // ignore: cast_nullable_to_non_nullable
               : strokeJoin as StrokeJoin,
       strokeDashes:
           strokeDashes == const $CopyWithPlaceholder() || strokeDashes == null
-              // ignore: unnecessary_non_null_assertion
-              ? _value.strokeDashes!
+              ? _value.strokeDashes
               // ignore: cast_nullable_to_non_nullable
               : strokeDashes as List<double>,
       strokeMiterAngle: strokeMiterAngle == const $CopyWithPlaceholder() ||
               strokeMiterAngle == null
-          // ignore: unnecessary_non_null_assertion
-          ? _value.strokeMiterAngle!
+          ? _value.strokeMiterAngle
           // ignore: cast_nullable_to_non_nullable
           : strokeMiterAngle as double,
       componentPropertyReferencesMap:
@@ -436,14 +421,12 @@ class _$BooleanOperationCWProxyImpl implements _$BooleanOperationCWProxy {
           : rotation as double?,
       pluginData:
           pluginData == const $CopyWithPlaceholder() || pluginData == null
-              // ignore: unnecessary_non_null_assertion
-              ? _value.pluginData!
+              ? _value.pluginData
               // ignore: cast_nullable_to_non_nullable
               : pluginData as dynamic,
       sharedPluginData: sharedPluginData == const $CopyWithPlaceholder() ||
               sharedPluginData == null
-          // ignore: unnecessary_non_null_assertion
-          ? _value.sharedPluginData!
+          ? _value.sharedPluginData
           // ignore: cast_nullable_to_non_nullable
           : sharedPluginData as dynamic,
       blendMode: blendMode == const $CopyWithPlaceholder()

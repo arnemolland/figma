@@ -126,8 +126,7 @@ class _$PaintCWProxyImpl implements _$PaintCWProxy {
           // ignore: cast_nullable_to_non_nullable
           : type as PaintType?,
       visible: visible == const $CopyWithPlaceholder() || visible == null
-          // ignore: unnecessary_non_null_assertion
-          ? _value.visible!
+          ? _value.visible
           // ignore: cast_nullable_to_non_nullable
           : visible as bool,
       opacity: opacity == const $CopyWithPlaceholder()
