@@ -94,6 +94,8 @@ abstract class _$FrameCWProxy {
 
   Frame preserveRatio(bool? preserveRatio);
 
+  Frame layoutGrow(double? layoutGrow);
+
   Frame constraints(LayoutConstraint? constraints);
 
   Frame layoutAlign(LayoutAlign? layoutAlign);
@@ -160,6 +162,7 @@ abstract class _$FrameCWProxy {
     List<double>? rectangleCornerRadii,
     BlendMode? blendMode,
     bool? preserveRatio,
+    double? layoutGrow,
     LayoutConstraint? constraints,
     LayoutAlign? layoutAlign,
     String? transitionNodeID,
@@ -328,6 +331,9 @@ class _$FrameCWProxyImpl implements _$FrameCWProxy {
       this(preserveRatio: preserveRatio);
 
   @override
+  Frame layoutGrow(double? layoutGrow) => this(layoutGrow: layoutGrow);
+
+  @override
   Frame constraints(LayoutConstraint? constraints) =>
       this(constraints: constraints);
 
@@ -407,6 +413,7 @@ class _$FrameCWProxyImpl implements _$FrameCWProxy {
     Object? rectangleCornerRadii = const $CopyWithPlaceholder(),
     Object? blendMode = const $CopyWithPlaceholder(),
     Object? preserveRatio = const $CopyWithPlaceholder(),
+    Object? layoutGrow = const $CopyWithPlaceholder(),
     Object? constraints = const $CopyWithPlaceholder(),
     Object? layoutAlign = const $CopyWithPlaceholder(),
     Object? transitionNodeID = const $CopyWithPlaceholder(),
@@ -616,6 +623,10 @@ class _$FrameCWProxyImpl implements _$FrameCWProxy {
           ? _value.preserveRatio
           // ignore: cast_nullable_to_non_nullable
           : preserveRatio as bool?,
+      layoutGrow: layoutGrow == const $CopyWithPlaceholder()
+          ? _value.layoutGrow
+          // ignore: cast_nullable_to_non_nullable
+          : layoutGrow as double?,
       constraints: constraints == const $CopyWithPlaceholder()
           ? _value.constraints
           // ignore: cast_nullable_to_non_nullable
@@ -754,6 +765,7 @@ Frame _$FrameFromJson(Map<String, dynamic> json) => Frame(
           .toList(),
       blendMode: $enumDecodeNullable(_$BlendModeEnumMap, json['blendMode']),
       preserveRatio: json['preserveRatio'] as bool? ?? false,
+      layoutGrow: (json['layoutGrow'] as num?)?.toDouble(),
       constraints: json['constraints'] == null
           ? null
           : LayoutConstraint.fromJson(
@@ -796,6 +808,7 @@ Map<String, dynamic> _$FrameToJson(Frame instance) => <String, dynamic>{
       'exportSettings': instance.exportSettings,
       'blendMode': _$BlendModeEnumMap[instance.blendMode],
       'preserveRatio': instance.preserveRatio,
+      'layoutGrow': instance.layoutGrow,
       'constraints': instance.constraints,
       'layoutAlign': _$LayoutAlignEnumMap[instance.layoutAlign],
       'transitionNodeID': instance.transitionNodeID,

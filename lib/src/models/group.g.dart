@@ -94,6 +94,8 @@ abstract class _$GroupCWProxy {
 
   Group preserveRatio(bool? preserveRatio);
 
+  Group layoutGrow(double? layoutGrow);
+
   Group constraints(LayoutConstraint? constraints);
 
   Group layoutAlign(LayoutAlign? layoutAlign);
@@ -160,6 +162,7 @@ abstract class _$GroupCWProxy {
     List<double>? rectangleCornerRadii,
     BlendMode? blendMode,
     bool? preserveRatio,
+    double? layoutGrow,
     LayoutConstraint? constraints,
     LayoutAlign? layoutAlign,
     String? transitionNodeID,
@@ -327,6 +330,9 @@ class _$GroupCWProxyImpl implements _$GroupCWProxy {
       this(preserveRatio: preserveRatio);
 
   @override
+  Group layoutGrow(double? layoutGrow) => this(layoutGrow: layoutGrow);
+
+  @override
   Group constraints(LayoutConstraint? constraints) =>
       this(constraints: constraints);
 
@@ -407,6 +413,7 @@ class _$GroupCWProxyImpl implements _$GroupCWProxy {
     Object? rectangleCornerRadii = const $CopyWithPlaceholder(),
     Object? blendMode = const $CopyWithPlaceholder(),
     Object? preserveRatio = const $CopyWithPlaceholder(),
+    Object? layoutGrow = const $CopyWithPlaceholder(),
     Object? constraints = const $CopyWithPlaceholder(),
     Object? layoutAlign = const $CopyWithPlaceholder(),
     Object? transitionNodeID = const $CopyWithPlaceholder(),
@@ -615,6 +622,10 @@ class _$GroupCWProxyImpl implements _$GroupCWProxy {
           ? _value.preserveRatio
           // ignore: cast_nullable_to_non_nullable
           : preserveRatio as bool?,
+      layoutGrow: layoutGrow == const $CopyWithPlaceholder()
+          ? _value.layoutGrow
+          // ignore: cast_nullable_to_non_nullable
+          : layoutGrow as double?,
       constraints: constraints == const $CopyWithPlaceholder()
           ? _value.constraints
           // ignore: cast_nullable_to_non_nullable
@@ -753,6 +764,7 @@ Group _$GroupFromJson(Map<String, dynamic> json) => Group(
           .toList(),
       blendMode: $enumDecodeNullable(_$BlendModeEnumMap, json['blendMode']),
       preserveRatio: json['preserveRatio'] as bool? ?? false,
+      layoutGrow: (json['layoutGrow'] as num?)?.toDouble(),
       constraints: json['constraints'] == null
           ? null
           : LayoutConstraint.fromJson(
@@ -796,6 +808,7 @@ Map<String, dynamic> _$GroupToJson(Group instance) => <String, dynamic>{
       'exportSettings': instance.exportSettings,
       'blendMode': _$BlendModeEnumMap[instance.blendMode],
       'preserveRatio': instance.preserveRatio,
+      'layoutGrow': instance.layoutGrow,
       'constraints': instance.constraints,
       'layoutAlign': _$LayoutAlignEnumMap[instance.layoutAlign],
       'transitionNodeID': instance.transitionNodeID,

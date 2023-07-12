@@ -51,6 +51,7 @@ class Group extends Frame {
     super.rectangleCornerRadii,
     super.blendMode,
     super.preserveRatio,
+    super.layoutGrow,
     super.constraints,
     super.layoutAlign,
     super.transitionNodeID,

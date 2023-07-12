@@ -99,8 +99,10 @@ ImageResponse _$ImageResponseFromJson(Map<String, dynamic> json) =>
       images: (json['images'] as Map<String, dynamic>?)?.map(
         (k, e) => MapEntry(k, e as String),
       ),
-      imageFills: (ImageResponse._readValueWithString(json, 'meta'))?.map(
-        (k, e) => MapEntry(k, e),
+      imageFills: (ImageResponse._readValueWithString(json, 'meta')
+              as Map<String, dynamic>?)
+          ?.map(
+        (k, e) => MapEntry(k, e as String),
       ),
       status: json['status'] as int?,
     );
