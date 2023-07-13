@@ -32,7 +32,7 @@ abstract class _$FrameCWProxy {
 
   Frame exportSettings(List<ExportSetting> exportSettings);
 
-  Frame children(List<Node> children);
+  Frame children(List<Node?> children);
 
   Frame opacity(double opacity);
 
@@ -131,7 +131,7 @@ abstract class _$FrameCWProxy {
     List<Paint>? fills,
     List<Paint>? strokes,
     List<ExportSetting>? exportSettings,
-    List<Node>? children,
+    List<Node?>? children,
     double? opacity,
     PrimaryAxisAlignItems? primaryAxisAlignItems,
     CounterAxisAlignItems? counterAxisAlignItems,
@@ -221,7 +221,7 @@ class _$FrameCWProxyImpl implements _$FrameCWProxy {
       this(exportSettings: exportSettings);
 
   @override
-  Frame children(List<Node> children) => this(children: children);
+  Frame children(List<Node?> children) => this(children: children);
 
   @override
   Frame opacity(double opacity) => this(opacity: opacity);
@@ -479,7 +479,7 @@ class _$FrameCWProxyImpl implements _$FrameCWProxy {
       children: children == const $CopyWithPlaceholder() || children == null
           ? _value.children
           // ignore: cast_nullable_to_non_nullable
-          : children as List<Node>,
+          : children as List<Node?>,
       opacity: opacity == const $CopyWithPlaceholder() || opacity == null
           ? _value.opacity
           // ignore: cast_nullable_to_non_nullable
@@ -700,7 +700,7 @@ Frame _$FrameFromJson(Map<String, dynamic> json) => Frame(
               .toList() ??
           [],
       children: (json['children'] as List<dynamic>)
-          .map((e) => Node.fromJson(e as Map<String, dynamic>))
+          .map(const NodeJsonConverter().fromJson)
           .toList(),
       opacity: (json['opacity'] as num?)?.toDouble() ?? 1.0,
       primaryAxisAlignItems: $enumDecodeNullable(
@@ -796,7 +796,8 @@ Map<String, dynamic> _$FrameToJson(Frame instance) => <String, dynamic>{
       'sharedPluginData': instance.sharedPluginData,
       'rotation': instance.rotation,
       'componentPropertyReferencesMap': instance.componentPropertyReferencesMap,
-      'children': instance.children,
+      'children':
+          instance.children.map(const NodeJsonConverter().toJson).toList(),
       'locked': instance.locked,
       'fills': instance.fills,
       'strokes': instance.strokes,
