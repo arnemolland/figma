@@ -11,7 +11,7 @@ part 'frame.g.dart';
 class Frame extends Node {
   /// An array of nodes that are direct children of this node.
   @NodeJsonConverter()
-  final List<Node> children;
+  final List<Node?>? children;
 
   /// If true, layer is locked and cannot be edited.
   @JsonKey(defaultValue: false)

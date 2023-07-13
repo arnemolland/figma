@@ -19,7 +19,7 @@ abstract class _$GroupCWProxy {
 
   Group exportSettings(List<ExportSetting> exportSettings);
 
-  Group children(List<Node> children);
+  Group children(List<Node?>? children);
 
   Group opacity(double opacity);
 
@@ -125,7 +125,7 @@ abstract class _$GroupCWProxy {
     List<Paint>? fills,
     List<Paint>? strokes,
     List<ExportSetting>? exportSettings,
-    List<Node>? children,
+    List<Node?>? children,
     double? opacity,
     LayoutPositioning? layoutPositioning,
     bool? itemReverseZIndex,
@@ -200,7 +200,7 @@ class _$GroupCWProxyImpl implements _$GroupCWProxy {
       this(exportSettings: exportSettings);
 
   @override
-  Group children(List<Node> children) => this(children: children);
+  Group children(List<Node?>? children) => this(children: children);
 
   @override
   Group opacity(double opacity) => this(opacity: opacity);
@@ -449,10 +449,10 @@ class _$GroupCWProxyImpl implements _$GroupCWProxy {
           ? _value.exportSettings
           // ignore: cast_nullable_to_non_nullable
           : exportSettings as List<ExportSetting>,
-      children: children == const $CopyWithPlaceholder() || children == null
+      children: children == const $CopyWithPlaceholder()
           ? _value.children
           // ignore: cast_nullable_to_non_nullable
-          : children as List<Node>,
+          : children as List<Node?>?,
       opacity: opacity == const $CopyWithPlaceholder() || opacity == null
           ? _value.opacity
           // ignore: cast_nullable_to_non_nullable
@@ -689,8 +689,8 @@ Group _$GroupFromJson(Map<String, dynamic> json) => Group(
               ?.map((e) => ExportSetting.fromJson(e as Map<String, dynamic>))
               .toList() ??
           [],
-      children: (json['children'] as List<dynamic>)
-          .map((e) => Node.fromJson(e as Map<String, dynamic>))
+      children: (json['children'] as List<dynamic>?)
+          ?.map(const NodeJsonConverter().fromJson)
           .toList(),
       opacity: (json['opacity'] as num?)?.toDouble() ?? 1.0,
       layoutPositioning: $enumDecodeNullable(
@@ -796,7 +796,8 @@ Map<String, dynamic> _$GroupToJson(Group instance) => <String, dynamic>{
       'sharedPluginData': instance.sharedPluginData,
       'rotation': instance.rotation,
       'componentPropertyReferencesMap': instance.componentPropertyReferencesMap,
-      'children': instance.children,
+      'children':
+          instance.children?.map(const NodeJsonConverter().toJson).toList(),
       'locked': instance.locked,
       'fills': instance.fills,
       'strokes': instance.strokes,

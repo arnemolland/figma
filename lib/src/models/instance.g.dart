@@ -19,7 +19,7 @@ abstract class _$InstanceCWProxy {
 
   Instance exportSettings(List<ExportSetting> exportSettings);
 
-  Instance children(List<Node> children);
+  Instance children(List<Node?>? children);
 
   Instance opacity(double opacity);
 
@@ -134,7 +134,7 @@ abstract class _$InstanceCWProxy {
     List<Paint>? fills,
     List<Paint>? strokes,
     List<ExportSetting>? exportSettings,
-    List<Node>? children,
+    List<Node?>? children,
     double? opacity,
     LayoutPositioning? layoutPositioning,
     bool? itemReverseZIndex,
@@ -213,7 +213,7 @@ class _$InstanceCWProxyImpl implements _$InstanceCWProxy {
       this(exportSettings: exportSettings);
 
   @override
-  Instance children(List<Node> children) => this(children: children);
+  Instance children(List<Node?>? children) => this(children: children);
 
   @override
   Instance opacity(double opacity) => this(opacity: opacity);
@@ -488,10 +488,10 @@ class _$InstanceCWProxyImpl implements _$InstanceCWProxy {
           ? _value.exportSettings
           // ignore: cast_nullable_to_non_nullable
           : exportSettings as List<ExportSetting>,
-      children: children == const $CopyWithPlaceholder() || children == null
+      children: children == const $CopyWithPlaceholder()
           ? _value.children
           // ignore: cast_nullable_to_non_nullable
-          : children as List<Node>,
+          : children as List<Node?>?,
       opacity: opacity == const $CopyWithPlaceholder() || opacity == null
           ? _value.opacity
           // ignore: cast_nullable_to_non_nullable
@@ -748,8 +748,8 @@ Instance _$InstanceFromJson(Map<String, dynamic> json) => Instance(
               ?.map((e) => ExportSetting.fromJson(e as Map<String, dynamic>))
               .toList() ??
           [],
-      children: (json['children'] as List<dynamic>)
-          .map((e) => Node.fromJson(e as Map<String, dynamic>))
+      children: (json['children'] as List<dynamic>?)
+          ?.map(const NodeJsonConverter().fromJson)
           .toList(),
       opacity: (json['opacity'] as num?)?.toDouble() ?? 1.0,
       layoutPositioning: $enumDecodeNullable(
@@ -867,7 +867,8 @@ Map<String, dynamic> _$InstanceToJson(Instance instance) => <String, dynamic>{
       'sharedPluginData': instance.sharedPluginData,
       'rotation': instance.rotation,
       'componentPropertyReferencesMap': instance.componentPropertyReferencesMap,
-      'children': instance.children,
+      'children':
+          instance.children?.map(const NodeJsonConverter().toJson).toList(),
       'locked': instance.locked,
       'fills': instance.fills,
       'strokes': instance.strokes,

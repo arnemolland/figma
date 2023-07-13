@@ -19,7 +19,7 @@ abstract class _$ComponentNodeCWProxy {
 
   ComponentNode exportSettings(List<ExportSetting> exportSettings);
 
-  ComponentNode children(List<Node> children);
+  ComponentNode children(List<Node?>? children);
 
   ComponentNode opacity(double opacity);
 
@@ -81,7 +81,7 @@ abstract class _$ComponentNodeCWProxy {
     List<Paint>? fills,
     List<Paint>? strokes,
     List<ExportSetting>? exportSettings,
-    List<Node>? children,
+    List<Node?>? children,
     double? opacity,
     PrimaryAxisAlignItems? primaryAxisAlignItems,
     CounterAxisAlignItems? counterAxisAlignItems,
@@ -132,7 +132,7 @@ class _$ComponentNodeCWProxyImpl implements _$ComponentNodeCWProxy {
       this(exportSettings: exportSettings);
 
   @override
-  ComponentNode children(List<Node> children) => this(children: children);
+  ComponentNode children(List<Node?>? children) => this(children: children);
 
   @override
   ComponentNode opacity(double opacity) => this(opacity: opacity);
@@ -284,10 +284,10 @@ class _$ComponentNodeCWProxyImpl implements _$ComponentNodeCWProxy {
           ? _value.exportSettings
           // ignore: cast_nullable_to_non_nullable
           : exportSettings as List<ExportSetting>,
-      children: children == const $CopyWithPlaceholder() || children == null
+      children: children == const $CopyWithPlaceholder()
           ? _value.children
           // ignore: cast_nullable_to_non_nullable
-          : children as List<Node>,
+          : children as List<Node?>?,
       opacity: opacity == const $CopyWithPlaceholder() || opacity == null
           ? _value.opacity
           // ignore: cast_nullable_to_non_nullable
@@ -428,8 +428,8 @@ ComponentNode _$ComponentNodeFromJson(Map<String, dynamic> json) =>
               ?.map((e) => ExportSetting.fromJson(e as Map<String, dynamic>))
               .toList() ??
           [],
-      children: (json['children'] as List<dynamic>)
-          .map((e) => Node.fromJson(e as Map<String, dynamic>))
+      children: (json['children'] as List<dynamic>?)
+          ?.map(const NodeJsonConverter().fromJson)
           .toList(),
       opacity: (json['opacity'] as num?)?.toDouble() ?? 1.0,
       primaryAxisAlignItems: $enumDecodeNullable(
@@ -484,7 +484,8 @@ Map<String, dynamic> _$ComponentNodeToJson(ComponentNode instance) =>
     <String, dynamic>{
       'id': instance.id,
       'visible': instance.visible,
-      'children': instance.children,
+      'children':
+          instance.children?.map(const NodeJsonConverter().toJson).toList(),
       'locked': instance.locked,
       'fills': instance.fills,
       'strokes': instance.strokes,
