@@ -88,7 +88,7 @@ class Vector extends Node {
   /// Map from ID to PaintOverride for looking up fill overrides. To see which
   /// regions are overriden, you must use the geometry=paths option. Each path
   /// returned may have an overrideId which maps to this table.
-  final Map<int, PaintOverride>? fillOverrideTable;
+  final Map<int, PaintOverride?>? fillOverrideTable;
 
   /// An array of stroke paints applied to the node.
   @JsonKey(defaultValue: [])

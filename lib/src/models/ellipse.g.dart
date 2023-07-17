@@ -78,7 +78,7 @@ abstract class _$EllipseCWProxy {
 
   Ellipse absoluteRenderBounds(SizeRectangle? absoluteRenderBounds);
 
-  Ellipse fillOverrideTable(Map<int, PaintOverride>? fillOverrideTable);
+  Ellipse fillOverrideTable(Map<int, PaintOverride?>? fillOverrideTable);
 
   Ellipse individualStrokeWeights(StrokeWeights? individualStrokeWeights);
 
@@ -126,7 +126,7 @@ abstract class _$EllipseCWProxy {
     StrokeAlign? strokeAlign,
     Map<StyleTypeKey, String>? styles,
     SizeRectangle? absoluteRenderBounds,
-    Map<int, PaintOverride>? fillOverrideTable,
+    Map<int, PaintOverride?>? fillOverrideTable,
     StrokeWeights? individualStrokeWeights,
     ArcData? arcData,
   });
@@ -263,7 +263,7 @@ class _$EllipseCWProxyImpl implements _$EllipseCWProxy {
       this(absoluteRenderBounds: absoluteRenderBounds);
 
   @override
-  Ellipse fillOverrideTable(Map<int, PaintOverride>? fillOverrideTable) =>
+  Ellipse fillOverrideTable(Map<int, PaintOverride?>? fillOverrideTable) =>
       this(fillOverrideTable: fillOverrideTable);
 
   @override
@@ -475,7 +475,7 @@ class _$EllipseCWProxyImpl implements _$EllipseCWProxy {
       fillOverrideTable: fillOverrideTable == const $CopyWithPlaceholder()
           ? _value.fillOverrideTable
           // ignore: cast_nullable_to_non_nullable
-          : fillOverrideTable as Map<int, PaintOverride>?,
+          : fillOverrideTable as Map<int, PaintOverride?>?,
       individualStrokeWeights:
           individualStrokeWeights == const $CopyWithPlaceholder()
               ? _value.individualStrokeWeights
@@ -581,7 +581,10 @@ Ellipse _$EllipseFromJson(Map<String, dynamic> json) => Ellipse(
       fillOverrideTable:
           (json['fillOverrideTable'] as Map<String, dynamic>?)?.map(
         (k, e) => MapEntry(
-            int.parse(k), PaintOverride.fromJson(e as Map<String, dynamic>)),
+            int.parse(k),
+            e == null
+                ? null
+                : PaintOverride.fromJson(e as Map<String, dynamic>)),
       ),
       individualStrokeWeights: json['individualStrokeWeights'] == null
           ? null

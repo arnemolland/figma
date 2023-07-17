@@ -79,7 +79,7 @@ abstract class _$BooleanOperationCWProxy {
   BooleanOperation absoluteRenderBounds(SizeRectangle? absoluteRenderBounds);
 
   BooleanOperation fillOverrideTable(
-      Map<int, PaintOverride>? fillOverrideTable);
+      Map<int, PaintOverride?>? fillOverrideTable);
 
   BooleanOperation individualStrokeWeights(
       StrokeWeights? individualStrokeWeights);
@@ -130,7 +130,7 @@ abstract class _$BooleanOperationCWProxy {
     StrokeAlign? strokeAlign,
     Map<StyleTypeKey, String>? styles,
     SizeRectangle? absoluteRenderBounds,
-    Map<int, PaintOverride>? fillOverrideTable,
+    Map<int, PaintOverride?>? fillOverrideTable,
     StrokeWeights? individualStrokeWeights,
     List<Node?>? children,
     Operation? operation,
@@ -274,7 +274,7 @@ class _$BooleanOperationCWProxyImpl implements _$BooleanOperationCWProxy {
 
   @override
   BooleanOperation fillOverrideTable(
-          Map<int, PaintOverride>? fillOverrideTable) =>
+          Map<int, PaintOverride?>? fillOverrideTable) =>
       this(fillOverrideTable: fillOverrideTable);
 
   @override
@@ -492,7 +492,7 @@ class _$BooleanOperationCWProxyImpl implements _$BooleanOperationCWProxy {
       fillOverrideTable: fillOverrideTable == const $CopyWithPlaceholder()
           ? _value.fillOverrideTable
           // ignore: cast_nullable_to_non_nullable
-          : fillOverrideTable as Map<int, PaintOverride>?,
+          : fillOverrideTable as Map<int, PaintOverride?>?,
       individualStrokeWeights:
           individualStrokeWeights == const $CopyWithPlaceholder()
               ? _value.individualStrokeWeights
@@ -603,7 +603,10 @@ BooleanOperation _$BooleanOperationFromJson(Map<String, dynamic> json) =>
       fillOverrideTable:
           (json['fillOverrideTable'] as Map<String, dynamic>?)?.map(
         (k, e) => MapEntry(
-            int.parse(k), PaintOverride.fromJson(e as Map<String, dynamic>)),
+            int.parse(k),
+            e == null
+                ? null
+                : PaintOverride.fromJson(e as Map<String, dynamic>)),
       ),
       individualStrokeWeights: json['individualStrokeWeights'] == null
           ? null
