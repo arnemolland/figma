@@ -63,6 +63,10 @@ abstract class _$InstanceCWProxy {
 
   Instance size(Vector2D? size);
 
+  Instance preserveRatio(bool preserveRatio);
+
+  Instance layoutGrow(double layoutGrow);
+
   Instance styles(Map<StyleTypeKey, String>? styles);
 
   Instance componentPropertyReferencesMap(
@@ -91,10 +95,6 @@ abstract class _$InstanceCWProxy {
   Instance rectangleCornerRadii(List<double>? rectangleCornerRadii);
 
   Instance blendMode(BlendMode? blendMode);
-
-  Instance preserveRatio(bool? preserveRatio);
-
-  Instance layoutGrow(double? layoutGrow);
 
   Instance constraints(LayoutConstraint? constraints);
 
@@ -156,6 +156,8 @@ abstract class _$InstanceCWProxy {
     double? paddingRight,
     double? paddingTop,
     Vector2D? size,
+    bool? preserveRatio,
+    double? layoutGrow,
     Map<StyleTypeKey, String>? styles,
     Map<String, String>? componentPropertyReferencesMap,
     SizeRectangle? absoluteBoundingBox,
@@ -170,8 +172,6 @@ abstract class _$InstanceCWProxy {
     double? cornerRadius,
     List<double>? rectangleCornerRadii,
     BlendMode? blendMode,
-    bool? preserveRatio,
-    double? layoutGrow,
     LayoutConstraint? constraints,
     LayoutAlign? layoutAlign,
     String? transitionNodeID,
@@ -293,6 +293,13 @@ class _$InstanceCWProxyImpl implements _$InstanceCWProxy {
   Instance size(Vector2D? size) => this(size: size);
 
   @override
+  Instance preserveRatio(bool preserveRatio) =>
+      this(preserveRatio: preserveRatio);
+
+  @override
+  Instance layoutGrow(double layoutGrow) => this(layoutGrow: layoutGrow);
+
+  @override
   Instance styles(Map<StyleTypeKey, String>? styles) => this(styles: styles);
 
   @override
@@ -342,13 +349,6 @@ class _$InstanceCWProxyImpl implements _$InstanceCWProxy {
 
   @override
   Instance blendMode(BlendMode? blendMode) => this(blendMode: blendMode);
-
-  @override
-  Instance preserveRatio(bool? preserveRatio) =>
-      this(preserveRatio: preserveRatio);
-
-  @override
-  Instance layoutGrow(double? layoutGrow) => this(layoutGrow: layoutGrow);
 
   @override
   Instance constraints(LayoutConstraint? constraints) =>
@@ -433,6 +433,8 @@ class _$InstanceCWProxyImpl implements _$InstanceCWProxy {
     Object? paddingRight = const $CopyWithPlaceholder(),
     Object? paddingTop = const $CopyWithPlaceholder(),
     Object? size = const $CopyWithPlaceholder(),
+    Object? preserveRatio = const $CopyWithPlaceholder(),
+    Object? layoutGrow = const $CopyWithPlaceholder(),
     Object? styles = const $CopyWithPlaceholder(),
     Object? componentPropertyReferencesMap = const $CopyWithPlaceholder(),
     Object? absoluteBoundingBox = const $CopyWithPlaceholder(),
@@ -447,8 +449,6 @@ class _$InstanceCWProxyImpl implements _$InstanceCWProxy {
     Object? cornerRadius = const $CopyWithPlaceholder(),
     Object? rectangleCornerRadii = const $CopyWithPlaceholder(),
     Object? blendMode = const $CopyWithPlaceholder(),
-    Object? preserveRatio = const $CopyWithPlaceholder(),
-    Object? layoutGrow = const $CopyWithPlaceholder(),
     Object? constraints = const $CopyWithPlaceholder(),
     Object? layoutAlign = const $CopyWithPlaceholder(),
     Object? transitionNodeID = const $CopyWithPlaceholder(),
@@ -598,6 +598,16 @@ class _$InstanceCWProxyImpl implements _$InstanceCWProxy {
           ? _value.size
           // ignore: cast_nullable_to_non_nullable
           : size as Vector2D?,
+      preserveRatio:
+          preserveRatio == const $CopyWithPlaceholder() || preserveRatio == null
+              ? _value.preserveRatio
+              // ignore: cast_nullable_to_non_nullable
+              : preserveRatio as bool,
+      layoutGrow:
+          layoutGrow == const $CopyWithPlaceholder() || layoutGrow == null
+              ? _value.layoutGrow
+              // ignore: cast_nullable_to_non_nullable
+              : layoutGrow as double,
       styles: styles == const $CopyWithPlaceholder()
           ? _value.styles
           // ignore: cast_nullable_to_non_nullable
@@ -657,14 +667,6 @@ class _$InstanceCWProxyImpl implements _$InstanceCWProxy {
           ? _value.blendMode
           // ignore: cast_nullable_to_non_nullable
           : blendMode as BlendMode?,
-      preserveRatio: preserveRatio == const $CopyWithPlaceholder()
-          ? _value.preserveRatio
-          // ignore: cast_nullable_to_non_nullable
-          : preserveRatio as bool?,
-      layoutGrow: layoutGrow == const $CopyWithPlaceholder()
-          ? _value.layoutGrow
-          // ignore: cast_nullable_to_non_nullable
-          : layoutGrow as double?,
       constraints: constraints == const $CopyWithPlaceholder()
           ? _value.constraints
           // ignore: cast_nullable_to_non_nullable
@@ -793,6 +795,8 @@ Instance _$InstanceFromJson(Map<String, dynamic> json) => Instance(
       size: json['size'] == null
           ? null
           : Vector2D.fromJson(json['size'] as Map<String, dynamic>),
+      preserveRatio: json['preserveRatio'] as bool? ?? false,
+      layoutGrow: (json['layoutGrow'] as num?)?.toDouble() ?? 0.0,
       styles: (json['styles'] as Map<String, dynamic>?)?.map(
         (k, e) => MapEntry($enumDecode(_$StyleTypeKeyEnumMap, k), e as String),
       ),
@@ -822,8 +826,6 @@ Instance _$InstanceFromJson(Map<String, dynamic> json) => Instance(
           ?.map((e) => (e as num).toDouble())
           .toList(),
       blendMode: $enumDecodeNullable(_$BlendModeEnumMap, json['blendMode']),
-      preserveRatio: json['preserveRatio'] as bool? ?? false,
-      layoutGrow: (json['layoutGrow'] as num?)?.toDouble(),
       constraints: json['constraints'] == null
           ? null
           : LayoutConstraint.fromJson(

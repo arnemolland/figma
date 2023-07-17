@@ -63,6 +63,10 @@ abstract class _$GroupCWProxy {
 
   Group size(Vector2D? size);
 
+  Group preserveRatio(bool preserveRatio);
+
+  Group layoutGrow(double layoutGrow);
+
   Group styles(Map<StyleTypeKey, String>? styles);
 
   Group componentPropertyReferencesMap(
@@ -91,10 +95,6 @@ abstract class _$GroupCWProxy {
   Group rectangleCornerRadii(List<double>? rectangleCornerRadii);
 
   Group blendMode(BlendMode? blendMode);
-
-  Group preserveRatio(bool? preserveRatio);
-
-  Group layoutGrow(double? layoutGrow);
 
   Group constraints(LayoutConstraint? constraints);
 
@@ -147,6 +147,8 @@ abstract class _$GroupCWProxy {
     double? paddingRight,
     double? paddingTop,
     Vector2D? size,
+    bool? preserveRatio,
+    double? layoutGrow,
     Map<StyleTypeKey, String>? styles,
     Map<String, String>? componentPropertyReferencesMap,
     SizeRectangle? absoluteBoundingBox,
@@ -161,8 +163,6 @@ abstract class _$GroupCWProxy {
     double? cornerRadius,
     List<double>? rectangleCornerRadii,
     BlendMode? blendMode,
-    bool? preserveRatio,
-    double? layoutGrow,
     LayoutConstraint? constraints,
     LayoutAlign? layoutAlign,
     String? transitionNodeID,
@@ -278,6 +278,12 @@ class _$GroupCWProxyImpl implements _$GroupCWProxy {
   Group size(Vector2D? size) => this(size: size);
 
   @override
+  Group preserveRatio(bool preserveRatio) => this(preserveRatio: preserveRatio);
+
+  @override
+  Group layoutGrow(double layoutGrow) => this(layoutGrow: layoutGrow);
+
+  @override
   Group styles(Map<StyleTypeKey, String>? styles) => this(styles: styles);
 
   @override
@@ -324,13 +330,6 @@ class _$GroupCWProxyImpl implements _$GroupCWProxy {
 
   @override
   Group blendMode(BlendMode? blendMode) => this(blendMode: blendMode);
-
-  @override
-  Group preserveRatio(bool? preserveRatio) =>
-      this(preserveRatio: preserveRatio);
-
-  @override
-  Group layoutGrow(double? layoutGrow) => this(layoutGrow: layoutGrow);
 
   @override
   Group constraints(LayoutConstraint? constraints) =>
@@ -398,6 +397,8 @@ class _$GroupCWProxyImpl implements _$GroupCWProxy {
     Object? paddingRight = const $CopyWithPlaceholder(),
     Object? paddingTop = const $CopyWithPlaceholder(),
     Object? size = const $CopyWithPlaceholder(),
+    Object? preserveRatio = const $CopyWithPlaceholder(),
+    Object? layoutGrow = const $CopyWithPlaceholder(),
     Object? styles = const $CopyWithPlaceholder(),
     Object? componentPropertyReferencesMap = const $CopyWithPlaceholder(),
     Object? absoluteBoundingBox = const $CopyWithPlaceholder(),
@@ -412,8 +413,6 @@ class _$GroupCWProxyImpl implements _$GroupCWProxy {
     Object? cornerRadius = const $CopyWithPlaceholder(),
     Object? rectangleCornerRadii = const $CopyWithPlaceholder(),
     Object? blendMode = const $CopyWithPlaceholder(),
-    Object? preserveRatio = const $CopyWithPlaceholder(),
-    Object? layoutGrow = const $CopyWithPlaceholder(),
     Object? constraints = const $CopyWithPlaceholder(),
     Object? layoutAlign = const $CopyWithPlaceholder(),
     Object? transitionNodeID = const $CopyWithPlaceholder(),
@@ -559,6 +558,16 @@ class _$GroupCWProxyImpl implements _$GroupCWProxy {
           ? _value.size
           // ignore: cast_nullable_to_non_nullable
           : size as Vector2D?,
+      preserveRatio:
+          preserveRatio == const $CopyWithPlaceholder() || preserveRatio == null
+              ? _value.preserveRatio
+              // ignore: cast_nullable_to_non_nullable
+              : preserveRatio as bool,
+      layoutGrow:
+          layoutGrow == const $CopyWithPlaceholder() || layoutGrow == null
+              ? _value.layoutGrow
+              // ignore: cast_nullable_to_non_nullable
+              : layoutGrow as double,
       styles: styles == const $CopyWithPlaceholder()
           ? _value.styles
           // ignore: cast_nullable_to_non_nullable
@@ -618,14 +627,6 @@ class _$GroupCWProxyImpl implements _$GroupCWProxy {
           ? _value.blendMode
           // ignore: cast_nullable_to_non_nullable
           : blendMode as BlendMode?,
-      preserveRatio: preserveRatio == const $CopyWithPlaceholder()
-          ? _value.preserveRatio
-          // ignore: cast_nullable_to_non_nullable
-          : preserveRatio as bool?,
-      layoutGrow: layoutGrow == const $CopyWithPlaceholder()
-          ? _value.layoutGrow
-          // ignore: cast_nullable_to_non_nullable
-          : layoutGrow as double?,
       constraints: constraints == const $CopyWithPlaceholder()
           ? _value.constraints
           // ignore: cast_nullable_to_non_nullable
@@ -734,6 +735,8 @@ Group _$GroupFromJson(Map<String, dynamic> json) => Group(
       size: json['size'] == null
           ? null
           : Vector2D.fromJson(json['size'] as Map<String, dynamic>),
+      preserveRatio: json['preserveRatio'] as bool? ?? false,
+      layoutGrow: (json['layoutGrow'] as num?)?.toDouble() ?? 0.0,
       styles: (json['styles'] as Map<String, dynamic>?)?.map(
         (k, e) => MapEntry($enumDecode(_$StyleTypeKeyEnumMap, k), e as String),
       ),
@@ -763,8 +766,6 @@ Group _$GroupFromJson(Map<String, dynamic> json) => Group(
           ?.map((e) => (e as num).toDouble())
           .toList(),
       blendMode: $enumDecodeNullable(_$BlendModeEnumMap, json['blendMode']),
-      preserveRatio: json['preserveRatio'] as bool? ?? false,
-      layoutGrow: (json['layoutGrow'] as num?)?.toDouble(),
       constraints: json['constraints'] == null
           ? null
           : LayoutConstraint.fromJson(

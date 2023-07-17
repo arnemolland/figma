@@ -99,9 +99,9 @@ abstract class _$ComponentNodeCWProxy {
 
   ComponentNode blendMode(BlendMode? blendMode);
 
-  ComponentNode preserveRatio(bool? preserveRatio);
+  ComponentNode preserveRatio(bool preserveRatio);
 
-  ComponentNode layoutGrow(double? layoutGrow);
+  ComponentNode layoutGrow(double layoutGrow);
 
   ComponentNode constraints(LayoutConstraint? constraints);
 
@@ -352,11 +352,11 @@ class _$ComponentNodeCWProxyImpl implements _$ComponentNodeCWProxy {
   ComponentNode blendMode(BlendMode? blendMode) => this(blendMode: blendMode);
 
   @override
-  ComponentNode preserveRatio(bool? preserveRatio) =>
+  ComponentNode preserveRatio(bool preserveRatio) =>
       this(preserveRatio: preserveRatio);
 
   @override
-  ComponentNode layoutGrow(double? layoutGrow) => this(layoutGrow: layoutGrow);
+  ComponentNode layoutGrow(double layoutGrow) => this(layoutGrow: layoutGrow);
 
   @override
   ComponentNode constraints(LayoutConstraint? constraints) =>
@@ -656,14 +656,16 @@ class _$ComponentNodeCWProxyImpl implements _$ComponentNodeCWProxy {
           ? _value.blendMode
           // ignore: cast_nullable_to_non_nullable
           : blendMode as BlendMode?,
-      preserveRatio: preserveRatio == const $CopyWithPlaceholder()
-          ? _value.preserveRatio
-          // ignore: cast_nullable_to_non_nullable
-          : preserveRatio as bool?,
-      layoutGrow: layoutGrow == const $CopyWithPlaceholder()
-          ? _value.layoutGrow
-          // ignore: cast_nullable_to_non_nullable
-          : layoutGrow as double?,
+      preserveRatio:
+          preserveRatio == const $CopyWithPlaceholder() || preserveRatio == null
+              ? _value.preserveRatio
+              // ignore: cast_nullable_to_non_nullable
+              : preserveRatio as bool,
+      layoutGrow:
+          layoutGrow == const $CopyWithPlaceholder() || layoutGrow == null
+              ? _value.layoutGrow
+              // ignore: cast_nullable_to_non_nullable
+              : layoutGrow as double,
       constraints: constraints == const $CopyWithPlaceholder()
           ? _value.constraints
           // ignore: cast_nullable_to_non_nullable
@@ -811,7 +813,7 @@ ComponentNode _$ComponentNodeFromJson(Map<String, dynamic> json) =>
           .toList(),
       blendMode: $enumDecodeNullable(_$BlendModeEnumMap, json['blendMode']),
       preserveRatio: json['preserveRatio'] as bool? ?? false,
-      layoutGrow: (json['layoutGrow'] as num?)?.toDouble(),
+      layoutGrow: (json['layoutGrow'] as num?)?.toDouble() ?? 0.0,
       constraints: json['constraints'] == null
           ? null
           : LayoutConstraint.fromJson(
