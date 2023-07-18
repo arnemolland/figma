@@ -9,16 +9,16 @@ part 'arc_data.g.dart';
 @CopyWith()
 class ArcData {
   ArcData({
-    required this.start,
-    required this.end,
+    required this.startingAngle,
+    required this.endingAngle,
     required this.innerRadius,
   });
 
   /// Start of the sweep in radians.
-  final double start;
+  final double startingAngle;
 
   /// End of the sweep in radians.
-  final double end;
+  final double endingAngle;
 
   /// Inner radius value between 0 and 1.
   final double innerRadius;
