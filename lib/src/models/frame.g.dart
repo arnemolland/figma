@@ -32,7 +32,7 @@ abstract class _$FrameCWProxy {
 
   Frame exportSettings(List<ExportSetting> exportSettings);
 
-  Frame children(List<Node> children);
+  Frame children(List<Node?>? children);
 
   Frame opacity(double opacity);
 
@@ -74,6 +74,10 @@ abstract class _$FrameCWProxy {
 
   Frame strokesIncludedInLayout(bool strokesIncludedInLayout);
 
+  Frame preserveRatio(bool preserveRatio);
+
+  Frame layoutGrow(double layoutGrow);
+
   Frame absoluteBoundingBox(SizeRectangle? absoluteBoundingBox);
 
   Frame absoluteRenderBounds(SizeRectangle? absoluteRenderBounds);
@@ -91,8 +95,6 @@ abstract class _$FrameCWProxy {
   Frame rectangleCornerRadii(List<double>? rectangleCornerRadii);
 
   Frame blendMode(BlendMode? blendMode);
-
-  Frame preserveRatio(bool? preserveRatio);
 
   Frame constraints(LayoutConstraint? constraints);
 
@@ -129,7 +131,7 @@ abstract class _$FrameCWProxy {
     List<Paint>? fills,
     List<Paint>? strokes,
     List<ExportSetting>? exportSettings,
-    List<Node>? children,
+    List<Node?>? children,
     double? opacity,
     PrimaryAxisAlignItems? primaryAxisAlignItems,
     CounterAxisAlignItems? counterAxisAlignItems,
@@ -150,6 +152,8 @@ abstract class _$FrameCWProxy {
     LayoutPositioning? layoutPositioning,
     bool? itemReverseZIndex,
     bool? strokesIncludedInLayout,
+    bool? preserveRatio,
+    double? layoutGrow,
     SizeRectangle? absoluteBoundingBox,
     SizeRectangle? absoluteRenderBounds,
     Vector2D? size,
@@ -159,7 +163,6 @@ abstract class _$FrameCWProxy {
     double? cornerRadius,
     List<double>? rectangleCornerRadii,
     BlendMode? blendMode,
-    bool? preserveRatio,
     LayoutConstraint? constraints,
     LayoutAlign? layoutAlign,
     String? transitionNodeID,
@@ -218,7 +221,7 @@ class _$FrameCWProxyImpl implements _$FrameCWProxy {
       this(exportSettings: exportSettings);
 
   @override
-  Frame children(List<Node> children) => this(children: children);
+  Frame children(List<Node?>? children) => this(children: children);
 
   @override
   Frame opacity(double opacity) => this(opacity: opacity);
@@ -293,6 +296,12 @@ class _$FrameCWProxyImpl implements _$FrameCWProxy {
       this(strokesIncludedInLayout: strokesIncludedInLayout);
 
   @override
+  Frame preserveRatio(bool preserveRatio) => this(preserveRatio: preserveRatio);
+
+  @override
+  Frame layoutGrow(double layoutGrow) => this(layoutGrow: layoutGrow);
+
+  @override
   Frame absoluteBoundingBox(SizeRectangle? absoluteBoundingBox) =>
       this(absoluteBoundingBox: absoluteBoundingBox);
 
@@ -322,10 +331,6 @@ class _$FrameCWProxyImpl implements _$FrameCWProxy {
 
   @override
   Frame blendMode(BlendMode? blendMode) => this(blendMode: blendMode);
-
-  @override
-  Frame preserveRatio(bool? preserveRatio) =>
-      this(preserveRatio: preserveRatio);
 
   @override
   Frame constraints(LayoutConstraint? constraints) =>
@@ -397,6 +402,8 @@ class _$FrameCWProxyImpl implements _$FrameCWProxy {
     Object? layoutPositioning = const $CopyWithPlaceholder(),
     Object? itemReverseZIndex = const $CopyWithPlaceholder(),
     Object? strokesIncludedInLayout = const $CopyWithPlaceholder(),
+    Object? preserveRatio = const $CopyWithPlaceholder(),
+    Object? layoutGrow = const $CopyWithPlaceholder(),
     Object? absoluteBoundingBox = const $CopyWithPlaceholder(),
     Object? absoluteRenderBounds = const $CopyWithPlaceholder(),
     Object? size = const $CopyWithPlaceholder(),
@@ -406,7 +413,6 @@ class _$FrameCWProxyImpl implements _$FrameCWProxy {
     Object? cornerRadius = const $CopyWithPlaceholder(),
     Object? rectangleCornerRadii = const $CopyWithPlaceholder(),
     Object? blendMode = const $CopyWithPlaceholder(),
-    Object? preserveRatio = const $CopyWithPlaceholder(),
     Object? constraints = const $CopyWithPlaceholder(),
     Object? layoutAlign = const $CopyWithPlaceholder(),
     Object? transitionNodeID = const $CopyWithPlaceholder(),
@@ -469,10 +475,10 @@ class _$FrameCWProxyImpl implements _$FrameCWProxy {
           ? _value.exportSettings
           // ignore: cast_nullable_to_non_nullable
           : exportSettings as List<ExportSetting>,
-      children: children == const $CopyWithPlaceholder() || children == null
+      children: children == const $CopyWithPlaceholder()
           ? _value.children
           // ignore: cast_nullable_to_non_nullable
-          : children as List<Node>,
+          : children as List<Node?>?,
       opacity: opacity == const $CopyWithPlaceholder() || opacity == null
           ? _value.opacity
           // ignore: cast_nullable_to_non_nullable
@@ -575,6 +581,16 @@ class _$FrameCWProxyImpl implements _$FrameCWProxy {
               ? _value.strokesIncludedInLayout
               // ignore: cast_nullable_to_non_nullable
               : strokesIncludedInLayout as bool,
+      preserveRatio:
+          preserveRatio == const $CopyWithPlaceholder() || preserveRatio == null
+              ? _value.preserveRatio
+              // ignore: cast_nullable_to_non_nullable
+              : preserveRatio as bool,
+      layoutGrow:
+          layoutGrow == const $CopyWithPlaceholder() || layoutGrow == null
+              ? _value.layoutGrow
+              // ignore: cast_nullable_to_non_nullable
+              : layoutGrow as double,
       absoluteBoundingBox: absoluteBoundingBox == const $CopyWithPlaceholder()
           ? _value.absoluteBoundingBox
           // ignore: cast_nullable_to_non_nullable
@@ -612,10 +628,6 @@ class _$FrameCWProxyImpl implements _$FrameCWProxy {
           ? _value.blendMode
           // ignore: cast_nullable_to_non_nullable
           : blendMode as BlendMode?,
-      preserveRatio: preserveRatio == const $CopyWithPlaceholder()
-          ? _value.preserveRatio
-          // ignore: cast_nullable_to_non_nullable
-          : preserveRatio as bool?,
       constraints: constraints == const $CopyWithPlaceholder()
           ? _value.constraints
           // ignore: cast_nullable_to_non_nullable
@@ -688,8 +700,8 @@ Frame _$FrameFromJson(Map<String, dynamic> json) => Frame(
               ?.map((e) => ExportSetting.fromJson(e as Map<String, dynamic>))
               .toList() ??
           [],
-      children: (json['children'] as List<dynamic>)
-          .map((e) => Node.fromJson(e as Map<String, dynamic>))
+      children: (json['children'] as List<dynamic>?)
+          ?.map(const NodeJsonConverter().fromJson)
           .toList(),
       opacity: (json['opacity'] as num?)?.toDouble() ?? 1.0,
       primaryAxisAlignItems: $enumDecodeNullable(
@@ -730,6 +742,8 @@ Frame _$FrameFromJson(Map<String, dynamic> json) => Frame(
       itemReverseZIndex: json['itemReverseZIndex'] as bool? ?? false,
       strokesIncludedInLayout:
           json['strokesIncludedInLayout'] as bool? ?? false,
+      preserveRatio: json['preserveRatio'] as bool? ?? false,
+      layoutGrow: (json['layoutGrow'] as num?)?.toDouble() ?? 0.0,
       absoluteBoundingBox: json['absoluteBoundingBox'] == null
           ? null
           : SizeRectangle.fromJson(
@@ -753,7 +767,6 @@ Frame _$FrameFromJson(Map<String, dynamic> json) => Frame(
           ?.map((e) => (e as num).toDouble())
           .toList(),
       blendMode: $enumDecodeNullable(_$BlendModeEnumMap, json['blendMode']),
-      preserveRatio: json['preserveRatio'] as bool? ?? false,
       constraints: json['constraints'] == null
           ? null
           : LayoutConstraint.fromJson(
@@ -784,7 +797,8 @@ Map<String, dynamic> _$FrameToJson(Frame instance) => <String, dynamic>{
       'sharedPluginData': instance.sharedPluginData,
       'rotation': instance.rotation,
       'componentPropertyReferencesMap': instance.componentPropertyReferencesMap,
-      'children': instance.children,
+      'children':
+          instance.children?.map(const NodeJsonConverter().toJson).toList(),
       'locked': instance.locked,
       'fills': instance.fills,
       'strokes': instance.strokes,
@@ -796,6 +810,7 @@ Map<String, dynamic> _$FrameToJson(Frame instance) => <String, dynamic>{
       'exportSettings': instance.exportSettings,
       'blendMode': _$BlendModeEnumMap[instance.blendMode],
       'preserveRatio': instance.preserveRatio,
+      'layoutGrow': instance.layoutGrow,
       'constraints': instance.constraints,
       'layoutAlign': _$LayoutAlignEnumMap[instance.layoutAlign],
       'transitionNodeID': instance.transitionNodeID,

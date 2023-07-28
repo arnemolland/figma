@@ -78,7 +78,7 @@ abstract class _$RegularPolygonCWProxy {
 
   RegularPolygon absoluteRenderBounds(SizeRectangle? absoluteRenderBounds);
 
-  RegularPolygon fillOverrideTable(Map<int, PaintOverride>? fillOverrideTable);
+  RegularPolygon fillOverrideTable(Map<int, PaintOverride?>? fillOverrideTable);
 
   RegularPolygon individualStrokeWeights(
       StrokeWeights? individualStrokeWeights);
@@ -125,7 +125,7 @@ abstract class _$RegularPolygonCWProxy {
     StrokeAlign? strokeAlign,
     Map<StyleTypeKey, String>? styles,
     SizeRectangle? absoluteRenderBounds,
-    Map<int, PaintOverride>? fillOverrideTable,
+    Map<int, PaintOverride?>? fillOverrideTable,
     StrokeWeights? individualStrokeWeights,
   });
 }
@@ -264,7 +264,7 @@ class _$RegularPolygonCWProxyImpl implements _$RegularPolygonCWProxy {
 
   @override
   RegularPolygon fillOverrideTable(
-          Map<int, PaintOverride>? fillOverrideTable) =>
+          Map<int, PaintOverride?>? fillOverrideTable) =>
       this(fillOverrideTable: fillOverrideTable);
 
   @override
@@ -473,7 +473,7 @@ class _$RegularPolygonCWProxyImpl implements _$RegularPolygonCWProxy {
       fillOverrideTable: fillOverrideTable == const $CopyWithPlaceholder()
           ? _value.fillOverrideTable
           // ignore: cast_nullable_to_non_nullable
-          : fillOverrideTable as Map<int, PaintOverride>?,
+          : fillOverrideTable as Map<int, PaintOverride?>?,
       individualStrokeWeights:
           individualStrokeWeights == const $CopyWithPlaceholder()
               ? _value.individualStrokeWeights
@@ -576,7 +576,10 @@ RegularPolygon _$RegularPolygonFromJson(Map<String, dynamic> json) =>
       fillOverrideTable:
           (json['fillOverrideTable'] as Map<String, dynamic>?)?.map(
         (k, e) => MapEntry(
-            int.parse(k), PaintOverride.fromJson(e as Map<String, dynamic>)),
+            int.parse(k),
+            e == null
+                ? null
+                : PaintOverride.fromJson(e as Map<String, dynamic>)),
       ),
       individualStrokeWeights: json['individualStrokeWeights'] == null
           ? null

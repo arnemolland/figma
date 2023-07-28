@@ -11,7 +11,7 @@ part 'frame.g.dart';
 class Frame extends Node {
   /// An array of nodes that are direct children of this node.
   @NodeJsonConverter()
-  final List<Node> children;
+  final List<Node?>? children;
 
   /// If true, layer is locked and cannot be edited.
   @JsonKey(defaultValue: false)
@@ -50,7 +50,13 @@ class Frame extends Node {
 
   /// Keep height and width constrained to same ratio.
   @JsonKey(defaultValue: false)
-  final bool? preserveRatio;
+  final bool preserveRatio;
+
+  /// This property is applicable only for direct children of auto-layout frames,
+  /// ignored otherwise. Determines whether a layer should stretch along the parent’s
+  /// primary axis. A `0` corresponds to a fixed size and `1` corresponds to stretch.
+  @JsonKey(defaultValue: 0.0)
+  final double layoutGrow;
 
   /// Horizontal and vertical layout constraints for node.
   final LayoutConstraint? constraints;
@@ -238,6 +244,8 @@ class Frame extends Node {
     required this.layoutPositioning,
     required this.itemReverseZIndex,
     required this.strokesIncludedInLayout,
+    required this.preserveRatio,
+    required this.layoutGrow,
     this.absoluteBoundingBox,
     this.absoluteRenderBounds,
     this.size,
@@ -247,7 +255,6 @@ class Frame extends Node {
     this.cornerRadius,
     this.rectangleCornerRadii,
     this.blendMode,
-    this.preserveRatio,
     this.constraints,
     this.layoutAlign,
     this.transitionNodeID,
@@ -273,6 +280,7 @@ class Frame extends Node {
         exportSettings,
         blendMode,
         preserveRatio,
+        layoutGrow,
         constraints,
         layoutAlign,
         transitionNodeID,

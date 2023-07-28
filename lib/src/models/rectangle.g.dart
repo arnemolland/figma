@@ -78,7 +78,7 @@ abstract class _$RectangleCWProxy {
 
   Rectangle absoluteRenderBounds(SizeRectangle? absoluteRenderBounds);
 
-  Rectangle fillOverrideTable(Map<int, PaintOverride>? fillOverrideTable);
+  Rectangle fillOverrideTable(Map<int, PaintOverride?>? fillOverrideTable);
 
   Rectangle individualStrokeWeights(StrokeWeights? individualStrokeWeights);
 
@@ -128,7 +128,7 @@ abstract class _$RectangleCWProxy {
     StrokeAlign? strokeAlign,
     Map<StyleTypeKey, String>? styles,
     SizeRectangle? absoluteRenderBounds,
-    Map<int, PaintOverride>? fillOverrideTable,
+    Map<int, PaintOverride?>? fillOverrideTable,
     StrokeWeights? individualStrokeWeights,
     double? cornerRadius,
     List<double>? rectangleCornerRadii,
@@ -266,7 +266,7 @@ class _$RectangleCWProxyImpl implements _$RectangleCWProxy {
       this(absoluteRenderBounds: absoluteRenderBounds);
 
   @override
-  Rectangle fillOverrideTable(Map<int, PaintOverride>? fillOverrideTable) =>
+  Rectangle fillOverrideTable(Map<int, PaintOverride?>? fillOverrideTable) =>
       this(fillOverrideTable: fillOverrideTable);
 
   @override
@@ -484,7 +484,7 @@ class _$RectangleCWProxyImpl implements _$RectangleCWProxy {
       fillOverrideTable: fillOverrideTable == const $CopyWithPlaceholder()
           ? _value.fillOverrideTable
           // ignore: cast_nullable_to_non_nullable
-          : fillOverrideTable as Map<int, PaintOverride>?,
+          : fillOverrideTable as Map<int, PaintOverride?>?,
       individualStrokeWeights:
           individualStrokeWeights == const $CopyWithPlaceholder()
               ? _value.individualStrokeWeights
@@ -594,7 +594,10 @@ Rectangle _$RectangleFromJson(Map<String, dynamic> json) => Rectangle(
       fillOverrideTable:
           (json['fillOverrideTable'] as Map<String, dynamic>?)?.map(
         (k, e) => MapEntry(
-            int.parse(k), PaintOverride.fromJson(e as Map<String, dynamic>)),
+            int.parse(k),
+            e == null
+                ? null
+                : PaintOverride.fromJson(e as Map<String, dynamic>)),
       ),
       individualStrokeWeights: json['individualStrokeWeights'] == null
           ? null

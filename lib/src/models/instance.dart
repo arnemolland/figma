@@ -1,3 +1,4 @@
+import 'package:figma/src/converters/converters.dart';
 import 'package:figma/src/models.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:copy_with_extension/copy_with_extension.dart';
@@ -36,6 +37,8 @@ class Instance extends Frame {
     required super.paddingRight,
     required super.paddingTop,
     required super.size,
+    required super.preserveRatio,
+    required super.layoutGrow,
     super.styles,
     super.componentPropertyReferencesMap,
     super.absoluteBoundingBox,
@@ -50,7 +53,6 @@ class Instance extends Frame {
     super.cornerRadius,
     super.rectangleCornerRadii,
     super.blendMode,
-    super.preserveRatio,
     super.constraints,
     super.layoutAlign,
     super.transitionNodeID,

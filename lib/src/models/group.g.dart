@@ -19,7 +19,7 @@ abstract class _$GroupCWProxy {
 
   Group exportSettings(List<ExportSetting> exportSettings);
 
-  Group children(List<Node> children);
+  Group children(List<Node?>? children);
 
   Group opacity(double opacity);
 
@@ -63,6 +63,10 @@ abstract class _$GroupCWProxy {
 
   Group size(Vector2D? size);
 
+  Group preserveRatio(bool preserveRatio);
+
+  Group layoutGrow(double layoutGrow);
+
   Group styles(Map<StyleTypeKey, String>? styles);
 
   Group componentPropertyReferencesMap(
@@ -91,8 +95,6 @@ abstract class _$GroupCWProxy {
   Group rectangleCornerRadii(List<double>? rectangleCornerRadii);
 
   Group blendMode(BlendMode? blendMode);
-
-  Group preserveRatio(bool? preserveRatio);
 
   Group constraints(LayoutConstraint? constraints);
 
@@ -123,7 +125,7 @@ abstract class _$GroupCWProxy {
     List<Paint>? fills,
     List<Paint>? strokes,
     List<ExportSetting>? exportSettings,
-    List<Node>? children,
+    List<Node?>? children,
     double? opacity,
     LayoutPositioning? layoutPositioning,
     bool? itemReverseZIndex,
@@ -145,6 +147,8 @@ abstract class _$GroupCWProxy {
     double? paddingRight,
     double? paddingTop,
     Vector2D? size,
+    bool? preserveRatio,
+    double? layoutGrow,
     Map<StyleTypeKey, String>? styles,
     Map<String, String>? componentPropertyReferencesMap,
     SizeRectangle? absoluteBoundingBox,
@@ -159,7 +163,6 @@ abstract class _$GroupCWProxy {
     double? cornerRadius,
     List<double>? rectangleCornerRadii,
     BlendMode? blendMode,
-    bool? preserveRatio,
     LayoutConstraint? constraints,
     LayoutAlign? layoutAlign,
     String? transitionNodeID,
@@ -197,7 +200,7 @@ class _$GroupCWProxyImpl implements _$GroupCWProxy {
       this(exportSettings: exportSettings);
 
   @override
-  Group children(List<Node> children) => this(children: children);
+  Group children(List<Node?>? children) => this(children: children);
 
   @override
   Group opacity(double opacity) => this(opacity: opacity);
@@ -275,6 +278,12 @@ class _$GroupCWProxyImpl implements _$GroupCWProxy {
   Group size(Vector2D? size) => this(size: size);
 
   @override
+  Group preserveRatio(bool preserveRatio) => this(preserveRatio: preserveRatio);
+
+  @override
+  Group layoutGrow(double layoutGrow) => this(layoutGrow: layoutGrow);
+
+  @override
   Group styles(Map<StyleTypeKey, String>? styles) => this(styles: styles);
 
   @override
@@ -321,10 +330,6 @@ class _$GroupCWProxyImpl implements _$GroupCWProxy {
 
   @override
   Group blendMode(BlendMode? blendMode) => this(blendMode: blendMode);
-
-  @override
-  Group preserveRatio(bool? preserveRatio) =>
-      this(preserveRatio: preserveRatio);
 
   @override
   Group constraints(LayoutConstraint? constraints) =>
@@ -392,6 +397,8 @@ class _$GroupCWProxyImpl implements _$GroupCWProxy {
     Object? paddingRight = const $CopyWithPlaceholder(),
     Object? paddingTop = const $CopyWithPlaceholder(),
     Object? size = const $CopyWithPlaceholder(),
+    Object? preserveRatio = const $CopyWithPlaceholder(),
+    Object? layoutGrow = const $CopyWithPlaceholder(),
     Object? styles = const $CopyWithPlaceholder(),
     Object? componentPropertyReferencesMap = const $CopyWithPlaceholder(),
     Object? absoluteBoundingBox = const $CopyWithPlaceholder(),
@@ -406,7 +413,6 @@ class _$GroupCWProxyImpl implements _$GroupCWProxy {
     Object? cornerRadius = const $CopyWithPlaceholder(),
     Object? rectangleCornerRadii = const $CopyWithPlaceholder(),
     Object? blendMode = const $CopyWithPlaceholder(),
-    Object? preserveRatio = const $CopyWithPlaceholder(),
     Object? constraints = const $CopyWithPlaceholder(),
     Object? layoutAlign = const $CopyWithPlaceholder(),
     Object? transitionNodeID = const $CopyWithPlaceholder(),
@@ -442,10 +448,10 @@ class _$GroupCWProxyImpl implements _$GroupCWProxy {
           ? _value.exportSettings
           // ignore: cast_nullable_to_non_nullable
           : exportSettings as List<ExportSetting>,
-      children: children == const $CopyWithPlaceholder() || children == null
+      children: children == const $CopyWithPlaceholder()
           ? _value.children
           // ignore: cast_nullable_to_non_nullable
-          : children as List<Node>,
+          : children as List<Node?>?,
       opacity: opacity == const $CopyWithPlaceholder() || opacity == null
           ? _value.opacity
           // ignore: cast_nullable_to_non_nullable
@@ -552,6 +558,16 @@ class _$GroupCWProxyImpl implements _$GroupCWProxy {
           ? _value.size
           // ignore: cast_nullable_to_non_nullable
           : size as Vector2D?,
+      preserveRatio:
+          preserveRatio == const $CopyWithPlaceholder() || preserveRatio == null
+              ? _value.preserveRatio
+              // ignore: cast_nullable_to_non_nullable
+              : preserveRatio as bool,
+      layoutGrow:
+          layoutGrow == const $CopyWithPlaceholder() || layoutGrow == null
+              ? _value.layoutGrow
+              // ignore: cast_nullable_to_non_nullable
+              : layoutGrow as double,
       styles: styles == const $CopyWithPlaceholder()
           ? _value.styles
           // ignore: cast_nullable_to_non_nullable
@@ -611,10 +627,6 @@ class _$GroupCWProxyImpl implements _$GroupCWProxy {
           ? _value.blendMode
           // ignore: cast_nullable_to_non_nullable
           : blendMode as BlendMode?,
-      preserveRatio: preserveRatio == const $CopyWithPlaceholder()
-          ? _value.preserveRatio
-          // ignore: cast_nullable_to_non_nullable
-          : preserveRatio as bool?,
       constraints: constraints == const $CopyWithPlaceholder()
           ? _value.constraints
           // ignore: cast_nullable_to_non_nullable
@@ -678,8 +690,8 @@ Group _$GroupFromJson(Map<String, dynamic> json) => Group(
               ?.map((e) => ExportSetting.fromJson(e as Map<String, dynamic>))
               .toList() ??
           [],
-      children: (json['children'] as List<dynamic>)
-          .map((e) => Node.fromJson(e as Map<String, dynamic>))
+      children: (json['children'] as List<dynamic>?)
+          ?.map(const NodeJsonConverter().fromJson)
           .toList(),
       opacity: (json['opacity'] as num?)?.toDouble() ?? 1.0,
       layoutPositioning: $enumDecodeNullable(
@@ -723,6 +735,8 @@ Group _$GroupFromJson(Map<String, dynamic> json) => Group(
       size: json['size'] == null
           ? null
           : Vector2D.fromJson(json['size'] as Map<String, dynamic>),
+      preserveRatio: json['preserveRatio'] as bool? ?? false,
+      layoutGrow: (json['layoutGrow'] as num?)?.toDouble() ?? 0.0,
       styles: (json['styles'] as Map<String, dynamic>?)?.map(
         (k, e) => MapEntry($enumDecode(_$StyleTypeKeyEnumMap, k), e as String),
       ),
@@ -752,7 +766,6 @@ Group _$GroupFromJson(Map<String, dynamic> json) => Group(
           ?.map((e) => (e as num).toDouble())
           .toList(),
       blendMode: $enumDecodeNullable(_$BlendModeEnumMap, json['blendMode']),
-      preserveRatio: json['preserveRatio'] as bool? ?? false,
       constraints: json['constraints'] == null
           ? null
           : LayoutConstraint.fromJson(
@@ -784,7 +797,8 @@ Map<String, dynamic> _$GroupToJson(Group instance) => <String, dynamic>{
       'sharedPluginData': instance.sharedPluginData,
       'rotation': instance.rotation,
       'componentPropertyReferencesMap': instance.componentPropertyReferencesMap,
-      'children': instance.children,
+      'children':
+          instance.children?.map(const NodeJsonConverter().toJson).toList(),
       'locked': instance.locked,
       'fills': instance.fills,
       'strokes': instance.strokes,
@@ -796,6 +810,7 @@ Map<String, dynamic> _$GroupToJson(Group instance) => <String, dynamic>{
       'exportSettings': instance.exportSettings,
       'blendMode': _$BlendModeEnumMap[instance.blendMode],
       'preserveRatio': instance.preserveRatio,
+      'layoutGrow': instance.layoutGrow,
       'constraints': instance.constraints,
       'layoutAlign': _$LayoutAlignEnumMap[instance.layoutAlign],
       'transitionNodeID': instance.transitionNodeID,

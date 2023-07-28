@@ -19,7 +19,7 @@ abstract class _$InstanceCWProxy {
 
   Instance exportSettings(List<ExportSetting> exportSettings);
 
-  Instance children(List<Node> children);
+  Instance children(List<Node?>? children);
 
   Instance opacity(double opacity);
 
@@ -63,6 +63,10 @@ abstract class _$InstanceCWProxy {
 
   Instance size(Vector2D? size);
 
+  Instance preserveRatio(bool preserveRatio);
+
+  Instance layoutGrow(double layoutGrow);
+
   Instance styles(Map<StyleTypeKey, String>? styles);
 
   Instance componentPropertyReferencesMap(
@@ -91,8 +95,6 @@ abstract class _$InstanceCWProxy {
   Instance rectangleCornerRadii(List<double>? rectangleCornerRadii);
 
   Instance blendMode(BlendMode? blendMode);
-
-  Instance preserveRatio(bool? preserveRatio);
 
   Instance constraints(LayoutConstraint? constraints);
 
@@ -132,7 +134,7 @@ abstract class _$InstanceCWProxy {
     List<Paint>? fills,
     List<Paint>? strokes,
     List<ExportSetting>? exportSettings,
-    List<Node>? children,
+    List<Node?>? children,
     double? opacity,
     LayoutPositioning? layoutPositioning,
     bool? itemReverseZIndex,
@@ -154,6 +156,8 @@ abstract class _$InstanceCWProxy {
     double? paddingRight,
     double? paddingTop,
     Vector2D? size,
+    bool? preserveRatio,
+    double? layoutGrow,
     Map<StyleTypeKey, String>? styles,
     Map<String, String>? componentPropertyReferencesMap,
     SizeRectangle? absoluteBoundingBox,
@@ -168,7 +172,6 @@ abstract class _$InstanceCWProxy {
     double? cornerRadius,
     List<double>? rectangleCornerRadii,
     BlendMode? blendMode,
-    bool? preserveRatio,
     LayoutConstraint? constraints,
     LayoutAlign? layoutAlign,
     String? transitionNodeID,
@@ -210,7 +213,7 @@ class _$InstanceCWProxyImpl implements _$InstanceCWProxy {
       this(exportSettings: exportSettings);
 
   @override
-  Instance children(List<Node> children) => this(children: children);
+  Instance children(List<Node?>? children) => this(children: children);
 
   @override
   Instance opacity(double opacity) => this(opacity: opacity);
@@ -290,6 +293,13 @@ class _$InstanceCWProxyImpl implements _$InstanceCWProxy {
   Instance size(Vector2D? size) => this(size: size);
 
   @override
+  Instance preserveRatio(bool preserveRatio) =>
+      this(preserveRatio: preserveRatio);
+
+  @override
+  Instance layoutGrow(double layoutGrow) => this(layoutGrow: layoutGrow);
+
+  @override
   Instance styles(Map<StyleTypeKey, String>? styles) => this(styles: styles);
 
   @override
@@ -339,10 +349,6 @@ class _$InstanceCWProxyImpl implements _$InstanceCWProxy {
 
   @override
   Instance blendMode(BlendMode? blendMode) => this(blendMode: blendMode);
-
-  @override
-  Instance preserveRatio(bool? preserveRatio) =>
-      this(preserveRatio: preserveRatio);
 
   @override
   Instance constraints(LayoutConstraint? constraints) =>
@@ -427,6 +433,8 @@ class _$InstanceCWProxyImpl implements _$InstanceCWProxy {
     Object? paddingRight = const $CopyWithPlaceholder(),
     Object? paddingTop = const $CopyWithPlaceholder(),
     Object? size = const $CopyWithPlaceholder(),
+    Object? preserveRatio = const $CopyWithPlaceholder(),
+    Object? layoutGrow = const $CopyWithPlaceholder(),
     Object? styles = const $CopyWithPlaceholder(),
     Object? componentPropertyReferencesMap = const $CopyWithPlaceholder(),
     Object? absoluteBoundingBox = const $CopyWithPlaceholder(),
@@ -441,7 +449,6 @@ class _$InstanceCWProxyImpl implements _$InstanceCWProxy {
     Object? cornerRadius = const $CopyWithPlaceholder(),
     Object? rectangleCornerRadii = const $CopyWithPlaceholder(),
     Object? blendMode = const $CopyWithPlaceholder(),
-    Object? preserveRatio = const $CopyWithPlaceholder(),
     Object? constraints = const $CopyWithPlaceholder(),
     Object? layoutAlign = const $CopyWithPlaceholder(),
     Object? transitionNodeID = const $CopyWithPlaceholder(),
@@ -481,10 +488,10 @@ class _$InstanceCWProxyImpl implements _$InstanceCWProxy {
           ? _value.exportSettings
           // ignore: cast_nullable_to_non_nullable
           : exportSettings as List<ExportSetting>,
-      children: children == const $CopyWithPlaceholder() || children == null
+      children: children == const $CopyWithPlaceholder()
           ? _value.children
           // ignore: cast_nullable_to_non_nullable
-          : children as List<Node>,
+          : children as List<Node?>?,
       opacity: opacity == const $CopyWithPlaceholder() || opacity == null
           ? _value.opacity
           // ignore: cast_nullable_to_non_nullable
@@ -591,6 +598,16 @@ class _$InstanceCWProxyImpl implements _$InstanceCWProxy {
           ? _value.size
           // ignore: cast_nullable_to_non_nullable
           : size as Vector2D?,
+      preserveRatio:
+          preserveRatio == const $CopyWithPlaceholder() || preserveRatio == null
+              ? _value.preserveRatio
+              // ignore: cast_nullable_to_non_nullable
+              : preserveRatio as bool,
+      layoutGrow:
+          layoutGrow == const $CopyWithPlaceholder() || layoutGrow == null
+              ? _value.layoutGrow
+              // ignore: cast_nullable_to_non_nullable
+              : layoutGrow as double,
       styles: styles == const $CopyWithPlaceholder()
           ? _value.styles
           // ignore: cast_nullable_to_non_nullable
@@ -650,10 +667,6 @@ class _$InstanceCWProxyImpl implements _$InstanceCWProxy {
           ? _value.blendMode
           // ignore: cast_nullable_to_non_nullable
           : blendMode as BlendMode?,
-      preserveRatio: preserveRatio == const $CopyWithPlaceholder()
-          ? _value.preserveRatio
-          // ignore: cast_nullable_to_non_nullable
-          : preserveRatio as bool?,
       constraints: constraints == const $CopyWithPlaceholder()
           ? _value.constraints
           // ignore: cast_nullable_to_non_nullable
@@ -737,8 +750,8 @@ Instance _$InstanceFromJson(Map<String, dynamic> json) => Instance(
               ?.map((e) => ExportSetting.fromJson(e as Map<String, dynamic>))
               .toList() ??
           [],
-      children: (json['children'] as List<dynamic>)
-          .map((e) => Node.fromJson(e as Map<String, dynamic>))
+      children: (json['children'] as List<dynamic>?)
+          ?.map(const NodeJsonConverter().fromJson)
           .toList(),
       opacity: (json['opacity'] as num?)?.toDouble() ?? 1.0,
       layoutPositioning: $enumDecodeNullable(
@@ -782,6 +795,8 @@ Instance _$InstanceFromJson(Map<String, dynamic> json) => Instance(
       size: json['size'] == null
           ? null
           : Vector2D.fromJson(json['size'] as Map<String, dynamic>),
+      preserveRatio: json['preserveRatio'] as bool? ?? false,
+      layoutGrow: (json['layoutGrow'] as num?)?.toDouble() ?? 0.0,
       styles: (json['styles'] as Map<String, dynamic>?)?.map(
         (k, e) => MapEntry($enumDecode(_$StyleTypeKeyEnumMap, k), e as String),
       ),
@@ -811,7 +826,6 @@ Instance _$InstanceFromJson(Map<String, dynamic> json) => Instance(
           ?.map((e) => (e as num).toDouble())
           .toList(),
       blendMode: $enumDecodeNullable(_$BlendModeEnumMap, json['blendMode']),
-      preserveRatio: json['preserveRatio'] as bool? ?? false,
       constraints: json['constraints'] == null
           ? null
           : LayoutConstraint.fromJson(
@@ -855,7 +869,8 @@ Map<String, dynamic> _$InstanceToJson(Instance instance) => <String, dynamic>{
       'sharedPluginData': instance.sharedPluginData,
       'rotation': instance.rotation,
       'componentPropertyReferencesMap': instance.componentPropertyReferencesMap,
-      'children': instance.children,
+      'children':
+          instance.children?.map(const NodeJsonConverter().toJson).toList(),
       'locked': instance.locked,
       'fills': instance.fills,
       'strokes': instance.strokes,
@@ -867,6 +882,7 @@ Map<String, dynamic> _$InstanceToJson(Instance instance) => <String, dynamic>{
       'exportSettings': instance.exportSettings,
       'blendMode': _$BlendModeEnumMap[instance.blendMode],
       'preserveRatio': instance.preserveRatio,
+      'layoutGrow': instance.layoutGrow,
       'constraints': instance.constraints,
       'layoutAlign': _$LayoutAlignEnumMap[instance.layoutAlign],
       'transitionNodeID': instance.transitionNodeID,
