@@ -31,6 +31,9 @@ abstract class _$ComponentCWProxy {
 
   Component componentSetId(String? componentSetId);
 
+  Component componentPropertyDefinitions(
+      Map<String, ComponentPropertyDefinition> componentPropertyDefinitions);
+
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Component(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
@@ -50,6 +53,7 @@ abstract class _$ComponentCWProxy {
     FrameInfo? containingFrame,
     dynamic containingPage,
     String? componentSetId,
+    Map<String, ComponentPropertyDefinition>? componentPropertyDefinitions,
   });
 }
 
@@ -100,6 +104,12 @@ class _$ComponentCWProxyImpl implements _$ComponentCWProxy {
       this(componentSetId: componentSetId);
 
   @override
+  Component componentPropertyDefinitions(
+          Map<String, ComponentPropertyDefinition>
+              componentPropertyDefinitions) =>
+      this(componentPropertyDefinitions: componentPropertyDefinitions);
+
+  @override
 
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Component(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
@@ -120,6 +130,7 @@ class _$ComponentCWProxyImpl implements _$ComponentCWProxy {
     Object? containingFrame = const $CopyWithPlaceholder(),
     Object? containingPage = const $CopyWithPlaceholder(),
     Object? componentSetId = const $CopyWithPlaceholder(),
+    Object? componentPropertyDefinitions = const $CopyWithPlaceholder(),
   }) {
     return Component(
       key: key == const $CopyWithPlaceholder()
@@ -171,6 +182,13 @@ class _$ComponentCWProxyImpl implements _$ComponentCWProxy {
           ? _value.componentSetId
           // ignore: cast_nullable_to_non_nullable
           : componentSetId as String?,
+      componentPropertyDefinitions:
+          componentPropertyDefinitions == const $CopyWithPlaceholder() ||
+                  componentPropertyDefinitions == null
+              ? _value.componentPropertyDefinitions
+              // ignore: cast_nullable_to_non_nullable
+              : componentPropertyDefinitions
+                  as Map<String, ComponentPropertyDefinition>,
     );
   }
 }
@@ -207,6 +225,14 @@ Component _$ComponentFromJson(Map<String, dynamic> json) => Component(
               json['containing_frame'] as Map<String, dynamic>),
       containingPage: json['containing_page'],
       componentSetId: json['componentSetId'] as String?,
+      componentPropertyDefinitions:
+          (json['componentPropertyDefinitions'] as Map<String, dynamic>?)?.map(
+                (k, e) => MapEntry(
+                    k,
+                    ComponentPropertyDefinition.fromJson(
+                        e as Map<String, dynamic>)),
+              ) ??
+              {},
     );
 
 Map<String, dynamic> _$ComponentToJson(Component instance) => <String, dynamic>{
@@ -222,4 +248,5 @@ Map<String, dynamic> _$ComponentToJson(Component instance) => <String, dynamic>{
       'containing_frame': instance.containingFrame,
       'containing_page': instance.containingPage,
       'componentSetId': instance.componentSetId,
+      'componentPropertyDefinitions': instance.componentPropertyDefinitions,
     };

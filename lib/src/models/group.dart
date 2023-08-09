@@ -40,7 +40,7 @@ class Group extends Frame {
     required super.preserveRatio,
     required super.layoutGrow,
     super.styles,
-    super.componentPropertyReferencesMap,
+    super.componentPropertyReferences,
     super.absoluteBoundingBox,
     super.absoluteRenderBounds,
     super.rotation,

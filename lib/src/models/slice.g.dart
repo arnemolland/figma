@@ -11,8 +11,8 @@ abstract class _$SliceCWProxy {
 
   Slice visible(bool visible);
 
-  Slice componentPropertyReferencesMap(
-      Map<String, String>? componentPropertyReferencesMap);
+  Slice componentPropertyReferences(
+      Map<String, String>? componentPropertyReferences);
 
   Slice rotation(double? rotation);
 
@@ -43,7 +43,7 @@ abstract class _$SliceCWProxy {
   Slice call({
     String? id,
     bool? visible,
-    Map<String, String>? componentPropertyReferencesMap,
+    Map<String, String>? componentPropertyReferences,
     double? rotation,
     String? name,
     String? type,
@@ -70,9 +70,9 @@ class _$SliceCWProxyImpl implements _$SliceCWProxy {
   Slice visible(bool visible) => this(visible: visible);
 
   @override
-  Slice componentPropertyReferencesMap(
-          Map<String, String>? componentPropertyReferencesMap) =>
-      this(componentPropertyReferencesMap: componentPropertyReferencesMap);
+  Slice componentPropertyReferences(
+          Map<String, String>? componentPropertyReferences) =>
+      this(componentPropertyReferences: componentPropertyReferences);
 
   @override
   Slice rotation(double? rotation) => this(rotation: rotation);
@@ -120,7 +120,7 @@ class _$SliceCWProxyImpl implements _$SliceCWProxy {
   Slice call({
     Object? id = const $CopyWithPlaceholder(),
     Object? visible = const $CopyWithPlaceholder(),
-    Object? componentPropertyReferencesMap = const $CopyWithPlaceholder(),
+    Object? componentPropertyReferences = const $CopyWithPlaceholder(),
     Object? rotation = const $CopyWithPlaceholder(),
     Object? name = const $CopyWithPlaceholder(),
     Object? type = const $CopyWithPlaceholder(),
@@ -141,11 +141,11 @@ class _$SliceCWProxyImpl implements _$SliceCWProxy {
           ? _value.visible
           // ignore: cast_nullable_to_non_nullable
           : visible as bool,
-      componentPropertyReferencesMap:
-          componentPropertyReferencesMap == const $CopyWithPlaceholder()
-              ? _value.componentPropertyReferencesMap
+      componentPropertyReferences:
+          componentPropertyReferences == const $CopyWithPlaceholder()
+              ? _value.componentPropertyReferences
               // ignore: cast_nullable_to_non_nullable
-              : componentPropertyReferencesMap as Map<String, String>?,
+              : componentPropertyReferences as Map<String, String>?,
       rotation: rotation == const $CopyWithPlaceholder()
           ? _value.rotation
           // ignore: cast_nullable_to_non_nullable
@@ -205,9 +205,8 @@ extension $SliceCopyWith on Slice {
 Slice _$SliceFromJson(Map<String, dynamic> json) => Slice(
       id: json['id'] as String,
       visible: json['visible'] as bool? ?? true,
-      componentPropertyReferencesMap:
-          (json['componentPropertyReferencesMap'] as Map<String, dynamic>?)
-              ?.map(
+      componentPropertyReferences:
+          (json['componentPropertyReferences'] as Map<String, dynamic>?)?.map(
         (k, e) => MapEntry(k, e as String),
       ),
       rotation: (json['rotation'] as num?)?.toDouble(),
@@ -242,7 +241,7 @@ Map<String, dynamic> _$SliceToJson(Slice instance) => <String, dynamic>{
       'pluginData': instance.pluginData,
       'sharedPluginData': instance.sharedPluginData,
       'rotation': instance.rotation,
-      'componentPropertyReferencesMap': instance.componentPropertyReferencesMap,
+      'componentPropertyReferences': instance.componentPropertyReferences,
       'exportSettings': instance.exportSettings,
       'absoluteBoundingBox': instance.absoluteBoundingBox,
       'absoluteRenderBounds': instance.absoluteRenderBounds,

@@ -33,7 +33,7 @@ class Rectangle extends Vector {
     required super.strokeJoin,
     required super.strokeDashes,
     required super.strokeMiterAngle,
-    super.componentPropertyReferencesMap,
+    super.componentPropertyReferences,
     super.name,
     super.rotation,
     super.pluginData,
