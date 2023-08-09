@@ -24,5 +24,7 @@ jobs:
 
   publish:
     needs: dryrun
+    permissions:
+      id-token: write # Required for authentication using OIDC
     # Docs found at https://dart.dev/tools/pub/automated-publishing
     uses: dart-lang/setup-dart/.github/workflows/publish.yml@v1

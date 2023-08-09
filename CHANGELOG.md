@@ -1,3 +1,7 @@
+## 6.0.1
+
+- Fixed type mismatches ([@BigFlexLiu](https://github.com/BigFlexLiu))
+
 ## 6.0.0
 
 - **BREAKING:** Updated Dart SDK constraints to 3.0 or later
