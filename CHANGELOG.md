@@ -1,3 +1,7 @@
+## 7.0.0
+
+- Updated Figma API response models ([@BigFlexLiu](https://github.com/BigFlexLiu))
+
 ## 6.0.1
 
 - Fixed type mismatches ([@BigFlexLiu](https://github.com/BigFlexLiu))
