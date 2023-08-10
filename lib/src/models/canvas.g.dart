@@ -11,8 +11,8 @@ abstract class _$CanvasCWProxy {
 
   Canvas visible(bool visible);
 
-  Canvas componentPropertyReferencesMap(
-      Map<String, String>? componentPropertyReferencesMap);
+  Canvas componentPropertyReferences(
+      Map<String, String>? componentPropertyReferences);
 
   Canvas name(String? name);
 
@@ -43,7 +43,7 @@ abstract class _$CanvasCWProxy {
   Canvas call({
     String? id,
     bool? visible,
-    Map<String, String>? componentPropertyReferencesMap,
+    Map<String, String>? componentPropertyReferences,
     String? name,
     double? rotation,
     dynamic pluginData,
@@ -70,9 +70,9 @@ class _$CanvasCWProxyImpl implements _$CanvasCWProxy {
   Canvas visible(bool visible) => this(visible: visible);
 
   @override
-  Canvas componentPropertyReferencesMap(
-          Map<String, String>? componentPropertyReferencesMap) =>
-      this(componentPropertyReferencesMap: componentPropertyReferencesMap);
+  Canvas componentPropertyReferences(
+          Map<String, String>? componentPropertyReferences) =>
+      this(componentPropertyReferences: componentPropertyReferences);
 
   @override
   Canvas name(String? name) => this(name: name);
@@ -120,7 +120,7 @@ class _$CanvasCWProxyImpl implements _$CanvasCWProxy {
   Canvas call({
     Object? id = const $CopyWithPlaceholder(),
     Object? visible = const $CopyWithPlaceholder(),
-    Object? componentPropertyReferencesMap = const $CopyWithPlaceholder(),
+    Object? componentPropertyReferences = const $CopyWithPlaceholder(),
     Object? name = const $CopyWithPlaceholder(),
     Object? rotation = const $CopyWithPlaceholder(),
     Object? pluginData = const $CopyWithPlaceholder(),
@@ -141,11 +141,11 @@ class _$CanvasCWProxyImpl implements _$CanvasCWProxy {
           ? _value.visible
           // ignore: cast_nullable_to_non_nullable
           : visible as bool,
-      componentPropertyReferencesMap:
-          componentPropertyReferencesMap == const $CopyWithPlaceholder()
-              ? _value.componentPropertyReferencesMap
+      componentPropertyReferences:
+          componentPropertyReferences == const $CopyWithPlaceholder()
+              ? _value.componentPropertyReferences
               // ignore: cast_nullable_to_non_nullable
-              : componentPropertyReferencesMap as Map<String, String>?,
+              : componentPropertyReferences as Map<String, String>?,
       name: name == const $CopyWithPlaceholder()
           ? _value.name
           // ignore: cast_nullable_to_non_nullable
@@ -208,9 +208,8 @@ extension $CanvasCopyWith on Canvas {
 Canvas _$CanvasFromJson(Map<String, dynamic> json) => Canvas(
       id: json['id'] as String,
       visible: json['visible'] as bool? ?? true,
-      componentPropertyReferencesMap:
-          (json['componentPropertyReferencesMap'] as Map<String, dynamic>?)
-              ?.map(
+      componentPropertyReferences:
+          (json['componentPropertyReferences'] as Map<String, dynamic>?)?.map(
         (k, e) => MapEntry(k, e as String),
       ),
       name: json['name'] as String?,
@@ -245,7 +244,7 @@ Map<String, dynamic> _$CanvasToJson(Canvas instance) => <String, dynamic>{
       'pluginData': instance.pluginData,
       'sharedPluginData': instance.sharedPluginData,
       'rotation': instance.rotation,
-      'componentPropertyReferencesMap': instance.componentPropertyReferencesMap,
+      'componentPropertyReferences': instance.componentPropertyReferences,
       'children':
           instance.children?.map(const NodeJsonConverter().toJson).toList(),
       'backgroundColor': instance.backgroundColor,
