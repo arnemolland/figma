@@ -21,8 +21,8 @@ abstract class _$NodeCWProxy {
 
   Node rotation(double? rotation);
 
-  Node componentPropertyReferencesMap(
-      Map<String, String>? componentPropertyReferencesMap);
+  Node componentPropertyReferences(
+      Map<String, String>? componentPropertyReferences);
 
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Node(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
@@ -38,7 +38,7 @@ abstract class _$NodeCWProxy {
     dynamic pluginData,
     dynamic sharedPluginData,
     double? rotation,
-    Map<String, String>? componentPropertyReferencesMap,
+    Map<String, String>? componentPropertyReferences,
   });
 }
 
@@ -71,9 +71,9 @@ class _$NodeCWProxyImpl implements _$NodeCWProxy {
   Node rotation(double? rotation) => this(rotation: rotation);
 
   @override
-  Node componentPropertyReferencesMap(
-          Map<String, String>? componentPropertyReferencesMap) =>
-      this(componentPropertyReferencesMap: componentPropertyReferencesMap);
+  Node componentPropertyReferences(
+          Map<String, String>? componentPropertyReferences) =>
+      this(componentPropertyReferences: componentPropertyReferences);
 
   @override
 
@@ -91,7 +91,7 @@ class _$NodeCWProxyImpl implements _$NodeCWProxy {
     Object? pluginData = const $CopyWithPlaceholder(),
     Object? sharedPluginData = const $CopyWithPlaceholder(),
     Object? rotation = const $CopyWithPlaceholder(),
-    Object? componentPropertyReferencesMap = const $CopyWithPlaceholder(),
+    Object? componentPropertyReferences = const $CopyWithPlaceholder(),
   }) {
     return Node(
       id: id == const $CopyWithPlaceholder() || id == null
@@ -124,11 +124,11 @@ class _$NodeCWProxyImpl implements _$NodeCWProxy {
           ? _value.rotation
           // ignore: cast_nullable_to_non_nullable
           : rotation as double?,
-      componentPropertyReferencesMap:
-          componentPropertyReferencesMap == const $CopyWithPlaceholder()
-              ? _value.componentPropertyReferencesMap
+      componentPropertyReferences:
+          componentPropertyReferences == const $CopyWithPlaceholder()
+              ? _value.componentPropertyReferences
               // ignore: cast_nullable_to_non_nullable
-              : componentPropertyReferencesMap as Map<String, String>?,
+              : componentPropertyReferences as Map<String, String>?,
     );
   }
 }
@@ -151,9 +151,8 @@ Node _$NodeFromJson(Map<String, dynamic> json) => Node(
       pluginData: json['pluginData'],
       sharedPluginData: json['sharedPluginData'],
       rotation: (json['rotation'] as num?)?.toDouble(),
-      componentPropertyReferencesMap:
-          (json['componentPropertyReferencesMap'] as Map<String, dynamic>?)
-              ?.map(
+      componentPropertyReferences:
+          (json['componentPropertyReferences'] as Map<String, dynamic>?)?.map(
         (k, e) => MapEntry(k, e as String),
       ),
     );
@@ -166,5 +165,5 @@ Map<String, dynamic> _$NodeToJson(Node instance) => <String, dynamic>{
       'pluginData': instance.pluginData,
       'sharedPluginData': instance.sharedPluginData,
       'rotation': instance.rotation,
-      'componentPropertyReferencesMap': instance.componentPropertyReferencesMap,
+      'componentPropertyReferences': instance.componentPropertyReferences,
     };

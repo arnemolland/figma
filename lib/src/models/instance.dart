@@ -40,7 +40,7 @@ class Instance extends Frame {
     required super.preserveRatio,
     required super.layoutGrow,
     super.styles,
-    super.componentPropertyReferencesMap,
+    super.componentPropertyReferences,
     super.absoluteBoundingBox,
     super.absoluteRenderBounds,
     super.rotation,
@@ -65,6 +65,7 @@ class Instance extends Frame {
     required this.exposedInstances,
     required this.componentProperties,
     this.componentId,
+    required this.componentPropertyDefinitions,
   });
 
   /// ID of component that this instance came from, refers to components
@@ -84,10 +85,15 @@ class Instance extends Frame {
   @JsonKey(defaultValue: {})
   final Map<String, ComponentProperty> componentProperties;
 
+  // Mapping of property name to its definitions
+  @JsonKey(defaultValue: {})
+  final Map<String, ComponentPropertyDefinition> componentPropertyDefinitions;
+
   @override
   List<Object?> get props => [
         ...super.props,
         componentId,
+        componentPropertyDefinitions,
       ];
 
   factory Instance.fromJson(Map<String, dynamic> json) =>

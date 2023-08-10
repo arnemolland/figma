@@ -69,8 +69,8 @@ abstract class _$InstanceCWProxy {
 
   Instance styles(Map<StyleTypeKey, String>? styles);
 
-  Instance componentPropertyReferencesMap(
-      Map<String, String>? componentPropertyReferencesMap);
+  Instance componentPropertyReferences(
+      Map<String, String>? componentPropertyReferences);
 
   Instance absoluteBoundingBox(SizeRectangle? absoluteBoundingBox);
 
@@ -121,6 +121,9 @@ abstract class _$InstanceCWProxy {
 
   Instance componentId(String? componentId);
 
+  Instance componentPropertyDefinitions(
+      Map<String, ComponentPropertyDefinition> componentPropertyDefinitions);
+
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Instance(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
@@ -159,7 +162,7 @@ abstract class _$InstanceCWProxy {
     bool? preserveRatio,
     double? layoutGrow,
     Map<StyleTypeKey, String>? styles,
-    Map<String, String>? componentPropertyReferencesMap,
+    Map<String, String>? componentPropertyReferences,
     SizeRectangle? absoluteBoundingBox,
     SizeRectangle? absoluteRenderBounds,
     double? rotation,
@@ -184,6 +187,7 @@ abstract class _$InstanceCWProxy {
     List<String>? exposedInstances,
     Map<String, ComponentProperty>? componentProperties,
     String? componentId,
+    Map<String, ComponentPropertyDefinition>? componentPropertyDefinitions,
   });
 }
 
@@ -303,9 +307,9 @@ class _$InstanceCWProxyImpl implements _$InstanceCWProxy {
   Instance styles(Map<StyleTypeKey, String>? styles) => this(styles: styles);
 
   @override
-  Instance componentPropertyReferencesMap(
-          Map<String, String>? componentPropertyReferencesMap) =>
-      this(componentPropertyReferencesMap: componentPropertyReferencesMap);
+  Instance componentPropertyReferences(
+          Map<String, String>? componentPropertyReferences) =>
+      this(componentPropertyReferences: componentPropertyReferences);
 
   @override
   Instance absoluteBoundingBox(SizeRectangle? absoluteBoundingBox) =>
@@ -397,6 +401,12 @@ class _$InstanceCWProxyImpl implements _$InstanceCWProxy {
   Instance componentId(String? componentId) => this(componentId: componentId);
 
   @override
+  Instance componentPropertyDefinitions(
+          Map<String, ComponentPropertyDefinition>
+              componentPropertyDefinitions) =>
+      this(componentPropertyDefinitions: componentPropertyDefinitions);
+
+  @override
 
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Instance(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
@@ -436,7 +446,7 @@ class _$InstanceCWProxyImpl implements _$InstanceCWProxy {
     Object? preserveRatio = const $CopyWithPlaceholder(),
     Object? layoutGrow = const $CopyWithPlaceholder(),
     Object? styles = const $CopyWithPlaceholder(),
-    Object? componentPropertyReferencesMap = const $CopyWithPlaceholder(),
+    Object? componentPropertyReferences = const $CopyWithPlaceholder(),
     Object? absoluteBoundingBox = const $CopyWithPlaceholder(),
     Object? absoluteRenderBounds = const $CopyWithPlaceholder(),
     Object? rotation = const $CopyWithPlaceholder(),
@@ -461,6 +471,7 @@ class _$InstanceCWProxyImpl implements _$InstanceCWProxy {
     Object? exposedInstances = const $CopyWithPlaceholder(),
     Object? componentProperties = const $CopyWithPlaceholder(),
     Object? componentId = const $CopyWithPlaceholder(),
+    Object? componentPropertyDefinitions = const $CopyWithPlaceholder(),
   }) {
     return Instance(
       id: id == const $CopyWithPlaceholder() || id == null
@@ -612,11 +623,11 @@ class _$InstanceCWProxyImpl implements _$InstanceCWProxy {
           ? _value.styles
           // ignore: cast_nullable_to_non_nullable
           : styles as Map<StyleTypeKey, String>?,
-      componentPropertyReferencesMap:
-          componentPropertyReferencesMap == const $CopyWithPlaceholder()
-              ? _value.componentPropertyReferencesMap
+      componentPropertyReferences:
+          componentPropertyReferences == const $CopyWithPlaceholder()
+              ? _value.componentPropertyReferences
               // ignore: cast_nullable_to_non_nullable
-              : componentPropertyReferencesMap as Map<String, String>?,
+              : componentPropertyReferences as Map<String, String>?,
       absoluteBoundingBox: absoluteBoundingBox == const $CopyWithPlaceholder()
           ? _value.absoluteBoundingBox
           // ignore: cast_nullable_to_non_nullable
@@ -720,6 +731,13 @@ class _$InstanceCWProxyImpl implements _$InstanceCWProxy {
           ? _value.componentId
           // ignore: cast_nullable_to_non_nullable
           : componentId as String?,
+      componentPropertyDefinitions:
+          componentPropertyDefinitions == const $CopyWithPlaceholder() ||
+                  componentPropertyDefinitions == null
+              ? _value.componentPropertyDefinitions
+              // ignore: cast_nullable_to_non_nullable
+              : componentPropertyDefinitions
+                  as Map<String, ComponentPropertyDefinition>,
     );
   }
 }
@@ -800,9 +818,8 @@ Instance _$InstanceFromJson(Map<String, dynamic> json) => Instance(
       styles: (json['styles'] as Map<String, dynamic>?)?.map(
         (k, e) => MapEntry($enumDecode(_$StyleTypeKeyEnumMap, k), e as String),
       ),
-      componentPropertyReferencesMap:
-          (json['componentPropertyReferencesMap'] as Map<String, dynamic>?)
-              ?.map(
+      componentPropertyReferences:
+          (json['componentPropertyReferences'] as Map<String, dynamic>?)?.map(
         (k, e) => MapEntry(k, e as String),
       ),
       absoluteBoundingBox: json['absoluteBoundingBox'] == null
@@ -858,6 +875,14 @@ Instance _$InstanceFromJson(Map<String, dynamic> json) => Instance(
               ) ??
               {},
       componentId: json['componentId'] as String?,
+      componentPropertyDefinitions:
+          (json['componentPropertyDefinitions'] as Map<String, dynamic>?)?.map(
+                (k, e) => MapEntry(
+                    k,
+                    ComponentPropertyDefinition.fromJson(
+                        e as Map<String, dynamic>)),
+              ) ??
+              {},
     );
 
 Map<String, dynamic> _$InstanceToJson(Instance instance) => <String, dynamic>{
@@ -868,7 +893,7 @@ Map<String, dynamic> _$InstanceToJson(Instance instance) => <String, dynamic>{
       'pluginData': instance.pluginData,
       'sharedPluginData': instance.sharedPluginData,
       'rotation': instance.rotation,
-      'componentPropertyReferencesMap': instance.componentPropertyReferencesMap,
+      'componentPropertyReferences': instance.componentPropertyReferences,
       'children':
           instance.children?.map(const NodeJsonConverter().toJson).toList(),
       'locked': instance.locked,
@@ -925,6 +950,7 @@ Map<String, dynamic> _$InstanceToJson(Instance instance) => <String, dynamic>{
       'isExposedInstance': instance.isExposedInstance,
       'exposedInstances': instance.exposedInstances,
       'componentProperties': instance.componentProperties,
+      'componentPropertyDefinitions': instance.componentPropertyDefinitions,
     };
 
 const _$LayoutPositioningEnumMap = {

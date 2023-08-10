@@ -72,8 +72,8 @@ abstract class _$ComponentNodeCWProxy {
 
   ComponentNode styles(Map<StyleTypeKey, String>? styles);
 
-  ComponentNode componentPropertyReferencesMap(
-      Map<String, String>? componentPropertyReferencesMap);
+  ComponentNode componentPropertyReferences(
+      Map<String, String>? componentPropertyReferences);
 
   ComponentNode absoluteBoundingBox(SizeRectangle? absoluteBoundingBox);
 
@@ -156,7 +156,7 @@ abstract class _$ComponentNodeCWProxy {
     Vector2D? size,
     Map<String, ComponentPropertyDefinition>? componentPropertyDefinitions,
     Map<StyleTypeKey, String>? styles,
-    Map<String, String>? componentPropertyReferencesMap,
+    Map<String, String>? componentPropertyReferences,
     SizeRectangle? absoluteBoundingBox,
     SizeRectangle? absoluteRenderBounds,
     double? rotation,
@@ -304,9 +304,9 @@ class _$ComponentNodeCWProxyImpl implements _$ComponentNodeCWProxy {
       this(styles: styles);
 
   @override
-  ComponentNode componentPropertyReferencesMap(
-          Map<String, String>? componentPropertyReferencesMap) =>
-      this(componentPropertyReferencesMap: componentPropertyReferencesMap);
+  ComponentNode componentPropertyReferences(
+          Map<String, String>? componentPropertyReferences) =>
+      this(componentPropertyReferences: componentPropertyReferences);
 
   @override
   ComponentNode absoluteBoundingBox(SizeRectangle? absoluteBoundingBox) =>
@@ -430,7 +430,7 @@ class _$ComponentNodeCWProxyImpl implements _$ComponentNodeCWProxy {
     Object? size = const $CopyWithPlaceholder(),
     Object? componentPropertyDefinitions = const $CopyWithPlaceholder(),
     Object? styles = const $CopyWithPlaceholder(),
-    Object? componentPropertyReferencesMap = const $CopyWithPlaceholder(),
+    Object? componentPropertyReferences = const $CopyWithPlaceholder(),
     Object? absoluteBoundingBox = const $CopyWithPlaceholder(),
     Object? absoluteRenderBounds = const $CopyWithPlaceholder(),
     Object? rotation = const $CopyWithPlaceholder(),
@@ -601,11 +601,11 @@ class _$ComponentNodeCWProxyImpl implements _$ComponentNodeCWProxy {
           ? _value.styles
           // ignore: cast_nullable_to_non_nullable
           : styles as Map<StyleTypeKey, String>?,
-      componentPropertyReferencesMap:
-          componentPropertyReferencesMap == const $CopyWithPlaceholder()
-              ? _value.componentPropertyReferencesMap
+      componentPropertyReferences:
+          componentPropertyReferences == const $CopyWithPlaceholder()
+              ? _value.componentPropertyReferences
               // ignore: cast_nullable_to_non_nullable
-              : componentPropertyReferencesMap as Map<String, String>?,
+              : componentPropertyReferences as Map<String, String>?,
       absoluteBoundingBox: absoluteBoundingBox == const $CopyWithPlaceholder()
           ? _value.absoluteBoundingBox
           // ignore: cast_nullable_to_non_nullable
@@ -786,9 +786,8 @@ ComponentNode _$ComponentNodeFromJson(Map<String, dynamic> json) =>
       styles: (json['styles'] as Map<String, dynamic>?)?.map(
         (k, e) => MapEntry($enumDecode(_$StyleTypeKeyEnumMap, k), e as String),
       ),
-      componentPropertyReferencesMap:
-          (json['componentPropertyReferencesMap'] as Map<String, dynamic>?)
-              ?.map(
+      componentPropertyReferences:
+          (json['componentPropertyReferences'] as Map<String, dynamic>?)?.map(
         (k, e) => MapEntry(k, e as String),
       ),
       absoluteBoundingBox: json['absoluteBoundingBox'] == null
@@ -845,7 +844,7 @@ Map<String, dynamic> _$ComponentNodeToJson(ComponentNode instance) =>
       'pluginData': instance.pluginData,
       'sharedPluginData': instance.sharedPluginData,
       'rotation': instance.rotation,
-      'componentPropertyReferencesMap': instance.componentPropertyReferencesMap,
+      'componentPropertyReferences': instance.componentPropertyReferences,
       'children':
           instance.children?.map(const NodeJsonConverter().toJson).toList(),
       'locked': instance.locked,

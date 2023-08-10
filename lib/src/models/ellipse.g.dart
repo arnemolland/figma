@@ -37,8 +37,8 @@ abstract class _$EllipseCWProxy {
 
   Ellipse strokeMiterAngle(double strokeMiterAngle);
 
-  Ellipse componentPropertyReferencesMap(
-      Map<String, String>? componentPropertyReferencesMap);
+  Ellipse componentPropertyReferences(
+      Map<String, String>? componentPropertyReferences);
 
   Ellipse name(String? name);
 
@@ -106,7 +106,7 @@ abstract class _$EllipseCWProxy {
     StrokeJoin? strokeJoin,
     List<double>? strokeDashes,
     double? strokeMiterAngle,
-    Map<String, String>? componentPropertyReferencesMap,
+    Map<String, String>? componentPropertyReferences,
     String? name,
     double? rotation,
     dynamic pluginData,
@@ -189,9 +189,9 @@ class _$EllipseCWProxyImpl implements _$EllipseCWProxy {
       this(strokeMiterAngle: strokeMiterAngle);
 
   @override
-  Ellipse componentPropertyReferencesMap(
-          Map<String, String>? componentPropertyReferencesMap) =>
-      this(componentPropertyReferencesMap: componentPropertyReferencesMap);
+  Ellipse componentPropertyReferences(
+          Map<String, String>? componentPropertyReferences) =>
+      this(componentPropertyReferences: componentPropertyReferences);
 
   @override
   Ellipse name(String? name) => this(name: name);
@@ -297,7 +297,7 @@ class _$EllipseCWProxyImpl implements _$EllipseCWProxy {
     Object? strokeJoin = const $CopyWithPlaceholder(),
     Object? strokeDashes = const $CopyWithPlaceholder(),
     Object? strokeMiterAngle = const $CopyWithPlaceholder(),
-    Object? componentPropertyReferencesMap = const $CopyWithPlaceholder(),
+    Object? componentPropertyReferences = const $CopyWithPlaceholder(),
     Object? name = const $CopyWithPlaceholder(),
     Object? rotation = const $CopyWithPlaceholder(),
     Object? pluginData = const $CopyWithPlaceholder(),
@@ -389,11 +389,11 @@ class _$EllipseCWProxyImpl implements _$EllipseCWProxy {
           ? _value.strokeMiterAngle
           // ignore: cast_nullable_to_non_nullable
           : strokeMiterAngle as double,
-      componentPropertyReferencesMap:
-          componentPropertyReferencesMap == const $CopyWithPlaceholder()
-              ? _value.componentPropertyReferencesMap
+      componentPropertyReferences:
+          componentPropertyReferences == const $CopyWithPlaceholder()
+              ? _value.componentPropertyReferences
               // ignore: cast_nullable_to_non_nullable
-              : componentPropertyReferencesMap as Map<String, String>?,
+              : componentPropertyReferences as Map<String, String>?,
       name: name == const $CopyWithPlaceholder()
           ? _value.name
           // ignore: cast_nullable_to_non_nullable
@@ -533,9 +533,8 @@ Ellipse _$EllipseFromJson(Map<String, dynamic> json) => Ellipse(
               .toList() ??
           [],
       strokeMiterAngle: (json['strokeMiterAngle'] as num?)?.toDouble() ?? 28.96,
-      componentPropertyReferencesMap:
-          (json['componentPropertyReferencesMap'] as Map<String, dynamic>?)
-              ?.map(
+      componentPropertyReferences:
+          (json['componentPropertyReferences'] as Map<String, dynamic>?)?.map(
         (k, e) => MapEntry(k, e as String),
       ),
       name: json['name'] as String?,
@@ -600,7 +599,7 @@ Map<String, dynamic> _$EllipseToJson(Ellipse instance) => <String, dynamic>{
       'pluginData': instance.pluginData,
       'sharedPluginData': instance.sharedPluginData,
       'rotation': instance.rotation,
-      'componentPropertyReferencesMap': instance.componentPropertyReferencesMap,
+      'componentPropertyReferences': instance.componentPropertyReferences,
       'locked': instance.locked,
       'exportSettings': instance.exportSettings,
       'blendMode': _$BlendModeEnumMap[instance.blendMode],

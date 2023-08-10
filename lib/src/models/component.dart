@@ -56,6 +56,10 @@ class Component extends Equatable {
   /// if any.
   final String? componentSetId;
 
+  // Mapping of property name to its definitions
+  @JsonKey(defaultValue: {})
+  final Map<String, ComponentPropertyDefinition> componentPropertyDefinitions;
+
   Component({
     this.key,
     this.fileKey,
@@ -69,6 +73,7 @@ class Component extends Equatable {
     this.containingFrame,
     this.containingPage,
     this.componentSetId,
+    required this.componentPropertyDefinitions,
   });
 
   @override
@@ -84,7 +89,8 @@ class Component extends Equatable {
         user,
         containingFrame,
         containingPage,
-        componentSetId
+        componentSetId,
+        componentPropertyDefinitions,
       ];
 
   factory Component.fromJson(Map<String, dynamic> json) =>
