@@ -922,6 +922,7 @@ const _$CounterAxisAlignItemsEnumMap = {
   CounterAxisAlignItems.min: 'MIN',
   CounterAxisAlignItems.center: 'CENTER',
   CounterAxisAlignItems.max: 'MAX',
+  CounterAxisAlignItems.baseline: 'BASELINE',
 };
 
 const _$PrimaryAxisAlignItemsEnumMap = {
