@@ -70,7 +70,7 @@ Future<void> download(
 
   // Retrieve Figma file.
   final file = await client.getFile(ref).catchError((e) {
-    if (e is FigmaError) {
+    if (e is FigmaException) {
       switch (e.code) {
         case 403:
           throw Exception('Invalid access token');
