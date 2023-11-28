@@ -11,6 +11,10 @@ part 'style.g.dart';
 @JsonSerializable()
 @CopyWith()
 class Style extends Equatable {
+  /// The node id of this style.
+  @JsonKey(name: 'node_id')
+  final String? nodeId;
+
   /// The key of the style.
   final String? key;
 
@@ -25,6 +29,7 @@ class Style extends Equatable {
   final StyleType? type;
 
   Style({
+    this.nodeId,
     this.key,
     this.name,
     this.description,
@@ -33,6 +38,7 @@ class Style extends Equatable {
 
   @override
   List<Object?> get props => [
+        nodeId,
         key,
         name,
         description,

@@ -7,6 +7,8 @@ part of 'style.dart';
 // **************************************************************************
 
 abstract class _$StyleCWProxy {
+  Style nodeId(String? nodeId);
+
   Style key(String? key);
 
   Style name(String? name);
@@ -22,6 +24,7 @@ abstract class _$StyleCWProxy {
   /// Style(...).copyWith(id: 12, name: "My name")
   /// ````
   Style call({
+    String? nodeId,
     String? key,
     String? name,
     String? description,
@@ -34,6 +37,9 @@ class _$StyleCWProxyImpl implements _$StyleCWProxy {
   const _$StyleCWProxyImpl(this._value);
 
   final Style _value;
+
+  @override
+  Style nodeId(String? nodeId) => this(nodeId: nodeId);
 
   @override
   Style key(String? key) => this(key: key);
@@ -56,12 +62,17 @@ class _$StyleCWProxyImpl implements _$StyleCWProxy {
   /// Style(...).copyWith(id: 12, name: "My name")
   /// ````
   Style call({
+    Object? nodeId = const $CopyWithPlaceholder(),
     Object? key = const $CopyWithPlaceholder(),
     Object? name = const $CopyWithPlaceholder(),
     Object? description = const $CopyWithPlaceholder(),
     Object? type = const $CopyWithPlaceholder(),
   }) {
     return Style(
+      nodeId: nodeId == const $CopyWithPlaceholder()
+          ? _value.nodeId
+          // ignore: cast_nullable_to_non_nullable
+          : nodeId as String?,
       key: key == const $CopyWithPlaceholder()
           ? _value.key
           // ignore: cast_nullable_to_non_nullable
@@ -93,6 +104,7 @@ extension $StyleCopyWith on Style {
 // **************************************************************************
 
 Style _$StyleFromJson(Map<String, dynamic> json) => Style(
+      nodeId: json['node_id'] as String?,
       key: json['key'] as String?,
       name: json['name'] as String?,
       description: json['description'] as String?,
@@ -100,6 +112,7 @@ Style _$StyleFromJson(Map<String, dynamic> json) => Style(
     );
 
 Map<String, dynamic> _$StyleToJson(Style instance) => <String, dynamic>{
+      'node_id': instance.nodeId,
       'key': instance.key,
       'name': instance.name,
       'description': instance.description,
