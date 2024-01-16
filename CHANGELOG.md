@@ -1,3 +1,9 @@
+## 7.1.0
+
+- Added `BASELINE` value to `CounterAxisAlignItems`
+- Added `node_id` to style model
+- FigmaError is now FigmaException
+
 ## 7.0.0
 
 - Updated Figma API response models ([@BigFlexLiu](https://github.com/BigFlexLiu))
