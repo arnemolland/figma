@@ -865,7 +865,7 @@ const _$OverflowDirectionEnumMap = {
   OverflowDirection.horizontalScrolling: 'HORIZONTAL_SCROLLING',
   OverflowDirection.verticalScrolling: 'VERTICAL_SCROLLING',
   OverflowDirection.horizontalVerticalScrolling:
-      'HORIZONTAL_AND_VERICAL_SCROLLING',
+      'HORIZONTAL_AND_VERTICAL_SCROLLING',
 };
 
 const _$CounterAxisAlignItemsEnumMap = {
