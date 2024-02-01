@@ -1,3 +1,8 @@
+## 7.1.1
+
+- Fixed typo in HORIZONTAL_AND_VERICAL_SCROLLING ([@evgentus-cy](https://github.com/evgentus-cy))
+
+
 ## 7.1.0
 
 - Added `BASELINE` value to `CounterAxisAlignItems`
