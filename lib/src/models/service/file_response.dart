@@ -1,5 +1,4 @@
 import 'package:equatable/equatable.dart';
-import 'package:figma/src/converters/converters.dart';
 import 'package:figma/src/models.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:copy_with_extension/copy_with_extension.dart';
@@ -26,8 +25,7 @@ class FileResponse extends Equatable {
   final String? version;
 
   /// File document (top-level node).
-  @NodeJsonConverter()
-  final Node? document;
+  final Document? document;
 
   /// File components, if any.
   final Map<String, Component>? components;

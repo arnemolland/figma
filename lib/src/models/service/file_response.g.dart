@@ -17,7 +17,7 @@ abstract class _$FileResponseCWProxy {
 
   FileResponse version(String? version);
 
-  FileResponse document(Node? document);
+  FileResponse document(Document? document);
 
   FileResponse components(Map<String, Component>? components);
 
@@ -39,7 +39,7 @@ abstract class _$FileResponseCWProxy {
     DateTime? lastModified,
     String? thumbnailUrl,
     String? version,
-    Node? document,
+    Document? document,
     Map<String, Component>? components,
     Map<String, ComponentSet>? componentSets,
     int? schemaVersion,
@@ -71,7 +71,7 @@ class _$FileResponseCWProxyImpl implements _$FileResponseCWProxy {
   FileResponse version(String? version) => this(version: version);
 
   @override
-  FileResponse document(Node? document) => this(document: document);
+  FileResponse document(Document? document) => this(document: document);
 
   @override
   FileResponse components(Map<String, Component>? components) =>
@@ -132,7 +132,7 @@ class _$FileResponseCWProxyImpl implements _$FileResponseCWProxy {
       document: document == const $CopyWithPlaceholder()
           ? _value.document
           // ignore: cast_nullable_to_non_nullable
-          : document as Node?,
+          : document as Document?,
       components: components == const $CopyWithPlaceholder()
           ? _value.components
           // ignore: cast_nullable_to_non_nullable
@@ -171,7 +171,9 @@ FileResponse _$FileResponseFromJson(Map<String, dynamic> json) => FileResponse(
           : DateTime.parse(json['lastModified'] as String),
       thumbnailUrl: json['thumbnailUrl'] as String?,
       version: json['version'] as String?,
-      document: const NodeJsonConverter().fromJson(json['document']),
+      document: json['document'] == null
+          ? null
+          : Document.fromJson(json['document'] as Map<String, dynamic>),
       components: (json['components'] as Map<String, dynamic>?)?.map(
         (k, e) => MapEntry(k, Component.fromJson(e as Map<String, dynamic>)),
       ),
@@ -191,7 +193,7 @@ Map<String, dynamic> _$FileResponseToJson(FileResponse instance) =>
       'lastModified': instance.lastModified?.toIso8601String(),
       'thumbnailUrl': instance.thumbnailUrl,
       'version': instance.version,
-      'document': const NodeJsonConverter().toJson(instance.document),
+      'document': instance.document,
       'components': instance.components,
       'componentSets': instance.componentSets,
       'schemaVersion': instance.schemaVersion,
