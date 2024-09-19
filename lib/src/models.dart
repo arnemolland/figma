@@ -64,3 +64,4 @@ export 'models/component_node.dart';
 export 'models/component_property_type.dart';
 export 'models/component_property.dart';
 export 'models/overrides.dart';
+export 'models/section.dart';
