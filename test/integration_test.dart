@@ -11,7 +11,6 @@ void main() {
     late String testProject;
 
     late String testCommentId;
-    late String? testStyleKey;
 
     late FigmaClient client;
 
@@ -135,16 +134,17 @@ void main() {
     test(
       'getFileStyles() gets file styles',
       () => client.getFileStyles(testFile).then((res) {
-        expect(res.meta?.styles?.isNotEmpty, true);
-        testStyleKey = res.meta?.styles?.first.key;
+        // This will always be empty as published styles are a paid feature.
+        expect(res.meta?.styles, isA<List<Style>>());
       }),
     );
 
-    test(
+    /* The following only works if there are published styles in the file. */
+    /* test(
       'getStyle() gets style',
       () => client
           .getStyle(testStyleKey!)
           .then((res) => expect(res.style != null, true)),
-    );
+    );*/
   });
 }
