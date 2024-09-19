@@ -1,6 +1,10 @@
 {
-	"image": "google/dart",
-	"extensions": [
-		"Dart-Code.dart-code",
-	],
+	"image": "dart",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"Dart-Code.dart-code"
+			]
+		}
+	}
 }
