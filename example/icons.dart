@@ -1,3 +1,9 @@
+import 'dart:io';
+
+import 'package:args/args.dart';
+import 'package:figma/figma.dart';
+import 'package:http/http.dart';
+
 /// This script downloads all icons from Figma and
 /// generates an icon font from them. It also optimizes the SVGs using SVGO.
 ///
@@ -15,12 +21,6 @@
 ///
 /// Code is based on open source code from the Flume project:
 /// https://github.com/gameflow-tv/flume_mobile/blob/main/tool/icons.dart
-
-import 'dart:io';
-
-import 'package:args/args.dart';
-import 'package:figma/figma.dart';
-import 'package:http/http.dart';
 
 /// Returns true if the given file is an SVG file.
 bool isSvg(File f) {
@@ -86,7 +86,7 @@ Future<void> download(
 
   // Retrieve icon canvas.
   final canvas =
-      file.document?.children?.where((node) => node?.name == pageRef).single;
+      (file.document as Document?)?.children?.where((node) => node?.name == pageRef).single;
 
   if (canvas?.id == null) {
     throw Exception('Could not find icon canvas');
