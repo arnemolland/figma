@@ -1,7 +1,12 @@
+## 7.2.0
+
+- Added `Section` model
+- Updated dependencies and regenerated files
+- Removed tests that require paid Figma features (published styles)
+
 ## 7.1.1
 
 - Fixed typo in HORIZONTAL_AND_VERICAL_SCROLLING ([@evgentus-cy](https://github.com/evgentus-cy))
-
 
 ## 7.1.0
 
