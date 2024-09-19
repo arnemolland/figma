@@ -85,7 +85,7 @@ extension $ComponentResponseCopyWith on ComponentResponse {
 
 ComponentResponse _$ComponentResponseFromJson(Map<String, dynamic> json) =>
     ComponentResponse(
-      status: json['status'] as int?,
+      status: (json['status'] as num?)?.toInt(),
       error: json['error'] as bool?,
       component: json['meta'] == null
           ? null

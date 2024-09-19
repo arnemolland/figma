@@ -71,8 +71,8 @@ extension $CursorCopyWith on Cursor {
 // **************************************************************************
 
 Cursor _$CursorFromJson(Map<String, dynamic> json) => Cursor(
-      before: json['before'] as int?,
-      after: json['after'] as int?,
+      before: (json['before'] as num?)?.toInt(),
+      after: (json['after'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$CursorToJson(Cursor instance) => <String, dynamic>{

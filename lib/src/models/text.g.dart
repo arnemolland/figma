@@ -650,7 +650,7 @@ Text _$TextFromJson(Map<String, dynamic> json) => Text(
           : TypeStyle.fromJson(json['style'] as Map<String, dynamic>),
       characterStyleOverrides:
           (json['characterStyleOverrides'] as List<dynamic>?)
-              ?.map((e) => e as int)
+              ?.map((e) => (e as num).toInt())
               .toList(),
       styleOverrideTable:
           (json['styleOverrideTable'] as Map<String, dynamic>?)?.map(
@@ -661,7 +661,7 @@ Text _$TextFromJson(Map<String, dynamic> json) => Text(
           ?.map((e) => $enumDecode(_$LineTypeEnumMap, e))
           .toList(),
       lineIndentations: (json['lineIndentations'] as List<dynamic>?)
-          ?.map((e) => e as int)
+          ?.map((e) => (e as num).toInt())
           .toList(),
     );
 

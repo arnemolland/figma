@@ -146,7 +146,7 @@ LayoutGrid _$LayoutGridFromJson(Map<String, dynamic> json) => LayoutGrid(
       alignment: $enumDecodeNullable(_$LayoutAlignEnumMap, json['alignment']),
       gutterSize: (json['gutterSize'] as num?)?.toDouble(),
       offset: (json['offset'] as num?)?.toDouble(),
-      count: json['count'] as int?,
+      count: (json['count'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$LayoutGridToJson(LayoutGrid instance) =>
