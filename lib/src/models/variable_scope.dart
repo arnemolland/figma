@@ -1,0 +1,46 @@
+import 'package:json_annotation/json_annotation.dart';
+
+enum VariableScope {
+  @JsonValue('ALL_SCOPES')
+  allScopes,
+  @JsonValue('CORNER_RADIUS')
+  cornerRadius,
+  @JsonValue('TEXT_CONTENT')
+  textContent,
+  @JsonValue('WIDTH_HEIGHT')
+  widthHeight,
+  @JsonValue('GAP')
+  gap,
+  @JsonValue('STROKE_FLOAT')
+  strokeFloat,
+  @JsonValue('OPACITY')
+  opacity,
+  @JsonValue('EFFECT_FLOAT')
+  effectFloat,
+  @JsonValue('FONT_WEIGHT')
+  fontWeight,
+  @JsonValue('FONT_SIZE')
+  fontSize,
+  @JsonValue('LINE_HEIGHT')
+  lineHeight,
+  @JsonValue('LETTER_SPACING')
+  letterSpacing,
+  @JsonValue('PARAGRAPH_SPACING')
+  paragraphSpacing,
+  @JsonValue('PARAGRAPH_INDENT')
+  paragraphIndent,
+  @JsonValue('FONT_FAMILY')
+  fontFamily,
+  @JsonValue('FONT_STYLE')
+  fontStyle,
+  @JsonValue('FRAME_FILL')
+  frameFill,
+  @JsonValue('SHAPE_FILL')
+  shapeFill,
+  @JsonValue('TEXT_FILL')
+  textFill,
+  @JsonValue('STROKE_COLOR')
+  strokeColor,
+  @JsonValue('EFFECT_COLOR')
+  effectColor,
+}
