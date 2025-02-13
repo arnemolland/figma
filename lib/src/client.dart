@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:figma/figma.dart';
+import 'package:figma/src/models/service/local_variables_response.dart';
 import 'package:http/http.dart';
 import 'package:http2/http2.dart';
 
@@ -138,6 +139,11 @@ class FigmaClient {
       _getFigma('/files/$key/styles', query)
           .then((data) => StylesResponse.fromJson(data));
 
+  /// Retrieves all local variables from
+  Future<LocalVariablesResponse> getLocalVariables(String key) async =>
+      _getFigma('/files/$key/variables/local')
+          .then((data) => LocalVariablesResponse.fromJson(data));
+
   /// Retrieves a specific style specified by [key].
   Future<StyleResponse> getStyle(String key) async =>
       _getFigma('/styles/$key').then((data) => StyleResponse.fromJson(data));
@@ -258,6 +264,7 @@ class FigmaClient {
 class _Response {
   final int statusCode;
   final String body;
+
   const _Response(this.statusCode, this.body);
 }
 
