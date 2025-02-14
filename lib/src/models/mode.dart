@@ -8,12 +8,13 @@ part 'mode.g.dart';
 @JsonSerializable()
 @CopyWith()
 class Mode extends Equatable {
-  /// Mode ID
+  /// The unique identifier of this mode.
   final String modeId;
 
-  /// Mode name.
+  /// The name of this mode.
   final String name;
 
+  /// The modes of this variable collection.
   Mode({
     required this.modeId,
     required this.name,
