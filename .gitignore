@@ -10,5 +10,8 @@ build/
 # Directory created by dartdoc
 doc/api/
 
+# JetBrains
+.idea/
+
 .env
 .envrc
