@@ -1,3 +1,7 @@
+## 7.3.0
+- Added support for variables (local and published) ([@jamieastley](https://github.com/jamieastley))
+- Updated copy_with_extension to 6.0.1
+
 ## 7.2.0
 
 - Added `Section` model
