@@ -29,7 +29,7 @@ class FigmaQuery {
   final bool? svgIncludeId;
 
   /// Whether to simplify inside/outside strokes and use stroke attribute if
-  /// possible instead of <mask>. Default: true.
+  /// possible instead of `<mask>`. Default: true.
   final bool? svgSimplifyStroke;
 
   /// Use the full dimensions of the node regardless of whether or not it is
