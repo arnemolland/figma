@@ -18,7 +18,7 @@ abstract class _$PaintOverrideCWProxy {
   /// PaintOverride(...).copyWith(id: 12, name: "My name")
   /// ````
   PaintOverride call({
-    List<Paint>? fills,
+    List<Paint> fills,
     String? inheritFillStyleId,
   });
 }
@@ -49,7 +49,7 @@ class _$PaintOverrideCWProxyImpl implements _$PaintOverrideCWProxy {
     Object? inheritFillStyleId = const $CopyWithPlaceholder(),
   }) {
     return PaintOverride(
-      fills: fills == const $CopyWithPlaceholder() || fills == null
+      fills: fills == const $CopyWithPlaceholder()
           ? _value.fills
           // ignore: cast_nullable_to_non_nullable
           : fills as List<Paint>,

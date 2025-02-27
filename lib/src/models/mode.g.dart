@@ -18,8 +18,8 @@ abstract class _$ModeCWProxy {
   /// Mode(...).copyWith(id: 12, name: "My name")
   /// ````
   Mode call({
-    String? modeId,
-    String? name,
+    String modeId,
+    String name,
   });
 }
 
@@ -48,11 +48,11 @@ class _$ModeCWProxyImpl implements _$ModeCWProxy {
     Object? name = const $CopyWithPlaceholder(),
   }) {
     return Mode(
-      modeId: modeId == const $CopyWithPlaceholder() || modeId == null
+      modeId: modeId == const $CopyWithPlaceholder()
           ? _value.modeId
           // ignore: cast_nullable_to_non_nullable
           : modeId as String,
-      name: name == const $CopyWithPlaceholder() || name == null
+      name: name == const $CopyWithPlaceholder()
           ? _value.name
           // ignore: cast_nullable_to_non_nullable
           : name as String,

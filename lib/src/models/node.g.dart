@@ -31,9 +31,9 @@ abstract class _$NodeCWProxy {
   /// Node(...).copyWith(id: 12, name: "My name")
   /// ````
   Node call({
-    String? id,
+    String id,
     String? name,
-    bool? visible,
+    bool visible,
     String? type,
     dynamic pluginData,
     dynamic sharedPluginData,
@@ -94,7 +94,7 @@ class _$NodeCWProxyImpl implements _$NodeCWProxy {
     Object? componentPropertyReferences = const $CopyWithPlaceholder(),
   }) {
     return Node(
-      id: id == const $CopyWithPlaceholder() || id == null
+      id: id == const $CopyWithPlaceholder()
           ? _value.id
           // ignore: cast_nullable_to_non_nullable
           : id as String,
@@ -102,7 +102,7 @@ class _$NodeCWProxyImpl implements _$NodeCWProxy {
           ? _value.name
           // ignore: cast_nullable_to_non_nullable
           : name as String?,
-      visible: visible == const $CopyWithPlaceholder() || visible == null
+      visible: visible == const $CopyWithPlaceholder()
           ? _value.visible
           // ignore: cast_nullable_to_non_nullable
           : visible as bool,
@@ -110,13 +110,11 @@ class _$NodeCWProxyImpl implements _$NodeCWProxy {
           ? _value.type
           // ignore: cast_nullable_to_non_nullable
           : type as String?,
-      pluginData:
-          pluginData == const $CopyWithPlaceholder() || pluginData == null
-              ? _value.pluginData
-              // ignore: cast_nullable_to_non_nullable
-              : pluginData as dynamic,
-      sharedPluginData: sharedPluginData == const $CopyWithPlaceholder() ||
-              sharedPluginData == null
+      pluginData: pluginData == const $CopyWithPlaceholder()
+          ? _value.pluginData
+          // ignore: cast_nullable_to_non_nullable
+          : pluginData as dynamic,
+      sharedPluginData: sharedPluginData == const $CopyWithPlaceholder()
           ? _value.sharedPluginData
           // ignore: cast_nullable_to_non_nullable
           : sharedPluginData as dynamic,

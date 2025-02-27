@@ -22,8 +22,8 @@ abstract class _$UserCWProxy {
   /// User(...).copyWith(id: 12, name: "My name")
   /// ````
   User call({
-    String? id,
-    String? handle,
+    String id,
+    String handle,
     String? imageUrl,
     String? email,
   });
@@ -62,11 +62,11 @@ class _$UserCWProxyImpl implements _$UserCWProxy {
     Object? email = const $CopyWithPlaceholder(),
   }) {
     return User(
-      id: id == const $CopyWithPlaceholder() || id == null
+      id: id == const $CopyWithPlaceholder()
           ? _value.id
           // ignore: cast_nullable_to_non_nullable
           : id as String,
-      handle: handle == const $CopyWithPlaceholder() || handle == null
+      handle: handle == const $CopyWithPlaceholder()
           ? _value.handle
           // ignore: cast_nullable_to_non_nullable
           : handle as String,

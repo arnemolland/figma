@@ -31,7 +31,7 @@ abstract class _$EffectCWProxy {
   /// ````
   Effect call({
     EffectType? type,
-    bool? visible,
+    bool visible,
     num? radius,
     num? spread,
     Color? color,
@@ -95,7 +95,7 @@ class _$EffectCWProxyImpl implements _$EffectCWProxy {
           ? _value.type
           // ignore: cast_nullable_to_non_nullable
           : type as EffectType?,
-      visible: visible == const $CopyWithPlaceholder() || visible == null
+      visible: visible == const $CopyWithPlaceholder()
           ? _value.visible
           // ignore: cast_nullable_to_non_nullable
           : visible as bool,

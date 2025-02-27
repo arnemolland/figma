@@ -30,12 +30,12 @@ abstract class _$CommentCWProxy {
   /// Comment(...).copyWith(id: 12, name: "My name")
   /// ````
   Comment call({
-    String? id,
+    String id,
     dynamic clientMeta,
-    String? fileKey,
+    String fileKey,
     String? parentId,
-    User? user,
-    DateTime? createdAt,
+    User user,
+    DateTime createdAt,
     DateTime? resolvedAt,
     String? orderId,
   });
@@ -90,16 +90,15 @@ class _$CommentCWProxyImpl implements _$CommentCWProxy {
     Object? orderId = const $CopyWithPlaceholder(),
   }) {
     return Comment(
-      id: id == const $CopyWithPlaceholder() || id == null
+      id: id == const $CopyWithPlaceholder()
           ? _value.id
           // ignore: cast_nullable_to_non_nullable
           : id as String,
-      clientMeta:
-          clientMeta == const $CopyWithPlaceholder() || clientMeta == null
-              ? _value.clientMeta
-              // ignore: cast_nullable_to_non_nullable
-              : clientMeta as dynamic,
-      fileKey: fileKey == const $CopyWithPlaceholder() || fileKey == null
+      clientMeta: clientMeta == const $CopyWithPlaceholder()
+          ? _value.clientMeta
+          // ignore: cast_nullable_to_non_nullable
+          : clientMeta as dynamic,
+      fileKey: fileKey == const $CopyWithPlaceholder()
           ? _value.fileKey
           // ignore: cast_nullable_to_non_nullable
           : fileKey as String,
@@ -107,11 +106,11 @@ class _$CommentCWProxyImpl implements _$CommentCWProxy {
           ? _value.parentId
           // ignore: cast_nullable_to_non_nullable
           : parentId as String?,
-      user: user == const $CopyWithPlaceholder() || user == null
+      user: user == const $CopyWithPlaceholder()
           ? _value.user
           // ignore: cast_nullable_to_non_nullable
           : user as User,
-      createdAt: createdAt == const $CopyWithPlaceholder() || createdAt == null
+      createdAt: createdAt == const $CopyWithPlaceholder()
           ? _value.createdAt
           // ignore: cast_nullable_to_non_nullable
           : createdAt as DateTime,

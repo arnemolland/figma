@@ -33,8 +33,8 @@ abstract class _$DocumentCWProxy {
   /// Document(...).copyWith(id: 12, name: "My name")
   /// ````
   Document call({
-    String? id,
-    bool? visible,
+    String id,
+    bool visible,
     Map<String, String>? componentPropertyReferences,
     double? rotation,
     String? type,
@@ -101,11 +101,11 @@ class _$DocumentCWProxyImpl implements _$DocumentCWProxy {
     Object? children = const $CopyWithPlaceholder(),
   }) {
     return Document(
-      id: id == const $CopyWithPlaceholder() || id == null
+      id: id == const $CopyWithPlaceholder()
           ? _value.id
           // ignore: cast_nullable_to_non_nullable
           : id as String,
-      visible: visible == const $CopyWithPlaceholder() || visible == null
+      visible: visible == const $CopyWithPlaceholder()
           ? _value.visible
           // ignore: cast_nullable_to_non_nullable
           : visible as bool,
@@ -126,13 +126,11 @@ class _$DocumentCWProxyImpl implements _$DocumentCWProxy {
           ? _value.name
           // ignore: cast_nullable_to_non_nullable
           : name as String?,
-      pluginData:
-          pluginData == const $CopyWithPlaceholder() || pluginData == null
-              ? _value.pluginData
-              // ignore: cast_nullable_to_non_nullable
-              : pluginData as dynamic,
-      sharedPluginData: sharedPluginData == const $CopyWithPlaceholder() ||
-              sharedPluginData == null
+      pluginData: pluginData == const $CopyWithPlaceholder()
+          ? _value.pluginData
+          // ignore: cast_nullable_to_non_nullable
+          : pluginData as dynamic,
+      sharedPluginData: sharedPluginData == const $CopyWithPlaceholder()
           ? _value.sharedPluginData
           // ignore: cast_nullable_to_non_nullable
           : sharedPluginData as dynamic,

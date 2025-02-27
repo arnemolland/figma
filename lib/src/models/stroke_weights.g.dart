@@ -22,10 +22,10 @@ abstract class _$StrokeWeightsCWProxy {
   /// StrokeWeights(...).copyWith(id: 12, name: "My name")
   /// ````
   StrokeWeights call({
-    double? top,
-    double? right,
-    double? bottom,
-    double? left,
+    double top,
+    double right,
+    double bottom,
+    double left,
   });
 }
 
@@ -62,19 +62,19 @@ class _$StrokeWeightsCWProxyImpl implements _$StrokeWeightsCWProxy {
     Object? left = const $CopyWithPlaceholder(),
   }) {
     return StrokeWeights(
-      top: top == const $CopyWithPlaceholder() || top == null
+      top: top == const $CopyWithPlaceholder()
           ? _value.top
           // ignore: cast_nullable_to_non_nullable
           : top as double,
-      right: right == const $CopyWithPlaceholder() || right == null
+      right: right == const $CopyWithPlaceholder()
           ? _value.right
           // ignore: cast_nullable_to_non_nullable
           : right as double,
-      bottom: bottom == const $CopyWithPlaceholder() || bottom == null
+      bottom: bottom == const $CopyWithPlaceholder()
           ? _value.bottom
           // ignore: cast_nullable_to_non_nullable
           : bottom as double,
-      left: left == const $CopyWithPlaceholder() || left == null
+      left: left == const $CopyWithPlaceholder()
           ? _value.left
           // ignore: cast_nullable_to_non_nullable
           : left as double,

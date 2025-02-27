@@ -90,21 +90,21 @@ abstract class _$RegularPolygonCWProxy {
   /// RegularPolygon(...).copyWith(id: 12, name: "My name")
   /// ````
   RegularPolygon call({
-    String? id,
-    bool? visible,
-    bool? locked,
-    List<ExportSetting>? exportSettings,
-    bool? preserveRatio,
-    double? layoutGrow,
-    double? opacity,
-    bool? isMask,
-    List<Paint>? fills,
-    List<Path>? fillGeometry,
-    List<Paint>? strokes,
-    StrokeCap? strokeCap,
-    StrokeJoin? strokeJoin,
-    List<double>? strokeDashes,
-    double? strokeMiterAngle,
+    String id,
+    bool visible,
+    bool locked,
+    List<ExportSetting> exportSettings,
+    bool preserveRatio,
+    double layoutGrow,
+    double opacity,
+    bool isMask,
+    List<Paint> fills,
+    List<Path> fillGeometry,
+    List<Paint> strokes,
+    StrokeCap strokeCap,
+    StrokeJoin strokeJoin,
+    List<double> strokeDashes,
+    double strokeMiterAngle,
     Map<String, String>? componentPropertyReferences,
     String? name,
     double? rotation,
@@ -320,70 +320,63 @@ class _$RegularPolygonCWProxyImpl implements _$RegularPolygonCWProxy {
     Object? individualStrokeWeights = const $CopyWithPlaceholder(),
   }) {
     return RegularPolygon(
-      id: id == const $CopyWithPlaceholder() || id == null
+      id: id == const $CopyWithPlaceholder()
           ? _value.id
           // ignore: cast_nullable_to_non_nullable
           : id as String,
-      visible: visible == const $CopyWithPlaceholder() || visible == null
+      visible: visible == const $CopyWithPlaceholder()
           ? _value.visible
           // ignore: cast_nullable_to_non_nullable
           : visible as bool,
-      locked: locked == const $CopyWithPlaceholder() || locked == null
+      locked: locked == const $CopyWithPlaceholder()
           ? _value.locked
           // ignore: cast_nullable_to_non_nullable
           : locked as bool,
-      exportSettings: exportSettings == const $CopyWithPlaceholder() ||
-              exportSettings == null
+      exportSettings: exportSettings == const $CopyWithPlaceholder()
           ? _value.exportSettings
           // ignore: cast_nullable_to_non_nullable
           : exportSettings as List<ExportSetting>,
-      preserveRatio:
-          preserveRatio == const $CopyWithPlaceholder() || preserveRatio == null
-              ? _value.preserveRatio
-              // ignore: cast_nullable_to_non_nullable
-              : preserveRatio as bool,
-      layoutGrow:
-          layoutGrow == const $CopyWithPlaceholder() || layoutGrow == null
-              ? _value.layoutGrow
-              // ignore: cast_nullable_to_non_nullable
-              : layoutGrow as double,
-      opacity: opacity == const $CopyWithPlaceholder() || opacity == null
+      preserveRatio: preserveRatio == const $CopyWithPlaceholder()
+          ? _value.preserveRatio
+          // ignore: cast_nullable_to_non_nullable
+          : preserveRatio as bool,
+      layoutGrow: layoutGrow == const $CopyWithPlaceholder()
+          ? _value.layoutGrow
+          // ignore: cast_nullable_to_non_nullable
+          : layoutGrow as double,
+      opacity: opacity == const $CopyWithPlaceholder()
           ? _value.opacity
           // ignore: cast_nullable_to_non_nullable
           : opacity as double,
-      isMask: isMask == const $CopyWithPlaceholder() || isMask == null
+      isMask: isMask == const $CopyWithPlaceholder()
           ? _value.isMask
           // ignore: cast_nullable_to_non_nullable
           : isMask as bool,
-      fills: fills == const $CopyWithPlaceholder() || fills == null
+      fills: fills == const $CopyWithPlaceholder()
           ? _value.fills
           // ignore: cast_nullable_to_non_nullable
           : fills as List<Paint>,
-      fillGeometry:
-          fillGeometry == const $CopyWithPlaceholder() || fillGeometry == null
-              ? _value.fillGeometry
-              // ignore: cast_nullable_to_non_nullable
-              : fillGeometry as List<Path>,
-      strokes: strokes == const $CopyWithPlaceholder() || strokes == null
+      fillGeometry: fillGeometry == const $CopyWithPlaceholder()
+          ? _value.fillGeometry
+          // ignore: cast_nullable_to_non_nullable
+          : fillGeometry as List<Path>,
+      strokes: strokes == const $CopyWithPlaceholder()
           ? _value.strokes
           // ignore: cast_nullable_to_non_nullable
           : strokes as List<Paint>,
-      strokeCap: strokeCap == const $CopyWithPlaceholder() || strokeCap == null
+      strokeCap: strokeCap == const $CopyWithPlaceholder()
           ? _value.strokeCap
           // ignore: cast_nullable_to_non_nullable
           : strokeCap as StrokeCap,
-      strokeJoin:
-          strokeJoin == const $CopyWithPlaceholder() || strokeJoin == null
-              ? _value.strokeJoin
-              // ignore: cast_nullable_to_non_nullable
-              : strokeJoin as StrokeJoin,
-      strokeDashes:
-          strokeDashes == const $CopyWithPlaceholder() || strokeDashes == null
-              ? _value.strokeDashes
-              // ignore: cast_nullable_to_non_nullable
-              : strokeDashes as List<double>,
-      strokeMiterAngle: strokeMiterAngle == const $CopyWithPlaceholder() ||
-              strokeMiterAngle == null
+      strokeJoin: strokeJoin == const $CopyWithPlaceholder()
+          ? _value.strokeJoin
+          // ignore: cast_nullable_to_non_nullable
+          : strokeJoin as StrokeJoin,
+      strokeDashes: strokeDashes == const $CopyWithPlaceholder()
+          ? _value.strokeDashes
+          // ignore: cast_nullable_to_non_nullable
+          : strokeDashes as List<double>,
+      strokeMiterAngle: strokeMiterAngle == const $CopyWithPlaceholder()
           ? _value.strokeMiterAngle
           // ignore: cast_nullable_to_non_nullable
           : strokeMiterAngle as double,
@@ -400,13 +393,11 @@ class _$RegularPolygonCWProxyImpl implements _$RegularPolygonCWProxy {
           ? _value.rotation
           // ignore: cast_nullable_to_non_nullable
           : rotation as double?,
-      pluginData:
-          pluginData == const $CopyWithPlaceholder() || pluginData == null
-              ? _value.pluginData
-              // ignore: cast_nullable_to_non_nullable
-              : pluginData as dynamic,
-      sharedPluginData: sharedPluginData == const $CopyWithPlaceholder() ||
-              sharedPluginData == null
+      pluginData: pluginData == const $CopyWithPlaceholder()
+          ? _value.pluginData
+          // ignore: cast_nullable_to_non_nullable
+          : pluginData as dynamic,
+      sharedPluginData: sharedPluginData == const $CopyWithPlaceholder()
           ? _value.sharedPluginData
           // ignore: cast_nullable_to_non_nullable
           : sharedPluginData as dynamic,

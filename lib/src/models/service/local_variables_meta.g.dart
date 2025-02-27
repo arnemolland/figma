@@ -19,8 +19,8 @@ abstract class _$LocalVariablesMetaCWProxy {
   /// LocalVariablesMeta(...).copyWith(id: 12, name: "My name")
   /// ````
   LocalVariablesMeta call({
-    Map<String, LocalVariableCollection>? variableCollections,
-    Map<String, LocalVariable>? variables,
+    Map<String, LocalVariableCollection> variableCollections,
+    Map<String, LocalVariable> variables,
   });
 }
 
@@ -52,13 +52,11 @@ class _$LocalVariablesMetaCWProxyImpl implements _$LocalVariablesMetaCWProxy {
     Object? variables = const $CopyWithPlaceholder(),
   }) {
     return LocalVariablesMeta(
-      variableCollections:
-          variableCollections == const $CopyWithPlaceholder() ||
-                  variableCollections == null
-              ? _value.variableCollections
-              // ignore: cast_nullable_to_non_nullable
-              : variableCollections as Map<String, LocalVariableCollection>,
-      variables: variables == const $CopyWithPlaceholder() || variables == null
+      variableCollections: variableCollections == const $CopyWithPlaceholder()
+          ? _value.variableCollections
+          // ignore: cast_nullable_to_non_nullable
+          : variableCollections as Map<String, LocalVariableCollection>,
+      variables: variables == const $CopyWithPlaceholder()
           ? _value.variables
           // ignore: cast_nullable_to_non_nullable
           : variables as Map<String, LocalVariable>,

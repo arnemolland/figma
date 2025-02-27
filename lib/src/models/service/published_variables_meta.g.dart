@@ -19,8 +19,8 @@ abstract class _$PublishedVariablesMetaCWProxy {
   /// PublishedVariablesMeta(...).copyWith(id: 12, name: "My name")
   /// ````
   PublishedVariablesMeta call({
-    Map<String, PublishedVariable>? variables,
-    Map<String, PublishedVariableCollection>? variableCollections,
+    Map<String, PublishedVariable> variables,
+    Map<String, PublishedVariableCollection> variableCollections,
   });
 }
 
@@ -53,16 +53,14 @@ class _$PublishedVariablesMetaCWProxyImpl
     Object? variableCollections = const $CopyWithPlaceholder(),
   }) {
     return PublishedVariablesMeta(
-      variables: variables == const $CopyWithPlaceholder() || variables == null
+      variables: variables == const $CopyWithPlaceholder()
           ? _value.variables
           // ignore: cast_nullable_to_non_nullable
           : variables as Map<String, PublishedVariable>,
-      variableCollections:
-          variableCollections == const $CopyWithPlaceholder() ||
-                  variableCollections == null
-              ? _value.variableCollections
-              // ignore: cast_nullable_to_non_nullable
-              : variableCollections as Map<String, PublishedVariableCollection>,
+      variableCollections: variableCollections == const $CopyWithPlaceholder()
+          ? _value.variableCollections
+          // ignore: cast_nullable_to_non_nullable
+          : variableCollections as Map<String, PublishedVariableCollection>,
     );
   }
 }

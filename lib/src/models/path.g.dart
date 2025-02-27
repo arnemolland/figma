@@ -18,8 +18,8 @@ abstract class _$PathCWProxy {
   /// Path(...).copyWith(id: 12, name: "My name")
   /// ````
   Path call({
-    String? path,
-    WindingRule? windingRule,
+    String path,
+    WindingRule windingRule,
   });
 }
 
@@ -48,15 +48,14 @@ class _$PathCWProxyImpl implements _$PathCWProxy {
     Object? windingRule = const $CopyWithPlaceholder(),
   }) {
     return Path(
-      path: path == const $CopyWithPlaceholder() || path == null
+      path: path == const $CopyWithPlaceholder()
           ? _value.path
           // ignore: cast_nullable_to_non_nullable
           : path as String,
-      windingRule:
-          windingRule == const $CopyWithPlaceholder() || windingRule == null
-              ? _value.windingRule
-              // ignore: cast_nullable_to_non_nullable
-              : windingRule as WindingRule,
+      windingRule: windingRule == const $CopyWithPlaceholder()
+          ? _value.windingRule
+          // ignore: cast_nullable_to_non_nullable
+          : windingRule as WindingRule,
     );
   }
 }

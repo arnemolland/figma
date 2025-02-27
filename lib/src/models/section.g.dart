@@ -36,15 +36,15 @@ abstract class _$SectionCWProxy {
   /// Section(...).copyWith(id: 12, name: "My name")
   /// ````
   Section call({
-    String? id,
-    bool? visible,
-    bool? contentsHidden,
+    String id,
+    bool visible,
+    bool contentsHidden,
     String? devStatus,
-    List<Paint>? fills,
-    List<Paint>? strokes,
+    List<Paint> fills,
+    List<Paint> strokes,
     double? strokeWeight,
     String? strokeAlign,
-    List<Node>? children,
+    List<Node> children,
     Rectangle? absoluteBoundingBox,
     Rectangle? absoluteRenderBounds,
   });
@@ -115,16 +115,15 @@ class _$SectionCWProxyImpl implements _$SectionCWProxy {
     Object? absoluteRenderBounds = const $CopyWithPlaceholder(),
   }) {
     return Section(
-      id: id == const $CopyWithPlaceholder() || id == null
+      id: id == const $CopyWithPlaceholder()
           ? _value.id
           // ignore: cast_nullable_to_non_nullable
           : id as String,
-      visible: visible == const $CopyWithPlaceholder() || visible == null
+      visible: visible == const $CopyWithPlaceholder()
           ? _value.visible
           // ignore: cast_nullable_to_non_nullable
           : visible as bool,
-      contentsHidden: contentsHidden == const $CopyWithPlaceholder() ||
-              contentsHidden == null
+      contentsHidden: contentsHidden == const $CopyWithPlaceholder()
           ? _value.contentsHidden
           // ignore: cast_nullable_to_non_nullable
           : contentsHidden as bool,
@@ -132,11 +131,11 @@ class _$SectionCWProxyImpl implements _$SectionCWProxy {
           ? _value.devStatus
           // ignore: cast_nullable_to_non_nullable
           : devStatus as String?,
-      fills: fills == const $CopyWithPlaceholder() || fills == null
+      fills: fills == const $CopyWithPlaceholder()
           ? _value.fills
           // ignore: cast_nullable_to_non_nullable
           : fills as List<Paint>,
-      strokes: strokes == const $CopyWithPlaceholder() || strokes == null
+      strokes: strokes == const $CopyWithPlaceholder()
           ? _value.strokes
           // ignore: cast_nullable_to_non_nullable
           : strokes as List<Paint>,
@@ -148,7 +147,7 @@ class _$SectionCWProxyImpl implements _$SectionCWProxy {
           ? _value.strokeAlign
           // ignore: cast_nullable_to_non_nullable
           : strokeAlign as String?,
-      children: children == const $CopyWithPlaceholder() || children == null
+      children: children == const $CopyWithPlaceholder()
           ? _value.children
           // ignore: cast_nullable_to_non_nullable
           : children as List<Node>,

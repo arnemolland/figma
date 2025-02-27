@@ -18,8 +18,8 @@ abstract class _$FlowStartingPointCWProxy {
   /// FlowStartingPoint(...).copyWith(id: 12, name: "My name")
   /// ````
   FlowStartingPoint call({
-    String? nodeId,
-    String? name,
+    String nodeId,
+    String name,
   });
 }
 
@@ -48,11 +48,11 @@ class _$FlowStartingPointCWProxyImpl implements _$FlowStartingPointCWProxy {
     Object? name = const $CopyWithPlaceholder(),
   }) {
     return FlowStartingPoint(
-      nodeId: nodeId == const $CopyWithPlaceholder() || nodeId == null
+      nodeId: nodeId == const $CopyWithPlaceholder()
           ? _value.nodeId
           // ignore: cast_nullable_to_non_nullable
           : nodeId as String,
-      name: name == const $CopyWithPlaceholder() || name == null
+      name: name == const $CopyWithPlaceholder()
           ? _value.name
           // ignore: cast_nullable_to_non_nullable
           : name as String,

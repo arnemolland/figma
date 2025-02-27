@@ -18,8 +18,8 @@ abstract class _$SizeCWProxy {
   /// Size(...).copyWith(id: 12, name: "My name")
   /// ````
   Size call({
-    double? width,
-    double? height,
+    double width,
+    double height,
   });
 }
 
@@ -48,11 +48,11 @@ class _$SizeCWProxyImpl implements _$SizeCWProxy {
     Object? height = const $CopyWithPlaceholder(),
   }) {
     return Size(
-      width: width == const $CopyWithPlaceholder() || width == null
+      width: width == const $CopyWithPlaceholder()
           ? _value.width
           // ignore: cast_nullable_to_non_nullable
           : width as double,
-      height: height == const $CopyWithPlaceholder() || height == null
+      height: height == const $CopyWithPlaceholder()
           ? _value.height
           // ignore: cast_nullable_to_non_nullable
           : height as double,

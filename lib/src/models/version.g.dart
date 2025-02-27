@@ -24,11 +24,11 @@ abstract class _$VersionCWProxy {
   /// Version(...).copyWith(id: 12, name: "My name")
   /// ````
   Version call({
-    String? id,
-    DateTime? createdAt,
+    String id,
+    DateTime createdAt,
     String? label,
     String? description,
-    User? user,
+    User user,
   });
 }
 
@@ -69,11 +69,11 @@ class _$VersionCWProxyImpl implements _$VersionCWProxy {
     Object? user = const $CopyWithPlaceholder(),
   }) {
     return Version(
-      id: id == const $CopyWithPlaceholder() || id == null
+      id: id == const $CopyWithPlaceholder()
           ? _value.id
           // ignore: cast_nullable_to_non_nullable
           : id as String,
-      createdAt: createdAt == const $CopyWithPlaceholder() || createdAt == null
+      createdAt: createdAt == const $CopyWithPlaceholder()
           ? _value.createdAt
           // ignore: cast_nullable_to_non_nullable
           : createdAt as DateTime,
@@ -85,7 +85,7 @@ class _$VersionCWProxyImpl implements _$VersionCWProxy {
           ? _value.description
           // ignore: cast_nullable_to_non_nullable
           : description as String?,
-      user: user == const $CopyWithPlaceholder() || user == null
+      user: user == const $CopyWithPlaceholder()
           ? _value.user
           // ignore: cast_nullable_to_non_nullable
           : user as User,

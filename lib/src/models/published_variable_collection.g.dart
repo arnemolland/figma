@@ -24,11 +24,11 @@ abstract class _$PublishedVariableCollectionCWProxy {
   /// PublishedVariableCollection(...).copyWith(id: 12, name: "My name")
   /// ````
   PublishedVariableCollection call({
-    String? id,
-    String? subscribedId,
-    String? name,
-    String? key,
-    DateTime? updatedAt,
+    String id,
+    String subscribedId,
+    String name,
+    String key,
+    DateTime updatedAt,
   });
 }
 
@@ -72,24 +72,23 @@ class _$PublishedVariableCollectionCWProxyImpl
     Object? updatedAt = const $CopyWithPlaceholder(),
   }) {
     return PublishedVariableCollection(
-      id: id == const $CopyWithPlaceholder() || id == null
+      id: id == const $CopyWithPlaceholder()
           ? _value.id
           // ignore: cast_nullable_to_non_nullable
           : id as String,
-      subscribedId:
-          subscribedId == const $CopyWithPlaceholder() || subscribedId == null
-              ? _value.subscribedId
-              // ignore: cast_nullable_to_non_nullable
-              : subscribedId as String,
-      name: name == const $CopyWithPlaceholder() || name == null
+      subscribedId: subscribedId == const $CopyWithPlaceholder()
+          ? _value.subscribedId
+          // ignore: cast_nullable_to_non_nullable
+          : subscribedId as String,
+      name: name == const $CopyWithPlaceholder()
           ? _value.name
           // ignore: cast_nullable_to_non_nullable
           : name as String,
-      key: key == const $CopyWithPlaceholder() || key == null
+      key: key == const $CopyWithPlaceholder()
           ? _value.key
           // ignore: cast_nullable_to_non_nullable
           : key as String,
-      updatedAt: updatedAt == const $CopyWithPlaceholder() || updatedAt == null
+      updatedAt: updatedAt == const $CopyWithPlaceholder()
           ? _value.updatedAt
           // ignore: cast_nullable_to_non_nullable
           : updatedAt as DateTime,

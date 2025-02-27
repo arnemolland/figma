@@ -20,9 +20,9 @@ abstract class _$ArcDataCWProxy {
   /// ArcData(...).copyWith(id: 12, name: "My name")
   /// ````
   ArcData call({
-    double? startingAngle,
-    double? endingAngle,
-    double? innerRadius,
+    double startingAngle,
+    double endingAngle,
+    double innerRadius,
   });
 }
 
@@ -56,21 +56,18 @@ class _$ArcDataCWProxyImpl implements _$ArcDataCWProxy {
     Object? innerRadius = const $CopyWithPlaceholder(),
   }) {
     return ArcData(
-      startingAngle:
-          startingAngle == const $CopyWithPlaceholder() || startingAngle == null
-              ? _value.startingAngle
-              // ignore: cast_nullable_to_non_nullable
-              : startingAngle as double,
-      endingAngle:
-          endingAngle == const $CopyWithPlaceholder() || endingAngle == null
-              ? _value.endingAngle
-              // ignore: cast_nullable_to_non_nullable
-              : endingAngle as double,
-      innerRadius:
-          innerRadius == const $CopyWithPlaceholder() || innerRadius == null
-              ? _value.innerRadius
-              // ignore: cast_nullable_to_non_nullable
-              : innerRadius as double,
+      startingAngle: startingAngle == const $CopyWithPlaceholder()
+          ? _value.startingAngle
+          // ignore: cast_nullable_to_non_nullable
+          : startingAngle as double,
+      endingAngle: endingAngle == const $CopyWithPlaceholder()
+          ? _value.endingAngle
+          // ignore: cast_nullable_to_non_nullable
+          : endingAngle as double,
+      innerRadius: innerRadius == const $CopyWithPlaceholder()
+          ? _value.innerRadius
+          // ignore: cast_nullable_to_non_nullable
+          : innerRadius as double,
     );
   }
 }

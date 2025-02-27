@@ -28,13 +28,13 @@ abstract class _$PublishedVariableCWProxy {
   /// PublishedVariable(...).copyWith(id: 12, name: "My name")
   /// ````
   PublishedVariable call({
-    String? id,
-    String? subscribedId,
-    String? name,
-    String? key,
-    String? variableCollectionId,
-    ResolvedType? resolvedDataType,
-    DateTime? updatedAt,
+    String id,
+    String subscribedId,
+    String name,
+    String key,
+    String variableCollectionId,
+    ResolvedType resolvedDataType,
+    DateTime updatedAt,
   });
 }
 
@@ -86,35 +86,31 @@ class _$PublishedVariableCWProxyImpl implements _$PublishedVariableCWProxy {
     Object? updatedAt = const $CopyWithPlaceholder(),
   }) {
     return PublishedVariable(
-      id: id == const $CopyWithPlaceholder() || id == null
+      id: id == const $CopyWithPlaceholder()
           ? _value.id
           // ignore: cast_nullable_to_non_nullable
           : id as String,
-      subscribedId:
-          subscribedId == const $CopyWithPlaceholder() || subscribedId == null
-              ? _value.subscribedId
-              // ignore: cast_nullable_to_non_nullable
-              : subscribedId as String,
-      name: name == const $CopyWithPlaceholder() || name == null
+      subscribedId: subscribedId == const $CopyWithPlaceholder()
+          ? _value.subscribedId
+          // ignore: cast_nullable_to_non_nullable
+          : subscribedId as String,
+      name: name == const $CopyWithPlaceholder()
           ? _value.name
           // ignore: cast_nullable_to_non_nullable
           : name as String,
-      key: key == const $CopyWithPlaceholder() || key == null
+      key: key == const $CopyWithPlaceholder()
           ? _value.key
           // ignore: cast_nullable_to_non_nullable
           : key as String,
-      variableCollectionId:
-          variableCollectionId == const $CopyWithPlaceholder() ||
-                  variableCollectionId == null
-              ? _value.variableCollectionId
-              // ignore: cast_nullable_to_non_nullable
-              : variableCollectionId as String,
-      resolvedDataType: resolvedDataType == const $CopyWithPlaceholder() ||
-              resolvedDataType == null
+      variableCollectionId: variableCollectionId == const $CopyWithPlaceholder()
+          ? _value.variableCollectionId
+          // ignore: cast_nullable_to_non_nullable
+          : variableCollectionId as String,
+      resolvedDataType: resolvedDataType == const $CopyWithPlaceholder()
           ? _value.resolvedDataType
           // ignore: cast_nullable_to_non_nullable
           : resolvedDataType as ResolvedType,
-      updatedAt: updatedAt == const $CopyWithPlaceholder() || updatedAt == null
+      updatedAt: updatedAt == const $CopyWithPlaceholder()
           ? _value.updatedAt
           // ignore: cast_nullable_to_non_nullable
           : updatedAt as DateTime,

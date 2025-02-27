@@ -22,8 +22,8 @@ abstract class _$PrototypeDeviceCWProxy {
   /// PrototypeDevice(...).copyWith(id: 12, name: "My name")
   /// ````
   PrototypeDevice call({
-    PrototypeDeviceType? type,
-    PrototypeDeviceRotation? rotation,
+    PrototypeDeviceType type,
+    PrototypeDeviceRotation rotation,
     Size? size,
     String? presetIdentifier,
   });
@@ -64,11 +64,11 @@ class _$PrototypeDeviceCWProxyImpl implements _$PrototypeDeviceCWProxy {
     Object? presetIdentifier = const $CopyWithPlaceholder(),
   }) {
     return PrototypeDevice(
-      type: type == const $CopyWithPlaceholder() || type == null
+      type: type == const $CopyWithPlaceholder()
           ? _value.type
           // ignore: cast_nullable_to_non_nullable
           : type as PrototypeDeviceType,
-      rotation: rotation == const $CopyWithPlaceholder() || rotation == null
+      rotation: rotation == const $CopyWithPlaceholder()
           ? _value.rotation
           // ignore: cast_nullable_to_non_nullable
           : rotation as PrototypeDeviceRotation,

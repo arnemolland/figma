@@ -38,17 +38,17 @@ abstract class _$LocalVariableCWProxy {
   /// LocalVariable(...).copyWith(id: 12, name: "My name")
   /// ````
   LocalVariable call({
-    String? id,
-    String? name,
-    String? key,
-    String? variableCollectionId,
-    ResolvedType? resolvedType,
-    Map<String, dynamic>? valuesByMode,
-    bool? remote,
-    String? description,
-    bool? hiddenFromPublishing,
-    List<VariableScope>? scopes,
-    Map<VariableCodeSyntaxPlatform, String>? codeSyntax,
+    String id,
+    String name,
+    String key,
+    String variableCollectionId,
+    ResolvedType resolvedType,
+    Map<String, dynamic> valuesByMode,
+    bool remote,
+    String description,
+    bool hiddenFromPublishing,
+    List<VariableScope> scopes,
+    Map<VariableCodeSyntaxPlatform, String> codeSyntax,
     bool? deletedButReferenced,
   });
 }
@@ -126,58 +126,50 @@ class _$LocalVariableCWProxyImpl implements _$LocalVariableCWProxy {
     Object? deletedButReferenced = const $CopyWithPlaceholder(),
   }) {
     return LocalVariable(
-      id: id == const $CopyWithPlaceholder() || id == null
+      id: id == const $CopyWithPlaceholder()
           ? _value.id
           // ignore: cast_nullable_to_non_nullable
           : id as String,
-      name: name == const $CopyWithPlaceholder() || name == null
+      name: name == const $CopyWithPlaceholder()
           ? _value.name
           // ignore: cast_nullable_to_non_nullable
           : name as String,
-      key: key == const $CopyWithPlaceholder() || key == null
+      key: key == const $CopyWithPlaceholder()
           ? _value.key
           // ignore: cast_nullable_to_non_nullable
           : key as String,
-      variableCollectionId:
-          variableCollectionId == const $CopyWithPlaceholder() ||
-                  variableCollectionId == null
-              ? _value.variableCollectionId
-              // ignore: cast_nullable_to_non_nullable
-              : variableCollectionId as String,
-      resolvedType:
-          resolvedType == const $CopyWithPlaceholder() || resolvedType == null
-              ? _value.resolvedType
-              // ignore: cast_nullable_to_non_nullable
-              : resolvedType as ResolvedType,
-      valuesByMode:
-          valuesByMode == const $CopyWithPlaceholder() || valuesByMode == null
-              ? _value.valuesByMode
-              // ignore: cast_nullable_to_non_nullable
-              : valuesByMode as Map<String, dynamic>,
-      remote: remote == const $CopyWithPlaceholder() || remote == null
+      variableCollectionId: variableCollectionId == const $CopyWithPlaceholder()
+          ? _value.variableCollectionId
+          // ignore: cast_nullable_to_non_nullable
+          : variableCollectionId as String,
+      resolvedType: resolvedType == const $CopyWithPlaceholder()
+          ? _value.resolvedType
+          // ignore: cast_nullable_to_non_nullable
+          : resolvedType as ResolvedType,
+      valuesByMode: valuesByMode == const $CopyWithPlaceholder()
+          ? _value.valuesByMode
+          // ignore: cast_nullable_to_non_nullable
+          : valuesByMode as Map<String, dynamic>,
+      remote: remote == const $CopyWithPlaceholder()
           ? _value.remote
           // ignore: cast_nullable_to_non_nullable
           : remote as bool,
-      description:
-          description == const $CopyWithPlaceholder() || description == null
-              ? _value.description
-              // ignore: cast_nullable_to_non_nullable
-              : description as String,
-      hiddenFromPublishing:
-          hiddenFromPublishing == const $CopyWithPlaceholder() ||
-                  hiddenFromPublishing == null
-              ? _value.hiddenFromPublishing
-              // ignore: cast_nullable_to_non_nullable
-              : hiddenFromPublishing as bool,
-      scopes: scopes == const $CopyWithPlaceholder() || scopes == null
+      description: description == const $CopyWithPlaceholder()
+          ? _value.description
+          // ignore: cast_nullable_to_non_nullable
+          : description as String,
+      hiddenFromPublishing: hiddenFromPublishing == const $CopyWithPlaceholder()
+          ? _value.hiddenFromPublishing
+          // ignore: cast_nullable_to_non_nullable
+          : hiddenFromPublishing as bool,
+      scopes: scopes == const $CopyWithPlaceholder()
           ? _value.scopes
           // ignore: cast_nullable_to_non_nullable
           : scopes as List<VariableScope>,
-      codeSyntax:
-          codeSyntax == const $CopyWithPlaceholder() || codeSyntax == null
-              ? _value.codeSyntax
-              // ignore: cast_nullable_to_non_nullable
-              : codeSyntax as Map<VariableCodeSyntaxPlatform, String>,
+      codeSyntax: codeSyntax == const $CopyWithPlaceholder()
+          ? _value.codeSyntax
+          // ignore: cast_nullable_to_non_nullable
+          : codeSyntax as Map<VariableCodeSyntaxPlatform, String>,
       deletedButReferenced: deletedButReferenced == const $CopyWithPlaceholder()
           ? _value.deletedButReferenced
           // ignore: cast_nullable_to_non_nullable

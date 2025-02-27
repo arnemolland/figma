@@ -18,8 +18,8 @@ abstract class _$OverridesCWProxy {
   /// Overrides(...).copyWith(id: 12, name: "My name")
   /// ````
   Overrides call({
-    String? id,
-    List<String>? overriddenFields,
+    String id,
+    List<String> overriddenFields,
   });
 }
 
@@ -49,12 +49,11 @@ class _$OverridesCWProxyImpl implements _$OverridesCWProxy {
     Object? overriddenFields = const $CopyWithPlaceholder(),
   }) {
     return Overrides(
-      id: id == const $CopyWithPlaceholder() || id == null
+      id: id == const $CopyWithPlaceholder()
           ? _value.id
           // ignore: cast_nullable_to_non_nullable
           : id as String,
-      overriddenFields: overriddenFields == const $CopyWithPlaceholder() ||
-              overriddenFields == null
+      overriddenFields: overriddenFields == const $CopyWithPlaceholder()
           ? _value.overriddenFields
           // ignore: cast_nullable_to_non_nullable
           : overriddenFields as List<String>,

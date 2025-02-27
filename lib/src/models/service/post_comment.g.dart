@@ -59,11 +59,10 @@ class _$PostCommentCWProxyImpl implements _$PostCommentCWProxy {
           ? _value.message
           // ignore: cast_nullable_to_non_nullable
           : message as String?,
-      clientMeta:
-          clientMeta == const $CopyWithPlaceholder() || clientMeta == null
-              ? _value.clientMeta
-              // ignore: cast_nullable_to_non_nullable
-              : clientMeta as dynamic,
+      clientMeta: clientMeta == const $CopyWithPlaceholder()
+          ? _value.clientMeta
+          // ignore: cast_nullable_to_non_nullable
+          : clientMeta as dynamic,
       commentId: commentId == const $CopyWithPlaceholder()
           ? _value.commentId
           // ignore: cast_nullable_to_non_nullable

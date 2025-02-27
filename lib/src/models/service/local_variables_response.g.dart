@@ -20,8 +20,8 @@ abstract class _$LocalVariablesResponseCWProxy {
   /// LocalVariablesResponse(...).copyWith(id: 12, name: "My name")
   /// ````
   LocalVariablesResponse call({
-    int? status,
-    bool? error,
+    int status,
+    bool error,
     LocalVariablesMeta? meta,
   });
 }
@@ -56,11 +56,11 @@ class _$LocalVariablesResponseCWProxyImpl
     Object? meta = const $CopyWithPlaceholder(),
   }) {
     return LocalVariablesResponse(
-      status: status == const $CopyWithPlaceholder() || status == null
+      status: status == const $CopyWithPlaceholder()
           ? _value.status
           // ignore: cast_nullable_to_non_nullable
           : status as int,
-      error: error == const $CopyWithPlaceholder() || error == null
+      error: error == const $CopyWithPlaceholder()
           ? _value.error
           // ignore: cast_nullable_to_non_nullable
           : error as bool,

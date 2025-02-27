@@ -53,7 +53,7 @@ abstract class _$ComponentCWProxy {
     FrameInfo? containingFrame,
     dynamic containingPage,
     String? componentSetId,
-    Map<String, ComponentPropertyDefinition>? componentPropertyDefinitions,
+    Map<String, ComponentPropertyDefinition> componentPropertyDefinitions,
   });
 }
 
@@ -173,8 +173,7 @@ class _$ComponentCWProxyImpl implements _$ComponentCWProxy {
           ? _value.containingFrame
           // ignore: cast_nullable_to_non_nullable
           : containingFrame as FrameInfo?,
-      containingPage: containingPage == const $CopyWithPlaceholder() ||
-              containingPage == null
+      containingPage: containingPage == const $CopyWithPlaceholder()
           ? _value.containingPage
           // ignore: cast_nullable_to_non_nullable
           : containingPage as dynamic,
@@ -183,8 +182,7 @@ class _$ComponentCWProxyImpl implements _$ComponentCWProxy {
           // ignore: cast_nullable_to_non_nullable
           : componentSetId as String?,
       componentPropertyDefinitions:
-          componentPropertyDefinitions == const $CopyWithPlaceholder() ||
-                  componentPropertyDefinitions == null
+          componentPropertyDefinitions == const $CopyWithPlaceholder()
               ? _value.componentPropertyDefinitions
               // ignore: cast_nullable_to_non_nullable
               : componentPropertyDefinitions

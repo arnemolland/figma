@@ -23,7 +23,7 @@ abstract class _$ComponentPropertyDefinitionCWProxy {
   /// ComponentPropertyDefinition(...).copyWith(id: 12, name: "My name")
   /// ````
   ComponentPropertyDefinition call({
-    String? type,
+    String type,
     dynamic defaultValue,
     List<String>? variantOptions,
     List<InstanceSwapPreferredValue>? preferredValues,
@@ -68,15 +68,14 @@ class _$ComponentPropertyDefinitionCWProxyImpl
     Object? preferredValues = const $CopyWithPlaceholder(),
   }) {
     return ComponentPropertyDefinition(
-      type: type == const $CopyWithPlaceholder() || type == null
+      type: type == const $CopyWithPlaceholder()
           ? _value.type
           // ignore: cast_nullable_to_non_nullable
           : type as String,
-      defaultValue:
-          defaultValue == const $CopyWithPlaceholder() || defaultValue == null
-              ? _value.defaultValue
-              // ignore: cast_nullable_to_non_nullable
-              : defaultValue as dynamic,
+      defaultValue: defaultValue == const $CopyWithPlaceholder()
+          ? _value.defaultValue
+          // ignore: cast_nullable_to_non_nullable
+          : defaultValue as dynamic,
       variantOptions: variantOptions == const $CopyWithPlaceholder()
           ? _value.variantOptions
           // ignore: cast_nullable_to_non_nullable

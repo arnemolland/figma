@@ -119,41 +119,41 @@ abstract class _$FrameCWProxy {
   /// Frame(...).copyWith(id: 12, name: "My name")
   /// ````
   Frame call({
-    String? id,
-    bool? visible,
+    String id,
+    bool visible,
     Map<String, String>? componentPropertyReferences,
     String? name,
     double? rotation,
     dynamic pluginData,
     dynamic sharedPluginData,
     String? type,
-    bool? locked,
-    List<Paint>? fills,
-    List<Paint>? strokes,
-    List<ExportSetting>? exportSettings,
+    bool locked,
+    List<Paint> fills,
+    List<Paint> strokes,
+    List<ExportSetting> exportSettings,
     List<Node?>? children,
-    double? opacity,
-    PrimaryAxisAlignItems? primaryAxisAlignItems,
-    CounterAxisAlignItems? counterAxisAlignItems,
-    PrimaryAxisSizingMode? primaryAxisSizingMode,
-    CounterAxisSizingMode? counterAxisSizingMode,
-    double? paddingBottom,
-    double? paddingLeft,
-    double? paddingRight,
-    double? paddingTop,
-    double? horizontalPadding,
-    double? verticalPadding,
-    double? itemSpacing,
-    List<LayoutGrid>? layoutGrids,
-    OverflowDirection? overflowDirection,
-    List<Effect>? effects,
-    bool? isMask,
-    bool? isMaskOutline,
-    LayoutPositioning? layoutPositioning,
-    bool? itemReverseZIndex,
-    bool? strokesIncludedInLayout,
-    bool? preserveRatio,
-    double? layoutGrow,
+    double opacity,
+    PrimaryAxisAlignItems primaryAxisAlignItems,
+    CounterAxisAlignItems counterAxisAlignItems,
+    PrimaryAxisSizingMode primaryAxisSizingMode,
+    CounterAxisSizingMode counterAxisSizingMode,
+    double paddingBottom,
+    double paddingLeft,
+    double paddingRight,
+    double paddingTop,
+    double horizontalPadding,
+    double verticalPadding,
+    double itemSpacing,
+    List<LayoutGrid> layoutGrids,
+    OverflowDirection overflowDirection,
+    List<Effect> effects,
+    bool isMask,
+    bool isMaskOutline,
+    LayoutPositioning layoutPositioning,
+    bool itemReverseZIndex,
+    bool strokesIncludedInLayout,
+    bool preserveRatio,
+    double layoutGrow,
     SizeRectangle? absoluteBoundingBox,
     SizeRectangle? absoluteRenderBounds,
     Vector2D? size,
@@ -423,11 +423,11 @@ class _$FrameCWProxyImpl implements _$FrameCWProxy {
     Object? styles = const $CopyWithPlaceholder(),
   }) {
     return Frame(
-      id: id == const $CopyWithPlaceholder() || id == null
+      id: id == const $CopyWithPlaceholder()
           ? _value.id
           // ignore: cast_nullable_to_non_nullable
           : id as String,
-      visible: visible == const $CopyWithPlaceholder() || visible == null
+      visible: visible == const $CopyWithPlaceholder()
           ? _value.visible
           // ignore: cast_nullable_to_non_nullable
           : visible as bool,
@@ -444,13 +444,11 @@ class _$FrameCWProxyImpl implements _$FrameCWProxy {
           ? _value.rotation
           // ignore: cast_nullable_to_non_nullable
           : rotation as double?,
-      pluginData:
-          pluginData == const $CopyWithPlaceholder() || pluginData == null
-              ? _value.pluginData
-              // ignore: cast_nullable_to_non_nullable
-              : pluginData as dynamic,
-      sharedPluginData: sharedPluginData == const $CopyWithPlaceholder() ||
-              sharedPluginData == null
+      pluginData: pluginData == const $CopyWithPlaceholder()
+          ? _value.pluginData
+          // ignore: cast_nullable_to_non_nullable
+          : pluginData as dynamic,
+      sharedPluginData: sharedPluginData == const $CopyWithPlaceholder()
           ? _value.sharedPluginData
           // ignore: cast_nullable_to_non_nullable
           : sharedPluginData as dynamic,
@@ -458,20 +456,19 @@ class _$FrameCWProxyImpl implements _$FrameCWProxy {
           ? _value.type
           // ignore: cast_nullable_to_non_nullable
           : type as String?,
-      locked: locked == const $CopyWithPlaceholder() || locked == null
+      locked: locked == const $CopyWithPlaceholder()
           ? _value.locked
           // ignore: cast_nullable_to_non_nullable
           : locked as bool,
-      fills: fills == const $CopyWithPlaceholder() || fills == null
+      fills: fills == const $CopyWithPlaceholder()
           ? _value.fills
           // ignore: cast_nullable_to_non_nullable
           : fills as List<Paint>,
-      strokes: strokes == const $CopyWithPlaceholder() || strokes == null
+      strokes: strokes == const $CopyWithPlaceholder()
           ? _value.strokes
           // ignore: cast_nullable_to_non_nullable
           : strokes as List<Paint>,
-      exportSettings: exportSettings == const $CopyWithPlaceholder() ||
-              exportSettings == null
+      exportSettings: exportSettings == const $CopyWithPlaceholder()
           ? _value.exportSettings
           // ignore: cast_nullable_to_non_nullable
           : exportSettings as List<ExportSetting>,
@@ -479,118 +476,99 @@ class _$FrameCWProxyImpl implements _$FrameCWProxy {
           ? _value.children
           // ignore: cast_nullable_to_non_nullable
           : children as List<Node?>?,
-      opacity: opacity == const $CopyWithPlaceholder() || opacity == null
+      opacity: opacity == const $CopyWithPlaceholder()
           ? _value.opacity
           // ignore: cast_nullable_to_non_nullable
           : opacity as double,
       primaryAxisAlignItems:
-          primaryAxisAlignItems == const $CopyWithPlaceholder() ||
-                  primaryAxisAlignItems == null
+          primaryAxisAlignItems == const $CopyWithPlaceholder()
               ? _value.primaryAxisAlignItems
               // ignore: cast_nullable_to_non_nullable
               : primaryAxisAlignItems as PrimaryAxisAlignItems,
       counterAxisAlignItems:
-          counterAxisAlignItems == const $CopyWithPlaceholder() ||
-                  counterAxisAlignItems == null
+          counterAxisAlignItems == const $CopyWithPlaceholder()
               ? _value.counterAxisAlignItems
               // ignore: cast_nullable_to_non_nullable
               : counterAxisAlignItems as CounterAxisAlignItems,
       primaryAxisSizingMode:
-          primaryAxisSizingMode == const $CopyWithPlaceholder() ||
-                  primaryAxisSizingMode == null
+          primaryAxisSizingMode == const $CopyWithPlaceholder()
               ? _value.primaryAxisSizingMode
               // ignore: cast_nullable_to_non_nullable
               : primaryAxisSizingMode as PrimaryAxisSizingMode,
       counterAxisSizingMode:
-          counterAxisSizingMode == const $CopyWithPlaceholder() ||
-                  counterAxisSizingMode == null
+          counterAxisSizingMode == const $CopyWithPlaceholder()
               ? _value.counterAxisSizingMode
               // ignore: cast_nullable_to_non_nullable
               : counterAxisSizingMode as CounterAxisSizingMode,
-      paddingBottom:
-          paddingBottom == const $CopyWithPlaceholder() || paddingBottom == null
-              ? _value.paddingBottom
-              // ignore: cast_nullable_to_non_nullable
-              : paddingBottom as double,
-      paddingLeft:
-          paddingLeft == const $CopyWithPlaceholder() || paddingLeft == null
-              ? _value.paddingLeft
-              // ignore: cast_nullable_to_non_nullable
-              : paddingLeft as double,
-      paddingRight:
-          paddingRight == const $CopyWithPlaceholder() || paddingRight == null
-              ? _value.paddingRight
-              // ignore: cast_nullable_to_non_nullable
-              : paddingRight as double,
-      paddingTop:
-          paddingTop == const $CopyWithPlaceholder() || paddingTop == null
-              ? _value.paddingTop
-              // ignore: cast_nullable_to_non_nullable
-              : paddingTop as double,
-      horizontalPadding: horizontalPadding == const $CopyWithPlaceholder() ||
-              horizontalPadding == null
+      paddingBottom: paddingBottom == const $CopyWithPlaceholder()
+          ? _value.paddingBottom
+          // ignore: cast_nullable_to_non_nullable
+          : paddingBottom as double,
+      paddingLeft: paddingLeft == const $CopyWithPlaceholder()
+          ? _value.paddingLeft
+          // ignore: cast_nullable_to_non_nullable
+          : paddingLeft as double,
+      paddingRight: paddingRight == const $CopyWithPlaceholder()
+          ? _value.paddingRight
+          // ignore: cast_nullable_to_non_nullable
+          : paddingRight as double,
+      paddingTop: paddingTop == const $CopyWithPlaceholder()
+          ? _value.paddingTop
+          // ignore: cast_nullable_to_non_nullable
+          : paddingTop as double,
+      horizontalPadding: horizontalPadding == const $CopyWithPlaceholder()
           ? _value.horizontalPadding
           // ignore: cast_nullable_to_non_nullable
           : horizontalPadding as double,
-      verticalPadding: verticalPadding == const $CopyWithPlaceholder() ||
-              verticalPadding == null
+      verticalPadding: verticalPadding == const $CopyWithPlaceholder()
           ? _value.verticalPadding
           // ignore: cast_nullable_to_non_nullable
           : verticalPadding as double,
-      itemSpacing:
-          itemSpacing == const $CopyWithPlaceholder() || itemSpacing == null
-              ? _value.itemSpacing
-              // ignore: cast_nullable_to_non_nullable
-              : itemSpacing as double,
-      layoutGrids:
-          layoutGrids == const $CopyWithPlaceholder() || layoutGrids == null
-              ? _value.layoutGrids
-              // ignore: cast_nullable_to_non_nullable
-              : layoutGrids as List<LayoutGrid>,
-      overflowDirection: overflowDirection == const $CopyWithPlaceholder() ||
-              overflowDirection == null
+      itemSpacing: itemSpacing == const $CopyWithPlaceholder()
+          ? _value.itemSpacing
+          // ignore: cast_nullable_to_non_nullable
+          : itemSpacing as double,
+      layoutGrids: layoutGrids == const $CopyWithPlaceholder()
+          ? _value.layoutGrids
+          // ignore: cast_nullable_to_non_nullable
+          : layoutGrids as List<LayoutGrid>,
+      overflowDirection: overflowDirection == const $CopyWithPlaceholder()
           ? _value.overflowDirection
           // ignore: cast_nullable_to_non_nullable
           : overflowDirection as OverflowDirection,
-      effects: effects == const $CopyWithPlaceholder() || effects == null
+      effects: effects == const $CopyWithPlaceholder()
           ? _value.effects
           // ignore: cast_nullable_to_non_nullable
           : effects as List<Effect>,
-      isMask: isMask == const $CopyWithPlaceholder() || isMask == null
+      isMask: isMask == const $CopyWithPlaceholder()
           ? _value.isMask
           // ignore: cast_nullable_to_non_nullable
           : isMask as bool,
-      isMaskOutline:
-          isMaskOutline == const $CopyWithPlaceholder() || isMaskOutline == null
-              ? _value.isMaskOutline
-              // ignore: cast_nullable_to_non_nullable
-              : isMaskOutline as bool,
-      layoutPositioning: layoutPositioning == const $CopyWithPlaceholder() ||
-              layoutPositioning == null
+      isMaskOutline: isMaskOutline == const $CopyWithPlaceholder()
+          ? _value.isMaskOutline
+          // ignore: cast_nullable_to_non_nullable
+          : isMaskOutline as bool,
+      layoutPositioning: layoutPositioning == const $CopyWithPlaceholder()
           ? _value.layoutPositioning
           // ignore: cast_nullable_to_non_nullable
           : layoutPositioning as LayoutPositioning,
-      itemReverseZIndex: itemReverseZIndex == const $CopyWithPlaceholder() ||
-              itemReverseZIndex == null
+      itemReverseZIndex: itemReverseZIndex == const $CopyWithPlaceholder()
           ? _value.itemReverseZIndex
           // ignore: cast_nullable_to_non_nullable
           : itemReverseZIndex as bool,
       strokesIncludedInLayout:
-          strokesIncludedInLayout == const $CopyWithPlaceholder() ||
-                  strokesIncludedInLayout == null
+          strokesIncludedInLayout == const $CopyWithPlaceholder()
               ? _value.strokesIncludedInLayout
               // ignore: cast_nullable_to_non_nullable
               : strokesIncludedInLayout as bool,
-      preserveRatio:
-          preserveRatio == const $CopyWithPlaceholder() || preserveRatio == null
-              ? _value.preserveRatio
-              // ignore: cast_nullable_to_non_nullable
-              : preserveRatio as bool,
-      layoutGrow:
-          layoutGrow == const $CopyWithPlaceholder() || layoutGrow == null
-              ? _value.layoutGrow
-              // ignore: cast_nullable_to_non_nullable
-              : layoutGrow as double,
+      preserveRatio: preserveRatio == const $CopyWithPlaceholder()
+          ? _value.preserveRatio
+          // ignore: cast_nullable_to_non_nullable
+          : preserveRatio as bool,
+      layoutGrow: layoutGrow == const $CopyWithPlaceholder()
+          ? _value.layoutGrow
+          // ignore: cast_nullable_to_non_nullable
+          : layoutGrow as double,
       absoluteBoundingBox: absoluteBoundingBox == const $CopyWithPlaceholder()
           ? _value.absoluteBoundingBox
           // ignore: cast_nullable_to_non_nullable

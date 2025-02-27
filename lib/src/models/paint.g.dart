@@ -39,7 +39,7 @@ abstract class _$PaintCWProxy {
   /// ````
   Paint call({
     PaintType? type,
-    bool? visible,
+    bool visible,
     double? opacity,
     Color? color,
     BlendMode? blendMode,
@@ -125,7 +125,7 @@ class _$PaintCWProxyImpl implements _$PaintCWProxy {
           ? _value.type
           // ignore: cast_nullable_to_non_nullable
           : type as PaintType?,
-      visible: visible == const $CopyWithPlaceholder() || visible == null
+      visible: visible == const $CopyWithPlaceholder()
           ? _value.visible
           // ignore: cast_nullable_to_non_nullable
           : visible as bool,

@@ -18,8 +18,8 @@ abstract class _$Vector2DCWProxy {
   /// Vector2D(...).copyWith(id: 12, name: "My name")
   /// ````
   Vector2D call({
-    num? x,
-    num? y,
+    num x,
+    num y,
   });
 }
 
@@ -48,11 +48,11 @@ class _$Vector2DCWProxyImpl implements _$Vector2DCWProxy {
     Object? y = const $CopyWithPlaceholder(),
   }) {
     return Vector2D(
-      x: x == const $CopyWithPlaceholder() || x == null
+      x: x == const $CopyWithPlaceholder()
           ? _value.x
           // ignore: cast_nullable_to_non_nullable
           : x as num,
-      y: y == const $CopyWithPlaceholder() || y == null
+      y: y == const $CopyWithPlaceholder()
           ? _value.y
           // ignore: cast_nullable_to_non_nullable
           : y as num,

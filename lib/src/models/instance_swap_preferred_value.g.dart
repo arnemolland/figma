@@ -18,8 +18,8 @@ abstract class _$InstanceSwapPreferredValueCWProxy {
   /// InstanceSwapPreferredValue(...).copyWith(id: 12, name: "My name")
   /// ````
   InstanceSwapPreferredValue call({
-    InstanceSwapPreferredValueType? type,
-    String? key,
+    InstanceSwapPreferredValueType type,
+    String key,
   });
 }
 
@@ -50,11 +50,11 @@ class _$InstanceSwapPreferredValueCWProxyImpl
     Object? key = const $CopyWithPlaceholder(),
   }) {
     return InstanceSwapPreferredValue(
-      type: type == const $CopyWithPlaceholder() || type == null
+      type: type == const $CopyWithPlaceholder()
           ? _value.type
           // ignore: cast_nullable_to_non_nullable
           : type as InstanceSwapPreferredValueType,
-      key: key == const $CopyWithPlaceholder() || key == null
+      key: key == const $CopyWithPlaceholder()
           ? _value.key
           // ignore: cast_nullable_to_non_nullable
           : key as String,

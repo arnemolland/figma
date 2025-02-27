@@ -41,17 +41,17 @@ abstract class _$CanvasCWProxy {
   /// Canvas(...).copyWith(id: 12, name: "My name")
   /// ````
   Canvas call({
-    String? id,
-    bool? visible,
+    String id,
+    bool visible,
     Map<String, String>? componentPropertyReferences,
     String? name,
     double? rotation,
     dynamic pluginData,
     dynamic sharedPluginData,
     String? type,
-    PrototypeDevice? prototypeDevice,
-    List<FlowStartingPoint>? flowStartingPoints,
-    List<ExportSetting>? exportSettings,
+    PrototypeDevice prototypeDevice,
+    List<FlowStartingPoint> flowStartingPoints,
+    List<ExportSetting> exportSettings,
     List<Node?>? children,
     Color? backgroundColor,
   });
@@ -133,11 +133,11 @@ class _$CanvasCWProxyImpl implements _$CanvasCWProxy {
     Object? backgroundColor = const $CopyWithPlaceholder(),
   }) {
     return Canvas(
-      id: id == const $CopyWithPlaceholder() || id == null
+      id: id == const $CopyWithPlaceholder()
           ? _value.id
           // ignore: cast_nullable_to_non_nullable
           : id as String,
-      visible: visible == const $CopyWithPlaceholder() || visible == null
+      visible: visible == const $CopyWithPlaceholder()
           ? _value.visible
           // ignore: cast_nullable_to_non_nullable
           : visible as bool,
@@ -154,13 +154,11 @@ class _$CanvasCWProxyImpl implements _$CanvasCWProxy {
           ? _value.rotation
           // ignore: cast_nullable_to_non_nullable
           : rotation as double?,
-      pluginData:
-          pluginData == const $CopyWithPlaceholder() || pluginData == null
-              ? _value.pluginData
-              // ignore: cast_nullable_to_non_nullable
-              : pluginData as dynamic,
-      sharedPluginData: sharedPluginData == const $CopyWithPlaceholder() ||
-              sharedPluginData == null
+      pluginData: pluginData == const $CopyWithPlaceholder()
+          ? _value.pluginData
+          // ignore: cast_nullable_to_non_nullable
+          : pluginData as dynamic,
+      sharedPluginData: sharedPluginData == const $CopyWithPlaceholder()
           ? _value.sharedPluginData
           // ignore: cast_nullable_to_non_nullable
           : sharedPluginData as dynamic,
@@ -168,18 +166,15 @@ class _$CanvasCWProxyImpl implements _$CanvasCWProxy {
           ? _value.type
           // ignore: cast_nullable_to_non_nullable
           : type as String?,
-      prototypeDevice: prototypeDevice == const $CopyWithPlaceholder() ||
-              prototypeDevice == null
+      prototypeDevice: prototypeDevice == const $CopyWithPlaceholder()
           ? _value.prototypeDevice
           // ignore: cast_nullable_to_non_nullable
           : prototypeDevice as PrototypeDevice,
-      flowStartingPoints: flowStartingPoints == const $CopyWithPlaceholder() ||
-              flowStartingPoints == null
+      flowStartingPoints: flowStartingPoints == const $CopyWithPlaceholder()
           ? _value.flowStartingPoints
           // ignore: cast_nullable_to_non_nullable
           : flowStartingPoints as List<FlowStartingPoint>,
-      exportSettings: exportSettings == const $CopyWithPlaceholder() ||
-              exportSettings == null
+      exportSettings: exportSettings == const $CopyWithPlaceholder()
           ? _value.exportSettings
           // ignore: cast_nullable_to_non_nullable
           : exportSettings as List<ExportSetting>,
