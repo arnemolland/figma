@@ -2,7 +2,7 @@
 ///
 /// To get started, retrieve your Figma access token [here](https://www.figma.com/login?cont=/developers/docs)
 /// and start making requests.
-library figma;
+library;
 
 export 'src/client.dart';
 export 'src/query.dart';

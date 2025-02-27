@@ -43,7 +43,7 @@ class PublishedVariableCollection extends Equatable {
         name,
         key,
         updatedAt,
-  ];
+      ];
 
   factory PublishedVariableCollection.fromJson(Map<String, dynamic> json) =>
       _$PublishedVariableCollectionFromJson(json);

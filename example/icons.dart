@@ -85,8 +85,10 @@ Future<void> download(
   });
 
   // Retrieve icon canvas.
-  final canvas =
-      (file.document as Document?)?.children?.where((node) => node?.name == pageRef).single;
+  final canvas = (file.document as Document?)
+      ?.children
+      ?.where((node) => node?.name == pageRef)
+      .single;
 
   if (canvas?.id == null) {
     throw Exception('Could not find icon canvas');

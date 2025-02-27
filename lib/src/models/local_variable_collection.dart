@@ -61,7 +61,7 @@ class LocalVariableCollection extends Equatable {
         remote,
         hiddenFromPublishing,
         variableIds,
-  ];
+      ];
 
   factory LocalVariableCollection.fromJson(Map<String, dynamic> json) =>
       _$LocalVariableCollectionFromJson(json);
