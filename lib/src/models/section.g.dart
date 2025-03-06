@@ -25,9 +25,9 @@ abstract class _$SectionCWProxy {
 
   Section children(List<Node> children);
 
-  Section absoluteBoundingBox(Rectangle? absoluteBoundingBox);
+  Section absoluteBoundingBox(SizeRectangle? absoluteBoundingBox);
 
-  Section absoluteRenderBounds(Rectangle? absoluteRenderBounds);
+  Section absoluteRenderBounds(SizeRectangle? absoluteRenderBounds);
 
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Section(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
@@ -45,8 +45,8 @@ abstract class _$SectionCWProxy {
     double? strokeWeight,
     String? strokeAlign,
     List<Node> children,
-    Rectangle? absoluteBoundingBox,
-    Rectangle? absoluteRenderBounds,
+    SizeRectangle? absoluteBoundingBox,
+    SizeRectangle? absoluteRenderBounds,
   });
 }
 
@@ -86,11 +86,11 @@ class _$SectionCWProxyImpl implements _$SectionCWProxy {
   Section children(List<Node> children) => this(children: children);
 
   @override
-  Section absoluteBoundingBox(Rectangle? absoluteBoundingBox) =>
+  Section absoluteBoundingBox(SizeRectangle? absoluteBoundingBox) =>
       this(absoluteBoundingBox: absoluteBoundingBox);
 
   @override
-  Section absoluteRenderBounds(Rectangle? absoluteRenderBounds) =>
+  Section absoluteRenderBounds(SizeRectangle? absoluteRenderBounds) =>
       this(absoluteRenderBounds: absoluteRenderBounds);
 
   @override
@@ -154,11 +154,11 @@ class _$SectionCWProxyImpl implements _$SectionCWProxy {
       absoluteBoundingBox: absoluteBoundingBox == const $CopyWithPlaceholder()
           ? _value.absoluteBoundingBox
           // ignore: cast_nullable_to_non_nullable
-          : absoluteBoundingBox as Rectangle?,
+          : absoluteBoundingBox as SizeRectangle?,
       absoluteRenderBounds: absoluteRenderBounds == const $CopyWithPlaceholder()
           ? _value.absoluteRenderBounds
           // ignore: cast_nullable_to_non_nullable
-          : absoluteRenderBounds as Rectangle?,
+          : absoluteRenderBounds as SizeRectangle?,
     );
   }
 }
@@ -193,11 +193,11 @@ Section _$SectionFromJson(Map<String, dynamic> json) => Section(
           .toList(),
       absoluteBoundingBox: json['absoluteBoundingBox'] == null
           ? null
-          : Rectangle.fromJson(
+          : SizeRectangle.fromJson(
               json['absoluteBoundingBox'] as Map<String, dynamic>),
       absoluteRenderBounds: json['absoluteRenderBounds'] == null
           ? null
-          : Rectangle.fromJson(
+          : SizeRectangle.fromJson(
               json['absoluteRenderBounds'] as Map<String, dynamic>),
     );
 
