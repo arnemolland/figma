@@ -1,6 +1,4 @@
-import 'package:figma/src/models/node.dart';
-import 'package:figma/src/models/paint.dart';
-import 'package:figma/src/models/rectangle.dart';
+import 'package:figma/figma.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:copy_with_extension/copy_with_extension.dart';
 
@@ -36,10 +34,10 @@ class Section extends Node {
   final List<Node> children;
 
   /// Bounding box of the node in absolute space coordinates.
-  final Rectangle? absoluteBoundingBox;
+  final SizeRectangle? absoluteBoundingBox;
 
-  /// The actual bounds of a node accounting for drop shadows, thick strokes, and anything else that may fall outside the node's regular bounding box.
-  final Rectangle? absoluteRenderBounds;
+  /// The bounds of the rendered node in the file in absolute space coordinates.
+  final SizeRectangle? absoluteRenderBounds;
 
   Section({
     required super.id,
