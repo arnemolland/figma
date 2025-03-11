@@ -1,3 +1,7 @@
+## 7.3.2
+
+- Changed types for `absoluteBoundingBox` to and `absoluteRenderBounds` properties in `Section` model from `Rectangle` to `SizeRectangle` ([@evgentus-cy](https://github.com/evgentus-cy))
+
 ## 7.3.1
 
 - Lowered dependency constraints
