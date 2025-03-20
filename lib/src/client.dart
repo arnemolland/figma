@@ -2,8 +2,6 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:figma/figma.dart';
-import 'package:figma/src/models/service/local_variables_response.dart';
-import 'package:figma/src/models/service/published_variables_response.dart';
 import 'package:http/http.dart';
 import 'package:http2/http2.dart';
 
@@ -107,12 +105,12 @@ class FigmaClient {
       await _getFigma('/teams/$team/projects')
           .then((data) => TeamProjectsResponse.fromJson(data));
 
-  /// Retrieives all project files specified by [project].
+  /// Retrieves all project files specified by [project].
   Future<ProjectFilesResponse> getProjectFiles(String project) async =>
       _getFigma('/projects/$project/files')
           .then((data) => ProjectFilesResponse.fromJson(data));
 
-  /// Retrieives all components from the Figma team specified by [team].
+  /// Retrieves all components from the Figma team specified by [team].
   Future<ComponentsResponse> getTeamComponents(String team,
           [FigmaQuery? query]) async =>
       _getFigma('/teams/$team/components', query)
@@ -124,7 +122,7 @@ class FigmaClient {
       _getFigma('/files/$key/components', query)
           .then((data) => ComponentsResponse.fromJson(data));
 
-  /// Retrivies a specific component specified by [key].
+  /// Retrieves a specific component specified by [key].
   Future<ComponentResponse> getComponent(String key) async =>
       _getFigma('/components/$key')
           .then((data) => ComponentResponse.fromJson(data));
