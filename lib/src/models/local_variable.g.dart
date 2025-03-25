@@ -258,6 +258,7 @@ const _$VariableScopeEnumMap = {
   VariableScope.textFill: 'TEXT_FILL',
   VariableScope.strokeColor: 'STROKE_COLOR',
   VariableScope.effectColor: 'EFFECT_COLOR',
+  VariableScope.fontVariations: 'FONT_VARIATIONS',
 };
 
 const _$VariableCodeSyntaxPlatformEnumMap = {

@@ -43,4 +43,6 @@ enum VariableScope {
   strokeColor,
   @JsonValue('EFFECT_COLOR')
   effectColor,
+  @JsonValue('FONT_VARIATIONS')
+  fontVariations,
 }
