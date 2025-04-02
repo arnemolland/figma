@@ -17,7 +17,7 @@ export 'models/counter_axis_align_items.dart';
 export 'models/counter_axis_sizing_mode.dart';
 export 'models/document.dart' show Document;
 export 'models/easing_type.dart';
-export 'models/effect.dart' show Effect;
+export 'models/effect.dart' show Effect, EffectType;
 export 'models/ellipse.dart' show Ellipse;
 export 'models/export_setting.dart' show ExportSetting;
 export 'models/flow_starting_point.dart' show FlowStartingPoint;
