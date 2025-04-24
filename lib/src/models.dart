@@ -17,7 +17,7 @@ export 'models/counter_axis_align_items.dart';
 export 'models/counter_axis_sizing_mode.dart';
 export 'models/document.dart' show Document;
 export 'models/easing_type.dart';
-export 'models/effect.dart' show Effect;
+export 'models/effect.dart' show Effect, EffectType;
 export 'models/ellipse.dart' show Ellipse;
 export 'models/export_setting.dart' show ExportSetting;
 export 'models/flow_starting_point.dart' show FlowStartingPoint;
@@ -91,7 +91,8 @@ export 'models/stroke_weights.dart' show StrokeWeights;
 export 'models/style.dart' show Style;
 export 'models/style_type.dart';
 export 'models/text.dart' show Text;
-export 'models/type_style.dart' show TypeStyle;
+export 'models/type_style.dart'
+    show TypeStyle, TextDecoration, TextAlignVertical, TextAlignHorizontal;
 export 'models/user.dart' show User;
 export 'models/variable_code_syntax_platform.dart';
 export 'models/variable_scope.dart';
