@@ -1,3 +1,8 @@
+## 7.3.4
+
+- Export `EffectType` from models ([@filippomenchini](https://github.com/filippomenchini))
+- Add `fontVariations` enum ([@donny-dont](https://github.com/donny-dont))
+
 ## 7.3.3
 
 - Export all model classes ([@donny-dont](https://github.com/donny-dont))
