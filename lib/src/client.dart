@@ -77,6 +77,11 @@ class FigmaClient {
       await _getFigma('/files/$key/images')
           .then((data) => ImageResponse.fromJson(data));
 
+  /// Retrieves the image fills specified.
+  Future<FileMetaResponse> getFileMetadata(String key) async =>
+      await _getFigma('/files/$key/meta')
+          .then((data) => FileMetaResponse.fromJson(data));
+
   /// Retrieves comments from the Figma file specified by [key].
   Future<List<Comment>> getComments(String key) async =>
       await _getFigma('/files/$key/comments')
