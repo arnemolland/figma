@@ -1,29 +1,41 @@
 import 'dart:convert';
-import 'dart:io';
 
 import 'package:figma/figma.dart';
-import 'package:http/http.dart';
-import 'package:http2/http2.dart';
 
-/// Figma API base URL.
-const base = 'api.figma.com';
-
-/// A constant that is true if the application was compiled to run on the web.
-
-// This implementation takes advantage of the fact that JavaScript does not support integers.
-// In this environment, Dart's doubles and ints are backed by the same kind of object. Thus a
-// double 0.0 is identical to an integer 0. This is not true for Dart code running in
-// AOT or on the VM.
-const bool kIsWeb = identical(0, 0.0);
+import 'client/shared.dart';
+import 'client/stub.dart'
+    if (dart.library.js_interop) 'client/browser.dart'
+    if (dart.library.io) 'client/io.dart';
 
 /// A client for interacting with the Figma API.
 class FigmaClient {
-  FigmaClient(
-    this.accessToken, {
-    this.apiVersion = 'v1',
-    this.webhookVersion = 'v2',
-    this.useHttp2 = !kIsWeb,
-    this.useOAuth = false,
+  factory FigmaClient(
+    String accessToken, {
+    String apiVersion = 'v1',
+    String webhookVersion = 'v2',
+    bool? useHttp2,
+    bool useOAuth = false,
+  }) {
+    useHttp2 ??= http2 != null;
+    final send = useHttp2 ? http2 : http;
+    if (send == null) {
+      throw UnsupportedError('HTTP/2 unavailable on this platform');
+    }
+
+    return FigmaClient._(accessToken, send,
+        apiVersion: apiVersion,
+        webhookVersion: webhookVersion,
+        useHttp2: useHttp2,
+        useOAuth: useOAuth);
+  }
+
+  FigmaClient._(
+    this.accessToken,
+    this._send, {
+    required this.apiVersion,
+    required this.webhookVersion,
+    required this.useHttp2,
+    required this.useOAuth,
   });
 
   /// Use HTTP2 sockets for interacting with API.
@@ -46,8 +58,11 @@ class FigmaClient {
   /// Should only be used if package is not updated with a new API release.
   final String webhookVersion;
 
-  // If true, then use accessToken as OAuth token when calling figma API.
+  /// If true, then use accessToken as OAuth token when calling the Figma API.
   final bool useOAuth;
+
+  /// The send routine for calling the Figma API.
+  final SendRequest _send;
 
   /// Does an authenticated GET request towards the Figma API.
   Future<Map<String, dynamic>> authenticatedGet(String url) {
@@ -249,70 +264,6 @@ class FigmaClient {
     });
   }
 
-  Future<_Response> _send(
-    String method,
-    Uri uri,
-    Map<String, String> headers, [
-    String? body,
-  ]) async {
-    // HTTP/2 is not supported on all platforms, so we need to fallback to
-    // HTTP/1.1 in that case.
-    if (!useHttp2) {
-      final client = Client();
-      try {
-        final request = Request(method, uri);
-        request.headers.addAll(headers);
-        final response = await client.send(request);
-        final body = await response.stream.toBytes();
-        return _Response(response.statusCode, utf8.decode(body));
-      } finally {
-        client.close();
-      }
-    }
-
-    final transport = ClientTransportConnection.viaSocket(
-      await SecureSocket.connect(
-        uri.host,
-        uri.port,
-        supportedProtocols: ['h2'],
-      ),
-    );
-
-    final stream = transport.makeRequest(
-      [
-        Header.ascii(':method', method),
-        Header.ascii(':path', uri.path + (uri.hasQuery ? '?${uri.query}' : '')),
-        Header.ascii(':scheme', uri.scheme),
-        Header.ascii(':authority', uri.host),
-        ...headers.entries.map(
-          (e) => Header.ascii(e.key.toLowerCase(), e.value),
-        ),
-      ],
-      endStream: body == null,
-    );
-    if (body != null) {
-      stream.sendData(utf8.encode(body), endStream: true);
-    }
-    var status = 200;
-    final buffer = <int>[];
-    await for (final message in stream.incomingMessages) {
-      if (message is HeadersStreamMessage) {
-        for (final header in message.headers) {
-          final name = utf8.decode(header.name);
-          final value = utf8.decode(header.value);
-          if (name == ':status') {
-            status = int.parse(value);
-          }
-        }
-      } else if (message is DataStreamMessage) {
-        buffer.addAll(message.bytes);
-      }
-    }
-    await transport.finish();
-
-    return _Response(status, utf8.decode(buffer));
-  }
-
   Map<String, String> get _authHeaders {
     final headers = <String, String>{
       'Content-Type': 'application/json',
@@ -324,13 +275,6 @@ class FigmaClient {
     }
     return headers;
   }
-}
-
-class _Response {
-  final int statusCode;
-  final String body;
-
-  const _Response(this.statusCode, this.body);
 }
 
 /// An error from the [Figma API docs](https://www.figma.com/developers/api#errors).
