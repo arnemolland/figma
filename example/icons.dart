@@ -23,14 +23,10 @@ import 'package:http/http.dart';
 /// https://github.com/gameflow-tv/flume_mobile/blob/main/tool/icons.dart
 
 /// Returns true if the given file is an SVG file.
-bool isSvg(File f) {
-  return f.path.endsWith('.svg');
-}
+bool isSvg(File f) => f.path.endsWith('.svg');
 
 /// Returns true if the given FileSystemEntity is an SVG file.
-bool isSvgFile(FileSystemEntity e) {
-  return e is File && isSvg(e);
-}
+bool isSvgFile(FileSystemEntity e) => e is File && isSvg(e);
 
 /// Runs SVGO on all SVG files in the given directory.
 Future<void> optimize(Directory dir) async {
