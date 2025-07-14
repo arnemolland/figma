@@ -1,1 +1,10 @@
 include: package:lints/recommended.yaml
+
+analyzer:
+  exclude: ['**/*.g.dart']
+
+linter:
+  rules:
+    - prefer_expression_function_bodies
+    - unnecessary_await_in_return
+    - unnecessary_lambdas
