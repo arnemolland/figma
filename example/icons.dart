@@ -40,7 +40,7 @@ Future<void> optimize(Directory dir) async {
   final list = dir.listSync();
 
   // Optimize SVGs.
-  List<Future> svgoFutures = [];
+  final svgoFutures = <Future>[];
 
   // Loop through SVG files and optimize them.
   for (final element in list.where(isSvgFile)) {
@@ -120,7 +120,7 @@ Future<void> download(
   }
 
   // Future list for parallel execution.
-  List<Future> futures = [];
+  final futures = <Future>[];
 
   // Loop through each URL and download the SVG.
   for (var url in res.images!.entries) {

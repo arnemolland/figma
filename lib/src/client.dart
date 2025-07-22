@@ -192,7 +192,7 @@ class FigmaClient {
     // HTTP/2 is not supported on all platforms, so we need to fallback to
     // HTTP/1.1 in that case.
     if (!useHttp2) {
-      var client = Client();
+      final client = Client();
       try {
         final request = Request(method, uri);
         request.headers.addAll(headers);
@@ -204,7 +204,7 @@ class FigmaClient {
       }
     }
 
-    var transport = ClientTransportConnection.viaSocket(
+    final transport = ClientTransportConnection.viaSocket(
       await SecureSocket.connect(
         uri.host,
         uri.port,
@@ -212,7 +212,7 @@ class FigmaClient {
       ),
     );
 
-    var stream = transport.makeRequest(
+    final stream = transport.makeRequest(
       [
         Header.ascii(':method', method),
         Header.ascii(':path', uri.path + (uri.hasQuery ? '?${uri.query}' : '')),
@@ -232,8 +232,8 @@ class FigmaClient {
     await for (var message in stream.incomingMessages) {
       if (message is HeadersStreamMessage) {
         for (var header in message.headers) {
-          var name = utf8.decode(header.name);
-          var value = utf8.decode(header.value);
+          final name = utf8.decode(header.name);
+          final value = utf8.decode(header.value);
           if (name == ':status') {
             status = int.parse(value);
           }
