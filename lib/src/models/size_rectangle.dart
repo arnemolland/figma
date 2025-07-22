@@ -20,7 +20,7 @@ class SizeRectangle extends Equatable {
   /// Height of the rectangle.
   final double? height;
 
-  SizeRectangle({this.x, this.y, this.width, this.height});
+  const SizeRectangle({this.x, this.y, this.width, this.height});
 
   @override
   List<Object?> get props => [x, y, width, height];

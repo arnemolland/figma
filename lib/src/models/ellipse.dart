@@ -8,7 +8,7 @@ part 'ellipse.g.dart';
 @JsonSerializable()
 @CopyWith()
 class Ellipse extends Vector {
-  Ellipse({
+  const Ellipse({
     required super.id,
     required super.visible,
     required super.locked,

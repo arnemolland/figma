@@ -19,7 +19,7 @@ class PublishedVariablesResponse extends Equatable {
   /// Contains the collection of [PublishedVariable] and [PublishedVariableCollection].
   final PublishedVariablesMeta? meta;
 
-  PublishedVariablesResponse({this.status, this.error, this.meta});
+  const PublishedVariablesResponse({this.status, this.error, this.meta});
 
   @override
   List<Object?> get props => [status, error, meta];

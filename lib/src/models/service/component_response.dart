@@ -19,7 +19,7 @@ class ComponentResponse extends Equatable {
   @JsonKey(name: 'meta')
   final Component? component;
 
-  ComponentResponse({this.status, this.error, this.component});
+  const ComponentResponse({this.status, this.error, this.component});
 
   @override
   List<Object?> get props => [status, error, component];

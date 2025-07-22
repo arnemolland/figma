@@ -17,7 +17,7 @@ class Rectangle extends Vector {
   /// starting in the top left and proceeding clockwise.
   final List<double>? rectangleCornerRadii;
 
-  Rectangle({
+  const Rectangle({
     required super.id,
     required super.visible,
     required super.locked,

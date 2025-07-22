@@ -18,7 +18,7 @@ class StylesResponse extends Equatable {
   /// [Style] list + metadata.
   final StylesMeta? meta;
 
-  StylesResponse({this.status, this.error, this.meta});
+  const StylesResponse({this.status, this.error, this.meta});
 
   @override
   List<Object?> get props => [status, error, meta];

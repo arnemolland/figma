@@ -15,7 +15,7 @@ class Mode extends Equatable {
   final String name;
 
   /// The modes of this variable collection.
-  Mode({
+  const Mode({
     required this.modeId,
     required this.name,
   });

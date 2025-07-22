@@ -15,7 +15,7 @@ class StylesMeta extends Equatable {
   /// Pagination cursor.
   final Cursor? cursor;
 
-  StylesMeta({this.styles, this.cursor});
+  const StylesMeta({this.styles, this.cursor});
 
   @override
   List<Object?> get props => [styles, cursor];

@@ -86,7 +86,7 @@ class Vector extends Node {
   final List<Path> fillGeometry;
 
   /// Map from ID to PaintOverride for looking up fill overrides. To see which
-  /// regions are overriden, you must use the geometry=paths option. Each path
+  /// regions are overridden, you must use the geometry=paths option. Each path
   /// returned may have an overrideId which maps to this table.
   final Map<int, PaintOverride?>? fillOverrideTable;
 
@@ -136,7 +136,7 @@ class Vector extends Node {
   /// style in the top-level styles field.
   final Map<StyleTypeKey, String>? styles;
 
-  Vector({
+  const Vector({
     required super.id,
     required super.visible,
     super.componentPropertyReferences,

@@ -14,7 +14,7 @@ class FileMetaResponse extends Equatable {
   /// The file's metadata.
   final FileMeta? file;
 
-  FileMetaResponse({
+  const FileMetaResponse({
     this.file,
   });
 

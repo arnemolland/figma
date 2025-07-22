@@ -39,7 +39,7 @@ class Section extends Node {
   /// The bounds of the rendered node in the file in absolute space coordinates.
   final SizeRectangle? absoluteRenderBounds;
 
-  Section({
+  const Section({
     required super.id,
     required super.visible,
     required this.contentsHidden,

@@ -41,7 +41,7 @@ class FileResponse extends Equatable {
   /// Map of styles within the file, if any.
   final Map<String, Style>? styles;
 
-  FileResponse({
+  const FileResponse({
     this.name,
     this.role,
     this.lastModified,

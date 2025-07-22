@@ -15,7 +15,7 @@ class TeamProjectsResponse extends Equatable {
   /// List of project of this team.
   final List<Project>? projects;
 
-  TeamProjectsResponse({this.name, this.projects});
+  const TeamProjectsResponse({this.name, this.projects});
 
   @override
   List<Object?> get props => [name, projects];

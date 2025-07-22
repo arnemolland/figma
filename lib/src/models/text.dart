@@ -29,7 +29,7 @@ class Text extends Vector {
   /// Style of text including font family and weight (see [TypeStyle]).
   final TypeStyle? style;
 
-  /// Array with same number of elements as characeters in text box, each
+  /// Array with same number of elements as characters in text box, each
   /// element is a reference to the styleOverrideTable defined below and maps
   /// to the corresponding character in the characters field. Elements with
   /// value 0 have the default type style.
@@ -49,7 +49,7 @@ class Text extends Vector {
   /// line.
   final List<int>? lineIndentations;
 
-  Text({
+  const Text({
     required super.id,
     required super.visible,
     required super.locked,

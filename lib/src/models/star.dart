@@ -8,7 +8,7 @@ part 'star.g.dart';
 @JsonSerializable()
 @CopyWith()
 class Star extends Vector {
-  Star({
+  const Star({
     required super.id,
     required super.visible,
     required super.locked,

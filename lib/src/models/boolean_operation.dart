@@ -30,7 +30,7 @@ class BooleanOperation extends Vector {
   /// indicating the type of boolean operation applied.
   final Operation? operation;
 
-  BooleanOperation({
+  const BooleanOperation({
     required super.id,
     required super.visible,
     required super.locked,

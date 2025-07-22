@@ -7,7 +7,7 @@ part 'regular_polygon.g.dart';
 @JsonSerializable()
 @CopyWith()
 class RegularPolygon extends Vector {
-  RegularPolygon({
+  const RegularPolygon({
     required super.id,
     required super.visible,
     required super.locked,

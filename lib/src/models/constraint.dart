@@ -29,7 +29,7 @@ class Constraint extends Equatable {
   /// See type property for effect of this field.
   final num? value;
 
-  Constraint({this.type, this.value});
+  const Constraint({this.type, this.value});
 
   @override
   List<Object?> get props => [type, value];

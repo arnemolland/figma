@@ -56,7 +56,7 @@ class Effect extends Equatable {
   /// Applies only to drop shadow.
   final bool? showShadowBehindNode;
 
-  Effect({
+  const Effect({
     this.type,
     required this.visible,
     this.radius,

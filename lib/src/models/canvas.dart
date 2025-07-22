@@ -30,7 +30,7 @@ class Canvas extends Node {
   /// The device that this canvas is a prototype for.
   final PrototypeDevice prototypeDevice;
 
-  Canvas({
+  const Canvas({
     required super.id,
     required super.visible,
     super.componentPropertyReferences,
