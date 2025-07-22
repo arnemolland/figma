@@ -200,46 +200,40 @@ Future<void> generateIconFont(
 /// Downloads all icons from Figma, optimizes and
 /// saves them to the assets folder.
 Future<void> main(List<String> args) async {
-  final parser = ArgParser();
-
-  parser.addOption(
-    'file',
-    abbr: 'f',
-    help: 'Figma file reference',
-    mandatory: true,
-  );
-
-  parser.addOption(
-    'page',
-    abbr: 'p',
-    help: 'Figma page reference',
-    defaultsTo: 'Icons',
-  );
-
-  parser.addOption(
-    'token',
-    abbr: 't',
-    help: 'Figma access token',
-    mandatory: true,
-  );
-
-  parser.addOption(
-    'class-name',
-    help: 'Name of the Dart icon class',
-    defaultsTo: 'ExampleIcons',
-  );
-
-  parser.addOption(
-    'dart-out',
-    help: 'Path to save Flutter icon class to',
-    defaultsTo: 'example.dart',
-  );
-
-  parser.addOption(
-    'ttf-out',
-    help: 'Path to save icon font (.ttf) to',
-    defaultsTo: 'example.ttf',
-  );
+  final parser = ArgParser()
+    ..addOption(
+      'file',
+      abbr: 'f',
+      help: 'Figma file reference',
+      mandatory: true,
+    )
+    ..addOption(
+      'page',
+      abbr: 'p',
+      help: 'Figma page reference',
+      defaultsTo: 'Icons',
+    )
+    ..addOption(
+      'token',
+      abbr: 't',
+      help: 'Figma access token',
+      mandatory: true,
+    )
+    ..addOption(
+      'class-name',
+      help: 'Name of the Dart icon class',
+      defaultsTo: 'ExampleIcons',
+    )
+    ..addOption(
+      'dart-out',
+      help: 'Path to save Flutter icon class to',
+      defaultsTo: 'example.dart',
+    )
+    ..addOption(
+      'ttf-out',
+      help: 'Path to save icon font (.ttf) to',
+      defaultsTo: 'example.ttf',
+    );
 
   // Parse arguments.
   final results = parser.parse(args);

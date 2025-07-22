@@ -65,24 +65,18 @@ class FigmaQuery {
     this.pluginData,
   });
 
-  Map<String, String?> get params {
-    var map = {
-      'ids': ids?.join(','),
-      'scale': scale?.toString(),
-      'format': format,
-      'version': version,
-      'depth': depth?.toString(),
-      'geometry': geometry,
-      'svg_include_id': svgIncludeId?.toString(),
-      'svg_simplify_stroke': svgSimplifyStroke?.toString(),
-      'use_absolute_bounds': useAbsoluteBounds?.toString(),
-      'page_size': pageSize?.toString(),
-      'cursor': cursor?.toString(),
-      'plugin_data': pluginData,
-    };
-
-    map.removeWhere((k, v) => v == null);
-
-    return map;
-  }
+  Map<String, String?> get params => <String, String?>{
+        'ids': ids?.join(','),
+        'scale': scale?.toString(),
+        'format': format,
+        'version': version,
+        'depth': depth?.toString(),
+        'geometry': geometry,
+        'svg_include_id': svgIncludeId?.toString(),
+        'svg_simplify_stroke': svgSimplifyStroke?.toString(),
+        'use_absolute_bounds': useAbsoluteBounds?.toString(),
+        'page_size': pageSize?.toString(),
+        'cursor': cursor?.toString(),
+        'plugin_data': pluginData,
+      }..removeWhere((k, v) => v == null);
 }
