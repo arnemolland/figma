@@ -74,7 +74,7 @@ class Paint extends Equatable {
   /// references to image URLs.
   final String? gifRef;
 
-  Paint({
+  const Paint({
     this.type,
     required this.visible,
     this.opacity,

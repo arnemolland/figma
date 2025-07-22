@@ -23,7 +23,7 @@ class ImageResponse extends Equatable {
   /// Status code.
   final int? status;
 
-  ImageResponse({this.err, this.images, this.imageFills, this.status});
+  const ImageResponse({this.err, this.images, this.imageFills, this.status});
 
   @override
   List<Object?> get props => [err, images, imageFills, status];

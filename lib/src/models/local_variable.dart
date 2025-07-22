@@ -66,7 +66,7 @@ class LocalVariable extends Equatable {
   /// modes in its [LocalVariableCollection].
   ///
   /// These values can be applied to various kinds of design properties.
-  LocalVariable({
+  const LocalVariable({
     required this.id,
     required this.name,
     required this.key,

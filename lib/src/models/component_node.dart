@@ -10,7 +10,7 @@ part 'component_node.g.dart';
 @JsonSerializable()
 @CopyWith()
 class ComponentNode extends Frame {
-  ComponentNode({
+  const ComponentNode({
     required super.id,
     required super.visible,
     required super.locked,
@@ -68,7 +68,7 @@ class ComponentNode extends Frame {
 
   /// A mapping of name to ComponentPropertyDefinition for every component
   /// property on this component. Each property has a type, defaultValue, and
-  /// ther optional values.
+  /// their optional values.
   @JsonKey(defaultValue: {})
   final Map<String, ComponentPropertyDefinition> componentPropertyDefinitions;
 

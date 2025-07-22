@@ -12,7 +12,7 @@ class CommentsResponse extends Equatable {
   /// List of comments requested, if any.
   final List<Comment>? comments;
 
-  CommentsResponse({this.comments});
+  const CommentsResponse({this.comments});
 
   @override
   List<Object?> get props => [comments];

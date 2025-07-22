@@ -15,7 +15,7 @@ class ProjectFilesResponse extends Equatable {
   /// List of [ProjectFile] belonging to the project.
   final List<ProjectFile>? files;
 
-  ProjectFilesResponse({this.name, this.files});
+  const ProjectFilesResponse({this.name, this.files});
 
   @override
   List<Object?> get props => [name, files];

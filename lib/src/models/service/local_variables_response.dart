@@ -18,7 +18,7 @@ class LocalVariablesResponse extends Equatable {
   /// Contains [LocalVariable] and [LocalVariableCollection].
   final LocalVariablesMeta? meta;
 
-  LocalVariablesResponse({
+  const LocalVariablesResponse({
     required this.status,
     required this.error,
     required this.meta,

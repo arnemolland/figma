@@ -13,7 +13,7 @@ class StrokeWeights extends Equatable {
   final double bottom;
   final double left;
 
-  StrokeWeights({
+  const StrokeWeights({
     required this.top,
     required this.right,
     required this.bottom,

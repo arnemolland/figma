@@ -35,7 +35,7 @@ class LayoutGrid extends Equatable {
   /// Number of columns or rows.
   final int? count;
 
-  LayoutGrid({
+  const LayoutGrid({
     this.pattern,
     this.sectionSize,
     this.visible,
