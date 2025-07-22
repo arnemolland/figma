@@ -1,6 +1,6 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:figma/figma.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:copy_with_extension/copy_with_extension.dart';
 
 part 'section.g.dart';
 
