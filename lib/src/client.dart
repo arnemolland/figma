@@ -295,9 +295,9 @@ class FigmaClient {
     }
     var status = 200;
     final buffer = <int>[];
-    await for (var message in stream.incomingMessages) {
+    await for (final message in stream.incomingMessages) {
       if (message is HeadersStreamMessage) {
-        for (var header in message.headers) {
+        for (final header in message.headers) {
           final name = utf8.decode(header.name);
           final value = utf8.decode(header.value);
           if (name == ':status') {
