@@ -37,7 +37,7 @@ Future<void> optimize(Directory dir) async {
     throw Exception('SVGO not found in path, skipping optimization');
   }
 
-  final list = dir.listSync();
+  final list = await dir.list().toList();
 
   // Optimize SVGs.
   final svgoFutures = <Future>[];
@@ -49,7 +49,7 @@ Future<void> optimize(Directory dir) async {
   }
 
   // Execute SVGO in parallel.
-  Future.wait(svgoFutures).then((_) {
+  return Future.wait(svgoFutures).then((_) {
     print('Optimized ${svgoFutures.length} icons');
   });
 }
@@ -141,11 +141,11 @@ Future<void> download(
 
         // Create file if it doesn't exist.
         if (!file.existsSync()) {
-          file.createSync(recursive: true);
+          await file.create(recursive: true);
         }
 
         // Write SVG contents to file.
-        file.writeAsStringSync(svgRes.body);
+        await file.writeAsString(svgRes.body);
       }
     });
 
@@ -153,7 +153,7 @@ Future<void> download(
   }
 
   // Execute requests in parallel.
-  await Future.wait(futures).then((_) async {
+  return Future.wait(futures).then((_) {
     print('Saved ${res.images!.length} icons');
   });
 }
@@ -174,15 +174,17 @@ Future<void> generateIconFont(
         'icon_font_generator not found in path, skipping font generation');
   }
 
-  if (!File(dartOut).existsSync()) {
-    File(dartOut).createSync(recursive: true);
+  final dartFile = File(dartOut);
+  if (!dartFile.existsSync()) {
+    await dartFile.create(recursive: true);
   }
 
-  if (!File(ttfOut).existsSync()) {
-    File(ttfOut).createSync(recursive: true);
+  final ttfFile = File(ttfOut);
+  if (!ttfFile.existsSync()) {
+    await ttfFile.create(recursive: true);
   }
 
-  Process.run('icon_font_generator', [
+  return Process.run('icon_font_generator', [
     '--from=${dir.path}',
     '--class-name=$className',
     '--out-font=$ttfOut',
