@@ -18,11 +18,8 @@ jobs:
       - name: Install dependencies
         run: dart pub get
 
-      - name: Analyze library
-        run: dart analyze lib
-
-      - name: Analyze tests
-        run: dart analyze test
+      - name: Analyze package
+        run: dart analyze --fatal-infos
 
   test:
     runs-on: ubuntu-latest
