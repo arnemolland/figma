@@ -30,7 +30,7 @@ class ExportSetting extends Equatable {
   /// Constraint that determines sizing of exported asset.
   final Constraint? constraint;
 
-  ExportSetting({this.suffix, this.format, this.constraint});
+  const ExportSetting({this.suffix, this.format, this.constraint});
 
   @override
   List<Object?> get props => [suffix, format, constraint];

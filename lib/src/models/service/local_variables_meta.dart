@@ -15,7 +15,7 @@ class LocalVariablesMeta extends Equatable {
   /// A map of variable ids to variables.
   final Map<String, LocalVariable> variables;
 
-  LocalVariablesMeta({
+  const LocalVariablesMeta({
     required this.variableCollections,
     required this.variables,
   });

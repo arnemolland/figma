@@ -50,7 +50,7 @@ class FileMeta extends Equatable {
   /// check if the file has changed between requests.
   final String? version;
 
-  FileMeta({
+  const FileMeta({
     this.name,
     this.folderName,
     this.lastTouchedAt,

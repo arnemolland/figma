@@ -28,7 +28,7 @@ class PublishedVariableCollection extends Equatable {
   final DateTime updatedAt;
 
   /// A grouping of related Variable objects each with the same modes.
-  PublishedVariableCollection({
+  const PublishedVariableCollection({
     required this.id,
     required this.subscribedId,
     required this.name,

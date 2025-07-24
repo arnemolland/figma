@@ -40,7 +40,7 @@ class LocalVariableCollection extends Equatable {
   final List<String> variableIds;
 
   /// A grouping of related Variable objects each with the same modes.
-  LocalVariableCollection({
+  const LocalVariableCollection({
     required this.id,
     required this.name,
     required this.key,

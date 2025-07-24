@@ -22,7 +22,7 @@ class ProjectFile extends Equatable {
   @JsonKey(name: 'last_modified')
   final DateTime? lastModified;
 
-  ProjectFile({
+  const ProjectFile({
     this.key,
     this.name,
     this.thumbnailUrl,

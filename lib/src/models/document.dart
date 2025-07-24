@@ -14,7 +14,7 @@ class Document extends Node {
   @NodeJsonConverter()
   final List<Node?>? children;
 
-  Document({
+  const Document({
     required super.id,
     required super.visible,
     super.componentPropertyReferences,

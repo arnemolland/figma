@@ -7,7 +7,7 @@ part 'line.g.dart';
 @JsonSerializable()
 @CopyWith()
 class Line extends Vector {
-  Line({
+  const Line({
     required super.id,
     required super.visible,
     required super.locked,

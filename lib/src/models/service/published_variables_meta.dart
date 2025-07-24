@@ -17,7 +17,7 @@ class PublishedVariablesMeta extends Equatable {
   /// A map of variable collection ids to variable collections
   final Map<String, PublishedVariableCollection> variableCollections;
 
-  PublishedVariablesMeta({
+  const PublishedVariablesMeta({
     required this.variables,
     required this.variableCollections,
   });

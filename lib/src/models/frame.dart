@@ -129,22 +129,22 @@ class Frame extends Node {
   @JsonKey(defaultValue: CounterAxisAlignItems.min)
   final CounterAxisAlignItems counterAxisAlignItems;
 
-  /// The padding betweeen the left border of the frame and its children.
+  /// The padding between the left border of the frame and its children.
   /// This property is only applicable for auto-layout frames.
   @JsonKey(defaultValue: 0.0)
   final double paddingLeft;
 
-  /// The padding betweeen the top border of the frame and its children.
+  /// The padding between the top border of the frame and its children.
   /// This property is only applicable for auto-layout frames.
   @JsonKey(defaultValue: 0.0)
   final double paddingTop;
 
-  /// The padding betweeen the right border of the frame and its children.
+  /// The padding between the right border of the frame and its children.
   /// This property is only applicable for auto-layout frames.
   @JsonKey(defaultValue: 0.0)
   final double paddingRight;
 
-  /// The padding betweeen the bottom border of the frame and its children.
+  /// The padding between the bottom border of the frame and its children.
   /// This property is only applicable for auto-layout frames.
   @JsonKey(defaultValue: 0.0)
   final double paddingBottom;
@@ -210,7 +210,7 @@ class Frame extends Node {
   /// style in the top-level styles field.
   final Map<StyleTypeKey, String>? styles;
 
-  Frame({
+  const Frame({
     required super.id,
     required super.visible,
     super.componentPropertyReferences,

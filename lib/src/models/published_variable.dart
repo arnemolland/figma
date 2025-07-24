@@ -38,7 +38,7 @@ class PublishedVariable extends Equatable {
   /// modes in its [PublishedVariableCollection].
   ///
   /// These values can be applied to various kinds of design properties.
-  PublishedVariable({
+  const PublishedVariable({
     required this.id,
     required this.subscribedId,
     required this.name,

@@ -123,7 +123,7 @@ Future<void> download(
   final futures = <Future>[];
 
   // Loop through each URL and download the SVG.
-  for (var url in res.images!.entries) {
+  for (final url in res.images!.entries) {
     final component = components?[url.key];
 
     if (component == null || component.name == null) {

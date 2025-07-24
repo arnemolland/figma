@@ -18,7 +18,7 @@ class ComponentsResponse extends Equatable {
   /// List of components, if any, along with metadata.
   final ComponentsMeta? meta;
 
-  ComponentsResponse({this.status, this.error, this.meta});
+  const ComponentsResponse({this.status, this.error, this.meta});
 
   @override
   List<Object?> get props => [status, error, meta];

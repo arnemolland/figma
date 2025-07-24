@@ -8,7 +8,7 @@ part 'group.g.dart';
 @JsonSerializable()
 @CopyWith()
 class Group extends Frame {
-  Group({
+  const Group({
     required super.id,
     required super.visible,
     required super.locked,

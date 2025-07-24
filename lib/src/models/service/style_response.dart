@@ -19,7 +19,7 @@ class StyleResponse extends Equatable {
   @JsonKey(name: 'meta')
   final Style? style;
 
-  StyleResponse({this.status, this.error, this.style});
+  const StyleResponse({this.status, this.error, this.style});
 
   @override
   List<Object?> get props => [status, error, style];

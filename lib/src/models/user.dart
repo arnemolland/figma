@@ -22,7 +22,7 @@ class User extends Equatable {
   /// This will only be present on the /v1/me endpoint.
   final String? email;
 
-  User({
+  const User({
     required this.id,
     required this.handle,
     this.imageUrl,

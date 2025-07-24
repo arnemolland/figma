@@ -52,7 +52,7 @@ class Component extends Equatable {
   @JsonKey(name: 'containing_page')
   final dynamic containingPage;
 
-  /// The ID of the componentset it belongs to
+  /// The ID of the component set it belongs to
   /// if any.
   final String? componentSetId;
 
@@ -60,7 +60,7 @@ class Component extends Equatable {
   @JsonKey(defaultValue: {})
   final Map<String, ComponentPropertyDefinition> componentPropertyDefinitions;
 
-  Component({
+  const Component({
     this.key,
     this.fileKey,
     this.nodeId,

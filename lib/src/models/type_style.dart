@@ -176,7 +176,7 @@ class TypeStyle extends Equatable {
   /// The unit of the line height value specified by the user.
   final LineHeightUnit? lineHeightUnit;
 
-  TypeStyle({
+  const TypeStyle({
     this.fontFamily,
     this.fontPostScriptName,
     this.paragraphSpacing,
