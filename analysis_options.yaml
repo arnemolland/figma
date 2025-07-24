@@ -13,4 +13,6 @@ linter:
     - sort_pub_dependencies
     - unnecessary_await_in_return
     - unnecessary_lambdas
-    - cascade_invocations
+    - avoid_slow_async_io
+    - unnecessary_async
+    - unawaited_futures
