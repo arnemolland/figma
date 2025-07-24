@@ -10,5 +10,7 @@ linter:
     - prefer_const_constructors_in_immutables
     - prefer_expression_function_bodies
     - prefer_final_locals
+    - sort_pub_dependencies
     - unnecessary_await_in_return
     - unnecessary_lambdas
+    - cascade_invocations
