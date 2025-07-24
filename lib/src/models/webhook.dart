@@ -52,7 +52,7 @@ class Webhook extends Equatable {
   /// convenient. Max length 140 characters.
   final String? description;
 
-  Webhook({
+  const Webhook({
     this.id,
     this.eventType,
     this.context,

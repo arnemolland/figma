@@ -16,7 +16,7 @@ class Pagination extends Equatable {
   @JsonKey(name: 'next_page')
   final String? next;
 
-  Pagination({this.previous, this.next});
+  const Pagination({this.previous, this.next});
 
   @override
   List<Object?> get props => [previous, next];
