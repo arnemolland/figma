@@ -30,7 +30,7 @@ class GetWebhooks extends Equatable {
 
   final String? cursor;
 
-  GetWebhooks({
+  const GetWebhooks({
     this.context,
     this.contextId,
     this.planApiId,

@@ -15,7 +15,7 @@ class WebhooksResponse extends Equatable {
   /// Pagination
   final Pagination? pagination;
 
-  WebhooksResponse({this.webhooks, this.pagination});
+  const WebhooksResponse({this.webhooks, this.pagination});
 
   @override
   List<Object?> get props => [webhooks, pagination];

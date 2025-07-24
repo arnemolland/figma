@@ -29,7 +29,7 @@ class PutWebhook extends Equatable {
   /// convenient. Max length 150 characters.
   final String? description;
 
-  PutWebhook({
+  const PutWebhook({
     this.eventType,
     this.endpoint,
     this.passcode,

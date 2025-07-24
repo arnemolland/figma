@@ -39,7 +39,7 @@ class PostWebhook extends Equatable {
   /// convenient. Max length 150 characters.
   final String? description;
 
-  PostWebhook({
+  const PostWebhook({
     this.eventType,
     this.context,
     this.contextId,
