@@ -22,7 +22,7 @@ class PostComment extends Equatable {
   @JsonKey(name: 'comment_id')
   final String? commentId;
 
-  PostComment({this.message, this.clientMeta, this.commentId});
+  const PostComment({this.message, this.clientMeta, this.commentId});
 
   @override
   List<Object?> get props => [message, clientMeta, commentId];

@@ -8,7 +8,7 @@ part 'instance.g.dart';
 @JsonSerializable()
 @CopyWith()
 class Instance extends Frame {
-  Instance({
+  const Instance({
     required super.id,
     required super.visible,
     required super.locked,

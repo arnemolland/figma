@@ -28,7 +28,7 @@ class Style extends Equatable {
   @JsonKey(name: 'style_type')
   final StyleType? type;
 
-  Style({
+  const Style({
     this.nodeId,
     this.key,
     this.name,

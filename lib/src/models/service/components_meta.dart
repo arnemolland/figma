@@ -12,10 +12,10 @@ class ComponentsMeta extends Equatable {
   /// List of components, if any.
   final List<Component>? components;
 
-  /// Pagniation cursor, if any.
+  /// Pagination cursor, if any.
   final Cursor? cursor;
 
-  ComponentsMeta({this.components, this.cursor});
+  const ComponentsMeta({this.components, this.cursor});
 
   @override
   List<Object?> get props => [components, cursor];

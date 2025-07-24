@@ -14,7 +14,7 @@ class Project extends Equatable {
   /// The name of the project.
   final String? name;
 
-  Project({this.id, this.name});
+  const Project({this.id, this.name});
 
   @override
   List<Object?> get props => [id, name];

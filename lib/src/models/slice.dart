@@ -35,7 +35,7 @@ class Slice extends Node {
   /// geometry=paths is passed.
   final List<List<num>>? relativeTransform;
 
-  Slice({
+  const Slice({
     required super.id,
     required super.visible,
     super.componentPropertyReferences,

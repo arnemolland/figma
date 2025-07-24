@@ -55,7 +55,7 @@ class ComponentSet extends Equatable {
   @JsonKey(defaultValue: {})
   final Map<String, ComponentPropertyDefinition> componentPropertyDefinitions;
 
-  ComponentSet({
+  const ComponentSet({
     this.key,
     this.fileKey,
     this.nodeId,

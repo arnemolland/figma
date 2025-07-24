@@ -12,7 +12,7 @@ class VersionsResponse extends Equatable {
   /// List of versions.
   final List<Version>? versions;
 
-  VersionsResponse({this.versions});
+  const VersionsResponse({this.versions});
 
   @override
   List<Object?> get props => [versions];

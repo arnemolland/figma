@@ -40,7 +40,7 @@ class Node extends Equatable {
   /// set's componentPropertyDefinitions.
   final Map<String, String>? componentPropertyReferences;
 
-  Node({
+  const Node({
     required this.id,
     this.name,
     required this.visible,

@@ -15,7 +15,7 @@ class ColorStop extends Equatable {
   /// Color attached to corresponding position.
   final Color? color;
 
-  ColorStop({this.position, this.color});
+  const ColorStop({this.position, this.color});
 
   @override
   List<Object?> get props => [position, color];

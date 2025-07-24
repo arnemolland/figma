@@ -41,7 +41,7 @@ class Comment extends Equatable {
   @JsonKey(name: 'order_id')
   final String? orderId;
 
-  Comment({
+  const Comment({
     required this.id,
     this.clientMeta,
     required this.fileKey,

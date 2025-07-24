@@ -71,7 +71,7 @@ class LayoutConstraint extends Equatable {
   /// Horizontal constraint as an enum.
   final HorizontalConstraint? horizontal;
 
-  LayoutConstraint({this.vertical, this.horizontal});
+  const LayoutConstraint({this.vertical, this.horizontal});
 
   @override
   List<Object?> get props => [vertical, horizontal];

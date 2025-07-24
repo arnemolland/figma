@@ -14,7 +14,7 @@ class Cursor extends Equatable {
   /// Page after.
   final int? after;
 
-  Cursor({this.before, this.after});
+  const Cursor({this.before, this.after});
 
   @override
   List<Object?> get props => [before, after];

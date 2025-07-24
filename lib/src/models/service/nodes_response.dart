@@ -27,7 +27,7 @@ class NodesResponse extends Equatable {
   /// Map from each [Node] id to the corresponding object.
   final Map<String, FileResponse>? nodes;
 
-  NodesResponse({
+  const NodesResponse({
     this.name,
     this.role,
     this.lastModified,

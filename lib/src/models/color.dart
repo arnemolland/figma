@@ -20,7 +20,7 @@ class Color extends Equatable {
   /// Alpha channel value, between 0 and 1.
   final double? a;
 
-  Color({this.r, this.g, this.b, this.a});
+  const Color({this.r, this.g, this.b, this.a});
 
   @override
   List<Object?> get props => [r, g, b, a];

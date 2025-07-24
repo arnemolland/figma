@@ -25,7 +25,7 @@ class Version extends Equatable {
   /// The user that created the version.
   final User user;
 
-  Version({
+  const Version({
     required this.id,
     required this.createdAt,
     this.label,

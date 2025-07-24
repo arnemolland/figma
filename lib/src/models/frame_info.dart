@@ -27,7 +27,7 @@ class FrameInfo extends Equatable {
   @JsonKey(name: 'page_name')
   final String? pageName;
 
-  FrameInfo({
+  const FrameInfo({
     this.nodeId,
     this.name,
     this.backgroundColor,
