@@ -249,25 +249,74 @@ class FigmaClient {
     });
   }
 
-  Future<_Response> _send(
-    String method,
-    Uri uri,
-    Map<String, String> headers, [
-    String? body,
-  ]) async {
+  Future<_Response> _send(String method, Uri uri, Map<String, String> headers,
+      [String? body]) async {
+    // Check if we need to use a proxy (only on non-web platforms)
+    String? proxyString;
+    bool useProxy = false;
+
+    if (!kIsWeb) {
+      proxyString = HttpClient.findProxyFromEnvironment(uri);
+      useProxy = proxyString != 'DIRECT';
+    }
+
     // HTTP/2 is not supported on all platforms, so we need to fallback to
     // HTTP/1.1 in that case.
-    if (!useHttp2) {
-      final client = Client();
-      try {
-        final request = Request(method, uri);
-        request.headers.addAll(headers);
-        final response = await client.send(request);
-        final body = await response.stream.toBytes();
-        return _Response(response.statusCode, utf8.decode(body));
-      } finally {
-        client.close();
+    // Also, if a proxy is detected and we're using HTTP/2, we should fall back to HTTP/1.1
+    // as HTTP/2 proxy support is complex and not easily implemented with the current http2 package
+    if (!useHttp2 || (useHttp2 && useProxy)) {
+      if (useHttp2 && useProxy) {
+        print(
+            'Falling back to HTTP/1.1 due to proxy configuration: $proxyString');
       }
+
+      if (kIsWeb) {
+        // On web, use the standard http package
+        var client = Client();
+        try {
+          final request = Request(method, uri);
+          request.headers.addAll(headers);
+          if (body != null) {
+            request.body = body;
+          }
+          final response = await client.send(request);
+          final responseBody = await response.stream.toBytes();
+          return _Response(response.statusCode, utf8.decode(responseBody));
+        } finally {
+          client.close();
+        }
+      } else {
+        // On non-web platforms, use HttpClient for proxy support
+        var httpClient = HttpClient();
+        try {
+          if (useProxy) {
+            httpClient.findProxy = (uri) => proxyString!;
+          }
+
+          final request = await httpClient.openUrl(method, uri);
+          headers.forEach((key, value) {
+            request.headers.add(key, value);
+          });
+
+          if (body != null) {
+            request.write(body);
+          }
+
+          final response = await request.close();
+          final responseBody = await response.transform(utf8.decoder).join();
+          httpClient.close();
+
+          return _Response(response.statusCode, responseBody);
+        } catch (e) {
+          httpClient.close();
+          rethrow;
+        }
+      }
+    }
+
+    // HTTP/2 is only supported on non-web platforms
+    if (kIsWeb) {
+      throw UnsupportedError('HTTP/2 is not supported on web platforms');
     }
 
     final transport = ClientTransportConnection.viaSocket(
