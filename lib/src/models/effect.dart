@@ -21,7 +21,11 @@ enum EffectType {
 
   /// Background blur effect.
   @JsonValue('BACKGROUND_BLUR')
-  backgroundBlur
+  backgroundBlur,
+
+  /// Texture
+  @JsonValue('TEXTURE')
+  texture,
 }
 
 /// A visual effect such as a shadow or blur.

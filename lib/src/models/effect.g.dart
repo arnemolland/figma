@@ -168,6 +168,7 @@ const _$EffectTypeEnumMap = {
   EffectType.dropShadow: 'DROP_SHADOW',
   EffectType.layerBlur: 'LAYER_BLUR',
   EffectType.backgroundBlur: 'BACKGROUND_BLUR',
+  EffectType.texture: 'TEXTURE',
 };
 
 const _$BlendModeEnumMap = {
