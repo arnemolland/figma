@@ -5,14 +5,14 @@ analyzer:
 
 linter:
   rules:
+    - avoid_slow_async_io
     - cascade_invocations
     - directives_ordering
     - prefer_const_constructors_in_immutables
     - prefer_expression_function_bodies
     - prefer_final_locals
     - sort_pub_dependencies
+    - unawaited_futures
+    - unnecessary_async
     - unnecessary_await_in_return
     - unnecessary_lambdas
-    - avoid_slow_async_io
-    - unnecessary_async
-    - unawaited_futures
