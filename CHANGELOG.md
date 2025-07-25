@@ -1,3 +1,10 @@
+## 7.4.0
+
+- Add and enforce lints ([@donny-dont](https://github.com/donny-dont))
+- Webhooks support ([@donny-dont](https://github.com/donny-dont))
+- Add automatic HTTP/1.1 fallback for proxies and web ([@donny-dont](https://github.com/donny-dont))
+- Add `TEXTURE` effect
+
 ## 7.3.4
 
 - Export `EffectType` from models ([@filippomenchini](https://github.com/filippomenchini))
@@ -98,7 +105,7 @@
 ## 3.5.0
 
 - Add missing style-related properties ([@yzxben](https://github.com/yzxben))
-  
+
 ## 3.4.0
 
 - Updated dependencies and added imageFills for image response ([@BigFlexLiu](https://github.com/BigFlexLiu))
