@@ -1,3 +1,8 @@
+## 7.5.0
+
+- Bump dependencies
+- Add webhook payloads ([@donny-dont](https://github.com/donny-dont))
+
 ## 7.4.0
 
 - Add and enforce lints ([@donny-dont](https://github.com/donny-dont))
