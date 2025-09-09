@@ -27,12 +27,13 @@ abstract class _$FileResponseCWProxy {
 
   FileResponse styles(Map<String, Style>? styles);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `FileResponse(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `FileResponse(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// FileResponse(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   FileResponse call({
     String? name,
     String? role,
@@ -47,55 +48,57 @@ abstract class _$FileResponseCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfFileResponse.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfFileResponse.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfFileResponse.copyWith(...)` or call `instanceOfFileResponse.copyWith.fieldName(value)` for a single field.
 class _$FileResponseCWProxyImpl implements _$FileResponseCWProxy {
   const _$FileResponseCWProxyImpl(this._value);
 
   final FileResponse _value;
 
   @override
-  FileResponse name(String? name) => this(name: name);
+  FileResponse name(String? name) => call(name: name);
 
   @override
-  FileResponse role(String? role) => this(role: role);
+  FileResponse role(String? role) => call(role: role);
 
   @override
   FileResponse lastModified(DateTime? lastModified) =>
-      this(lastModified: lastModified);
+      call(lastModified: lastModified);
 
   @override
   FileResponse thumbnailUrl(String? thumbnailUrl) =>
-      this(thumbnailUrl: thumbnailUrl);
+      call(thumbnailUrl: thumbnailUrl);
 
   @override
-  FileResponse version(String? version) => this(version: version);
+  FileResponse version(String? version) => call(version: version);
 
   @override
-  FileResponse document(Node? document) => this(document: document);
+  FileResponse document(Node? document) => call(document: document);
 
   @override
   FileResponse components(Map<String, Component>? components) =>
-      this(components: components);
+      call(components: components);
 
   @override
   FileResponse componentSets(Map<String, ComponentSet>? componentSets) =>
-      this(componentSets: componentSets);
+      call(componentSets: componentSets);
 
   @override
   FileResponse schemaVersion(int? schemaVersion) =>
-      this(schemaVersion: schemaVersion);
+      call(schemaVersion: schemaVersion);
 
   @override
-  FileResponse styles(Map<String, Style>? styles) => this(styles: styles);
+  FileResponse styles(Map<String, Style>? styles) => call(styles: styles);
 
   @override
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `FileResponse(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `FileResponse(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// FileResponse(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   FileResponse call({
     Object? name = const $CopyWithPlaceholder(),
     Object? role = const $CopyWithPlaceholder(),
@@ -154,7 +157,8 @@ class _$FileResponseCWProxyImpl implements _$FileResponseCWProxy {
 }
 
 extension $FileResponseCopyWith on FileResponse {
-  /// Returns a callable class that can be used as follows: `instanceOfFileResponse.copyWith(...)` or like so:`instanceOfFileResponse.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfFileResponse.copyWith(...)` or `instanceOfFileResponse.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$FileResponseCWProxy get copyWith => _$FileResponseCWProxyImpl(this);
 }

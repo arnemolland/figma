@@ -45,12 +45,13 @@ abstract class _$TypeStyleCWProxy {
 
   TypeStyle lineHeightUnit(LineHeightUnit? lineHeightUnit);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `TypeStyle(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `TypeStyle(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// TypeStyle(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   TypeStyle call({
     String? fontFamily,
     String? fontPostScriptName,
@@ -74,89 +75,91 @@ abstract class _$TypeStyleCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfTypeStyle.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfTypeStyle.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfTypeStyle.copyWith(...)` or call `instanceOfTypeStyle.copyWith.fieldName(value)` for a single field.
 class _$TypeStyleCWProxyImpl implements _$TypeStyleCWProxy {
   const _$TypeStyleCWProxyImpl(this._value);
 
   final TypeStyle _value;
 
   @override
-  TypeStyle fontFamily(String? fontFamily) => this(fontFamily: fontFamily);
+  TypeStyle fontFamily(String? fontFamily) => call(fontFamily: fontFamily);
 
   @override
   TypeStyle fontPostScriptName(String? fontPostScriptName) =>
-      this(fontPostScriptName: fontPostScriptName);
+      call(fontPostScriptName: fontPostScriptName);
 
   @override
   TypeStyle paragraphSpacing(num? paragraphSpacing) =>
-      this(paragraphSpacing: paragraphSpacing);
+      call(paragraphSpacing: paragraphSpacing);
 
   @override
   TypeStyle paragraphIndent(num? paragraphIndent) =>
-      this(paragraphIndent: paragraphIndent);
+      call(paragraphIndent: paragraphIndent);
 
   @override
-  TypeStyle italic(bool? italic) => this(italic: italic);
+  TypeStyle italic(bool? italic) => call(italic: italic);
 
   @override
-  TypeStyle fontWeight(num? fontWeight) => this(fontWeight: fontWeight);
+  TypeStyle fontWeight(num? fontWeight) => call(fontWeight: fontWeight);
 
   @override
-  TypeStyle fontSize(num? fontSize) => this(fontSize: fontSize);
+  TypeStyle fontSize(num? fontSize) => call(fontSize: fontSize);
 
   @override
-  TypeStyle textCase(TextCase? textCase) => this(textCase: textCase);
+  TypeStyle textCase(TextCase? textCase) => call(textCase: textCase);
 
   @override
   TypeStyle textDecoration(TextDecoration? textDecoration) =>
-      this(textDecoration: textDecoration);
+      call(textDecoration: textDecoration);
 
   @override
   TypeStyle textAutoResize(TextAutoResize? textAutoResize) =>
-      this(textAutoResize: textAutoResize);
+      call(textAutoResize: textAutoResize);
 
   @override
   TypeStyle textAlignHorizontal(TextAlignHorizontal? textAlignHorizontal) =>
-      this(textAlignHorizontal: textAlignHorizontal);
+      call(textAlignHorizontal: textAlignHorizontal);
 
   @override
   TypeStyle textAlignVertical(TextAlignVertical? textAlignVertical) =>
-      this(textAlignVertical: textAlignVertical);
+      call(textAlignVertical: textAlignVertical);
 
   @override
   TypeStyle letterSpacing(num? letterSpacing) =>
-      this(letterSpacing: letterSpacing);
+      call(letterSpacing: letterSpacing);
 
   @override
-  TypeStyle fills(List<Paint>? fills) => this(fills: fills);
+  TypeStyle fills(List<Paint>? fills) => call(fills: fills);
 
   @override
   TypeStyle opentypeFlags(Map<String, num>? opentypeFlags) =>
-      this(opentypeFlags: opentypeFlags);
+      call(opentypeFlags: opentypeFlags);
 
   @override
-  TypeStyle lineHeightPx(num? lineHeightPx) => this(lineHeightPx: lineHeightPx);
+  TypeStyle lineHeightPx(num? lineHeightPx) => call(lineHeightPx: lineHeightPx);
 
   @override
   TypeStyle lineHeightPercent(num? lineHeightPercent) =>
-      this(lineHeightPercent: lineHeightPercent);
+      call(lineHeightPercent: lineHeightPercent);
 
   @override
   TypeStyle lineHeightPercentFontSize(num? lineHeightPercentFontSize) =>
-      this(lineHeightPercentFontSize: lineHeightPercentFontSize);
+      call(lineHeightPercentFontSize: lineHeightPercentFontSize);
 
   @override
   TypeStyle lineHeightUnit(LineHeightUnit? lineHeightUnit) =>
-      this(lineHeightUnit: lineHeightUnit);
+      call(lineHeightUnit: lineHeightUnit);
 
   @override
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `TypeStyle(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `TypeStyle(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// TypeStyle(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   TypeStyle call({
     Object? fontFamily = const $CopyWithPlaceholder(),
     Object? fontPostScriptName = const $CopyWithPlaceholder(),
@@ -261,7 +264,8 @@ class _$TypeStyleCWProxyImpl implements _$TypeStyleCWProxy {
 }
 
 extension $TypeStyleCopyWith on TypeStyle {
-  /// Returns a callable class that can be used as follows: `instanceOfTypeStyle.copyWith(...)` or like so:`instanceOfTypeStyle.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfTypeStyle.copyWith(...)` or `instanceOfTypeStyle.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$TypeStyleCWProxy get copyWith => _$TypeStyleCWProxyImpl(this);
 }

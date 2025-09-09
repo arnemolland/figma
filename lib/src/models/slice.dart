@@ -1,4 +1,3 @@
-import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:figma/src/models.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -12,7 +11,6 @@ part 'slice.g.dart';
 /// child layers, have a background, effects, etc. Slices are just a lighter
 /// weight rectangular bound that exists outside of the hierarchy for exporting.
 @JsonSerializable()
-@CopyWith()
 class Slice extends Node {
   /// An array of export settings representing images to export from this node.
   final List<ExportSetting>? exportSettings;

@@ -23,12 +23,13 @@ abstract class _$EffectCWProxy {
 
   Effect showShadowBehindNode(bool? showShadowBehindNode);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Effect(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Effect(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// Effect(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   Effect call({
     EffectType? type,
     bool visible,
@@ -41,45 +42,47 @@ abstract class _$EffectCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfEffect.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfEffect.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfEffect.copyWith(...)` or call `instanceOfEffect.copyWith.fieldName(value)` for a single field.
 class _$EffectCWProxyImpl implements _$EffectCWProxy {
   const _$EffectCWProxyImpl(this._value);
 
   final Effect _value;
 
   @override
-  Effect type(EffectType? type) => this(type: type);
+  Effect type(EffectType? type) => call(type: type);
 
   @override
-  Effect visible(bool visible) => this(visible: visible);
+  Effect visible(bool visible) => call(visible: visible);
 
   @override
-  Effect radius(num? radius) => this(radius: radius);
+  Effect radius(num? radius) => call(radius: radius);
 
   @override
-  Effect spread(num? spread) => this(spread: spread);
+  Effect spread(num? spread) => call(spread: spread);
 
   @override
-  Effect color(Color? color) => this(color: color);
+  Effect color(Color? color) => call(color: color);
 
   @override
-  Effect blendMode(BlendMode? blendMode) => this(blendMode: blendMode);
+  Effect blendMode(BlendMode? blendMode) => call(blendMode: blendMode);
 
   @override
-  Effect offset(Vector2D? offset) => this(offset: offset);
+  Effect offset(Vector2D? offset) => call(offset: offset);
 
   @override
   Effect showShadowBehindNode(bool? showShadowBehindNode) =>
-      this(showShadowBehindNode: showShadowBehindNode);
+      call(showShadowBehindNode: showShadowBehindNode);
 
   @override
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Effect(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Effect(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// Effect(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   Effect call({
     Object? type = const $CopyWithPlaceholder(),
     Object? visible = const $CopyWithPlaceholder(),
@@ -95,7 +98,7 @@ class _$EffectCWProxyImpl implements _$EffectCWProxy {
           ? _value.type
           // ignore: cast_nullable_to_non_nullable
           : type as EffectType?,
-      visible: visible == const $CopyWithPlaceholder()
+      visible: visible == const $CopyWithPlaceholder() || visible == null
           ? _value.visible
           // ignore: cast_nullable_to_non_nullable
           : visible as bool,
@@ -128,7 +131,8 @@ class _$EffectCWProxyImpl implements _$EffectCWProxy {
 }
 
 extension $EffectCopyWith on Effect {
-  /// Returns a callable class that can be used as follows: `instanceOfEffect.copyWith(...)` or like so:`instanceOfEffect.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfEffect.copyWith(...)` or `instanceOfEffect.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$EffectCWProxy get copyWith => _$EffectCWProxyImpl(this);
 }

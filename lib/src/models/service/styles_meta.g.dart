@@ -11,38 +11,41 @@ abstract class _$StylesMetaCWProxy {
 
   StylesMeta cursor(Cursor? cursor);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `StylesMeta(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `StylesMeta(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// StylesMeta(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   StylesMeta call({
     List<Style>? styles,
     Cursor? cursor,
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfStylesMeta.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfStylesMeta.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfStylesMeta.copyWith(...)` or call `instanceOfStylesMeta.copyWith.fieldName(value)` for a single field.
 class _$StylesMetaCWProxyImpl implements _$StylesMetaCWProxy {
   const _$StylesMetaCWProxyImpl(this._value);
 
   final StylesMeta _value;
 
   @override
-  StylesMeta styles(List<Style>? styles) => this(styles: styles);
+  StylesMeta styles(List<Style>? styles) => call(styles: styles);
 
   @override
-  StylesMeta cursor(Cursor? cursor) => this(cursor: cursor);
+  StylesMeta cursor(Cursor? cursor) => call(cursor: cursor);
 
   @override
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `StylesMeta(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `StylesMeta(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// StylesMeta(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   StylesMeta call({
     Object? styles = const $CopyWithPlaceholder(),
     Object? cursor = const $CopyWithPlaceholder(),
@@ -61,7 +64,8 @@ class _$StylesMetaCWProxyImpl implements _$StylesMetaCWProxy {
 }
 
 extension $StylesMetaCopyWith on StylesMeta {
-  /// Returns a callable class that can be used as follows: `instanceOfStylesMeta.copyWith(...)` or like so:`instanceOfStylesMeta.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfStylesMeta.copyWith(...)` or `instanceOfStylesMeta.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$StylesMetaCWProxy get copyWith => _$StylesMetaCWProxyImpl(this);
 }

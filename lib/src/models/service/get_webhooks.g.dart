@@ -15,12 +15,13 @@ abstract class _$GetWebhooksCWProxy {
 
   GetWebhooks cursor(String? cursor);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `GetWebhooks(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `GetWebhooks(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// GetWebhooks(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   GetWebhooks call({
     WebhookContext? context,
     String? contextId,
@@ -29,32 +30,34 @@ abstract class _$GetWebhooksCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfGetWebhooks.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfGetWebhooks.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfGetWebhooks.copyWith(...)` or call `instanceOfGetWebhooks.copyWith.fieldName(value)` for a single field.
 class _$GetWebhooksCWProxyImpl implements _$GetWebhooksCWProxy {
   const _$GetWebhooksCWProxyImpl(this._value);
 
   final GetWebhooks _value;
 
   @override
-  GetWebhooks context(WebhookContext? context) => this(context: context);
+  GetWebhooks context(WebhookContext? context) => call(context: context);
 
   @override
-  GetWebhooks contextId(String? contextId) => this(contextId: contextId);
+  GetWebhooks contextId(String? contextId) => call(contextId: contextId);
 
   @override
-  GetWebhooks planApiId(String? planApiId) => this(planApiId: planApiId);
+  GetWebhooks planApiId(String? planApiId) => call(planApiId: planApiId);
 
   @override
-  GetWebhooks cursor(String? cursor) => this(cursor: cursor);
+  GetWebhooks cursor(String? cursor) => call(cursor: cursor);
 
   @override
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `GetWebhooks(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `GetWebhooks(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// GetWebhooks(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   GetWebhooks call({
     Object? context = const $CopyWithPlaceholder(),
     Object? contextId = const $CopyWithPlaceholder(),
@@ -83,7 +86,8 @@ class _$GetWebhooksCWProxyImpl implements _$GetWebhooksCWProxy {
 }
 
 extension $GetWebhooksCopyWith on GetWebhooks {
-  /// Returns a callable class that can be used as follows: `instanceOfGetWebhooks.copyWith(...)` or like so:`instanceOfGetWebhooks.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfGetWebhooks.copyWith(...)` or `instanceOfGetWebhooks.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$GetWebhooksCWProxy get copyWith => _$GetWebhooksCWProxyImpl(this);
 }

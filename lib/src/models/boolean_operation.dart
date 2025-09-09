@@ -1,4 +1,3 @@
-import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:figma/src/converters/converters.dart';
 import 'package:figma/src/models.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -20,7 +19,6 @@ enum Operation {
 /// Boolean operations combine any set of shape layers through one of four
 /// formulas: Union, Subtract, Intersect, and Exclude.
 @JsonSerializable()
-@CopyWith()
 class BooleanOperation extends Vector {
   /// An array of nodes that are being boolean operated on.
   @NodeJsonConverter()

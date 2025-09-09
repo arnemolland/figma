@@ -27,12 +27,13 @@ abstract class _$WebhookCWProxy {
 
   Webhook description(String? description);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Webhook(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Webhook(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// Webhook(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   Webhook call({
     String? id,
     WebhookEvent? eventType,
@@ -47,50 +48,52 @@ abstract class _$WebhookCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfWebhook.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfWebhook.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfWebhook.copyWith(...)` or call `instanceOfWebhook.copyWith.fieldName(value)` for a single field.
 class _$WebhookCWProxyImpl implements _$WebhookCWProxy {
   const _$WebhookCWProxyImpl(this._value);
 
   final Webhook _value;
 
   @override
-  Webhook id(String? id) => this(id: id);
+  Webhook id(String? id) => call(id: id);
 
   @override
-  Webhook eventType(WebhookEvent? eventType) => this(eventType: eventType);
+  Webhook eventType(WebhookEvent? eventType) => call(eventType: eventType);
 
   @override
-  Webhook context(WebhookContext? context) => this(context: context);
+  Webhook context(WebhookContext? context) => call(context: context);
 
   @override
-  Webhook contextId(String? contextId) => this(contextId: contextId);
+  Webhook contextId(String? contextId) => call(contextId: contextId);
 
   @override
-  Webhook planApiId(String? planApiId) => this(planApiId: planApiId);
+  Webhook planApiId(String? planApiId) => call(planApiId: planApiId);
 
   @override
-  Webhook status(WebhookStatus? status) => this(status: status);
+  Webhook status(WebhookStatus? status) => call(status: status);
 
   @override
-  Webhook clientId(String? clientId) => this(clientId: clientId);
+  Webhook clientId(String? clientId) => call(clientId: clientId);
 
   @override
-  Webhook passcode(String? passcode) => this(passcode: passcode);
+  Webhook passcode(String? passcode) => call(passcode: passcode);
 
   @override
-  Webhook endpoint(String? endpoint) => this(endpoint: endpoint);
+  Webhook endpoint(String? endpoint) => call(endpoint: endpoint);
 
   @override
-  Webhook description(String? description) => this(description: description);
+  Webhook description(String? description) => call(description: description);
 
   @override
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Webhook(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Webhook(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// Webhook(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   Webhook call({
     Object? id = const $CopyWithPlaceholder(),
     Object? eventType = const $CopyWithPlaceholder(),
@@ -149,7 +152,8 @@ class _$WebhookCWProxyImpl implements _$WebhookCWProxy {
 }
 
 extension $WebhookCopyWith on Webhook {
-  /// Returns a callable class that can be used as follows: `instanceOfWebhook.copyWith(...)` or like so:`instanceOfWebhook.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfWebhook.copyWith(...)` or `instanceOfWebhook.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$WebhookCWProxy get copyWith => _$WebhookCWProxyImpl(this);
 }

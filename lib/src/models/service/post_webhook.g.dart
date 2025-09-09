@@ -21,12 +21,13 @@ abstract class _$PostWebhookCWProxy {
 
   PostWebhook description(String? description);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `PostWebhook(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PostWebhook(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// PostWebhook(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   PostWebhook call({
     WebhookEvent? eventType,
     WebhookContext? context,
@@ -38,42 +39,44 @@ abstract class _$PostWebhookCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfPostWebhook.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfPostWebhook.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfPostWebhook.copyWith(...)` or call `instanceOfPostWebhook.copyWith.fieldName(value)` for a single field.
 class _$PostWebhookCWProxyImpl implements _$PostWebhookCWProxy {
   const _$PostWebhookCWProxyImpl(this._value);
 
   final PostWebhook _value;
 
   @override
-  PostWebhook eventType(WebhookEvent? eventType) => this(eventType: eventType);
+  PostWebhook eventType(WebhookEvent? eventType) => call(eventType: eventType);
 
   @override
-  PostWebhook context(WebhookContext? context) => this(context: context);
+  PostWebhook context(WebhookContext? context) => call(context: context);
 
   @override
-  PostWebhook contextId(String? contextId) => this(contextId: contextId);
+  PostWebhook contextId(String? contextId) => call(contextId: contextId);
 
   @override
-  PostWebhook endpoint(String? endpoint) => this(endpoint: endpoint);
+  PostWebhook endpoint(String? endpoint) => call(endpoint: endpoint);
 
   @override
-  PostWebhook passcode(String? passcode) => this(passcode: passcode);
+  PostWebhook passcode(String? passcode) => call(passcode: passcode);
 
   @override
-  PostWebhook status(WebhookStatus? status) => this(status: status);
+  PostWebhook status(WebhookStatus? status) => call(status: status);
 
   @override
   PostWebhook description(String? description) =>
-      this(description: description);
+      call(description: description);
 
   @override
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `PostWebhook(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PostWebhook(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// PostWebhook(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   PostWebhook call({
     Object? eventType = const $CopyWithPlaceholder(),
     Object? context = const $CopyWithPlaceholder(),
@@ -117,7 +120,8 @@ class _$PostWebhookCWProxyImpl implements _$PostWebhookCWProxy {
 }
 
 extension $PostWebhookCopyWith on PostWebhook {
-  /// Returns a callable class that can be used as follows: `instanceOfPostWebhook.copyWith(...)` or like so:`instanceOfPostWebhook.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfPostWebhook.copyWith(...)` or `instanceOfPostWebhook.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$PostWebhookCWProxy get copyWith => _$PostWebhookCWProxyImpl(this);
 }

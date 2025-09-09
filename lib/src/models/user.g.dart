@@ -15,12 +15,13 @@ abstract class _$UserCWProxy {
 
   User email(String? email);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `User(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `User(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// User(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   User call({
     String id,
     String handle,
@@ -29,32 +30,34 @@ abstract class _$UserCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfUser.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfUser.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfUser.copyWith(...)` or call `instanceOfUser.copyWith.fieldName(value)` for a single field.
 class _$UserCWProxyImpl implements _$UserCWProxy {
   const _$UserCWProxyImpl(this._value);
 
   final User _value;
 
   @override
-  User id(String id) => this(id: id);
+  User id(String id) => call(id: id);
 
   @override
-  User handle(String handle) => this(handle: handle);
+  User handle(String handle) => call(handle: handle);
 
   @override
-  User imageUrl(String? imageUrl) => this(imageUrl: imageUrl);
+  User imageUrl(String? imageUrl) => call(imageUrl: imageUrl);
 
   @override
-  User email(String? email) => this(email: email);
+  User email(String? email) => call(email: email);
 
   @override
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `User(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `User(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// User(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   User call({
     Object? id = const $CopyWithPlaceholder(),
     Object? handle = const $CopyWithPlaceholder(),
@@ -62,11 +65,11 @@ class _$UserCWProxyImpl implements _$UserCWProxy {
     Object? email = const $CopyWithPlaceholder(),
   }) {
     return User(
-      id: id == const $CopyWithPlaceholder()
+      id: id == const $CopyWithPlaceholder() || id == null
           ? _value.id
           // ignore: cast_nullable_to_non_nullable
           : id as String,
-      handle: handle == const $CopyWithPlaceholder()
+      handle: handle == const $CopyWithPlaceholder() || handle == null
           ? _value.handle
           // ignore: cast_nullable_to_non_nullable
           : handle as String,
@@ -83,7 +86,8 @@ class _$UserCWProxyImpl implements _$UserCWProxy {
 }
 
 extension $UserCopyWith on User {
-  /// Returns a callable class that can be used as follows: `instanceOfUser.copyWith(...)` or like so:`instanceOfUser.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfUser.copyWith(...)` or `instanceOfUser.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$UserCWProxy get copyWith => _$UserCWProxyImpl(this);
 }

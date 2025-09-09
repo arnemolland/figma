@@ -9,18 +9,20 @@ part of 'comments_response.dart';
 abstract class _$CommentsResponseCWProxy {
   CommentsResponse comments(List<Comment>? comments);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `CommentsResponse(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `CommentsResponse(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// CommentsResponse(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   CommentsResponse call({
     List<Comment>? comments,
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfCommentsResponse.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfCommentsResponse.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfCommentsResponse.copyWith(...)` or call `instanceOfCommentsResponse.copyWith.fieldName(value)` for a single field.
 class _$CommentsResponseCWProxyImpl implements _$CommentsResponseCWProxy {
   const _$CommentsResponseCWProxyImpl(this._value);
 
@@ -28,16 +30,17 @@ class _$CommentsResponseCWProxyImpl implements _$CommentsResponseCWProxy {
 
   @override
   CommentsResponse comments(List<Comment>? comments) =>
-      this(comments: comments);
+      call(comments: comments);
 
   @override
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `CommentsResponse(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `CommentsResponse(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// CommentsResponse(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   CommentsResponse call({
     Object? comments = const $CopyWithPlaceholder(),
   }) {
@@ -51,7 +54,8 @@ class _$CommentsResponseCWProxyImpl implements _$CommentsResponseCWProxy {
 }
 
 extension $CommentsResponseCopyWith on CommentsResponse {
-  /// Returns a callable class that can be used as follows: `instanceOfCommentsResponse.copyWith(...)` or like so:`instanceOfCommentsResponse.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfCommentsResponse.copyWith(...)` or `instanceOfCommentsResponse.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$CommentsResponseCWProxy get copyWith => _$CommentsResponseCWProxyImpl(this);
 }

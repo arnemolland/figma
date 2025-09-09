@@ -1,4 +1,3 @@
-import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:figma/src/converters/converters.dart';
 import 'package:figma/src/models.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -10,7 +9,6 @@ part 'canvas.g.dart';
 /// Each subtree stemming from a Canvas node will represent a layer
 /// (e.g an object) on the Canvas.
 @JsonSerializable()
-@CopyWith()
 class Canvas extends Node {
   /// An array of top level layers on the canvas.
   @NodeJsonConverter()

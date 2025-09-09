@@ -15,12 +15,13 @@ abstract class _$ImageResponseCWProxy {
 
   ImageResponse status(int? status);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ImageResponse(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ImageResponse(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// ImageResponse(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   ImageResponse call({
     String? err,
     Map<String, String>? images,
@@ -29,33 +30,35 @@ abstract class _$ImageResponseCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfImageResponse.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfImageResponse.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfImageResponse.copyWith(...)` or call `instanceOfImageResponse.copyWith.fieldName(value)` for a single field.
 class _$ImageResponseCWProxyImpl implements _$ImageResponseCWProxy {
   const _$ImageResponseCWProxyImpl(this._value);
 
   final ImageResponse _value;
 
   @override
-  ImageResponse err(String? err) => this(err: err);
+  ImageResponse err(String? err) => call(err: err);
 
   @override
-  ImageResponse images(Map<String, String>? images) => this(images: images);
+  ImageResponse images(Map<String, String>? images) => call(images: images);
 
   @override
   ImageResponse imageFills(Map<String, String>? imageFills) =>
-      this(imageFills: imageFills);
+      call(imageFills: imageFills);
 
   @override
-  ImageResponse status(int? status) => this(status: status);
+  ImageResponse status(int? status) => call(status: status);
 
   @override
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ImageResponse(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ImageResponse(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// ImageResponse(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   ImageResponse call({
     Object? err = const $CopyWithPlaceholder(),
     Object? images = const $CopyWithPlaceholder(),
@@ -84,7 +87,8 @@ class _$ImageResponseCWProxyImpl implements _$ImageResponseCWProxy {
 }
 
 extension $ImageResponseCopyWith on ImageResponse {
-  /// Returns a callable class that can be used as follows: `instanceOfImageResponse.copyWith(...)` or like so:`instanceOfImageResponse.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfImageResponse.copyWith(...)` or `instanceOfImageResponse.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$ImageResponseCWProxy get copyWith => _$ImageResponseCWProxyImpl(this);
 }

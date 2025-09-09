@@ -13,12 +13,13 @@ abstract class _$PublishedVariablesResponseCWProxy {
 
   PublishedVariablesResponse meta(PublishedVariablesMeta? meta);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `PublishedVariablesResponse(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PublishedVariablesResponse(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// PublishedVariablesResponse(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   PublishedVariablesResponse call({
     int? status,
     bool? error,
@@ -26,7 +27,8 @@ abstract class _$PublishedVariablesResponseCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfPublishedVariablesResponse.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfPublishedVariablesResponse.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfPublishedVariablesResponse.copyWith(...)` or call `instanceOfPublishedVariablesResponse.copyWith.fieldName(value)` for a single field.
 class _$PublishedVariablesResponseCWProxyImpl
     implements _$PublishedVariablesResponseCWProxy {
   const _$PublishedVariablesResponseCWProxyImpl(this._value);
@@ -34,23 +36,24 @@ class _$PublishedVariablesResponseCWProxyImpl
   final PublishedVariablesResponse _value;
 
   @override
-  PublishedVariablesResponse status(int? status) => this(status: status);
+  PublishedVariablesResponse status(int? status) => call(status: status);
 
   @override
-  PublishedVariablesResponse error(bool? error) => this(error: error);
+  PublishedVariablesResponse error(bool? error) => call(error: error);
 
   @override
   PublishedVariablesResponse meta(PublishedVariablesMeta? meta) =>
-      this(meta: meta);
+      call(meta: meta);
 
   @override
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `PublishedVariablesResponse(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PublishedVariablesResponse(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// PublishedVariablesResponse(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   PublishedVariablesResponse call({
     Object? status = const $CopyWithPlaceholder(),
     Object? error = const $CopyWithPlaceholder(),
@@ -74,7 +77,8 @@ class _$PublishedVariablesResponseCWProxyImpl
 }
 
 extension $PublishedVariablesResponseCopyWith on PublishedVariablesResponse {
-  /// Returns a callable class that can be used as follows: `instanceOfPublishedVariablesResponse.copyWith(...)` or like so:`instanceOfPublishedVariablesResponse.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfPublishedVariablesResponse.copyWith(...)` or `instanceOfPublishedVariablesResponse.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$PublishedVariablesResponseCWProxy get copyWith =>
       _$PublishedVariablesResponseCWProxyImpl(this);

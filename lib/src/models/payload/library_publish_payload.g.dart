@@ -47,12 +47,13 @@ abstract class _$LibraryPublishPayloadCWProxy {
 
   LibraryPublishPayload triggeredBy(User? triggeredBy);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `LibraryPublishPayload(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `LibraryPublishPayload(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// LibraryPublishPayload(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   LibraryPublishPayload call({
     String? passcode,
     DateTime? timestamp,
@@ -74,7 +75,8 @@ abstract class _$LibraryPublishPayloadCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfLibraryPublishPayload.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfLibraryPublishPayload.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfLibraryPublishPayload.copyWith(...)` or call `instanceOfLibraryPublishPayload.copyWith.fieldName(value)` for a single field.
 class _$LibraryPublishPayloadCWProxyImpl
     implements _$LibraryPublishPayloadCWProxy {
   const _$LibraryPublishPayloadCWProxyImpl(this._value);
@@ -82,84 +84,85 @@ class _$LibraryPublishPayloadCWProxyImpl
   final LibraryPublishPayload _value;
 
   @override
-  LibraryPublishPayload passcode(String? passcode) => this(passcode: passcode);
+  LibraryPublishPayload passcode(String? passcode) => call(passcode: passcode);
 
   @override
   LibraryPublishPayload timestamp(DateTime? timestamp) =>
-      this(timestamp: timestamp);
+      call(timestamp: timestamp);
 
   @override
   LibraryPublishPayload webhookId(String? webhookId) =>
-      this(webhookId: webhookId);
+      call(webhookId: webhookId);
 
   @override
   LibraryPublishPayload createdComponents(
           List<LibraryItemData>? createdComponents) =>
-      this(createdComponents: createdComponents);
+      call(createdComponents: createdComponents);
 
   @override
   LibraryPublishPayload createdStyles(List<LibraryItemData>? createdStyles) =>
-      this(createdStyles: createdStyles);
+      call(createdStyles: createdStyles);
 
   @override
   LibraryPublishPayload createdVariables(
           List<LibraryItemData>? createdVariables) =>
-      this(createdVariables: createdVariables);
+      call(createdVariables: createdVariables);
 
   @override
   LibraryPublishPayload modifiedComponents(
           List<LibraryItemData>? modifiedComponents) =>
-      this(modifiedComponents: modifiedComponents);
+      call(modifiedComponents: modifiedComponents);
 
   @override
   LibraryPublishPayload modifiedStyles(List<LibraryItemData>? modifiedStyles) =>
-      this(modifiedStyles: modifiedStyles);
+      call(modifiedStyles: modifiedStyles);
 
   @override
   LibraryPublishPayload modifiedVariables(
           List<LibraryItemData>? modifiedVariables) =>
-      this(modifiedVariables: modifiedVariables);
+      call(modifiedVariables: modifiedVariables);
 
   @override
   LibraryPublishPayload deletedComponents(
           List<LibraryItemData>? deletedComponents) =>
-      this(deletedComponents: deletedComponents);
+      call(deletedComponents: deletedComponents);
 
   @override
   LibraryPublishPayload deletedStyles(List<LibraryItemData>? deletedStyles) =>
-      this(deletedStyles: deletedStyles);
+      call(deletedStyles: deletedStyles);
 
   @override
   LibraryPublishPayload deletedVariables(
           List<LibraryItemData>? deletedVariables) =>
-      this(deletedVariables: deletedVariables);
+      call(deletedVariables: deletedVariables);
 
   @override
   LibraryPublishPayload description(String? description) =>
-      this(description: description);
+      call(description: description);
 
   @override
-  LibraryPublishPayload fileKey(String? fileKey) => this(fileKey: fileKey);
+  LibraryPublishPayload fileKey(String? fileKey) => call(fileKey: fileKey);
 
   @override
-  LibraryPublishPayload fileName(String? fileName) => this(fileName: fileName);
+  LibraryPublishPayload fileName(String? fileName) => call(fileName: fileName);
 
   @override
   LibraryPublishPayload libraryItem(LibraryItemData? libraryItem) =>
-      this(libraryItem: libraryItem);
+      call(libraryItem: libraryItem);
 
   @override
   LibraryPublishPayload triggeredBy(User? triggeredBy) =>
-      this(triggeredBy: triggeredBy);
+      call(triggeredBy: triggeredBy);
 
   @override
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `LibraryPublishPayload(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `LibraryPublishPayload(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// LibraryPublishPayload(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   LibraryPublishPayload call({
     Object? passcode = const $CopyWithPlaceholder(),
     Object? timestamp = const $CopyWithPlaceholder(),
@@ -253,7 +256,8 @@ class _$LibraryPublishPayloadCWProxyImpl
 }
 
 extension $LibraryPublishPayloadCopyWith on LibraryPublishPayload {
-  /// Returns a callable class that can be used as follows: `instanceOfLibraryPublishPayload.copyWith(...)` or like so:`instanceOfLibraryPublishPayload.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfLibraryPublishPayload.copyWith(...)` or `instanceOfLibraryPublishPayload.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$LibraryPublishPayloadCWProxy get copyWith =>
       _$LibraryPublishPayloadCWProxyImpl(this);

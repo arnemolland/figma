@@ -1,4 +1,3 @@
-import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:figma/src/models.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -20,7 +19,6 @@ enum LineType {
 
 /// A text node, represented as a [Vector] and modified by a [TypeStyle].
 @JsonSerializable()
-@CopyWith()
 class Text extends Vector {
   /// Text contained within a text box. Newline characters are preserved and map
   /// to a new line in the UI when rendered.

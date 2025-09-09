@@ -23,12 +23,13 @@ abstract class _$LocalVariableCollectionCWProxy {
 
   LocalVariableCollection variableIds(List<String> variableIds);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `LocalVariableCollection(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `LocalVariableCollection(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// LocalVariableCollection(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   LocalVariableCollection call({
     String id,
     String name,
@@ -41,7 +42,8 @@ abstract class _$LocalVariableCollectionCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfLocalVariableCollection.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfLocalVariableCollection.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfLocalVariableCollection.copyWith(...)` or call `instanceOfLocalVariableCollection.copyWith.fieldName(value)` for a single field.
 class _$LocalVariableCollectionCWProxyImpl
     implements _$LocalVariableCollectionCWProxy {
   const _$LocalVariableCollectionCWProxyImpl(this._value);
@@ -49,40 +51,41 @@ class _$LocalVariableCollectionCWProxyImpl
   final LocalVariableCollection _value;
 
   @override
-  LocalVariableCollection id(String id) => this(id: id);
+  LocalVariableCollection id(String id) => call(id: id);
 
   @override
-  LocalVariableCollection name(String name) => this(name: name);
+  LocalVariableCollection name(String name) => call(name: name);
 
   @override
-  LocalVariableCollection key(String key) => this(key: key);
+  LocalVariableCollection key(String key) => call(key: key);
 
   @override
-  LocalVariableCollection modes(List<Mode> modes) => this(modes: modes);
+  LocalVariableCollection modes(List<Mode> modes) => call(modes: modes);
 
   @override
   LocalVariableCollection defaultModeId(String defaultModeId) =>
-      this(defaultModeId: defaultModeId);
+      call(defaultModeId: defaultModeId);
 
   @override
-  LocalVariableCollection remote(bool remote) => this(remote: remote);
+  LocalVariableCollection remote(bool remote) => call(remote: remote);
 
   @override
   LocalVariableCollection hiddenFromPublishing(bool hiddenFromPublishing) =>
-      this(hiddenFromPublishing: hiddenFromPublishing);
+      call(hiddenFromPublishing: hiddenFromPublishing);
 
   @override
   LocalVariableCollection variableIds(List<String> variableIds) =>
-      this(variableIds: variableIds);
+      call(variableIds: variableIds);
 
   @override
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `LocalVariableCollection(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `LocalVariableCollection(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// LocalVariableCollection(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   LocalVariableCollection call({
     Object? id = const $CopyWithPlaceholder(),
     Object? name = const $CopyWithPlaceholder(),
@@ -94,44 +97,49 @@ class _$LocalVariableCollectionCWProxyImpl
     Object? variableIds = const $CopyWithPlaceholder(),
   }) {
     return LocalVariableCollection(
-      id: id == const $CopyWithPlaceholder()
+      id: id == const $CopyWithPlaceholder() || id == null
           ? _value.id
           // ignore: cast_nullable_to_non_nullable
           : id as String,
-      name: name == const $CopyWithPlaceholder()
+      name: name == const $CopyWithPlaceholder() || name == null
           ? _value.name
           // ignore: cast_nullable_to_non_nullable
           : name as String,
-      key: key == const $CopyWithPlaceholder()
+      key: key == const $CopyWithPlaceholder() || key == null
           ? _value.key
           // ignore: cast_nullable_to_non_nullable
           : key as String,
-      modes: modes == const $CopyWithPlaceholder()
+      modes: modes == const $CopyWithPlaceholder() || modes == null
           ? _value.modes
           // ignore: cast_nullable_to_non_nullable
           : modes as List<Mode>,
-      defaultModeId: defaultModeId == const $CopyWithPlaceholder()
-          ? _value.defaultModeId
-          // ignore: cast_nullable_to_non_nullable
-          : defaultModeId as String,
-      remote: remote == const $CopyWithPlaceholder()
+      defaultModeId:
+          defaultModeId == const $CopyWithPlaceholder() || defaultModeId == null
+              ? _value.defaultModeId
+              // ignore: cast_nullable_to_non_nullable
+              : defaultModeId as String,
+      remote: remote == const $CopyWithPlaceholder() || remote == null
           ? _value.remote
           // ignore: cast_nullable_to_non_nullable
           : remote as bool,
-      hiddenFromPublishing: hiddenFromPublishing == const $CopyWithPlaceholder()
-          ? _value.hiddenFromPublishing
-          // ignore: cast_nullable_to_non_nullable
-          : hiddenFromPublishing as bool,
-      variableIds: variableIds == const $CopyWithPlaceholder()
-          ? _value.variableIds
-          // ignore: cast_nullable_to_non_nullable
-          : variableIds as List<String>,
+      hiddenFromPublishing:
+          hiddenFromPublishing == const $CopyWithPlaceholder() ||
+                  hiddenFromPublishing == null
+              ? _value.hiddenFromPublishing
+              // ignore: cast_nullable_to_non_nullable
+              : hiddenFromPublishing as bool,
+      variableIds:
+          variableIds == const $CopyWithPlaceholder() || variableIds == null
+              ? _value.variableIds
+              // ignore: cast_nullable_to_non_nullable
+              : variableIds as List<String>,
     );
   }
 }
 
 extension $LocalVariableCollectionCopyWith on LocalVariableCollection {
-  /// Returns a callable class that can be used as follows: `instanceOfLocalVariableCollection.copyWith(...)` or like so:`instanceOfLocalVariableCollection.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfLocalVariableCollection.copyWith(...)` or `instanceOfLocalVariableCollection.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$LocalVariableCollectionCWProxy get copyWith =>
       _$LocalVariableCollectionCWProxyImpl(this);

@@ -27,12 +27,13 @@ abstract class _$FileCommentPayloadCWProxy {
 
   FileCommentPayload triggeredBy(User? triggeredBy);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `FileCommentPayload(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `FileCommentPayload(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// FileCommentPayload(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   FileCommentPayload call({
     String? passcode,
     DateTime? timestamp,
@@ -47,54 +48,56 @@ abstract class _$FileCommentPayloadCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfFileCommentPayload.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfFileCommentPayload.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfFileCommentPayload.copyWith(...)` or call `instanceOfFileCommentPayload.copyWith.fieldName(value)` for a single field.
 class _$FileCommentPayloadCWProxyImpl implements _$FileCommentPayloadCWProxy {
   const _$FileCommentPayloadCWProxyImpl(this._value);
 
   final FileCommentPayload _value;
 
   @override
-  FileCommentPayload passcode(String? passcode) => this(passcode: passcode);
+  FileCommentPayload passcode(String? passcode) => call(passcode: passcode);
 
   @override
   FileCommentPayload timestamp(DateTime? timestamp) =>
-      this(timestamp: timestamp);
+      call(timestamp: timestamp);
 
   @override
-  FileCommentPayload webhookId(String? webhookId) => this(webhookId: webhookId);
+  FileCommentPayload webhookId(String? webhookId) => call(webhookId: webhookId);
 
   @override
   FileCommentPayload comment(List<CommentFragment>? comment) =>
-      this(comment: comment);
+      call(comment: comment);
 
   @override
-  FileCommentPayload commentId(String? commentId) => this(commentId: commentId);
+  FileCommentPayload commentId(String? commentId) => call(commentId: commentId);
 
   @override
   FileCommentPayload createdAt(DateTime? createdAt) =>
-      this(createdAt: createdAt);
+      call(createdAt: createdAt);
 
   @override
-  FileCommentPayload fileKey(String? fileKey) => this(fileKey: fileKey);
+  FileCommentPayload fileKey(String? fileKey) => call(fileKey: fileKey);
 
   @override
-  FileCommentPayload fileName(String? fileName) => this(fileName: fileName);
+  FileCommentPayload fileName(String? fileName) => call(fileName: fileName);
 
   @override
-  FileCommentPayload mentions(List<User>? mentions) => this(mentions: mentions);
+  FileCommentPayload mentions(List<User>? mentions) => call(mentions: mentions);
 
   @override
   FileCommentPayload triggeredBy(User? triggeredBy) =>
-      this(triggeredBy: triggeredBy);
+      call(triggeredBy: triggeredBy);
 
   @override
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `FileCommentPayload(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `FileCommentPayload(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// FileCommentPayload(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   FileCommentPayload call({
     Object? passcode = const $CopyWithPlaceholder(),
     Object? timestamp = const $CopyWithPlaceholder(),
@@ -153,7 +156,8 @@ class _$FileCommentPayloadCWProxyImpl implements _$FileCommentPayloadCWProxy {
 }
 
 extension $FileCommentPayloadCopyWith on FileCommentPayload {
-  /// Returns a callable class that can be used as follows: `instanceOfFileCommentPayload.copyWith(...)` or like so:`instanceOfFileCommentPayload.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfFileCommentPayload.copyWith(...)` or `instanceOfFileCommentPayload.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$FileCommentPayloadCWProxy get copyWith =>
       _$FileCommentPayloadCWProxyImpl(this);

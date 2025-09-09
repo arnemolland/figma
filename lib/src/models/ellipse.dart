@@ -1,4 +1,3 @@
-import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:figma/src/models.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -6,7 +5,6 @@ part 'ellipse.g.dart';
 
 /// An ellipse shaped vector.
 @JsonSerializable()
-@CopyWith()
 class Ellipse extends Vector {
   const Ellipse({
     required super.id,

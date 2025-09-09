@@ -34,12 +34,13 @@ abstract class _$ComponentCWProxy {
   Component componentPropertyDefinitions(
       Map<String, ComponentPropertyDefinition> componentPropertyDefinitions);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Component(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Component(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// Component(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   Component call({
     String? key,
     String? fileKey,
@@ -57,66 +58,68 @@ abstract class _$ComponentCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfComponent.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfComponent.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfComponent.copyWith(...)` or call `instanceOfComponent.copyWith.fieldName(value)` for a single field.
 class _$ComponentCWProxyImpl implements _$ComponentCWProxy {
   const _$ComponentCWProxyImpl(this._value);
 
   final Component _value;
 
   @override
-  Component key(String? key) => this(key: key);
+  Component key(String? key) => call(key: key);
 
   @override
-  Component fileKey(String? fileKey) => this(fileKey: fileKey);
+  Component fileKey(String? fileKey) => call(fileKey: fileKey);
 
   @override
-  Component nodeId(String? nodeId) => this(nodeId: nodeId);
+  Component nodeId(String? nodeId) => call(nodeId: nodeId);
 
   @override
   Component thumbnailUrl(String? thumbnailUrl) =>
-      this(thumbnailUrl: thumbnailUrl);
+      call(thumbnailUrl: thumbnailUrl);
 
   @override
-  Component name(String? name) => this(name: name);
+  Component name(String? name) => call(name: name);
 
   @override
-  Component description(String? description) => this(description: description);
+  Component description(String? description) => call(description: description);
 
   @override
-  Component createdAt(DateTime? createdAt) => this(createdAt: createdAt);
+  Component createdAt(DateTime? createdAt) => call(createdAt: createdAt);
 
   @override
-  Component updatedAt(DateTime? updatedAt) => this(updatedAt: updatedAt);
+  Component updatedAt(DateTime? updatedAt) => call(updatedAt: updatedAt);
 
   @override
-  Component user(User? user) => this(user: user);
+  Component user(User? user) => call(user: user);
 
   @override
   Component containingFrame(FrameInfo? containingFrame) =>
-      this(containingFrame: containingFrame);
+      call(containingFrame: containingFrame);
 
   @override
   Component containingPage(dynamic containingPage) =>
-      this(containingPage: containingPage);
+      call(containingPage: containingPage);
 
   @override
   Component componentSetId(String? componentSetId) =>
-      this(componentSetId: componentSetId);
+      call(componentSetId: componentSetId);
 
   @override
   Component componentPropertyDefinitions(
           Map<String, ComponentPropertyDefinition>
               componentPropertyDefinitions) =>
-      this(componentPropertyDefinitions: componentPropertyDefinitions);
+      call(componentPropertyDefinitions: componentPropertyDefinitions);
 
   @override
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Component(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Component(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// Component(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   Component call({
     Object? key = const $CopyWithPlaceholder(),
     Object? fileKey = const $CopyWithPlaceholder(),
@@ -182,7 +185,8 @@ class _$ComponentCWProxyImpl implements _$ComponentCWProxy {
           // ignore: cast_nullable_to_non_nullable
           : componentSetId as String?,
       componentPropertyDefinitions:
-          componentPropertyDefinitions == const $CopyWithPlaceholder()
+          componentPropertyDefinitions == const $CopyWithPlaceholder() ||
+                  componentPropertyDefinitions == null
               ? _value.componentPropertyDefinitions
               // ignore: cast_nullable_to_non_nullable
               : componentPropertyDefinitions
@@ -192,7 +196,8 @@ class _$ComponentCWProxyImpl implements _$ComponentCWProxy {
 }
 
 extension $ComponentCopyWith on Component {
-  /// Returns a callable class that can be used as follows: `instanceOfComponent.copyWith(...)` or like so:`instanceOfComponent.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfComponent.copyWith(...)` or `instanceOfComponent.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$ComponentCWProxy get copyWith => _$ComponentCWProxyImpl(this);
 }

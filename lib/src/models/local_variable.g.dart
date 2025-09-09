@@ -31,12 +31,13 @@ abstract class _$LocalVariableCWProxy {
 
   LocalVariable deletedButReferenced(bool? deletedButReferenced);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `LocalVariable(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `LocalVariable(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// LocalVariable(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   LocalVariable call({
     String id,
     String name,
@@ -53,64 +54,66 @@ abstract class _$LocalVariableCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfLocalVariable.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfLocalVariable.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfLocalVariable.copyWith(...)` or call `instanceOfLocalVariable.copyWith.fieldName(value)` for a single field.
 class _$LocalVariableCWProxyImpl implements _$LocalVariableCWProxy {
   const _$LocalVariableCWProxyImpl(this._value);
 
   final LocalVariable _value;
 
   @override
-  LocalVariable id(String id) => this(id: id);
+  LocalVariable id(String id) => call(id: id);
 
   @override
-  LocalVariable name(String name) => this(name: name);
+  LocalVariable name(String name) => call(name: name);
 
   @override
-  LocalVariable key(String key) => this(key: key);
+  LocalVariable key(String key) => call(key: key);
 
   @override
   LocalVariable variableCollectionId(String variableCollectionId) =>
-      this(variableCollectionId: variableCollectionId);
+      call(variableCollectionId: variableCollectionId);
 
   @override
   LocalVariable resolvedType(ResolvedType resolvedType) =>
-      this(resolvedType: resolvedType);
+      call(resolvedType: resolvedType);
 
   @override
   LocalVariable valuesByMode(Map<String, dynamic> valuesByMode) =>
-      this(valuesByMode: valuesByMode);
+      call(valuesByMode: valuesByMode);
 
   @override
-  LocalVariable remote(bool remote) => this(remote: remote);
+  LocalVariable remote(bool remote) => call(remote: remote);
 
   @override
   LocalVariable description(String description) =>
-      this(description: description);
+      call(description: description);
 
   @override
   LocalVariable hiddenFromPublishing(bool hiddenFromPublishing) =>
-      this(hiddenFromPublishing: hiddenFromPublishing);
+      call(hiddenFromPublishing: hiddenFromPublishing);
 
   @override
-  LocalVariable scopes(List<VariableScope> scopes) => this(scopes: scopes);
+  LocalVariable scopes(List<VariableScope> scopes) => call(scopes: scopes);
 
   @override
   LocalVariable codeSyntax(
           Map<VariableCodeSyntaxPlatform, String> codeSyntax) =>
-      this(codeSyntax: codeSyntax);
+      call(codeSyntax: codeSyntax);
 
   @override
   LocalVariable deletedButReferenced(bool? deletedButReferenced) =>
-      this(deletedButReferenced: deletedButReferenced);
+      call(deletedButReferenced: deletedButReferenced);
 
   @override
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `LocalVariable(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `LocalVariable(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// LocalVariable(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   LocalVariable call({
     Object? id = const $CopyWithPlaceholder(),
     Object? name = const $CopyWithPlaceholder(),
@@ -126,50 +129,58 @@ class _$LocalVariableCWProxyImpl implements _$LocalVariableCWProxy {
     Object? deletedButReferenced = const $CopyWithPlaceholder(),
   }) {
     return LocalVariable(
-      id: id == const $CopyWithPlaceholder()
+      id: id == const $CopyWithPlaceholder() || id == null
           ? _value.id
           // ignore: cast_nullable_to_non_nullable
           : id as String,
-      name: name == const $CopyWithPlaceholder()
+      name: name == const $CopyWithPlaceholder() || name == null
           ? _value.name
           // ignore: cast_nullable_to_non_nullable
           : name as String,
-      key: key == const $CopyWithPlaceholder()
+      key: key == const $CopyWithPlaceholder() || key == null
           ? _value.key
           // ignore: cast_nullable_to_non_nullable
           : key as String,
-      variableCollectionId: variableCollectionId == const $CopyWithPlaceholder()
-          ? _value.variableCollectionId
-          // ignore: cast_nullable_to_non_nullable
-          : variableCollectionId as String,
-      resolvedType: resolvedType == const $CopyWithPlaceholder()
-          ? _value.resolvedType
-          // ignore: cast_nullable_to_non_nullable
-          : resolvedType as ResolvedType,
-      valuesByMode: valuesByMode == const $CopyWithPlaceholder()
-          ? _value.valuesByMode
-          // ignore: cast_nullable_to_non_nullable
-          : valuesByMode as Map<String, dynamic>,
-      remote: remote == const $CopyWithPlaceholder()
+      variableCollectionId:
+          variableCollectionId == const $CopyWithPlaceholder() ||
+                  variableCollectionId == null
+              ? _value.variableCollectionId
+              // ignore: cast_nullable_to_non_nullable
+              : variableCollectionId as String,
+      resolvedType:
+          resolvedType == const $CopyWithPlaceholder() || resolvedType == null
+              ? _value.resolvedType
+              // ignore: cast_nullable_to_non_nullable
+              : resolvedType as ResolvedType,
+      valuesByMode:
+          valuesByMode == const $CopyWithPlaceholder() || valuesByMode == null
+              ? _value.valuesByMode
+              // ignore: cast_nullable_to_non_nullable
+              : valuesByMode as Map<String, dynamic>,
+      remote: remote == const $CopyWithPlaceholder() || remote == null
           ? _value.remote
           // ignore: cast_nullable_to_non_nullable
           : remote as bool,
-      description: description == const $CopyWithPlaceholder()
-          ? _value.description
-          // ignore: cast_nullable_to_non_nullable
-          : description as String,
-      hiddenFromPublishing: hiddenFromPublishing == const $CopyWithPlaceholder()
-          ? _value.hiddenFromPublishing
-          // ignore: cast_nullable_to_non_nullable
-          : hiddenFromPublishing as bool,
-      scopes: scopes == const $CopyWithPlaceholder()
+      description:
+          description == const $CopyWithPlaceholder() || description == null
+              ? _value.description
+              // ignore: cast_nullable_to_non_nullable
+              : description as String,
+      hiddenFromPublishing:
+          hiddenFromPublishing == const $CopyWithPlaceholder() ||
+                  hiddenFromPublishing == null
+              ? _value.hiddenFromPublishing
+              // ignore: cast_nullable_to_non_nullable
+              : hiddenFromPublishing as bool,
+      scopes: scopes == const $CopyWithPlaceholder() || scopes == null
           ? _value.scopes
           // ignore: cast_nullable_to_non_nullable
           : scopes as List<VariableScope>,
-      codeSyntax: codeSyntax == const $CopyWithPlaceholder()
-          ? _value.codeSyntax
-          // ignore: cast_nullable_to_non_nullable
-          : codeSyntax as Map<VariableCodeSyntaxPlatform, String>,
+      codeSyntax:
+          codeSyntax == const $CopyWithPlaceholder() || codeSyntax == null
+              ? _value.codeSyntax
+              // ignore: cast_nullable_to_non_nullable
+              : codeSyntax as Map<VariableCodeSyntaxPlatform, String>,
       deletedButReferenced: deletedButReferenced == const $CopyWithPlaceholder()
           ? _value.deletedButReferenced
           // ignore: cast_nullable_to_non_nullable
@@ -179,7 +190,8 @@ class _$LocalVariableCWProxyImpl implements _$LocalVariableCWProxy {
 }
 
 extension $LocalVariableCopyWith on LocalVariable {
-  /// Returns a callable class that can be used as follows: `instanceOfLocalVariable.copyWith(...)` or like so:`instanceOfLocalVariable.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfLocalVariable.copyWith(...)` or `instanceOfLocalVariable.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$LocalVariableCWProxy get copyWith => _$LocalVariableCWProxyImpl(this);
 }

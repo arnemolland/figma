@@ -13,12 +13,13 @@ abstract class _$StyleResponseCWProxy {
 
   StyleResponse style(Style? style);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `StyleResponse(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `StyleResponse(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// StyleResponse(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   StyleResponse call({
     int? status,
     bool? error,
@@ -26,29 +27,31 @@ abstract class _$StyleResponseCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfStyleResponse.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfStyleResponse.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfStyleResponse.copyWith(...)` or call `instanceOfStyleResponse.copyWith.fieldName(value)` for a single field.
 class _$StyleResponseCWProxyImpl implements _$StyleResponseCWProxy {
   const _$StyleResponseCWProxyImpl(this._value);
 
   final StyleResponse _value;
 
   @override
-  StyleResponse status(int? status) => this(status: status);
+  StyleResponse status(int? status) => call(status: status);
 
   @override
-  StyleResponse error(bool? error) => this(error: error);
+  StyleResponse error(bool? error) => call(error: error);
 
   @override
-  StyleResponse style(Style? style) => this(style: style);
+  StyleResponse style(Style? style) => call(style: style);
 
   @override
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `StyleResponse(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `StyleResponse(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// StyleResponse(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   StyleResponse call({
     Object? status = const $CopyWithPlaceholder(),
     Object? error = const $CopyWithPlaceholder(),
@@ -72,7 +75,8 @@ class _$StyleResponseCWProxyImpl implements _$StyleResponseCWProxy {
 }
 
 extension $StyleResponseCopyWith on StyleResponse {
-  /// Returns a callable class that can be used as follows: `instanceOfStyleResponse.copyWith(...)` or like so:`instanceOfStyleResponse.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfStyleResponse.copyWith(...)` or `instanceOfStyleResponse.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$StyleResponseCWProxy get copyWith => _$StyleResponseCWProxyImpl(this);
 }

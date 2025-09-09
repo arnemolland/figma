@@ -17,12 +17,13 @@ abstract class _$FileUpdatePayloadCWProxy {
 
   FileUpdatePayload fileName(String? fileName);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `FileUpdatePayload(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `FileUpdatePayload(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// FileUpdatePayload(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   FileUpdatePayload call({
     String? passcode,
     DateTime? timestamp,
@@ -32,36 +33,38 @@ abstract class _$FileUpdatePayloadCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfFileUpdatePayload.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfFileUpdatePayload.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfFileUpdatePayload.copyWith(...)` or call `instanceOfFileUpdatePayload.copyWith.fieldName(value)` for a single field.
 class _$FileUpdatePayloadCWProxyImpl implements _$FileUpdatePayloadCWProxy {
   const _$FileUpdatePayloadCWProxyImpl(this._value);
 
   final FileUpdatePayload _value;
 
   @override
-  FileUpdatePayload passcode(String? passcode) => this(passcode: passcode);
+  FileUpdatePayload passcode(String? passcode) => call(passcode: passcode);
 
   @override
   FileUpdatePayload timestamp(DateTime? timestamp) =>
-      this(timestamp: timestamp);
+      call(timestamp: timestamp);
 
   @override
-  FileUpdatePayload webhookId(String? webhookId) => this(webhookId: webhookId);
+  FileUpdatePayload webhookId(String? webhookId) => call(webhookId: webhookId);
 
   @override
-  FileUpdatePayload fileKey(String? fileKey) => this(fileKey: fileKey);
+  FileUpdatePayload fileKey(String? fileKey) => call(fileKey: fileKey);
 
   @override
-  FileUpdatePayload fileName(String? fileName) => this(fileName: fileName);
+  FileUpdatePayload fileName(String? fileName) => call(fileName: fileName);
 
   @override
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `FileUpdatePayload(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `FileUpdatePayload(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// FileUpdatePayload(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   FileUpdatePayload call({
     Object? passcode = const $CopyWithPlaceholder(),
     Object? timestamp = const $CopyWithPlaceholder(),
@@ -95,7 +98,8 @@ class _$FileUpdatePayloadCWProxyImpl implements _$FileUpdatePayloadCWProxy {
 }
 
 extension $FileUpdatePayloadCopyWith on FileUpdatePayload {
-  /// Returns a callable class that can be used as follows: `instanceOfFileUpdatePayload.copyWith(...)` or like so:`instanceOfFileUpdatePayload.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfFileUpdatePayload.copyWith(...)` or `instanceOfFileUpdatePayload.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$FileUpdatePayloadCWProxy get copyWith =>
       _$FileUpdatePayloadCWProxyImpl(this);

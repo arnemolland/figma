@@ -15,12 +15,13 @@ abstract class _$StrokeWeightsCWProxy {
 
   StrokeWeights left(double left);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `StrokeWeights(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `StrokeWeights(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// StrokeWeights(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   StrokeWeights call({
     double top,
     double right,
@@ -29,32 +30,34 @@ abstract class _$StrokeWeightsCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfStrokeWeights.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfStrokeWeights.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfStrokeWeights.copyWith(...)` or call `instanceOfStrokeWeights.copyWith.fieldName(value)` for a single field.
 class _$StrokeWeightsCWProxyImpl implements _$StrokeWeightsCWProxy {
   const _$StrokeWeightsCWProxyImpl(this._value);
 
   final StrokeWeights _value;
 
   @override
-  StrokeWeights top(double top) => this(top: top);
+  StrokeWeights top(double top) => call(top: top);
 
   @override
-  StrokeWeights right(double right) => this(right: right);
+  StrokeWeights right(double right) => call(right: right);
 
   @override
-  StrokeWeights bottom(double bottom) => this(bottom: bottom);
+  StrokeWeights bottom(double bottom) => call(bottom: bottom);
 
   @override
-  StrokeWeights left(double left) => this(left: left);
+  StrokeWeights left(double left) => call(left: left);
 
   @override
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `StrokeWeights(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `StrokeWeights(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// StrokeWeights(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   StrokeWeights call({
     Object? top = const $CopyWithPlaceholder(),
     Object? right = const $CopyWithPlaceholder(),
@@ -62,19 +65,19 @@ class _$StrokeWeightsCWProxyImpl implements _$StrokeWeightsCWProxy {
     Object? left = const $CopyWithPlaceholder(),
   }) {
     return StrokeWeights(
-      top: top == const $CopyWithPlaceholder()
+      top: top == const $CopyWithPlaceholder() || top == null
           ? _value.top
           // ignore: cast_nullable_to_non_nullable
           : top as double,
-      right: right == const $CopyWithPlaceholder()
+      right: right == const $CopyWithPlaceholder() || right == null
           ? _value.right
           // ignore: cast_nullable_to_non_nullable
           : right as double,
-      bottom: bottom == const $CopyWithPlaceholder()
+      bottom: bottom == const $CopyWithPlaceholder() || bottom == null
           ? _value.bottom
           // ignore: cast_nullable_to_non_nullable
           : bottom as double,
-      left: left == const $CopyWithPlaceholder()
+      left: left == const $CopyWithPlaceholder() || left == null
           ? _value.left
           // ignore: cast_nullable_to_non_nullable
           : left as double,
@@ -83,7 +86,8 @@ class _$StrokeWeightsCWProxyImpl implements _$StrokeWeightsCWProxy {
 }
 
 extension $StrokeWeightsCopyWith on StrokeWeights {
-  /// Returns a callable class that can be used as follows: `instanceOfStrokeWeights.copyWith(...)` or like so:`instanceOfStrokeWeights.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfStrokeWeights.copyWith(...)` or `instanceOfStrokeWeights.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$StrokeWeightsCWProxy get copyWith => _$StrokeWeightsCWProxyImpl(this);
 }

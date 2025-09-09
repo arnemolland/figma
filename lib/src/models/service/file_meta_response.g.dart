@@ -9,34 +9,37 @@ part of 'file_meta_response.dart';
 abstract class _$FileMetaResponseCWProxy {
   FileMetaResponse file(FileMeta? file);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `FileMetaResponse(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `FileMetaResponse(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// FileMetaResponse(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   FileMetaResponse call({
     FileMeta? file,
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfFileMetaResponse.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfFileMetaResponse.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfFileMetaResponse.copyWith(...)` or call `instanceOfFileMetaResponse.copyWith.fieldName(value)` for a single field.
 class _$FileMetaResponseCWProxyImpl implements _$FileMetaResponseCWProxy {
   const _$FileMetaResponseCWProxyImpl(this._value);
 
   final FileMetaResponse _value;
 
   @override
-  FileMetaResponse file(FileMeta? file) => this(file: file);
+  FileMetaResponse file(FileMeta? file) => call(file: file);
 
   @override
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `FileMetaResponse(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `FileMetaResponse(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// FileMetaResponse(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   FileMetaResponse call({
     Object? file = const $CopyWithPlaceholder(),
   }) {
@@ -50,7 +53,8 @@ class _$FileMetaResponseCWProxyImpl implements _$FileMetaResponseCWProxy {
 }
 
 extension $FileMetaResponseCopyWith on FileMetaResponse {
-  /// Returns a callable class that can be used as follows: `instanceOfFileMetaResponse.copyWith(...)` or like so:`instanceOfFileMetaResponse.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfFileMetaResponse.copyWith(...)` or `instanceOfFileMetaResponse.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$FileMetaResponseCWProxy get copyWith => _$FileMetaResponseCWProxyImpl(this);
 }

@@ -11,19 +11,21 @@ abstract class _$ComponentsMetaCWProxy {
 
   ComponentsMeta cursor(Cursor? cursor);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ComponentsMeta(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ComponentsMeta(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// ComponentsMeta(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   ComponentsMeta call({
     List<Component>? components,
     Cursor? cursor,
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfComponentsMeta.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfComponentsMeta.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfComponentsMeta.copyWith(...)` or call `instanceOfComponentsMeta.copyWith.fieldName(value)` for a single field.
 class _$ComponentsMetaCWProxyImpl implements _$ComponentsMetaCWProxy {
   const _$ComponentsMetaCWProxyImpl(this._value);
 
@@ -31,19 +33,20 @@ class _$ComponentsMetaCWProxyImpl implements _$ComponentsMetaCWProxy {
 
   @override
   ComponentsMeta components(List<Component>? components) =>
-      this(components: components);
+      call(components: components);
 
   @override
-  ComponentsMeta cursor(Cursor? cursor) => this(cursor: cursor);
+  ComponentsMeta cursor(Cursor? cursor) => call(cursor: cursor);
 
   @override
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ComponentsMeta(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ComponentsMeta(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// ComponentsMeta(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   ComponentsMeta call({
     Object? components = const $CopyWithPlaceholder(),
     Object? cursor = const $CopyWithPlaceholder(),
@@ -62,7 +65,8 @@ class _$ComponentsMetaCWProxyImpl implements _$ComponentsMetaCWProxy {
 }
 
 extension $ComponentsMetaCopyWith on ComponentsMeta {
-  /// Returns a callable class that can be used as follows: `instanceOfComponentsMeta.copyWith(...)` or like so:`instanceOfComponentsMeta.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfComponentsMeta.copyWith(...)` or `instanceOfComponentsMeta.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$ComponentsMetaCWProxy get copyWith => _$ComponentsMetaCWProxyImpl(this);
 }

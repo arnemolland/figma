@@ -25,12 +25,13 @@ abstract class _$DevModeStatusUpdatePayloadCWProxy {
 
   DevModeStatusUpdatePayload triggeredBy(User? triggeredBy);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `DevModeStatusUpdatePayload(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `DevModeStatusUpdatePayload(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// DevModeStatusUpdatePayload(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   DevModeStatusUpdatePayload call({
     String? passcode,
     DateTime? timestamp,
@@ -44,7 +45,8 @@ abstract class _$DevModeStatusUpdatePayloadCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfDevModeStatusUpdatePayload.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfDevModeStatusUpdatePayload.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfDevModeStatusUpdatePayload.copyWith(...)` or call `instanceOfDevModeStatusUpdatePayload.copyWith.fieldName(value)` for a single field.
 class _$DevModeStatusUpdatePayloadCWProxyImpl
     implements _$DevModeStatusUpdatePayloadCWProxy {
   const _$DevModeStatusUpdatePayloadCWProxyImpl(this._value);
@@ -53,46 +55,47 @@ class _$DevModeStatusUpdatePayloadCWProxyImpl
 
   @override
   DevModeStatusUpdatePayload passcode(String? passcode) =>
-      this(passcode: passcode);
+      call(passcode: passcode);
 
   @override
   DevModeStatusUpdatePayload timestamp(DateTime? timestamp) =>
-      this(timestamp: timestamp);
+      call(timestamp: timestamp);
 
   @override
   DevModeStatusUpdatePayload webhookId(String? webhookId) =>
-      this(webhookId: webhookId);
+      call(webhookId: webhookId);
 
   @override
-  DevModeStatusUpdatePayload fileKey(String? fileKey) => this(fileKey: fileKey);
+  DevModeStatusUpdatePayload fileKey(String? fileKey) => call(fileKey: fileKey);
 
   @override
   DevModeStatusUpdatePayload fileName(String? fileName) =>
-      this(fileName: fileName);
+      call(fileName: fileName);
 
   @override
-  DevModeStatusUpdatePayload nodeId(String? nodeId) => this(nodeId: nodeId);
+  DevModeStatusUpdatePayload nodeId(String? nodeId) => call(nodeId: nodeId);
 
   @override
   DevModeStatusUpdatePayload relatedLinks(List<DevResource>? relatedLinks) =>
-      this(relatedLinks: relatedLinks);
+      call(relatedLinks: relatedLinks);
 
   @override
   DevModeStatusUpdatePayload status(DevModeStatus? status) =>
-      this(status: status);
+      call(status: status);
 
   @override
   DevModeStatusUpdatePayload triggeredBy(User? triggeredBy) =>
-      this(triggeredBy: triggeredBy);
+      call(triggeredBy: triggeredBy);
 
   @override
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `DevModeStatusUpdatePayload(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `DevModeStatusUpdatePayload(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// DevModeStatusUpdatePayload(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   DevModeStatusUpdatePayload call({
     Object? passcode = const $CopyWithPlaceholder(),
     Object? timestamp = const $CopyWithPlaceholder(),
@@ -146,7 +149,8 @@ class _$DevModeStatusUpdatePayloadCWProxyImpl
 }
 
 extension $DevModeStatusUpdatePayloadCopyWith on DevModeStatusUpdatePayload {
-  /// Returns a callable class that can be used as follows: `instanceOfDevModeStatusUpdatePayload.copyWith(...)` or like so:`instanceOfDevModeStatusUpdatePayload.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfDevModeStatusUpdatePayload.copyWith(...)` or `instanceOfDevModeStatusUpdatePayload.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$DevModeStatusUpdatePayloadCWProxy get copyWith =>
       _$DevModeStatusUpdatePayloadCWProxyImpl(this);

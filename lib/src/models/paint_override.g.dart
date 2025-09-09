@@ -11,45 +11,48 @@ abstract class _$PaintOverrideCWProxy {
 
   PaintOverride inheritFillStyleId(String? inheritFillStyleId);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `PaintOverride(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PaintOverride(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// PaintOverride(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   PaintOverride call({
     List<Paint> fills,
     String? inheritFillStyleId,
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfPaintOverride.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfPaintOverride.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfPaintOverride.copyWith(...)` or call `instanceOfPaintOverride.copyWith.fieldName(value)` for a single field.
 class _$PaintOverrideCWProxyImpl implements _$PaintOverrideCWProxy {
   const _$PaintOverrideCWProxyImpl(this._value);
 
   final PaintOverride _value;
 
   @override
-  PaintOverride fills(List<Paint> fills) => this(fills: fills);
+  PaintOverride fills(List<Paint> fills) => call(fills: fills);
 
   @override
   PaintOverride inheritFillStyleId(String? inheritFillStyleId) =>
-      this(inheritFillStyleId: inheritFillStyleId);
+      call(inheritFillStyleId: inheritFillStyleId);
 
   @override
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `PaintOverride(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PaintOverride(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// PaintOverride(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   PaintOverride call({
     Object? fills = const $CopyWithPlaceholder(),
     Object? inheritFillStyleId = const $CopyWithPlaceholder(),
   }) {
     return PaintOverride(
-      fills: fills == const $CopyWithPlaceholder()
+      fills: fills == const $CopyWithPlaceholder() || fills == null
           ? _value.fills
           // ignore: cast_nullable_to_non_nullable
           : fills as List<Paint>,
@@ -62,7 +65,8 @@ class _$PaintOverrideCWProxyImpl implements _$PaintOverrideCWProxy {
 }
 
 extension $PaintOverrideCopyWith on PaintOverride {
-  /// Returns a callable class that can be used as follows: `instanceOfPaintOverride.copyWith(...)` or like so:`instanceOfPaintOverride.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfPaintOverride.copyWith(...)` or `instanceOfPaintOverride.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$PaintOverrideCWProxy get copyWith => _$PaintOverrideCWProxyImpl(this);
 }

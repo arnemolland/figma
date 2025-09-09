@@ -19,12 +19,13 @@ abstract class _$FileDeletePayloadCWProxy {
 
   FileDeletePayload triggeredBy(User? triggeredBy);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `FileDeletePayload(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `FileDeletePayload(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// FileDeletePayload(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   FileDeletePayload call({
     String? passcode,
     DateTime? timestamp,
@@ -35,40 +36,42 @@ abstract class _$FileDeletePayloadCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfFileDeletePayload.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfFileDeletePayload.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfFileDeletePayload.copyWith(...)` or call `instanceOfFileDeletePayload.copyWith.fieldName(value)` for a single field.
 class _$FileDeletePayloadCWProxyImpl implements _$FileDeletePayloadCWProxy {
   const _$FileDeletePayloadCWProxyImpl(this._value);
 
   final FileDeletePayload _value;
 
   @override
-  FileDeletePayload passcode(String? passcode) => this(passcode: passcode);
+  FileDeletePayload passcode(String? passcode) => call(passcode: passcode);
 
   @override
   FileDeletePayload timestamp(DateTime? timestamp) =>
-      this(timestamp: timestamp);
+      call(timestamp: timestamp);
 
   @override
-  FileDeletePayload webhookId(String? webhookId) => this(webhookId: webhookId);
+  FileDeletePayload webhookId(String? webhookId) => call(webhookId: webhookId);
 
   @override
-  FileDeletePayload fileKey(String? fileKey) => this(fileKey: fileKey);
+  FileDeletePayload fileKey(String? fileKey) => call(fileKey: fileKey);
 
   @override
-  FileDeletePayload fileName(String? fileName) => this(fileName: fileName);
+  FileDeletePayload fileName(String? fileName) => call(fileName: fileName);
 
   @override
   FileDeletePayload triggeredBy(User? triggeredBy) =>
-      this(triggeredBy: triggeredBy);
+      call(triggeredBy: triggeredBy);
 
   @override
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `FileDeletePayload(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `FileDeletePayload(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// FileDeletePayload(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   FileDeletePayload call({
     Object? passcode = const $CopyWithPlaceholder(),
     Object? timestamp = const $CopyWithPlaceholder(),
@@ -107,7 +110,8 @@ class _$FileDeletePayloadCWProxyImpl implements _$FileDeletePayloadCWProxy {
 }
 
 extension $FileDeletePayloadCopyWith on FileDeletePayload {
-  /// Returns a callable class that can be used as follows: `instanceOfFileDeletePayload.copyWith(...)` or like so:`instanceOfFileDeletePayload.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfFileDeletePayload.copyWith(...)` or `instanceOfFileDeletePayload.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$FileDeletePayloadCWProxy get copyWith =>
       _$FileDeletePayloadCWProxyImpl(this);

@@ -17,12 +17,13 @@ abstract class _$VersionCWProxy {
 
   Version user(User user);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Version(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Version(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// Version(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   Version call({
     String id,
     DateTime createdAt,
@@ -32,35 +33,37 @@ abstract class _$VersionCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfVersion.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfVersion.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfVersion.copyWith(...)` or call `instanceOfVersion.copyWith.fieldName(value)` for a single field.
 class _$VersionCWProxyImpl implements _$VersionCWProxy {
   const _$VersionCWProxyImpl(this._value);
 
   final Version _value;
 
   @override
-  Version id(String id) => this(id: id);
+  Version id(String id) => call(id: id);
 
   @override
-  Version createdAt(DateTime createdAt) => this(createdAt: createdAt);
+  Version createdAt(DateTime createdAt) => call(createdAt: createdAt);
 
   @override
-  Version label(String? label) => this(label: label);
+  Version label(String? label) => call(label: label);
 
   @override
-  Version description(String? description) => this(description: description);
+  Version description(String? description) => call(description: description);
 
   @override
-  Version user(User user) => this(user: user);
+  Version user(User user) => call(user: user);
 
   @override
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Version(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Version(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// Version(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   Version call({
     Object? id = const $CopyWithPlaceholder(),
     Object? createdAt = const $CopyWithPlaceholder(),
@@ -69,11 +72,11 @@ class _$VersionCWProxyImpl implements _$VersionCWProxy {
     Object? user = const $CopyWithPlaceholder(),
   }) {
     return Version(
-      id: id == const $CopyWithPlaceholder()
+      id: id == const $CopyWithPlaceholder() || id == null
           ? _value.id
           // ignore: cast_nullable_to_non_nullable
           : id as String,
-      createdAt: createdAt == const $CopyWithPlaceholder()
+      createdAt: createdAt == const $CopyWithPlaceholder() || createdAt == null
           ? _value.createdAt
           // ignore: cast_nullable_to_non_nullable
           : createdAt as DateTime,
@@ -85,7 +88,7 @@ class _$VersionCWProxyImpl implements _$VersionCWProxy {
           ? _value.description
           // ignore: cast_nullable_to_non_nullable
           : description as String?,
-      user: user == const $CopyWithPlaceholder()
+      user: user == const $CopyWithPlaceholder() || user == null
           ? _value.user
           // ignore: cast_nullable_to_non_nullable
           : user as User,
@@ -94,7 +97,8 @@ class _$VersionCWProxyImpl implements _$VersionCWProxy {
 }
 
 extension $VersionCopyWith on Version {
-  /// Returns a callable class that can be used as follows: `instanceOfVersion.copyWith(...)` or like so:`instanceOfVersion.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfVersion.copyWith(...)` or `instanceOfVersion.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$VersionCWProxy get copyWith => _$VersionCWProxyImpl(this);
 }

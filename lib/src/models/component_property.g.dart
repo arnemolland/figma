@@ -14,12 +14,13 @@ abstract class _$ComponentPropertyCWProxy {
   ComponentProperty preferredValues(
       List<InstanceSwapPreferredValue>? preferredValues);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ComponentProperty(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ComponentProperty(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// ComponentProperty(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   ComponentProperty call({
     String type,
     dynamic value,
@@ -27,38 +28,40 @@ abstract class _$ComponentPropertyCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfComponentProperty.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfComponentProperty.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfComponentProperty.copyWith(...)` or call `instanceOfComponentProperty.copyWith.fieldName(value)` for a single field.
 class _$ComponentPropertyCWProxyImpl implements _$ComponentPropertyCWProxy {
   const _$ComponentPropertyCWProxyImpl(this._value);
 
   final ComponentProperty _value;
 
   @override
-  ComponentProperty type(String type) => this(type: type);
+  ComponentProperty type(String type) => call(type: type);
 
   @override
-  ComponentProperty value(dynamic value) => this(value: value);
+  ComponentProperty value(dynamic value) => call(value: value);
 
   @override
   ComponentProperty preferredValues(
           List<InstanceSwapPreferredValue>? preferredValues) =>
-      this(preferredValues: preferredValues);
+      call(preferredValues: preferredValues);
 
   @override
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ComponentProperty(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ComponentProperty(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// ComponentProperty(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   ComponentProperty call({
     Object? type = const $CopyWithPlaceholder(),
     Object? value = const $CopyWithPlaceholder(),
     Object? preferredValues = const $CopyWithPlaceholder(),
   }) {
     return ComponentProperty(
-      type: type == const $CopyWithPlaceholder()
+      type: type == const $CopyWithPlaceholder() || type == null
           ? _value.type
           // ignore: cast_nullable_to_non_nullable
           : type as String,
@@ -75,7 +78,8 @@ class _$ComponentPropertyCWProxyImpl implements _$ComponentPropertyCWProxy {
 }
 
 extension $ComponentPropertyCopyWith on ComponentProperty {
-  /// Returns a callable class that can be used as follows: `instanceOfComponentProperty.copyWith(...)` or like so:`instanceOfComponentProperty.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfComponentProperty.copyWith(...)` or `instanceOfComponentProperty.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$ComponentPropertyCWProxy get copyWith =>
       _$ComponentPropertyCWProxyImpl(this);

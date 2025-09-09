@@ -17,12 +17,13 @@ abstract class _$DevResourceCWProxy {
 
   DevResource nodeId(String? nodeId);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `DevResource(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `DevResource(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// DevResource(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   DevResource call({
     String? id,
     String? name,
@@ -32,35 +33,37 @@ abstract class _$DevResourceCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfDevResource.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfDevResource.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfDevResource.copyWith(...)` or call `instanceOfDevResource.copyWith.fieldName(value)` for a single field.
 class _$DevResourceCWProxyImpl implements _$DevResourceCWProxy {
   const _$DevResourceCWProxyImpl(this._value);
 
   final DevResource _value;
 
   @override
-  DevResource id(String? id) => this(id: id);
+  DevResource id(String? id) => call(id: id);
 
   @override
-  DevResource name(String? name) => this(name: name);
+  DevResource name(String? name) => call(name: name);
 
   @override
-  DevResource url(String? url) => this(url: url);
+  DevResource url(String? url) => call(url: url);
 
   @override
-  DevResource fileKey(String? fileKey) => this(fileKey: fileKey);
+  DevResource fileKey(String? fileKey) => call(fileKey: fileKey);
 
   @override
-  DevResource nodeId(String? nodeId) => this(nodeId: nodeId);
+  DevResource nodeId(String? nodeId) => call(nodeId: nodeId);
 
   @override
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `DevResource(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `DevResource(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// DevResource(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   DevResource call({
     Object? id = const $CopyWithPlaceholder(),
     Object? name = const $CopyWithPlaceholder(),
@@ -94,7 +97,8 @@ class _$DevResourceCWProxyImpl implements _$DevResourceCWProxy {
 }
 
 extension $DevResourceCopyWith on DevResource {
-  /// Returns a callable class that can be used as follows: `instanceOfDevResource.copyWith(...)` or like so:`instanceOfDevResource.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfDevResource.copyWith(...)` or `instanceOfDevResource.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$DevResourceCWProxy get copyWith => _$DevResourceCWProxyImpl(this);
 }

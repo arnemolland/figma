@@ -15,12 +15,13 @@ abstract class _$PrototypeDeviceCWProxy {
 
   PrototypeDevice presetIdentifier(String? presetIdentifier);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `PrototypeDevice(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PrototypeDevice(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// PrototypeDevice(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   PrototypeDevice call({
     PrototypeDeviceType type,
     PrototypeDeviceRotation rotation,
@@ -29,34 +30,36 @@ abstract class _$PrototypeDeviceCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfPrototypeDevice.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfPrototypeDevice.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfPrototypeDevice.copyWith(...)` or call `instanceOfPrototypeDevice.copyWith.fieldName(value)` for a single field.
 class _$PrototypeDeviceCWProxyImpl implements _$PrototypeDeviceCWProxy {
   const _$PrototypeDeviceCWProxyImpl(this._value);
 
   final PrototypeDevice _value;
 
   @override
-  PrototypeDevice type(PrototypeDeviceType type) => this(type: type);
+  PrototypeDevice type(PrototypeDeviceType type) => call(type: type);
 
   @override
   PrototypeDevice rotation(PrototypeDeviceRotation rotation) =>
-      this(rotation: rotation);
+      call(rotation: rotation);
 
   @override
-  PrototypeDevice size(Size? size) => this(size: size);
+  PrototypeDevice size(Size? size) => call(size: size);
 
   @override
   PrototypeDevice presetIdentifier(String? presetIdentifier) =>
-      this(presetIdentifier: presetIdentifier);
+      call(presetIdentifier: presetIdentifier);
 
   @override
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `PrototypeDevice(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PrototypeDevice(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// PrototypeDevice(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   PrototypeDevice call({
     Object? type = const $CopyWithPlaceholder(),
     Object? rotation = const $CopyWithPlaceholder(),
@@ -64,11 +67,11 @@ class _$PrototypeDeviceCWProxyImpl implements _$PrototypeDeviceCWProxy {
     Object? presetIdentifier = const $CopyWithPlaceholder(),
   }) {
     return PrototypeDevice(
-      type: type == const $CopyWithPlaceholder()
+      type: type == const $CopyWithPlaceholder() || type == null
           ? _value.type
           // ignore: cast_nullable_to_non_nullable
           : type as PrototypeDeviceType,
-      rotation: rotation == const $CopyWithPlaceholder()
+      rotation: rotation == const $CopyWithPlaceholder() || rotation == null
           ? _value.rotation
           // ignore: cast_nullable_to_non_nullable
           : rotation as PrototypeDeviceRotation,
@@ -85,7 +88,8 @@ class _$PrototypeDeviceCWProxyImpl implements _$PrototypeDeviceCWProxy {
 }
 
 extension $PrototypeDeviceCopyWith on PrototypeDevice {
-  /// Returns a callable class that can be used as follows: `instanceOfPrototypeDevice.copyWith(...)` or like so:`instanceOfPrototypeDevice.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfPrototypeDevice.copyWith(...)` or `instanceOfPrototypeDevice.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$PrototypeDeviceCWProxy get copyWith => _$PrototypeDeviceCWProxyImpl(this);
 }

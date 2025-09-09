@@ -17,12 +17,13 @@ abstract class _$StyleCWProxy {
 
   Style type(StyleType? type);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Style(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Style(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// Style(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   Style call({
     String? nodeId,
     String? key,
@@ -32,35 +33,37 @@ abstract class _$StyleCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfStyle.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfStyle.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfStyle.copyWith(...)` or call `instanceOfStyle.copyWith.fieldName(value)` for a single field.
 class _$StyleCWProxyImpl implements _$StyleCWProxy {
   const _$StyleCWProxyImpl(this._value);
 
   final Style _value;
 
   @override
-  Style nodeId(String? nodeId) => this(nodeId: nodeId);
+  Style nodeId(String? nodeId) => call(nodeId: nodeId);
 
   @override
-  Style key(String? key) => this(key: key);
+  Style key(String? key) => call(key: key);
 
   @override
-  Style name(String? name) => this(name: name);
+  Style name(String? name) => call(name: name);
 
   @override
-  Style description(String? description) => this(description: description);
+  Style description(String? description) => call(description: description);
 
   @override
-  Style type(StyleType? type) => this(type: type);
+  Style type(StyleType? type) => call(type: type);
 
   @override
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Style(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Style(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// Style(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   Style call({
     Object? nodeId = const $CopyWithPlaceholder(),
     Object? key = const $CopyWithPlaceholder(),
@@ -94,7 +97,8 @@ class _$StyleCWProxyImpl implements _$StyleCWProxy {
 }
 
 extension $StyleCopyWith on Style {
-  /// Returns a callable class that can be used as follows: `instanceOfStyle.copyWith(...)` or like so:`instanceOfStyle.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfStyle.copyWith(...)` or `instanceOfStyle.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$StyleCWProxy get copyWith => _$StyleCWProxyImpl(this);
 }

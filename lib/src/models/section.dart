@@ -1,4 +1,3 @@
-import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:figma/figma.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -6,7 +5,6 @@ part 'section.g.dart';
 
 /// Represents a section in the Figma document.
 @JsonSerializable()
-@CopyWith()
 class Section extends Node {
   /// Whether the contents of the section are visible.
   @JsonKey(defaultValue: false)

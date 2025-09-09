@@ -11,49 +11,53 @@ abstract class _$OverridesCWProxy {
 
   Overrides overriddenFields(List<String> overriddenFields);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Overrides(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Overrides(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// Overrides(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   Overrides call({
     String id,
     List<String> overriddenFields,
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfOverrides.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfOverrides.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfOverrides.copyWith(...)` or call `instanceOfOverrides.copyWith.fieldName(value)` for a single field.
 class _$OverridesCWProxyImpl implements _$OverridesCWProxy {
   const _$OverridesCWProxyImpl(this._value);
 
   final Overrides _value;
 
   @override
-  Overrides id(String id) => this(id: id);
+  Overrides id(String id) => call(id: id);
 
   @override
   Overrides overriddenFields(List<String> overriddenFields) =>
-      this(overriddenFields: overriddenFields);
+      call(overriddenFields: overriddenFields);
 
   @override
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Overrides(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Overrides(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// Overrides(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   Overrides call({
     Object? id = const $CopyWithPlaceholder(),
     Object? overriddenFields = const $CopyWithPlaceholder(),
   }) {
     return Overrides(
-      id: id == const $CopyWithPlaceholder()
+      id: id == const $CopyWithPlaceholder() || id == null
           ? _value.id
           // ignore: cast_nullable_to_non_nullable
           : id as String,
-      overriddenFields: overriddenFields == const $CopyWithPlaceholder()
+      overriddenFields: overriddenFields == const $CopyWithPlaceholder() ||
+              overriddenFields == null
           ? _value.overriddenFields
           // ignore: cast_nullable_to_non_nullable
           : overriddenFields as List<String>,
@@ -62,7 +66,8 @@ class _$OverridesCWProxyImpl implements _$OverridesCWProxy {
 }
 
 extension $OverridesCopyWith on Overrides {
-  /// Returns a callable class that can be used as follows: `instanceOfOverrides.copyWith(...)` or like so:`instanceOfOverrides.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfOverrides.copyWith(...)` or `instanceOfOverrides.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$OverridesCWProxy get copyWith => _$OverridesCWProxyImpl(this);
 }

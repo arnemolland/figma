@@ -11,38 +11,41 @@ abstract class _$ColorStopCWProxy {
 
   ColorStop color(Color? color);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ColorStop(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ColorStop(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// ColorStop(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   ColorStop call({
     double? position,
     Color? color,
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfColorStop.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfColorStop.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfColorStop.copyWith(...)` or call `instanceOfColorStop.copyWith.fieldName(value)` for a single field.
 class _$ColorStopCWProxyImpl implements _$ColorStopCWProxy {
   const _$ColorStopCWProxyImpl(this._value);
 
   final ColorStop _value;
 
   @override
-  ColorStop position(double? position) => this(position: position);
+  ColorStop position(double? position) => call(position: position);
 
   @override
-  ColorStop color(Color? color) => this(color: color);
+  ColorStop color(Color? color) => call(color: color);
 
   @override
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ColorStop(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ColorStop(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// ColorStop(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   ColorStop call({
     Object? position = const $CopyWithPlaceholder(),
     Object? color = const $CopyWithPlaceholder(),
@@ -61,7 +64,8 @@ class _$ColorStopCWProxyImpl implements _$ColorStopCWProxy {
 }
 
 extension $ColorStopCopyWith on ColorStop {
-  /// Returns a callable class that can be used as follows: `instanceOfColorStop.copyWith(...)` or like so:`instanceOfColorStop.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfColorStop.copyWith(...)` or `instanceOfColorStop.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$ColorStopCWProxy get copyWith => _$ColorStopCWProxyImpl(this);
 }

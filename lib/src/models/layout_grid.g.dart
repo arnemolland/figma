@@ -23,12 +23,13 @@ abstract class _$LayoutGridCWProxy {
 
   LayoutGrid count(int? count);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `LayoutGrid(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `LayoutGrid(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// LayoutGrid(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   LayoutGrid call({
     LayoutPattern? pattern,
     double? sectionSize,
@@ -41,44 +42,46 @@ abstract class _$LayoutGridCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfLayoutGrid.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfLayoutGrid.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfLayoutGrid.copyWith(...)` or call `instanceOfLayoutGrid.copyWith.fieldName(value)` for a single field.
 class _$LayoutGridCWProxyImpl implements _$LayoutGridCWProxy {
   const _$LayoutGridCWProxyImpl(this._value);
 
   final LayoutGrid _value;
 
   @override
-  LayoutGrid pattern(LayoutPattern? pattern) => this(pattern: pattern);
+  LayoutGrid pattern(LayoutPattern? pattern) => call(pattern: pattern);
 
   @override
-  LayoutGrid sectionSize(double? sectionSize) => this(sectionSize: sectionSize);
+  LayoutGrid sectionSize(double? sectionSize) => call(sectionSize: sectionSize);
 
   @override
-  LayoutGrid visible(bool? visible) => this(visible: visible);
+  LayoutGrid visible(bool? visible) => call(visible: visible);
 
   @override
-  LayoutGrid color(Color? color) => this(color: color);
+  LayoutGrid color(Color? color) => call(color: color);
 
   @override
-  LayoutGrid alignment(LayoutAlign? alignment) => this(alignment: alignment);
+  LayoutGrid alignment(LayoutAlign? alignment) => call(alignment: alignment);
 
   @override
-  LayoutGrid gutterSize(double? gutterSize) => this(gutterSize: gutterSize);
+  LayoutGrid gutterSize(double? gutterSize) => call(gutterSize: gutterSize);
 
   @override
-  LayoutGrid offset(double? offset) => this(offset: offset);
+  LayoutGrid offset(double? offset) => call(offset: offset);
 
   @override
-  LayoutGrid count(int? count) => this(count: count);
+  LayoutGrid count(int? count) => call(count: count);
 
   @override
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `LayoutGrid(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `LayoutGrid(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// LayoutGrid(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   LayoutGrid call({
     Object? pattern = const $CopyWithPlaceholder(),
     Object? sectionSize = const $CopyWithPlaceholder(),
@@ -127,7 +130,8 @@ class _$LayoutGridCWProxyImpl implements _$LayoutGridCWProxy {
 }
 
 extension $LayoutGridCopyWith on LayoutGrid {
-  /// Returns a callable class that can be used as follows: `instanceOfLayoutGrid.copyWith(...)` or like so:`instanceOfLayoutGrid.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfLayoutGrid.copyWith(...)` or `instanceOfLayoutGrid.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$LayoutGridCWProxy get copyWith => _$LayoutGridCWProxyImpl(this);
 }

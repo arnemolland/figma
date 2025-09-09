@@ -1,11 +1,9 @@
-import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:figma/src/models.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'line.g.dart';
 
 @JsonSerializable()
-@CopyWith()
 class Line extends Vector {
   const Line({
     required super.id,

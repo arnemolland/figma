@@ -15,12 +15,13 @@ abstract class _$ProjectFileCWProxy {
 
   ProjectFile lastModified(DateTime? lastModified);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ProjectFile(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ProjectFile(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// ProjectFile(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   ProjectFile call({
     String? key,
     String? name,
@@ -29,34 +30,36 @@ abstract class _$ProjectFileCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfProjectFile.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfProjectFile.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfProjectFile.copyWith(...)` or call `instanceOfProjectFile.copyWith.fieldName(value)` for a single field.
 class _$ProjectFileCWProxyImpl implements _$ProjectFileCWProxy {
   const _$ProjectFileCWProxyImpl(this._value);
 
   final ProjectFile _value;
 
   @override
-  ProjectFile key(String? key) => this(key: key);
+  ProjectFile key(String? key) => call(key: key);
 
   @override
-  ProjectFile name(String? name) => this(name: name);
+  ProjectFile name(String? name) => call(name: name);
 
   @override
   ProjectFile thumbnailUrl(String? thumbnailUrl) =>
-      this(thumbnailUrl: thumbnailUrl);
+      call(thumbnailUrl: thumbnailUrl);
 
   @override
   ProjectFile lastModified(DateTime? lastModified) =>
-      this(lastModified: lastModified);
+      call(lastModified: lastModified);
 
   @override
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ProjectFile(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ProjectFile(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// ProjectFile(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   ProjectFile call({
     Object? key = const $CopyWithPlaceholder(),
     Object? name = const $CopyWithPlaceholder(),
@@ -85,7 +88,8 @@ class _$ProjectFileCWProxyImpl implements _$ProjectFileCWProxy {
 }
 
 extension $ProjectFileCopyWith on ProjectFile {
-  /// Returns a callable class that can be used as follows: `instanceOfProjectFile.copyWith(...)` or like so:`instanceOfProjectFile.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfProjectFile.copyWith(...)` or `instanceOfProjectFile.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$ProjectFileCWProxy get copyWith => _$ProjectFileCWProxyImpl(this);
 }

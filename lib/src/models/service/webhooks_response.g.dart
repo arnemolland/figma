@@ -11,19 +11,21 @@ abstract class _$WebhooksResponseCWProxy {
 
   WebhooksResponse pagination(Pagination? pagination);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `WebhooksResponse(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `WebhooksResponse(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// WebhooksResponse(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   WebhooksResponse call({
     List<Webhook>? webhooks,
     Pagination? pagination,
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfWebhooksResponse.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfWebhooksResponse.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfWebhooksResponse.copyWith(...)` or call `instanceOfWebhooksResponse.copyWith.fieldName(value)` for a single field.
 class _$WebhooksResponseCWProxyImpl implements _$WebhooksResponseCWProxy {
   const _$WebhooksResponseCWProxyImpl(this._value);
 
@@ -31,20 +33,21 @@ class _$WebhooksResponseCWProxyImpl implements _$WebhooksResponseCWProxy {
 
   @override
   WebhooksResponse webhooks(List<Webhook>? webhooks) =>
-      this(webhooks: webhooks);
+      call(webhooks: webhooks);
 
   @override
   WebhooksResponse pagination(Pagination? pagination) =>
-      this(pagination: pagination);
+      call(pagination: pagination);
 
   @override
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `WebhooksResponse(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `WebhooksResponse(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// WebhooksResponse(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   WebhooksResponse call({
     Object? webhooks = const $CopyWithPlaceholder(),
     Object? pagination = const $CopyWithPlaceholder(),
@@ -63,7 +66,8 @@ class _$WebhooksResponseCWProxyImpl implements _$WebhooksResponseCWProxy {
 }
 
 extension $WebhooksResponseCopyWith on WebhooksResponse {
-  /// Returns a callable class that can be used as follows: `instanceOfWebhooksResponse.copyWith(...)` or like so:`instanceOfWebhooksResponse.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfWebhooksResponse.copyWith(...)` or `instanceOfWebhooksResponse.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$WebhooksResponseCWProxy get copyWith => _$WebhooksResponseCWProxyImpl(this);
 }

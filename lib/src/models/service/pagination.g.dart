@@ -11,38 +11,41 @@ abstract class _$PaginationCWProxy {
 
   Pagination next(String? next);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Pagination(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Pagination(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// Pagination(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   Pagination call({
     String? previous,
     String? next,
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfPagination.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfPagination.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfPagination.copyWith(...)` or call `instanceOfPagination.copyWith.fieldName(value)` for a single field.
 class _$PaginationCWProxyImpl implements _$PaginationCWProxy {
   const _$PaginationCWProxyImpl(this._value);
 
   final Pagination _value;
 
   @override
-  Pagination previous(String? previous) => this(previous: previous);
+  Pagination previous(String? previous) => call(previous: previous);
 
   @override
-  Pagination next(String? next) => this(next: next);
+  Pagination next(String? next) => call(next: next);
 
   @override
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Pagination(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Pagination(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// Pagination(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   Pagination call({
     Object? previous = const $CopyWithPlaceholder(),
     Object? next = const $CopyWithPlaceholder(),
@@ -61,7 +64,8 @@ class _$PaginationCWProxyImpl implements _$PaginationCWProxy {
 }
 
 extension $PaginationCopyWith on Pagination {
-  /// Returns a callable class that can be used as follows: `instanceOfPagination.copyWith(...)` or like so:`instanceOfPagination.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfPagination.copyWith(...)` or `instanceOfPagination.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$PaginationCWProxy get copyWith => _$PaginationCWProxyImpl(this);
 }

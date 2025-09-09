@@ -11,48 +11,51 @@ abstract class _$SizeCWProxy {
 
   Size height(double height);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Size(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Size(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// Size(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   Size call({
     double width,
     double height,
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfSize.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfSize.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfSize.copyWith(...)` or call `instanceOfSize.copyWith.fieldName(value)` for a single field.
 class _$SizeCWProxyImpl implements _$SizeCWProxy {
   const _$SizeCWProxyImpl(this._value);
 
   final Size _value;
 
   @override
-  Size width(double width) => this(width: width);
+  Size width(double width) => call(width: width);
 
   @override
-  Size height(double height) => this(height: height);
+  Size height(double height) => call(height: height);
 
   @override
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Size(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Size(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// Size(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   Size call({
     Object? width = const $CopyWithPlaceholder(),
     Object? height = const $CopyWithPlaceholder(),
   }) {
     return Size(
-      width: width == const $CopyWithPlaceholder()
+      width: width == const $CopyWithPlaceholder() || width == null
           ? _value.width
           // ignore: cast_nullable_to_non_nullable
           : width as double,
-      height: height == const $CopyWithPlaceholder()
+      height: height == const $CopyWithPlaceholder() || height == null
           ? _value.height
           // ignore: cast_nullable_to_non_nullable
           : height as double,
@@ -61,7 +64,8 @@ class _$SizeCWProxyImpl implements _$SizeCWProxy {
 }
 
 extension $SizeCopyWith on Size {
-  /// Returns a callable class that can be used as follows: `instanceOfSize.copyWith(...)` or like so:`instanceOfSize.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfSize.copyWith(...)` or `instanceOfSize.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$SizeCWProxy get copyWith => _$SizeCWProxyImpl(this);
 }

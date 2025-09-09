@@ -1,4 +1,3 @@
-import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:figma/src/models.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -8,7 +7,6 @@ part 'vector.g.dart';
 /// is either strokes or fills. Shapes like [Ellipse], [Rectangle] and [Line]
 /// are vectors, as well as [Text], among others.
 @JsonSerializable()
-@CopyWith()
 class Vector extends Node {
   /// If true, layer is locked and cannot be edited.
   @JsonKey(defaultValue: false)

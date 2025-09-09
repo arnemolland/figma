@@ -11,38 +11,41 @@ abstract class _$ProjectCWProxy {
 
   Project name(String? name);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Project(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Project(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// Project(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   Project call({
     String? id,
     String? name,
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfProject.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfProject.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfProject.copyWith(...)` or call `instanceOfProject.copyWith.fieldName(value)` for a single field.
 class _$ProjectCWProxyImpl implements _$ProjectCWProxy {
   const _$ProjectCWProxyImpl(this._value);
 
   final Project _value;
 
   @override
-  Project id(String? id) => this(id: id);
+  Project id(String? id) => call(id: id);
 
   @override
-  Project name(String? name) => this(name: name);
+  Project name(String? name) => call(name: name);
 
   @override
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Project(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Project(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// Project(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   Project call({
     Object? id = const $CopyWithPlaceholder(),
     Object? name = const $CopyWithPlaceholder(),
@@ -61,7 +64,8 @@ class _$ProjectCWProxyImpl implements _$ProjectCWProxy {
 }
 
 extension $ProjectCopyWith on Project {
-  /// Returns a callable class that can be used as follows: `instanceOfProject.copyWith(...)` or like so:`instanceOfProject.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfProject.copyWith(...)` or `instanceOfProject.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$ProjectCWProxy get copyWith => _$ProjectCWProxyImpl(this);
 }

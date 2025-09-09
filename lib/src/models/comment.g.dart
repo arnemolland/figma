@@ -23,12 +23,13 @@ abstract class _$CommentCWProxy {
 
   Comment orderId(String? orderId);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Comment(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Comment(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// Comment(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   Comment call({
     String id,
     dynamic clientMeta,
@@ -41,44 +42,46 @@ abstract class _$CommentCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfComment.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfComment.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfComment.copyWith(...)` or call `instanceOfComment.copyWith.fieldName(value)` for a single field.
 class _$CommentCWProxyImpl implements _$CommentCWProxy {
   const _$CommentCWProxyImpl(this._value);
 
   final Comment _value;
 
   @override
-  Comment id(String id) => this(id: id);
+  Comment id(String id) => call(id: id);
 
   @override
-  Comment clientMeta(dynamic clientMeta) => this(clientMeta: clientMeta);
+  Comment clientMeta(dynamic clientMeta) => call(clientMeta: clientMeta);
 
   @override
-  Comment fileKey(String fileKey) => this(fileKey: fileKey);
+  Comment fileKey(String fileKey) => call(fileKey: fileKey);
 
   @override
-  Comment parentId(String? parentId) => this(parentId: parentId);
+  Comment parentId(String? parentId) => call(parentId: parentId);
 
   @override
-  Comment user(User user) => this(user: user);
+  Comment user(User user) => call(user: user);
 
   @override
-  Comment createdAt(DateTime createdAt) => this(createdAt: createdAt);
+  Comment createdAt(DateTime createdAt) => call(createdAt: createdAt);
 
   @override
-  Comment resolvedAt(DateTime? resolvedAt) => this(resolvedAt: resolvedAt);
+  Comment resolvedAt(DateTime? resolvedAt) => call(resolvedAt: resolvedAt);
 
   @override
-  Comment orderId(String? orderId) => this(orderId: orderId);
+  Comment orderId(String? orderId) => call(orderId: orderId);
 
   @override
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Comment(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Comment(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// Comment(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   Comment call({
     Object? id = const $CopyWithPlaceholder(),
     Object? clientMeta = const $CopyWithPlaceholder(),
@@ -90,7 +93,7 @@ class _$CommentCWProxyImpl implements _$CommentCWProxy {
     Object? orderId = const $CopyWithPlaceholder(),
   }) {
     return Comment(
-      id: id == const $CopyWithPlaceholder()
+      id: id == const $CopyWithPlaceholder() || id == null
           ? _value.id
           // ignore: cast_nullable_to_non_nullable
           : id as String,
@@ -98,7 +101,7 @@ class _$CommentCWProxyImpl implements _$CommentCWProxy {
           ? _value.clientMeta
           // ignore: cast_nullable_to_non_nullable
           : clientMeta as dynamic,
-      fileKey: fileKey == const $CopyWithPlaceholder()
+      fileKey: fileKey == const $CopyWithPlaceholder() || fileKey == null
           ? _value.fileKey
           // ignore: cast_nullable_to_non_nullable
           : fileKey as String,
@@ -106,11 +109,11 @@ class _$CommentCWProxyImpl implements _$CommentCWProxy {
           ? _value.parentId
           // ignore: cast_nullable_to_non_nullable
           : parentId as String?,
-      user: user == const $CopyWithPlaceholder()
+      user: user == const $CopyWithPlaceholder() || user == null
           ? _value.user
           // ignore: cast_nullable_to_non_nullable
           : user as User,
-      createdAt: createdAt == const $CopyWithPlaceholder()
+      createdAt: createdAt == const $CopyWithPlaceholder() || createdAt == null
           ? _value.createdAt
           // ignore: cast_nullable_to_non_nullable
           : createdAt as DateTime,
@@ -127,7 +130,8 @@ class _$CommentCWProxyImpl implements _$CommentCWProxy {
 }
 
 extension $CommentCopyWith on Comment {
-  /// Returns a callable class that can be used as follows: `instanceOfComment.copyWith(...)` or like so:`instanceOfComment.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfComment.copyWith(...)` or `instanceOfComment.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$CommentCWProxy get copyWith => _$CommentCWProxyImpl(this);
 }

@@ -17,12 +17,13 @@ abstract class _$FrameInfoCWProxy {
 
   FrameInfo pageName(String? pageName);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `FrameInfo(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `FrameInfo(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// FrameInfo(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   FrameInfo call({
     String? nodeId,
     String? name,
@@ -32,36 +33,38 @@ abstract class _$FrameInfoCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfFrameInfo.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfFrameInfo.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfFrameInfo.copyWith(...)` or call `instanceOfFrameInfo.copyWith.fieldName(value)` for a single field.
 class _$FrameInfoCWProxyImpl implements _$FrameInfoCWProxy {
   const _$FrameInfoCWProxyImpl(this._value);
 
   final FrameInfo _value;
 
   @override
-  FrameInfo nodeId(String? nodeId) => this(nodeId: nodeId);
+  FrameInfo nodeId(String? nodeId) => call(nodeId: nodeId);
 
   @override
-  FrameInfo name(String? name) => this(name: name);
+  FrameInfo name(String? name) => call(name: name);
 
   @override
   FrameInfo backgroundColor(String? backgroundColor) =>
-      this(backgroundColor: backgroundColor);
+      call(backgroundColor: backgroundColor);
 
   @override
-  FrameInfo pageId(String? pageId) => this(pageId: pageId);
+  FrameInfo pageId(String? pageId) => call(pageId: pageId);
 
   @override
-  FrameInfo pageName(String? pageName) => this(pageName: pageName);
+  FrameInfo pageName(String? pageName) => call(pageName: pageName);
 
   @override
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `FrameInfo(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `FrameInfo(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// FrameInfo(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   FrameInfo call({
     Object? nodeId = const $CopyWithPlaceholder(),
     Object? name = const $CopyWithPlaceholder(),
@@ -95,7 +98,8 @@ class _$FrameInfoCWProxyImpl implements _$FrameInfoCWProxy {
 }
 
 extension $FrameInfoCopyWith on FrameInfo {
-  /// Returns a callable class that can be used as follows: `instanceOfFrameInfo.copyWith(...)` or like so:`instanceOfFrameInfo.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfFrameInfo.copyWith(...)` or `instanceOfFrameInfo.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$FrameInfoCWProxy get copyWith => _$FrameInfoCWProxyImpl(this);
 }

@@ -19,12 +19,13 @@ abstract class _$NodesResponseCWProxy {
 
   NodesResponse nodes(Map<String, FileResponse>? nodes);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `NodesResponse(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `NodesResponse(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// NodesResponse(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   NodesResponse call({
     String? name,
     String? role,
@@ -35,40 +36,42 @@ abstract class _$NodesResponseCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfNodesResponse.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfNodesResponse.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfNodesResponse.copyWith(...)` or call `instanceOfNodesResponse.copyWith.fieldName(value)` for a single field.
 class _$NodesResponseCWProxyImpl implements _$NodesResponseCWProxy {
   const _$NodesResponseCWProxyImpl(this._value);
 
   final NodesResponse _value;
 
   @override
-  NodesResponse name(String? name) => this(name: name);
+  NodesResponse name(String? name) => call(name: name);
 
   @override
-  NodesResponse role(String? role) => this(role: role);
+  NodesResponse role(String? role) => call(role: role);
 
   @override
   NodesResponse lastModified(DateTime? lastModified) =>
-      this(lastModified: lastModified);
+      call(lastModified: lastModified);
 
   @override
   NodesResponse thumbnailUrl(String? thumbnailUrl) =>
-      this(thumbnailUrl: thumbnailUrl);
+      call(thumbnailUrl: thumbnailUrl);
 
   @override
-  NodesResponse err(String? err) => this(err: err);
+  NodesResponse err(String? err) => call(err: err);
 
   @override
-  NodesResponse nodes(Map<String, FileResponse>? nodes) => this(nodes: nodes);
+  NodesResponse nodes(Map<String, FileResponse>? nodes) => call(nodes: nodes);
 
   @override
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `NodesResponse(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `NodesResponse(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// NodesResponse(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   NodesResponse call({
     Object? name = const $CopyWithPlaceholder(),
     Object? role = const $CopyWithPlaceholder(),
@@ -107,7 +110,8 @@ class _$NodesResponseCWProxyImpl implements _$NodesResponseCWProxy {
 }
 
 extension $NodesResponseCopyWith on NodesResponse {
-  /// Returns a callable class that can be used as follows: `instanceOfNodesResponse.copyWith(...)` or like so:`instanceOfNodesResponse.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfNodesResponse.copyWith(...)` or `instanceOfNodesResponse.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$NodesResponseCWProxy get copyWith => _$NodesResponseCWProxyImpl(this);
 }

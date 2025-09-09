@@ -15,12 +15,13 @@ abstract class _$ColorCWProxy {
 
   Color a(double? a);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Color(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Color(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// Color(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   Color call({
     double? r,
     double? g,
@@ -29,32 +30,34 @@ abstract class _$ColorCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfColor.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfColor.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfColor.copyWith(...)` or call `instanceOfColor.copyWith.fieldName(value)` for a single field.
 class _$ColorCWProxyImpl implements _$ColorCWProxy {
   const _$ColorCWProxyImpl(this._value);
 
   final Color _value;
 
   @override
-  Color r(double? r) => this(r: r);
+  Color r(double? r) => call(r: r);
 
   @override
-  Color g(double? g) => this(g: g);
+  Color g(double? g) => call(g: g);
 
   @override
-  Color b(double? b) => this(b: b);
+  Color b(double? b) => call(b: b);
 
   @override
-  Color a(double? a) => this(a: a);
+  Color a(double? a) => call(a: a);
 
   @override
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Color(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Color(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// Color(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   Color call({
     Object? r = const $CopyWithPlaceholder(),
     Object? g = const $CopyWithPlaceholder(),
@@ -83,7 +86,8 @@ class _$ColorCWProxyImpl implements _$ColorCWProxy {
 }
 
 extension $ColorCopyWith on Color {
-  /// Returns a callable class that can be used as follows: `instanceOfColor.copyWith(...)` or like so:`instanceOfColor.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfColor.copyWith(...)` or `instanceOfColor.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$ColorCWProxy get copyWith => _$ColorCWProxyImpl(this);
 }

@@ -29,12 +29,13 @@ abstract class _$FileMetaCWProxy {
 
   FileMeta version(String? version);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `FileMeta(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `FileMeta(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// FileMeta(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   FileMeta call({
     String? name,
     String? folderName,
@@ -50,56 +51,58 @@ abstract class _$FileMetaCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfFileMeta.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfFileMeta.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfFileMeta.copyWith(...)` or call `instanceOfFileMeta.copyWith.fieldName(value)` for a single field.
 class _$FileMetaCWProxyImpl implements _$FileMetaCWProxy {
   const _$FileMetaCWProxyImpl(this._value);
 
   final FileMeta _value;
 
   @override
-  FileMeta name(String? name) => this(name: name);
+  FileMeta name(String? name) => call(name: name);
 
   @override
-  FileMeta folderName(String? folderName) => this(folderName: folderName);
+  FileMeta folderName(String? folderName) => call(folderName: folderName);
 
   @override
   FileMeta lastTouchedAt(DateTime? lastTouchedAt) =>
-      this(lastTouchedAt: lastTouchedAt);
+      call(lastTouchedAt: lastTouchedAt);
 
   @override
-  FileMeta creator(User? creator) => this(creator: creator);
+  FileMeta creator(User? creator) => call(creator: creator);
 
   @override
   FileMeta lastTouchedBy(User? lastTouchedBy) =>
-      this(lastTouchedBy: lastTouchedBy);
+      call(lastTouchedBy: lastTouchedBy);
 
   @override
   FileMeta thumbnailUrl(String? thumbnailUrl) =>
-      this(thumbnailUrl: thumbnailUrl);
+      call(thumbnailUrl: thumbnailUrl);
 
   @override
-  FileMeta editorType(EditorType? editorType) => this(editorType: editorType);
+  FileMeta editorType(EditorType? editorType) => call(editorType: editorType);
 
   @override
-  FileMeta role(Role? role) => this(role: role);
+  FileMeta role(Role? role) => call(role: role);
 
   @override
-  FileMeta linkAccess(LinkAccess? linkAccess) => this(linkAccess: linkAccess);
+  FileMeta linkAccess(LinkAccess? linkAccess) => call(linkAccess: linkAccess);
 
   @override
-  FileMeta url(String? url) => this(url: url);
+  FileMeta url(String? url) => call(url: url);
 
   @override
-  FileMeta version(String? version) => this(version: version);
+  FileMeta version(String? version) => call(version: version);
 
   @override
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `FileMeta(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `FileMeta(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// FileMeta(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   FileMeta call({
     Object? name = const $CopyWithPlaceholder(),
     Object? folderName = const $CopyWithPlaceholder(),
@@ -163,7 +166,8 @@ class _$FileMetaCWProxyImpl implements _$FileMetaCWProxy {
 }
 
 extension $FileMetaCopyWith on FileMeta {
-  /// Returns a callable class that can be used as follows: `instanceOfFileMeta.copyWith(...)` or like so:`instanceOfFileMeta.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfFileMeta.copyWith(...)` or `instanceOfFileMeta.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$FileMetaCWProxy get copyWith => _$FileMetaCWProxyImpl(this);
 }

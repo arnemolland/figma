@@ -1,4 +1,3 @@
-import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:figma/src/models.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -7,7 +6,6 @@ part 'rectangle.g.dart';
 /// A rectangle is a rectangular-shaped vector that has a width and height and
 /// may have rounded corners.
 @JsonSerializable()
-@CopyWith()
 class Rectangle extends Vector {
   /// Radius of each corner of the rectangle if
   /// a single radius is set for all corners.

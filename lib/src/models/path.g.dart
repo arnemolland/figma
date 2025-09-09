@@ -11,57 +11,62 @@ abstract class _$PathCWProxy {
 
   Path windingRule(WindingRule windingRule);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Path(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Path(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// Path(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   Path call({
     String path,
     WindingRule windingRule,
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfPath.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfPath.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfPath.copyWith(...)` or call `instanceOfPath.copyWith.fieldName(value)` for a single field.
 class _$PathCWProxyImpl implements _$PathCWProxy {
   const _$PathCWProxyImpl(this._value);
 
   final Path _value;
 
   @override
-  Path path(String path) => this(path: path);
+  Path path(String path) => call(path: path);
 
   @override
-  Path windingRule(WindingRule windingRule) => this(windingRule: windingRule);
+  Path windingRule(WindingRule windingRule) => call(windingRule: windingRule);
 
   @override
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Path(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Path(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// Path(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   Path call({
     Object? path = const $CopyWithPlaceholder(),
     Object? windingRule = const $CopyWithPlaceholder(),
   }) {
     return Path(
-      path: path == const $CopyWithPlaceholder()
+      path: path == const $CopyWithPlaceholder() || path == null
           ? _value.path
           // ignore: cast_nullable_to_non_nullable
           : path as String,
-      windingRule: windingRule == const $CopyWithPlaceholder()
-          ? _value.windingRule
-          // ignore: cast_nullable_to_non_nullable
-          : windingRule as WindingRule,
+      windingRule:
+          windingRule == const $CopyWithPlaceholder() || windingRule == null
+              ? _value.windingRule
+              // ignore: cast_nullable_to_non_nullable
+              : windingRule as WindingRule,
     );
   }
 }
 
 extension $PathCopyWith on Path {
-  /// Returns a callable class that can be used as follows: `instanceOfPath.copyWith(...)` or like so:`instanceOfPath.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfPath.copyWith(...)` or `instanceOfPath.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$PathCWProxy get copyWith => _$PathCWProxyImpl(this);
 }

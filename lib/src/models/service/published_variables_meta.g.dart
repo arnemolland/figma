@@ -12,19 +12,21 @@ abstract class _$PublishedVariablesMetaCWProxy {
   PublishedVariablesMeta variableCollections(
       Map<String, PublishedVariableCollection> variableCollections);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `PublishedVariablesMeta(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PublishedVariablesMeta(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// PublishedVariablesMeta(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   PublishedVariablesMeta call({
     Map<String, PublishedVariable> variables,
     Map<String, PublishedVariableCollection> variableCollections,
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfPublishedVariablesMeta.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfPublishedVariablesMeta.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfPublishedVariablesMeta.copyWith(...)` or call `instanceOfPublishedVariablesMeta.copyWith.fieldName(value)` for a single field.
 class _$PublishedVariablesMetaCWProxyImpl
     implements _$PublishedVariablesMetaCWProxy {
   const _$PublishedVariablesMetaCWProxyImpl(this._value);
@@ -33,40 +35,44 @@ class _$PublishedVariablesMetaCWProxyImpl
 
   @override
   PublishedVariablesMeta variables(Map<String, PublishedVariable> variables) =>
-      this(variables: variables);
+      call(variables: variables);
 
   @override
   PublishedVariablesMeta variableCollections(
           Map<String, PublishedVariableCollection> variableCollections) =>
-      this(variableCollections: variableCollections);
+      call(variableCollections: variableCollections);
 
   @override
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `PublishedVariablesMeta(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PublishedVariablesMeta(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// PublishedVariablesMeta(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   PublishedVariablesMeta call({
     Object? variables = const $CopyWithPlaceholder(),
     Object? variableCollections = const $CopyWithPlaceholder(),
   }) {
     return PublishedVariablesMeta(
-      variables: variables == const $CopyWithPlaceholder()
+      variables: variables == const $CopyWithPlaceholder() || variables == null
           ? _value.variables
           // ignore: cast_nullable_to_non_nullable
           : variables as Map<String, PublishedVariable>,
-      variableCollections: variableCollections == const $CopyWithPlaceholder()
-          ? _value.variableCollections
-          // ignore: cast_nullable_to_non_nullable
-          : variableCollections as Map<String, PublishedVariableCollection>,
+      variableCollections:
+          variableCollections == const $CopyWithPlaceholder() ||
+                  variableCollections == null
+              ? _value.variableCollections
+              // ignore: cast_nullable_to_non_nullable
+              : variableCollections as Map<String, PublishedVariableCollection>,
     );
   }
 }
 
 extension $PublishedVariablesMetaCopyWith on PublishedVariablesMeta {
-  /// Returns a callable class that can be used as follows: `instanceOfPublishedVariablesMeta.copyWith(...)` or like so:`instanceOfPublishedVariablesMeta.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfPublishedVariablesMeta.copyWith(...)` or `instanceOfPublishedVariablesMeta.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$PublishedVariablesMetaCWProxy get copyWith =>
       _$PublishedVariablesMetaCWProxyImpl(this);

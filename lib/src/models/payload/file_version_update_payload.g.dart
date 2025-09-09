@@ -25,12 +25,13 @@ abstract class _$FileVersionUpdatePayloadCWProxy {
 
   FileVersionUpdatePayload versionId(String? versionId);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `FileVersionUpdatePayload(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `FileVersionUpdatePayload(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// FileVersionUpdatePayload(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   FileVersionUpdatePayload call({
     String? passcode,
     DateTime? timestamp,
@@ -44,7 +45,8 @@ abstract class _$FileVersionUpdatePayloadCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfFileVersionUpdatePayload.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfFileVersionUpdatePayload.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfFileVersionUpdatePayload.copyWith(...)` or call `instanceOfFileVersionUpdatePayload.copyWith.fieldName(value)` for a single field.
 class _$FileVersionUpdatePayloadCWProxyImpl
     implements _$FileVersionUpdatePayloadCWProxy {
   const _$FileVersionUpdatePayloadCWProxyImpl(this._value);
@@ -53,47 +55,48 @@ class _$FileVersionUpdatePayloadCWProxyImpl
 
   @override
   FileVersionUpdatePayload passcode(String? passcode) =>
-      this(passcode: passcode);
+      call(passcode: passcode);
 
   @override
   FileVersionUpdatePayload timestamp(DateTime? timestamp) =>
-      this(timestamp: timestamp);
+      call(timestamp: timestamp);
 
   @override
   FileVersionUpdatePayload webhookId(String? webhookId) =>
-      this(webhookId: webhookId);
+      call(webhookId: webhookId);
 
   @override
   FileVersionUpdatePayload createdAt(DateTime? createdAt) =>
-      this(createdAt: createdAt);
+      call(createdAt: createdAt);
 
   @override
   FileVersionUpdatePayload description(String? description) =>
-      this(description: description);
+      call(description: description);
 
   @override
-  FileVersionUpdatePayload fileKey(String? fileKey) => this(fileKey: fileKey);
+  FileVersionUpdatePayload fileKey(String? fileKey) => call(fileKey: fileKey);
 
   @override
   FileVersionUpdatePayload fileName(String? fileName) =>
-      this(fileName: fileName);
+      call(fileName: fileName);
 
   @override
   FileVersionUpdatePayload triggeredBy(User? triggeredBy) =>
-      this(triggeredBy: triggeredBy);
+      call(triggeredBy: triggeredBy);
 
   @override
   FileVersionUpdatePayload versionId(String? versionId) =>
-      this(versionId: versionId);
+      call(versionId: versionId);
 
   @override
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `FileVersionUpdatePayload(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `FileVersionUpdatePayload(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// FileVersionUpdatePayload(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   FileVersionUpdatePayload call({
     Object? passcode = const $CopyWithPlaceholder(),
     Object? timestamp = const $CopyWithPlaceholder(),
@@ -147,7 +150,8 @@ class _$FileVersionUpdatePayloadCWProxyImpl
 }
 
 extension $FileVersionUpdatePayloadCopyWith on FileVersionUpdatePayload {
-  /// Returns a callable class that can be used as follows: `instanceOfFileVersionUpdatePayload.copyWith(...)` or like so:`instanceOfFileVersionUpdatePayload.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfFileVersionUpdatePayload.copyWith(...)` or `instanceOfFileVersionUpdatePayload.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$FileVersionUpdatePayloadCWProxy get copyWith =>
       _$FileVersionUpdatePayloadCWProxyImpl(this);

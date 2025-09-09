@@ -17,12 +17,13 @@ abstract class _$PublishedVariableCollectionCWProxy {
 
   PublishedVariableCollection updatedAt(DateTime updatedAt);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `PublishedVariableCollection(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PublishedVariableCollection(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// PublishedVariableCollection(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   PublishedVariableCollection call({
     String id,
     String subscribedId,
@@ -32,7 +33,8 @@ abstract class _$PublishedVariableCollectionCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfPublishedVariableCollection.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfPublishedVariableCollection.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfPublishedVariableCollection.copyWith(...)` or call `instanceOfPublishedVariableCollection.copyWith.fieldName(value)` for a single field.
 class _$PublishedVariableCollectionCWProxyImpl
     implements _$PublishedVariableCollectionCWProxy {
   const _$PublishedVariableCollectionCWProxyImpl(this._value);
@@ -40,30 +42,31 @@ class _$PublishedVariableCollectionCWProxyImpl
   final PublishedVariableCollection _value;
 
   @override
-  PublishedVariableCollection id(String id) => this(id: id);
+  PublishedVariableCollection id(String id) => call(id: id);
 
   @override
   PublishedVariableCollection subscribedId(String subscribedId) =>
-      this(subscribedId: subscribedId);
+      call(subscribedId: subscribedId);
 
   @override
-  PublishedVariableCollection name(String name) => this(name: name);
+  PublishedVariableCollection name(String name) => call(name: name);
 
   @override
-  PublishedVariableCollection key(String key) => this(key: key);
+  PublishedVariableCollection key(String key) => call(key: key);
 
   @override
   PublishedVariableCollection updatedAt(DateTime updatedAt) =>
-      this(updatedAt: updatedAt);
+      call(updatedAt: updatedAt);
 
   @override
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `PublishedVariableCollection(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PublishedVariableCollection(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// PublishedVariableCollection(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   PublishedVariableCollection call({
     Object? id = const $CopyWithPlaceholder(),
     Object? subscribedId = const $CopyWithPlaceholder(),
@@ -72,23 +75,24 @@ class _$PublishedVariableCollectionCWProxyImpl
     Object? updatedAt = const $CopyWithPlaceholder(),
   }) {
     return PublishedVariableCollection(
-      id: id == const $CopyWithPlaceholder()
+      id: id == const $CopyWithPlaceholder() || id == null
           ? _value.id
           // ignore: cast_nullable_to_non_nullable
           : id as String,
-      subscribedId: subscribedId == const $CopyWithPlaceholder()
-          ? _value.subscribedId
-          // ignore: cast_nullable_to_non_nullable
-          : subscribedId as String,
-      name: name == const $CopyWithPlaceholder()
+      subscribedId:
+          subscribedId == const $CopyWithPlaceholder() || subscribedId == null
+              ? _value.subscribedId
+              // ignore: cast_nullable_to_non_nullable
+              : subscribedId as String,
+      name: name == const $CopyWithPlaceholder() || name == null
           ? _value.name
           // ignore: cast_nullable_to_non_nullable
           : name as String,
-      key: key == const $CopyWithPlaceholder()
+      key: key == const $CopyWithPlaceholder() || key == null
           ? _value.key
           // ignore: cast_nullable_to_non_nullable
           : key as String,
-      updatedAt: updatedAt == const $CopyWithPlaceholder()
+      updatedAt: updatedAt == const $CopyWithPlaceholder() || updatedAt == null
           ? _value.updatedAt
           // ignore: cast_nullable_to_non_nullable
           : updatedAt as DateTime,
@@ -97,7 +101,8 @@ class _$PublishedVariableCollectionCWProxyImpl
 }
 
 extension $PublishedVariableCollectionCopyWith on PublishedVariableCollection {
-  /// Returns a callable class that can be used as follows: `instanceOfPublishedVariableCollection.copyWith(...)` or like so:`instanceOfPublishedVariableCollection.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfPublishedVariableCollection.copyWith(...)` or `instanceOfPublishedVariableCollection.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$PublishedVariableCollectionCWProxy get copyWith =>
       _$PublishedVariableCollectionCWProxyImpl(this);

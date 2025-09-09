@@ -1,4 +1,3 @@
-import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:figma/src/converters/converters.dart';
 import 'package:figma/src/models.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -8,7 +7,6 @@ part 'component_node.g.dart';
 /// A component is a reusable piece of design that can be applied to different
 /// frames. Components can contain other components.
 @JsonSerializable()
-@CopyWith()
 class ComponentNode extends Frame {
   const ComponentNode({
     required super.id,

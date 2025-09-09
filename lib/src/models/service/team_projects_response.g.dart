@@ -11,19 +11,21 @@ abstract class _$TeamProjectsResponseCWProxy {
 
   TeamProjectsResponse projects(List<Project>? projects);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `TeamProjectsResponse(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `TeamProjectsResponse(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// TeamProjectsResponse(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   TeamProjectsResponse call({
     String? name,
     List<Project>? projects,
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfTeamProjectsResponse.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfTeamProjectsResponse.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfTeamProjectsResponse.copyWith(...)` or call `instanceOfTeamProjectsResponse.copyWith.fieldName(value)` for a single field.
 class _$TeamProjectsResponseCWProxyImpl
     implements _$TeamProjectsResponseCWProxy {
   const _$TeamProjectsResponseCWProxyImpl(this._value);
@@ -31,20 +33,21 @@ class _$TeamProjectsResponseCWProxyImpl
   final TeamProjectsResponse _value;
 
   @override
-  TeamProjectsResponse name(String? name) => this(name: name);
+  TeamProjectsResponse name(String? name) => call(name: name);
 
   @override
   TeamProjectsResponse projects(List<Project>? projects) =>
-      this(projects: projects);
+      call(projects: projects);
 
   @override
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `TeamProjectsResponse(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `TeamProjectsResponse(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// TeamProjectsResponse(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   TeamProjectsResponse call({
     Object? name = const $CopyWithPlaceholder(),
     Object? projects = const $CopyWithPlaceholder(),
@@ -63,7 +66,8 @@ class _$TeamProjectsResponseCWProxyImpl
 }
 
 extension $TeamProjectsResponseCopyWith on TeamProjectsResponse {
-  /// Returns a callable class that can be used as follows: `instanceOfTeamProjectsResponse.copyWith(...)` or like so:`instanceOfTeamProjectsResponse.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfTeamProjectsResponse.copyWith(...)` or `instanceOfTeamProjectsResponse.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$TeamProjectsResponseCWProxy get copyWith =>
       _$TeamProjectsResponseCWProxyImpl(this);

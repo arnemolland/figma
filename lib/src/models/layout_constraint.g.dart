@@ -11,19 +11,21 @@ abstract class _$LayoutConstraintCWProxy {
 
   LayoutConstraint horizontal(HorizontalConstraint? horizontal);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `LayoutConstraint(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `LayoutConstraint(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// LayoutConstraint(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   LayoutConstraint call({
     VerticalConstraint? vertical,
     HorizontalConstraint? horizontal,
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfLayoutConstraint.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfLayoutConstraint.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfLayoutConstraint.copyWith(...)` or call `instanceOfLayoutConstraint.copyWith.fieldName(value)` for a single field.
 class _$LayoutConstraintCWProxyImpl implements _$LayoutConstraintCWProxy {
   const _$LayoutConstraintCWProxyImpl(this._value);
 
@@ -31,20 +33,21 @@ class _$LayoutConstraintCWProxyImpl implements _$LayoutConstraintCWProxy {
 
   @override
   LayoutConstraint vertical(VerticalConstraint? vertical) =>
-      this(vertical: vertical);
+      call(vertical: vertical);
 
   @override
   LayoutConstraint horizontal(HorizontalConstraint? horizontal) =>
-      this(horizontal: horizontal);
+      call(horizontal: horizontal);
 
   @override
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `LayoutConstraint(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `LayoutConstraint(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// LayoutConstraint(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   LayoutConstraint call({
     Object? vertical = const $CopyWithPlaceholder(),
     Object? horizontal = const $CopyWithPlaceholder(),
@@ -63,7 +66,8 @@ class _$LayoutConstraintCWProxyImpl implements _$LayoutConstraintCWProxy {
 }
 
 extension $LayoutConstraintCopyWith on LayoutConstraint {
-  /// Returns a callable class that can be used as follows: `instanceOfLayoutConstraint.copyWith(...)` or like so:`instanceOfLayoutConstraint.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfLayoutConstraint.copyWith(...)` or `instanceOfLayoutConstraint.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$LayoutConstraintCWProxy get copyWith => _$LayoutConstraintCWProxyImpl(this);
 }

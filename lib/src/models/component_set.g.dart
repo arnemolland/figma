@@ -32,12 +32,13 @@ abstract class _$ComponentSetCWProxy {
   ComponentSet componentPropertyDefinitions(
       Map<String, ComponentPropertyDefinition> componentPropertyDefinitions);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ComponentSet(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ComponentSet(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// ComponentSet(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   ComponentSet call({
     String? key,
     String? fileKey,
@@ -54,63 +55,65 @@ abstract class _$ComponentSetCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfComponentSet.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfComponentSet.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfComponentSet.copyWith(...)` or call `instanceOfComponentSet.copyWith.fieldName(value)` for a single field.
 class _$ComponentSetCWProxyImpl implements _$ComponentSetCWProxy {
   const _$ComponentSetCWProxyImpl(this._value);
 
   final ComponentSet _value;
 
   @override
-  ComponentSet key(String? key) => this(key: key);
+  ComponentSet key(String? key) => call(key: key);
 
   @override
-  ComponentSet fileKey(String? fileKey) => this(fileKey: fileKey);
+  ComponentSet fileKey(String? fileKey) => call(fileKey: fileKey);
 
   @override
-  ComponentSet nodeId(String? nodeId) => this(nodeId: nodeId);
+  ComponentSet nodeId(String? nodeId) => call(nodeId: nodeId);
 
   @override
   ComponentSet thumbnailUrl(String? thumbnailUrl) =>
-      this(thumbnailUrl: thumbnailUrl);
+      call(thumbnailUrl: thumbnailUrl);
 
   @override
-  ComponentSet name(String? name) => this(name: name);
+  ComponentSet name(String? name) => call(name: name);
 
   @override
   ComponentSet description(String? description) =>
-      this(description: description);
+      call(description: description);
 
   @override
-  ComponentSet createdAt(DateTime? createdAt) => this(createdAt: createdAt);
+  ComponentSet createdAt(DateTime? createdAt) => call(createdAt: createdAt);
 
   @override
-  ComponentSet updatedAt(DateTime? updatedAt) => this(updatedAt: updatedAt);
+  ComponentSet updatedAt(DateTime? updatedAt) => call(updatedAt: updatedAt);
 
   @override
-  ComponentSet user(User? user) => this(user: user);
+  ComponentSet user(User? user) => call(user: user);
 
   @override
   ComponentSet containingFrame(FrameInfo? containingFrame) =>
-      this(containingFrame: containingFrame);
+      call(containingFrame: containingFrame);
 
   @override
   ComponentSet containingPage(dynamic containingPage) =>
-      this(containingPage: containingPage);
+      call(containingPage: containingPage);
 
   @override
   ComponentSet componentPropertyDefinitions(
           Map<String, ComponentPropertyDefinition>
               componentPropertyDefinitions) =>
-      this(componentPropertyDefinitions: componentPropertyDefinitions);
+      call(componentPropertyDefinitions: componentPropertyDefinitions);
 
   @override
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ComponentSet(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ComponentSet(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// ComponentSet(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   ComponentSet call({
     Object? key = const $CopyWithPlaceholder(),
     Object? fileKey = const $CopyWithPlaceholder(),
@@ -171,7 +174,8 @@ class _$ComponentSetCWProxyImpl implements _$ComponentSetCWProxy {
           // ignore: cast_nullable_to_non_nullable
           : containingPage as dynamic,
       componentPropertyDefinitions:
-          componentPropertyDefinitions == const $CopyWithPlaceholder()
+          componentPropertyDefinitions == const $CopyWithPlaceholder() ||
+                  componentPropertyDefinitions == null
               ? _value.componentPropertyDefinitions
               // ignore: cast_nullable_to_non_nullable
               : componentPropertyDefinitions
@@ -181,7 +185,8 @@ class _$ComponentSetCWProxyImpl implements _$ComponentSetCWProxy {
 }
 
 extension $ComponentSetCopyWith on ComponentSet {
-  /// Returns a callable class that can be used as follows: `instanceOfComponentSet.copyWith(...)` or like so:`instanceOfComponentSet.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfComponentSet.copyWith(...)` or `instanceOfComponentSet.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$ComponentSetCWProxy get copyWith => _$ComponentSetCWProxyImpl(this);
 }

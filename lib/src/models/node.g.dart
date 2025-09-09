@@ -24,12 +24,13 @@ abstract class _$NodeCWProxy {
   Node componentPropertyReferences(
       Map<String, String>? componentPropertyReferences);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Node(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Node(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// Node(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   Node call({
     String id,
     String? name,
@@ -42,47 +43,49 @@ abstract class _$NodeCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfNode.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfNode.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfNode.copyWith(...)` or call `instanceOfNode.copyWith.fieldName(value)` for a single field.
 class _$NodeCWProxyImpl implements _$NodeCWProxy {
   const _$NodeCWProxyImpl(this._value);
 
   final Node _value;
 
   @override
-  Node id(String id) => this(id: id);
+  Node id(String id) => call(id: id);
 
   @override
-  Node name(String? name) => this(name: name);
+  Node name(String? name) => call(name: name);
 
   @override
-  Node visible(bool visible) => this(visible: visible);
+  Node visible(bool visible) => call(visible: visible);
 
   @override
-  Node type(String? type) => this(type: type);
+  Node type(String? type) => call(type: type);
 
   @override
-  Node pluginData(dynamic pluginData) => this(pluginData: pluginData);
+  Node pluginData(dynamic pluginData) => call(pluginData: pluginData);
 
   @override
   Node sharedPluginData(dynamic sharedPluginData) =>
-      this(sharedPluginData: sharedPluginData);
+      call(sharedPluginData: sharedPluginData);
 
   @override
-  Node rotation(double? rotation) => this(rotation: rotation);
+  Node rotation(double? rotation) => call(rotation: rotation);
 
   @override
   Node componentPropertyReferences(
           Map<String, String>? componentPropertyReferences) =>
-      this(componentPropertyReferences: componentPropertyReferences);
+      call(componentPropertyReferences: componentPropertyReferences);
 
   @override
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Node(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Node(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// Node(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   Node call({
     Object? id = const $CopyWithPlaceholder(),
     Object? name = const $CopyWithPlaceholder(),
@@ -94,7 +97,7 @@ class _$NodeCWProxyImpl implements _$NodeCWProxy {
     Object? componentPropertyReferences = const $CopyWithPlaceholder(),
   }) {
     return Node(
-      id: id == const $CopyWithPlaceholder()
+      id: id == const $CopyWithPlaceholder() || id == null
           ? _value.id
           // ignore: cast_nullable_to_non_nullable
           : id as String,
@@ -102,7 +105,7 @@ class _$NodeCWProxyImpl implements _$NodeCWProxy {
           ? _value.name
           // ignore: cast_nullable_to_non_nullable
           : name as String?,
-      visible: visible == const $CopyWithPlaceholder()
+      visible: visible == const $CopyWithPlaceholder() || visible == null
           ? _value.visible
           // ignore: cast_nullable_to_non_nullable
           : visible as bool,
@@ -132,7 +135,8 @@ class _$NodeCWProxyImpl implements _$NodeCWProxy {
 }
 
 extension $NodeCopyWith on Node {
-  /// Returns a callable class that can be used as follows: `instanceOfNode.copyWith(...)` or like so:`instanceOfNode.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfNode.copyWith(...)` or `instanceOfNode.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$NodeCWProxy get copyWith => _$NodeCWProxyImpl(this);
 }

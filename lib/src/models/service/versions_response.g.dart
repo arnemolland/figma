@@ -9,18 +9,20 @@ part of 'versions_response.dart';
 abstract class _$VersionsResponseCWProxy {
   VersionsResponse versions(List<Version>? versions);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `VersionsResponse(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `VersionsResponse(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// VersionsResponse(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   VersionsResponse call({
     List<Version>? versions,
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfVersionsResponse.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfVersionsResponse.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfVersionsResponse.copyWith(...)` or call `instanceOfVersionsResponse.copyWith.fieldName(value)` for a single field.
 class _$VersionsResponseCWProxyImpl implements _$VersionsResponseCWProxy {
   const _$VersionsResponseCWProxyImpl(this._value);
 
@@ -28,16 +30,17 @@ class _$VersionsResponseCWProxyImpl implements _$VersionsResponseCWProxy {
 
   @override
   VersionsResponse versions(List<Version>? versions) =>
-      this(versions: versions);
+      call(versions: versions);
 
   @override
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `VersionsResponse(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `VersionsResponse(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// VersionsResponse(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   VersionsResponse call({
     Object? versions = const $CopyWithPlaceholder(),
   }) {
@@ -51,7 +54,8 @@ class _$VersionsResponseCWProxyImpl implements _$VersionsResponseCWProxy {
 }
 
 extension $VersionsResponseCopyWith on VersionsResponse {
-  /// Returns a callable class that can be used as follows: `instanceOfVersionsResponse.copyWith(...)` or like so:`instanceOfVersionsResponse.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfVersionsResponse.copyWith(...)` or `instanceOfVersionsResponse.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$VersionsResponseCWProxy get copyWith => _$VersionsResponseCWProxyImpl(this);
 }

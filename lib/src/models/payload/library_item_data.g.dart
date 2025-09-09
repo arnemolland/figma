@@ -11,38 +11,41 @@ abstract class _$LibraryItemDataCWProxy {
 
   LibraryItemData name(String? name);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `LibraryItemData(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `LibraryItemData(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// LibraryItemData(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   LibraryItemData call({
     String? key,
     String? name,
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfLibraryItemData.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfLibraryItemData.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfLibraryItemData.copyWith(...)` or call `instanceOfLibraryItemData.copyWith.fieldName(value)` for a single field.
 class _$LibraryItemDataCWProxyImpl implements _$LibraryItemDataCWProxy {
   const _$LibraryItemDataCWProxyImpl(this._value);
 
   final LibraryItemData _value;
 
   @override
-  LibraryItemData key(String? key) => this(key: key);
+  LibraryItemData key(String? key) => call(key: key);
 
   @override
-  LibraryItemData name(String? name) => this(name: name);
+  LibraryItemData name(String? name) => call(name: name);
 
   @override
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `LibraryItemData(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `LibraryItemData(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// LibraryItemData(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   LibraryItemData call({
     Object? key = const $CopyWithPlaceholder(),
     Object? name = const $CopyWithPlaceholder(),
@@ -61,7 +64,8 @@ class _$LibraryItemDataCWProxyImpl implements _$LibraryItemDataCWProxy {
 }
 
 extension $LibraryItemDataCopyWith on LibraryItemData {
-  /// Returns a callable class that can be used as follows: `instanceOfLibraryItemData.copyWith(...)` or like so:`instanceOfLibraryItemData.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfLibraryItemData.copyWith(...)` or `instanceOfLibraryItemData.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$LibraryItemDataCWProxy get copyWith => _$LibraryItemDataCWProxyImpl(this);
 }

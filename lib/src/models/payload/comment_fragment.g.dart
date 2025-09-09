@@ -11,38 +11,41 @@ abstract class _$CommentFragmentCWProxy {
 
   CommentFragment mention(String? mention);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `CommentFragment(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `CommentFragment(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// CommentFragment(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   CommentFragment call({
     String? text,
     String? mention,
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfCommentFragment.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfCommentFragment.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfCommentFragment.copyWith(...)` or call `instanceOfCommentFragment.copyWith.fieldName(value)` for a single field.
 class _$CommentFragmentCWProxyImpl implements _$CommentFragmentCWProxy {
   const _$CommentFragmentCWProxyImpl(this._value);
 
   final CommentFragment _value;
 
   @override
-  CommentFragment text(String? text) => this(text: text);
+  CommentFragment text(String? text) => call(text: text);
 
   @override
-  CommentFragment mention(String? mention) => this(mention: mention);
+  CommentFragment mention(String? mention) => call(mention: mention);
 
   @override
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `CommentFragment(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `CommentFragment(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// CommentFragment(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   CommentFragment call({
     Object? text = const $CopyWithPlaceholder(),
     Object? mention = const $CopyWithPlaceholder(),
@@ -61,7 +64,8 @@ class _$CommentFragmentCWProxyImpl implements _$CommentFragmentCWProxy {
 }
 
 extension $CommentFragmentCopyWith on CommentFragment {
-  /// Returns a callable class that can be used as follows: `instanceOfCommentFragment.copyWith(...)` or like so:`instanceOfCommentFragment.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfCommentFragment.copyWith(...)` or `instanceOfCommentFragment.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$CommentFragmentCWProxy get copyWith => _$CommentFragmentCWProxyImpl(this);
 }

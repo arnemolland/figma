@@ -15,12 +15,13 @@ abstract class _$SizeRectangleCWProxy {
 
   SizeRectangle height(double? height);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `SizeRectangle(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `SizeRectangle(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// SizeRectangle(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   SizeRectangle call({
     double? x,
     double? y,
@@ -29,32 +30,34 @@ abstract class _$SizeRectangleCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfSizeRectangle.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfSizeRectangle.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfSizeRectangle.copyWith(...)` or call `instanceOfSizeRectangle.copyWith.fieldName(value)` for a single field.
 class _$SizeRectangleCWProxyImpl implements _$SizeRectangleCWProxy {
   const _$SizeRectangleCWProxyImpl(this._value);
 
   final SizeRectangle _value;
 
   @override
-  SizeRectangle x(double? x) => this(x: x);
+  SizeRectangle x(double? x) => call(x: x);
 
   @override
-  SizeRectangle y(double? y) => this(y: y);
+  SizeRectangle y(double? y) => call(y: y);
 
   @override
-  SizeRectangle width(double? width) => this(width: width);
+  SizeRectangle width(double? width) => call(width: width);
 
   @override
-  SizeRectangle height(double? height) => this(height: height);
+  SizeRectangle height(double? height) => call(height: height);
 
   @override
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `SizeRectangle(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `SizeRectangle(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// SizeRectangle(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   SizeRectangle call({
     Object? x = const $CopyWithPlaceholder(),
     Object? y = const $CopyWithPlaceholder(),
@@ -83,7 +86,8 @@ class _$SizeRectangleCWProxyImpl implements _$SizeRectangleCWProxy {
 }
 
 extension $SizeRectangleCopyWith on SizeRectangle {
-  /// Returns a callable class that can be used as follows: `instanceOfSizeRectangle.copyWith(...)` or like so:`instanceOfSizeRectangle.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfSizeRectangle.copyWith(...)` or `instanceOfSizeRectangle.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$SizeRectangleCWProxy get copyWith => _$SizeRectangleCWProxyImpl(this);
 }

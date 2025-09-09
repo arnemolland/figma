@@ -13,12 +13,13 @@ abstract class _$PostCommentCWProxy {
 
   PostComment commentId(String? commentId);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `PostComment(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PostComment(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// PostComment(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   PostComment call({
     String? message,
     dynamic clientMeta,
@@ -26,29 +27,31 @@ abstract class _$PostCommentCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfPostComment.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfPostComment.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfPostComment.copyWith(...)` or call `instanceOfPostComment.copyWith.fieldName(value)` for a single field.
 class _$PostCommentCWProxyImpl implements _$PostCommentCWProxy {
   const _$PostCommentCWProxyImpl(this._value);
 
   final PostComment _value;
 
   @override
-  PostComment message(String? message) => this(message: message);
+  PostComment message(String? message) => call(message: message);
 
   @override
-  PostComment clientMeta(dynamic clientMeta) => this(clientMeta: clientMeta);
+  PostComment clientMeta(dynamic clientMeta) => call(clientMeta: clientMeta);
 
   @override
-  PostComment commentId(String? commentId) => this(commentId: commentId);
+  PostComment commentId(String? commentId) => call(commentId: commentId);
 
   @override
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `PostComment(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PostComment(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// PostComment(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   PostComment call({
     Object? message = const $CopyWithPlaceholder(),
     Object? clientMeta = const $CopyWithPlaceholder(),
@@ -72,7 +75,8 @@ class _$PostCommentCWProxyImpl implements _$PostCommentCWProxy {
 }
 
 extension $PostCommentCopyWith on PostComment {
-  /// Returns a callable class that can be used as follows: `instanceOfPostComment.copyWith(...)` or like so:`instanceOfPostComment.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfPostComment.copyWith(...)` or `instanceOfPostComment.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$PostCommentCWProxy get copyWith => _$PostCommentCWProxyImpl(this);
 }

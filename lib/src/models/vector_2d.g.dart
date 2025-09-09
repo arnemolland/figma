@@ -11,48 +11,51 @@ abstract class _$Vector2DCWProxy {
 
   Vector2D y(num y);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Vector2D(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Vector2D(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// Vector2D(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   Vector2D call({
     num x,
     num y,
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfVector2D.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfVector2D.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfVector2D.copyWith(...)` or call `instanceOfVector2D.copyWith.fieldName(value)` for a single field.
 class _$Vector2DCWProxyImpl implements _$Vector2DCWProxy {
   const _$Vector2DCWProxyImpl(this._value);
 
   final Vector2D _value;
 
   @override
-  Vector2D x(num x) => this(x: x);
+  Vector2D x(num x) => call(x: x);
 
   @override
-  Vector2D y(num y) => this(y: y);
+  Vector2D y(num y) => call(y: y);
 
   @override
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Vector2D(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Vector2D(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// Vector2D(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   Vector2D call({
     Object? x = const $CopyWithPlaceholder(),
     Object? y = const $CopyWithPlaceholder(),
   }) {
     return Vector2D(
-      x: x == const $CopyWithPlaceholder()
+      x: x == const $CopyWithPlaceholder() || x == null
           ? _value.x
           // ignore: cast_nullable_to_non_nullable
           : x as num,
-      y: y == const $CopyWithPlaceholder()
+      y: y == const $CopyWithPlaceholder() || y == null
           ? _value.y
           // ignore: cast_nullable_to_non_nullable
           : y as num,
@@ -61,7 +64,8 @@ class _$Vector2DCWProxyImpl implements _$Vector2DCWProxy {
 }
 
 extension $Vector2DCopyWith on Vector2D {
-  /// Returns a callable class that can be used as follows: `instanceOfVector2D.copyWith(...)` or like so:`instanceOfVector2D.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfVector2D.copyWith(...)` or `instanceOfVector2D.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$Vector2DCWProxy get copyWith => _$Vector2DCWProxyImpl(this);
 }

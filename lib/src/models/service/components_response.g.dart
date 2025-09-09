@@ -13,12 +13,13 @@ abstract class _$ComponentsResponseCWProxy {
 
   ComponentsResponse meta(ComponentsMeta? meta);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ComponentsResponse(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ComponentsResponse(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// ComponentsResponse(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   ComponentsResponse call({
     int? status,
     bool? error,
@@ -26,29 +27,31 @@ abstract class _$ComponentsResponseCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfComponentsResponse.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfComponentsResponse.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfComponentsResponse.copyWith(...)` or call `instanceOfComponentsResponse.copyWith.fieldName(value)` for a single field.
 class _$ComponentsResponseCWProxyImpl implements _$ComponentsResponseCWProxy {
   const _$ComponentsResponseCWProxyImpl(this._value);
 
   final ComponentsResponse _value;
 
   @override
-  ComponentsResponse status(int? status) => this(status: status);
+  ComponentsResponse status(int? status) => call(status: status);
 
   @override
-  ComponentsResponse error(bool? error) => this(error: error);
+  ComponentsResponse error(bool? error) => call(error: error);
 
   @override
-  ComponentsResponse meta(ComponentsMeta? meta) => this(meta: meta);
+  ComponentsResponse meta(ComponentsMeta? meta) => call(meta: meta);
 
   @override
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ComponentsResponse(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ComponentsResponse(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// ComponentsResponse(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   ComponentsResponse call({
     Object? status = const $CopyWithPlaceholder(),
     Object? error = const $CopyWithPlaceholder(),
@@ -72,7 +75,8 @@ class _$ComponentsResponseCWProxyImpl implements _$ComponentsResponseCWProxy {
 }
 
 extension $ComponentsResponseCopyWith on ComponentsResponse {
-  /// Returns a callable class that can be used as follows: `instanceOfComponentsResponse.copyWith(...)` or like so:`instanceOfComponentsResponse.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfComponentsResponse.copyWith(...)` or `instanceOfComponentsResponse.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$ComponentsResponseCWProxy get copyWith =>
       _$ComponentsResponseCWProxyImpl(this);

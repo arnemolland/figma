@@ -13,12 +13,13 @@ abstract class _$LocalVariablesResponseCWProxy {
 
   LocalVariablesResponse meta(LocalVariablesMeta? meta);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `LocalVariablesResponse(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `LocalVariablesResponse(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// LocalVariablesResponse(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   LocalVariablesResponse call({
     int status,
     bool error,
@@ -26,7 +27,8 @@ abstract class _$LocalVariablesResponseCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfLocalVariablesResponse.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfLocalVariablesResponse.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfLocalVariablesResponse.copyWith(...)` or call `instanceOfLocalVariablesResponse.copyWith.fieldName(value)` for a single field.
 class _$LocalVariablesResponseCWProxyImpl
     implements _$LocalVariablesResponseCWProxy {
   const _$LocalVariablesResponseCWProxyImpl(this._value);
@@ -34,33 +36,34 @@ class _$LocalVariablesResponseCWProxyImpl
   final LocalVariablesResponse _value;
 
   @override
-  LocalVariablesResponse status(int status) => this(status: status);
+  LocalVariablesResponse status(int status) => call(status: status);
 
   @override
-  LocalVariablesResponse error(bool error) => this(error: error);
+  LocalVariablesResponse error(bool error) => call(error: error);
 
   @override
-  LocalVariablesResponse meta(LocalVariablesMeta? meta) => this(meta: meta);
+  LocalVariablesResponse meta(LocalVariablesMeta? meta) => call(meta: meta);
 
   @override
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `LocalVariablesResponse(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `LocalVariablesResponse(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// LocalVariablesResponse(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   LocalVariablesResponse call({
     Object? status = const $CopyWithPlaceholder(),
     Object? error = const $CopyWithPlaceholder(),
     Object? meta = const $CopyWithPlaceholder(),
   }) {
     return LocalVariablesResponse(
-      status: status == const $CopyWithPlaceholder()
+      status: status == const $CopyWithPlaceholder() || status == null
           ? _value.status
           // ignore: cast_nullable_to_non_nullable
           : status as int,
-      error: error == const $CopyWithPlaceholder()
+      error: error == const $CopyWithPlaceholder() || error == null
           ? _value.error
           // ignore: cast_nullable_to_non_nullable
           : error as bool,
@@ -73,7 +76,8 @@ class _$LocalVariablesResponseCWProxyImpl
 }
 
 extension $LocalVariablesResponseCopyWith on LocalVariablesResponse {
-  /// Returns a callable class that can be used as follows: `instanceOfLocalVariablesResponse.copyWith(...)` or like so:`instanceOfLocalVariablesResponse.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfLocalVariablesResponse.copyWith(...)` or `instanceOfLocalVariablesResponse.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$LocalVariablesResponseCWProxy get copyWith =>
       _$LocalVariablesResponseCWProxyImpl(this);

@@ -1,4 +1,3 @@
-import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:figma/src/models.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -6,7 +5,6 @@ part 'star.g.dart';
 
 /// A star shape represented as a [Vector].
 @JsonSerializable()
-@CopyWith()
 class Star extends Vector {
   const Star({
     required super.id,

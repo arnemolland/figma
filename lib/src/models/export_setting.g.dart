@@ -13,12 +13,13 @@ abstract class _$ExportSettingCWProxy {
 
   ExportSetting constraint(Constraint? constraint);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ExportSetting(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ExportSetting(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// ExportSetting(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   ExportSetting call({
     String? suffix,
     ExportFormat? format,
@@ -26,30 +27,32 @@ abstract class _$ExportSettingCWProxy {
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfExportSetting.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfExportSetting.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfExportSetting.copyWith(...)` or call `instanceOfExportSetting.copyWith.fieldName(value)` for a single field.
 class _$ExportSettingCWProxyImpl implements _$ExportSettingCWProxy {
   const _$ExportSettingCWProxyImpl(this._value);
 
   final ExportSetting _value;
 
   @override
-  ExportSetting suffix(String? suffix) => this(suffix: suffix);
+  ExportSetting suffix(String? suffix) => call(suffix: suffix);
 
   @override
-  ExportSetting format(ExportFormat? format) => this(format: format);
+  ExportSetting format(ExportFormat? format) => call(format: format);
 
   @override
   ExportSetting constraint(Constraint? constraint) =>
-      this(constraint: constraint);
+      call(constraint: constraint);
 
   @override
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ExportSetting(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ExportSetting(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// ExportSetting(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   ExportSetting call({
     Object? suffix = const $CopyWithPlaceholder(),
     Object? format = const $CopyWithPlaceholder(),
@@ -73,7 +76,8 @@ class _$ExportSettingCWProxyImpl implements _$ExportSettingCWProxy {
 }
 
 extension $ExportSettingCopyWith on ExportSetting {
-  /// Returns a callable class that can be used as follows: `instanceOfExportSetting.copyWith(...)` or like so:`instanceOfExportSetting.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfExportSetting.copyWith(...)` or `instanceOfExportSetting.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$ExportSettingCWProxy get copyWith => _$ExportSettingCWProxyImpl(this);
 }

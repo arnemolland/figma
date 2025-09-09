@@ -1,4 +1,3 @@
-import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:figma/src/converters/converters.dart';
 import 'package:figma/src/models.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -8,7 +7,6 @@ part 'document.g.dart';
 /// At the root of every File is a Document node, and from that Document
 ///  node stems any Canvas nodes.
 @JsonSerializable()
-@CopyWith()
 class Document extends Node {
   /// An array of canvases attached to the document.
   @NodeJsonConverter()

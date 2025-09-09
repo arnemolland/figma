@@ -1,4 +1,3 @@
-import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:figma/src/converters/converters.dart';
 import 'package:figma/src/models.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -7,7 +6,6 @@ part 'frame.g.dart';
 
 /// A Figma frame.
 @JsonSerializable()
-@CopyWith()
 class Frame extends Node {
   /// An array of nodes that are direct children of this node.
   @NodeJsonConverter()

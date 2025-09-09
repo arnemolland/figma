@@ -11,38 +11,41 @@ abstract class _$ConstraintCWProxy {
 
   Constraint value(num? value);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Constraint(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Constraint(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// Constraint(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   Constraint call({
     ConstraintType? type,
     num? value,
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfConstraint.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfConstraint.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfConstraint.copyWith(...)` or call `instanceOfConstraint.copyWith.fieldName(value)` for a single field.
 class _$ConstraintCWProxyImpl implements _$ConstraintCWProxy {
   const _$ConstraintCWProxyImpl(this._value);
 
   final Constraint _value;
 
   @override
-  Constraint type(ConstraintType? type) => this(type: type);
+  Constraint type(ConstraintType? type) => call(type: type);
 
   @override
-  Constraint value(num? value) => this(value: value);
+  Constraint value(num? value) => call(value: value);
 
   @override
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Constraint(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Constraint(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// Constraint(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   Constraint call({
     Object? type = const $CopyWithPlaceholder(),
     Object? value = const $CopyWithPlaceholder(),
@@ -61,7 +64,8 @@ class _$ConstraintCWProxyImpl implements _$ConstraintCWProxy {
 }
 
 extension $ConstraintCopyWith on Constraint {
-  /// Returns a callable class that can be used as follows: `instanceOfConstraint.copyWith(...)` or like so:`instanceOfConstraint.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfConstraint.copyWith(...)` or `instanceOfConstraint.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$ConstraintCWProxy get copyWith => _$ConstraintCWProxyImpl(this);
 }

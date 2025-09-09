@@ -11,48 +11,51 @@ abstract class _$ModeCWProxy {
 
   Mode name(String name);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Mode(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Mode(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// Mode(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   Mode call({
     String modeId,
     String name,
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfMode.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfMode.copyWith.fieldName(...)`
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfMode.copyWith(...)` or call `instanceOfMode.copyWith.fieldName(value)` for a single field.
 class _$ModeCWProxyImpl implements _$ModeCWProxy {
   const _$ModeCWProxyImpl(this._value);
 
   final Mode _value;
 
   @override
-  Mode modeId(String modeId) => this(modeId: modeId);
+  Mode modeId(String modeId) => call(modeId: modeId);
 
   @override
-  Mode name(String name) => this(name: name);
+  Mode name(String name) => call(name: name);
 
   @override
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Mode(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Mode(...).copyWith.fieldName(value)`.
   ///
-  /// Usage
+  /// Example:
   /// ```dart
   /// Mode(...).copyWith(id: 12, name: "My name")
-  /// ````
+  /// ```
   Mode call({
     Object? modeId = const $CopyWithPlaceholder(),
     Object? name = const $CopyWithPlaceholder(),
   }) {
     return Mode(
-      modeId: modeId == const $CopyWithPlaceholder()
+      modeId: modeId == const $CopyWithPlaceholder() || modeId == null
           ? _value.modeId
           // ignore: cast_nullable_to_non_nullable
           : modeId as String,
-      name: name == const $CopyWithPlaceholder()
+      name: name == const $CopyWithPlaceholder() || name == null
           ? _value.name
           // ignore: cast_nullable_to_non_nullable
           : name as String,
@@ -61,7 +64,8 @@ class _$ModeCWProxyImpl implements _$ModeCWProxy {
 }
 
 extension $ModeCopyWith on Mode {
-  /// Returns a callable class that can be used as follows: `instanceOfMode.copyWith(...)` or like so:`instanceOfMode.copyWith.fieldName(...)`.
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfMode.copyWith(...)` or `instanceOfMode.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
   _$ModeCWProxy get copyWith => _$ModeCWProxyImpl(this);
 }
