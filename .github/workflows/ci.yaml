@@ -42,6 +42,22 @@ jobs:
 
       - name: Run tests
         run: dart test
+
+  integration-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: dart-lang/setup-dart@v1
+        with:
+          sdk: beta
+
+      - name: Install dependencies
+        run: dart pub get
+
+      - name: Run tests
+        run: dart test -P integration
         env:
           FIGMA_TEST_FILE: ${{ secrets.FIGMA_TEST_FILE }}
           FIGMA_ACCESS_TOKEN: ${{ secrets.FIGMA_ACCESS_TOKEN }}

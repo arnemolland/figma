@@ -1,0 +1,11 @@
+tags:
+  # Integration tests can take a long time to complete
+  integration:
+    timeout: 2m
+
+presets:
+  integration:
+    include_tags: integration
+
+# By default ignore integration tests since they require environmental setup
+exclude_tags: integration
