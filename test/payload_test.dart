@@ -237,8 +237,9 @@ void main() {
       expect(fileComment.toJson(), equals(fileCommentDecoded));
 
       final devModeStatusUpdateDecoded = jsonDecode(devModeStatusUpdatePayload);
-      final devModeStatusUpdate =
-          BasePayload.fromJson(devModeStatusUpdateDecoded);
+      final devModeStatusUpdate = BasePayload.fromJson(
+        devModeStatusUpdateDecoded,
+      );
       expect(devModeStatusUpdate, isA<DevModeStatusUpdatePayload>());
       expect(devModeStatusUpdate.toJson(), equals(devModeStatusUpdateDecoded));
 

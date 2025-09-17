@@ -86,7 +86,6 @@ class _$WebhookCWProxyImpl implements _$WebhookCWProxy {
   Webhook description(String? description) => call(description: description);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Webhook(...).copyWith.fieldName(value)`.
   ///
@@ -163,30 +162,30 @@ extension $WebhookCopyWith on Webhook {
 // **************************************************************************
 
 Webhook _$WebhookFromJson(Map<String, dynamic> json) => Webhook(
-      id: json['id'] as String?,
-      eventType: $enumDecodeNullable(_$WebhookEventEnumMap, json['event_type']),
-      context: $enumDecodeNullable(_$WebhookContextEnumMap, json['context']),
-      contextId: json['context_id'] as String?,
-      planApiId: json['plan_api_id'] as String?,
-      status: $enumDecodeNullable(_$WebhookStatusEnumMap, json['status']),
-      clientId: json['client_id'] as String?,
-      passcode: json['passcode'] as String?,
-      endpoint: json['endpoint'] as String?,
-      description: json['description'] as String?,
-    );
+  id: json['id'] as String?,
+  eventType: $enumDecodeNullable(_$WebhookEventEnumMap, json['event_type']),
+  context: $enumDecodeNullable(_$WebhookContextEnumMap, json['context']),
+  contextId: json['context_id'] as String?,
+  planApiId: json['plan_api_id'] as String?,
+  status: $enumDecodeNullable(_$WebhookStatusEnumMap, json['status']),
+  clientId: json['client_id'] as String?,
+  passcode: json['passcode'] as String?,
+  endpoint: json['endpoint'] as String?,
+  description: json['description'] as String?,
+);
 
 Map<String, dynamic> _$WebhookToJson(Webhook instance) => <String, dynamic>{
-      'id': instance.id,
-      'event_type': _$WebhookEventEnumMap[instance.eventType],
-      'context': _$WebhookContextEnumMap[instance.context],
-      'context_id': instance.contextId,
-      'plan_api_id': instance.planApiId,
-      'status': _$WebhookStatusEnumMap[instance.status],
-      'client_id': instance.clientId,
-      'passcode': instance.passcode,
-      'endpoint': instance.endpoint,
-      'description': instance.description,
-    };
+  'id': instance.id,
+  'event_type': _$WebhookEventEnumMap[instance.eventType],
+  'context': _$WebhookContextEnumMap[instance.context],
+  'context_id': instance.contextId,
+  'plan_api_id': instance.planApiId,
+  'status': _$WebhookStatusEnumMap[instance.status],
+  'client_id': instance.clientId,
+  'passcode': instance.passcode,
+  'endpoint': instance.endpoint,
+  'description': instance.description,
+};
 
 const _$WebhookEventEnumMap = {
   WebhookEvent.ping: 'PING',

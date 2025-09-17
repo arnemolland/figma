@@ -18,10 +18,7 @@ abstract class _$CursorCWProxy {
   /// ```dart
   /// Cursor(...).copyWith(id: 12, name: "My name")
   /// ```
-  Cursor call({
-    int? before,
-    int? after,
-  });
+  Cursor call({int? before, int? after});
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -38,7 +35,6 @@ class _$CursorCWProxyImpl implements _$CursorCWProxy {
   Cursor after(int? after) => call(after: after);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Cursor(...).copyWith.fieldName(value)`.
   ///
@@ -75,11 +71,11 @@ extension $CursorCopyWith on Cursor {
 // **************************************************************************
 
 Cursor _$CursorFromJson(Map<String, dynamic> json) => Cursor(
-      before: (json['before'] as num?)?.toInt(),
-      after: (json['after'] as num?)?.toInt(),
-    );
+  before: (json['before'] as num?)?.toInt(),
+  after: (json['after'] as num?)?.toInt(),
+);
 
 Map<String, dynamic> _$CursorToJson(Cursor instance) => <String, dynamic>{
-      'before': instance.before,
-      'after': instance.after,
-    };
+  'before': instance.before,
+  'after': instance.after,
+};

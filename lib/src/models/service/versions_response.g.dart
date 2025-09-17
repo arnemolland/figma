@@ -16,9 +16,7 @@ abstract class _$VersionsResponseCWProxy {
   /// ```dart
   /// VersionsResponse(...).copyWith(id: 12, name: "My name")
   /// ```
-  VersionsResponse call({
-    List<Version>? versions,
-  });
+  VersionsResponse call({List<Version>? versions});
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -33,7 +31,6 @@ class _$VersionsResponseCWProxyImpl implements _$VersionsResponseCWProxy {
       call(versions: versions);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `VersionsResponse(...).copyWith.fieldName(value)`.
   ///
@@ -41,9 +38,7 @@ class _$VersionsResponseCWProxyImpl implements _$VersionsResponseCWProxy {
   /// ```dart
   /// VersionsResponse(...).copyWith(id: 12, name: "My name")
   /// ```
-  VersionsResponse call({
-    Object? versions = const $CopyWithPlaceholder(),
-  }) {
+  VersionsResponse call({Object? versions = const $CopyWithPlaceholder()}) {
     return VersionsResponse(
       versions: versions == const $CopyWithPlaceholder()
           ? _value.versions
@@ -72,6 +67,4 @@ VersionsResponse _$VersionsResponseFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$VersionsResponseToJson(VersionsResponse instance) =>
-    <String, dynamic>{
-      'versions': instance.versions,
-    };
+    <String, dynamic>{'versions': instance.versions};

@@ -56,7 +56,6 @@ class _$StyleCWProxyImpl implements _$StyleCWProxy {
   Style type(StyleType? type) => call(type: type);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Style(...).copyWith.fieldName(value)`.
   ///
@@ -108,20 +107,20 @@ extension $StyleCopyWith on Style {
 // **************************************************************************
 
 Style _$StyleFromJson(Map<String, dynamic> json) => Style(
-      nodeId: json['node_id'] as String?,
-      key: json['key'] as String?,
-      name: json['name'] as String?,
-      description: json['description'] as String?,
-      type: $enumDecodeNullable(_$StyleTypeEnumMap, json['style_type']),
-    );
+  nodeId: json['node_id'] as String?,
+  key: json['key'] as String?,
+  name: json['name'] as String?,
+  description: json['description'] as String?,
+  type: $enumDecodeNullable(_$StyleTypeEnumMap, json['style_type']),
+);
 
 Map<String, dynamic> _$StyleToJson(Style instance) => <String, dynamic>{
-      'node_id': instance.nodeId,
-      'key': instance.key,
-      'name': instance.name,
-      'description': instance.description,
-      'style_type': _$StyleTypeEnumMap[instance.type],
-    };
+  'node_id': instance.nodeId,
+  'key': instance.key,
+  'name': instance.name,
+  'description': instance.description,
+  'style_type': _$StyleTypeEnumMap[instance.type],
+};
 
 const _$StyleTypeEnumMap = {
   StyleType.fill: 'FILL',

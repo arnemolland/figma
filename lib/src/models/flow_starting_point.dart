@@ -7,10 +7,7 @@ part 'flow_starting_point.g.dart';
 @JsonSerializable()
 @CopyWith()
 class FlowStartingPoint {
-  FlowStartingPoint({
-    required this.nodeId,
-    required this.name,
-  });
+  FlowStartingPoint({required this.nodeId, required this.name});
 
   /// Unique identifier specifying the frame.
   final String nodeId;

@@ -18,10 +18,7 @@ abstract class _$WebhooksResponseCWProxy {
   /// ```dart
   /// WebhooksResponse(...).copyWith(id: 12, name: "My name")
   /// ```
-  WebhooksResponse call({
-    List<Webhook>? webhooks,
-    Pagination? pagination,
-  });
+  WebhooksResponse call({List<Webhook>? webhooks, Pagination? pagination});
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -40,7 +37,6 @@ class _$WebhooksResponseCWProxyImpl implements _$WebhooksResponseCWProxy {
       call(pagination: pagination);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `WebhooksResponse(...).copyWith.fieldName(value)`.
   ///

@@ -6,98 +6,106 @@ part of 'regular_polygon.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-RegularPolygon _$RegularPolygonFromJson(Map<String, dynamic> json) =>
-    RegularPolygon(
-      id: json['id'] as String,
-      visible: json['visible'] as bool? ?? true,
-      locked: json['locked'] as bool? ?? false,
-      exportSettings: (json['exportSettings'] as List<dynamic>?)
-              ?.map((e) => ExportSetting.fromJson(e as Map<String, dynamic>))
-              .toList() ??
-          [],
-      preserveRatio: json['preserveRatio'] as bool? ?? false,
-      layoutGrow: (json['layoutGrow'] as num?)?.toDouble() ?? 0.0,
-      opacity: (json['opacity'] as num?)?.toDouble() ?? 1.0,
-      isMask: json['isMask'] as bool? ?? false,
-      fills: (json['fills'] as List<dynamic>?)
-              ?.map((e) => Paint.fromJson(e as Map<String, dynamic>))
-              .toList() ??
-          [],
-      fillGeometry: (json['fillGeometry'] as List<dynamic>?)
-              ?.map((e) => Path.fromJson(e as Map<String, dynamic>))
-              .toList() ??
-          [],
-      strokes: (json['strokes'] as List<dynamic>?)
-              ?.map((e) => Paint.fromJson(e as Map<String, dynamic>))
-              .toList() ??
-          [],
-      strokeCap: $enumDecodeNullable(_$StrokeCapEnumMap, json['strokeCap']) ??
-          StrokeCap.none,
-      strokeJoin:
-          $enumDecodeNullable(_$StrokeJoinEnumMap, json['strokeJoin']) ??
-              StrokeJoin.miter,
-      strokeDashes: (json['strokeDashes'] as List<dynamic>?)
-              ?.map((e) => (e as num).toDouble())
-              .toList() ??
-          [],
-      strokeMiterAngle: (json['strokeMiterAngle'] as num?)?.toDouble() ?? 28.96,
-      componentPropertyReferences:
-          (json['componentPropertyReferences'] as Map<String, dynamic>?)?.map(
+RegularPolygon _$RegularPolygonFromJson(
+  Map<String, dynamic> json,
+) => RegularPolygon(
+  id: json['id'] as String,
+  visible: json['visible'] as bool? ?? true,
+  locked: json['locked'] as bool? ?? false,
+  exportSettings:
+      (json['exportSettings'] as List<dynamic>?)
+          ?.map((e) => ExportSetting.fromJson(e as Map<String, dynamic>))
+          .toList() ??
+      [],
+  preserveRatio: json['preserveRatio'] as bool? ?? false,
+  layoutGrow: (json['layoutGrow'] as num?)?.toDouble() ?? 0.0,
+  opacity: (json['opacity'] as num?)?.toDouble() ?? 1.0,
+  isMask: json['isMask'] as bool? ?? false,
+  fills:
+      (json['fills'] as List<dynamic>?)
+          ?.map((e) => Paint.fromJson(e as Map<String, dynamic>))
+          .toList() ??
+      [],
+  fillGeometry:
+      (json['fillGeometry'] as List<dynamic>?)
+          ?.map((e) => Path.fromJson(e as Map<String, dynamic>))
+          .toList() ??
+      [],
+  strokes:
+      (json['strokes'] as List<dynamic>?)
+          ?.map((e) => Paint.fromJson(e as Map<String, dynamic>))
+          .toList() ??
+      [],
+  strokeCap:
+      $enumDecodeNullable(_$StrokeCapEnumMap, json['strokeCap']) ??
+      StrokeCap.none,
+  strokeJoin:
+      $enumDecodeNullable(_$StrokeJoinEnumMap, json['strokeJoin']) ??
+      StrokeJoin.miter,
+  strokeDashes:
+      (json['strokeDashes'] as List<dynamic>?)
+          ?.map((e) => (e as num).toDouble())
+          .toList() ??
+      [],
+  strokeMiterAngle: (json['strokeMiterAngle'] as num?)?.toDouble() ?? 28.96,
+  componentPropertyReferences:
+      (json['componentPropertyReferences'] as Map<String, dynamic>?)?.map(
         (k, e) => MapEntry(k, e as String),
       ),
-      name: json['name'] as String?,
-      rotation: (json['rotation'] as num?)?.toDouble(),
-      pluginData: json['pluginData'],
-      sharedPluginData: json['sharedPluginData'],
-      blendMode: $enumDecodeNullable(_$BlendModeEnumMap, json['blendMode']),
-      layoutAlign:
-          $enumDecodeNullable(_$LayoutAlignEnumMap, json['layoutAlign']),
-      constraints: json['constraints'] == null
-          ? null
-          : LayoutConstraint.fromJson(
-              json['constraints'] as Map<String, dynamic>),
-      transitionNodeID: json['transitionNodeID'] as String?,
-      transitionDuration: (json['transitionDuration'] as num?)?.toDouble(),
-      transitionEasing:
-          $enumDecodeNullable(_$EasingTypeEnumMap, json['transitionEasing']),
-      absoluteBoundingBox: json['absoluteBoundingBox'] == null
-          ? null
-          : SizeRectangle.fromJson(
-              json['absoluteBoundingBox'] as Map<String, dynamic>),
-      effects: (json['effects'] as List<dynamic>?)
-          ?.map((e) => Effect.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      size: json['size'] == null
-          ? null
-          : Vector2D.fromJson(json['size'] as Map<String, dynamic>),
-      relativeTransform: (json['relativeTransform'] as List<dynamic>?)
-          ?.map((e) =>
-              (e as List<dynamic>).map((e) => (e as num).toDouble()).toList())
-          .toList(),
-      strokeWeight: (json['strokeWeight'] as num?)?.toDouble(),
-      strokeGeometry: json['strokeGeometry'] as List<dynamic>?,
-      strokeAlign:
-          $enumDecodeNullable(_$StrokeAlignEnumMap, json['strokeAlign']),
-      styles: (json['styles'] as Map<String, dynamic>?)?.map(
-        (k, e) => MapEntry($enumDecode(_$StyleTypeKeyEnumMap, k), e as String),
-      ),
-      absoluteRenderBounds: json['absoluteRenderBounds'] == null
-          ? null
-          : SizeRectangle.fromJson(
-              json['absoluteRenderBounds'] as Map<String, dynamic>),
-      fillOverrideTable:
-          (json['fillOverrideTable'] as Map<String, dynamic>?)?.map(
-        (k, e) => MapEntry(
-            int.parse(k),
-            e == null
-                ? null
-                : PaintOverride.fromJson(e as Map<String, dynamic>)),
-      ),
-      individualStrokeWeights: json['individualStrokeWeights'] == null
-          ? null
-          : StrokeWeights.fromJson(
-              json['individualStrokeWeights'] as Map<String, dynamic>),
-    );
+  name: json['name'] as String?,
+  rotation: (json['rotation'] as num?)?.toDouble(),
+  pluginData: json['pluginData'],
+  sharedPluginData: json['sharedPluginData'],
+  blendMode: $enumDecodeNullable(_$BlendModeEnumMap, json['blendMode']),
+  layoutAlign: $enumDecodeNullable(_$LayoutAlignEnumMap, json['layoutAlign']),
+  constraints: json['constraints'] == null
+      ? null
+      : LayoutConstraint.fromJson(json['constraints'] as Map<String, dynamic>),
+  transitionNodeID: json['transitionNodeID'] as String?,
+  transitionDuration: (json['transitionDuration'] as num?)?.toDouble(),
+  transitionEasing: $enumDecodeNullable(
+    _$EasingTypeEnumMap,
+    json['transitionEasing'],
+  ),
+  absoluteBoundingBox: json['absoluteBoundingBox'] == null
+      ? null
+      : SizeRectangle.fromJson(
+          json['absoluteBoundingBox'] as Map<String, dynamic>,
+        ),
+  effects: (json['effects'] as List<dynamic>?)
+      ?.map((e) => Effect.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  size: json['size'] == null
+      ? null
+      : Vector2D.fromJson(json['size'] as Map<String, dynamic>),
+  relativeTransform: (json['relativeTransform'] as List<dynamic>?)
+      ?.map(
+        (e) => (e as List<dynamic>).map((e) => (e as num).toDouble()).toList(),
+      )
+      .toList(),
+  strokeWeight: (json['strokeWeight'] as num?)?.toDouble(),
+  strokeGeometry: json['strokeGeometry'] as List<dynamic>?,
+  strokeAlign: $enumDecodeNullable(_$StrokeAlignEnumMap, json['strokeAlign']),
+  styles: (json['styles'] as Map<String, dynamic>?)?.map(
+    (k, e) => MapEntry($enumDecode(_$StyleTypeKeyEnumMap, k), e as String),
+  ),
+  absoluteRenderBounds: json['absoluteRenderBounds'] == null
+      ? null
+      : SizeRectangle.fromJson(
+          json['absoluteRenderBounds'] as Map<String, dynamic>,
+        ),
+  fillOverrideTable: (json['fillOverrideTable'] as Map<String, dynamic>?)?.map(
+    (k, e) => MapEntry(
+      int.parse(k),
+      e == null ? null : PaintOverride.fromJson(e as Map<String, dynamic>),
+    ),
+  ),
+  individualStrokeWeights: json['individualStrokeWeights'] == null
+      ? null
+      : StrokeWeights.fromJson(
+          json['individualStrokeWeights'] as Map<String, dynamic>,
+        ),
+);
 
 Map<String, dynamic> _$RegularPolygonToJson(RegularPolygon instance) =>
     <String, dynamic>{
@@ -127,8 +135,9 @@ Map<String, dynamic> _$RegularPolygonToJson(RegularPolygon instance) =>
       'isMask': instance.isMask,
       'fills': instance.fills,
       'fillGeometry': instance.fillGeometry,
-      'fillOverrideTable':
-          instance.fillOverrideTable?.map((k, e) => MapEntry(k.toString(), e)),
+      'fillOverrideTable': instance.fillOverrideTable?.map(
+        (k, e) => MapEntry(k.toString(), e),
+      ),
       'strokes': instance.strokes,
       'strokeWeight': instance.strokeWeight,
       'individualStrokeWeights': instance.individualStrokeWeights,
@@ -138,8 +147,9 @@ Map<String, dynamic> _$RegularPolygonToJson(RegularPolygon instance) =>
       'strokeMiterAngle': instance.strokeMiterAngle,
       'strokeGeometry': instance.strokeGeometry,
       'strokeAlign': _$StrokeAlignEnumMap[instance.strokeAlign],
-      'styles': instance.styles
-          ?.map((k, e) => MapEntry(_$StyleTypeKeyEnumMap[k]!, e)),
+      'styles': instance.styles?.map(
+        (k, e) => MapEntry(_$StyleTypeKeyEnumMap[k]!, e),
+      ),
     };
 
 const _$StrokeCapEnumMap = {

@@ -89,10 +89,10 @@ class Instance extends Frame {
 
   @override
   List<Object?> get props => [
-        ...super.props,
-        componentId,
-        componentPropertyDefinitions,
-      ];
+    ...super.props,
+    componentId,
+    componentPropertyDefinitions,
+  ];
 
   factory Instance.fromJson(Map<String, dynamic> json) =>
       _$InstanceFromJson(json);

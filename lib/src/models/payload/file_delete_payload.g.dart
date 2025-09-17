@@ -64,7 +64,6 @@ class _$FileDeletePayloadCWProxyImpl implements _$FileDeletePayloadCWProxy {
       call(triggeredBy: triggeredBy);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `FileDeletePayload(...).copyWith.fieldName(value)`.
   ///

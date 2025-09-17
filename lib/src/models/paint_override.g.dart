@@ -18,10 +18,7 @@ abstract class _$PaintOverrideCWProxy {
   /// ```dart
   /// PaintOverride(...).copyWith(id: 12, name: "My name")
   /// ```
-  PaintOverride call({
-    List<Paint> fills,
-    String? inheritFillStyleId,
-  });
+  PaintOverride call({List<Paint> fills, String? inheritFillStyleId});
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -39,7 +36,6 @@ class _$PaintOverrideCWProxyImpl implements _$PaintOverrideCWProxy {
       call(inheritFillStyleId: inheritFillStyleId);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PaintOverride(...).copyWith.fieldName(value)`.
   ///
@@ -77,7 +73,8 @@ extension $PaintOverrideCopyWith on PaintOverride {
 
 PaintOverride _$PaintOverrideFromJson(Map<String, dynamic> json) =>
     PaintOverride(
-      fills: (json['fills'] as List<dynamic>?)
+      fills:
+          (json['fills'] as List<dynamic>?)
               ?.map((e) => Paint.fromJson(e as Map<String, dynamic>))
               .toList() ??
           [],

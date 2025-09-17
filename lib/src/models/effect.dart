@@ -73,15 +73,15 @@ class Effect extends Equatable {
 
   @override
   List<Object?> get props => [
-        type,
-        visible,
-        radius,
-        spread,
-        color,
-        blendMode,
-        offset,
-        showShadowBehindNode,
-      ];
+    type,
+    visible,
+    radius,
+    spread,
+    color,
+    blendMode,
+    offset,
+    showShadowBehindNode,
+  ];
 
   factory Effect.fromJson(Map<String, dynamic> json) => _$EffectFromJson(json);
 

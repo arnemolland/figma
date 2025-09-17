@@ -25,7 +25,7 @@ enum TextCase {
 
   /// Small caps forced, e.g. "ʜᴇʟʟᴏ"
   @JsonValue('SMALL_CAPS_FORCED')
-  smallCapsForced
+  smallCapsForced,
 }
 
 /// Text decoration applied to the node, default is none.
@@ -36,7 +36,7 @@ enum TextDecoration {
 
   /// Underline text decoration, e.g. "H͟e͟l͟l͟o͟" (rendered as solid line in Figma).
   @JsonValue('UNDERLINE')
-  underline
+  underline,
 }
 
 /// Horizontal text alignment as string enum.
@@ -72,7 +72,7 @@ enum TextAlignVertical {
 
   /// Bottom-aligned text.
   @JsonValue('BOTTOM')
-  bottom
+  bottom,
 }
 
 /// The unit of the line height value specified by the user.
@@ -87,7 +87,7 @@ enum LineHeightUnit {
 
   /// Line height is specified as a percentage of the font size of the parent
   @JsonValue('INTRINSIC_%')
-  intrinsicPercent
+  intrinsicPercent,
 }
 
 /// Dimensions along which text will auto resize.
@@ -200,25 +200,25 @@ class TypeStyle extends Equatable {
 
   @override
   List<Object?> get props => [
-        fontFamily,
-        fontPostScriptName,
-        paragraphSpacing,
-        paragraphIndent,
-        italic,
-        fontWeight,
-        fontSize,
-        textCase,
-        textDecoration,
-        textAlignHorizontal,
-        textAlignVertical,
-        letterSpacing,
-        fills,
-        opentypeFlags,
-        lineHeightPx,
-        lineHeightPercent,
-        lineHeightPercentFontSize,
-        lineHeightUnit,
-      ];
+    fontFamily,
+    fontPostScriptName,
+    paragraphSpacing,
+    paragraphIndent,
+    italic,
+    fontWeight,
+    fontSize,
+    textCase,
+    textDecoration,
+    textAlignHorizontal,
+    textAlignVertical,
+    letterSpacing,
+    fills,
+    opentypeFlags,
+    lineHeightPx,
+    lineHeightPercent,
+    lineHeightPercentFontSize,
+    lineHeightUnit,
+  ];
 
   factory TypeStyle.fromJson(Map<String, dynamic> json) =>
       _$TypeStyleFromJson(json);

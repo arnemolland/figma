@@ -28,7 +28,8 @@ Future<void> main(List<String> arguments) async {
   if (version != tag) {
     exitCode = 1;
     stderr.writeln(
-        'error: tag $tag does not match the version set in pubspec.yaml');
+      'error: tag $tag does not match the version set in pubspec.yaml',
+    );
   }
 
   // Validate that CHANGELOG.md contains a H2 header for the tag.
@@ -41,7 +42,8 @@ Future<void> main(List<String> arguments) async {
   final document = Document().parseLines(changelogContents);
 
   final header = document.firstWhereOrNull(
-      (element) => element is Element && element.textContent == tag);
+    (element) => element is Element && element.textContent == tag,
+  );
 
   if (header == null) {
     exitCode = 1;
@@ -52,13 +54,15 @@ Future<void> main(List<String> arguments) async {
   if (header is Element && header.tag != 'h2') {
     exitCode = 1;
     stderr.writeln(
-        'error: CHANGELOG.md header for $tag is not a H2 header. It is a ${header.tag} header');
+      'error: CHANGELOG.md header for $tag is not a H2 header. It is a ${header.tag} header',
+    );
   }
 
   // Validate that the CHANGELOG.md header is the first header in the document.
   if (header is Element && document.indexOf(header) != 0) {
     exitCode = 1;
     stderr.writeln(
-        'error: CHANGELOG.md header for $tag is not the first header in the document');
+      'error: CHANGELOG.md header for $tag is not the first header in the document',
+    );
   }
 }

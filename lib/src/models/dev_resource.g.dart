@@ -56,7 +56,6 @@ class _$DevResourceCWProxyImpl implements _$DevResourceCWProxy {
   DevResource nodeId(String? nodeId) => call(nodeId: nodeId);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `DevResource(...).copyWith.fieldName(value)`.
   ///
@@ -108,12 +107,12 @@ extension $DevResourceCopyWith on DevResource {
 // **************************************************************************
 
 DevResource _$DevResourceFromJson(Map<String, dynamic> json) => DevResource(
-      id: json['id'] as String?,
-      name: json['name'] as String?,
-      url: json['url'] as String?,
-      fileKey: json['file_key'] as String?,
-      nodeId: json['node_id'] as String?,
-    );
+  id: json['id'] as String?,
+  name: json['name'] as String?,
+  url: json['url'] as String?,
+  fileKey: json['file_key'] as String?,
+  nodeId: json['node_id'] as String?,
+);
 
 Map<String, dynamic> _$DevResourceToJson(DevResource instance) =>
     <String, dynamic>{

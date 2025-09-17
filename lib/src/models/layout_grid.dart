@@ -48,15 +48,15 @@ class LayoutGrid extends Equatable {
 
   @override
   List<Object?> get props => [
-        pattern,
-        sectionSize,
-        visible,
-        color,
-        alignment,
-        gutterSize,
-        offset,
-        count,
-      ];
+    pattern,
+    sectionSize,
+    visible,
+    color,
+    alignment,
+    gutterSize,
+    offset,
+    count,
+  ];
 
   factory LayoutGrid.fromJson(Map<String, dynamic> json) =>
       _$LayoutGridFromJson(json);

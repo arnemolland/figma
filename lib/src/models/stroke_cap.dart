@@ -22,5 +22,5 @@ enum StrokeCap {
 
   /// Triangle arrow end caps.
   @JsonValue('TRIANGLE_ARROW')
-  triangleArrow
+  triangleArrow,
 }

@@ -59,10 +59,10 @@ class Rectangle extends Vector {
 
   @override
   List<Object?> get props => [
-        ...super.props,
-        cornerRadius,
-        rectangleCornerRadii,
-      ];
+    ...super.props,
+    cornerRadius,
+    rectangleCornerRadii,
+  ];
 
   factory Rectangle.fromJson(Map<String, dynamic> json) =>
       _$RectangleFromJson(json);

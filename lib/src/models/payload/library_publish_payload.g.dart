@@ -14,28 +14,34 @@ abstract class _$LibraryPublishPayloadCWProxy {
   LibraryPublishPayload webhookId(String? webhookId);
 
   LibraryPublishPayload createdComponents(
-      List<LibraryItemData>? createdComponents);
+    List<LibraryItemData>? createdComponents,
+  );
 
   LibraryPublishPayload createdStyles(List<LibraryItemData>? createdStyles);
 
   LibraryPublishPayload createdVariables(
-      List<LibraryItemData>? createdVariables);
+    List<LibraryItemData>? createdVariables,
+  );
 
   LibraryPublishPayload modifiedComponents(
-      List<LibraryItemData>? modifiedComponents);
+    List<LibraryItemData>? modifiedComponents,
+  );
 
   LibraryPublishPayload modifiedStyles(List<LibraryItemData>? modifiedStyles);
 
   LibraryPublishPayload modifiedVariables(
-      List<LibraryItemData>? modifiedVariables);
+    List<LibraryItemData>? modifiedVariables,
+  );
 
   LibraryPublishPayload deletedComponents(
-      List<LibraryItemData>? deletedComponents);
+    List<LibraryItemData>? deletedComponents,
+  );
 
   LibraryPublishPayload deletedStyles(List<LibraryItemData>? deletedStyles);
 
   LibraryPublishPayload deletedVariables(
-      List<LibraryItemData>? deletedVariables);
+    List<LibraryItemData>? deletedVariables,
+  );
 
   LibraryPublishPayload description(String? description);
 
@@ -96,8 +102,8 @@ class _$LibraryPublishPayloadCWProxyImpl
 
   @override
   LibraryPublishPayload createdComponents(
-          List<LibraryItemData>? createdComponents) =>
-      call(createdComponents: createdComponents);
+    List<LibraryItemData>? createdComponents,
+  ) => call(createdComponents: createdComponents);
 
   @override
   LibraryPublishPayload createdStyles(List<LibraryItemData>? createdStyles) =>
@@ -105,13 +111,13 @@ class _$LibraryPublishPayloadCWProxyImpl
 
   @override
   LibraryPublishPayload createdVariables(
-          List<LibraryItemData>? createdVariables) =>
-      call(createdVariables: createdVariables);
+    List<LibraryItemData>? createdVariables,
+  ) => call(createdVariables: createdVariables);
 
   @override
   LibraryPublishPayload modifiedComponents(
-          List<LibraryItemData>? modifiedComponents) =>
-      call(modifiedComponents: modifiedComponents);
+    List<LibraryItemData>? modifiedComponents,
+  ) => call(modifiedComponents: modifiedComponents);
 
   @override
   LibraryPublishPayload modifiedStyles(List<LibraryItemData>? modifiedStyles) =>
@@ -119,13 +125,13 @@ class _$LibraryPublishPayloadCWProxyImpl
 
   @override
   LibraryPublishPayload modifiedVariables(
-          List<LibraryItemData>? modifiedVariables) =>
-      call(modifiedVariables: modifiedVariables);
+    List<LibraryItemData>? modifiedVariables,
+  ) => call(modifiedVariables: modifiedVariables);
 
   @override
   LibraryPublishPayload deletedComponents(
-          List<LibraryItemData>? deletedComponents) =>
-      call(deletedComponents: deletedComponents);
+    List<LibraryItemData>? deletedComponents,
+  ) => call(deletedComponents: deletedComponents);
 
   @override
   LibraryPublishPayload deletedStyles(List<LibraryItemData>? deletedStyles) =>
@@ -133,8 +139,8 @@ class _$LibraryPublishPayloadCWProxyImpl
 
   @override
   LibraryPublishPayload deletedVariables(
-          List<LibraryItemData>? deletedVariables) =>
-      call(deletedVariables: deletedVariables);
+    List<LibraryItemData>? deletedVariables,
+  ) => call(deletedVariables: deletedVariables);
 
   @override
   LibraryPublishPayload description(String? description) =>
@@ -155,7 +161,6 @@ class _$LibraryPublishPayloadCWProxyImpl
       call(triggeredBy: triggeredBy);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `LibraryPublishPayload(...).copyWith.fieldName(value)`.
   ///
@@ -268,77 +273,81 @@ extension $LibraryPublishPayloadCopyWith on LibraryPublishPayload {
 // **************************************************************************
 
 LibraryPublishPayload _$LibraryPublishPayloadFromJson(
-        Map<String, dynamic> json) =>
-    LibraryPublishPayload(
-      passcode: json['passcode'] as String?,
-      timestamp: json['timestamp'] == null
-          ? null
-          : DateTime.parse(json['timestamp'] as String),
-      webhookId: json['webhook_id'] as String?,
-      createdComponents: (json['created_components'] as List<dynamic>?)
-          ?.map((e) => LibraryItemData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      createdStyles: (json['created_styles'] as List<dynamic>?)
-          ?.map((e) => LibraryItemData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      createdVariables: (json['created_variables'] as List<dynamic>?)
-          ?.map((e) => LibraryItemData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      modifiedComponents: (json['modified_components'] as List<dynamic>?)
-          ?.map((e) => LibraryItemData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      modifiedStyles: (json['modified_styles'] as List<dynamic>?)
-          ?.map((e) => LibraryItemData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      modifiedVariables: (json['modified_variables'] as List<dynamic>?)
-          ?.map((e) => LibraryItemData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      deletedComponents: (json['deleted_components'] as List<dynamic>?)
-          ?.map((e) => LibraryItemData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      deletedStyles: (json['deleted_styles'] as List<dynamic>?)
-          ?.map((e) => LibraryItemData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      deletedVariables: (json['deleted_variables'] as List<dynamic>?)
-          ?.map((e) => LibraryItemData.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      description: json['description'] as String?,
-      fileKey: json['file_key'] as String?,
-      fileName: json['file_name'] as String?,
-      libraryItem: json['library_item'] == null
-          ? null
-          : LibraryItemData.fromJson(
-              json['library_item'] as Map<String, dynamic>),
-      triggeredBy: json['triggered_by'] == null
-          ? null
-          : User.fromJson(json['triggered_by'] as Map<String, dynamic>),
-    );
+  Map<String, dynamic> json,
+) => LibraryPublishPayload(
+  passcode: json['passcode'] as String?,
+  timestamp: json['timestamp'] == null
+      ? null
+      : DateTime.parse(json['timestamp'] as String),
+  webhookId: json['webhook_id'] as String?,
+  createdComponents: (json['created_components'] as List<dynamic>?)
+      ?.map((e) => LibraryItemData.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  createdStyles: (json['created_styles'] as List<dynamic>?)
+      ?.map((e) => LibraryItemData.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  createdVariables: (json['created_variables'] as List<dynamic>?)
+      ?.map((e) => LibraryItemData.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  modifiedComponents: (json['modified_components'] as List<dynamic>?)
+      ?.map((e) => LibraryItemData.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  modifiedStyles: (json['modified_styles'] as List<dynamic>?)
+      ?.map((e) => LibraryItemData.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  modifiedVariables: (json['modified_variables'] as List<dynamic>?)
+      ?.map((e) => LibraryItemData.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  deletedComponents: (json['deleted_components'] as List<dynamic>?)
+      ?.map((e) => LibraryItemData.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  deletedStyles: (json['deleted_styles'] as List<dynamic>?)
+      ?.map((e) => LibraryItemData.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  deletedVariables: (json['deleted_variables'] as List<dynamic>?)
+      ?.map((e) => LibraryItemData.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  description: json['description'] as String?,
+  fileKey: json['file_key'] as String?,
+  fileName: json['file_name'] as String?,
+  libraryItem: json['library_item'] == null
+      ? null
+      : LibraryItemData.fromJson(json['library_item'] as Map<String, dynamic>),
+  triggeredBy: json['triggered_by'] == null
+      ? null
+      : User.fromJson(json['triggered_by'] as Map<String, dynamic>),
+);
 
 Map<String, dynamic> _$LibraryPublishPayloadToJson(
-        LibraryPublishPayload instance) =>
-    <String, dynamic>{
-      'passcode': instance.passcode,
-      'timestamp': instance.timestamp?.toIso8601String(),
-      'webhook_id': instance.webhookId,
-      'created_components':
-          instance.createdComponents?.map((e) => e.toJson()).toList(),
-      'created_styles': instance.createdStyles?.map((e) => e.toJson()).toList(),
-      'created_variables':
-          instance.createdVariables?.map((e) => e.toJson()).toList(),
-      'modified_components':
-          instance.modifiedComponents?.map((e) => e.toJson()).toList(),
-      'modified_styles':
-          instance.modifiedStyles?.map((e) => e.toJson()).toList(),
-      'modified_variables':
-          instance.modifiedVariables?.map((e) => e.toJson()).toList(),
-      'deleted_components':
-          instance.deletedComponents?.map((e) => e.toJson()).toList(),
-      'deleted_styles': instance.deletedStyles?.map((e) => e.toJson()).toList(),
-      'deleted_variables':
-          instance.deletedVariables?.map((e) => e.toJson()).toList(),
-      'description': instance.description,
-      'file_key': instance.fileKey,
-      'file_name': instance.fileName,
-      'library_item': instance.libraryItem?.toJson(),
-      'triggered_by': instance.triggeredBy?.toJson(),
-    };
+  LibraryPublishPayload instance,
+) => <String, dynamic>{
+  'passcode': instance.passcode,
+  'timestamp': instance.timestamp?.toIso8601String(),
+  'webhook_id': instance.webhookId,
+  'created_components': instance.createdComponents
+      ?.map((e) => e.toJson())
+      .toList(),
+  'created_styles': instance.createdStyles?.map((e) => e.toJson()).toList(),
+  'created_variables': instance.createdVariables
+      ?.map((e) => e.toJson())
+      .toList(),
+  'modified_components': instance.modifiedComponents
+      ?.map((e) => e.toJson())
+      .toList(),
+  'modified_styles': instance.modifiedStyles?.map((e) => e.toJson()).toList(),
+  'modified_variables': instance.modifiedVariables
+      ?.map((e) => e.toJson())
+      .toList(),
+  'deleted_components': instance.deletedComponents
+      ?.map((e) => e.toJson())
+      .toList(),
+  'deleted_styles': instance.deletedStyles?.map((e) => e.toJson()).toList(),
+  'deleted_variables': instance.deletedVariables
+      ?.map((e) => e.toJson())
+      .toList(),
+  'description': instance.description,
+  'file_key': instance.fileKey,
+  'file_name': instance.fileName,
+  'library_item': instance.libraryItem?.toJson(),
+  'triggered_by': instance.triggeredBy?.toJson(),
+};

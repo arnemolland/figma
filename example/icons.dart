@@ -44,8 +44,9 @@ Future<void> optimize(Directory dir) async {
 
   // Loop through SVG files and optimize them.
   for (final element in list.where(isSvgFile)) {
-    svgoFutures
-        .add(Process.run('svgo', ['-i', element.path, '-o', element.path]));
+    svgoFutures.add(
+      Process.run('svgo', ['-i', element.path, '-o', element.path]),
+    );
   }
 
   // Execute SVGO in parallel.
@@ -61,7 +62,7 @@ Future<void> download(
   String pageRef,
   String accessToken,
 ) async {
-// Create a Figma client.
+  // Create a Figma client.
   final client = FigmaClient(accessToken);
 
   // Retrieve Figma file.
@@ -81,8 +82,7 @@ Future<void> download(
   });
 
   // Retrieve icon canvas.
-  final canvas = (file.document as Document?)
-      ?.children
+  final canvas = (file.document as Document?)?.children
       ?.where((node) => node?.name == pageRef)
       .single;
 
@@ -92,11 +92,9 @@ Future<void> download(
 
   // Get nodes from icon canvas.
   final node = await client.getFileNodes(
-      ref,
-      FigmaQuery(
-        ids: [canvas!.id],
-        format: 'svg',
-      ));
+    ref,
+    FigmaQuery(ids: [canvas!.id], format: 'svg'),
+  );
 
   final components = node.nodes?[canvas.id]?.components;
   final ids = components?.keys.toList();
@@ -108,11 +106,7 @@ Future<void> download(
   // Retrieve SVG for each component.
   final res = await client.getImages(
     ref,
-    FigmaQuery(
-      ids: ids,
-      format: 'svg',
-      svgIncludeId: true,
-    ),
+    FigmaQuery(ids: ids, format: 'svg', svgIncludeId: true),
   );
 
   if (res.err != null || res.images == null) {
@@ -171,7 +165,8 @@ Future<void> generateIconFont(
 
   if (!binary.isNotEmpty) {
     throw Exception(
-        'icon_font_generator not found in path, skipping font generation');
+      'icon_font_generator not found in path, skipping font generation',
+    );
   }
 
   final dartFile = File(dartOut);
@@ -188,7 +183,7 @@ Future<void> generateIconFont(
     '--from=${dir.path}',
     '--class-name=$className',
     '--out-font=$ttfOut',
-    '--out-flutter=$dartOut'
+    '--out-flutter=$dartOut',
   ]).then((res) {
     if (res.exitCode == 0) {
       print('Generated icon font at $ttfOut');
@@ -215,12 +210,7 @@ Future<void> main(List<String> args) async {
       help: 'Figma page reference',
       defaultsTo: 'Icons',
     )
-    ..addOption(
-      'token',
-      abbr: 't',
-      help: 'Figma access token',
-      mandatory: true,
-    )
+    ..addOption('token', abbr: 't', help: 'Figma access token', mandatory: true)
     ..addOption(
       'class-name',
       help: 'Name of the Dart icon class',

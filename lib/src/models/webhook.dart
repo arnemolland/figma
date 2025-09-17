@@ -67,17 +67,17 @@ class Webhook extends Equatable {
 
   @override
   List<Object?> get props => [
-        id,
-        eventType,
-        context,
-        contextId,
-        planApiId,
-        status,
-        clientId,
-        passcode,
-        endpoint,
-        description,
-      ];
+    id,
+    eventType,
+    context,
+    contextId,
+    planApiId,
+    status,
+    clientId,
+    passcode,
+    endpoint,
+    description,
+  ];
 
   factory Webhook.fromJson(Map<String, dynamic> json) =>
       _$WebhookFromJson(json);

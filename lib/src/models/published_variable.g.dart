@@ -71,7 +71,6 @@ class _$PublishedVariableCWProxyImpl implements _$PublishedVariableCWProxy {
   PublishedVariable updatedAt(DateTime updatedAt) => call(updatedAt: updatedAt);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PublishedVariable(...).copyWith.fieldName(value)`.
   ///
@@ -95,9 +94,9 @@ class _$PublishedVariableCWProxyImpl implements _$PublishedVariableCWProxy {
           : id as String,
       subscribedId:
           subscribedId == const $CopyWithPlaceholder() || subscribedId == null
-              ? _value.subscribedId
-              // ignore: cast_nullable_to_non_nullable
-              : subscribedId as String,
+          ? _value.subscribedId
+          // ignore: cast_nullable_to_non_nullable
+          : subscribedId as String,
       name: name == const $CopyWithPlaceholder() || name == null
           ? _value.name
           // ignore: cast_nullable_to_non_nullable
@@ -108,11 +107,12 @@ class _$PublishedVariableCWProxyImpl implements _$PublishedVariableCWProxy {
           : key as String,
       variableCollectionId:
           variableCollectionId == const $CopyWithPlaceholder() ||
-                  variableCollectionId == null
-              ? _value.variableCollectionId
-              // ignore: cast_nullable_to_non_nullable
-              : variableCollectionId as String,
-      resolvedDataType: resolvedDataType == const $CopyWithPlaceholder() ||
+              variableCollectionId == null
+          ? _value.variableCollectionId
+          // ignore: cast_nullable_to_non_nullable
+          : variableCollectionId as String,
+      resolvedDataType:
+          resolvedDataType == const $CopyWithPlaceholder() ||
               resolvedDataType == null
           ? _value.resolvedDataType
           // ignore: cast_nullable_to_non_nullable
@@ -144,8 +144,10 @@ PublishedVariable _$PublishedVariableFromJson(Map<String, dynamic> json) =>
       name: json['name'] as String,
       key: json['key'] as String,
       variableCollectionId: json['variableCollectionId'] as String,
-      resolvedDataType:
-          $enumDecode(_$ResolvedTypeEnumMap, json['resolvedDataType']),
+      resolvedDataType: $enumDecode(
+        _$ResolvedTypeEnumMap,
+        json['resolvedDataType'],
+      ),
       updatedAt: DateTime.parse(json['updatedAt'] as String),
     );
 

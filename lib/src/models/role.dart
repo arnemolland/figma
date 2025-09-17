@@ -7,5 +7,5 @@ enum Role {
   @JsonValue('editor')
   editor,
   @JsonValue('viewer')
-  viewer
+  viewer,
 }

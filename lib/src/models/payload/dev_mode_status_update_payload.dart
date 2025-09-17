@@ -55,20 +55,20 @@ class DevModeStatusUpdatePayload extends BasePayload {
 
   @override
   List<Object?> get props => [
-        passcode,
-        timestamp,
-        webhookId,
-        fileKey,
-        fileName,
-        nodeId,
-        relatedLinks,
-        status,
-        triggeredBy,
-      ];
+    passcode,
+    timestamp,
+    webhookId,
+    fileKey,
+    fileName,
+    nodeId,
+    relatedLinks,
+    status,
+    triggeredBy,
+  ];
 
   @override
   Map<String, dynamic> toJson() => <String, dynamic>{
-        'event_type': eventType,
-        ..._$DevModeStatusUpdatePayloadToJson(this)
-      };
+    'event_type': eventType,
+    ..._$DevModeStatusUpdatePayloadToJson(this),
+  };
 }

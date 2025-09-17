@@ -46,13 +46,13 @@ class Canvas extends Node {
 
   @override
   List<Object?> get props => [
-        ...super.props,
-        children,
-        backgroundColor,
-        exportSettings,
-        flowStartingPoints,
-        prototypeDevice,
-      ];
+    ...super.props,
+    children,
+    backgroundColor,
+    exportSettings,
+    flowStartingPoints,
+    prototypeDevice,
+  ];
 
   @override
   factory Canvas.fromJson(Map<String, dynamic> json) => _$CanvasFromJson(json);

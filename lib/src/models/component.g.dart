@@ -32,7 +32,8 @@ abstract class _$ComponentCWProxy {
   Component componentSetId(String? componentSetId);
 
   Component componentPropertyDefinitions(
-      Map<String, ComponentPropertyDefinition> componentPropertyDefinitions);
+    Map<String, ComponentPropertyDefinition> componentPropertyDefinitions,
+  );
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Component(...).copyWith.fieldName(value)`.
@@ -107,12 +108,10 @@ class _$ComponentCWProxyImpl implements _$ComponentCWProxy {
 
   @override
   Component componentPropertyDefinitions(
-          Map<String, ComponentPropertyDefinition>
-              componentPropertyDefinitions) =>
-      call(componentPropertyDefinitions: componentPropertyDefinitions);
+    Map<String, ComponentPropertyDefinition> componentPropertyDefinitions,
+  ) => call(componentPropertyDefinitions: componentPropertyDefinitions);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Component(...).copyWith.fieldName(value)`.
   ///
@@ -186,11 +185,11 @@ class _$ComponentCWProxyImpl implements _$ComponentCWProxy {
           : componentSetId as String?,
       componentPropertyDefinitions:
           componentPropertyDefinitions == const $CopyWithPlaceholder() ||
-                  componentPropertyDefinitions == null
-              ? _value.componentPropertyDefinitions
-              // ignore: cast_nullable_to_non_nullable
-              : componentPropertyDefinitions
-                  as Map<String, ComponentPropertyDefinition>,
+              componentPropertyDefinitions == null
+          ? _value.componentPropertyDefinitions
+          // ignore: cast_nullable_to_non_nullable
+          : componentPropertyDefinitions
+                as Map<String, ComponentPropertyDefinition>,
     );
   }
 }
@@ -207,49 +206,48 @@ extension $ComponentCopyWith on Component {
 // **************************************************************************
 
 Component _$ComponentFromJson(Map<String, dynamic> json) => Component(
-      key: json['key'] as String?,
-      fileKey: json['file_key'] as String?,
-      nodeId: json['node_id'] as String?,
-      thumbnailUrl: json['thumbnail_url'] as String?,
-      name: json['name'] as String?,
-      description: json['description'] as String?,
-      createdAt: json['created_at'] == null
-          ? null
-          : DateTime.parse(json['created_at'] as String),
-      updatedAt: json['updated_at'] == null
-          ? null
-          : DateTime.parse(json['updated_at'] as String),
-      user: json['user'] == null
-          ? null
-          : User.fromJson(json['user'] as Map<String, dynamic>),
-      containingFrame: json['containing_frame'] == null
-          ? null
-          : FrameInfo.fromJson(
-              json['containing_frame'] as Map<String, dynamic>),
-      containingPage: json['containing_page'],
-      componentSetId: json['componentSetId'] as String?,
-      componentPropertyDefinitions:
-          (json['componentPropertyDefinitions'] as Map<String, dynamic>?)?.map(
-                (k, e) => MapEntry(
-                    k,
-                    ComponentPropertyDefinition.fromJson(
-                        e as Map<String, dynamic>)),
-              ) ??
-              {},
-    );
+  key: json['key'] as String?,
+  fileKey: json['file_key'] as String?,
+  nodeId: json['node_id'] as String?,
+  thumbnailUrl: json['thumbnail_url'] as String?,
+  name: json['name'] as String?,
+  description: json['description'] as String?,
+  createdAt: json['created_at'] == null
+      ? null
+      : DateTime.parse(json['created_at'] as String),
+  updatedAt: json['updated_at'] == null
+      ? null
+      : DateTime.parse(json['updated_at'] as String),
+  user: json['user'] == null
+      ? null
+      : User.fromJson(json['user'] as Map<String, dynamic>),
+  containingFrame: json['containing_frame'] == null
+      ? null
+      : FrameInfo.fromJson(json['containing_frame'] as Map<String, dynamic>),
+  containingPage: json['containing_page'],
+  componentSetId: json['componentSetId'] as String?,
+  componentPropertyDefinitions:
+      (json['componentPropertyDefinitions'] as Map<String, dynamic>?)?.map(
+        (k, e) => MapEntry(
+          k,
+          ComponentPropertyDefinition.fromJson(e as Map<String, dynamic>),
+        ),
+      ) ??
+      {},
+);
 
 Map<String, dynamic> _$ComponentToJson(Component instance) => <String, dynamic>{
-      'key': instance.key,
-      'file_key': instance.fileKey,
-      'node_id': instance.nodeId,
-      'thumbnail_url': instance.thumbnailUrl,
-      'name': instance.name,
-      'description': instance.description,
-      'created_at': instance.createdAt?.toIso8601String(),
-      'updated_at': instance.updatedAt?.toIso8601String(),
-      'user': instance.user,
-      'containing_frame': instance.containingFrame,
-      'containing_page': instance.containingPage,
-      'componentSetId': instance.componentSetId,
-      'componentPropertyDefinitions': instance.componentPropertyDefinitions,
-    };
+  'key': instance.key,
+  'file_key': instance.fileKey,
+  'node_id': instance.nodeId,
+  'thumbnail_url': instance.thumbnailUrl,
+  'name': instance.name,
+  'description': instance.description,
+  'created_at': instance.createdAt?.toIso8601String(),
+  'updated_at': instance.updatedAt?.toIso8601String(),
+  'user': instance.user,
+  'containing_frame': instance.containingFrame,
+  'containing_page': instance.containingPage,
+  'componentSetId': instance.componentSetId,
+  'componentPropertyDefinitions': instance.componentPropertyDefinitions,
+};

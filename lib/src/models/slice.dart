@@ -51,13 +51,13 @@ class Slice extends Node {
 
   @override
   List<Object?> get props => [
-        ...super.props,
-        exportSettings,
-        absoluteBoundingBox,
-        absoluteRenderBounds,
-        size,
-        relativeTransform,
-      ];
+    ...super.props,
+    exportSettings,
+    absoluteBoundingBox,
+    absoluteRenderBounds,
+    size,
+    relativeTransform,
+  ];
 
   factory Slice.fromJson(Map<String, dynamic> json) => _$SliceFromJson(json);
 

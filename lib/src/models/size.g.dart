@@ -18,10 +18,7 @@ abstract class _$SizeCWProxy {
   /// ```dart
   /// Size(...).copyWith(id: 12, name: "My name")
   /// ```
-  Size call({
-    double width,
-    double height,
-  });
+  Size call({double width, double height});
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -38,7 +35,6 @@ class _$SizeCWProxyImpl implements _$SizeCWProxy {
   Size height(double height) => call(height: height);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Size(...).copyWith.fieldName(value)`.
   ///
@@ -75,11 +71,11 @@ extension $SizeCopyWith on Size {
 // **************************************************************************
 
 Size _$SizeFromJson(Map<String, dynamic> json) => Size(
-      width: (json['width'] as num).toDouble(),
-      height: (json['height'] as num).toDouble(),
-    );
+  width: (json['width'] as num).toDouble(),
+  height: (json['height'] as num).toDouble(),
+);
 
 Map<String, dynamic> _$SizeToJson(Size instance) => <String, dynamic>{
-      'width': instance.width,
-      'height': instance.height,
-    };
+  'width': instance.width,
+  'height': instance.height,
+};

@@ -25,10 +25,7 @@ class Document extends Node {
   });
 
   @override
-  List<Object?> get props => [
-        ...super.props,
-        children,
-      ];
+  List<Object?> get props => [...super.props, children];
 
   @override
   factory Document.fromJson(Map<String, dynamic> json) =>

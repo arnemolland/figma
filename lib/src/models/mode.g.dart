@@ -18,10 +18,7 @@ abstract class _$ModeCWProxy {
   /// ```dart
   /// Mode(...).copyWith(id: 12, name: "My name")
   /// ```
-  Mode call({
-    String modeId,
-    String name,
-  });
+  Mode call({String modeId, String name});
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -38,7 +35,6 @@ class _$ModeCWProxyImpl implements _$ModeCWProxy {
   Mode name(String name) => call(name: name);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Mode(...).copyWith.fieldName(value)`.
   ///
@@ -74,12 +70,10 @@ extension $ModeCopyWith on Mode {
 // JsonSerializableGenerator
 // **************************************************************************
 
-Mode _$ModeFromJson(Map<String, dynamic> json) => Mode(
-      modeId: json['modeId'] as String,
-      name: json['name'] as String,
-    );
+Mode _$ModeFromJson(Map<String, dynamic> json) =>
+    Mode(modeId: json['modeId'] as String, name: json['name'] as String);
 
 Map<String, dynamic> _$ModeToJson(Mode instance) => <String, dynamic>{
-      'modeId': instance.modeId,
-      'name': instance.name,
-    };
+  'modeId': instance.modeId,
+  'name': instance.name,
+};

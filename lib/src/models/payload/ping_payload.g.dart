@@ -20,11 +20,7 @@ abstract class _$PingPayloadCWProxy {
   /// ```dart
   /// PingPayload(...).copyWith(id: 12, name: "My name")
   /// ```
-  PingPayload call({
-    String? passcode,
-    DateTime? timestamp,
-    String? webhookId,
-  });
+  PingPayload call({String? passcode, DateTime? timestamp, String? webhookId});
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -44,7 +40,6 @@ class _$PingPayloadCWProxyImpl implements _$PingPayloadCWProxy {
   PingPayload webhookId(String? webhookId) => call(webhookId: webhookId);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PingPayload(...).copyWith.fieldName(value)`.
   ///
@@ -86,12 +81,12 @@ extension $PingPayloadCopyWith on PingPayload {
 // **************************************************************************
 
 PingPayload _$PingPayloadFromJson(Map<String, dynamic> json) => PingPayload(
-      passcode: json['passcode'] as String?,
-      timestamp: json['timestamp'] == null
-          ? null
-          : DateTime.parse(json['timestamp'] as String),
-      webhookId: json['webhook_id'] as String?,
-    );
+  passcode: json['passcode'] as String?,
+  timestamp: json['timestamp'] == null
+      ? null
+      : DateTime.parse(json['timestamp'] as String),
+  webhookId: json['webhook_id'] as String?,
+);
 
 Map<String, dynamic> _$PingPayloadToJson(PingPayload instance) =>
     <String, dynamic>{

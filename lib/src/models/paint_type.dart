@@ -28,5 +28,5 @@ enum PaintType {
 
   /// Emoji paint.
   @JsonValue('EMOJI')
-  emoji
+  emoji,
 }

@@ -101,7 +101,6 @@ class _$PaintCWProxyImpl implements _$PaintCWProxy {
   Paint gifRef(String? gifRef) => call(gifRef: gifRef);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Paint(...).copyWith.fieldName(value)`.
   ///
@@ -146,9 +145,9 @@ class _$PaintCWProxyImpl implements _$PaintCWProxy {
           : blendMode as BlendMode?,
       gradientHandlePositions:
           gradientHandlePositions == const $CopyWithPlaceholder()
-              ? _value.gradientHandlePositions
-              // ignore: cast_nullable_to_non_nullable
-              : gradientHandlePositions as List<Vector2D>?,
+          ? _value.gradientHandlePositions
+          // ignore: cast_nullable_to_non_nullable
+          : gradientHandlePositions as List<Vector2D>?,
       gradientStops: gradientStops == const $CopyWithPlaceholder()
           ? _value.gradientStops
           // ignore: cast_nullable_to_non_nullable
@@ -189,43 +188,42 @@ extension $PaintCopyWith on Paint {
 // **************************************************************************
 
 Paint _$PaintFromJson(Map<String, dynamic> json) => Paint(
-      type: $enumDecodeNullable(_$PaintTypeEnumMap, json['type']),
-      visible: json['visible'] as bool? ?? true,
-      opacity: (json['opacity'] as num?)?.toDouble(),
-      color: json['color'] == null
-          ? null
-          : Color.fromJson(json['color'] as Map<String, dynamic>),
-      blendMode: $enumDecodeNullable(_$BlendModeEnumMap, json['blendMode']),
-      gradientHandlePositions:
-          (json['gradientHandlePositions'] as List<dynamic>?)
-              ?.map((e) => Vector2D.fromJson(e as Map<String, dynamic>))
-              .toList(),
-      gradientStops: (json['gradientStops'] as List<dynamic>?)
-          ?.map((e) => ColorStop.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      scaleMode: $enumDecodeNullable(_$ScaleModeEnumMap, json['scaleMode']),
-      imageTransform: (json['imageTransform'] as List<dynamic>?)
-          ?.map((e) => (e as List<dynamic>).map((e) => e as num).toList())
-          .toList(),
-      scalingFactor: json['scalingFactor'] as num?,
-      imageRef: json['imageRef'] as String?,
-      gifRef: json['gifRef'] as String?,
-    );
+  type: $enumDecodeNullable(_$PaintTypeEnumMap, json['type']),
+  visible: json['visible'] as bool? ?? true,
+  opacity: (json['opacity'] as num?)?.toDouble(),
+  color: json['color'] == null
+      ? null
+      : Color.fromJson(json['color'] as Map<String, dynamic>),
+  blendMode: $enumDecodeNullable(_$BlendModeEnumMap, json['blendMode']),
+  gradientHandlePositions: (json['gradientHandlePositions'] as List<dynamic>?)
+      ?.map((e) => Vector2D.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  gradientStops: (json['gradientStops'] as List<dynamic>?)
+      ?.map((e) => ColorStop.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  scaleMode: $enumDecodeNullable(_$ScaleModeEnumMap, json['scaleMode']),
+  imageTransform: (json['imageTransform'] as List<dynamic>?)
+      ?.map((e) => (e as List<dynamic>).map((e) => e as num).toList())
+      .toList(),
+  scalingFactor: json['scalingFactor'] as num?,
+  imageRef: json['imageRef'] as String?,
+  gifRef: json['gifRef'] as String?,
+);
 
 Map<String, dynamic> _$PaintToJson(Paint instance) => <String, dynamic>{
-      'type': _$PaintTypeEnumMap[instance.type],
-      'visible': instance.visible,
-      'opacity': instance.opacity,
-      'color': instance.color,
-      'blendMode': _$BlendModeEnumMap[instance.blendMode],
-      'gradientHandlePositions': instance.gradientHandlePositions,
-      'gradientStops': instance.gradientStops,
-      'scaleMode': _$ScaleModeEnumMap[instance.scaleMode],
-      'imageTransform': instance.imageTransform,
-      'scalingFactor': instance.scalingFactor,
-      'imageRef': instance.imageRef,
-      'gifRef': instance.gifRef,
-    };
+  'type': _$PaintTypeEnumMap[instance.type],
+  'visible': instance.visible,
+  'opacity': instance.opacity,
+  'color': instance.color,
+  'blendMode': _$BlendModeEnumMap[instance.blendMode],
+  'gradientHandlePositions': instance.gradientHandlePositions,
+  'gradientStops': instance.gradientStops,
+  'scaleMode': _$ScaleModeEnumMap[instance.scaleMode],
+  'imageTransform': instance.imageTransform,
+  'scalingFactor': instance.scalingFactor,
+  'imageRef': instance.imageRef,
+  'gifRef': instance.gifRef,
+};
 
 const _$PaintTypeEnumMap = {
   PaintType.solid: 'SOLID',

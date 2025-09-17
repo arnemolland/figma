@@ -18,10 +18,7 @@ abstract class _$CommentFragmentCWProxy {
   /// ```dart
   /// CommentFragment(...).copyWith(id: 12, name: "My name")
   /// ```
-  CommentFragment call({
-    String? text,
-    String? mention,
-  });
+  CommentFragment call({String? text, String? mention});
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -38,7 +35,6 @@ class _$CommentFragmentCWProxyImpl implements _$CommentFragmentCWProxy {
   CommentFragment mention(String? mention) => call(mention: mention);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `CommentFragment(...).copyWith.fieldName(value)`.
   ///
@@ -81,7 +77,4 @@ CommentFragment _$CommentFragmentFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$CommentFragmentToJson(CommentFragment instance) =>
-    <String, dynamic>{
-      'text': instance.text,
-      'mention': instance.mention,
-    };
+    <String, dynamic>{'text': instance.text, 'mention': instance.mention};

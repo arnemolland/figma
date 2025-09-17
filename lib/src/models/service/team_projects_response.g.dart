@@ -18,10 +18,7 @@ abstract class _$TeamProjectsResponseCWProxy {
   /// ```dart
   /// TeamProjectsResponse(...).copyWith(id: 12, name: "My name")
   /// ```
-  TeamProjectsResponse call({
-    String? name,
-    List<Project>? projects,
-  });
+  TeamProjectsResponse call({String? name, List<Project>? projects});
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -40,7 +37,6 @@ class _$TeamProjectsResponseCWProxyImpl
       call(projects: projects);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `TeamProjectsResponse(...).copyWith.fieldName(value)`.
   ///
@@ -78,17 +74,14 @@ extension $TeamProjectsResponseCopyWith on TeamProjectsResponse {
 // **************************************************************************
 
 TeamProjectsResponse _$TeamProjectsResponseFromJson(
-        Map<String, dynamic> json) =>
-    TeamProjectsResponse(
-      name: json['name'] as String?,
-      projects: (json['projects'] as List<dynamic>?)
-          ?.map((e) => Project.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
+  Map<String, dynamic> json,
+) => TeamProjectsResponse(
+  name: json['name'] as String?,
+  projects: (json['projects'] as List<dynamic>?)
+      ?.map((e) => Project.fromJson(e as Map<String, dynamic>))
+      .toList(),
+);
 
 Map<String, dynamic> _$TeamProjectsResponseToJson(
-        TeamProjectsResponse instance) =>
-    <String, dynamic>{
-      'name': instance.name,
-      'projects': instance.projects,
-    };
+  TeamProjectsResponse instance,
+) => <String, dynamic>{'name': instance.name, 'projects': instance.projects};

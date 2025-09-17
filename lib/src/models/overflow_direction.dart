@@ -19,5 +19,5 @@ enum OverflowDirection {
 
   /// Both horizontal and vertical scrolling.
   @JsonValue('HORIZONTAL_AND_VERTICAL_SCROLLING')
-  horizontalVerticalScrolling
+  horizontalVerticalScrolling,
 }

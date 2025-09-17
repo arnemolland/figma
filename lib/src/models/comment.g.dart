@@ -74,7 +74,6 @@ class _$CommentCWProxyImpl implements _$CommentCWProxy {
   Comment orderId(String? orderId) => call(orderId: orderId);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Comment(...).copyWith.fieldName(value)`.
   ///
@@ -141,25 +140,25 @@ extension $CommentCopyWith on Comment {
 // **************************************************************************
 
 Comment _$CommentFromJson(Map<String, dynamic> json) => Comment(
-      id: json['id'] as String,
-      clientMeta: json['client_meta'],
-      fileKey: json['file_key'] as String,
-      parentId: json['parent_id'] as String?,
-      user: User.fromJson(json['user'] as Map<String, dynamic>),
-      createdAt: DateTime.parse(json['created_at'] as String),
-      resolvedAt: json['resolved_at'] == null
-          ? null
-          : DateTime.parse(json['resolved_at'] as String),
-      orderId: json['order_id'] as String?,
-    );
+  id: json['id'] as String,
+  clientMeta: json['client_meta'],
+  fileKey: json['file_key'] as String,
+  parentId: json['parent_id'] as String?,
+  user: User.fromJson(json['user'] as Map<String, dynamic>),
+  createdAt: DateTime.parse(json['created_at'] as String),
+  resolvedAt: json['resolved_at'] == null
+      ? null
+      : DateTime.parse(json['resolved_at'] as String),
+  orderId: json['order_id'] as String?,
+);
 
 Map<String, dynamic> _$CommentToJson(Comment instance) => <String, dynamic>{
-      'id': instance.id,
-      'client_meta': instance.clientMeta,
-      'file_key': instance.fileKey,
-      'parent_id': instance.parentId,
-      'user': instance.user,
-      'created_at': instance.createdAt.toIso8601String(),
-      'resolved_at': instance.resolvedAt?.toIso8601String(),
-      'order_id': instance.orderId,
-    };
+  'id': instance.id,
+  'client_meta': instance.clientMeta,
+  'file_key': instance.fileKey,
+  'parent_id': instance.parentId,
+  'user': instance.user,
+  'created_at': instance.createdAt.toIso8601String(),
+  'resolved_at': instance.resolvedAt?.toIso8601String(),
+  'order_id': instance.orderId,
+};

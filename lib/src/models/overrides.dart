@@ -7,10 +7,7 @@ part 'overrides.g.dart';
 @JsonSerializable()
 @CopyWith()
 class Overrides {
-  Overrides({
-    required this.id,
-    required this.overriddenFields,
-  });
+  Overrides({required this.id, required this.overriddenFields});
 
   /// A unique ID for a node.
   final String id;

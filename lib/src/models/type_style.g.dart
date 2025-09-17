@@ -152,7 +152,6 @@ class _$TypeStyleCWProxyImpl implements _$TypeStyleCWProxy {
       call(lineHeightUnit: lineHeightUnit);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `TypeStyle(...).copyWith.fieldName(value)`.
   ///
@@ -252,9 +251,9 @@ class _$TypeStyleCWProxyImpl implements _$TypeStyleCWProxy {
           : lineHeightPercent as num?,
       lineHeightPercentFontSize:
           lineHeightPercentFontSize == const $CopyWithPlaceholder()
-              ? _value.lineHeightPercentFontSize
-              // ignore: cast_nullable_to_non_nullable
-              : lineHeightPercentFontSize as num?,
+          ? _value.lineHeightPercentFontSize
+          // ignore: cast_nullable_to_non_nullable
+          : lineHeightPercentFontSize as num?,
       lineHeightUnit: lineHeightUnit == const $CopyWithPlaceholder()
           ? _value.lineHeightUnit
           // ignore: cast_nullable_to_non_nullable
@@ -275,59 +274,68 @@ extension $TypeStyleCopyWith on TypeStyle {
 // **************************************************************************
 
 TypeStyle _$TypeStyleFromJson(Map<String, dynamic> json) => TypeStyle(
-      fontFamily: json['fontFamily'] as String?,
-      fontPostScriptName: json['fontPostScriptName'] as String?,
-      paragraphSpacing: json['paragraphSpacing'] as num?,
-      paragraphIndent: json['paragraphIndent'] as num?,
-      italic: json['italic'] as bool?,
-      fontWeight: json['fontWeight'] as num?,
-      fontSize: json['fontSize'] as num?,
-      textCase: $enumDecodeNullable(_$TextCaseEnumMap, json['textCase']),
-      textDecoration:
-          $enumDecodeNullable(_$TextDecorationEnumMap, json['textDecoration']),
-      textAutoResize:
-          $enumDecodeNullable(_$TextAutoResizeEnumMap, json['textAutoResize']),
-      textAlignHorizontal: $enumDecodeNullable(
-          _$TextAlignHorizontalEnumMap, json['textAlignHorizontal']),
-      textAlignVertical: $enumDecodeNullable(
-          _$TextAlignVerticalEnumMap, json['textAlignVertical']),
-      letterSpacing: json['letterSpacing'] as num?,
-      fills: (json['fills'] as List<dynamic>?)
-          ?.map((e) => Paint.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      opentypeFlags: (json['opentypeFlags'] as Map<String, dynamic>?)?.map(
-        (k, e) => MapEntry(k, e as num),
-      ),
-      lineHeightPx: json['lineHeightPx'] as num?,
-      lineHeightPercent: json['lineHeightPercent'] as num?,
-      lineHeightPercentFontSize: json['lineHeightPercentFontSize'] as num?,
-      lineHeightUnit:
-          $enumDecodeNullable(_$LineHeightUnitEnumMap, json['lineHeightUnit']),
-    );
+  fontFamily: json['fontFamily'] as String?,
+  fontPostScriptName: json['fontPostScriptName'] as String?,
+  paragraphSpacing: json['paragraphSpacing'] as num?,
+  paragraphIndent: json['paragraphIndent'] as num?,
+  italic: json['italic'] as bool?,
+  fontWeight: json['fontWeight'] as num?,
+  fontSize: json['fontSize'] as num?,
+  textCase: $enumDecodeNullable(_$TextCaseEnumMap, json['textCase']),
+  textDecoration: $enumDecodeNullable(
+    _$TextDecorationEnumMap,
+    json['textDecoration'],
+  ),
+  textAutoResize: $enumDecodeNullable(
+    _$TextAutoResizeEnumMap,
+    json['textAutoResize'],
+  ),
+  textAlignHorizontal: $enumDecodeNullable(
+    _$TextAlignHorizontalEnumMap,
+    json['textAlignHorizontal'],
+  ),
+  textAlignVertical: $enumDecodeNullable(
+    _$TextAlignVerticalEnumMap,
+    json['textAlignVertical'],
+  ),
+  letterSpacing: json['letterSpacing'] as num?,
+  fills: (json['fills'] as List<dynamic>?)
+      ?.map((e) => Paint.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  opentypeFlags: (json['opentypeFlags'] as Map<String, dynamic>?)?.map(
+    (k, e) => MapEntry(k, e as num),
+  ),
+  lineHeightPx: json['lineHeightPx'] as num?,
+  lineHeightPercent: json['lineHeightPercent'] as num?,
+  lineHeightPercentFontSize: json['lineHeightPercentFontSize'] as num?,
+  lineHeightUnit: $enumDecodeNullable(
+    _$LineHeightUnitEnumMap,
+    json['lineHeightUnit'],
+  ),
+);
 
 Map<String, dynamic> _$TypeStyleToJson(TypeStyle instance) => <String, dynamic>{
-      'fontFamily': instance.fontFamily,
-      'fontPostScriptName': instance.fontPostScriptName,
-      'paragraphSpacing': instance.paragraphSpacing,
-      'paragraphIndent': instance.paragraphIndent,
-      'italic': instance.italic,
-      'fontWeight': instance.fontWeight,
-      'fontSize': instance.fontSize,
-      'textCase': _$TextCaseEnumMap[instance.textCase],
-      'textDecoration': _$TextDecorationEnumMap[instance.textDecoration],
-      'textAutoResize': _$TextAutoResizeEnumMap[instance.textAutoResize],
-      'textAlignHorizontal':
-          _$TextAlignHorizontalEnumMap[instance.textAlignHorizontal],
-      'textAlignVertical':
-          _$TextAlignVerticalEnumMap[instance.textAlignVertical],
-      'letterSpacing': instance.letterSpacing,
-      'fills': instance.fills,
-      'opentypeFlags': instance.opentypeFlags,
-      'lineHeightPx': instance.lineHeightPx,
-      'lineHeightPercent': instance.lineHeightPercent,
-      'lineHeightPercentFontSize': instance.lineHeightPercentFontSize,
-      'lineHeightUnit': _$LineHeightUnitEnumMap[instance.lineHeightUnit],
-    };
+  'fontFamily': instance.fontFamily,
+  'fontPostScriptName': instance.fontPostScriptName,
+  'paragraphSpacing': instance.paragraphSpacing,
+  'paragraphIndent': instance.paragraphIndent,
+  'italic': instance.italic,
+  'fontWeight': instance.fontWeight,
+  'fontSize': instance.fontSize,
+  'textCase': _$TextCaseEnumMap[instance.textCase],
+  'textDecoration': _$TextDecorationEnumMap[instance.textDecoration],
+  'textAutoResize': _$TextAutoResizeEnumMap[instance.textAutoResize],
+  'textAlignHorizontal':
+      _$TextAlignHorizontalEnumMap[instance.textAlignHorizontal],
+  'textAlignVertical': _$TextAlignVerticalEnumMap[instance.textAlignVertical],
+  'letterSpacing': instance.letterSpacing,
+  'fills': instance.fills,
+  'opentypeFlags': instance.opentypeFlags,
+  'lineHeightPx': instance.lineHeightPx,
+  'lineHeightPercent': instance.lineHeightPercent,
+  'lineHeightPercentFontSize': instance.lineHeightPercentFontSize,
+  'lineHeightUnit': _$LineHeightUnitEnumMap[instance.lineHeightUnit],
+};
 
 const _$TextCaseEnumMap = {
   TextCase.upper: 'UPPER',

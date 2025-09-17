@@ -12,7 +12,8 @@ abstract class _$ComponentPropertyCWProxy {
   ComponentProperty value(dynamic value);
 
   ComponentProperty preferredValues(
-      List<InstanceSwapPreferredValue>? preferredValues);
+    List<InstanceSwapPreferredValue>? preferredValues,
+  );
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ComponentProperty(...).copyWith.fieldName(value)`.
@@ -43,11 +44,10 @@ class _$ComponentPropertyCWProxyImpl implements _$ComponentPropertyCWProxy {
 
   @override
   ComponentProperty preferredValues(
-          List<InstanceSwapPreferredValue>? preferredValues) =>
-      call(preferredValues: preferredValues);
+    List<InstanceSwapPreferredValue>? preferredValues,
+  ) => call(preferredValues: preferredValues);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ComponentProperty(...).copyWith.fieldName(value)`.
   ///
@@ -94,8 +94,10 @@ ComponentProperty _$ComponentPropertyFromJson(Map<String, dynamic> json) =>
       type: json['type'] as String,
       value: json['value'],
       preferredValues: (json['preferredValues'] as List<dynamic>?)
-          ?.map((e) =>
-              InstanceSwapPreferredValue.fromJson(e as Map<String, dynamic>))
+          ?.map(
+            (e) =>
+                InstanceSwapPreferredValue.fromJson(e as Map<String, dynamic>),
+          )
           .toList(),
     );
 

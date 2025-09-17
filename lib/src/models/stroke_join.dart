@@ -14,5 +14,5 @@ enum StrokeJoin {
 
   /// Corners are rendered with a smooth, circular arc between the two lines.
   @JsonValue('ROUND')
-  round
+  round,
 }

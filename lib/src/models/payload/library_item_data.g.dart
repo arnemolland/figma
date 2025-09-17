@@ -18,10 +18,7 @@ abstract class _$LibraryItemDataCWProxy {
   /// ```dart
   /// LibraryItemData(...).copyWith(id: 12, name: "My name")
   /// ```
-  LibraryItemData call({
-    String? key,
-    String? name,
-  });
+  LibraryItemData call({String? key, String? name});
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -38,7 +35,6 @@ class _$LibraryItemDataCWProxyImpl implements _$LibraryItemDataCWProxy {
   LibraryItemData name(String? name) => call(name: name);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `LibraryItemData(...).copyWith.fieldName(value)`.
   ///
@@ -75,13 +71,7 @@ extension $LibraryItemDataCopyWith on LibraryItemData {
 // **************************************************************************
 
 LibraryItemData _$LibraryItemDataFromJson(Map<String, dynamic> json) =>
-    LibraryItemData(
-      key: json['key'] as String?,
-      name: json['name'] as String?,
-    );
+    LibraryItemData(key: json['key'] as String?, name: json['name'] as String?);
 
 Map<String, dynamic> _$LibraryItemDataToJson(LibraryItemData instance) =>
-    <String, dynamic>{
-      'key': instance.key,
-      'name': instance.name,
-    };
+    <String, dynamic>{'key': instance.key, 'name': instance.name};

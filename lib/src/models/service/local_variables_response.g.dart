@@ -45,7 +45,6 @@ class _$LocalVariablesResponseCWProxyImpl
   LocalVariablesResponse meta(LocalVariablesMeta? meta) => call(meta: meta);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `LocalVariablesResponse(...).copyWith.fieldName(value)`.
   ///
@@ -88,19 +87,19 @@ extension $LocalVariablesResponseCopyWith on LocalVariablesResponse {
 // **************************************************************************
 
 LocalVariablesResponse _$LocalVariablesResponseFromJson(
-        Map<String, dynamic> json) =>
-    LocalVariablesResponse(
-      status: (json['status'] as num).toInt(),
-      error: json['error'] as bool,
-      meta: json['meta'] == null
-          ? null
-          : LocalVariablesMeta.fromJson(json['meta'] as Map<String, dynamic>),
-    );
+  Map<String, dynamic> json,
+) => LocalVariablesResponse(
+  status: (json['status'] as num).toInt(),
+  error: json['error'] as bool,
+  meta: json['meta'] == null
+      ? null
+      : LocalVariablesMeta.fromJson(json['meta'] as Map<String, dynamic>),
+);
 
 Map<String, dynamic> _$LocalVariablesResponseToJson(
-        LocalVariablesResponse instance) =>
-    <String, dynamic>{
-      'status': instance.status,
-      'error': instance.error,
-      'meta': instance.meta,
-    };
+  LocalVariablesResponse instance,
+) => <String, dynamic>{
+  'status': instance.status,
+  'error': instance.error,
+  'meta': instance.meta,
+};

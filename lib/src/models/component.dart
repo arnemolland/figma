@@ -78,20 +78,20 @@ class Component extends Equatable {
 
   @override
   List<Object?> get props => [
-        key,
-        fileKey,
-        nodeId,
-        thumbnailUrl,
-        name,
-        description,
-        createdAt,
-        updatedAt,
-        user,
-        containingFrame,
-        containingPage,
-        componentSetId,
-        componentPropertyDefinitions,
-      ];
+    key,
+    fileKey,
+    nodeId,
+    thumbnailUrl,
+    name,
+    description,
+    createdAt,
+    updatedAt,
+    user,
+    containingFrame,
+    containingPage,
+    componentSetId,
+    componentPropertyDefinitions,
+  ];
 
   factory Component.fromJson(Map<String, dynamic> json) =>
       _$ComponentFromJson(json);

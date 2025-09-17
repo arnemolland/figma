@@ -8,10 +8,7 @@ part 'paint_override.g.dart';
 @JsonSerializable()
 @CopyWith()
 class PaintOverride {
-  PaintOverride({
-    required this.fills,
-    this.inheritFillStyleId,
-  });
+  PaintOverride({required this.fills, this.inheritFillStyleId});
 
   /// Paints applied to characters.
   @JsonKey(defaultValue: [])

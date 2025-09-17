@@ -98,15 +98,14 @@ class _$LocalVariableCWProxyImpl implements _$LocalVariableCWProxy {
 
   @override
   LocalVariable codeSyntax(
-          Map<VariableCodeSyntaxPlatform, String> codeSyntax) =>
-      call(codeSyntax: codeSyntax);
+    Map<VariableCodeSyntaxPlatform, String> codeSyntax,
+  ) => call(codeSyntax: codeSyntax);
 
   @override
   LocalVariable deletedButReferenced(bool? deletedButReferenced) =>
       call(deletedButReferenced: deletedButReferenced);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `LocalVariable(...).copyWith.fieldName(value)`.
   ///
@@ -143,44 +142,44 @@ class _$LocalVariableCWProxyImpl implements _$LocalVariableCWProxy {
           : key as String,
       variableCollectionId:
           variableCollectionId == const $CopyWithPlaceholder() ||
-                  variableCollectionId == null
-              ? _value.variableCollectionId
-              // ignore: cast_nullable_to_non_nullable
-              : variableCollectionId as String,
+              variableCollectionId == null
+          ? _value.variableCollectionId
+          // ignore: cast_nullable_to_non_nullable
+          : variableCollectionId as String,
       resolvedType:
           resolvedType == const $CopyWithPlaceholder() || resolvedType == null
-              ? _value.resolvedType
-              // ignore: cast_nullable_to_non_nullable
-              : resolvedType as ResolvedType,
+          ? _value.resolvedType
+          // ignore: cast_nullable_to_non_nullable
+          : resolvedType as ResolvedType,
       valuesByMode:
           valuesByMode == const $CopyWithPlaceholder() || valuesByMode == null
-              ? _value.valuesByMode
-              // ignore: cast_nullable_to_non_nullable
-              : valuesByMode as Map<String, dynamic>,
+          ? _value.valuesByMode
+          // ignore: cast_nullable_to_non_nullable
+          : valuesByMode as Map<String, dynamic>,
       remote: remote == const $CopyWithPlaceholder() || remote == null
           ? _value.remote
           // ignore: cast_nullable_to_non_nullable
           : remote as bool,
       description:
           description == const $CopyWithPlaceholder() || description == null
-              ? _value.description
-              // ignore: cast_nullable_to_non_nullable
-              : description as String,
+          ? _value.description
+          // ignore: cast_nullable_to_non_nullable
+          : description as String,
       hiddenFromPublishing:
           hiddenFromPublishing == const $CopyWithPlaceholder() ||
-                  hiddenFromPublishing == null
-              ? _value.hiddenFromPublishing
-              // ignore: cast_nullable_to_non_nullable
-              : hiddenFromPublishing as bool,
+              hiddenFromPublishing == null
+          ? _value.hiddenFromPublishing
+          // ignore: cast_nullable_to_non_nullable
+          : hiddenFromPublishing as bool,
       scopes: scopes == const $CopyWithPlaceholder() || scopes == null
           ? _value.scopes
           // ignore: cast_nullable_to_non_nullable
           : scopes as List<VariableScope>,
       codeSyntax:
           codeSyntax == const $CopyWithPlaceholder() || codeSyntax == null
-              ? _value.codeSyntax
-              // ignore: cast_nullable_to_non_nullable
-              : codeSyntax as Map<VariableCodeSyntaxPlatform, String>,
+          ? _value.codeSyntax
+          // ignore: cast_nullable_to_non_nullable
+          : codeSyntax as Map<VariableCodeSyntaxPlatform, String>,
       deletedButReferenced: deletedButReferenced == const $CopyWithPlaceholder()
           ? _value.deletedButReferenced
           // ignore: cast_nullable_to_non_nullable
@@ -211,14 +210,17 @@ LocalVariable _$LocalVariableFromJson(Map<String, dynamic> json) =>
       remote: json['remote'] as bool,
       description: json['description'] as String,
       hiddenFromPublishing: json['hiddenFromPublishing'] as bool,
-      scopes: (json['scopes'] as List<dynamic>?)
+      scopes:
+          (json['scopes'] as List<dynamic>?)
               ?.map((e) => $enumDecode(_$VariableScopeEnumMap, e))
               .toList() ??
           [],
-      codeSyntax: (json['codeSyntax'] as Map<String, dynamic>?)?.map(
+      codeSyntax:
+          (json['codeSyntax'] as Map<String, dynamic>?)?.map(
             (k, e) => MapEntry(
-                $enumDecode(_$VariableCodeSyntaxPlatformEnumMap, k),
-                e as String),
+              $enumDecode(_$VariableCodeSyntaxPlatformEnumMap, k),
+              e as String,
+            ),
           ) ??
           {},
       deletedButReferenced: json['deletedButReferenced'] as bool?,
@@ -236,8 +238,9 @@ Map<String, dynamic> _$LocalVariableToJson(LocalVariable instance) =>
       'description': instance.description,
       'hiddenFromPublishing': instance.hiddenFromPublishing,
       'scopes': instance.scopes.map((e) => _$VariableScopeEnumMap[e]!).toList(),
-      'codeSyntax': instance.codeSyntax
-          .map((k, e) => MapEntry(_$VariableCodeSyntaxPlatformEnumMap[k]!, e)),
+      'codeSyntax': instance.codeSyntax.map(
+        (k, e) => MapEntry(_$VariableCodeSyntaxPlatformEnumMap[k]!, e),
+      ),
       'deletedButReferenced': instance.deletedButReferenced,
     };
 

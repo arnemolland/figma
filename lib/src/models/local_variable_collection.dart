@@ -53,15 +53,15 @@ class LocalVariableCollection extends Equatable {
 
   @override
   List<Object?> get props => [
-        id,
-        name,
-        key,
-        modes,
-        defaultModeId,
-        remote,
-        hiddenFromPublishing,
-        variableIds,
-      ];
+    id,
+    name,
+    key,
+    modes,
+    defaultModeId,
+    remote,
+    hiddenFromPublishing,
+    variableIds,
+  ];
 
   factory LocalVariableCollection.fromJson(Map<String, dynamic> json) =>
       _$LocalVariableCollectionFromJson(json);

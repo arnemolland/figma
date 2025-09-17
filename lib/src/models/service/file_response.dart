@@ -56,17 +56,17 @@ class FileResponse extends Equatable {
 
   @override
   List<Object?> get props => [
-        name,
-        role,
-        lastModified,
-        thumbnailUrl,
-        version,
-        document,
-        components,
-        componentSets,
-        schemaVersion,
-        styles,
-      ];
+    name,
+    role,
+    lastModified,
+    thumbnailUrl,
+    version,
+    document,
+    components,
+    componentSets,
+    schemaVersion,
+    styles,
+  ];
 
   factory FileResponse.fromJson(Map<String, dynamic> json) =>
       _$FileResponseFromJson(json);

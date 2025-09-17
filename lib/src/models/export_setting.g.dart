@@ -45,7 +45,6 @@ class _$ExportSettingCWProxyImpl implements _$ExportSettingCWProxy {
       call(constraint: constraint);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ExportSetting(...).copyWith.fieldName(value)`.
   ///

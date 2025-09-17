@@ -8,13 +8,7 @@ part 'dev_resource.g.dart';
 @JsonSerializable()
 @CopyWith()
 class DevResource extends Equatable {
-  const DevResource({
-    this.id,
-    this.name,
-    this.url,
-    this.fileKey,
-    this.nodeId,
-  });
+  const DevResource({this.id, this.name, this.url, this.fileKey, this.nodeId});
 
   factory DevResource.fromJson(Map<String, dynamic> json) =>
       _$DevResourceFromJson(json);
@@ -37,13 +31,7 @@ class DevResource extends Equatable {
   final String? nodeId;
 
   @override
-  List<Object?> get props => [
-        id,
-        name,
-        url,
-        fileKey,
-        nodeId,
-      ];
+  List<Object?> get props => [id, name, url, fileKey, nodeId];
 
   Map<String, dynamic> toJson() => _$DevResourceToJson(this);
 }

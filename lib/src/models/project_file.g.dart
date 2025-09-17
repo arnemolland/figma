@@ -52,7 +52,6 @@ class _$ProjectFileCWProxyImpl implements _$ProjectFileCWProxy {
       call(lastModified: lastModified);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ProjectFile(...).copyWith.fieldName(value)`.
   ///
@@ -99,13 +98,13 @@ extension $ProjectFileCopyWith on ProjectFile {
 // **************************************************************************
 
 ProjectFile _$ProjectFileFromJson(Map<String, dynamic> json) => ProjectFile(
-      key: json['key'] as String?,
-      name: json['name'] as String?,
-      thumbnailUrl: json['thumbnail_url'] as String?,
-      lastModified: json['last_modified'] == null
-          ? null
-          : DateTime.parse(json['last_modified'] as String),
-    );
+  key: json['key'] as String?,
+  name: json['name'] as String?,
+  thumbnailUrl: json['thumbnail_url'] as String?,
+  lastModified: json['last_modified'] == null
+      ? null
+      : DateTime.parse(json['last_modified'] as String),
+);
 
 Map<String, dynamic> _$ProjectFileToJson(ProjectFile instance) =>
     <String, dynamic>{

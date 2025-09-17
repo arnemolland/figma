@@ -56,7 +56,6 @@ class _$VersionCWProxyImpl implements _$VersionCWProxy {
   Version user(User user) => call(user: user);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Version(...).copyWith.fieldName(value)`.
   ///
@@ -108,17 +107,17 @@ extension $VersionCopyWith on Version {
 // **************************************************************************
 
 Version _$VersionFromJson(Map<String, dynamic> json) => Version(
-      id: json['id'] as String,
-      createdAt: DateTime.parse(json['created_at'] as String),
-      label: json['label'] as String?,
-      description: json['description'] as String?,
-      user: User.fromJson(json['user'] as Map<String, dynamic>),
-    );
+  id: json['id'] as String,
+  createdAt: DateTime.parse(json['created_at'] as String),
+  label: json['label'] as String?,
+  description: json['description'] as String?,
+  user: User.fromJson(json['user'] as Map<String, dynamic>),
+);
 
 Map<String, dynamic> _$VersionToJson(Version instance) => <String, dynamic>{
-      'id': instance.id,
-      'created_at': instance.createdAt.toIso8601String(),
-      'label': instance.label,
-      'description': instance.description,
-      'user': instance.user,
-    };
+  'id': instance.id,
+  'created_at': instance.createdAt.toIso8601String(),
+  'label': instance.label,
+  'description': instance.description,
+  'user': instance.user,
+};

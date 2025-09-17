@@ -18,10 +18,7 @@ abstract class _$PathCWProxy {
   /// ```dart
   /// Path(...).copyWith(id: 12, name: "My name")
   /// ```
-  Path call({
-    String path,
-    WindingRule windingRule,
-  });
+  Path call({String path, WindingRule windingRule});
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -38,7 +35,6 @@ class _$PathCWProxyImpl implements _$PathCWProxy {
   Path windingRule(WindingRule windingRule) => call(windingRule: windingRule);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Path(...).copyWith.fieldName(value)`.
   ///
@@ -57,9 +53,9 @@ class _$PathCWProxyImpl implements _$PathCWProxy {
           : path as String,
       windingRule:
           windingRule == const $CopyWithPlaceholder() || windingRule == null
-              ? _value.windingRule
-              // ignore: cast_nullable_to_non_nullable
-              : windingRule as WindingRule,
+          ? _value.windingRule
+          // ignore: cast_nullable_to_non_nullable
+          : windingRule as WindingRule,
     );
   }
 }
@@ -76,14 +72,14 @@ extension $PathCopyWith on Path {
 // **************************************************************************
 
 Path _$PathFromJson(Map<String, dynamic> json) => Path(
-      path: json['path'] as String,
-      windingRule: $enumDecode(_$WindingRuleEnumMap, json['windingRule']),
-    );
+  path: json['path'] as String,
+  windingRule: $enumDecode(_$WindingRuleEnumMap, json['windingRule']),
+);
 
 Map<String, dynamic> _$PathToJson(Path instance) => <String, dynamic>{
-      'path': instance.path,
-      'windingRule': _$WindingRuleEnumMap[instance.windingRule]!,
-    };
+  'path': instance.path,
+  'windingRule': _$WindingRuleEnumMap[instance.windingRule]!,
+};
 
 const _$WindingRuleEnumMap = {
   WindingRule.nonzero: 'NONZERO',

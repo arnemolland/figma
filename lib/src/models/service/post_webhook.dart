@@ -51,14 +51,14 @@ class PostWebhook extends Equatable {
 
   @override
   List<Object?> get props => [
-        eventType,
-        context,
-        contextId,
-        endpoint,
-        passcode,
-        status,
-        description,
-      ];
+    eventType,
+    context,
+    contextId,
+    endpoint,
+    passcode,
+    status,
+    description,
+  ];
 
   factory PostWebhook.fromJson(Map<String, dynamic> json) =>
       _$PostWebhookFromJson(json);

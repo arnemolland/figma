@@ -28,22 +28,10 @@ class Style extends Equatable {
   @JsonKey(name: 'style_type')
   final StyleType? type;
 
-  const Style({
-    this.nodeId,
-    this.key,
-    this.name,
-    this.description,
-    this.type,
-  });
+  const Style({this.nodeId, this.key, this.name, this.description, this.type});
 
   @override
-  List<Object?> get props => [
-        nodeId,
-        key,
-        name,
-        description,
-        type,
-      ];
+  List<Object?> get props => [nodeId, key, name, description, type];
 
   factory Style.fromJson(Map<String, dynamic> json) => _$StyleFromJson(json);
 

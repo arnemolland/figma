@@ -54,15 +54,15 @@ class Comment extends Equatable {
 
   @override
   List<Object?> get props => [
-        id,
-        clientMeta,
-        fileKey,
-        parentId,
-        user,
-        createdAt,
-        resolvedAt,
-        orderId,
-      ];
+    id,
+    clientMeta,
+    fileKey,
+    parentId,
+    user,
+    createdAt,
+    resolvedAt,
+    orderId,
+  ];
 
   factory Comment.fromJson(Map<String, dynamic> json) =>
       _$CommentFromJson(json);

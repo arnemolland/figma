@@ -18,10 +18,7 @@ abstract class _$Vector2DCWProxy {
   /// ```dart
   /// Vector2D(...).copyWith(id: 12, name: "My name")
   /// ```
-  Vector2D call({
-    num x,
-    num y,
-  });
+  Vector2D call({num x, num y});
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -38,7 +35,6 @@ class _$Vector2DCWProxyImpl implements _$Vector2DCWProxy {
   Vector2D y(num y) => call(y: y);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Vector2D(...).copyWith.fieldName(value)`.
   ///
@@ -74,12 +70,10 @@ extension $Vector2DCopyWith on Vector2D {
 // JsonSerializableGenerator
 // **************************************************************************
 
-Vector2D _$Vector2DFromJson(Map<String, dynamic> json) => Vector2D(
-      x: json['x'] as num,
-      y: json['y'] as num,
-    );
+Vector2D _$Vector2DFromJson(Map<String, dynamic> json) =>
+    Vector2D(x: json['x'] as num, y: json['y'] as num);
 
 Map<String, dynamic> _$Vector2DToJson(Vector2D instance) => <String, dynamic>{
-      'x': instance.x,
-      'y': instance.y,
-    };
+  'x': instance.x,
+  'y': instance.y,
+};

@@ -20,11 +20,7 @@ abstract class _$StyleResponseCWProxy {
   /// ```dart
   /// StyleResponse(...).copyWith(id: 12, name: "My name")
   /// ```
-  StyleResponse call({
-    int? status,
-    bool? error,
-    Style? style,
-  });
+  StyleResponse call({int? status, bool? error, Style? style});
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -44,7 +40,6 @@ class _$StyleResponseCWProxyImpl implements _$StyleResponseCWProxy {
   StyleResponse style(Style? style) => call(style: style);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `StyleResponse(...).copyWith.fieldName(value)`.
   ///

@@ -18,10 +18,7 @@ abstract class _$ColorStopCWProxy {
   /// ```dart
   /// ColorStop(...).copyWith(id: 12, name: "My name")
   /// ```
-  ColorStop call({
-    double? position,
-    Color? color,
-  });
+  ColorStop call({double? position, Color? color});
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -38,7 +35,6 @@ class _$ColorStopCWProxyImpl implements _$ColorStopCWProxy {
   ColorStop color(Color? color) => call(color: color);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ColorStop(...).copyWith.fieldName(value)`.
   ///
@@ -75,13 +71,13 @@ extension $ColorStopCopyWith on ColorStop {
 // **************************************************************************
 
 ColorStop _$ColorStopFromJson(Map<String, dynamic> json) => ColorStop(
-      position: (json['position'] as num?)?.toDouble(),
-      color: json['color'] == null
-          ? null
-          : Color.fromJson(json['color'] as Map<String, dynamic>),
-    );
+  position: (json['position'] as num?)?.toDouble(),
+  color: json['color'] == null
+      ? null
+      : Color.fromJson(json['color'] as Map<String, dynamic>),
+);
 
 Map<String, dynamic> _$ColorStopToJson(ColorStop instance) => <String, dynamic>{
-      'position': instance.position,
-      'color': instance.color,
-    };
+  'position': instance.position,
+  'color': instance.color,
+};

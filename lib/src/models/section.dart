@@ -53,16 +53,16 @@ class Section extends Node {
 
   @override
   List<Object?> get props => [
-        contentsHidden,
-        devStatus,
-        fills,
-        strokes,
-        strokeWeight,
-        strokeAlign,
-        children,
-        absoluteBoundingBox,
-        absoluteRenderBounds,
-      ];
+    contentsHidden,
+    devStatus,
+    fills,
+    strokes,
+    strokeWeight,
+    strokeAlign,
+    children,
+    absoluteBoundingBox,
+    absoluteRenderBounds,
+  ];
 
   factory Section.fromJson(Map<String, dynamic> json) =>
       _$SectionFromJson(json);

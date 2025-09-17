@@ -22,12 +22,7 @@ abstract class _$ColorCWProxy {
   /// ```dart
   /// Color(...).copyWith(id: 12, name: "My name")
   /// ```
-  Color call({
-    double? r,
-    double? g,
-    double? b,
-    double? a,
-  });
+  Color call({double? r, double? g, double? b, double? a});
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -50,7 +45,6 @@ class _$ColorCWProxyImpl implements _$ColorCWProxy {
   Color a(double? a) => call(a: a);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Color(...).copyWith.fieldName(value)`.
   ///
@@ -97,15 +91,15 @@ extension $ColorCopyWith on Color {
 // **************************************************************************
 
 Color _$ColorFromJson(Map<String, dynamic> json) => Color(
-      r: (json['r'] as num?)?.toDouble(),
-      g: (json['g'] as num?)?.toDouble(),
-      b: (json['b'] as num?)?.toDouble(),
-      a: (json['a'] as num?)?.toDouble(),
-    );
+  r: (json['r'] as num?)?.toDouble(),
+  g: (json['g'] as num?)?.toDouble(),
+  b: (json['b'] as num?)?.toDouble(),
+  a: (json['a'] as num?)?.toDouble(),
+);
 
 Map<String, dynamic> _$ColorToJson(Color instance) => <String, dynamic>{
-      'r': instance.r,
-      'g': instance.g,
-      'b': instance.b,
-      'a': instance.a,
-    };
+  'r': instance.r,
+  'g': instance.g,
+  'b': instance.b,
+  'a': instance.a,
+};

@@ -22,12 +22,7 @@ abstract class _$StrokeWeightsCWProxy {
   /// ```dart
   /// StrokeWeights(...).copyWith(id: 12, name: "My name")
   /// ```
-  StrokeWeights call({
-    double top,
-    double right,
-    double bottom,
-    double left,
-  });
+  StrokeWeights call({double top, double right, double bottom, double left});
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -50,7 +45,6 @@ class _$StrokeWeightsCWProxyImpl implements _$StrokeWeightsCWProxy {
   StrokeWeights left(double left) => call(left: left);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `StrokeWeights(...).copyWith.fieldName(value)`.
   ///

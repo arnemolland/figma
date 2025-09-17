@@ -14,7 +14,8 @@ abstract class _$ComponentPropertyDefinitionCWProxy {
   ComponentPropertyDefinition variantOptions(List<String>? variantOptions);
 
   ComponentPropertyDefinition preferredValues(
-      List<InstanceSwapPreferredValue>? preferredValues);
+    List<InstanceSwapPreferredValue>? preferredValues,
+  );
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ComponentPropertyDefinition(...).copyWith.fieldName(value)`.
@@ -52,11 +53,10 @@ class _$ComponentPropertyDefinitionCWProxyImpl
 
   @override
   ComponentPropertyDefinition preferredValues(
-          List<InstanceSwapPreferredValue>? preferredValues) =>
-      call(preferredValues: preferredValues);
+    List<InstanceSwapPreferredValue>? preferredValues,
+  ) => call(preferredValues: preferredValues);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ComponentPropertyDefinition(...).copyWith.fieldName(value)`.
   ///
@@ -104,24 +104,25 @@ extension $ComponentPropertyDefinitionCopyWith on ComponentPropertyDefinition {
 // **************************************************************************
 
 ComponentPropertyDefinition _$ComponentPropertyDefinitionFromJson(
-        Map<String, dynamic> json) =>
-    ComponentPropertyDefinition(
-      type: json['type'] as String,
-      defaultValue: json['defaultValue'],
-      variantOptions: (json['variantOptions'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList(),
-      preferredValues: (json['preferredValues'] as List<dynamic>?)
-          ?.map((e) =>
-              InstanceSwapPreferredValue.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
+  Map<String, dynamic> json,
+) => ComponentPropertyDefinition(
+  type: json['type'] as String,
+  defaultValue: json['defaultValue'],
+  variantOptions: (json['variantOptions'] as List<dynamic>?)
+      ?.map((e) => e as String)
+      .toList(),
+  preferredValues: (json['preferredValues'] as List<dynamic>?)
+      ?.map(
+        (e) => InstanceSwapPreferredValue.fromJson(e as Map<String, dynamic>),
+      )
+      .toList(),
+);
 
 Map<String, dynamic> _$ComponentPropertyDefinitionToJson(
-        ComponentPropertyDefinition instance) =>
-    <String, dynamic>{
-      'type': instance.type,
-      'defaultValue': instance.defaultValue,
-      'variantOptions': instance.variantOptions,
-      'preferredValues': instance.preferredValues,
-    };
+  ComponentPropertyDefinition instance,
+) => <String, dynamic>{
+  'type': instance.type,
+  'defaultValue': instance.defaultValue,
+  'variantOptions': instance.variantOptions,
+  'preferredValues': instance.preferredValues,
+};

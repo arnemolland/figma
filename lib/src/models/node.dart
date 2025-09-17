@@ -53,15 +53,15 @@ class Node extends Equatable {
 
   @override
   List<Object?> get props => [
-        id,
-        name,
-        visible,
-        type,
-        pluginData,
-        sharedPluginData,
-        rotation,
-        componentPropertyReferences,
-      ];
+    id,
+    name,
+    visible,
+    type,
+    pluginData,
+    sharedPluginData,
+    rotation,
+    componentPropertyReferences,
+  ];
 
   factory Node.fromJson(Map<String, dynamic> json) => _$NodeFromJson(json);
 

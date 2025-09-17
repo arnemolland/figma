@@ -22,12 +22,7 @@ abstract class _$SizeRectangleCWProxy {
   /// ```dart
   /// SizeRectangle(...).copyWith(id: 12, name: "My name")
   /// ```
-  SizeRectangle call({
-    double? x,
-    double? y,
-    double? width,
-    double? height,
-  });
+  SizeRectangle call({double? x, double? y, double? width, double? height});
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -50,7 +45,6 @@ class _$SizeRectangleCWProxyImpl implements _$SizeRectangleCWProxy {
   SizeRectangle height(double? height) => call(height: height);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `SizeRectangle(...).copyWith.fieldName(value)`.
   ///

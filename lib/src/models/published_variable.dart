@@ -50,14 +50,14 @@ class PublishedVariable extends Equatable {
 
   @override
   List<Object?> get props => [
-        id,
-        subscribedId,
-        name,
-        key,
-        variableCollectionId,
-        resolvedDataType,
-        updatedAt,
-      ];
+    id,
+    subscribedId,
+    name,
+    key,
+    variableCollectionId,
+    resolvedDataType,
+    updatedAt,
+  ];
 
   factory PublishedVariable.fromJson(Map<String, dynamic> json) =>
       _$PublishedVariableFromJson(json);

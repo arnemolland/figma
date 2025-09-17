@@ -18,10 +18,7 @@ abstract class _$OverridesCWProxy {
   /// ```dart
   /// Overrides(...).copyWith(id: 12, name: "My name")
   /// ```
-  Overrides call({
-    String id,
-    List<String> overriddenFields,
-  });
+  Overrides call({String id, List<String> overriddenFields});
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -39,7 +36,6 @@ class _$OverridesCWProxyImpl implements _$OverridesCWProxy {
       call(overriddenFields: overriddenFields);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Overrides(...).copyWith.fieldName(value)`.
   ///
@@ -56,7 +52,8 @@ class _$OverridesCWProxyImpl implements _$OverridesCWProxy {
           ? _value.id
           // ignore: cast_nullable_to_non_nullable
           : id as String,
-      overriddenFields: overriddenFields == const $CopyWithPlaceholder() ||
+      overriddenFields:
+          overriddenFields == const $CopyWithPlaceholder() ||
               overriddenFields == null
           ? _value.overriddenFields
           // ignore: cast_nullable_to_non_nullable
@@ -77,13 +74,13 @@ extension $OverridesCopyWith on Overrides {
 // **************************************************************************
 
 Overrides _$OverridesFromJson(Map<String, dynamic> json) => Overrides(
-      id: json['id'] as String,
-      overriddenFields: (json['overriddenFields'] as List<dynamic>)
-          .map((e) => e as String)
-          .toList(),
-    );
+  id: json['id'] as String,
+  overriddenFields: (json['overriddenFields'] as List<dynamic>)
+      .map((e) => e as String)
+      .toList(),
+);
 
 Map<String, dynamic> _$OverridesToJson(Overrides instance) => <String, dynamic>{
-      'id': instance.id,
-      'overriddenFields': instance.overriddenFields,
-    };
+  'id': instance.id,
+  'overriddenFields': instance.overriddenFields,
+};

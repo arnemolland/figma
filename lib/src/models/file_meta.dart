@@ -66,18 +66,18 @@ class FileMeta extends Equatable {
 
   @override
   List<Object?> get props => [
-        name,
-        folderName,
-        lastTouchedAt,
-        creator,
-        lastTouchedBy,
-        thumbnailUrl,
-        editorType,
-        role,
-        linkAccess,
-        url,
-        version,
-      ];
+    name,
+    folderName,
+    lastTouchedAt,
+    creator,
+    lastTouchedBy,
+    thumbnailUrl,
+    editorType,
+    role,
+    linkAccess,
+    url,
+    version,
+  ];
 
   factory FileMeta.fromJson(Map<String, dynamic> json) =>
       _$FileMetaFromJson(json);
