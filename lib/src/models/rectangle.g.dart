@@ -161,6 +161,15 @@ const _$StrokeCapEnumMap = {
   StrokeCap.square: 'SQUARE',
   StrokeCap.lineArrow: 'LINE_ARROW',
   StrokeCap.triangleArrow: 'TRIANGLE_ARROW',
+  StrokeCap.diamondFilled: 'DIAMOND_FILLED',
+  StrokeCap.circleFilled: 'CIRCLE_FILLED',
+  StrokeCap.triangleFilled: 'TRIANGLE_FILLED',
+  StrokeCap.washiTape1: 'WASHI_TAPE_1',
+  StrokeCap.washiTape2: 'WASHI_TAPE_2',
+  StrokeCap.washiTape3: 'WASHI_TAPE_3',
+  StrokeCap.washiTape4: 'WASHI_TAPE_4',
+  StrokeCap.washiTape5: 'WASHI_TAPE_5',
+  StrokeCap.washiTape6: 'WASHI_TAPE_6',
 };
 
 const _$StrokeJoinEnumMap = {
@@ -192,19 +201,27 @@ const _$BlendModeEnumMap = {
 };
 
 const _$LayoutAlignEnumMap = {
+  LayoutAlign.inherit: 'INHERIT',
+  LayoutAlign.stretch: 'STRETCH',
   LayoutAlign.min: 'MIN',
   LayoutAlign.center: 'CENTER',
   LayoutAlign.max: 'MAX',
-  LayoutAlign.stretch: 'STRETCH',
-  LayoutAlign.inherit: 'INHERIT',
 };
 
 const _$EasingTypeEnumMap = {
   EasingType.easeIn: 'EASE_IN',
   EasingType.easeOut: 'EASE_OUT',
-  EasingType.easeInOut: 'EASE_IN_AND_OUT',
+  EasingType.easeInAndOut: 'EASE_IN_AND_OUT',
   EasingType.linear: 'LINEAR',
-  EasingType.customBezier: 'CUSTOM_BEZIER',
+  EasingType.easeInBack: 'EASE_IN_BACK',
+  EasingType.easeOutBack: 'EASE_OUT_BACK',
+  EasingType.easeInAndOutBack: 'EASE_IN_AND_OUT_BACK',
+  EasingType.customCubicBezier: 'CUSTOM_CUBIC_BEZIER',
+  EasingType.gentle: 'GENTLE',
+  EasingType.quick: 'QUICK',
+  EasingType.bouncy: 'BOUNCY',
+  EasingType.slow: 'SLOW',
+  EasingType.customSpring: 'CUSTOM_SPRING',
 };
 
 const _$StrokeAlignEnumMap = {

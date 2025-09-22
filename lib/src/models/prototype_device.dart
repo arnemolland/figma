@@ -4,36 +4,6 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'prototype_device.g.dart';
 
-/// Device type.
-enum PrototypeDeviceType {
-  /// No device type specified.
-  @JsonValue('NONE')
-  none,
-
-  /// Preset device type.
-  @JsonValue('PRESET')
-  preset,
-
-  /// Custom device type.
-  @JsonValue('CUSTOM')
-  custom,
-
-  /// Presentation device type.
-  @JsonValue('PRESENTATION')
-  presentation,
-}
-
-/// Device rotation.
-enum PrototypeDeviceRotation {
-  /// Counter-clockwise 90 degrees.
-  @JsonValue('CCW_90')
-  ccw90,
-
-  /// No rotation.
-  @JsonValue('NONE')
-  none,
-}
-
 /// A device used for a prototype.
 @JsonSerializable()
 @CopyWith()

@@ -1,16 +1,17 @@
+// Generated from v0.33.0 of the Figma REST API specification
+
 import 'package:json_annotation/json_annotation.dart';
 
 /// Orientation of the grid as a string enum.
-enum LayoutPattern {
+///
+/// - `COLUMNS`: Vertical grid.
+/// - `ROWS`: Horizontal grid.
+/// - `GRID`: Square grid.
+enum LayoutGridPattern {
   @JsonValue('COLUMNS')
-  /// Vertical grid.
   columns,
-
   @JsonValue('ROWS')
-  /// Horizontal grid.
   rows,
-
   @JsonValue('GRID')
-  /// Square grid.
   grid,
 }

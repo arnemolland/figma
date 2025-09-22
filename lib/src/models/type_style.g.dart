@@ -346,14 +346,15 @@ const _$TextCaseEnumMap = {
 };
 
 const _$TextDecorationEnumMap = {
-  TextDecoration.strikeThrough: 'STRIKETHROUGH',
+  TextDecoration.none: 'NONE',
+  TextDecoration.strikethrough: 'STRIKETHROUGH',
   TextDecoration.underline: 'UNDERLINE',
 };
 
 const _$TextAutoResizeEnumMap = {
   TextAutoResize.none: 'NONE',
-  TextAutoResize.height: 'HEIGHT',
   TextAutoResize.widthAndHeight: 'WIDTH_AND_HEIGHT',
+  TextAutoResize.height: 'HEIGHT',
   TextAutoResize.truncate: 'TRUNCATE',
 };
 
@@ -372,6 +373,6 @@ const _$TextAlignVerticalEnumMap = {
 
 const _$LineHeightUnitEnumMap = {
   LineHeightUnit.pixels: 'PIXELS',
-  LineHeightUnit.fontSizePercent: 'FONT_SIZE_%',
-  LineHeightUnit.intrinsicPercent: 'INTRINSIC_%',
+  LineHeightUnit.fontSize: 'FONT_SIZE_%',
+  LineHeightUnit.intrinsic: 'INTRINSIC_%',
 };

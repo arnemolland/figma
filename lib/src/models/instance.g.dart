@@ -240,11 +240,11 @@ const _$CounterAxisSizingModeEnumMap = {
 };
 
 const _$OverflowDirectionEnumMap = {
-  OverflowDirection.none: 'NONE',
   OverflowDirection.horizontalScrolling: 'HORIZONTAL_SCROLLING',
   OverflowDirection.verticalScrolling: 'VERTICAL_SCROLLING',
-  OverflowDirection.horizontalVerticalScrolling:
+  OverflowDirection.horizontalAndVerticalScrolling:
       'HORIZONTAL_AND_VERTICAL_SCROLLING',
+  OverflowDirection.none: 'NONE',
 };
 
 const _$CounterAxisAlignItemsEnumMap = {
@@ -305,15 +305,16 @@ const _$BlendModeEnumMap = {
 };
 
 const _$LayoutAlignEnumMap = {
+  LayoutAlign.inherit: 'INHERIT',
+  LayoutAlign.stretch: 'STRETCH',
   LayoutAlign.min: 'MIN',
   LayoutAlign.center: 'CENTER',
   LayoutAlign.max: 'MAX',
-  LayoutAlign.stretch: 'STRETCH',
-  LayoutAlign.inherit: 'INHERIT',
 };
 
 const _$LayoutModeEnumMap = {
   LayoutMode.none: 'NONE',
   LayoutMode.horizontal: 'HORIZONTAL',
   LayoutMode.vertical: 'VERTICAL',
+  LayoutMode.grid: 'GRID',
 };

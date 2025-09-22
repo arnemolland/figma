@@ -130,6 +130,6 @@ const _$PrototypeDeviceTypeEnumMap = {
 };
 
 const _$PrototypeDeviceRotationEnumMap = {
-  PrototypeDeviceRotation.ccw90: 'CCW_90',
   PrototypeDeviceRotation.none: 'NONE',
+  PrototypeDeviceRotation.ccw90: 'CCW_90',
 };

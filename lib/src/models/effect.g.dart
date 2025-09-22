@@ -167,11 +167,12 @@ Map<String, dynamic> _$EffectToJson(Effect instance) => <String, dynamic>{
 };
 
 const _$EffectTypeEnumMap = {
-  EffectType.innerShadow: 'INNER_SHADOW',
   EffectType.dropShadow: 'DROP_SHADOW',
+  EffectType.innerShadow: 'INNER_SHADOW',
   EffectType.layerBlur: 'LAYER_BLUR',
   EffectType.backgroundBlur: 'BACKGROUND_BLUR',
   EffectType.texture: 'TEXTURE',
+  EffectType.noise: 'NOISE',
 };
 
 const _$BlendModeEnumMap = {

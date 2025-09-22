@@ -5,29 +5,6 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'effect.g.dart';
 
-/// Type of effect.
-enum EffectType {
-  /// Inner shadow effect.
-  @JsonValue('INNER_SHADOW')
-  innerShadow,
-
-  /// Outer shadow effect.
-  @JsonValue('DROP_SHADOW')
-  dropShadow,
-
-  /// Layer blur effect.
-  @JsonValue('LAYER_BLUR')
-  layerBlur,
-
-  /// Background blur effect.
-  @JsonValue('BACKGROUND_BLUR')
-  backgroundBlur,
-
-  /// Texture
-  @JsonValue('TEXTURE')
-  texture,
-}
-
 /// A visual effect such as a shadow or blur.
 @JsonSerializable()
 @CopyWith()

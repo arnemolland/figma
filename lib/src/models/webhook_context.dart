@@ -1,13 +1,15 @@
+// Generated from v0.33.0 of the Figma REST API specification
+
 import 'package:json_annotation/json_annotation.dart';
 
-/// The context for the webhook.
+/// The type of context this webhook is attached to.
 ///
-/// A webhook can be associated to a team, a project, or a file.
+/// The value will be "PROJECT", "TEAM", or "FILE".
 enum WebhookContext {
-  @JsonValue('project')
+  @JsonValue('PROJECT')
   project,
-  @JsonValue('team')
+  @JsonValue('TEAM')
   team,
-  @JsonValue('file')
+  @JsonValue('FILE')
   file,
 }

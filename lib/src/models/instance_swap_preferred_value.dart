@@ -1,18 +1,8 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
+import 'package:figma/src/models.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'instance_swap_preferred_value.g.dart';
-
-/// The type of node for a preferred value.
-enum InstanceSwapPreferredValueType {
-  /// A component.
-  @JsonValue('COMPONENT')
-  component,
-
-  /// A component set.
-  @JsonValue('COMPONENT_SET')
-  componentSet,
-}
 
 /// A preferred value for an instance swap property.
 @JsonSerializable()

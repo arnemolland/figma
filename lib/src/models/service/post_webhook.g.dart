@@ -161,9 +161,9 @@ const _$WebhookEventEnumMap = {
 };
 
 const _$WebhookContextEnumMap = {
-  WebhookContext.project: 'project',
-  WebhookContext.team: 'team',
-  WebhookContext.file: 'file',
+  WebhookContext.project: 'PROJECT',
+  WebhookContext.team: 'TEAM',
+  WebhookContext.file: 'FILE',
 };
 
 const _$WebhookStatusEnumMap = {
