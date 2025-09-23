@@ -1,14 +1,31 @@
+// Generated from v0.33.0 of the Figma REST API specification
+
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:equatable/equatable.dart';
-import 'package:figma/src/models.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:meta/meta.dart';
+
+import 'user.dart';
 
 part 'version.g.dart';
 
 /// A version of a file.
-@JsonSerializable()
+@JsonSerializable(explicitToJson: true)
 @CopyWith()
+@immutable
 class Version extends Equatable {
+  const Version({
+    required this.id,
+    required this.createdAt,
+    this.label,
+    this.description,
+    required this.user,
+    this.thumbnailUrl,
+  });
+
+  factory Version.fromJson(Map<String, Object?> json) =>
+      _$VersionFromJson(json);
+
   /// Unique identifier for version.
   final String id;
 
@@ -25,19 +42,19 @@ class Version extends Equatable {
   /// The user that created the version.
   final User user;
 
-  const Version({
-    required this.id,
-    required this.createdAt,
-    this.label,
-    this.description,
-    required this.user,
-  });
+  /// A URL to a thumbnail image of the file version.
+  @JsonKey(name: 'thumbnail_url', includeIfNull: false)
+  final String? thumbnailUrl;
 
   @override
-  List<Object?> get props => [id, createdAt, label, description, user];
+  List<Object?> get props => <Object?>[
+    id,
+    createdAt,
+    label,
+    description,
+    user,
+    thumbnailUrl,
+  ];
 
-  factory Version.fromJson(Map<String, dynamic> json) =>
-      _$VersionFromJson(json);
-
-  Map<String, dynamic> toJson() => _$VersionToJson(this);
+  Map<String, Object?> toJson() => _$VersionToJson(this);
 }

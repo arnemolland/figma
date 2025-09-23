@@ -7,13 +7,13 @@ part of 'project_file.dart';
 // **************************************************************************
 
 abstract class _$ProjectFileCWProxy {
-  ProjectFile key(String? key);
+  ProjectFile key(String key);
 
-  ProjectFile name(String? name);
+  ProjectFile name(String name);
 
   ProjectFile thumbnailUrl(String? thumbnailUrl);
 
-  ProjectFile lastModified(DateTime? lastModified);
+  ProjectFile lastModified(DateTime lastModified);
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ProjectFile(...).copyWith.fieldName(value)`.
@@ -23,10 +23,10 @@ abstract class _$ProjectFileCWProxy {
   /// ProjectFile(...).copyWith(id: 12, name: "My name")
   /// ```
   ProjectFile call({
-    String? key,
-    String? name,
+    String key,
+    String name,
     String? thumbnailUrl,
-    DateTime? lastModified,
+    DateTime lastModified,
   });
 }
 
@@ -38,17 +38,17 @@ class _$ProjectFileCWProxyImpl implements _$ProjectFileCWProxy {
   final ProjectFile _value;
 
   @override
-  ProjectFile key(String? key) => call(key: key);
+  ProjectFile key(String key) => call(key: key);
 
   @override
-  ProjectFile name(String? name) => call(name: name);
+  ProjectFile name(String name) => call(name: name);
 
   @override
   ProjectFile thumbnailUrl(String? thumbnailUrl) =>
       call(thumbnailUrl: thumbnailUrl);
 
   @override
-  ProjectFile lastModified(DateTime? lastModified) =>
+  ProjectFile lastModified(DateTime lastModified) =>
       call(lastModified: lastModified);
 
   @override
@@ -66,22 +66,23 @@ class _$ProjectFileCWProxyImpl implements _$ProjectFileCWProxy {
     Object? lastModified = const $CopyWithPlaceholder(),
   }) {
     return ProjectFile(
-      key: key == const $CopyWithPlaceholder()
+      key: key == const $CopyWithPlaceholder() || key == null
           ? _value.key
           // ignore: cast_nullable_to_non_nullable
-          : key as String?,
-      name: name == const $CopyWithPlaceholder()
+          : key as String,
+      name: name == const $CopyWithPlaceholder() || name == null
           ? _value.name
           // ignore: cast_nullable_to_non_nullable
-          : name as String?,
+          : name as String,
       thumbnailUrl: thumbnailUrl == const $CopyWithPlaceholder()
           ? _value.thumbnailUrl
           // ignore: cast_nullable_to_non_nullable
           : thumbnailUrl as String?,
-      lastModified: lastModified == const $CopyWithPlaceholder()
+      lastModified:
+          lastModified == const $CopyWithPlaceholder() || lastModified == null
           ? _value.lastModified
           // ignore: cast_nullable_to_non_nullable
-          : lastModified as DateTime?,
+          : lastModified as DateTime,
     );
   }
 }
@@ -98,18 +99,16 @@ extension $ProjectFileCopyWith on ProjectFile {
 // **************************************************************************
 
 ProjectFile _$ProjectFileFromJson(Map<String, dynamic> json) => ProjectFile(
-  key: json['key'] as String?,
-  name: json['name'] as String?,
+  key: json['key'] as String,
+  name: json['name'] as String,
   thumbnailUrl: json['thumbnail_url'] as String?,
-  lastModified: json['last_modified'] == null
-      ? null
-      : DateTime.parse(json['last_modified'] as String),
+  lastModified: DateTime.parse(json['last_modified'] as String),
 );
 
 Map<String, dynamic> _$ProjectFileToJson(ProjectFile instance) =>
     <String, dynamic>{
       'key': instance.key,
       'name': instance.name,
-      'thumbnail_url': instance.thumbnailUrl,
-      'last_modified': instance.lastModified?.toIso8601String(),
+      'thumbnail_url': ?instance.thumbnailUrl,
+      'last_modified': instance.lastModified.toIso8601String(),
     };

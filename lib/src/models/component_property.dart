@@ -1,31 +1,53 @@
+// Generated from v0.33.0 of the Figma REST API specification
+
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:figma/src/models/instance_swap_preferred_value.dart';
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:meta/meta.dart';
+
+import 'component_property_type.dart';
+import 'component_property_variables.dart';
+import 'instance_swap_preferred_value.dart';
 
 part 'component_property.g.dart';
 
-/// Component properties.
-@JsonSerializable()
+/// A property of a component.
+@JsonSerializable(explicitToJson: true)
 @CopyWith()
-class ComponentProperty {
-  ComponentProperty({
+@immutable
+class ComponentProperty extends Equatable {
+  const ComponentProperty({
     required this.type,
     required this.value,
-    this.preferredValues,
+    this.preferredValues = const [],
+    this.boundVariables = const ComponentPropertyVariables(),
   });
 
-  /// The type of the property.
-  final String type;
-
-  /// Value of this property for instances. Either a string or a boolean.
-  final dynamic value;
-
-  /// List of user-defined preferred values for this property. Only exists on
-  /// INSTANCE_SWAP properties.
-  final List<InstanceSwapPreferredValue>? preferredValues;
-
-  factory ComponentProperty.fromJson(Map<String, dynamic> json) =>
+  factory ComponentProperty.fromJson(Map<String, Object?> json) =>
       _$ComponentPropertyFromJson(json);
 
-  Map<String, dynamic> toJson() => _$ComponentPropertyToJson(this);
+  /// Type of this component property.
+  final ComponentPropertyType type;
+
+  /// Value of the property for this component instance.
+  final Object value;
+
+  /// Preferred values for this property.
+  ///
+  /// Only applicable if type is `INSTANCE_SWAP`.
+  @JsonKey(defaultValue: [])
+  final List<InstanceSwapPreferredValue> preferredValues;
+
+  /// The variables bound to a particular field on this component property.
+  final ComponentPropertyVariables boundVariables;
+
+  @override
+  List<Object?> get props => <Object?>[
+    type,
+    value,
+    preferredValues,
+    boundVariables,
+  ];
+
+  Map<String, Object?> toJson() => _$ComponentPropertyToJson(this);
 }

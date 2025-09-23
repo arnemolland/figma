@@ -1,14 +1,23 @@
+// Generated from v0.33.0 of the Figma REST API specification
+
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:figma/src/models.dart';
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:meta/meta.dart';
+
+import 'instance_swap_preferred_value_type.dart';
 
 part 'instance_swap_preferred_value.g.dart';
 
-/// A preferred value for an instance swap property.
-@JsonSerializable()
+/// Instance swap preferred value.
+@JsonSerializable(explicitToJson: true)
 @CopyWith()
-class InstanceSwapPreferredValue {
-  InstanceSwapPreferredValue({required this.type, required this.key});
+@immutable
+class InstanceSwapPreferredValue extends Equatable {
+  const InstanceSwapPreferredValue({required this.type, required this.key});
+
+  factory InstanceSwapPreferredValue.fromJson(Map<String, Object?> json) =>
+      _$InstanceSwapPreferredValueFromJson(json);
 
   /// Type of node for this preferred value.
   final InstanceSwapPreferredValueType type;
@@ -16,8 +25,8 @@ class InstanceSwapPreferredValue {
   /// Key of this component or component set.
   final String key;
 
-  factory InstanceSwapPreferredValue.fromJson(Map<String, dynamic> json) =>
-      _$InstanceSwapPreferredValueFromJson(json);
+  @override
+  List<Object?> get props => <Object?>[type, key];
 
-  Map<String, dynamic> toJson() => _$InstanceSwapPreferredValueToJson(this);
+  Map<String, Object?> toJson() => _$InstanceSwapPreferredValueToJson(this);
 }

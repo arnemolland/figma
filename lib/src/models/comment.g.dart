@@ -9,7 +9,7 @@ part of 'comment.dart';
 abstract class _$CommentCWProxy {
   Comment id(String id);
 
-  Comment clientMeta(dynamic clientMeta);
+  Comment clientMeta(ClientMeta? clientMeta);
 
   Comment fileKey(String fileKey);
 
@@ -21,7 +21,11 @@ abstract class _$CommentCWProxy {
 
   Comment resolvedAt(DateTime? resolvedAt);
 
+  Comment message(String message);
+
   Comment orderId(String? orderId);
+
+  Comment reactions(List<Reaction> reactions);
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Comment(...).copyWith.fieldName(value)`.
@@ -32,13 +36,15 @@ abstract class _$CommentCWProxy {
   /// ```
   Comment call({
     String id,
-    dynamic clientMeta,
+    ClientMeta? clientMeta,
     String fileKey,
     String? parentId,
     User user,
     DateTime createdAt,
     DateTime? resolvedAt,
+    String message,
     String? orderId,
+    List<Reaction> reactions,
   });
 }
 
@@ -53,7 +59,7 @@ class _$CommentCWProxyImpl implements _$CommentCWProxy {
   Comment id(String id) => call(id: id);
 
   @override
-  Comment clientMeta(dynamic clientMeta) => call(clientMeta: clientMeta);
+  Comment clientMeta(ClientMeta? clientMeta) => call(clientMeta: clientMeta);
 
   @override
   Comment fileKey(String fileKey) => call(fileKey: fileKey);
@@ -71,7 +77,13 @@ class _$CommentCWProxyImpl implements _$CommentCWProxy {
   Comment resolvedAt(DateTime? resolvedAt) => call(resolvedAt: resolvedAt);
 
   @override
+  Comment message(String message) => call(message: message);
+
+  @override
   Comment orderId(String? orderId) => call(orderId: orderId);
+
+  @override
+  Comment reactions(List<Reaction> reactions) => call(reactions: reactions);
 
   @override
   /// Creates a new instance with the provided field values.
@@ -89,7 +101,9 @@ class _$CommentCWProxyImpl implements _$CommentCWProxy {
     Object? user = const $CopyWithPlaceholder(),
     Object? createdAt = const $CopyWithPlaceholder(),
     Object? resolvedAt = const $CopyWithPlaceholder(),
+    Object? message = const $CopyWithPlaceholder(),
     Object? orderId = const $CopyWithPlaceholder(),
+    Object? reactions = const $CopyWithPlaceholder(),
   }) {
     return Comment(
       id: id == const $CopyWithPlaceholder() || id == null
@@ -99,7 +113,7 @@ class _$CommentCWProxyImpl implements _$CommentCWProxy {
       clientMeta: clientMeta == const $CopyWithPlaceholder()
           ? _value.clientMeta
           // ignore: cast_nullable_to_non_nullable
-          : clientMeta as dynamic,
+          : clientMeta as ClientMeta?,
       fileKey: fileKey == const $CopyWithPlaceholder() || fileKey == null
           ? _value.fileKey
           // ignore: cast_nullable_to_non_nullable
@@ -120,10 +134,18 @@ class _$CommentCWProxyImpl implements _$CommentCWProxy {
           ? _value.resolvedAt
           // ignore: cast_nullable_to_non_nullable
           : resolvedAt as DateTime?,
+      message: message == const $CopyWithPlaceholder() || message == null
+          ? _value.message
+          // ignore: cast_nullable_to_non_nullable
+          : message as String,
       orderId: orderId == const $CopyWithPlaceholder()
           ? _value.orderId
           // ignore: cast_nullable_to_non_nullable
           : orderId as String?,
+      reactions: reactions == const $CopyWithPlaceholder() || reactions == null
+          ? _value.reactions
+          // ignore: cast_nullable_to_non_nullable
+          : reactions as List<Reaction>,
     );
   }
 }
@@ -149,16 +171,22 @@ Comment _$CommentFromJson(Map<String, dynamic> json) => Comment(
   resolvedAt: json['resolved_at'] == null
       ? null
       : DateTime.parse(json['resolved_at'] as String),
+  message: json['message'] as String,
   orderId: json['order_id'] as String?,
+  reactions: (json['reactions'] as List<dynamic>)
+      .map((e) => Reaction.fromJson(e as Map<String, dynamic>))
+      .toList(),
 );
 
 Map<String, dynamic> _$CommentToJson(Comment instance) => <String, dynamic>{
   'id': instance.id,
   'client_meta': instance.clientMeta,
   'file_key': instance.fileKey,
-  'parent_id': instance.parentId,
-  'user': instance.user,
+  'parent_id': ?instance.parentId,
+  'user': instance.user.toJson(),
   'created_at': instance.createdAt.toIso8601String(),
   'resolved_at': instance.resolvedAt?.toIso8601String(),
+  'message': instance.message,
   'order_id': instance.orderId,
+  'reactions': instance.reactions.map((e) => e.toJson()).toList(),
 };

@@ -7,13 +7,13 @@ part of 'color.dart';
 // **************************************************************************
 
 abstract class _$ColorCWProxy {
-  Color r(double? r);
+  Color r(num r);
 
-  Color g(double? g);
+  Color g(num g);
 
-  Color b(double? b);
+  Color b(num b);
 
-  Color a(double? a);
+  Color a(num a);
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Color(...).copyWith.fieldName(value)`.
@@ -22,7 +22,7 @@ abstract class _$ColorCWProxy {
   /// ```dart
   /// Color(...).copyWith(id: 12, name: "My name")
   /// ```
-  Color call({double? r, double? g, double? b, double? a});
+  Color call({num r, num g, num b, num a});
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -33,16 +33,16 @@ class _$ColorCWProxyImpl implements _$ColorCWProxy {
   final Color _value;
 
   @override
-  Color r(double? r) => call(r: r);
+  Color r(num r) => call(r: r);
 
   @override
-  Color g(double? g) => call(g: g);
+  Color g(num g) => call(g: g);
 
   @override
-  Color b(double? b) => call(b: b);
+  Color b(num b) => call(b: b);
 
   @override
-  Color a(double? a) => call(a: a);
+  Color a(num a) => call(a: a);
 
   @override
   /// Creates a new instance with the provided field values.
@@ -59,22 +59,22 @@ class _$ColorCWProxyImpl implements _$ColorCWProxy {
     Object? a = const $CopyWithPlaceholder(),
   }) {
     return Color(
-      r: r == const $CopyWithPlaceholder()
+      r: r == const $CopyWithPlaceholder() || r == null
           ? _value.r
           // ignore: cast_nullable_to_non_nullable
-          : r as double?,
-      g: g == const $CopyWithPlaceholder()
+          : r as num,
+      g: g == const $CopyWithPlaceholder() || g == null
           ? _value.g
           // ignore: cast_nullable_to_non_nullable
-          : g as double?,
-      b: b == const $CopyWithPlaceholder()
+          : g as num,
+      b: b == const $CopyWithPlaceholder() || b == null
           ? _value.b
           // ignore: cast_nullable_to_non_nullable
-          : b as double?,
-      a: a == const $CopyWithPlaceholder()
+          : b as num,
+      a: a == const $CopyWithPlaceholder() || a == null
           ? _value.a
           // ignore: cast_nullable_to_non_nullable
-          : a as double?,
+          : a as num,
     );
   }
 }
@@ -91,10 +91,10 @@ extension $ColorCopyWith on Color {
 // **************************************************************************
 
 Color _$ColorFromJson(Map<String, dynamic> json) => Color(
-  r: (json['r'] as num?)?.toDouble(),
-  g: (json['g'] as num?)?.toDouble(),
-  b: (json['b'] as num?)?.toDouble(),
-  a: (json['a'] as num?)?.toDouble(),
+  r: json['r'] as num,
+  g: json['g'] as num,
+  b: json['b'] as num,
+  a: json['a'] as num,
 );
 
 Map<String, dynamic> _$ColorToJson(Color instance) => <String, dynamic>{

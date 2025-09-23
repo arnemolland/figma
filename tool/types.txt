@@ -14,6 +14,7 @@ ExportFormat
 HorizontalConstraint
 InstanceSwapPreferredValueType
 LayoutAlign
+LayoutGridAlignment
 LayoutGridPattern
 LayoutMode
 LayoutPositioning
@@ -46,11 +47,66 @@ WebhookEvent
 WebhookStatus
 WindingRule
 
+# Type definitions
+ClientMeta
+Emoji
+VariableValue
+
 # Models
+ArcData
+Color
+ColorStop
+ColorStopVariables
+Comment
 CommentFragment
+Component
+ComponentProperty
+ComponentPropertyDefinition
+ComponentPropertyVariables
+ComponentSet
+ComponentsMeta
+Constraint
+ContainingComponentSet
+Cursor
 DevResource
+DocumentationLink
+ExportSetting
+FileMeta
+FlowStartingPoint
+FrameInfo
+InstanceSwapPreferredValue
+LayoutConstraint
+LayoutGrid
+LayoutGridVariables
 LibraryItemData
+LocalVariable
+LocalVariableCollection
+LocalVariablesMeta
+Mode
+Overrides
+Pagination
+PaintOverride
+Path
+Project
+ProjectFile
+PrototypeDevice
+PublishedComponent
+PublishedStyle
+PublishedVariable
+PublishedVariableCollection
+PublishedVariablesMeta
+Reaction
+ResponseCursor
+Size
+SizeRectangle
+StrokeWeights
+Style
+StylesMeta
 User
+VariableAlias
+VariableCodeSyntax
+Vector2D
+Version
 
 # Payloads
 DevModeStatusUpdatePayload

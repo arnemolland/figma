@@ -9,11 +9,11 @@ part of 'prototype_device.dart';
 abstract class _$PrototypeDeviceCWProxy {
   PrototypeDevice type(PrototypeDeviceType type);
 
-  PrototypeDevice rotation(PrototypeDeviceRotation rotation);
-
   PrototypeDevice size(Size? size);
 
   PrototypeDevice presetIdentifier(String? presetIdentifier);
+
+  PrototypeDevice rotation(PrototypeDeviceRotation rotation);
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PrototypeDevice(...).copyWith.fieldName(value)`.
@@ -24,9 +24,9 @@ abstract class _$PrototypeDeviceCWProxy {
   /// ```
   PrototypeDevice call({
     PrototypeDeviceType type,
-    PrototypeDeviceRotation rotation,
     Size? size,
     String? presetIdentifier,
+    PrototypeDeviceRotation rotation,
   });
 }
 
@@ -41,15 +41,15 @@ class _$PrototypeDeviceCWProxyImpl implements _$PrototypeDeviceCWProxy {
   PrototypeDevice type(PrototypeDeviceType type) => call(type: type);
 
   @override
-  PrototypeDevice rotation(PrototypeDeviceRotation rotation) =>
-      call(rotation: rotation);
-
-  @override
   PrototypeDevice size(Size? size) => call(size: size);
 
   @override
   PrototypeDevice presetIdentifier(String? presetIdentifier) =>
       call(presetIdentifier: presetIdentifier);
+
+  @override
+  PrototypeDevice rotation(PrototypeDeviceRotation rotation) =>
+      call(rotation: rotation);
 
   @override
   /// Creates a new instance with the provided field values.
@@ -61,19 +61,15 @@ class _$PrototypeDeviceCWProxyImpl implements _$PrototypeDeviceCWProxy {
   /// ```
   PrototypeDevice call({
     Object? type = const $CopyWithPlaceholder(),
-    Object? rotation = const $CopyWithPlaceholder(),
     Object? size = const $CopyWithPlaceholder(),
     Object? presetIdentifier = const $CopyWithPlaceholder(),
+    Object? rotation = const $CopyWithPlaceholder(),
   }) {
     return PrototypeDevice(
       type: type == const $CopyWithPlaceholder() || type == null
           ? _value.type
           // ignore: cast_nullable_to_non_nullable
           : type as PrototypeDeviceType,
-      rotation: rotation == const $CopyWithPlaceholder() || rotation == null
-          ? _value.rotation
-          // ignore: cast_nullable_to_non_nullable
-          : rotation as PrototypeDeviceRotation,
       size: size == const $CopyWithPlaceholder()
           ? _value.size
           // ignore: cast_nullable_to_non_nullable
@@ -82,6 +78,10 @@ class _$PrototypeDeviceCWProxyImpl implements _$PrototypeDeviceCWProxy {
           ? _value.presetIdentifier
           // ignore: cast_nullable_to_non_nullable
           : presetIdentifier as String?,
+      rotation: rotation == const $CopyWithPlaceholder() || rotation == null
+          ? _value.rotation
+          // ignore: cast_nullable_to_non_nullable
+          : rotation as PrototypeDeviceRotation,
     );
   }
 }
@@ -99,26 +99,19 @@ extension $PrototypeDeviceCopyWith on PrototypeDevice {
 
 PrototypeDevice _$PrototypeDeviceFromJson(Map<String, dynamic> json) =>
     PrototypeDevice(
-      type:
-          $enumDecodeNullable(_$PrototypeDeviceTypeEnumMap, json['type']) ??
-          PrototypeDeviceType.none,
-      rotation:
-          $enumDecodeNullable(
-            _$PrototypeDeviceRotationEnumMap,
-            json['rotation'],
-          ) ??
-          PrototypeDeviceRotation.none,
+      type: $enumDecode(_$PrototypeDeviceTypeEnumMap, json['type']),
       size: json['size'] == null
           ? null
           : Size.fromJson(json['size'] as Map<String, dynamic>),
       presetIdentifier: json['presetIdentifier'] as String?,
+      rotation: $enumDecode(_$PrototypeDeviceRotationEnumMap, json['rotation']),
     );
 
 Map<String, dynamic> _$PrototypeDeviceToJson(PrototypeDevice instance) =>
     <String, dynamic>{
       'type': _$PrototypeDeviceTypeEnumMap[instance.type]!,
-      'size': instance.size,
-      'presetIdentifier': instance.presetIdentifier,
+      'size': ?instance.size?.toJson(),
+      'presetIdentifier': ?instance.presetIdentifier,
       'rotation': _$PrototypeDeviceRotationEnumMap[instance.rotation]!,
     };
 

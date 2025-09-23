@@ -17,6 +17,8 @@ abstract class _$VersionCWProxy {
 
   Version user(User user);
 
+  Version thumbnailUrl(String? thumbnailUrl);
+
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Version(...).copyWith.fieldName(value)`.
   ///
@@ -30,6 +32,7 @@ abstract class _$VersionCWProxy {
     String? label,
     String? description,
     User user,
+    String? thumbnailUrl,
   });
 }
 
@@ -56,6 +59,10 @@ class _$VersionCWProxyImpl implements _$VersionCWProxy {
   Version user(User user) => call(user: user);
 
   @override
+  Version thumbnailUrl(String? thumbnailUrl) =>
+      call(thumbnailUrl: thumbnailUrl);
+
+  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Version(...).copyWith.fieldName(value)`.
   ///
@@ -69,6 +76,7 @@ class _$VersionCWProxyImpl implements _$VersionCWProxy {
     Object? label = const $CopyWithPlaceholder(),
     Object? description = const $CopyWithPlaceholder(),
     Object? user = const $CopyWithPlaceholder(),
+    Object? thumbnailUrl = const $CopyWithPlaceholder(),
   }) {
     return Version(
       id: id == const $CopyWithPlaceholder() || id == null
@@ -91,6 +99,10 @@ class _$VersionCWProxyImpl implements _$VersionCWProxy {
           ? _value.user
           // ignore: cast_nullable_to_non_nullable
           : user as User,
+      thumbnailUrl: thumbnailUrl == const $CopyWithPlaceholder()
+          ? _value.thumbnailUrl
+          // ignore: cast_nullable_to_non_nullable
+          : thumbnailUrl as String?,
     );
   }
 }
@@ -112,6 +124,7 @@ Version _$VersionFromJson(Map<String, dynamic> json) => Version(
   label: json['label'] as String?,
   description: json['description'] as String?,
   user: User.fromJson(json['user'] as Map<String, dynamic>),
+  thumbnailUrl: json['thumbnail_url'] as String?,
 );
 
 Map<String, dynamic> _$VersionToJson(Version instance) => <String, dynamic>{
@@ -119,5 +132,6 @@ Map<String, dynamic> _$VersionToJson(Version instance) => <String, dynamic>{
   'created_at': instance.createdAt.toIso8601String(),
   'label': instance.label,
   'description': instance.description,
-  'user': instance.user,
+  'user': instance.user.toJson(),
+  'thumbnail_url': ?instance.thumbnailUrl,
 };

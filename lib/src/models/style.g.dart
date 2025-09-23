@@ -7,15 +7,15 @@ part of 'style.dart';
 // **************************************************************************
 
 abstract class _$StyleCWProxy {
-  Style nodeId(String? nodeId);
+  Style key(String key);
 
-  Style key(String? key);
+  Style name(String name);
 
-  Style name(String? name);
+  Style description(String description);
 
-  Style description(String? description);
+  Style remote(bool remote);
 
-  Style type(StyleType? type);
+  Style styleType(StyleType styleType);
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Style(...).copyWith.fieldName(value)`.
@@ -25,11 +25,11 @@ abstract class _$StyleCWProxy {
   /// Style(...).copyWith(id: 12, name: "My name")
   /// ```
   Style call({
-    String? nodeId,
-    String? key,
-    String? name,
-    String? description,
-    StyleType? type,
+    String key,
+    String name,
+    String description,
+    bool remote,
+    StyleType styleType,
   });
 }
 
@@ -41,19 +41,19 @@ class _$StyleCWProxyImpl implements _$StyleCWProxy {
   final Style _value;
 
   @override
-  Style nodeId(String? nodeId) => call(nodeId: nodeId);
+  Style key(String key) => call(key: key);
 
   @override
-  Style key(String? key) => call(key: key);
+  Style name(String name) => call(name: name);
 
   @override
-  Style name(String? name) => call(name: name);
+  Style description(String description) => call(description: description);
 
   @override
-  Style description(String? description) => call(description: description);
+  Style remote(bool remote) => call(remote: remote);
 
   @override
-  Style type(StyleType? type) => call(type: type);
+  Style styleType(StyleType styleType) => call(styleType: styleType);
 
   @override
   /// Creates a new instance with the provided field values.
@@ -64,33 +64,34 @@ class _$StyleCWProxyImpl implements _$StyleCWProxy {
   /// Style(...).copyWith(id: 12, name: "My name")
   /// ```
   Style call({
-    Object? nodeId = const $CopyWithPlaceholder(),
     Object? key = const $CopyWithPlaceholder(),
     Object? name = const $CopyWithPlaceholder(),
     Object? description = const $CopyWithPlaceholder(),
-    Object? type = const $CopyWithPlaceholder(),
+    Object? remote = const $CopyWithPlaceholder(),
+    Object? styleType = const $CopyWithPlaceholder(),
   }) {
     return Style(
-      nodeId: nodeId == const $CopyWithPlaceholder()
-          ? _value.nodeId
-          // ignore: cast_nullable_to_non_nullable
-          : nodeId as String?,
-      key: key == const $CopyWithPlaceholder()
+      key: key == const $CopyWithPlaceholder() || key == null
           ? _value.key
           // ignore: cast_nullable_to_non_nullable
-          : key as String?,
-      name: name == const $CopyWithPlaceholder()
+          : key as String,
+      name: name == const $CopyWithPlaceholder() || name == null
           ? _value.name
           // ignore: cast_nullable_to_non_nullable
-          : name as String?,
-      description: description == const $CopyWithPlaceholder()
+          : name as String,
+      description:
+          description == const $CopyWithPlaceholder() || description == null
           ? _value.description
           // ignore: cast_nullable_to_non_nullable
-          : description as String?,
-      type: type == const $CopyWithPlaceholder()
-          ? _value.type
+          : description as String,
+      remote: remote == const $CopyWithPlaceholder() || remote == null
+          ? _value.remote
           // ignore: cast_nullable_to_non_nullable
-          : type as StyleType?,
+          : remote as bool,
+      styleType: styleType == const $CopyWithPlaceholder() || styleType == null
+          ? _value.styleType
+          // ignore: cast_nullable_to_non_nullable
+          : styleType as StyleType,
     );
   }
 }
@@ -107,19 +108,19 @@ extension $StyleCopyWith on Style {
 // **************************************************************************
 
 Style _$StyleFromJson(Map<String, dynamic> json) => Style(
-  nodeId: json['node_id'] as String?,
-  key: json['key'] as String?,
-  name: json['name'] as String?,
-  description: json['description'] as String?,
-  type: $enumDecodeNullable(_$StyleTypeEnumMap, json['style_type']),
+  key: json['key'] as String,
+  name: json['name'] as String,
+  description: json['description'] as String,
+  remote: json['remote'] as bool,
+  styleType: $enumDecode(_$StyleTypeEnumMap, json['styleType']),
 );
 
 Map<String, dynamic> _$StyleToJson(Style instance) => <String, dynamic>{
-  'node_id': instance.nodeId,
   'key': instance.key,
   'name': instance.name,
   'description': instance.description,
-  'style_type': _$StyleTypeEnumMap[instance.type],
+  'remote': instance.remote,
+  'styleType': _$StyleTypeEnumMap[instance.styleType]!,
 };
 
 const _$StyleTypeEnumMap = {

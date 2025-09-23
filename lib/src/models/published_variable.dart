@@ -1,16 +1,36 @@
+// Generated from v0.33.0 of the Figma REST API specification
+
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:equatable/equatable.dart';
-import 'package:figma/src/models/published_variable_collection.dart';
-import 'package:figma/src/models/resolved_type.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:meta/meta.dart';
+
+import 'resolved_type.dart';
 
 part 'published_variable.g.dart';
 
-/// A response object containing a list of styles.
-@JsonSerializable()
+/// A Variable is a single design token that defines values for each of the
+/// modes in its VariableCollection.
+///
+/// These values can be applied to various kinds of design properties.
+@JsonSerializable(explicitToJson: true)
 @CopyWith()
+@immutable
 class PublishedVariable extends Equatable {
-  /// The unique identifier of this variable;
+  const PublishedVariable({
+    required this.id,
+    required this.subscribedId,
+    required this.name,
+    required this.key,
+    required this.variableCollectionId,
+    required this.resolvedDataType,
+    required this.updatedAt,
+  });
+
+  factory PublishedVariable.fromJson(Map<String, Object?> json) =>
+      _$PublishedVariableFromJson(json);
+
+  /// The unique identifier of this variable.
   final String id;
 
   /// The ID of the variable that is used by subscribing files.
@@ -34,22 +54,8 @@ class PublishedVariable extends Equatable {
   /// The UTC ISO 8601 time at which the variable was last updated.
   final DateTime updatedAt;
 
-  /// A Variable is a single design token that defines values for each of the
-  /// modes in its [PublishedVariableCollection].
-  ///
-  /// These values can be applied to various kinds of design properties.
-  const PublishedVariable({
-    required this.id,
-    required this.subscribedId,
-    required this.name,
-    required this.key,
-    required this.variableCollectionId,
-    required this.resolvedDataType,
-    required this.updatedAt,
-  });
-
   @override
-  List<Object?> get props => [
+  List<Object?> get props => <Object?>[
     id,
     subscribedId,
     name,
@@ -59,8 +65,5 @@ class PublishedVariable extends Equatable {
     updatedAt,
   ];
 
-  factory PublishedVariable.fromJson(Map<String, dynamic> json) =>
-      _$PublishedVariableFromJson(json);
-
-  Map<String, dynamic> toJson() => _$PublishedVariableToJson(this);
+  Map<String, Object?> toJson() => _$PublishedVariableToJson(this);
 }

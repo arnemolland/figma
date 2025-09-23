@@ -17,7 +17,7 @@ abstract class _$LocalVariableCWProxy {
 
   LocalVariable resolvedType(ResolvedType resolvedType);
 
-  LocalVariable valuesByMode(Map<String, dynamic> valuesByMode);
+  LocalVariable valuesByMode(Map<String, VariableValue> valuesByMode);
 
   LocalVariable remote(bool remote);
 
@@ -27,9 +27,9 @@ abstract class _$LocalVariableCWProxy {
 
   LocalVariable scopes(List<VariableScope> scopes);
 
-  LocalVariable codeSyntax(Map<VariableCodeSyntaxPlatform, String> codeSyntax);
+  LocalVariable codeSyntax(VariableCodeSyntax codeSyntax);
 
-  LocalVariable deletedButReferenced(bool? deletedButReferenced);
+  LocalVariable deletedButReferenced(bool deletedButReferenced);
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `LocalVariable(...).copyWith.fieldName(value)`.
@@ -44,13 +44,13 @@ abstract class _$LocalVariableCWProxy {
     String key,
     String variableCollectionId,
     ResolvedType resolvedType,
-    Map<String, dynamic> valuesByMode,
+    Map<String, VariableValue> valuesByMode,
     bool remote,
     String description,
     bool hiddenFromPublishing,
     List<VariableScope> scopes,
-    Map<VariableCodeSyntaxPlatform, String> codeSyntax,
-    bool? deletedButReferenced,
+    VariableCodeSyntax codeSyntax,
+    bool deletedButReferenced,
   });
 }
 
@@ -79,7 +79,7 @@ class _$LocalVariableCWProxyImpl implements _$LocalVariableCWProxy {
       call(resolvedType: resolvedType);
 
   @override
-  LocalVariable valuesByMode(Map<String, dynamic> valuesByMode) =>
+  LocalVariable valuesByMode(Map<String, VariableValue> valuesByMode) =>
       call(valuesByMode: valuesByMode);
 
   @override
@@ -97,12 +97,11 @@ class _$LocalVariableCWProxyImpl implements _$LocalVariableCWProxy {
   LocalVariable scopes(List<VariableScope> scopes) => call(scopes: scopes);
 
   @override
-  LocalVariable codeSyntax(
-    Map<VariableCodeSyntaxPlatform, String> codeSyntax,
-  ) => call(codeSyntax: codeSyntax);
+  LocalVariable codeSyntax(VariableCodeSyntax codeSyntax) =>
+      call(codeSyntax: codeSyntax);
 
   @override
-  LocalVariable deletedButReferenced(bool? deletedButReferenced) =>
+  LocalVariable deletedButReferenced(bool deletedButReferenced) =>
       call(deletedButReferenced: deletedButReferenced);
 
   @override
@@ -155,7 +154,7 @@ class _$LocalVariableCWProxyImpl implements _$LocalVariableCWProxy {
           valuesByMode == const $CopyWithPlaceholder() || valuesByMode == null
           ? _value.valuesByMode
           // ignore: cast_nullable_to_non_nullable
-          : valuesByMode as Map<String, dynamic>,
+          : valuesByMode as Map<String, VariableValue>,
       remote: remote == const $CopyWithPlaceholder() || remote == null
           ? _value.remote
           // ignore: cast_nullable_to_non_nullable
@@ -179,11 +178,13 @@ class _$LocalVariableCWProxyImpl implements _$LocalVariableCWProxy {
           codeSyntax == const $CopyWithPlaceholder() || codeSyntax == null
           ? _value.codeSyntax
           // ignore: cast_nullable_to_non_nullable
-          : codeSyntax as Map<VariableCodeSyntaxPlatform, String>,
-      deletedButReferenced: deletedButReferenced == const $CopyWithPlaceholder()
+          : codeSyntax as VariableCodeSyntax,
+      deletedButReferenced:
+          deletedButReferenced == const $CopyWithPlaceholder() ||
+              deletedButReferenced == null
           ? _value.deletedButReferenced
           // ignore: cast_nullable_to_non_nullable
-          : deletedButReferenced as bool?,
+          : deletedButReferenced as bool,
     );
   }
 }
@@ -206,24 +207,19 @@ LocalVariable _$LocalVariableFromJson(Map<String, dynamic> json) =>
       key: json['key'] as String,
       variableCollectionId: json['variableCollectionId'] as String,
       resolvedType: $enumDecode(_$ResolvedTypeEnumMap, json['resolvedType']),
-      valuesByMode: json['valuesByMode'] as Map<String, dynamic>? ?? {},
+      valuesByMode: (json['valuesByMode'] as Map<String, dynamic>).map(
+        (k, e) => MapEntry(k, e as Object),
+      ),
       remote: json['remote'] as bool,
       description: json['description'] as String,
       hiddenFromPublishing: json['hiddenFromPublishing'] as bool,
-      scopes:
-          (json['scopes'] as List<dynamic>?)
-              ?.map((e) => $enumDecode(_$VariableScopeEnumMap, e))
-              .toList() ??
-          [],
-      codeSyntax:
-          (json['codeSyntax'] as Map<String, dynamic>?)?.map(
-            (k, e) => MapEntry(
-              $enumDecode(_$VariableCodeSyntaxPlatformEnumMap, k),
-              e as String,
-            ),
-          ) ??
-          {},
-      deletedButReferenced: json['deletedButReferenced'] as bool?,
+      scopes: (json['scopes'] as List<dynamic>)
+          .map((e) => $enumDecode(_$VariableScopeEnumMap, e))
+          .toList(),
+      codeSyntax: VariableCodeSyntax.fromJson(
+        json['codeSyntax'] as Map<String, dynamic>,
+      ),
+      deletedButReferenced: json['deletedButReferenced'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$LocalVariableToJson(LocalVariable instance) =>
@@ -238,9 +234,7 @@ Map<String, dynamic> _$LocalVariableToJson(LocalVariable instance) =>
       'description': instance.description,
       'hiddenFromPublishing': instance.hiddenFromPublishing,
       'scopes': instance.scopes.map((e) => _$VariableScopeEnumMap[e]!).toList(),
-      'codeSyntax': instance.codeSyntax.map(
-        (k, e) => MapEntry(_$VariableCodeSyntaxPlatformEnumMap[k]!, e),
-      ),
+      'codeSyntax': instance.codeSyntax.toJson(),
       'deletedButReferenced': instance.deletedButReferenced,
     };
 
@@ -275,10 +269,4 @@ const _$VariableScopeEnumMap = {
   VariableScope.paragraphSpacing: 'PARAGRAPH_SPACING',
   VariableScope.paragraphIndent: 'PARAGRAPH_INDENT',
   VariableScope.fontVariations: 'FONT_VARIATIONS',
-};
-
-const _$VariableCodeSyntaxPlatformEnumMap = {
-  VariableCodeSyntaxPlatform.web: 'WEB',
-  VariableCodeSyntaxPlatform.android: 'ANDROID',
-  VariableCodeSyntaxPlatform.ios: 'iOS',
 };

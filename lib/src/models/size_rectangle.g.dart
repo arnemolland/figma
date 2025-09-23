@@ -7,13 +7,13 @@ part of 'size_rectangle.dart';
 // **************************************************************************
 
 abstract class _$SizeRectangleCWProxy {
-  SizeRectangle x(double? x);
+  SizeRectangle x(num x);
 
-  SizeRectangle y(double? y);
+  SizeRectangle y(num y);
 
-  SizeRectangle width(double? width);
+  SizeRectangle width(num width);
 
-  SizeRectangle height(double? height);
+  SizeRectangle height(num height);
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `SizeRectangle(...).copyWith.fieldName(value)`.
@@ -22,7 +22,7 @@ abstract class _$SizeRectangleCWProxy {
   /// ```dart
   /// SizeRectangle(...).copyWith(id: 12, name: "My name")
   /// ```
-  SizeRectangle call({double? x, double? y, double? width, double? height});
+  SizeRectangle call({num x, num y, num width, num height});
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -33,16 +33,16 @@ class _$SizeRectangleCWProxyImpl implements _$SizeRectangleCWProxy {
   final SizeRectangle _value;
 
   @override
-  SizeRectangle x(double? x) => call(x: x);
+  SizeRectangle x(num x) => call(x: x);
 
   @override
-  SizeRectangle y(double? y) => call(y: y);
+  SizeRectangle y(num y) => call(y: y);
 
   @override
-  SizeRectangle width(double? width) => call(width: width);
+  SizeRectangle width(num width) => call(width: width);
 
   @override
-  SizeRectangle height(double? height) => call(height: height);
+  SizeRectangle height(num height) => call(height: height);
 
   @override
   /// Creates a new instance with the provided field values.
@@ -59,22 +59,22 @@ class _$SizeRectangleCWProxyImpl implements _$SizeRectangleCWProxy {
     Object? height = const $CopyWithPlaceholder(),
   }) {
     return SizeRectangle(
-      x: x == const $CopyWithPlaceholder()
+      x: x == const $CopyWithPlaceholder() || x == null
           ? _value.x
           // ignore: cast_nullable_to_non_nullable
-          : x as double?,
-      y: y == const $CopyWithPlaceholder()
+          : x as num,
+      y: y == const $CopyWithPlaceholder() || y == null
           ? _value.y
           // ignore: cast_nullable_to_non_nullable
-          : y as double?,
-      width: width == const $CopyWithPlaceholder()
+          : y as num,
+      width: width == const $CopyWithPlaceholder() || width == null
           ? _value.width
           // ignore: cast_nullable_to_non_nullable
-          : width as double?,
-      height: height == const $CopyWithPlaceholder()
+          : width as num,
+      height: height == const $CopyWithPlaceholder() || height == null
           ? _value.height
           // ignore: cast_nullable_to_non_nullable
-          : height as double?,
+          : height as num,
     );
   }
 }
@@ -92,10 +92,10 @@ extension $SizeRectangleCopyWith on SizeRectangle {
 
 SizeRectangle _$SizeRectangleFromJson(Map<String, dynamic> json) =>
     SizeRectangle(
-      x: (json['x'] as num?)?.toDouble(),
-      y: (json['y'] as num?)?.toDouble(),
-      width: (json['width'] as num?)?.toDouble(),
-      height: (json['height'] as num?)?.toDouble(),
+      x: json['x'] as num,
+      y: json['y'] as num,
+      width: json['width'] as num,
+      height: json['height'] as num,
     );
 
 Map<String, dynamic> _$SizeRectangleToJson(SizeRectangle instance) =>

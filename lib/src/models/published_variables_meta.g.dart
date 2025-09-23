@@ -101,6 +101,8 @@ PublishedVariablesMeta _$PublishedVariablesMetaFromJson(
 Map<String, dynamic> _$PublishedVariablesMetaToJson(
   PublishedVariablesMeta instance,
 ) => <String, dynamic>{
-  'variables': instance.variables,
-  'variableCollections': instance.variableCollections,
+  'variables': instance.variables.map((k, e) => MapEntry(k, e.toJson())),
+  'variableCollections': instance.variableCollections.map(
+    (k, e) => MapEntry(k, e.toJson()),
+  ),
 };

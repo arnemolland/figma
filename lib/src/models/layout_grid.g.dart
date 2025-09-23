@@ -7,21 +7,23 @@ part of 'layout_grid.dart';
 // **************************************************************************
 
 abstract class _$LayoutGridCWProxy {
-  LayoutGrid pattern(LayoutGridPattern? pattern);
+  LayoutGrid pattern(LayoutGridPattern pattern);
 
-  LayoutGrid sectionSize(double? sectionSize);
+  LayoutGrid sectionSize(num sectionSize);
 
-  LayoutGrid visible(bool? visible);
+  LayoutGrid visible(bool visible);
 
-  LayoutGrid color(Color? color);
+  LayoutGrid color(Color color);
 
-  LayoutGrid alignment(LayoutAlign? alignment);
+  LayoutGrid alignment(LayoutGridAlignment alignment);
 
-  LayoutGrid gutterSize(double? gutterSize);
+  LayoutGrid gutterSize(num gutterSize);
 
-  LayoutGrid offset(double? offset);
+  LayoutGrid offset(num offset);
 
-  LayoutGrid count(int? count);
+  LayoutGrid count(num count);
+
+  LayoutGrid boundVariables(LayoutGridVariables boundVariables);
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `LayoutGrid(...).copyWith.fieldName(value)`.
@@ -31,14 +33,15 @@ abstract class _$LayoutGridCWProxy {
   /// LayoutGrid(...).copyWith(id: 12, name: "My name")
   /// ```
   LayoutGrid call({
-    LayoutGridPattern? pattern,
-    double? sectionSize,
-    bool? visible,
-    Color? color,
-    LayoutAlign? alignment,
-    double? gutterSize,
-    double? offset,
-    int? count,
+    LayoutGridPattern pattern,
+    num sectionSize,
+    bool visible,
+    Color color,
+    LayoutGridAlignment alignment,
+    num gutterSize,
+    num offset,
+    num count,
+    LayoutGridVariables boundVariables,
   });
 }
 
@@ -50,28 +53,33 @@ class _$LayoutGridCWProxyImpl implements _$LayoutGridCWProxy {
   final LayoutGrid _value;
 
   @override
-  LayoutGrid pattern(LayoutGridPattern? pattern) => call(pattern: pattern);
+  LayoutGrid pattern(LayoutGridPattern pattern) => call(pattern: pattern);
 
   @override
-  LayoutGrid sectionSize(double? sectionSize) => call(sectionSize: sectionSize);
+  LayoutGrid sectionSize(num sectionSize) => call(sectionSize: sectionSize);
 
   @override
-  LayoutGrid visible(bool? visible) => call(visible: visible);
+  LayoutGrid visible(bool visible) => call(visible: visible);
 
   @override
-  LayoutGrid color(Color? color) => call(color: color);
+  LayoutGrid color(Color color) => call(color: color);
 
   @override
-  LayoutGrid alignment(LayoutAlign? alignment) => call(alignment: alignment);
+  LayoutGrid alignment(LayoutGridAlignment alignment) =>
+      call(alignment: alignment);
 
   @override
-  LayoutGrid gutterSize(double? gutterSize) => call(gutterSize: gutterSize);
+  LayoutGrid gutterSize(num gutterSize) => call(gutterSize: gutterSize);
 
   @override
-  LayoutGrid offset(double? offset) => call(offset: offset);
+  LayoutGrid offset(num offset) => call(offset: offset);
 
   @override
-  LayoutGrid count(int? count) => call(count: count);
+  LayoutGrid count(num count) => call(count: count);
+
+  @override
+  LayoutGrid boundVariables(LayoutGridVariables boundVariables) =>
+      call(boundVariables: boundVariables);
 
   @override
   /// Creates a new instance with the provided field values.
@@ -90,40 +98,49 @@ class _$LayoutGridCWProxyImpl implements _$LayoutGridCWProxy {
     Object? gutterSize = const $CopyWithPlaceholder(),
     Object? offset = const $CopyWithPlaceholder(),
     Object? count = const $CopyWithPlaceholder(),
+    Object? boundVariables = const $CopyWithPlaceholder(),
   }) {
     return LayoutGrid(
-      pattern: pattern == const $CopyWithPlaceholder()
+      pattern: pattern == const $CopyWithPlaceholder() || pattern == null
           ? _value.pattern
           // ignore: cast_nullable_to_non_nullable
-          : pattern as LayoutGridPattern?,
-      sectionSize: sectionSize == const $CopyWithPlaceholder()
+          : pattern as LayoutGridPattern,
+      sectionSize:
+          sectionSize == const $CopyWithPlaceholder() || sectionSize == null
           ? _value.sectionSize
           // ignore: cast_nullable_to_non_nullable
-          : sectionSize as double?,
-      visible: visible == const $CopyWithPlaceholder()
+          : sectionSize as num,
+      visible: visible == const $CopyWithPlaceholder() || visible == null
           ? _value.visible
           // ignore: cast_nullable_to_non_nullable
-          : visible as bool?,
-      color: color == const $CopyWithPlaceholder()
+          : visible as bool,
+      color: color == const $CopyWithPlaceholder() || color == null
           ? _value.color
           // ignore: cast_nullable_to_non_nullable
-          : color as Color?,
-      alignment: alignment == const $CopyWithPlaceholder()
+          : color as Color,
+      alignment: alignment == const $CopyWithPlaceholder() || alignment == null
           ? _value.alignment
           // ignore: cast_nullable_to_non_nullable
-          : alignment as LayoutAlign?,
-      gutterSize: gutterSize == const $CopyWithPlaceholder()
+          : alignment as LayoutGridAlignment,
+      gutterSize:
+          gutterSize == const $CopyWithPlaceholder() || gutterSize == null
           ? _value.gutterSize
           // ignore: cast_nullable_to_non_nullable
-          : gutterSize as double?,
-      offset: offset == const $CopyWithPlaceholder()
+          : gutterSize as num,
+      offset: offset == const $CopyWithPlaceholder() || offset == null
           ? _value.offset
           // ignore: cast_nullable_to_non_nullable
-          : offset as double?,
-      count: count == const $CopyWithPlaceholder()
+          : offset as num,
+      count: count == const $CopyWithPlaceholder() || count == null
           ? _value.count
           // ignore: cast_nullable_to_non_nullable
-          : count as int?,
+          : count as num,
+      boundVariables:
+          boundVariables == const $CopyWithPlaceholder() ||
+              boundVariables == null
+          ? _value.boundVariables
+          // ignore: cast_nullable_to_non_nullable
+          : boundVariables as LayoutGridVariables,
     );
   }
 }
@@ -140,28 +157,32 @@ extension $LayoutGridCopyWith on LayoutGrid {
 // **************************************************************************
 
 LayoutGrid _$LayoutGridFromJson(Map<String, dynamic> json) => LayoutGrid(
-  pattern: $enumDecodeNullable(_$LayoutGridPatternEnumMap, json['pattern']),
-  sectionSize: (json['sectionSize'] as num?)?.toDouble(),
-  visible: json['visible'] as bool?,
-  color: json['color'] == null
-      ? null
-      : Color.fromJson(json['color'] as Map<String, dynamic>),
-  alignment: $enumDecodeNullable(_$LayoutAlignEnumMap, json['alignment']),
-  gutterSize: (json['gutterSize'] as num?)?.toDouble(),
-  offset: (json['offset'] as num?)?.toDouble(),
-  count: (json['count'] as num?)?.toInt(),
+  pattern: $enumDecode(_$LayoutGridPatternEnumMap, json['pattern']),
+  sectionSize: json['sectionSize'] as num,
+  visible: json['visible'] as bool,
+  color: Color.fromJson(json['color'] as Map<String, dynamic>),
+  alignment: $enumDecode(_$LayoutGridAlignmentEnumMap, json['alignment']),
+  gutterSize: json['gutterSize'] as num,
+  offset: json['offset'] as num,
+  count: json['count'] as num,
+  boundVariables: json['boundVariables'] == null
+      ? const LayoutGridVariables()
+      : LayoutGridVariables.fromJson(
+          json['boundVariables'] as Map<String, dynamic>,
+        ),
 );
 
 Map<String, dynamic> _$LayoutGridToJson(LayoutGrid instance) =>
     <String, dynamic>{
-      'pattern': _$LayoutGridPatternEnumMap[instance.pattern],
+      'pattern': _$LayoutGridPatternEnumMap[instance.pattern]!,
       'sectionSize': instance.sectionSize,
       'visible': instance.visible,
-      'color': instance.color,
-      'alignment': _$LayoutAlignEnumMap[instance.alignment],
+      'color': instance.color.toJson(),
+      'alignment': _$LayoutGridAlignmentEnumMap[instance.alignment]!,
       'gutterSize': instance.gutterSize,
       'offset': instance.offset,
       'count': instance.count,
+      'boundVariables': instance.boundVariables.toJson(),
     };
 
 const _$LayoutGridPatternEnumMap = {
@@ -170,10 +191,9 @@ const _$LayoutGridPatternEnumMap = {
   LayoutGridPattern.grid: 'GRID',
 };
 
-const _$LayoutAlignEnumMap = {
-  LayoutAlign.inherit: 'INHERIT',
-  LayoutAlign.stretch: 'STRETCH',
-  LayoutAlign.min: 'MIN',
-  LayoutAlign.center: 'CENTER',
-  LayoutAlign.max: 'MAX',
+const _$LayoutGridAlignmentEnumMap = {
+  LayoutGridAlignment.min: 'MIN',
+  LayoutGridAlignment.max: 'MAX',
+  LayoutGridAlignment.stretch: 'STRETCH',
+  LayoutGridAlignment.center: 'CENTER',
 };

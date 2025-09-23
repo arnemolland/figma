@@ -7,9 +7,9 @@ part of 'layout_constraint.dart';
 // **************************************************************************
 
 abstract class _$LayoutConstraintCWProxy {
-  LayoutConstraint vertical(VerticalConstraint? vertical);
+  LayoutConstraint vertical(VerticalConstraint vertical);
 
-  LayoutConstraint horizontal(HorizontalConstraint? horizontal);
+  LayoutConstraint horizontal(HorizontalConstraint horizontal);
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `LayoutConstraint(...).copyWith.fieldName(value)`.
@@ -19,8 +19,8 @@ abstract class _$LayoutConstraintCWProxy {
   /// LayoutConstraint(...).copyWith(id: 12, name: "My name")
   /// ```
   LayoutConstraint call({
-    VerticalConstraint? vertical,
-    HorizontalConstraint? horizontal,
+    VerticalConstraint vertical,
+    HorizontalConstraint horizontal,
   });
 }
 
@@ -32,11 +32,11 @@ class _$LayoutConstraintCWProxyImpl implements _$LayoutConstraintCWProxy {
   final LayoutConstraint _value;
 
   @override
-  LayoutConstraint vertical(VerticalConstraint? vertical) =>
+  LayoutConstraint vertical(VerticalConstraint vertical) =>
       call(vertical: vertical);
 
   @override
-  LayoutConstraint horizontal(HorizontalConstraint? horizontal) =>
+  LayoutConstraint horizontal(HorizontalConstraint horizontal) =>
       call(horizontal: horizontal);
 
   @override
@@ -52,14 +52,15 @@ class _$LayoutConstraintCWProxyImpl implements _$LayoutConstraintCWProxy {
     Object? horizontal = const $CopyWithPlaceholder(),
   }) {
     return LayoutConstraint(
-      vertical: vertical == const $CopyWithPlaceholder()
+      vertical: vertical == const $CopyWithPlaceholder() || vertical == null
           ? _value.vertical
           // ignore: cast_nullable_to_non_nullable
-          : vertical as VerticalConstraint?,
-      horizontal: horizontal == const $CopyWithPlaceholder()
+          : vertical as VerticalConstraint,
+      horizontal:
+          horizontal == const $CopyWithPlaceholder() || horizontal == null
           ? _value.horizontal
           // ignore: cast_nullable_to_non_nullable
-          : horizontal as HorizontalConstraint?,
+          : horizontal as HorizontalConstraint,
     );
   }
 }
@@ -77,11 +78,8 @@ extension $LayoutConstraintCopyWith on LayoutConstraint {
 
 LayoutConstraint _$LayoutConstraintFromJson(Map<String, dynamic> json) =>
     LayoutConstraint(
-      vertical: $enumDecodeNullable(
-        _$VerticalConstraintEnumMap,
-        json['vertical'],
-      ),
-      horizontal: $enumDecodeNullable(
+      vertical: $enumDecode(_$VerticalConstraintEnumMap, json['vertical']),
+      horizontal: $enumDecode(
         _$HorizontalConstraintEnumMap,
         json['horizontal'],
       ),
@@ -89,8 +87,8 @@ LayoutConstraint _$LayoutConstraintFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$LayoutConstraintToJson(LayoutConstraint instance) =>
     <String, dynamic>{
-      'vertical': _$VerticalConstraintEnumMap[instance.vertical],
-      'horizontal': _$HorizontalConstraintEnumMap[instance.horizontal],
+      'vertical': _$VerticalConstraintEnumMap[instance.vertical]!,
+      'horizontal': _$HorizontalConstraintEnumMap[instance.horizontal]!,
     };
 
 const _$VerticalConstraintEnumMap = {

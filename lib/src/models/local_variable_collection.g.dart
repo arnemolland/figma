@@ -171,7 +171,7 @@ Map<String, dynamic> _$LocalVariableCollectionToJson(
   'id': instance.id,
   'name': instance.name,
   'key': instance.key,
-  'modes': instance.modes,
+  'modes': instance.modes.map((e) => e.toJson()).toList(),
   'defaultModeId': instance.defaultModeId,
   'remote': instance.remote,
   'hiddenFromPublishing': instance.hiddenFromPublishing,

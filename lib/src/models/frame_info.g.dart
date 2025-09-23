@@ -13,9 +13,13 @@ abstract class _$FrameInfoCWProxy {
 
   FrameInfo backgroundColor(String? backgroundColor);
 
-  FrameInfo pageId(String? pageId);
+  FrameInfo pageId(String pageId);
 
-  FrameInfo pageName(String? pageName);
+  FrameInfo pageName(String pageName);
+
+  FrameInfo containingComponentSet(
+    ContainingComponentSet? containingComponentSet,
+  );
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `FrameInfo(...).copyWith.fieldName(value)`.
@@ -28,8 +32,9 @@ abstract class _$FrameInfoCWProxy {
     String? nodeId,
     String? name,
     String? backgroundColor,
-    String? pageId,
-    String? pageName,
+    String pageId,
+    String pageName,
+    ContainingComponentSet? containingComponentSet,
   });
 }
 
@@ -51,10 +56,15 @@ class _$FrameInfoCWProxyImpl implements _$FrameInfoCWProxy {
       call(backgroundColor: backgroundColor);
 
   @override
-  FrameInfo pageId(String? pageId) => call(pageId: pageId);
+  FrameInfo pageId(String pageId) => call(pageId: pageId);
 
   @override
-  FrameInfo pageName(String? pageName) => call(pageName: pageName);
+  FrameInfo pageName(String pageName) => call(pageName: pageName);
+
+  @override
+  FrameInfo containingComponentSet(
+    ContainingComponentSet? containingComponentSet,
+  ) => call(containingComponentSet: containingComponentSet);
 
   @override
   /// Creates a new instance with the provided field values.
@@ -70,6 +80,7 @@ class _$FrameInfoCWProxyImpl implements _$FrameInfoCWProxy {
     Object? backgroundColor = const $CopyWithPlaceholder(),
     Object? pageId = const $CopyWithPlaceholder(),
     Object? pageName = const $CopyWithPlaceholder(),
+    Object? containingComponentSet = const $CopyWithPlaceholder(),
   }) {
     return FrameInfo(
       nodeId: nodeId == const $CopyWithPlaceholder()
@@ -84,14 +95,19 @@ class _$FrameInfoCWProxyImpl implements _$FrameInfoCWProxy {
           ? _value.backgroundColor
           // ignore: cast_nullable_to_non_nullable
           : backgroundColor as String?,
-      pageId: pageId == const $CopyWithPlaceholder()
+      pageId: pageId == const $CopyWithPlaceholder() || pageId == null
           ? _value.pageId
           // ignore: cast_nullable_to_non_nullable
-          : pageId as String?,
-      pageName: pageName == const $CopyWithPlaceholder()
+          : pageId as String,
+      pageName: pageName == const $CopyWithPlaceholder() || pageName == null
           ? _value.pageName
           // ignore: cast_nullable_to_non_nullable
-          : pageName as String?,
+          : pageName as String,
+      containingComponentSet:
+          containingComponentSet == const $CopyWithPlaceholder()
+          ? _value.containingComponentSet
+          // ignore: cast_nullable_to_non_nullable
+          : containingComponentSet as ContainingComponentSet?,
     );
   }
 }
@@ -108,17 +124,23 @@ extension $FrameInfoCopyWith on FrameInfo {
 // **************************************************************************
 
 FrameInfo _$FrameInfoFromJson(Map<String, dynamic> json) => FrameInfo(
-  nodeId: json['node:_id'] as String?,
+  nodeId: json['nodeId'] as String?,
   name: json['name'] as String?,
-  backgroundColor: json['background_color'] as String?,
-  pageId: json['page_id'] as String?,
-  pageName: json['page_name'] as String?,
+  backgroundColor: json['backgroundColor'] as String?,
+  pageId: json['pageId'] as String,
+  pageName: json['pageName'] as String,
+  containingComponentSet: json['containingComponentSet'] == null
+      ? null
+      : ContainingComponentSet.fromJson(
+          json['containingComponentSet'] as Map<String, dynamic>,
+        ),
 );
 
 Map<String, dynamic> _$FrameInfoToJson(FrameInfo instance) => <String, dynamic>{
-  'node:_id': instance.nodeId,
-  'name': instance.name,
-  'background_color': instance.backgroundColor,
-  'page_id': instance.pageId,
-  'page_name': instance.pageName,
+  'nodeId': ?instance.nodeId,
+  'name': ?instance.name,
+  'backgroundColor': ?instance.backgroundColor,
+  'pageId': instance.pageId,
+  'pageName': instance.pageName,
+  'containingComponentSet': instance.containingComponentSet?.toJson(),
 };

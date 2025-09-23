@@ -7,13 +7,15 @@ part of 'component_property.dart';
 // **************************************************************************
 
 abstract class _$ComponentPropertyCWProxy {
-  ComponentProperty type(String type);
+  ComponentProperty type(ComponentPropertyType type);
 
-  ComponentProperty value(dynamic value);
+  ComponentProperty value(Object value);
 
   ComponentProperty preferredValues(
-    List<InstanceSwapPreferredValue>? preferredValues,
+    List<InstanceSwapPreferredValue> preferredValues,
   );
+
+  ComponentProperty boundVariables(ComponentPropertyVariables boundVariables);
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ComponentProperty(...).copyWith.fieldName(value)`.
@@ -23,9 +25,10 @@ abstract class _$ComponentPropertyCWProxy {
   /// ComponentProperty(...).copyWith(id: 12, name: "My name")
   /// ```
   ComponentProperty call({
-    String type,
-    dynamic value,
-    List<InstanceSwapPreferredValue>? preferredValues,
+    ComponentPropertyType type,
+    Object value,
+    List<InstanceSwapPreferredValue> preferredValues,
+    ComponentPropertyVariables boundVariables,
   });
 }
 
@@ -37,15 +40,19 @@ class _$ComponentPropertyCWProxyImpl implements _$ComponentPropertyCWProxy {
   final ComponentProperty _value;
 
   @override
-  ComponentProperty type(String type) => call(type: type);
+  ComponentProperty type(ComponentPropertyType type) => call(type: type);
 
   @override
-  ComponentProperty value(dynamic value) => call(value: value);
+  ComponentProperty value(Object value) => call(value: value);
 
   @override
   ComponentProperty preferredValues(
-    List<InstanceSwapPreferredValue>? preferredValues,
+    List<InstanceSwapPreferredValue> preferredValues,
   ) => call(preferredValues: preferredValues);
+
+  @override
+  ComponentProperty boundVariables(ComponentPropertyVariables boundVariables) =>
+      call(boundVariables: boundVariables);
 
   @override
   /// Creates a new instance with the provided field values.
@@ -59,20 +66,29 @@ class _$ComponentPropertyCWProxyImpl implements _$ComponentPropertyCWProxy {
     Object? type = const $CopyWithPlaceholder(),
     Object? value = const $CopyWithPlaceholder(),
     Object? preferredValues = const $CopyWithPlaceholder(),
+    Object? boundVariables = const $CopyWithPlaceholder(),
   }) {
     return ComponentProperty(
       type: type == const $CopyWithPlaceholder() || type == null
           ? _value.type
           // ignore: cast_nullable_to_non_nullable
-          : type as String,
-      value: value == const $CopyWithPlaceholder()
+          : type as ComponentPropertyType,
+      value: value == const $CopyWithPlaceholder() || value == null
           ? _value.value
           // ignore: cast_nullable_to_non_nullable
-          : value as dynamic,
-      preferredValues: preferredValues == const $CopyWithPlaceholder()
+          : value as Object,
+      preferredValues:
+          preferredValues == const $CopyWithPlaceholder() ||
+              preferredValues == null
           ? _value.preferredValues
           // ignore: cast_nullable_to_non_nullable
-          : preferredValues as List<InstanceSwapPreferredValue>?,
+          : preferredValues as List<InstanceSwapPreferredValue>,
+      boundVariables:
+          boundVariables == const $CopyWithPlaceholder() ||
+              boundVariables == null
+          ? _value.boundVariables
+          // ignore: cast_nullable_to_non_nullable
+          : boundVariables as ComponentPropertyVariables,
     );
   }
 }
@@ -91,19 +107,36 @@ extension $ComponentPropertyCopyWith on ComponentProperty {
 
 ComponentProperty _$ComponentPropertyFromJson(Map<String, dynamic> json) =>
     ComponentProperty(
-      type: json['type'] as String,
-      value: json['value'],
-      preferredValues: (json['preferredValues'] as List<dynamic>?)
-          ?.map(
-            (e) =>
-                InstanceSwapPreferredValue.fromJson(e as Map<String, dynamic>),
-          )
-          .toList(),
+      type: $enumDecode(_$ComponentPropertyTypeEnumMap, json['type']),
+      value: json['value'] as Object,
+      preferredValues:
+          (json['preferredValues'] as List<dynamic>?)
+              ?.map(
+                (e) => InstanceSwapPreferredValue.fromJson(
+                  e as Map<String, dynamic>,
+                ),
+              )
+              .toList() ??
+          [],
+      boundVariables: json['boundVariables'] == null
+          ? const ComponentPropertyVariables()
+          : ComponentPropertyVariables.fromJson(
+              json['boundVariables'] as Map<String, dynamic>,
+            ),
     );
 
-Map<String, dynamic> _$ComponentPropertyToJson(ComponentProperty instance) =>
-    <String, dynamic>{
-      'type': instance.type,
-      'value': instance.value,
-      'preferredValues': instance.preferredValues,
-    };
+Map<String, dynamic> _$ComponentPropertyToJson(
+  ComponentProperty instance,
+) => <String, dynamic>{
+  'type': _$ComponentPropertyTypeEnumMap[instance.type]!,
+  'value': instance.value,
+  'preferredValues': instance.preferredValues.map((e) => e.toJson()).toList(),
+  'boundVariables': instance.boundVariables.toJson(),
+};
+
+const _$ComponentPropertyTypeEnumMap = {
+  ComponentPropertyType.boolean: 'BOOLEAN',
+  ComponentPropertyType.instanceSwap: 'INSTANCE_SWAP',
+  ComponentPropertyType.text: 'TEXT',
+  ComponentPropertyType.variant: 'VARIANT',
+};

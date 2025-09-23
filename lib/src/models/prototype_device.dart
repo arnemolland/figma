@@ -1,36 +1,43 @@
+// Generated from v0.33.0 of the Figma REST API specification
+
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:figma/src/models.dart';
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:meta/meta.dart';
+
+import 'prototype_device_rotation.dart';
+import 'prototype_device_type.dart';
+import 'size.dart';
 
 part 'prototype_device.g.dart';
 
-/// A device used for a prototype.
-@JsonSerializable()
+/// The device used to view a prototype.
+@JsonSerializable(explicitToJson: true)
 @CopyWith()
-class PrototypeDevice {
-  PrototypeDevice({
+@immutable
+class PrototypeDevice extends Equatable {
+  const PrototypeDevice({
     required this.type,
-    required this.rotation,
     this.size,
     this.presetIdentifier,
+    required this.rotation,
   });
 
-  /// Device type used for the prototype.
-  @JsonKey(defaultValue: PrototypeDeviceType.none)
-  final PrototypeDeviceType type;
-
-  /// Size of the device.
-  final Size? size;
-
-  /// Identifier of the preset device type.
-  final String? presetIdentifier;
-
-  /// Device rotation.
-  @JsonKey(defaultValue: PrototypeDeviceRotation.none)
-  final PrototypeDeviceRotation rotation;
-
-  factory PrototypeDevice.fromJson(Map<String, dynamic> json) =>
+  factory PrototypeDevice.fromJson(Map<String, Object?> json) =>
       _$PrototypeDeviceFromJson(json);
 
-  Map<String, dynamic> toJson() => _$PrototypeDeviceToJson(this);
+  final PrototypeDeviceType type;
+
+  @JsonKey(includeIfNull: false)
+  final Size? size;
+
+  @JsonKey(includeIfNull: false)
+  final String? presetIdentifier;
+
+  final PrototypeDeviceRotation rotation;
+
+  @override
+  List<Object?> get props => <Object?>[type, size, presetIdentifier, rotation];
+
+  Map<String, Object?> toJson() => _$PrototypeDeviceToJson(this);
 }
