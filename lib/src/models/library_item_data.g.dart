@@ -7,9 +7,9 @@ part of 'library_item_data.dart';
 // **************************************************************************
 
 abstract class _$LibraryItemDataCWProxy {
-  LibraryItemData key(String? key);
+  LibraryItemData key(String key);
 
-  LibraryItemData name(String? name);
+  LibraryItemData name(String name);
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `LibraryItemData(...).copyWith.fieldName(value)`.
@@ -18,7 +18,7 @@ abstract class _$LibraryItemDataCWProxy {
   /// ```dart
   /// LibraryItemData(...).copyWith(id: 12, name: "My name")
   /// ```
-  LibraryItemData call({String? key, String? name});
+  LibraryItemData call({String key, String name});
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -29,10 +29,10 @@ class _$LibraryItemDataCWProxyImpl implements _$LibraryItemDataCWProxy {
   final LibraryItemData _value;
 
   @override
-  LibraryItemData key(String? key) => call(key: key);
+  LibraryItemData key(String key) => call(key: key);
 
   @override
-  LibraryItemData name(String? name) => call(name: name);
+  LibraryItemData name(String name) => call(name: name);
 
   @override
   /// Creates a new instance with the provided field values.
@@ -47,14 +47,14 @@ class _$LibraryItemDataCWProxyImpl implements _$LibraryItemDataCWProxy {
     Object? name = const $CopyWithPlaceholder(),
   }) {
     return LibraryItemData(
-      key: key == const $CopyWithPlaceholder()
+      key: key == const $CopyWithPlaceholder() || key == null
           ? _value.key
           // ignore: cast_nullable_to_non_nullable
-          : key as String?,
-      name: name == const $CopyWithPlaceholder()
+          : key as String,
+      name: name == const $CopyWithPlaceholder() || name == null
           ? _value.name
           // ignore: cast_nullable_to_non_nullable
-          : name as String?,
+          : name as String,
     );
   }
 }
@@ -71,7 +71,7 @@ extension $LibraryItemDataCopyWith on LibraryItemData {
 // **************************************************************************
 
 LibraryItemData _$LibraryItemDataFromJson(Map<String, dynamic> json) =>
-    LibraryItemData(key: json['key'] as String?, name: json['name'] as String?);
+    LibraryItemData(key: json['key'] as String, name: json['name'] as String);
 
 Map<String, dynamic> _$LibraryItemDataToJson(LibraryItemData instance) =>
     <String, dynamic>{'key': instance.key, 'name': instance.name};

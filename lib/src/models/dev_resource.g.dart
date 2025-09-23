@@ -7,15 +7,15 @@ part of 'dev_resource.dart';
 // **************************************************************************
 
 abstract class _$DevResourceCWProxy {
-  DevResource id(String? id);
+  DevResource id(String id);
 
-  DevResource name(String? name);
+  DevResource name(String name);
 
-  DevResource url(String? url);
+  DevResource url(String url);
 
-  DevResource fileKey(String? fileKey);
+  DevResource fileKey(String fileKey);
 
-  DevResource nodeId(String? nodeId);
+  DevResource nodeId(String nodeId);
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `DevResource(...).copyWith.fieldName(value)`.
@@ -25,11 +25,11 @@ abstract class _$DevResourceCWProxy {
   /// DevResource(...).copyWith(id: 12, name: "My name")
   /// ```
   DevResource call({
-    String? id,
-    String? name,
-    String? url,
-    String? fileKey,
-    String? nodeId,
+    String id,
+    String name,
+    String url,
+    String fileKey,
+    String nodeId,
   });
 }
 
@@ -41,19 +41,19 @@ class _$DevResourceCWProxyImpl implements _$DevResourceCWProxy {
   final DevResource _value;
 
   @override
-  DevResource id(String? id) => call(id: id);
+  DevResource id(String id) => call(id: id);
 
   @override
-  DevResource name(String? name) => call(name: name);
+  DevResource name(String name) => call(name: name);
 
   @override
-  DevResource url(String? url) => call(url: url);
+  DevResource url(String url) => call(url: url);
 
   @override
-  DevResource fileKey(String? fileKey) => call(fileKey: fileKey);
+  DevResource fileKey(String fileKey) => call(fileKey: fileKey);
 
   @override
-  DevResource nodeId(String? nodeId) => call(nodeId: nodeId);
+  DevResource nodeId(String nodeId) => call(nodeId: nodeId);
 
   @override
   /// Creates a new instance with the provided field values.
@@ -71,26 +71,26 @@ class _$DevResourceCWProxyImpl implements _$DevResourceCWProxy {
     Object? nodeId = const $CopyWithPlaceholder(),
   }) {
     return DevResource(
-      id: id == const $CopyWithPlaceholder()
+      id: id == const $CopyWithPlaceholder() || id == null
           ? _value.id
           // ignore: cast_nullable_to_non_nullable
-          : id as String?,
-      name: name == const $CopyWithPlaceholder()
+          : id as String,
+      name: name == const $CopyWithPlaceholder() || name == null
           ? _value.name
           // ignore: cast_nullable_to_non_nullable
-          : name as String?,
-      url: url == const $CopyWithPlaceholder()
+          : name as String,
+      url: url == const $CopyWithPlaceholder() || url == null
           ? _value.url
           // ignore: cast_nullable_to_non_nullable
-          : url as String?,
-      fileKey: fileKey == const $CopyWithPlaceholder()
+          : url as String,
+      fileKey: fileKey == const $CopyWithPlaceholder() || fileKey == null
           ? _value.fileKey
           // ignore: cast_nullable_to_non_nullable
-          : fileKey as String?,
-      nodeId: nodeId == const $CopyWithPlaceholder()
+          : fileKey as String,
+      nodeId: nodeId == const $CopyWithPlaceholder() || nodeId == null
           ? _value.nodeId
           // ignore: cast_nullable_to_non_nullable
-          : nodeId as String?,
+          : nodeId as String,
     );
   }
 }
@@ -107,11 +107,11 @@ extension $DevResourceCopyWith on DevResource {
 // **************************************************************************
 
 DevResource _$DevResourceFromJson(Map<String, dynamic> json) => DevResource(
-  id: json['id'] as String?,
-  name: json['name'] as String?,
-  url: json['url'] as String?,
-  fileKey: json['file_key'] as String?,
-  nodeId: json['node_id'] as String?,
+  id: json['id'] as String,
+  name: json['name'] as String,
+  url: json['url'] as String,
+  fileKey: json['file_key'] as String,
+  nodeId: json['node_id'] as String,
 );
 
 Map<String, dynamic> _$DevResourceToJson(DevResource instance) =>

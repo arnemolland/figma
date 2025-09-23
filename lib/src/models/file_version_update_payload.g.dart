@@ -7,23 +7,23 @@ part of 'file_version_update_payload.dart';
 // **************************************************************************
 
 abstract class _$FileVersionUpdatePayloadCWProxy {
-  FileVersionUpdatePayload passcode(String? passcode);
+  FileVersionUpdatePayload passcode(String passcode);
 
-  FileVersionUpdatePayload timestamp(DateTime? timestamp);
+  FileVersionUpdatePayload timestamp(DateTime timestamp);
 
-  FileVersionUpdatePayload webhookId(String? webhookId);
+  FileVersionUpdatePayload webhookId(String webhookId);
 
-  FileVersionUpdatePayload createdAt(DateTime? createdAt);
+  FileVersionUpdatePayload createdAt(DateTime createdAt);
 
   FileVersionUpdatePayload description(String? description);
 
-  FileVersionUpdatePayload fileKey(String? fileKey);
+  FileVersionUpdatePayload fileKey(String fileKey);
 
-  FileVersionUpdatePayload fileName(String? fileName);
+  FileVersionUpdatePayload fileName(String fileName);
 
-  FileVersionUpdatePayload triggeredBy(User? triggeredBy);
+  FileVersionUpdatePayload triggeredBy(User triggeredBy);
 
-  FileVersionUpdatePayload versionId(String? versionId);
+  FileVersionUpdatePayload versionId(String versionId);
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `FileVersionUpdatePayload(...).copyWith.fieldName(value)`.
@@ -33,15 +33,15 @@ abstract class _$FileVersionUpdatePayloadCWProxy {
   /// FileVersionUpdatePayload(...).copyWith(id: 12, name: "My name")
   /// ```
   FileVersionUpdatePayload call({
-    String? passcode,
-    DateTime? timestamp,
-    String? webhookId,
-    DateTime? createdAt,
+    String passcode,
+    DateTime timestamp,
+    String webhookId,
+    DateTime createdAt,
     String? description,
-    String? fileKey,
-    String? fileName,
-    User? triggeredBy,
-    String? versionId,
+    String fileKey,
+    String fileName,
+    User triggeredBy,
+    String versionId,
   });
 }
 
@@ -54,19 +54,19 @@ class _$FileVersionUpdatePayloadCWProxyImpl
   final FileVersionUpdatePayload _value;
 
   @override
-  FileVersionUpdatePayload passcode(String? passcode) =>
+  FileVersionUpdatePayload passcode(String passcode) =>
       call(passcode: passcode);
 
   @override
-  FileVersionUpdatePayload timestamp(DateTime? timestamp) =>
+  FileVersionUpdatePayload timestamp(DateTime timestamp) =>
       call(timestamp: timestamp);
 
   @override
-  FileVersionUpdatePayload webhookId(String? webhookId) =>
+  FileVersionUpdatePayload webhookId(String webhookId) =>
       call(webhookId: webhookId);
 
   @override
-  FileVersionUpdatePayload createdAt(DateTime? createdAt) =>
+  FileVersionUpdatePayload createdAt(DateTime createdAt) =>
       call(createdAt: createdAt);
 
   @override
@@ -74,18 +74,18 @@ class _$FileVersionUpdatePayloadCWProxyImpl
       call(description: description);
 
   @override
-  FileVersionUpdatePayload fileKey(String? fileKey) => call(fileKey: fileKey);
+  FileVersionUpdatePayload fileKey(String fileKey) => call(fileKey: fileKey);
 
   @override
-  FileVersionUpdatePayload fileName(String? fileName) =>
+  FileVersionUpdatePayload fileName(String fileName) =>
       call(fileName: fileName);
 
   @override
-  FileVersionUpdatePayload triggeredBy(User? triggeredBy) =>
+  FileVersionUpdatePayload triggeredBy(User triggeredBy) =>
       call(triggeredBy: triggeredBy);
 
   @override
-  FileVersionUpdatePayload versionId(String? versionId) =>
+  FileVersionUpdatePayload versionId(String versionId) =>
       call(versionId: versionId);
 
   @override
@@ -108,42 +108,43 @@ class _$FileVersionUpdatePayloadCWProxyImpl
     Object? versionId = const $CopyWithPlaceholder(),
   }) {
     return FileVersionUpdatePayload(
-      passcode: passcode == const $CopyWithPlaceholder()
+      passcode: passcode == const $CopyWithPlaceholder() || passcode == null
           ? _value.passcode
           // ignore: cast_nullable_to_non_nullable
-          : passcode as String?,
-      timestamp: timestamp == const $CopyWithPlaceholder()
+          : passcode as String,
+      timestamp: timestamp == const $CopyWithPlaceholder() || timestamp == null
           ? _value.timestamp
           // ignore: cast_nullable_to_non_nullable
-          : timestamp as DateTime?,
-      webhookId: webhookId == const $CopyWithPlaceholder()
+          : timestamp as DateTime,
+      webhookId: webhookId == const $CopyWithPlaceholder() || webhookId == null
           ? _value.webhookId
           // ignore: cast_nullable_to_non_nullable
-          : webhookId as String?,
-      createdAt: createdAt == const $CopyWithPlaceholder()
+          : webhookId as String,
+      createdAt: createdAt == const $CopyWithPlaceholder() || createdAt == null
           ? _value.createdAt
           // ignore: cast_nullable_to_non_nullable
-          : createdAt as DateTime?,
+          : createdAt as DateTime,
       description: description == const $CopyWithPlaceholder()
           ? _value.description
           // ignore: cast_nullable_to_non_nullable
           : description as String?,
-      fileKey: fileKey == const $CopyWithPlaceholder()
+      fileKey: fileKey == const $CopyWithPlaceholder() || fileKey == null
           ? _value.fileKey
           // ignore: cast_nullable_to_non_nullable
-          : fileKey as String?,
-      fileName: fileName == const $CopyWithPlaceholder()
+          : fileKey as String,
+      fileName: fileName == const $CopyWithPlaceholder() || fileName == null
           ? _value.fileName
           // ignore: cast_nullable_to_non_nullable
-          : fileName as String?,
-      triggeredBy: triggeredBy == const $CopyWithPlaceholder()
+          : fileName as String,
+      triggeredBy:
+          triggeredBy == const $CopyWithPlaceholder() || triggeredBy == null
           ? _value.triggeredBy
           // ignore: cast_nullable_to_non_nullable
-          : triggeredBy as User?,
-      versionId: versionId == const $CopyWithPlaceholder()
+          : triggeredBy as User,
+      versionId: versionId == const $CopyWithPlaceholder() || versionId == null
           ? _value.versionId
           // ignore: cast_nullable_to_non_nullable
-          : versionId as String?,
+          : versionId as String,
     );
   }
 }
@@ -163,33 +164,38 @@ extension $FileVersionUpdatePayloadCopyWith on FileVersionUpdatePayload {
 FileVersionUpdatePayload _$FileVersionUpdatePayloadFromJson(
   Map<String, dynamic> json,
 ) => FileVersionUpdatePayload(
-  passcode: json['passcode'] as String?,
-  timestamp: json['timestamp'] == null
-      ? null
-      : DateTime.parse(json['timestamp'] as String),
-  webhookId: json['webhook_id'] as String?,
-  createdAt: json['created_at'] == null
-      ? null
-      : DateTime.parse(json['created_at'] as String),
+  passcode: json['passcode'] as String,
+  timestamp: DateTime.parse(json['timestamp'] as String),
+  webhookId: json['webhook_id'] as String,
+  createdAt: DateTime.parse(json['created_at'] as String),
   description: json['description'] as String?,
-  fileKey: json['file_key'] as String?,
-  fileName: json['file_name'] as String?,
-  triggeredBy: json['triggered_by'] == null
-      ? null
-      : User.fromJson(json['triggered_by'] as Map<String, dynamic>),
-  versionId: json['version_id'] as String?,
+  fileKey: json['file_key'] as String,
+  fileName: json['file_name'] as String,
+  triggeredBy: User.fromJson(json['triggered_by'] as Map<String, dynamic>),
+  versionId: json['version_id'] as String,
 );
 
 Map<String, dynamic> _$FileVersionUpdatePayloadToJson(
   FileVersionUpdatePayload instance,
 ) => <String, dynamic>{
   'passcode': instance.passcode,
-  'timestamp': instance.timestamp?.toIso8601String(),
+  'timestamp': instance.timestamp.toIso8601String(),
   'webhook_id': instance.webhookId,
-  'created_at': instance.createdAt?.toIso8601String(),
-  'description': instance.description,
+  'created_at': instance.createdAt.toIso8601String(),
+  'description': ?instance.description,
   'file_key': instance.fileKey,
   'file_name': instance.fileName,
-  'triggered_by': instance.triggeredBy?.toJson(),
+  'triggered_by': instance.triggeredBy.toJson(),
   'version_id': instance.versionId,
+  'event_type': _$WebhookEventEnumMap[instance.eventType]!,
+};
+
+const _$WebhookEventEnumMap = {
+  WebhookEvent.ping: 'PING',
+  WebhookEvent.fileUpdate: 'FILE_UPDATE',
+  WebhookEvent.fileVersionUpdate: 'FILE_VERSION_UPDATE',
+  WebhookEvent.fileDelete: 'FILE_DELETE',
+  WebhookEvent.libraryPublish: 'LIBRARY_PUBLISH',
+  WebhookEvent.fileComment: 'FILE_COMMENT',
+  WebhookEvent.devModeStatusUpdate: 'DEV_MODE_STATUS_UPDATE',
 };

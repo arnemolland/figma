@@ -1,14 +1,20 @@
+// Generated from v0.33.0 of the Figma REST API specification
+
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:figma/src/models.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:meta/meta.dart';
+
+import 'library_item_data.dart';
+import 'user.dart';
+import 'webhook_event.dart';
+import 'webhook_payload.dart';
 
 part 'library_publish_payload.g.dart';
 
 @JsonSerializable(explicitToJson: true)
 @CopyWith()
-class LibraryPublishPayload extends BasePayload {
-  static const String eventType = 'LIBRARY_PUBLISH';
-
+@immutable
+class LibraryPublishPayload extends WebhookPayload {
   const LibraryPublishPayload({
     required super.passcode,
     required super.timestamp,
@@ -22,82 +28,79 @@ class LibraryPublishPayload extends BasePayload {
     required this.deletedComponents,
     required this.deletedStyles,
     required this.deletedVariables,
-    required this.description,
+    this.description,
     required this.fileKey,
     required this.fileName,
     required this.libraryItem,
     required this.triggeredBy,
   });
 
-  factory LibraryPublishPayload.fromJson(Map<String, dynamic> json) {
-    final type = json['event_type'];
-    if (type != eventType) {
-      throw ArgumentError.value(type, 'event_type', 'expected $eventType');
-    }
-
-    return _$LibraryPublishPayloadFromJson(json);
-  }
+  factory LibraryPublishPayload.fromJson(Map<String, Object?> json) =>
+      _$LibraryPublishPayloadFromJson(json);
 
   /// Components that were created by the library publish.
   @JsonKey(name: 'created_components')
-  final List<LibraryItemData>? createdComponents;
+  final List<LibraryItemData> createdComponents;
 
   /// Styles that were created by the library publish.
   @JsonKey(name: 'created_styles')
-  final List<LibraryItemData>? createdStyles;
+  final List<LibraryItemData> createdStyles;
 
   /// Variables that were created by the library publish.
   @JsonKey(name: 'created_variables')
-  final List<LibraryItemData>? createdVariables;
+  final List<LibraryItemData> createdVariables;
 
   /// Components that were modified by the library publish.
   @JsonKey(name: 'modified_components')
-  final List<LibraryItemData>? modifiedComponents;
+  final List<LibraryItemData> modifiedComponents;
 
   /// Styles that were modified by the library publish.
   @JsonKey(name: 'modified_styles')
-  final List<LibraryItemData>? modifiedStyles;
+  final List<LibraryItemData> modifiedStyles;
 
   /// Variables that were modified by the library publish.
   @JsonKey(name: 'modified_variables')
-  final List<LibraryItemData>? modifiedVariables;
+  final List<LibraryItemData> modifiedVariables;
 
   /// Components that were deleted by the library publish.
   @JsonKey(name: 'deleted_components')
-  final List<LibraryItemData>? deletedComponents;
+  final List<LibraryItemData> deletedComponents;
 
   /// Styles that were deleted by the library publish.
   @JsonKey(name: 'deleted_styles')
-  final List<LibraryItemData>? deletedStyles;
+  final List<LibraryItemData> deletedStyles;
 
   /// Variables that were deleted by the library publish.
   @JsonKey(name: 'deleted_variables')
-  final List<LibraryItemData>? deletedVariables;
+  final List<LibraryItemData> deletedVariables;
 
   /// Description of the library publish.
+  @JsonKey(includeIfNull: false)
   final String? description;
 
   /// The key of the file that was published.
   @JsonKey(name: 'file_key')
-  final String? fileKey;
+  final String fileKey;
 
   /// The name of the file that was published.
   @JsonKey(name: 'file_name')
-  final String? fileName;
+  final String fileName;
 
   /// The library item that was published.
   @JsonKey(name: 'library_item')
-  final LibraryItemData? libraryItem;
+  final LibraryItemData libraryItem;
 
   /// The user that published the library and triggered this event.
   @JsonKey(name: 'triggered_by')
-  final User? triggeredBy;
+  final User triggeredBy;
+
+  @JsonKey(includeToJson: true, name: 'event_type')
+  @override
+  WebhookEvent get eventType => WebhookEvent.libraryPublish;
 
   @override
-  List<Object?> get props => [
-    passcode,
-    timestamp,
-    webhookId,
+  List<Object?> get props => <Object?>[
+    ...super.props,
     createdComponents,
     createdStyles,
     createdVariables,
@@ -115,8 +118,5 @@ class LibraryPublishPayload extends BasePayload {
   ];
 
   @override
-  Map<String, dynamic> toJson() => <String, dynamic>{
-    'event_type': eventType,
-    ..._$LibraryPublishPayloadToJson(this),
-  };
+  Map<String, Object?> toJson() => _$LibraryPublishPayloadToJson(this);
 }

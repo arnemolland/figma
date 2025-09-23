@@ -77,4 +77,4 @@ CommentFragment _$CommentFragmentFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$CommentFragmentToJson(CommentFragment instance) =>
-    <String, dynamic>{'text': instance.text, 'mention': instance.mention};
+    <String, dynamic>{'text': ?instance.text, 'mention': ?instance.mention};
