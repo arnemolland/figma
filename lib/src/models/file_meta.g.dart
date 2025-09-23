@@ -7,19 +7,19 @@ part of 'file_meta.dart';
 // **************************************************************************
 
 abstract class _$FileMetaCWProxy {
-  FileMeta name(String? name);
+  FileMeta name(String name);
 
   FileMeta folderName(String? folderName);
 
-  FileMeta lastTouchedAt(DateTime? lastTouchedAt);
+  FileMeta lastTouchedAt(DateTime lastTouchedAt);
 
-  FileMeta creator(User? creator);
+  FileMeta creator(User creator);
 
   FileMeta lastTouchedBy(User? lastTouchedBy);
 
   FileMeta thumbnailUrl(String? thumbnailUrl);
 
-  FileMeta editorType(EditorType? editorType);
+  FileMeta editorType(EditorType editorType);
 
   FileMeta role(Role? role);
 
@@ -37,13 +37,13 @@ abstract class _$FileMetaCWProxy {
   /// FileMeta(...).copyWith(id: 12, name: "My name")
   /// ```
   FileMeta call({
-    String? name,
+    String name,
     String? folderName,
-    DateTime? lastTouchedAt,
-    User? creator,
+    DateTime lastTouchedAt,
+    User creator,
     User? lastTouchedBy,
     String? thumbnailUrl,
-    EditorType? editorType,
+    EditorType editorType,
     Role? role,
     LinkAccess? linkAccess,
     String? url,
@@ -59,17 +59,17 @@ class _$FileMetaCWProxyImpl implements _$FileMetaCWProxy {
   final FileMeta _value;
 
   @override
-  FileMeta name(String? name) => call(name: name);
+  FileMeta name(String name) => call(name: name);
 
   @override
   FileMeta folderName(String? folderName) => call(folderName: folderName);
 
   @override
-  FileMeta lastTouchedAt(DateTime? lastTouchedAt) =>
+  FileMeta lastTouchedAt(DateTime lastTouchedAt) =>
       call(lastTouchedAt: lastTouchedAt);
 
   @override
-  FileMeta creator(User? creator) => call(creator: creator);
+  FileMeta creator(User creator) => call(creator: creator);
 
   @override
   FileMeta lastTouchedBy(User? lastTouchedBy) =>
@@ -80,7 +80,7 @@ class _$FileMetaCWProxyImpl implements _$FileMetaCWProxy {
       call(thumbnailUrl: thumbnailUrl);
 
   @override
-  FileMeta editorType(EditorType? editorType) => call(editorType: editorType);
+  FileMeta editorType(EditorType editorType) => call(editorType: editorType);
 
   @override
   FileMeta role(Role? role) => call(role: role);
@@ -116,22 +116,23 @@ class _$FileMetaCWProxyImpl implements _$FileMetaCWProxy {
     Object? version = const $CopyWithPlaceholder(),
   }) {
     return FileMeta(
-      name: name == const $CopyWithPlaceholder()
+      name: name == const $CopyWithPlaceholder() || name == null
           ? _value.name
           // ignore: cast_nullable_to_non_nullable
-          : name as String?,
+          : name as String,
       folderName: folderName == const $CopyWithPlaceholder()
           ? _value.folderName
           // ignore: cast_nullable_to_non_nullable
           : folderName as String?,
-      lastTouchedAt: lastTouchedAt == const $CopyWithPlaceholder()
+      lastTouchedAt:
+          lastTouchedAt == const $CopyWithPlaceholder() || lastTouchedAt == null
           ? _value.lastTouchedAt
           // ignore: cast_nullable_to_non_nullable
-          : lastTouchedAt as DateTime?,
-      creator: creator == const $CopyWithPlaceholder()
+          : lastTouchedAt as DateTime,
+      creator: creator == const $CopyWithPlaceholder() || creator == null
           ? _value.creator
           // ignore: cast_nullable_to_non_nullable
-          : creator as User?,
+          : creator as User,
       lastTouchedBy: lastTouchedBy == const $CopyWithPlaceholder()
           ? _value.lastTouchedBy
           // ignore: cast_nullable_to_non_nullable
@@ -140,10 +141,11 @@ class _$FileMetaCWProxyImpl implements _$FileMetaCWProxy {
           ? _value.thumbnailUrl
           // ignore: cast_nullable_to_non_nullable
           : thumbnailUrl as String?,
-      editorType: editorType == const $CopyWithPlaceholder()
+      editorType:
+          editorType == const $CopyWithPlaceholder() || editorType == null
           ? _value.editorType
           // ignore: cast_nullable_to_non_nullable
-          : editorType as EditorType?,
+          : editorType as EditorType,
       role: role == const $CopyWithPlaceholder()
           ? _value.role
           // ignore: cast_nullable_to_non_nullable
@@ -176,19 +178,15 @@ extension $FileMetaCopyWith on FileMeta {
 // **************************************************************************
 
 FileMeta _$FileMetaFromJson(Map<String, dynamic> json) => FileMeta(
-  name: json['name'] as String?,
+  name: json['name'] as String,
   folderName: json['folder_name'] as String?,
-  lastTouchedAt: json['last_touched_at'] == null
-      ? null
-      : DateTime.parse(json['last_touched_at'] as String),
-  creator: json['creator'] == null
-      ? null
-      : User.fromJson(json['creator'] as Map<String, dynamic>),
+  lastTouchedAt: DateTime.parse(json['last_touched_at'] as String),
+  creator: User.fromJson(json['creator'] as Map<String, dynamic>),
   lastTouchedBy: json['last_touched_by'] == null
       ? null
       : User.fromJson(json['last_touched_by'] as Map<String, dynamic>),
   thumbnailUrl: json['thumbnail_url'] as String?,
-  editorType: $enumDecodeNullable(_$EditorTypeEnumMap, json['editorType']),
+  editorType: $enumDecode(_$EditorTypeEnumMap, json['editorType']),
   role: $enumDecodeNullable(_$RoleEnumMap, json['role']),
   linkAccess: $enumDecodeNullable(_$LinkAccessEnumMap, json['link_access']),
   url: json['url'] as String?,
@@ -197,16 +195,16 @@ FileMeta _$FileMetaFromJson(Map<String, dynamic> json) => FileMeta(
 
 Map<String, dynamic> _$FileMetaToJson(FileMeta instance) => <String, dynamic>{
   'name': instance.name,
-  'folder_name': instance.folderName,
-  'last_touched_at': instance.lastTouchedAt?.toIso8601String(),
-  'creator': instance.creator,
-  'last_touched_by': instance.lastTouchedBy,
-  'thumbnail_url': instance.thumbnailUrl,
-  'editorType': _$EditorTypeEnumMap[instance.editorType],
-  'role': _$RoleEnumMap[instance.role],
-  'link_access': _$LinkAccessEnumMap[instance.linkAccess],
-  'url': instance.url,
-  'version': instance.version,
+  'folder_name': ?instance.folderName,
+  'last_touched_at': instance.lastTouchedAt.toIso8601String(),
+  'creator': instance.creator.toJson(),
+  'last_touched_by': ?instance.lastTouchedBy?.toJson(),
+  'thumbnail_url': ?instance.thumbnailUrl,
+  'editorType': _$EditorTypeEnumMap[instance.editorType]!,
+  'role': ?_$RoleEnumMap[instance.role],
+  'link_access': ?_$LinkAccessEnumMap[instance.linkAccess],
+  'url': ?instance.url,
+  'version': ?instance.version,
 };
 
 const _$EditorTypeEnumMap = {

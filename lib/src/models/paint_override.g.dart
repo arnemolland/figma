@@ -83,6 +83,6 @@ PaintOverride _$PaintOverrideFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$PaintOverrideToJson(PaintOverride instance) =>
     <String, dynamic>{
-      'fills': instance.fills,
-      'inheritFillStyleId': instance.inheritFillStyleId,
+      'fills': instance.fills.map((e) => e.toJson()).toList(),
+      'inheritFillStyleId': ?instance.inheritFillStyleId,
     };

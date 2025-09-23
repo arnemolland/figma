@@ -7,14 +7,14 @@ part of 'component_property_definition.dart';
 // **************************************************************************
 
 abstract class _$ComponentPropertyDefinitionCWProxy {
-  ComponentPropertyDefinition type(String type);
+  ComponentPropertyDefinition type(ComponentPropertyType type);
 
-  ComponentPropertyDefinition defaultValue(dynamic defaultValue);
+  ComponentPropertyDefinition defaultValue(Object defaultValue);
 
-  ComponentPropertyDefinition variantOptions(List<String>? variantOptions);
+  ComponentPropertyDefinition variantOptions(List<String> variantOptions);
 
   ComponentPropertyDefinition preferredValues(
-    List<InstanceSwapPreferredValue>? preferredValues,
+    List<InstanceSwapPreferredValue> preferredValues,
   );
 
   /// Creates a new instance with the provided field values.
@@ -25,10 +25,10 @@ abstract class _$ComponentPropertyDefinitionCWProxy {
   /// ComponentPropertyDefinition(...).copyWith(id: 12, name: "My name")
   /// ```
   ComponentPropertyDefinition call({
-    String type,
-    dynamic defaultValue,
-    List<String>? variantOptions,
-    List<InstanceSwapPreferredValue>? preferredValues,
+    ComponentPropertyType type,
+    Object defaultValue,
+    List<String> variantOptions,
+    List<InstanceSwapPreferredValue> preferredValues,
   });
 }
 
@@ -41,19 +41,20 @@ class _$ComponentPropertyDefinitionCWProxyImpl
   final ComponentPropertyDefinition _value;
 
   @override
-  ComponentPropertyDefinition type(String type) => call(type: type);
+  ComponentPropertyDefinition type(ComponentPropertyType type) =>
+      call(type: type);
 
   @override
-  ComponentPropertyDefinition defaultValue(dynamic defaultValue) =>
+  ComponentPropertyDefinition defaultValue(Object defaultValue) =>
       call(defaultValue: defaultValue);
 
   @override
-  ComponentPropertyDefinition variantOptions(List<String>? variantOptions) =>
+  ComponentPropertyDefinition variantOptions(List<String> variantOptions) =>
       call(variantOptions: variantOptions);
 
   @override
   ComponentPropertyDefinition preferredValues(
-    List<InstanceSwapPreferredValue>? preferredValues,
+    List<InstanceSwapPreferredValue> preferredValues,
   ) => call(preferredValues: preferredValues);
 
   @override
@@ -74,19 +75,24 @@ class _$ComponentPropertyDefinitionCWProxyImpl
       type: type == const $CopyWithPlaceholder() || type == null
           ? _value.type
           // ignore: cast_nullable_to_non_nullable
-          : type as String,
-      defaultValue: defaultValue == const $CopyWithPlaceholder()
+          : type as ComponentPropertyType,
+      defaultValue:
+          defaultValue == const $CopyWithPlaceholder() || defaultValue == null
           ? _value.defaultValue
           // ignore: cast_nullable_to_non_nullable
-          : defaultValue as dynamic,
-      variantOptions: variantOptions == const $CopyWithPlaceholder()
+          : defaultValue as Object,
+      variantOptions:
+          variantOptions == const $CopyWithPlaceholder() ||
+              variantOptions == null
           ? _value.variantOptions
           // ignore: cast_nullable_to_non_nullable
-          : variantOptions as List<String>?,
-      preferredValues: preferredValues == const $CopyWithPlaceholder()
+          : variantOptions as List<String>,
+      preferredValues:
+          preferredValues == const $CopyWithPlaceholder() ||
+              preferredValues == null
           ? _value.preferredValues
           // ignore: cast_nullable_to_non_nullable
-          : preferredValues as List<InstanceSwapPreferredValue>?,
+          : preferredValues as List<InstanceSwapPreferredValue>,
     );
   }
 }
@@ -106,23 +112,35 @@ extension $ComponentPropertyDefinitionCopyWith on ComponentPropertyDefinition {
 ComponentPropertyDefinition _$ComponentPropertyDefinitionFromJson(
   Map<String, dynamic> json,
 ) => ComponentPropertyDefinition(
-  type: json['type'] as String,
-  defaultValue: json['defaultValue'],
-  variantOptions: (json['variantOptions'] as List<dynamic>?)
-      ?.map((e) => e as String)
-      .toList(),
-  preferredValues: (json['preferredValues'] as List<dynamic>?)
-      ?.map(
-        (e) => InstanceSwapPreferredValue.fromJson(e as Map<String, dynamic>),
-      )
-      .toList(),
+  type: $enumDecode(_$ComponentPropertyTypeEnumMap, json['type']),
+  defaultValue: json['defaultValue'] as Object,
+  variantOptions:
+      (json['variantOptions'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList() ??
+      [],
+  preferredValues:
+      (json['preferredValues'] as List<dynamic>?)
+          ?.map(
+            (e) =>
+                InstanceSwapPreferredValue.fromJson(e as Map<String, dynamic>),
+          )
+          .toList() ??
+      [],
 );
 
 Map<String, dynamic> _$ComponentPropertyDefinitionToJson(
   ComponentPropertyDefinition instance,
 ) => <String, dynamic>{
-  'type': instance.type,
+  'type': _$ComponentPropertyTypeEnumMap[instance.type]!,
   'defaultValue': instance.defaultValue,
   'variantOptions': instance.variantOptions,
-  'preferredValues': instance.preferredValues,
+  'preferredValues': instance.preferredValues.map((e) => e.toJson()).toList(),
+};
+
+const _$ComponentPropertyTypeEnumMap = {
+  ComponentPropertyType.boolean: 'BOOLEAN',
+  ComponentPropertyType.instanceSwap: 'INSTANCE_SWAP',
+  ComponentPropertyType.text: 'TEXT',
+  ComponentPropertyType.variant: 'VARIANT',
 };

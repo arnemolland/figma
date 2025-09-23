@@ -11,6 +11,8 @@ abstract class _$PathCWProxy {
 
   Path windingRule(WindingRule windingRule);
 
+  Path overrideId(num? overrideId);
+
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Path(...).copyWith.fieldName(value)`.
   ///
@@ -18,7 +20,7 @@ abstract class _$PathCWProxy {
   /// ```dart
   /// Path(...).copyWith(id: 12, name: "My name")
   /// ```
-  Path call({String path, WindingRule windingRule});
+  Path call({String path, WindingRule windingRule, num? overrideId});
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -35,6 +37,9 @@ class _$PathCWProxyImpl implements _$PathCWProxy {
   Path windingRule(WindingRule windingRule) => call(windingRule: windingRule);
 
   @override
+  Path overrideId(num? overrideId) => call(overrideId: overrideId);
+
+  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Path(...).copyWith.fieldName(value)`.
   ///
@@ -45,6 +50,7 @@ class _$PathCWProxyImpl implements _$PathCWProxy {
   Path call({
     Object? path = const $CopyWithPlaceholder(),
     Object? windingRule = const $CopyWithPlaceholder(),
+    Object? overrideId = const $CopyWithPlaceholder(),
   }) {
     return Path(
       path: path == const $CopyWithPlaceholder() || path == null
@@ -56,6 +62,10 @@ class _$PathCWProxyImpl implements _$PathCWProxy {
           ? _value.windingRule
           // ignore: cast_nullable_to_non_nullable
           : windingRule as WindingRule,
+      overrideId: overrideId == const $CopyWithPlaceholder()
+          ? _value.overrideId
+          // ignore: cast_nullable_to_non_nullable
+          : overrideId as num?,
     );
   }
 }
@@ -74,11 +84,13 @@ extension $PathCopyWith on Path {
 Path _$PathFromJson(Map<String, dynamic> json) => Path(
   path: json['path'] as String,
   windingRule: $enumDecode(_$WindingRuleEnumMap, json['windingRule']),
+  overrideId: json['overrideID'] as num?,
 );
 
 Map<String, dynamic> _$PathToJson(Path instance) => <String, dynamic>{
   'path': instance.path,
   'windingRule': _$WindingRuleEnumMap[instance.windingRule]!,
+  'overrideID': ?instance.overrideId,
 };
 
 const _$WindingRuleEnumMap = {

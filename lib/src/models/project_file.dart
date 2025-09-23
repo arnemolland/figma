@@ -1,39 +1,42 @@
+// Generated from v0.33.0 of the Figma REST API specification
+
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:meta/meta.dart';
 
 part 'project_file.g.dart';
 
-/// A Figma project file.
 @JsonSerializable()
 @CopyWith()
+@immutable
 class ProjectFile extends Equatable {
-  /// The file key.
-  final String? key;
-
-  /// The name of the project file.
-  final String? name;
-
-  /// The URL of the file thumbnail image.
-  @JsonKey(name: 'thumbnail_url')
-  final String? thumbnailUrl;
-
-  /// The date t he file was last modified.
-  @JsonKey(name: 'last_modified')
-  final DateTime? lastModified;
-
   const ProjectFile({
-    this.key,
-    this.name,
+    required this.key,
+    required this.name,
     this.thumbnailUrl,
-    this.lastModified,
+    required this.lastModified,
   });
 
-  @override
-  List<Object?> get props => [key, name, thumbnailUrl, lastModified];
-
-  factory ProjectFile.fromJson(Map<String, dynamic> json) =>
+  factory ProjectFile.fromJson(Map<String, Object?> json) =>
       _$ProjectFileFromJson(json);
 
-  Map<String, dynamic> toJson() => _$ProjectFileToJson(this);
+  /// The file's key.
+  final String key;
+
+  /// The file's name.
+  final String name;
+
+  /// The file's thumbnail URL.
+  @JsonKey(name: 'thumbnail_url', includeIfNull: false)
+  final String? thumbnailUrl;
+
+  /// The UTC ISO 8601 time at which the file was last modified.
+  @JsonKey(name: 'last_modified')
+  final DateTime lastModified;
+
+  @override
+  List<Object?> get props => <Object?>[key, name, thumbnailUrl, lastModified];
+
+  Map<String, Object?> toJson() => _$ProjectFileToJson(this);
 }

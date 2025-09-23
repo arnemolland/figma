@@ -1,13 +1,22 @@
+// Generated from v0.33.0 of the Figma REST API specification
+
 import 'package:copy_with_extension/copy_with_extension.dart';
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:meta/meta.dart';
 
 part 'flow_starting_point.g.dart';
 
-/// A starting point for a flow within a frame.
+/// A flow starting point used when launching a prototype to enter Presentation
+/// view.
 @JsonSerializable()
 @CopyWith()
-class FlowStartingPoint {
-  FlowStartingPoint({required this.nodeId, required this.name});
+@immutable
+class FlowStartingPoint extends Equatable {
+  const FlowStartingPoint({required this.nodeId, required this.name});
+
+  factory FlowStartingPoint.fromJson(Map<String, Object?> json) =>
+      _$FlowStartingPointFromJson(json);
 
   /// Unique identifier specifying the frame.
   final String nodeId;
@@ -15,8 +24,8 @@ class FlowStartingPoint {
   /// Name of flow.
   final String name;
 
-  factory FlowStartingPoint.fromJson(Map<String, dynamic> json) =>
-      _$FlowStartingPointFromJson(json);
+  @override
+  List<Object?> get props => <Object?>[nodeId, name];
 
-  Map<String, dynamic> toJson() => _$FlowStartingPointToJson(this);
+  Map<String, Object?> toJson() => _$FlowStartingPointToJson(this);
 }

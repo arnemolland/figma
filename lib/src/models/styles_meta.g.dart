@@ -7,9 +7,7 @@ part of 'styles_meta.dart';
 // **************************************************************************
 
 abstract class _$StylesMetaCWProxy {
-  StylesMeta styles(List<Style>? styles);
-
-  StylesMeta cursor(Cursor? cursor);
+  StylesMeta styles(List<PublishedStyle> styles);
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `StylesMeta(...).copyWith.fieldName(value)`.
@@ -18,7 +16,7 @@ abstract class _$StylesMetaCWProxy {
   /// ```dart
   /// StylesMeta(...).copyWith(id: 12, name: "My name")
   /// ```
-  StylesMeta call({List<Style>? styles, Cursor? cursor});
+  StylesMeta call({List<PublishedStyle> styles});
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -29,10 +27,7 @@ class _$StylesMetaCWProxyImpl implements _$StylesMetaCWProxy {
   final StylesMeta _value;
 
   @override
-  StylesMeta styles(List<Style>? styles) => call(styles: styles);
-
-  @override
-  StylesMeta cursor(Cursor? cursor) => call(cursor: cursor);
+  StylesMeta styles(List<PublishedStyle> styles) => call(styles: styles);
 
   @override
   /// Creates a new instance with the provided field values.
@@ -42,19 +37,12 @@ class _$StylesMetaCWProxyImpl implements _$StylesMetaCWProxy {
   /// ```dart
   /// StylesMeta(...).copyWith(id: 12, name: "My name")
   /// ```
-  StylesMeta call({
-    Object? styles = const $CopyWithPlaceholder(),
-    Object? cursor = const $CopyWithPlaceholder(),
-  }) {
+  StylesMeta call({Object? styles = const $CopyWithPlaceholder()}) {
     return StylesMeta(
-      styles: styles == const $CopyWithPlaceholder()
+      styles: styles == const $CopyWithPlaceholder() || styles == null
           ? _value.styles
           // ignore: cast_nullable_to_non_nullable
-          : styles as List<Style>?,
-      cursor: cursor == const $CopyWithPlaceholder()
-          ? _value.cursor
-          // ignore: cast_nullable_to_non_nullable
-          : cursor as Cursor?,
+          : styles as List<PublishedStyle>,
     );
   }
 }
@@ -71,13 +59,12 @@ extension $StylesMetaCopyWith on StylesMeta {
 // **************************************************************************
 
 StylesMeta _$StylesMetaFromJson(Map<String, dynamic> json) => StylesMeta(
-  styles: (json['styles'] as List<dynamic>?)
-      ?.map((e) => Style.fromJson(e as Map<String, dynamic>))
+  styles: (json['styles'] as List<dynamic>)
+      .map((e) => PublishedStyle.fromJson(e as Map<String, dynamic>))
       .toList(),
-  cursor: json['cursor'] == null
-      ? null
-      : Cursor.fromJson(json['cursor'] as Map<String, dynamic>),
 );
 
 Map<String, dynamic> _$StylesMetaToJson(StylesMeta instance) =>
-    <String, dynamic>{'styles': instance.styles, 'cursor': instance.cursor};
+    <String, dynamic>{
+      'styles': instance.styles.map((e) => e.toJson()).toList(),
+    };

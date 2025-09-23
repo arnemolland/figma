@@ -1,37 +1,55 @@
-// ignore_for_file: lines_longer_than_80_chars
+// Generated from v0.33.0 of the Figma REST API specification
 
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:figma/src/models/instance_swap_preferred_value.dart';
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:meta/meta.dart';
+
+import 'component_property_type.dart';
+import 'instance_swap_preferred_value.dart';
 
 part 'component_property_definition.g.dart';
 
-/// Definition of a component property.
-@JsonSerializable()
+/// A property of a component.
+@JsonSerializable(explicitToJson: true)
 @CopyWith()
-class ComponentPropertyDefinition {
-  ComponentPropertyDefinition({
+@immutable
+class ComponentPropertyDefinition extends Equatable {
+  const ComponentPropertyDefinition({
     required this.type,
     required this.defaultValue,
-    this.variantOptions,
-    this.preferredValues,
+    this.variantOptions = const [],
+    this.preferredValues = const [],
   });
 
-  /// The type of the property.
-  final String type;
-
-  /// Initial value of this property for instances. Either a string or a boolean.
-  final dynamic defaultValue;
-
-  /// All possible values for this property. Only exists on VARIANT properties.
-  final List<String>? variantOptions;
-
-  /// List of user-defined preferred values for this property. Only exists on
-  /// INSTANCE_SWAP properties.
-  final List<InstanceSwapPreferredValue>? preferredValues;
-
-  factory ComponentPropertyDefinition.fromJson(Map<String, dynamic> json) =>
+  factory ComponentPropertyDefinition.fromJson(Map<String, Object?> json) =>
       _$ComponentPropertyDefinitionFromJson(json);
 
-  Map<String, dynamic> toJson() => _$ComponentPropertyDefinitionToJson(this);
+  /// Type of this component property.
+  final ComponentPropertyType type;
+
+  /// Initial value of this property for instances.
+  final Object defaultValue;
+
+  /// All possible values for this property.
+  ///
+  /// Only exists on VARIANT properties.
+  @JsonKey(defaultValue: [])
+  final List<String> variantOptions;
+
+  /// Preferred values for this property.
+  ///
+  /// Only applicable if type is `INSTANCE_SWAP`.
+  @JsonKey(defaultValue: [])
+  final List<InstanceSwapPreferredValue> preferredValues;
+
+  @override
+  List<Object?> get props => <Object?>[
+    type,
+    defaultValue,
+    variantOptions,
+    preferredValues,
+  ];
+
+  Map<String, Object?> toJson() => _$ComponentPropertyDefinitionToJson(this);
 }

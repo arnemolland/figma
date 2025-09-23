@@ -1,14 +1,33 @@
+// Generated from v0.33.0 of the Figma REST API specification
+
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:equatable/equatable.dart';
-import 'package:figma/src/models/mode.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:meta/meta.dart';
+
+import 'mode.dart';
 
 part 'local_variable_collection.g.dart';
 
 /// A grouping of related Variable objects each with the same modes.
-@JsonSerializable()
+@JsonSerializable(explicitToJson: true)
 @CopyWith()
+@immutable
 class LocalVariableCollection extends Equatable {
+  const LocalVariableCollection({
+    required this.id,
+    required this.name,
+    required this.key,
+    required this.modes,
+    required this.defaultModeId,
+    required this.remote,
+    required this.hiddenFromPublishing,
+    required this.variableIds,
+  });
+
+  factory LocalVariableCollection.fromJson(Map<String, Object?> json) =>
+      _$LocalVariableCollectionFromJson(json);
+
   /// The unique identifier of this variable collection.
   final String id;
 
@@ -27,32 +46,20 @@ class LocalVariableCollection extends Equatable {
   /// Whether this variable collection is remote.
   final bool remote;
 
-  /// Whether this variable collection is hidden when publishing the
-  /// current file as a library.
+  /// Whether this variable collection is hidden when publishing the current
+  /// file as a library.
   final bool hiddenFromPublishing;
 
   /// The ids of the variables in the collection.
   ///
   /// Note that the order of these variables is roughly the same as what is
-  /// shown in Figma Design, however it does not account for groups.
-  /// As a result, the order of these variables may not exactly reflect the
-  /// exact ordering and grouping shown in the authoring UI.
+  /// shown in Figma Design, however it does not account for groups. As a
+  /// result, the order of these variables may not exactly reflect the exact
+  /// ordering and grouping shown in the authoring UI.
   final List<String> variableIds;
 
-  /// A grouping of related Variable objects each with the same modes.
-  const LocalVariableCollection({
-    required this.id,
-    required this.name,
-    required this.key,
-    required this.modes,
-    required this.defaultModeId,
-    required this.remote,
-    required this.hiddenFromPublishing,
-    required this.variableIds,
-  });
-
   @override
-  List<Object?> get props => [
+  List<Object?> get props => <Object?>[
     id,
     name,
     key,
@@ -63,8 +70,5 @@ class LocalVariableCollection extends Equatable {
     variableIds,
   ];
 
-  factory LocalVariableCollection.fromJson(Map<String, dynamic> json) =>
-      _$LocalVariableCollectionFromJson(json);
-
-  Map<String, dynamic> toJson() => _$LocalVariableCollectionToJson(this);
+  Map<String, Object?> toJson() => _$LocalVariableCollectionToJson(this);
 }

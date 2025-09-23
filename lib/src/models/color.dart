@@ -1,31 +1,40 @@
+// Generated from v0.33.0 of the Figma REST API specification
+
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:meta/meta.dart';
 
 part 'color.g.dart';
 
-/// An RGBA color, represented by float values for each channel.
+/// An RGBA color.
 @JsonSerializable()
 @CopyWith()
+@immutable
 class Color extends Equatable {
+  const Color({
+    required this.r,
+    required this.g,
+    required this.b,
+    required this.a,
+  });
+
+  factory Color.fromJson(Map<String, Object?> json) => _$ColorFromJson(json);
+
   /// Red channel value, between 0 and 1.
-  final double? r;
+  final num r;
 
   /// Green channel value, between 0 and 1.
-  final double? g;
+  final num g;
 
   /// Blue channel value, between 0 and 1.
-  final double? b;
+  final num b;
 
   /// Alpha channel value, between 0 and 1.
-  final double? a;
-
-  const Color({this.r, this.g, this.b, this.a});
+  final num a;
 
   @override
-  List<Object?> get props => [r, g, b, a];
+  List<Object?> get props => <Object?>[r, g, b, a];
 
-  factory Color.fromJson(Map<String, dynamic> json) => _$ColorFromJson(json);
-
-  Map<String, dynamic> toJson() => _$ColorToJson(this);
+  Map<String, Object?> toJson() => _$ColorToJson(this);
 }

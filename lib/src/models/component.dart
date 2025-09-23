@@ -1,100 +1,62 @@
+// Generated from v0.33.0 of the Figma REST API specification
+
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:equatable/equatable.dart';
-import 'package:figma/src/models.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:meta/meta.dart';
+
+import 'documentation_link.dart';
 
 part 'component.g.dart';
 
-/// An arrangement of published UI elements
-/// that can be instantiated across Figma files.
-@JsonSerializable()
+/// A description of a main component.
+///
+/// Helps you identify which component instances are attached to.
+@JsonSerializable(explicitToJson: true)
 @CopyWith()
+@immutable
 class Component extends Equatable {
-  /// The unique identifier of the component.
-  final String? key;
-
-  /// The unique identifier of the figma file which contains the component.
-  @JsonKey(name: 'file_key')
-  final String? fileKey;
-
-  /// Id of the component node within the figma file.
-  @JsonKey(name: 'node_id')
-  final String? nodeId;
-
-  /// URL link to the component's thumbnail image.
-  @JsonKey(name: 'thumbnail_url')
-  final String? thumbnailUrl;
-
-  /// Name of the component.
-  final String? name;
-
-  /// The description of the component as entered by the publisher.
-  final String? description;
-
-  /// The UTC ISO 8601 time at which the component was created.
-  @JsonKey(name: 'created_at')
-  final DateTime? createdAt;
-
-  /// The UTC ISO 8601 time at which the component was updated.
-  @JsonKey(name: 'updated_at')
-  final DateTime? updatedAt;
-
-  /// The user who last updated the component.
-  final User? user;
-
-  /// Data on component's containing frame,
-  /// if component resides within a frame.
-  @JsonKey(name: 'containing_frame')
-  final FrameInfo? containingFrame;
-
-  /// Data on component's containing page,
-  /// if component resides in a multi-page file.
-  @JsonKey(name: 'containing_page')
-  final dynamic containingPage;
-
-  /// The ID of the component set it belongs to
-  /// if any.
-  final String? componentSetId;
-
-  // Mapping of property name to its definitions
-  @JsonKey(defaultValue: {})
-  final Map<String, ComponentPropertyDefinition> componentPropertyDefinitions;
-
   const Component({
-    this.key,
-    this.fileKey,
-    this.nodeId,
-    this.thumbnailUrl,
-    this.name,
-    this.description,
-    this.createdAt,
-    this.updatedAt,
-    this.user,
-    this.containingFrame,
-    this.containingPage,
+    required this.key,
+    required this.name,
+    required this.description,
     this.componentSetId,
-    required this.componentPropertyDefinitions,
+    required this.documentationLinks,
+    required this.remote,
   });
 
-  @override
-  List<Object?> get props => [
-    key,
-    fileKey,
-    nodeId,
-    thumbnailUrl,
-    name,
-    description,
-    createdAt,
-    updatedAt,
-    user,
-    containingFrame,
-    containingPage,
-    componentSetId,
-    componentPropertyDefinitions,
-  ];
-
-  factory Component.fromJson(Map<String, dynamic> json) =>
+  factory Component.fromJson(Map<String, Object?> json) =>
       _$ComponentFromJson(json);
 
-  Map<String, dynamic> toJson() => _$ComponentToJson(this);
+  /// The key of the component.
+  final String key;
+
+  /// Name of the component.
+  final String name;
+
+  /// The description of the component as entered in the editor.
+  final String description;
+
+  /// The ID of the component set if the component belongs to one.
+  @JsonKey(includeIfNull: false)
+  final String? componentSetId;
+
+  /// An array of documentation links attached to this component.
+  final List<DocumentationLink> documentationLinks;
+
+  /// Whether this component is a remote component that doesn't live in this
+  /// file.
+  final bool remote;
+
+  @override
+  List<Object?> get props => <Object?>[
+    key,
+    name,
+    description,
+    componentSetId,
+    documentationLinks,
+    remote,
+  ];
+
+  Map<String, Object?> toJson() => _$ComponentToJson(this);
 }

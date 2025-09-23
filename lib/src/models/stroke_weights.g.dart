@@ -7,13 +7,13 @@ part of 'stroke_weights.dart';
 // **************************************************************************
 
 abstract class _$StrokeWeightsCWProxy {
-  StrokeWeights top(double top);
+  StrokeWeights top(num top);
 
-  StrokeWeights right(double right);
+  StrokeWeights right(num right);
 
-  StrokeWeights bottom(double bottom);
+  StrokeWeights bottom(num bottom);
 
-  StrokeWeights left(double left);
+  StrokeWeights left(num left);
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `StrokeWeights(...).copyWith.fieldName(value)`.
@@ -22,7 +22,7 @@ abstract class _$StrokeWeightsCWProxy {
   /// ```dart
   /// StrokeWeights(...).copyWith(id: 12, name: "My name")
   /// ```
-  StrokeWeights call({double top, double right, double bottom, double left});
+  StrokeWeights call({num top, num right, num bottom, num left});
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -33,16 +33,16 @@ class _$StrokeWeightsCWProxyImpl implements _$StrokeWeightsCWProxy {
   final StrokeWeights _value;
 
   @override
-  StrokeWeights top(double top) => call(top: top);
+  StrokeWeights top(num top) => call(top: top);
 
   @override
-  StrokeWeights right(double right) => call(right: right);
+  StrokeWeights right(num right) => call(right: right);
 
   @override
-  StrokeWeights bottom(double bottom) => call(bottom: bottom);
+  StrokeWeights bottom(num bottom) => call(bottom: bottom);
 
   @override
-  StrokeWeights left(double left) => call(left: left);
+  StrokeWeights left(num left) => call(left: left);
 
   @override
   /// Creates a new instance with the provided field values.
@@ -62,19 +62,19 @@ class _$StrokeWeightsCWProxyImpl implements _$StrokeWeightsCWProxy {
       top: top == const $CopyWithPlaceholder() || top == null
           ? _value.top
           // ignore: cast_nullable_to_non_nullable
-          : top as double,
+          : top as num,
       right: right == const $CopyWithPlaceholder() || right == null
           ? _value.right
           // ignore: cast_nullable_to_non_nullable
-          : right as double,
+          : right as num,
       bottom: bottom == const $CopyWithPlaceholder() || bottom == null
           ? _value.bottom
           // ignore: cast_nullable_to_non_nullable
-          : bottom as double,
+          : bottom as num,
       left: left == const $CopyWithPlaceholder() || left == null
           ? _value.left
           // ignore: cast_nullable_to_non_nullable
-          : left as double,
+          : left as num,
     );
   }
 }
@@ -92,10 +92,10 @@ extension $StrokeWeightsCopyWith on StrokeWeights {
 
 StrokeWeights _$StrokeWeightsFromJson(Map<String, dynamic> json) =>
     StrokeWeights(
-      top: (json['top'] as num).toDouble(),
-      right: (json['right'] as num).toDouble(),
-      bottom: (json['bottom'] as num).toDouble(),
-      left: (json['left'] as num).toDouble(),
+      top: json['top'] as num,
+      right: json['right'] as num,
+      bottom: json['bottom'] as num,
+      left: json['left'] as num,
     );
 
 Map<String, dynamic> _$StrokeWeightsToJson(StrokeWeights instance) =>

@@ -7,11 +7,11 @@ part of 'arc_data.dart';
 // **************************************************************************
 
 abstract class _$ArcDataCWProxy {
-  ArcData startingAngle(double startingAngle);
+  ArcData startingAngle(num startingAngle);
 
-  ArcData endingAngle(double endingAngle);
+  ArcData endingAngle(num endingAngle);
 
-  ArcData innerRadius(double innerRadius);
+  ArcData innerRadius(num innerRadius);
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ArcData(...).copyWith.fieldName(value)`.
@@ -20,7 +20,7 @@ abstract class _$ArcDataCWProxy {
   /// ```dart
   /// ArcData(...).copyWith(id: 12, name: "My name")
   /// ```
-  ArcData call({double startingAngle, double endingAngle, double innerRadius});
+  ArcData call({num startingAngle, num endingAngle, num innerRadius});
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -31,14 +31,14 @@ class _$ArcDataCWProxyImpl implements _$ArcDataCWProxy {
   final ArcData _value;
 
   @override
-  ArcData startingAngle(double startingAngle) =>
+  ArcData startingAngle(num startingAngle) =>
       call(startingAngle: startingAngle);
 
   @override
-  ArcData endingAngle(double endingAngle) => call(endingAngle: endingAngle);
+  ArcData endingAngle(num endingAngle) => call(endingAngle: endingAngle);
 
   @override
-  ArcData innerRadius(double innerRadius) => call(innerRadius: innerRadius);
+  ArcData innerRadius(num innerRadius) => call(innerRadius: innerRadius);
 
   @override
   /// Creates a new instance with the provided field values.
@@ -58,17 +58,17 @@ class _$ArcDataCWProxyImpl implements _$ArcDataCWProxy {
           startingAngle == const $CopyWithPlaceholder() || startingAngle == null
           ? _value.startingAngle
           // ignore: cast_nullable_to_non_nullable
-          : startingAngle as double,
+          : startingAngle as num,
       endingAngle:
           endingAngle == const $CopyWithPlaceholder() || endingAngle == null
           ? _value.endingAngle
           // ignore: cast_nullable_to_non_nullable
-          : endingAngle as double,
+          : endingAngle as num,
       innerRadius:
           innerRadius == const $CopyWithPlaceholder() || innerRadius == null
           ? _value.innerRadius
           // ignore: cast_nullable_to_non_nullable
-          : innerRadius as double,
+          : innerRadius as num,
     );
   }
 }
@@ -85,9 +85,9 @@ extension $ArcDataCopyWith on ArcData {
 // **************************************************************************
 
 ArcData _$ArcDataFromJson(Map<String, dynamic> json) => ArcData(
-  startingAngle: (json['startingAngle'] as num).toDouble(),
-  endingAngle: (json['endingAngle'] as num).toDouble(),
-  innerRadius: (json['innerRadius'] as num).toDouble(),
+  startingAngle: json['startingAngle'] as num,
+  endingAngle: json['endingAngle'] as num,
+  innerRadius: json['innerRadius'] as num,
 );
 
 Map<String, dynamic> _$ArcDataToJson(ArcData instance) => <String, dynamic>{

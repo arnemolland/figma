@@ -7,9 +7,9 @@ part of 'size.dart';
 // **************************************************************************
 
 abstract class _$SizeCWProxy {
-  Size width(double width);
+  Size width(num width);
 
-  Size height(double height);
+  Size height(num height);
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Size(...).copyWith.fieldName(value)`.
@@ -18,7 +18,7 @@ abstract class _$SizeCWProxy {
   /// ```dart
   /// Size(...).copyWith(id: 12, name: "My name")
   /// ```
-  Size call({double width, double height});
+  Size call({num width, num height});
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -29,10 +29,10 @@ class _$SizeCWProxyImpl implements _$SizeCWProxy {
   final Size _value;
 
   @override
-  Size width(double width) => call(width: width);
+  Size width(num width) => call(width: width);
 
   @override
-  Size height(double height) => call(height: height);
+  Size height(num height) => call(height: height);
 
   @override
   /// Creates a new instance with the provided field values.
@@ -50,11 +50,11 @@ class _$SizeCWProxyImpl implements _$SizeCWProxy {
       width: width == const $CopyWithPlaceholder() || width == null
           ? _value.width
           // ignore: cast_nullable_to_non_nullable
-          : width as double,
+          : width as num,
       height: height == const $CopyWithPlaceholder() || height == null
           ? _value.height
           // ignore: cast_nullable_to_non_nullable
-          : height as double,
+          : height as num,
     );
   }
 }
@@ -70,10 +70,8 @@ extension $SizeCopyWith on Size {
 // JsonSerializableGenerator
 // **************************************************************************
 
-Size _$SizeFromJson(Map<String, dynamic> json) => Size(
-  width: (json['width'] as num).toDouble(),
-  height: (json['height'] as num).toDouble(),
-);
+Size _$SizeFromJson(Map<String, dynamic> json) =>
+    Size(width: json['width'] as num, height: json['height'] as num);
 
 Map<String, dynamic> _$SizeToJson(Size instance) => <String, dynamic>{
   'width': instance.width,

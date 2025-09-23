@@ -1,18 +1,17 @@
+// Generated from v0.33.0 of the Figma REST API specification
+
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:meta/meta.dart';
 
 part 'stroke_weights.g.dart';
 
-/// Individual stroke weights for [Frame] and [Vector] nodes.
+/// Individual stroke weights.
 @JsonSerializable()
 @CopyWith()
+@immutable
 class StrokeWeights extends Equatable {
-  final double top;
-  final double right;
-  final double bottom;
-  final double left;
-
   const StrokeWeights({
     required this.top,
     required this.right,
@@ -20,11 +19,23 @@ class StrokeWeights extends Equatable {
     required this.left,
   });
 
-  @override
-  List<Object?> get props => [top, right, bottom, left];
-
-  factory StrokeWeights.fromJson(Map<String, dynamic> json) =>
+  factory StrokeWeights.fromJson(Map<String, Object?> json) =>
       _$StrokeWeightsFromJson(json);
 
-  Map<String, dynamic> toJson() => _$StrokeWeightsToJson(this);
+  /// The top stroke weight.
+  final num top;
+
+  /// The right stroke weight.
+  final num right;
+
+  /// The bottom stroke weight.
+  final num bottom;
+
+  /// The left stroke weight.
+  final num left;
+
+  @override
+  List<Object?> get props => <Object?>[top, right, bottom, left];
+
+  Map<String, Object?> toJson() => _$StrokeWeightsToJson(this);
 }

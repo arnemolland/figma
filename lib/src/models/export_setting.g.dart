@@ -7,11 +7,11 @@ part of 'export_setting.dart';
 // **************************************************************************
 
 abstract class _$ExportSettingCWProxy {
-  ExportSetting suffix(String? suffix);
+  ExportSetting suffix(String suffix);
 
-  ExportSetting format(ExportFormat? format);
+  ExportSetting format(ExportFormat format);
 
-  ExportSetting constraint(Constraint? constraint);
+  ExportSetting constraint(Constraint constraint);
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ExportSetting(...).copyWith.fieldName(value)`.
@@ -21,9 +21,9 @@ abstract class _$ExportSettingCWProxy {
   /// ExportSetting(...).copyWith(id: 12, name: "My name")
   /// ```
   ExportSetting call({
-    String? suffix,
-    ExportFormat? format,
-    Constraint? constraint,
+    String suffix,
+    ExportFormat format,
+    Constraint constraint,
   });
 }
 
@@ -35,13 +35,13 @@ class _$ExportSettingCWProxyImpl implements _$ExportSettingCWProxy {
   final ExportSetting _value;
 
   @override
-  ExportSetting suffix(String? suffix) => call(suffix: suffix);
+  ExportSetting suffix(String suffix) => call(suffix: suffix);
 
   @override
-  ExportSetting format(ExportFormat? format) => call(format: format);
+  ExportSetting format(ExportFormat format) => call(format: format);
 
   @override
-  ExportSetting constraint(Constraint? constraint) =>
+  ExportSetting constraint(Constraint constraint) =>
       call(constraint: constraint);
 
   @override
@@ -58,18 +58,19 @@ class _$ExportSettingCWProxyImpl implements _$ExportSettingCWProxy {
     Object? constraint = const $CopyWithPlaceholder(),
   }) {
     return ExportSetting(
-      suffix: suffix == const $CopyWithPlaceholder()
+      suffix: suffix == const $CopyWithPlaceholder() || suffix == null
           ? _value.suffix
           // ignore: cast_nullable_to_non_nullable
-          : suffix as String?,
-      format: format == const $CopyWithPlaceholder()
+          : suffix as String,
+      format: format == const $CopyWithPlaceholder() || format == null
           ? _value.format
           // ignore: cast_nullable_to_non_nullable
-          : format as ExportFormat?,
-      constraint: constraint == const $CopyWithPlaceholder()
+          : format as ExportFormat,
+      constraint:
+          constraint == const $CopyWithPlaceholder() || constraint == null
           ? _value.constraint
           // ignore: cast_nullable_to_non_nullable
-          : constraint as Constraint?,
+          : constraint as Constraint,
     );
   }
 }
@@ -87,18 +88,18 @@ extension $ExportSettingCopyWith on ExportSetting {
 
 ExportSetting _$ExportSettingFromJson(Map<String, dynamic> json) =>
     ExportSetting(
-      suffix: json['suffix'] as String?,
-      format: $enumDecodeNullable(_$ExportFormatEnumMap, json['format']),
-      constraint: json['constraint'] == null
-          ? null
-          : Constraint.fromJson(json['constraint'] as Map<String, dynamic>),
+      suffix: json['suffix'] as String,
+      format: $enumDecode(_$ExportFormatEnumMap, json['format']),
+      constraint: Constraint.fromJson(
+        json['constraint'] as Map<String, dynamic>,
+      ),
     );
 
 Map<String, dynamic> _$ExportSettingToJson(ExportSetting instance) =>
     <String, dynamic>{
       'suffix': instance.suffix,
-      'format': _$ExportFormatEnumMap[instance.format],
-      'constraint': instance.constraint,
+      'format': _$ExportFormatEnumMap[instance.format]!,
+      'constraint': instance.constraint.toJson(),
     };
 
 const _$ExportFormatEnumMap = {

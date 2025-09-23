@@ -7,9 +7,11 @@ part of 'color_stop.dart';
 // **************************************************************************
 
 abstract class _$ColorStopCWProxy {
-  ColorStop position(double? position);
+  ColorStop position(num position);
 
-  ColorStop color(Color? color);
+  ColorStop color(Color color);
+
+  ColorStop boundVariables(ColorStopVariables boundVariables);
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ColorStop(...).copyWith.fieldName(value)`.
@@ -18,7 +20,11 @@ abstract class _$ColorStopCWProxy {
   /// ```dart
   /// ColorStop(...).copyWith(id: 12, name: "My name")
   /// ```
-  ColorStop call({double? position, Color? color});
+  ColorStop call({
+    num position,
+    Color color,
+    ColorStopVariables boundVariables,
+  });
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -29,10 +35,14 @@ class _$ColorStopCWProxyImpl implements _$ColorStopCWProxy {
   final ColorStop _value;
 
   @override
-  ColorStop position(double? position) => call(position: position);
+  ColorStop position(num position) => call(position: position);
 
   @override
-  ColorStop color(Color? color) => call(color: color);
+  ColorStop color(Color color) => call(color: color);
+
+  @override
+  ColorStop boundVariables(ColorStopVariables boundVariables) =>
+      call(boundVariables: boundVariables);
 
   @override
   /// Creates a new instance with the provided field values.
@@ -45,16 +55,23 @@ class _$ColorStopCWProxyImpl implements _$ColorStopCWProxy {
   ColorStop call({
     Object? position = const $CopyWithPlaceholder(),
     Object? color = const $CopyWithPlaceholder(),
+    Object? boundVariables = const $CopyWithPlaceholder(),
   }) {
     return ColorStop(
-      position: position == const $CopyWithPlaceholder()
+      position: position == const $CopyWithPlaceholder() || position == null
           ? _value.position
           // ignore: cast_nullable_to_non_nullable
-          : position as double?,
-      color: color == const $CopyWithPlaceholder()
+          : position as num,
+      color: color == const $CopyWithPlaceholder() || color == null
           ? _value.color
           // ignore: cast_nullable_to_non_nullable
-          : color as Color?,
+          : color as Color,
+      boundVariables:
+          boundVariables == const $CopyWithPlaceholder() ||
+              boundVariables == null
+          ? _value.boundVariables
+          // ignore: cast_nullable_to_non_nullable
+          : boundVariables as ColorStopVariables,
     );
   }
 }
@@ -71,13 +88,17 @@ extension $ColorStopCopyWith on ColorStop {
 // **************************************************************************
 
 ColorStop _$ColorStopFromJson(Map<String, dynamic> json) => ColorStop(
-  position: (json['position'] as num?)?.toDouble(),
-  color: json['color'] == null
-      ? null
-      : Color.fromJson(json['color'] as Map<String, dynamic>),
+  position: json['position'] as num,
+  color: Color.fromJson(json['color'] as Map<String, dynamic>),
+  boundVariables: json['boundVariables'] == null
+      ? const ColorStopVariables()
+      : ColorStopVariables.fromJson(
+          json['boundVariables'] as Map<String, dynamic>,
+        ),
 );
 
 Map<String, dynamic> _$ColorStopToJson(ColorStop instance) => <String, dynamic>{
   'position': instance.position,
-  'color': instance.color,
+  'color': instance.color.toJson(),
+  'boundVariables': instance.boundVariables.toJson(),
 };

@@ -120,12 +120,12 @@ Future<void> download(
   for (final url in res.images!.entries) {
     final component = components?[url.key];
 
-    if (component == null || component.name == null) {
+    if (component == null) {
       throw Exception('Could not find component for ${url.key}');
     }
 
     // Remove eventual "some_" prefix from the name.
-    final name = component.name!.replaceAll('some_', '');
+    final name = component.name.replaceAll('some_', '');
 
     // Add future to list.
     final future = get(Uri.parse(url.value)).then((svgRes) async {

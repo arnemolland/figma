@@ -2,8 +2,7 @@
 
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:equatable/equatable.dart';
-import 'package:figma/src/models/published_variable.dart';
-import 'package:figma/src/models/service/published_variables_meta.dart';
+import 'package:figma/src/models.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'published_variables_response.g.dart';

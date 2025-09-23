@@ -1,21 +1,29 @@
+// Generated from v0.33.0 of the Figma REST API specification
+
 import 'package:copy_with_extension/copy_with_extension.dart';
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:meta/meta.dart';
 
 part 'size.g.dart';
 
 /// A width and a height.
 @JsonSerializable()
 @CopyWith()
-class Size {
-  Size({required this.width, required this.height});
+@immutable
+class Size extends Equatable {
+  const Size({required this.width, required this.height});
+
+  factory Size.fromJson(Map<String, Object?> json) => _$SizeFromJson(json);
 
   /// The width of a size.
-  final double width;
+  final num width;
 
-  /// The height of a size.
-  final double height;
+  /// the height of a size.
+  final num height;
 
-  factory Size.fromJson(Map<String, dynamic> json) => _$SizeFromJson(json);
+  @override
+  List<Object?> get props => <Object?>[width, height];
 
-  Map<String, dynamic> toJson() => _$SizeToJson(this);
+  Map<String, Object?> toJson() => _$SizeToJson(this);
 }

@@ -7,9 +7,9 @@ part of 'constraint.dart';
 // **************************************************************************
 
 abstract class _$ConstraintCWProxy {
-  Constraint type(ConstraintType? type);
+  Constraint type(ConstraintType type);
 
-  Constraint value(num? value);
+  Constraint value(num value);
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Constraint(...).copyWith.fieldName(value)`.
@@ -18,7 +18,7 @@ abstract class _$ConstraintCWProxy {
   /// ```dart
   /// Constraint(...).copyWith(id: 12, name: "My name")
   /// ```
-  Constraint call({ConstraintType? type, num? value});
+  Constraint call({ConstraintType type, num value});
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -29,10 +29,10 @@ class _$ConstraintCWProxyImpl implements _$ConstraintCWProxy {
   final Constraint _value;
 
   @override
-  Constraint type(ConstraintType? type) => call(type: type);
+  Constraint type(ConstraintType type) => call(type: type);
 
   @override
-  Constraint value(num? value) => call(value: value);
+  Constraint value(num value) => call(value: value);
 
   @override
   /// Creates a new instance with the provided field values.
@@ -47,14 +47,14 @@ class _$ConstraintCWProxyImpl implements _$ConstraintCWProxy {
     Object? value = const $CopyWithPlaceholder(),
   }) {
     return Constraint(
-      type: type == const $CopyWithPlaceholder()
+      type: type == const $CopyWithPlaceholder() || type == null
           ? _value.type
           // ignore: cast_nullable_to_non_nullable
-          : type as ConstraintType?,
-      value: value == const $CopyWithPlaceholder()
+          : type as ConstraintType,
+      value: value == const $CopyWithPlaceholder() || value == null
           ? _value.value
           // ignore: cast_nullable_to_non_nullable
-          : value as num?,
+          : value as num,
     );
   }
 }
@@ -71,13 +71,13 @@ extension $ConstraintCopyWith on Constraint {
 // **************************************************************************
 
 Constraint _$ConstraintFromJson(Map<String, dynamic> json) => Constraint(
-  type: $enumDecodeNullable(_$ConstraintTypeEnumMap, json['type']),
-  value: json['value'] as num?,
+  type: $enumDecode(_$ConstraintTypeEnumMap, json['type']),
+  value: json['value'] as num,
 );
 
 Map<String, dynamic> _$ConstraintToJson(Constraint instance) =>
     <String, dynamic>{
-      'type': _$ConstraintTypeEnumMap[instance.type],
+      'type': _$ConstraintTypeEnumMap[instance.type]!,
       'value': instance.value,
     };
 

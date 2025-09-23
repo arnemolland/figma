@@ -7,11 +7,11 @@ part of 'local_variables_meta.dart';
 // **************************************************************************
 
 abstract class _$LocalVariablesMetaCWProxy {
+  LocalVariablesMeta variables(Map<String, LocalVariable> variables);
+
   LocalVariablesMeta variableCollections(
     Map<String, LocalVariableCollection> variableCollections,
   );
-
-  LocalVariablesMeta variables(Map<String, LocalVariable> variables);
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `LocalVariablesMeta(...).copyWith.fieldName(value)`.
@@ -21,8 +21,8 @@ abstract class _$LocalVariablesMetaCWProxy {
   /// LocalVariablesMeta(...).copyWith(id: 12, name: "My name")
   /// ```
   LocalVariablesMeta call({
-    Map<String, LocalVariableCollection> variableCollections,
     Map<String, LocalVariable> variables,
+    Map<String, LocalVariableCollection> variableCollections,
   });
 }
 
@@ -34,13 +34,13 @@ class _$LocalVariablesMetaCWProxyImpl implements _$LocalVariablesMetaCWProxy {
   final LocalVariablesMeta _value;
 
   @override
+  LocalVariablesMeta variables(Map<String, LocalVariable> variables) =>
+      call(variables: variables);
+
+  @override
   LocalVariablesMeta variableCollections(
     Map<String, LocalVariableCollection> variableCollections,
   ) => call(variableCollections: variableCollections);
-
-  @override
-  LocalVariablesMeta variables(Map<String, LocalVariable> variables) =>
-      call(variables: variables);
 
   @override
   /// Creates a new instance with the provided field values.
@@ -51,20 +51,20 @@ class _$LocalVariablesMetaCWProxyImpl implements _$LocalVariablesMetaCWProxy {
   /// LocalVariablesMeta(...).copyWith(id: 12, name: "My name")
   /// ```
   LocalVariablesMeta call({
-    Object? variableCollections = const $CopyWithPlaceholder(),
     Object? variables = const $CopyWithPlaceholder(),
+    Object? variableCollections = const $CopyWithPlaceholder(),
   }) {
     return LocalVariablesMeta(
+      variables: variables == const $CopyWithPlaceholder() || variables == null
+          ? _value.variables
+          // ignore: cast_nullable_to_non_nullable
+          : variables as Map<String, LocalVariable>,
       variableCollections:
           variableCollections == const $CopyWithPlaceholder() ||
               variableCollections == null
           ? _value.variableCollections
           // ignore: cast_nullable_to_non_nullable
           : variableCollections as Map<String, LocalVariableCollection>,
-      variables: variables == const $CopyWithPlaceholder() || variables == null
-          ? _value.variables
-          // ignore: cast_nullable_to_non_nullable
-          : variables as Map<String, LocalVariable>,
     );
   }
 }
@@ -83,6 +83,10 @@ extension $LocalVariablesMetaCopyWith on LocalVariablesMeta {
 
 LocalVariablesMeta _$LocalVariablesMetaFromJson(Map<String, dynamic> json) =>
     LocalVariablesMeta(
+      variables: (json['variables'] as Map<String, dynamic>).map(
+        (k, e) =>
+            MapEntry(k, LocalVariable.fromJson(e as Map<String, dynamic>)),
+      ),
       variableCollections: (json['variableCollections'] as Map<String, dynamic>)
           .map(
             (k, e) => MapEntry(
@@ -90,14 +94,12 @@ LocalVariablesMeta _$LocalVariablesMetaFromJson(Map<String, dynamic> json) =>
               LocalVariableCollection.fromJson(e as Map<String, dynamic>),
             ),
           ),
-      variables: (json['variables'] as Map<String, dynamic>).map(
-        (k, e) =>
-            MapEntry(k, LocalVariable.fromJson(e as Map<String, dynamic>)),
-      ),
     );
 
 Map<String, dynamic> _$LocalVariablesMetaToJson(LocalVariablesMeta instance) =>
     <String, dynamic>{
-      'variableCollections': instance.variableCollections,
-      'variables': instance.variables,
+      'variables': instance.variables.map((k, e) => MapEntry(k, e.toJson())),
+      'variableCollections': instance.variableCollections.map(
+        (k, e) => MapEntry(k, e.toJson()),
+      ),
     };

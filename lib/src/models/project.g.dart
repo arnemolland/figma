@@ -7,9 +7,9 @@ part of 'project.dart';
 // **************************************************************************
 
 abstract class _$ProjectCWProxy {
-  Project id(String? id);
+  Project id(String id);
 
-  Project name(String? name);
+  Project name(String name);
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Project(...).copyWith.fieldName(value)`.
@@ -18,7 +18,7 @@ abstract class _$ProjectCWProxy {
   /// ```dart
   /// Project(...).copyWith(id: 12, name: "My name")
   /// ```
-  Project call({String? id, String? name});
+  Project call({String id, String name});
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -29,10 +29,10 @@ class _$ProjectCWProxyImpl implements _$ProjectCWProxy {
   final Project _value;
 
   @override
-  Project id(String? id) => call(id: id);
+  Project id(String id) => call(id: id);
 
   @override
-  Project name(String? name) => call(name: name);
+  Project name(String name) => call(name: name);
 
   @override
   /// Creates a new instance with the provided field values.
@@ -47,14 +47,14 @@ class _$ProjectCWProxyImpl implements _$ProjectCWProxy {
     Object? name = const $CopyWithPlaceholder(),
   }) {
     return Project(
-      id: id == const $CopyWithPlaceholder()
+      id: id == const $CopyWithPlaceholder() || id == null
           ? _value.id
           // ignore: cast_nullable_to_non_nullable
-          : id as String?,
-      name: name == const $CopyWithPlaceholder()
+          : id as String,
+      name: name == const $CopyWithPlaceholder() || name == null
           ? _value.name
           // ignore: cast_nullable_to_non_nullable
-          : name as String?,
+          : name as String,
     );
   }
 }
@@ -71,7 +71,7 @@ extension $ProjectCopyWith on Project {
 // **************************************************************************
 
 Project _$ProjectFromJson(Map<String, dynamic> json) =>
-    Project(id: json['id'] as String?, name: json['name'] as String?);
+    Project(id: json['id'] as String, name: json['name'] as String);
 
 Map<String, dynamic> _$ProjectToJson(Project instance) => <String, dynamic>{
   'id': instance.id,
