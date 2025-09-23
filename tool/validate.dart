@@ -54,7 +54,8 @@ Future<void> main(List<String> arguments) async {
   if (header is Element && header.tag != 'h2') {
     exitCode = 1;
     stderr.writeln(
-      'error: CHANGELOG.md header for $tag is not a H2 header. It is a ${header.tag} header',
+      'error: CHANGELOG.md header for $tag is not a H2 header. '
+      'It is a ${header.tag} header',
     );
   }
 
@@ -62,7 +63,8 @@ Future<void> main(List<String> arguments) async {
   if (header is Element && document.indexOf(header) != 0) {
     exitCode = 1;
     stderr.writeln(
-      'error: CHANGELOG.md header for $tag is not the first header in the document',
+      'error: CHANGELOG.md header for $tag is not the first header '
+      'in the document',
     );
   }
 }
