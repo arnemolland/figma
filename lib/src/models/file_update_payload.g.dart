@@ -7,15 +7,15 @@ part of 'file_update_payload.dart';
 // **************************************************************************
 
 abstract class _$FileUpdatePayloadCWProxy {
-  FileUpdatePayload passcode(String? passcode);
+  FileUpdatePayload passcode(String passcode);
 
-  FileUpdatePayload timestamp(DateTime? timestamp);
+  FileUpdatePayload timestamp(DateTime timestamp);
 
-  FileUpdatePayload webhookId(String? webhookId);
+  FileUpdatePayload webhookId(String webhookId);
 
-  FileUpdatePayload fileKey(String? fileKey);
+  FileUpdatePayload fileKey(String fileKey);
 
-  FileUpdatePayload fileName(String? fileName);
+  FileUpdatePayload fileName(String fileName);
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `FileUpdatePayload(...).copyWith.fieldName(value)`.
@@ -25,11 +25,11 @@ abstract class _$FileUpdatePayloadCWProxy {
   /// FileUpdatePayload(...).copyWith(id: 12, name: "My name")
   /// ```
   FileUpdatePayload call({
-    String? passcode,
-    DateTime? timestamp,
-    String? webhookId,
-    String? fileKey,
-    String? fileName,
+    String passcode,
+    DateTime timestamp,
+    String webhookId,
+    String fileKey,
+    String fileName,
   });
 }
 
@@ -41,20 +41,19 @@ class _$FileUpdatePayloadCWProxyImpl implements _$FileUpdatePayloadCWProxy {
   final FileUpdatePayload _value;
 
   @override
-  FileUpdatePayload passcode(String? passcode) => call(passcode: passcode);
+  FileUpdatePayload passcode(String passcode) => call(passcode: passcode);
 
   @override
-  FileUpdatePayload timestamp(DateTime? timestamp) =>
-      call(timestamp: timestamp);
+  FileUpdatePayload timestamp(DateTime timestamp) => call(timestamp: timestamp);
 
   @override
-  FileUpdatePayload webhookId(String? webhookId) => call(webhookId: webhookId);
+  FileUpdatePayload webhookId(String webhookId) => call(webhookId: webhookId);
 
   @override
-  FileUpdatePayload fileKey(String? fileKey) => call(fileKey: fileKey);
+  FileUpdatePayload fileKey(String fileKey) => call(fileKey: fileKey);
 
   @override
-  FileUpdatePayload fileName(String? fileName) => call(fileName: fileName);
+  FileUpdatePayload fileName(String fileName) => call(fileName: fileName);
 
   @override
   /// Creates a new instance with the provided field values.
@@ -72,26 +71,26 @@ class _$FileUpdatePayloadCWProxyImpl implements _$FileUpdatePayloadCWProxy {
     Object? fileName = const $CopyWithPlaceholder(),
   }) {
     return FileUpdatePayload(
-      passcode: passcode == const $CopyWithPlaceholder()
+      passcode: passcode == const $CopyWithPlaceholder() || passcode == null
           ? _value.passcode
           // ignore: cast_nullable_to_non_nullable
-          : passcode as String?,
-      timestamp: timestamp == const $CopyWithPlaceholder()
+          : passcode as String,
+      timestamp: timestamp == const $CopyWithPlaceholder() || timestamp == null
           ? _value.timestamp
           // ignore: cast_nullable_to_non_nullable
-          : timestamp as DateTime?,
-      webhookId: webhookId == const $CopyWithPlaceholder()
+          : timestamp as DateTime,
+      webhookId: webhookId == const $CopyWithPlaceholder() || webhookId == null
           ? _value.webhookId
           // ignore: cast_nullable_to_non_nullable
-          : webhookId as String?,
-      fileKey: fileKey == const $CopyWithPlaceholder()
+          : webhookId as String,
+      fileKey: fileKey == const $CopyWithPlaceholder() || fileKey == null
           ? _value.fileKey
           // ignore: cast_nullable_to_non_nullable
-          : fileKey as String?,
-      fileName: fileName == const $CopyWithPlaceholder()
+          : fileKey as String,
+      fileName: fileName == const $CopyWithPlaceholder() || fileName == null
           ? _value.fileName
           // ignore: cast_nullable_to_non_nullable
-          : fileName as String?,
+          : fileName as String,
     );
   }
 }
@@ -110,20 +109,29 @@ extension $FileUpdatePayloadCopyWith on FileUpdatePayload {
 
 FileUpdatePayload _$FileUpdatePayloadFromJson(Map<String, dynamic> json) =>
     FileUpdatePayload(
-      passcode: json['passcode'] as String?,
-      timestamp: json['timestamp'] == null
-          ? null
-          : DateTime.parse(json['timestamp'] as String),
-      webhookId: json['webhook_id'] as String?,
-      fileKey: json['file_key'] as String?,
-      fileName: json['file_name'] as String?,
+      passcode: json['passcode'] as String,
+      timestamp: DateTime.parse(json['timestamp'] as String),
+      webhookId: json['webhook_id'] as String,
+      fileKey: json['file_key'] as String,
+      fileName: json['file_name'] as String,
     );
 
 Map<String, dynamic> _$FileUpdatePayloadToJson(FileUpdatePayload instance) =>
     <String, dynamic>{
       'passcode': instance.passcode,
-      'timestamp': instance.timestamp?.toIso8601String(),
+      'timestamp': instance.timestamp.toIso8601String(),
       'webhook_id': instance.webhookId,
       'file_key': instance.fileKey,
       'file_name': instance.fileName,
+      'event_type': _$WebhookEventEnumMap[instance.eventType]!,
     };
+
+const _$WebhookEventEnumMap = {
+  WebhookEvent.ping: 'PING',
+  WebhookEvent.fileUpdate: 'FILE_UPDATE',
+  WebhookEvent.fileVersionUpdate: 'FILE_VERSION_UPDATE',
+  WebhookEvent.fileDelete: 'FILE_DELETE',
+  WebhookEvent.libraryPublish: 'LIBRARY_PUBLISH',
+  WebhookEvent.fileComment: 'FILE_COMMENT',
+  WebhookEvent.devModeStatusUpdate: 'DEV_MODE_STATUS_UPDATE',
+};

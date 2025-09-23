@@ -11,9 +11,7 @@ abstract class _$UserCWProxy {
 
   User handle(String handle);
 
-  User imageUrl(String? imageUrl);
-
-  User email(String? email);
+  User imgUrl(String imgUrl);
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `User(...).copyWith.fieldName(value)`.
@@ -22,7 +20,7 @@ abstract class _$UserCWProxy {
   /// ```dart
   /// User(...).copyWith(id: 12, name: "My name")
   /// ```
-  User call({String id, String handle, String? imageUrl, String? email});
+  User call({String id, String handle, String imgUrl});
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -39,10 +37,7 @@ class _$UserCWProxyImpl implements _$UserCWProxy {
   User handle(String handle) => call(handle: handle);
 
   @override
-  User imageUrl(String? imageUrl) => call(imageUrl: imageUrl);
-
-  @override
-  User email(String? email) => call(email: email);
+  User imgUrl(String imgUrl) => call(imgUrl: imgUrl);
 
   @override
   /// Creates a new instance with the provided field values.
@@ -55,8 +50,7 @@ class _$UserCWProxyImpl implements _$UserCWProxy {
   User call({
     Object? id = const $CopyWithPlaceholder(),
     Object? handle = const $CopyWithPlaceholder(),
-    Object? imageUrl = const $CopyWithPlaceholder(),
-    Object? email = const $CopyWithPlaceholder(),
+    Object? imgUrl = const $CopyWithPlaceholder(),
   }) {
     return User(
       id: id == const $CopyWithPlaceholder() || id == null
@@ -67,14 +61,10 @@ class _$UserCWProxyImpl implements _$UserCWProxy {
           ? _value.handle
           // ignore: cast_nullable_to_non_nullable
           : handle as String,
-      imageUrl: imageUrl == const $CopyWithPlaceholder()
-          ? _value.imageUrl
+      imgUrl: imgUrl == const $CopyWithPlaceholder() || imgUrl == null
+          ? _value.imgUrl
           // ignore: cast_nullable_to_non_nullable
-          : imageUrl as String?,
-      email: email == const $CopyWithPlaceholder()
-          ? _value.email
-          // ignore: cast_nullable_to_non_nullable
-          : email as String?,
+          : imgUrl as String,
     );
   }
 }
@@ -93,13 +83,11 @@ extension $UserCopyWith on User {
 User _$UserFromJson(Map<String, dynamic> json) => User(
   id: json['id'] as String,
   handle: json['handle'] as String,
-  imageUrl: json['img_url'] as String?,
-  email: json['email'] as String?,
+  imgUrl: json['img_url'] as String,
 );
 
 Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
   'id': instance.id,
   'handle': instance.handle,
-  'img_url': instance.imageUrl,
-  'email': instance.email,
+  'img_url': instance.imgUrl,
 };

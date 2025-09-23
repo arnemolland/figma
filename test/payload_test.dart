@@ -38,8 +38,7 @@ const fileDeletePayload = r'''
   "triggered_by": {
     "id": "813845097374535682",
     "handle": "Dylan Field",
-    "img_url": null,
-    "email": null
+    "img_url": ""
   },
   "webhook_id": "22"
 }
@@ -57,8 +56,7 @@ const fileVersionUpdatePayload = r'''
   "triggered_by": {
     "id": "813845097374535682",
     "handle": "Dylan Field",
-    "img_url": null,
-    "email": null
+    "img_url": ""
   },
   "version_id": "443",
   "webhook_id": "22"
@@ -112,14 +110,16 @@ const libraryPublishPayload = r'''
       "name": "Background fill"
     }
   ],
-  "library_item": null,
+  "library_item": {
+    "key": "50d99d74ef0ab8bc887f716d5dae0855feaf6eac",
+    "name": "Something"
+  },
   "passcode": "secretpassword",
   "timestamp": "2020-02-23T20:27:16.000Z",
   "triggered_by": {
     "id": "813845097374535682",
     "handle": "Dylan Field",
-    "img_url": null,
-    "email": null
+    "img_url": ""
   },
   "webhook_id": "22"
 }
@@ -129,16 +129,13 @@ const fileCommentPayload = r'''
 {
   "comment": [
     {
-      "text": "TODO: \n",
-      "mention": null
+      "text": "TODO: \n"
     },
     {
-      "text": null,
       "mention": "811724164054158337"
     },
     {
-      "text": "Change selection colors",
-      "mention": null
+      "text": "Change selection colors"
     }
   ],
   "comment_id": "32",
@@ -150,8 +147,7 @@ const fileCommentPayload = r'''
     {
       "id": "811724164054158337",
       "handle": "Evan Wallace",
-      "img_url": null,
-      "email": null
+      "img_url": ""
     }
   ],
   "passcode": "secretpasscode",
@@ -159,8 +155,7 @@ const fileCommentPayload = r'''
   "triggered_by": {
     "id": "813845097374535682",
     "handle": "Dylan Field",
-    "img_url": null,
-    "email": null
+    "img_url": ""
   },
   "webhook_id": "22"
 }
@@ -170,13 +165,12 @@ const devModeStatusUpdatePayload = '''
 {
   "event_type": "DEV_MODE_STATUS_UPDATE",
   "triggered_by": {
-    "email": "devmodeuser@example.com",
     "id": "1157089008212550991",
-    "img_url": null,
+    "img_url": "",
     "handle": "dmuser"
   },
   "file_key": "ABzTs1A2aFSy960zBI3nMM",
-  "file_name": null,
+  "file_name": "Mockup library",
   "node_id": "43:2",
   "status": "READY_FOR_DEV",
   "timestamp": "2025-05-14T23:28:40.000Z",
@@ -205,46 +199,48 @@ const badPayload = r'''
 
 void main() {
   group('payloads', () {
-    test('BasePayload.fromJson', () {
+    test('WebhookPayload.fromJson', () {
       final pingPayloadDecoded = jsonDecode(pingPayload);
-      final ping = BasePayload.fromJson(pingPayloadDecoded);
+      final ping = WebhookPayload.fromJson(pingPayloadDecoded);
       expect(ping, isA<PingPayload>());
       expect(ping.toJson(), equals(pingPayloadDecoded));
 
       final fileUpdateDecoded = jsonDecode(fileUpdatePayload);
-      final fileUpdate = BasePayload.fromJson(fileUpdateDecoded);
+      final fileUpdate = WebhookPayload.fromJson(fileUpdateDecoded);
       expect(fileUpdate, isA<FileUpdatePayload>());
       expect(fileUpdate.toJson(), equals(fileUpdateDecoded));
 
       final fileDeleteDecoded = jsonDecode(fileDeletePayload);
-      final fileDelete = BasePayload.fromJson(fileDeleteDecoded);
+      final fileDelete = WebhookPayload.fromJson(fileDeleteDecoded);
       expect(fileDelete, isA<FileDeletePayload>());
       expect(fileDelete.toJson(), equals(fileDeleteDecoded));
 
       final fileVersionUpdateDecoded = jsonDecode(fileVersionUpdatePayload);
-      final fileVersionUpdate = BasePayload.fromJson(fileVersionUpdateDecoded);
+      final fileVersionUpdate = WebhookPayload.fromJson(
+        fileVersionUpdateDecoded,
+      );
       expect(fileVersionUpdate, isA<FileVersionUpdatePayload>());
       expect(fileVersionUpdate.toJson(), equals(fileVersionUpdateDecoded));
 
       final libraryPublishDecoded = jsonDecode(libraryPublishPayload);
-      final libraryPublish = BasePayload.fromJson(libraryPublishDecoded);
+      final libraryPublish = WebhookPayload.fromJson(libraryPublishDecoded);
       expect(libraryPublish, isA<LibraryPublishPayload>());
       expect(libraryPublish.toJson(), equals(libraryPublishDecoded));
 
       final fileCommentDecoded = jsonDecode(fileCommentPayload);
-      final fileComment = BasePayload.fromJson(fileCommentDecoded);
+      final fileComment = WebhookPayload.fromJson(fileCommentDecoded);
       expect(fileComment, isA<FileCommentPayload>());
       expect(fileComment.toJson(), equals(fileCommentDecoded));
 
       final devModeStatusUpdateDecoded = jsonDecode(devModeStatusUpdatePayload);
-      final devModeStatusUpdate = BasePayload.fromJson(
+      final devModeStatusUpdate = WebhookPayload.fromJson(
         devModeStatusUpdateDecoded,
       );
       expect(devModeStatusUpdate, isA<DevModeStatusUpdatePayload>());
       expect(devModeStatusUpdate.toJson(), equals(devModeStatusUpdateDecoded));
 
       expect(
-        () => BasePayload.fromJson(jsonDecode(badPayload)),
+        () => WebhookPayload.fromJson(jsonDecode(badPayload)),
         throwsArgumentError,
       );
     });

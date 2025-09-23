@@ -7,25 +7,25 @@ part of 'file_comment_payload.dart';
 // **************************************************************************
 
 abstract class _$FileCommentPayloadCWProxy {
-  FileCommentPayload passcode(String? passcode);
+  FileCommentPayload passcode(String passcode);
 
-  FileCommentPayload timestamp(DateTime? timestamp);
+  FileCommentPayload timestamp(DateTime timestamp);
 
-  FileCommentPayload webhookId(String? webhookId);
+  FileCommentPayload webhookId(String webhookId);
 
-  FileCommentPayload comment(List<CommentFragment>? comment);
+  FileCommentPayload comment(List<CommentFragment> comment);
 
-  FileCommentPayload commentId(String? commentId);
+  FileCommentPayload commentId(String commentId);
 
-  FileCommentPayload createdAt(DateTime? createdAt);
+  FileCommentPayload createdAt(DateTime createdAt);
 
-  FileCommentPayload fileKey(String? fileKey);
+  FileCommentPayload fileKey(String fileKey);
 
-  FileCommentPayload fileName(String? fileName);
+  FileCommentPayload fileName(String fileName);
 
-  FileCommentPayload mentions(List<User>? mentions);
+  FileCommentPayload mentions(List<User> mentions);
 
-  FileCommentPayload triggeredBy(User? triggeredBy);
+  FileCommentPayload triggeredBy(User triggeredBy);
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `FileCommentPayload(...).copyWith.fieldName(value)`.
@@ -35,16 +35,16 @@ abstract class _$FileCommentPayloadCWProxy {
   /// FileCommentPayload(...).copyWith(id: 12, name: "My name")
   /// ```
   FileCommentPayload call({
-    String? passcode,
-    DateTime? timestamp,
-    String? webhookId,
-    List<CommentFragment>? comment,
-    String? commentId,
-    DateTime? createdAt,
-    String? fileKey,
-    String? fileName,
-    List<User>? mentions,
-    User? triggeredBy,
+    String passcode,
+    DateTime timestamp,
+    String webhookId,
+    List<CommentFragment> comment,
+    String commentId,
+    DateTime createdAt,
+    String fileKey,
+    String fileName,
+    List<User> mentions,
+    User triggeredBy,
   });
 }
 
@@ -56,37 +56,37 @@ class _$FileCommentPayloadCWProxyImpl implements _$FileCommentPayloadCWProxy {
   final FileCommentPayload _value;
 
   @override
-  FileCommentPayload passcode(String? passcode) => call(passcode: passcode);
+  FileCommentPayload passcode(String passcode) => call(passcode: passcode);
 
   @override
-  FileCommentPayload timestamp(DateTime? timestamp) =>
+  FileCommentPayload timestamp(DateTime timestamp) =>
       call(timestamp: timestamp);
 
   @override
-  FileCommentPayload webhookId(String? webhookId) => call(webhookId: webhookId);
+  FileCommentPayload webhookId(String webhookId) => call(webhookId: webhookId);
 
   @override
-  FileCommentPayload comment(List<CommentFragment>? comment) =>
+  FileCommentPayload comment(List<CommentFragment> comment) =>
       call(comment: comment);
 
   @override
-  FileCommentPayload commentId(String? commentId) => call(commentId: commentId);
+  FileCommentPayload commentId(String commentId) => call(commentId: commentId);
 
   @override
-  FileCommentPayload createdAt(DateTime? createdAt) =>
+  FileCommentPayload createdAt(DateTime createdAt) =>
       call(createdAt: createdAt);
 
   @override
-  FileCommentPayload fileKey(String? fileKey) => call(fileKey: fileKey);
+  FileCommentPayload fileKey(String fileKey) => call(fileKey: fileKey);
 
   @override
-  FileCommentPayload fileName(String? fileName) => call(fileName: fileName);
+  FileCommentPayload fileName(String fileName) => call(fileName: fileName);
 
   @override
-  FileCommentPayload mentions(List<User>? mentions) => call(mentions: mentions);
+  FileCommentPayload mentions(List<User> mentions) => call(mentions: mentions);
 
   @override
-  FileCommentPayload triggeredBy(User? triggeredBy) =>
+  FileCommentPayload triggeredBy(User triggeredBy) =>
       call(triggeredBy: triggeredBy);
 
   @override
@@ -110,46 +110,47 @@ class _$FileCommentPayloadCWProxyImpl implements _$FileCommentPayloadCWProxy {
     Object? triggeredBy = const $CopyWithPlaceholder(),
   }) {
     return FileCommentPayload(
-      passcode: passcode == const $CopyWithPlaceholder()
+      passcode: passcode == const $CopyWithPlaceholder() || passcode == null
           ? _value.passcode
           // ignore: cast_nullable_to_non_nullable
-          : passcode as String?,
-      timestamp: timestamp == const $CopyWithPlaceholder()
+          : passcode as String,
+      timestamp: timestamp == const $CopyWithPlaceholder() || timestamp == null
           ? _value.timestamp
           // ignore: cast_nullable_to_non_nullable
-          : timestamp as DateTime?,
-      webhookId: webhookId == const $CopyWithPlaceholder()
+          : timestamp as DateTime,
+      webhookId: webhookId == const $CopyWithPlaceholder() || webhookId == null
           ? _value.webhookId
           // ignore: cast_nullable_to_non_nullable
-          : webhookId as String?,
-      comment: comment == const $CopyWithPlaceholder()
+          : webhookId as String,
+      comment: comment == const $CopyWithPlaceholder() || comment == null
           ? _value.comment
           // ignore: cast_nullable_to_non_nullable
-          : comment as List<CommentFragment>?,
-      commentId: commentId == const $CopyWithPlaceholder()
+          : comment as List<CommentFragment>,
+      commentId: commentId == const $CopyWithPlaceholder() || commentId == null
           ? _value.commentId
           // ignore: cast_nullable_to_non_nullable
-          : commentId as String?,
-      createdAt: createdAt == const $CopyWithPlaceholder()
+          : commentId as String,
+      createdAt: createdAt == const $CopyWithPlaceholder() || createdAt == null
           ? _value.createdAt
           // ignore: cast_nullable_to_non_nullable
-          : createdAt as DateTime?,
-      fileKey: fileKey == const $CopyWithPlaceholder()
+          : createdAt as DateTime,
+      fileKey: fileKey == const $CopyWithPlaceholder() || fileKey == null
           ? _value.fileKey
           // ignore: cast_nullable_to_non_nullable
-          : fileKey as String?,
-      fileName: fileName == const $CopyWithPlaceholder()
+          : fileKey as String,
+      fileName: fileName == const $CopyWithPlaceholder() || fileName == null
           ? _value.fileName
           // ignore: cast_nullable_to_non_nullable
-          : fileName as String?,
-      mentions: mentions == const $CopyWithPlaceholder()
+          : fileName as String,
+      mentions: mentions == const $CopyWithPlaceholder() || mentions == null
           ? _value.mentions
           // ignore: cast_nullable_to_non_nullable
-          : mentions as List<User>?,
-      triggeredBy: triggeredBy == const $CopyWithPlaceholder()
+          : mentions as List<User>,
+      triggeredBy:
+          triggeredBy == const $CopyWithPlaceholder() || triggeredBy == null
           ? _value.triggeredBy
           // ignore: cast_nullable_to_non_nullable
-          : triggeredBy as User?,
+          : triggeredBy as User,
     );
   }
 }
@@ -168,38 +169,45 @@ extension $FileCommentPayloadCopyWith on FileCommentPayload {
 
 FileCommentPayload _$FileCommentPayloadFromJson(Map<String, dynamic> json) =>
     FileCommentPayload(
-      passcode: json['passcode'] as String?,
-      timestamp: json['timestamp'] == null
-          ? null
-          : DateTime.parse(json['timestamp'] as String),
-      webhookId: json['webhook_id'] as String?,
-      comment: (json['comment'] as List<dynamic>?)
-          ?.map((e) => CommentFragment.fromJson(e as Map<String, dynamic>))
+      passcode: json['passcode'] as String,
+      timestamp: DateTime.parse(json['timestamp'] as String),
+      webhookId: json['webhook_id'] as String,
+      comment: (json['comment'] as List<dynamic>)
+          .map((e) => CommentFragment.fromJson(e as Map<String, dynamic>))
           .toList(),
-      commentId: json['comment_id'] as String?,
-      createdAt: json['created_at'] == null
-          ? null
-          : DateTime.parse(json['created_at'] as String),
-      fileKey: json['file_key'] as String?,
-      fileName: json['file_name'] as String?,
-      mentions: (json['mentions'] as List<dynamic>?)
-          ?.map((e) => User.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      triggeredBy: json['triggered_by'] == null
-          ? null
-          : User.fromJson(json['triggered_by'] as Map<String, dynamic>),
+      commentId: json['comment_id'] as String,
+      createdAt: DateTime.parse(json['created_at'] as String),
+      fileKey: json['file_key'] as String,
+      fileName: json['file_name'] as String,
+      mentions:
+          (json['mentions'] as List<dynamic>?)
+              ?.map((e) => User.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          [],
+      triggeredBy: User.fromJson(json['triggered_by'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$FileCommentPayloadToJson(FileCommentPayload instance) =>
     <String, dynamic>{
       'passcode': instance.passcode,
-      'timestamp': instance.timestamp?.toIso8601String(),
+      'timestamp': instance.timestamp.toIso8601String(),
       'webhook_id': instance.webhookId,
-      'comment': instance.comment?.map((e) => e.toJson()).toList(),
+      'comment': instance.comment.map((e) => e.toJson()).toList(),
       'comment_id': instance.commentId,
-      'created_at': instance.createdAt?.toIso8601String(),
+      'created_at': instance.createdAt.toIso8601String(),
       'file_key': instance.fileKey,
       'file_name': instance.fileName,
-      'mentions': instance.mentions?.map((e) => e.toJson()).toList(),
-      'triggered_by': instance.triggeredBy?.toJson(),
+      'mentions': instance.mentions.map((e) => e.toJson()).toList(),
+      'triggered_by': instance.triggeredBy.toJson(),
+      'event_type': _$WebhookEventEnumMap[instance.eventType]!,
     };
+
+const _$WebhookEventEnumMap = {
+  WebhookEvent.ping: 'PING',
+  WebhookEvent.fileUpdate: 'FILE_UPDATE',
+  WebhookEvent.fileVersionUpdate: 'FILE_VERSION_UPDATE',
+  WebhookEvent.fileDelete: 'FILE_DELETE',
+  WebhookEvent.libraryPublish: 'LIBRARY_PUBLISH',
+  WebhookEvent.fileComment: 'FILE_COMMENT',
+  WebhookEvent.devModeStatusUpdate: 'DEV_MODE_STATUS_UPDATE',
+};

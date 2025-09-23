@@ -45,3 +45,19 @@ WebhookContext
 WebhookEvent
 WebhookStatus
 WindingRule
+
+# Models
+CommentFragment
+DevResource
+LibraryItemData
+User
+
+# Payloads
+DevModeStatusUpdatePayload
+FileCommentPayload
+FileDeletePayload
+FileUpdatePayload
+FileVersionUpdatePayload
+LibraryPublishPayload
+PingPayload
+WebhookPayload
