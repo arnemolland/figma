@@ -8,6 +8,7 @@ linter:
     - avoid_slow_async_io
     - cascade_invocations
     - directives_ordering
+    - lines_longer_than_80_chars
     - prefer_const_constructors_in_immutables
     - prefer_expression_function_bodies
     - prefer_final_locals

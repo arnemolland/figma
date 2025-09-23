@@ -1,3 +1,5 @@
+// ignore_for_file: lines_longer_than_80_chars
+
 import 'package:json_annotation/json_annotation.dart';
 
 /// Determines how the auto-layout frame’s children should be aligned

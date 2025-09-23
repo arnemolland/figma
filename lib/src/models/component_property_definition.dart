@@ -1,3 +1,5 @@
+// ignore_for_file: lines_longer_than_80_chars
+
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:figma/src/models/instance_swap_preferred_value.dart';
 import 'package:json_annotation/json_annotation.dart';

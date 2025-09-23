@@ -43,7 +43,8 @@ class FigmaClient {
 
   /// Use HTTP2 sockets for interacting with API.
   ///
-  /// This is the recommended way, but it may not work on certain platforms like web.
+  /// This is the recommended way, but it may not work on certain platforms like
+  /// web.
   ///
   /// If `false`, then the `http` package is used.
   final bool useHttp2;
@@ -126,7 +127,8 @@ class FigmaClient {
   Future<void> deleteComment(String key, String id) =>
       _deleteFigma(apiVersion, '/files/$key/comments/$id');
 
-  /// Retrieves the Figma [User] in ownership of the currently used access token.
+  /// Retrieves the Figma [User] in ownership of the currently used access
+  /// token.
   Future<User> getMe() => _getFigma(apiVersion, '/me').then(User.fromJson);
 
   /// Retrieves all versions of the Figma file specified by [key].
