@@ -1,219 +1,364 @@
-// ignore_for_file: lines_longer_than_80_chars
+// Generated from v0.33.0 of the Figma REST API specification
 
-import 'package:figma/src/models.dart';
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:meta/meta.dart';
+
+import 'annotations_trait.dart';
+import 'blend_mode.dart';
+import 'corner_radius_shape_traits.dart';
+import 'easing_type.dart';
+import 'effect.dart';
+import 'export_setting.dart';
+import 'grid_child_align.dart';
+import 'interaction.dart';
+import 'layer_trait_variables.dart';
+import 'layout_align.dart';
+import 'layout_constraint.dart';
+import 'layout_grow.dart';
+import 'layout_positioning.dart';
+import 'layout_sizing.dart';
+import 'mask_type.dart';
+import 'node_type.dart';
+import 'paint.dart';
+import 'paint_override.dart';
+import 'path.dart';
+import 'rectangle.dart';
+import 'scroll_behavior.dart';
+import 'stroke_align.dart';
+import 'stroke_cap.dart';
+import 'stroke_join.dart';
+import 'sub_canvas_node.dart';
+import 'transform.dart';
+import 'vector.dart';
 
 part 'vector_node.g.dart';
 
-/// A vector node, either a path or a group of paths. All geometry in a vector
-/// is either strokes or fills. Shapes like [Ellipse], [RectangleNode] and [Line]
-/// are vectors, as well as [Text], among others.
-@JsonSerializable()
-class VectorNode extends Node {
-  /// If true, layer is locked and cannot be edited.
-  @JsonKey(defaultValue: false)
-  final bool locked;
-
-  /// An array of export settings representing images to export from node.
-  @JsonKey(defaultValue: [])
-  final List<ExportSetting> exportSettings;
-
-  /// How this node blends with nodes behind it in the scene (see [BlendMode]).
-  final BlendMode? blendMode;
-
-  /// Keep height and width constrained to same ratio.
-  @JsonKey(defaultValue: false)
-  final bool preserveRatio;
-
-  /// How the layer is aligned inside an auto-layout frame. This property is
-  /// only provided for direct children of auto-layout frames.
-  final LayoutAlign? layoutAlign;
-
-  /// This property is applicable only for direct children of auto-layout frames,
-  /// ignored otherwise. Determines whether a layer should stretch along the parent’s
-  /// primary axis. A `0` corresponds to a fixed size and `1` corresponds to stretch.
-  @JsonKey(defaultValue: 0.0)
-  final double layoutGrow;
-
-  /// Horizontal and vertical layout constraints for node.
-  final LayoutConstraint? constraints;
-
-  /// Node ID of node to transition to in prototyping.
-  final String? transitionNodeID;
-
-  /// The duration of the prototyping transition on this node (in milliseconds).
-  final double? transitionDuration;
-
-  /// The easing curve used in the prototyping transition on this node.
-  final EasingType? transitionEasing;
-
-  /// Opacity of the node.
-  @JsonKey(defaultValue: 1.0)
-  final double opacity;
-
-  /// Bounding box of the node in absolute space coordinates.
-  final Rectangle? absoluteBoundingBox;
-
-  /// The bounds of the rendered node in the file in absolute space coordinates.
-  final Rectangle? absoluteRenderBounds;
-
-  /// An array of effects attached to this node (see [Effect]).
-  final List<Effect>? effects;
-
-  /// Width and height of element. This is different from the width and height
-  /// of the bounding box in that the absolute bounding box represents the
-  /// element after scaling and rotation. Only present if geometry=paths is
-  /// passed.
-  final Vector? size;
-
-  /// The top two rows of a matrix that represents the 2D transform of this node
-  /// relative to its parent. The bottom row of the matrix is implicitly always
-  /// (0, 0, 1). Use to transform coordinates in geometry. Only present if
-  /// geometry=paths is passed.
-  final List<List<double>>? relativeTransform;
-
-  /// Does this node mask sibling nodes in front of it?
-  @JsonKey(defaultValue: false)
-  final bool isMask;
-
-  /// An array of fill paints applied to the node.
-  @JsonKey(defaultValue: [])
-  final List<Paint> fills;
-
-  /// Only specified if parameter geometry=paths is used. An array of paths
-  /// representing the object fill.
-  @JsonKey(defaultValue: [])
-  final List<Path> fillGeometry;
-
-  /// Map from ID to PaintOverride for looking up fill overrides. To see which
-  /// regions are overridden, you must use the geometry=paths option. Each path
-  /// returned may have an overrideId which maps to this table.
-  final Map<int, PaintOverride?>? fillOverrideTable;
-
-  /// An array of stroke paints applied to the node.
-  @JsonKey(defaultValue: [])
-  final List<Paint> strokes;
-
-  /// The weight of strokes on the node.
-  final double? strokeWeight;
-
-  /// The weight of strokes on the node per side, if they vary.
-  final StrokeWeights? individualStrokeWeights;
-
-  /// A string enum with value of [StrokeCap.none], [StrokeCap.round],
-  /// [StrokeCap.square], [StrokeCap.lineArrow] or [StrokeCap.triangleArrow],
-  /// describing the end caps of vector paths.
-  @JsonKey(defaultValue: StrokeCap.none)
-  final StrokeCap strokeCap;
-
-  /// A string enum with value of [StrokeJoin.miter], [StrokeJoin.bevel], or
-  /// [StrokeCap.round], describing how corners in vector paths are rendered.
-  @JsonKey(defaultValue: StrokeJoin.miter)
-  final StrokeJoin strokeJoin;
-
-  /// An array of floating point numbers describing the pattern of dash length
-  /// and gap lengths that the vector path follows. For example a value of
-  /// `[1, 2]` indicates that the path has a dash of length 1 followed by a gap
-  /// of length 2, repeated.
-  @JsonKey(defaultValue: [])
-  final List<double> strokeDashes;
-
-  /// Only valid if strokeJoin is [StrokeJoin.miter]. The corner angle, in
-  /// degrees, below which strokeJoin will be set to [StrokeJoin.bevel] to
-  /// avoid super sharp corners. By default this is 28.96 degrees.
-  @JsonKey(defaultValue: 28.96)
-  final double strokeMiterAngle;
-
-  /// Only specified if parameter geometry=paths is used. An array of paths
-  /// representing the object stroke.
-  final List<dynamic>? strokeGeometry;
-
-  /// Position of stroke relative to vector outline.
-  final StrokeAlign? strokeAlign;
-
-  /// A mapping of a StyleType to style ID (see [Style]) of styles present on
-  /// this node. The style ID can be used to look up more information about the
-  /// style in the top-level styles field.
-  final Map<StyleTypeKey, String>? styles;
-
+@JsonSerializable(explicitToJson: true)
+@CopyWith()
+@immutable
+class VectorNode extends SubCanvasNode
+    with CornerRadiusShapeTraits, AnnotationsTrait {
   const VectorNode({
-    required super.id,
-    required super.visible,
-    super.componentPropertyReferences,
-    super.name,
-    super.rotation,
-    super.pluginData,
-    super.sharedPluginData,
-    required this.locked,
-    required this.exportSettings,
-    required this.preserveRatio,
-    required this.layoutGrow,
-    required this.strokeCap,
-    required this.strokeJoin,
-    required this.strokeDashes,
-    required this.strokeMiterAngle,
-    required this.opacity,
-    required this.isMask,
-    required this.fills,
-    required this.fillGeometry,
-    required this.strokes,
-    this.blendMode,
-    this.layoutAlign,
+    required this.id,
+    required this.name,
+    this.visible = true,
+    this.locked = false,
+    required this.scrollBehavior,
+    this.rotation = 0,
+    this.componentPropertyReferences = const {},
+    this.pluginData,
+    this.sharedPluginData,
+    this.boundVariables = const LayerTraitVariables(),
+    this.explicitVariableModes = const {},
+    required this.blendMode,
+    this.opacity = 1,
+    this.absoluteBoundingBox,
+    this.absoluteRenderBounds,
+    this.preserveRatio = false,
     this.constraints,
-    this.transitionNodeID,
+    this.relativeTransform,
+    this.size,
+    this.layoutAlign,
+    this.layoutGrow = LayoutGrow.fixed,
+    this.layoutPositioning = LayoutPositioning.auto,
+    this.minWidth = 0,
+    this.maxWidth = 0,
+    this.minHeight = 0,
+    this.maxHeight = 0,
+    this.layoutSizingHorizontal,
+    this.layoutSizingVertical,
+    this.gridRowCount,
+    this.gridColumnCount,
+    this.gridRowGap = 0,
+    this.gridColumnGap = 0,
+    this.gridColumnsSizing,
+    this.gridRowsSizing,
+    this.gridChildHorizontalAlign,
+    this.gridChildVerticalAlign,
+    this.gridRowSpan = 1,
+    this.gridColumnSpan = 1,
+    this.gridRowAnchorIndex = 0,
+    this.gridColumnAnchorIndex = 0,
+    this.fillOverrideTable = const {},
+    this.fillGeometry = const [],
+    this.strokeGeometry = const [],
+    this.strokeCap = StrokeCap.none,
+    this.strokeMiterAngle = 28.96,
+    required this.fills,
+    this.styles = const {},
+    this.strokes = const [],
+    this.strokeWeight = 1,
+    this.strokeAlign,
+    this.strokeJoin = StrokeJoin.miter,
+    this.strokeDashes = const [],
+    this.exportSettings = const [],
+    required this.effects,
+    this.isMask = false,
+    this.maskType,
+    this.transitionNodeId,
     this.transitionDuration,
     this.transitionEasing,
-    this.absoluteBoundingBox,
-    this.effects,
-    this.size,
-    this.relativeTransform,
-    this.strokeWeight,
-    this.individualStrokeWeights,
-    this.strokeGeometry,
-    this.strokeAlign,
-    this.styles,
-    this.absoluteRenderBounds,
-    this.fillOverrideTable,
+    this.interactions = const [],
+    this.cornerRadius = 0,
+    this.cornerSmoothing = 0,
+    this.rectangleCornerRadii = const [],
   });
 
-  @override
-  List<Object?> get props => [
-    ...super.props,
-    locked,
-    exportSettings,
-    blendMode,
-    preserveRatio,
-    layoutAlign,
-    layoutGrow,
-    constraints,
-    transitionNodeID,
-    transitionDuration,
-    transitionEasing,
-    opacity,
-    absoluteBoundingBox,
-    effects,
-    size,
-    relativeTransform,
-    isMask,
-    fills,
-    fillGeometry,
-    strokes,
-    strokeWeight,
-    individualStrokeWeights,
-    strokeCap,
-    strokeJoin,
-    strokeDashes,
-    strokeMiterAngle,
-    strokeGeometry,
-    strokeAlign,
-    styles,
-    absoluteRenderBounds,
-    fillOverrideTable,
-  ];
-
-  factory VectorNode.fromJson(Map<String, dynamic> json) =>
+  factory VectorNode.fromJson(Map<String, Object?> json) =>
       _$VectorNodeFromJson(json);
 
   @override
-  Map<String, dynamic> toJson() => _$VectorNodeToJson(this);
+  final String id;
+
+  @override
+  final String name;
+
+  @JsonKey(defaultValue: true)
+  @override
+  final bool visible;
+
+  @JsonKey(defaultValue: false)
+  @override
+  final bool locked;
+
+  @override
+  final ScrollBehavior scrollBehavior;
+
+  @JsonKey(defaultValue: 0)
+  @override
+  final num rotation;
+
+  @JsonKey(defaultValue: {})
+  @override
+  final Map<String, String> componentPropertyReferences;
+
+  @JsonKey(includeIfNull: false)
+  @override
+  final Object? pluginData;
+
+  @JsonKey(includeIfNull: false)
+  @override
+  final Object? sharedPluginData;
+
+  @override
+  final LayerTraitVariables boundVariables;
+
+  @JsonKey(defaultValue: {})
+  @override
+  final Map<String, String> explicitVariableModes;
+
+  @override
+  final BlendMode blendMode;
+
+  @JsonKey(defaultValue: 1)
+  @override
+  final num opacity;
+
+  @override
+  final Rectangle? absoluteBoundingBox;
+
+  @override
+  final Rectangle? absoluteRenderBounds;
+
+  @JsonKey(defaultValue: false)
+  @override
+  final bool preserveRatio;
+
+  @JsonKey(includeIfNull: false)
+  @override
+  final LayoutConstraint? constraints;
+
+  @JsonKey(includeIfNull: false)
+  @override
+  final Transform? relativeTransform;
+
+  @JsonKey(includeIfNull: false)
+  @override
+  final Vector? size;
+
+  @JsonKey(includeIfNull: false)
+  @override
+  final LayoutAlign? layoutAlign;
+
+  @JsonKey(defaultValue: LayoutGrow.fixed)
+  @override
+  final LayoutGrow layoutGrow;
+
+  @JsonKey(defaultValue: LayoutPositioning.auto)
+  @override
+  final LayoutPositioning layoutPositioning;
+
+  @JsonKey(defaultValue: 0)
+  @override
+  final num minWidth;
+
+  @JsonKey(defaultValue: 0)
+  @override
+  final num maxWidth;
+
+  @JsonKey(defaultValue: 0)
+  @override
+  final num minHeight;
+
+  @JsonKey(defaultValue: 0)
+  @override
+  final num maxHeight;
+
+  @JsonKey(includeIfNull: false)
+  @override
+  final LayoutSizing? layoutSizingHorizontal;
+
+  @JsonKey(includeIfNull: false)
+  @override
+  final LayoutSizing? layoutSizingVertical;
+
+  @JsonKey(includeIfNull: false)
+  @override
+  final num? gridRowCount;
+
+  @JsonKey(includeIfNull: false)
+  @override
+  final num? gridColumnCount;
+
+  @JsonKey(defaultValue: 0)
+  @override
+  final num gridRowGap;
+
+  @JsonKey(defaultValue: 0)
+  @override
+  final num gridColumnGap;
+
+  @JsonKey(includeIfNull: false)
+  @override
+  final String? gridColumnsSizing;
+
+  @JsonKey(includeIfNull: false)
+  @override
+  final String? gridRowsSizing;
+
+  @JsonKey(includeIfNull: false)
+  @override
+  final GridChildAlign? gridChildHorizontalAlign;
+
+  @JsonKey(includeIfNull: false)
+  @override
+  final GridChildAlign? gridChildVerticalAlign;
+
+  @JsonKey(defaultValue: 1)
+  @override
+  final num gridRowSpan;
+
+  @JsonKey(defaultValue: 1)
+  @override
+  final num gridColumnSpan;
+
+  @JsonKey(defaultValue: 0)
+  @override
+  final num gridRowAnchorIndex;
+
+  @JsonKey(defaultValue: 0)
+  @override
+  final num gridColumnAnchorIndex;
+
+  @JsonKey(defaultValue: {})
+  @override
+  final Map<String, PaintOverride?> fillOverrideTable;
+
+  @JsonKey(defaultValue: [])
+  @override
+  final List<Path> fillGeometry;
+
+  @JsonKey(defaultValue: [])
+  @override
+  final List<Path> strokeGeometry;
+
+  @JsonKey(defaultValue: StrokeCap.none)
+  @override
+  final StrokeCap strokeCap;
+
+  @JsonKey(defaultValue: 28.96)
+  @override
+  final num strokeMiterAngle;
+
+  @override
+  final List<Paint> fills;
+
+  @JsonKey(defaultValue: {})
+  @override
+  final Map<String, String> styles;
+
+  @JsonKey(defaultValue: [])
+  @override
+  final List<Paint> strokes;
+
+  @JsonKey(defaultValue: 1)
+  @override
+  final num strokeWeight;
+
+  @JsonKey(includeIfNull: false)
+  @override
+  final StrokeAlign? strokeAlign;
+
+  @JsonKey(defaultValue: StrokeJoin.miter)
+  @override
+  final StrokeJoin strokeJoin;
+
+  @JsonKey(defaultValue: [])
+  @override
+  final List<num> strokeDashes;
+
+  @JsonKey(defaultValue: [])
+  @override
+  final List<ExportSetting> exportSettings;
+
+  @override
+  final List<Effect> effects;
+
+  @JsonKey(defaultValue: false)
+  @override
+  final bool isMask;
+
+  @JsonKey(includeIfNull: false)
+  @override
+  final MaskType? maskType;
+
+  @JsonKey(name: 'transitionNodeID', includeIfNull: false)
+  @override
+  final String? transitionNodeId;
+
+  @JsonKey(includeIfNull: false)
+  @override
+  final num? transitionDuration;
+
+  @JsonKey(includeIfNull: false)
+  @override
+  final EasingType? transitionEasing;
+
+  @JsonKey(defaultValue: [])
+  @override
+  final List<Interaction> interactions;
+
+  @JsonKey(defaultValue: 0)
+  @override
+  final num cornerRadius;
+
+  @JsonKey(defaultValue: 0)
+  @override
+  final num cornerSmoothing;
+
+  @JsonKey(defaultValue: [])
+  @override
+  final List<num> rectangleCornerRadii;
+
+  /// The type of this node, represented by the string literal "VECTOR".
+  @JsonKey(includeToJson: true)
+  @override
+  NodeType get type => NodeType.vector;
+
+  @override
+  List<Object?> get props => <Object?>[...super.props];
+
+  @override
+  Map<String, Object?> toJson() => _$VectorNodeToJson(this);
 }

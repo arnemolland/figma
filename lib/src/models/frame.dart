@@ -1,320 +1,475 @@
-// ignore_for_file: lines_longer_than_80_chars
+// Generated from v0.33.0 of the Figma REST API specification
 
-import 'package:figma/src/converters/converters.dart';
-import 'package:figma/src/models.dart';
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:meta/meta.dart';
+
+import 'blend_mode.dart';
+import 'counter_axis_align_content.dart';
+import 'counter_axis_align_items.dart';
+import 'counter_axis_sizing_mode.dart';
+import 'dev_status.dart';
+import 'easing_type.dart';
+import 'effect.dart';
+import 'export_setting.dart';
+import 'frame_traits.dart';
+import 'grid_child_align.dart';
+import 'interaction.dart';
+import 'layer_trait_variables.dart';
+import 'layout_align.dart';
+import 'layout_constraint.dart';
+import 'layout_grid.dart';
+import 'layout_grow.dart';
+import 'layout_mode.dart';
+import 'layout_positioning.dart';
+import 'layout_sizing.dart';
+import 'layout_wrap.dart';
+import 'mask_type.dart';
+import 'node_type.dart';
+import 'overflow_direction.dart';
+import 'paint.dart';
+import 'paint_override.dart';
+import 'path.dart';
+import 'primary_axis_align_items.dart';
+import 'primary_axis_sizing_mode.dart';
+import 'rectangle.dart';
+import 'scroll_behavior.dart';
+import 'stroke_align.dart';
+import 'stroke_cap.dart';
+import 'stroke_join.dart';
+import 'stroke_weights.dart';
+import 'sub_canvas_node.dart';
+import 'transform.dart';
+import 'vector.dart';
 
 part 'frame.g.dart';
 
-/// A Figma frame.
-@JsonSerializable()
-class Frame extends Node {
-  /// An array of nodes that are direct children of this node.
-  @NodeJsonConverter()
-  final List<Node?>? children;
-
-  /// If true, layer is locked and cannot be edited.
-  @JsonKey(defaultValue: false)
-  final bool locked;
-
-  /// An array of fill paints applied to the node.
-  @JsonKey(defaultValue: [])
-  final List<Paint> fills;
-
-  /// An array of stroke paints applied to the node.
-  @JsonKey(defaultValue: [])
-  final List<Paint> strokes;
-
-  /// The weight of strokes on the node.
-  final double? strokeWeight;
-
-  /// The weight of strokes on the node per side, if they vary.
-  final StrokeWeights? individualStrokeWeights;
-
-  /// Position of stroke relative to vector outline, as a string enum.
-  final StrokeAlign? strokeAlign;
-
-  /// Radius of each corner of the frame if a single radius is set for all corners.
-  final double? cornerRadius;
-
-  /// Array of length 4 of the radius of each corner of the frame,
-  /// starting in the top left and proceeding clockwise.
-  final List<double>? rectangleCornerRadii;
-
-  /// An array of export settings representing images to export from node.
-  @JsonKey(defaultValue: [])
-  final List<ExportSetting> exportSettings;
-
-  /// How this node blends with nodes behind it in the scene.
-  final BlendMode? blendMode;
-
-  /// Keep height and width constrained to same ratio.
-  @JsonKey(defaultValue: false)
-  final bool preserveRatio;
-
-  /// This property is applicable only for direct children of auto-layout frames,
-  /// ignored otherwise. Determines whether a layer should stretch along the parent’s
-  /// primary axis. A `0` corresponds to a fixed size and `1` corresponds to stretch.
-  @JsonKey(defaultValue: 0.0)
-  final double layoutGrow;
-
-  /// Horizontal and vertical layout constraints for node.
-  final LayoutConstraint? constraints;
-
-  /// How the layer is aligned inside an auto-layout frame.
-  /// This property is only provided for direct children
-  /// of auto-layout frames.
-  ///
-  /// In horizontal auto-layout frames, "MIN" and "MAX" correspond to
-  /// "TOP" and "BOTTOM". In vertical auto-layout frames, "MIN" and "MAX"
-  /// correspond to "LEFT" and "RIGHT".
-  final LayoutAlign? layoutAlign;
-
-  /// Node ID of node to transition to in prototyping.
-  final String? transitionNodeID;
-
-  /// The duration of the prototyping transition on this node (in milliseconds).
-  final double? transitionDuration;
-
-  /// Opacity of the node.
-  @JsonKey(defaultValue: 1.0)
-  final double opacity;
-
-  /// Bounding box of the node in absolute space coordinates.
-  final Rectangle? absoluteBoundingBox;
-
-  /// The bounds of the rendered node in the file in absolute space coordinates.
-  final Rectangle? absoluteRenderBounds;
-
-  /// Width and height of element. This is different from the width and height
-  /// of the bounding box in that the absolute bounding box represents the
-  /// element after scaling and rotation. Only present if geometry=paths
-  /// is passed.
-  final Vector? size;
-
-  /// The top two rows of a matrix that represents the 2D transform of this
-  /// node relative to its parent. The bottom row of the matrix is implicitly
-  /// always (0, 0, 1). Use to transform coordinates in geometry. Only present
-  /// if `geometry=paths` is passed.
-  final List<List<double>>? relativeTransform;
-
-  /// Whether or not this node clip content outside of its bounds.
-  final bool? clipsContent;
-
-  /// Whether this layer uses auto-layout to position its children.
-  @JsonKey(defaultValue: LayoutMode.none)
-  final LayoutMode? layoutMode;
-
-  /// Whether the counter axis has a fixed length (determined by the user)
-  /// or an automatic length (determined by the layout engine). This property
-  /// is only applicable for auto-layout frames.
-  @JsonKey(defaultValue: CounterAxisSizingMode.auto)
-  final CounterAxisSizingMode counterAxisSizingMode;
-
-  /// Whether the primary axis has a fixed length (determined by the user) or
-  /// an automatic length (determined by the layout engine). This property is
-  /// only applicable for auto-layout frames.
-  @JsonKey(defaultValue: PrimaryAxisSizingMode.auto)
-  final PrimaryAxisSizingMode primaryAxisSizingMode;
-
-  /// Determines how the auto-layout frame’s children should be aligned in
-  /// the primary axis direction. This property is only applicable for
-  /// auto-layout frames.
-  @JsonKey(defaultValue: PrimaryAxisAlignItems.min)
-  final PrimaryAxisAlignItems primaryAxisAlignItems;
-
-  /// Determines how the auto-layout frame’s children should be aligned in
-  /// the counter axis direction. This property is only applicable for
-  /// auto-layout frames.
-  @JsonKey(defaultValue: CounterAxisAlignItems.min)
-  final CounterAxisAlignItems counterAxisAlignItems;
-
-  /// The padding between the left border of the frame and its children.
-  /// This property is only applicable for auto-layout frames.
-  @JsonKey(defaultValue: 0.0)
-  final double paddingLeft;
-
-  /// The padding between the top border of the frame and its children.
-  /// This property is only applicable for auto-layout frames.
-  @JsonKey(defaultValue: 0.0)
-  final double paddingTop;
-
-  /// The padding between the right border of the frame and its children.
-  /// This property is only applicable for auto-layout frames.
-  @JsonKey(defaultValue: 0.0)
-  final double paddingRight;
-
-  /// The padding between the bottom border of the frame and its children.
-  /// This property is only applicable for auto-layout frames.
-  @JsonKey(defaultValue: 0.0)
-  final double paddingBottom;
-
-  /// The horizontal padding between the borders of the frame and its children.
-  /// This property is only applicable for auto-layout frames.
-  @JsonKey(defaultValue: 0.0)
-  final double horizontalPadding;
-
-  /// The vertical padding between the borders of the frame and its children.
-  /// This property is only applicable for auto-layout frames.
-  @JsonKey(defaultValue: 0.0)
-  final double verticalPadding;
-
-  /// The distance between children of the frame.
-  /// This property is only applicable for auto-layout frames.
-  @JsonKey(defaultValue: 0.0)
-  final double itemSpacing;
-
-  /// Determines whether a layer's size and position should be determined by
-  /// auto-layout settings or manually adjustable.
-  @JsonKey(defaultValue: LayoutPositioning.auto)
-  final LayoutPositioning layoutPositioning;
-
-  /// Determines the canvas stacking order of layers in this frame. When true,
-  /// the first layer will be draw on top. This property is only applicable
-  /// for auto-layout frames.
-  @JsonKey(defaultValue: false)
-  final bool itemReverseZIndex;
-
-  /// Determines whether strokes are included in layout calculations. When true,
-  /// auto-layout frames behave like css "box-sizing: border-box". This property
-  /// is only applicable for auto-layout frames.
-  @JsonKey(defaultValue: false)
-  final bool strokesIncludedInLayout;
-
-  /// An array of layout grids attached to this node. [Group] nodes do not
-  /// have this attribute.
-  @JsonKey(defaultValue: [])
-  final List<LayoutGrid> layoutGrids;
-
-  /// Defines the scrolling behavior of the frame, if there exist contents
-  /// outside of the frame boundaries. The frame can either scroll vertically,
-  /// horizontally, or in both directions to the extents of the content
-  /// contained within it. This behavior can be observed in a prototype.
-  @JsonKey(defaultValue: OverflowDirection.none)
-  final OverflowDirection overflowDirection;
-
-  /// An array of effects attached to this node.
-  @JsonKey(defaultValue: [])
-  final List<Effect> effects;
-
-  /// Does this node mask sibling nodes in front of it?
-  @JsonKey(defaultValue: false)
-  final bool isMask;
-
-  /// Does this mask ignore fill style (like gradients) and effects?
-  @JsonKey(defaultValue: false)
-  final bool isMaskOutline;
-
-  /// A mapping of a StyleType to style ID (see [Style]) of styles present on
-  /// this node. The style ID can be used to look up more information about the
-  /// style in the top-level styles field.
-  final Map<StyleTypeKey, String>? styles;
-
+@JsonSerializable(explicitToJson: true)
+@CopyWith()
+@immutable
+class Frame extends SubCanvasNode with FrameTraits {
   const Frame({
-    required super.id,
-    required super.visible,
-    super.componentPropertyReferences,
-    super.name,
-    super.rotation,
-    super.pluginData,
-    super.sharedPluginData,
-    super.type,
-    required this.locked,
-    required this.fills,
-    required this.strokes,
-    required this.exportSettings,
+    required this.id,
+    required this.name,
+    this.visible = true,
+    this.locked = false,
+    required this.scrollBehavior,
+    this.rotation = 0,
+    this.componentPropertyReferences = const {},
+    this.pluginData,
+    this.sharedPluginData,
+    this.boundVariables = const LayerTraitVariables(),
+    this.explicitVariableModes = const {},
+    required this.blendMode,
+    this.opacity = 1,
     required this.children,
-    required this.opacity,
-    required this.primaryAxisAlignItems,
-    required this.counterAxisAlignItems,
-    required this.primaryAxisSizingMode,
-    required this.counterAxisSizingMode,
-    required this.paddingBottom,
-    required this.paddingLeft,
-    required this.paddingRight,
-    required this.paddingTop,
-    required this.horizontalPadding,
-    required this.verticalPadding,
-    required this.itemSpacing,
-    required this.layoutGrids,
-    required this.overflowDirection,
-    required this.effects,
-    required this.isMask,
-    required this.isMaskOutline,
-    required this.layoutPositioning,
-    required this.itemReverseZIndex,
-    required this.strokesIncludedInLayout,
-    required this.preserveRatio,
-    required this.layoutGrow,
     this.absoluteBoundingBox,
     this.absoluteRenderBounds,
-    this.size,
-    this.strokeWeight,
-    this.individualStrokeWeights,
-    this.strokeAlign,
-    this.cornerRadius,
-    this.rectangleCornerRadii,
-    this.blendMode,
+    this.preserveRatio = false,
     this.constraints,
-    this.layoutAlign,
-    this.transitionNodeID,
-    this.transitionDuration,
     this.relativeTransform,
-    this.clipsContent,
-    this.layoutMode,
-    this.styles,
+    this.size,
+    this.layoutAlign,
+    this.layoutGrow = LayoutGrow.fixed,
+    this.layoutPositioning = LayoutPositioning.auto,
+    this.minWidth = 0,
+    this.maxWidth = 0,
+    this.minHeight = 0,
+    this.maxHeight = 0,
+    this.layoutSizingHorizontal,
+    this.layoutSizingVertical,
+    this.gridRowCount,
+    this.gridColumnCount,
+    this.gridRowGap = 0,
+    this.gridColumnGap = 0,
+    this.gridColumnsSizing,
+    this.gridRowsSizing,
+    this.gridChildHorizontalAlign,
+    this.gridChildVerticalAlign,
+    this.gridRowSpan = 1,
+    this.gridColumnSpan = 1,
+    this.gridRowAnchorIndex = 0,
+    this.gridColumnAnchorIndex = 0,
+    required this.clipsContent,
+    this.layoutGrids = const [],
+    this.overflowDirection = OverflowDirection.none,
+    this.layoutMode = LayoutMode.none,
+    this.primaryAxisSizingMode = PrimaryAxisSizingMode.auto,
+    this.counterAxisSizingMode = CounterAxisSizingMode.auto,
+    this.primaryAxisAlignItems = PrimaryAxisAlignItems.min,
+    this.counterAxisAlignItems = CounterAxisAlignItems.min,
+    this.paddingLeft = 0,
+    this.paddingRight = 0,
+    this.paddingTop = 0,
+    this.paddingBottom = 0,
+    this.itemSpacing = 0,
+    this.itemReverseZIndex = false,
+    this.strokesIncludedInLayout = false,
+    this.layoutWrap,
+    this.counterAxisSpacing,
+    this.counterAxisAlignContent = CounterAxisAlignContent.auto,
+    this.cornerRadius = 0,
+    this.cornerSmoothing = 0,
+    this.rectangleCornerRadii = const [],
+    required this.fills,
+    this.styles = const {},
+    this.strokes = const [],
+    this.strokeWeight = 1,
+    this.strokeAlign,
+    this.strokeJoin = StrokeJoin.miter,
+    this.strokeDashes = const [],
+    this.fillOverrideTable = const {},
+    this.fillGeometry = const [],
+    this.strokeGeometry = const [],
+    this.strokeCap = StrokeCap.none,
+    this.strokeMiterAngle = 28.96,
+    this.exportSettings = const [],
+    required this.effects,
+    this.isMask = false,
+    this.maskType,
+    this.transitionNodeId,
+    this.transitionDuration,
+    this.transitionEasing,
+    this.interactions = const [],
+    this.individualStrokeWeights,
+    this.devStatus,
   });
 
-  @override
-  List<Object?> get props => [
-    ...super.props,
-    children,
-    locked,
-    fills,
-    strokes,
-    strokeWeight,
-    individualStrokeWeights,
-    strokeAlign,
-    cornerRadius,
-    rectangleCornerRadii,
-    exportSettings,
-    blendMode,
-    preserveRatio,
-    layoutGrow,
-    constraints,
-    layoutAlign,
-    transitionNodeID,
-    transitionDuration,
-    opacity,
-    absoluteBoundingBox,
-    size,
-    relativeTransform,
-    clipsContent,
-    layoutMode,
-    primaryAxisSizingMode,
-    primaryAxisAlignItems,
-    counterAxisSizingMode,
-    counterAxisAlignItems,
-    paddingTop,
-    paddingLeft,
-    paddingRight,
-    paddingBottom,
-    horizontalPadding,
-    verticalPadding,
-    itemSpacing,
-    layoutGrids,
-    overflowDirection,
-    effects,
-    isMask,
-    isMaskOutline,
-    layoutPositioning,
-    itemReverseZIndex,
-    strokesIncludedInLayout,
-    styles,
-  ];
-
-  factory Frame.fromJson(Map<String, dynamic> json) => _$FrameFromJson(json);
+  factory Frame.fromJson(Map<String, Object?> json) => _$FrameFromJson(json);
 
   @override
-  Map<String, dynamic> toJson() => _$FrameToJson(this);
+  final String id;
+
+  @override
+  final String name;
+
+  @JsonKey(defaultValue: true)
+  @override
+  final bool visible;
+
+  @JsonKey(defaultValue: false)
+  @override
+  final bool locked;
+
+  @override
+  final ScrollBehavior scrollBehavior;
+
+  @JsonKey(defaultValue: 0)
+  @override
+  final num rotation;
+
+  @JsonKey(defaultValue: {})
+  @override
+  final Map<String, String> componentPropertyReferences;
+
+  @JsonKey(includeIfNull: false)
+  @override
+  final Object? pluginData;
+
+  @JsonKey(includeIfNull: false)
+  @override
+  final Object? sharedPluginData;
+
+  @override
+  final LayerTraitVariables boundVariables;
+
+  @JsonKey(defaultValue: {})
+  @override
+  final Map<String, String> explicitVariableModes;
+
+  @override
+  final BlendMode blendMode;
+
+  @JsonKey(defaultValue: 1)
+  @override
+  final num opacity;
+
+  @override
+  final List<SubCanvasNode> children;
+
+  @override
+  final Rectangle? absoluteBoundingBox;
+
+  @override
+  final Rectangle? absoluteRenderBounds;
+
+  @JsonKey(defaultValue: false)
+  @override
+  final bool preserveRatio;
+
+  @JsonKey(includeIfNull: false)
+  @override
+  final LayoutConstraint? constraints;
+
+  @JsonKey(includeIfNull: false)
+  @override
+  final Transform? relativeTransform;
+
+  @JsonKey(includeIfNull: false)
+  @override
+  final Vector? size;
+
+  @JsonKey(includeIfNull: false)
+  @override
+  final LayoutAlign? layoutAlign;
+
+  @JsonKey(defaultValue: LayoutGrow.fixed)
+  @override
+  final LayoutGrow layoutGrow;
+
+  @JsonKey(defaultValue: LayoutPositioning.auto)
+  @override
+  final LayoutPositioning layoutPositioning;
+
+  @JsonKey(defaultValue: 0)
+  @override
+  final num minWidth;
+
+  @JsonKey(defaultValue: 0)
+  @override
+  final num maxWidth;
+
+  @JsonKey(defaultValue: 0)
+  @override
+  final num minHeight;
+
+  @JsonKey(defaultValue: 0)
+  @override
+  final num maxHeight;
+
+  @JsonKey(includeIfNull: false)
+  @override
+  final LayoutSizing? layoutSizingHorizontal;
+
+  @JsonKey(includeIfNull: false)
+  @override
+  final LayoutSizing? layoutSizingVertical;
+
+  @JsonKey(includeIfNull: false)
+  @override
+  final num? gridRowCount;
+
+  @JsonKey(includeIfNull: false)
+  @override
+  final num? gridColumnCount;
+
+  @JsonKey(defaultValue: 0)
+  @override
+  final num gridRowGap;
+
+  @JsonKey(defaultValue: 0)
+  @override
+  final num gridColumnGap;
+
+  @JsonKey(includeIfNull: false)
+  @override
+  final String? gridColumnsSizing;
+
+  @JsonKey(includeIfNull: false)
+  @override
+  final String? gridRowsSizing;
+
+  @JsonKey(includeIfNull: false)
+  @override
+  final GridChildAlign? gridChildHorizontalAlign;
+
+  @JsonKey(includeIfNull: false)
+  @override
+  final GridChildAlign? gridChildVerticalAlign;
+
+  @JsonKey(defaultValue: 1)
+  @override
+  final num gridRowSpan;
+
+  @JsonKey(defaultValue: 1)
+  @override
+  final num gridColumnSpan;
+
+  @JsonKey(defaultValue: 0)
+  @override
+  final num gridRowAnchorIndex;
+
+  @JsonKey(defaultValue: 0)
+  @override
+  final num gridColumnAnchorIndex;
+
+  @override
+  final bool clipsContent;
+
+  @JsonKey(defaultValue: [])
+  @override
+  final List<LayoutGrid> layoutGrids;
+
+  @JsonKey(defaultValue: OverflowDirection.none)
+  @override
+  final OverflowDirection overflowDirection;
+
+  @JsonKey(defaultValue: LayoutMode.none)
+  @override
+  final LayoutMode layoutMode;
+
+  @JsonKey(defaultValue: PrimaryAxisSizingMode.auto)
+  @override
+  final PrimaryAxisSizingMode primaryAxisSizingMode;
+
+  @JsonKey(defaultValue: CounterAxisSizingMode.auto)
+  @override
+  final CounterAxisSizingMode counterAxisSizingMode;
+
+  @JsonKey(defaultValue: PrimaryAxisAlignItems.min)
+  @override
+  final PrimaryAxisAlignItems primaryAxisAlignItems;
+
+  @JsonKey(defaultValue: CounterAxisAlignItems.min)
+  @override
+  final CounterAxisAlignItems counterAxisAlignItems;
+
+  @JsonKey(defaultValue: 0)
+  @override
+  final num paddingLeft;
+
+  @JsonKey(defaultValue: 0)
+  @override
+  final num paddingRight;
+
+  @JsonKey(defaultValue: 0)
+  @override
+  final num paddingTop;
+
+  @JsonKey(defaultValue: 0)
+  @override
+  final num paddingBottom;
+
+  @JsonKey(defaultValue: 0)
+  @override
+  final num itemSpacing;
+
+  @JsonKey(defaultValue: false)
+  @override
+  final bool itemReverseZIndex;
+
+  @JsonKey(defaultValue: false)
+  @override
+  final bool strokesIncludedInLayout;
+
+  @JsonKey(includeIfNull: false)
+  @override
+  final LayoutWrap? layoutWrap;
+
+  @JsonKey(includeIfNull: false)
+  @override
+  final num? counterAxisSpacing;
+
+  @JsonKey(defaultValue: CounterAxisAlignContent.auto)
+  @override
+  final CounterAxisAlignContent counterAxisAlignContent;
+
+  @JsonKey(defaultValue: 0)
+  @override
+  final num cornerRadius;
+
+  @JsonKey(defaultValue: 0)
+  @override
+  final num cornerSmoothing;
+
+  @JsonKey(defaultValue: [])
+  @override
+  final List<num> rectangleCornerRadii;
+
+  @override
+  final List<Paint> fills;
+
+  @JsonKey(defaultValue: {})
+  @override
+  final Map<String, String> styles;
+
+  @JsonKey(defaultValue: [])
+  @override
+  final List<Paint> strokes;
+
+  @JsonKey(defaultValue: 1)
+  @override
+  final num strokeWeight;
+
+  @JsonKey(includeIfNull: false)
+  @override
+  final StrokeAlign? strokeAlign;
+
+  @JsonKey(defaultValue: StrokeJoin.miter)
+  @override
+  final StrokeJoin strokeJoin;
+
+  @JsonKey(defaultValue: [])
+  @override
+  final List<num> strokeDashes;
+
+  @JsonKey(defaultValue: {})
+  @override
+  final Map<String, PaintOverride?> fillOverrideTable;
+
+  @JsonKey(defaultValue: [])
+  @override
+  final List<Path> fillGeometry;
+
+  @JsonKey(defaultValue: [])
+  @override
+  final List<Path> strokeGeometry;
+
+  @JsonKey(defaultValue: StrokeCap.none)
+  @override
+  final StrokeCap strokeCap;
+
+  @JsonKey(defaultValue: 28.96)
+  @override
+  final num strokeMiterAngle;
+
+  @JsonKey(defaultValue: [])
+  @override
+  final List<ExportSetting> exportSettings;
+
+  @override
+  final List<Effect> effects;
+
+  @JsonKey(defaultValue: false)
+  @override
+  final bool isMask;
+
+  @JsonKey(includeIfNull: false)
+  @override
+  final MaskType? maskType;
+
+  @JsonKey(name: 'transitionNodeID', includeIfNull: false)
+  @override
+  final String? transitionNodeId;
+
+  @JsonKey(includeIfNull: false)
+  @override
+  final num? transitionDuration;
+
+  @JsonKey(includeIfNull: false)
+  @override
+  final EasingType? transitionEasing;
+
+  @JsonKey(defaultValue: [])
+  @override
+  final List<Interaction> interactions;
+
+  @JsonKey(includeIfNull: false)
+  @override
+  final StrokeWeights? individualStrokeWeights;
+
+  @JsonKey(includeIfNull: false)
+  @override
+  final DevStatus? devStatus;
+
+  /// The type of this node, represented by the string literal "FRAME".
+  @JsonKey(includeToJson: true)
+  @override
+  NodeType get type => NodeType.frame;
+
+  @override
+  List<Object?> get props => <Object?>[...super.props];
+
+  @override
+  Map<String, Object?> toJson() => _$FrameToJson(this);
 }

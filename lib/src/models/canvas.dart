@@ -1,62 +1,142 @@
-import 'package:figma/src/converters/converters.dart';
-import 'package:figma/src/models.dart';
+// Generated from v0.33.0 of the Figma REST API specification
+
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:meta/meta.dart';
+
+import 'export_setting.dart';
+import 'flow_starting_point.dart';
+import 'has_export_settings_trait.dart';
+import 'is_layer_trait.dart';
+import 'layer_trait_variables.dart';
+import 'measurement.dart';
+import 'node.dart';
+import 'node_type.dart';
+import 'prototype_device.dart';
+import 'rgba.dart';
+import 'scroll_behavior.dart';
+import 'sub_canvas_node.dart';
 
 part 'canvas.g.dart';
 
-/// A Canvas node represents a Page in a Figma File.
-/// A Canvas node can then have any number of nodes as its children.
-/// Each subtree stemming from a Canvas node will represent a layer
-/// (e.g an object) on the Canvas.
-@JsonSerializable()
-class Canvas extends Node {
-  /// An array of top level layers on the canvas.
-  @NodeJsonConverter()
-  final List<Node?>? children;
-
-  /// Background color of the canvas.
-  final Rgba? backgroundColor;
-
-  /// An array of export settings representing images to export from the canvas.
-  @JsonKey(defaultValue: [])
-  final List<ExportSetting> exportSettings;
-
-  /// An array of starting points for flows attached to the canvas.
-  @JsonKey(defaultValue: [])
-  final List<FlowStartingPoint> flowStartingPoints;
-
-  /// The device that this canvas is a prototype for.
-  final PrototypeDevice prototypeDevice;
-
+@JsonSerializable(explicitToJson: true)
+@CopyWith()
+@immutable
+class Canvas extends Node with IsLayerTrait, HasExportSettingsTrait {
   const Canvas({
-    required super.id,
-    required super.visible,
-    super.componentPropertyReferences,
-    super.name,
-    super.rotation,
-    super.pluginData,
-    super.sharedPluginData,
-    super.type,
-    required this.prototypeDevice,
+    required this.id,
+    required this.name,
+    this.visible = true,
+    this.locked = false,
+    required this.scrollBehavior,
+    this.rotation = 0,
+    this.componentPropertyReferences = const {},
+    this.pluginData,
+    this.sharedPluginData,
+    this.boundVariables = const LayerTraitVariables(),
+    this.explicitVariableModes = const {},
+    this.exportSettings = const [],
+    required this.children,
+    required this.backgroundColor,
     required this.flowStartingPoints,
-    required this.exportSettings,
-    this.children,
-    this.backgroundColor,
+    required this.prototypeDevice,
+    this.prototypeBackgrounds = const [],
+    this.measurements = const [],
   });
 
+  factory Canvas.fromJson(Map<String, Object?> json) => _$CanvasFromJson(json);
+
   @override
-  List<Object?> get props => [
+  final String id;
+
+  @override
+  final String name;
+
+  @JsonKey(defaultValue: true)
+  @override
+  final bool visible;
+
+  @JsonKey(defaultValue: false)
+  @override
+  final bool locked;
+
+  @override
+  final ScrollBehavior scrollBehavior;
+
+  @JsonKey(defaultValue: 0)
+  @override
+  final num rotation;
+
+  @JsonKey(defaultValue: {})
+  @override
+  final Map<String, String> componentPropertyReferences;
+
+  @JsonKey(includeIfNull: false)
+  @override
+  final Object? pluginData;
+
+  @JsonKey(includeIfNull: false)
+  @override
+  final Object? sharedPluginData;
+
+  @override
+  final LayerTraitVariables boundVariables;
+
+  @JsonKey(defaultValue: {})
+  @override
+  final Map<String, String> explicitVariableModes;
+
+  @JsonKey(defaultValue: [])
+  @override
+  final List<ExportSetting> exportSettings;
+
+  final List<SubCanvasNode> children;
+
+  /// Background color of the canvas.
+  final Rgba backgroundColor;
+
+  /// An array of flow starting points sorted by its position in the prototype
+  /// settings panel.
+  final List<FlowStartingPoint> flowStartingPoints;
+
+  /// The device used to view a prototype.
+  final PrototypeDevice prototypeDevice;
+
+  /// The background color of the prototype (currently only supports a single
+  /// solid color paint).
+  @JsonKey(defaultValue: [])
+  final List<Rgba> prototypeBackgrounds;
+
+  @JsonKey(defaultValue: [])
+  final List<Measurement> measurements;
+
+  @JsonKey(includeToJson: true)
+  @override
+  NodeType get type => NodeType.canvas;
+
+  @override
+  List<Object?> get props => <Object?>[
     ...super.props,
     children,
     backgroundColor,
-    exportSettings,
     flowStartingPoints,
     prototypeDevice,
+    prototypeBackgrounds,
+    measurements,
+    id,
+    name,
+    visible,
+    locked,
+    scrollBehavior,
+    rotation,
+    componentPropertyReferences,
+    pluginData,
+    sharedPluginData,
+    boundVariables,
+    explicitVariableModes,
+    exportSettings,
   ];
 
   @override
-  factory Canvas.fromJson(Map<String, dynamic> json) => _$CanvasFromJson(json);
-
-  @override
-  Map<String, dynamic> toJson() => _$CanvasToJson(this);
+  Map<String, Object?> toJson() => _$CanvasToJson(this);
 }

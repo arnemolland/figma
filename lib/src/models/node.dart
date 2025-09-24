@@ -1,69 +1,36 @@
-import 'package:copy_with_extension/copy_with_extension.dart';
+// Generated from v0.33.0 of the Figma REST API specification
+
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:meta/meta.dart';
+
+import 'canvas.dart';
+import 'document.dart';
+import 'node_type.dart';
+import 'sub_canvas_node.dart';
 
 part 'node.g.dart';
 
-/// A generic node in the document.
-@JsonSerializable()
-@CopyWith()
-class Node extends Equatable {
-  /// A string uniquely identifying this node within the document.
-  final String id;
+@JsonSerializable(createFactory: false)
+@immutable
+abstract class Node extends Equatable {
+  const Node();
 
-  /// The name given to the node by the user in the tool.
-  final String? name;
+  factory Node.fromJson(Map<String, Object?> json) {
+    final discriminator = json['type'];
+    final construct = switch (discriminator) {
+      'DOCUMENT' => Document.fromJson,
+      'CANVAS' => Canvas.fromJson,
+      _ => SubCanvasNode.fromJson,
+    };
 
-  /// Whether or not the node is visible on the canvas.
-  @JsonKey(defaultValue: true)
-  final bool visible;
+    return construct(json);
+  }
 
-  /// The type of the node. This is usually the same as the Node subtype classes
-  /// (e.g. [Frame], [Component] etc.), but can be different in the case of
-  /// foreign nodes.
-  final String? type;
-
-  /// Data written by plugins that is visible only to the plugin that wrote
-  /// it. Requires the `pluginData` to include the ID of the plugin.
-  final dynamic pluginData;
-
-  /// Data written by plugins that is visible to all plugins. Requires the
-  /// `pluginData` parameter to include the string "shared".
-  final dynamic sharedPluginData;
-
-  /// The rotation of the node, if not 0.
-  final double? rotation;
-
-  /// A mapping of a layer's property to component property name of component
-  /// properties attached to this node. The component property name can be used
-  /// to look up more information on the corresponding component's or component
-  /// set's componentPropertyDefinitions.
-  final Map<String, String>? componentPropertyReferences;
-
-  const Node({
-    required this.id,
-    this.name,
-    required this.visible,
-    this.type,
-    this.pluginData,
-    this.sharedPluginData,
-    this.rotation,
-    this.componentPropertyReferences,
-  });
-
+  /// Discriminator for [Node] types.
+  NodeType get type;
   @override
-  List<Object?> get props => [
-    id,
-    name,
-    visible,
-    type,
-    pluginData,
-    sharedPluginData,
-    rotation,
-    componentPropertyReferences,
-  ];
+  List<Object?> get props => <Object?>[type];
 
-  factory Node.fromJson(Map<String, dynamic> json) => _$NodeFromJson(json);
-
-  Map<String, dynamic> toJson() => _$NodeToJson(this);
+  Map<String, Object?> toJson() => _$NodeToJson(this);
 }
