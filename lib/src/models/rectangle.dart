@@ -1,72 +1,41 @@
-import 'package:figma/src/models.dart';
+// Generated from v0.33.0 of the Figma REST API specification
+
+import 'package:copy_with_extension/copy_with_extension.dart';
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:meta/meta.dart';
 
 part 'rectangle.g.dart';
 
-/// A rectangle is a rectangular-shaped vector that has a width and height and
-/// may have rounded corners.
+/// A rectangle that expresses a bounding box in absolute coordinates.
 @JsonSerializable()
-class Rectangle extends Vector {
-  /// Radius of each corner of the rectangle if
-  /// a single radius is set for all corners.
-  final double? cornerRadius;
-
-  /// Array of length 4 of the radius of each corner of the rectangle,
-  /// starting in the top left and proceeding clockwise.
-  final List<double>? rectangleCornerRadii;
-
+@CopyWith()
+@immutable
+class Rectangle extends Equatable {
   const Rectangle({
-    required super.id,
-    required super.visible,
-    required super.locked,
-    required super.exportSettings,
-    required super.preserveRatio,
-    required super.layoutGrow,
-    required super.opacity,
-    required super.isMask,
-    required super.fills,
-    required super.fillGeometry,
-    required super.strokes,
-    required super.strokeCap,
-    required super.strokeJoin,
-    required super.strokeDashes,
-    required super.strokeMiterAngle,
-    super.componentPropertyReferences,
-    super.name,
-    super.rotation,
-    super.pluginData,
-    super.sharedPluginData,
-    super.blendMode,
-    super.layoutAlign,
-    super.constraints,
-    super.transitionNodeID,
-    super.transitionDuration,
-    super.transitionEasing,
-    super.absoluteBoundingBox,
-    super.effects,
-    super.size,
-    super.relativeTransform,
-    super.strokeWeight,
-    super.strokeGeometry,
-    super.strokeAlign,
-    super.styles,
-    super.absoluteRenderBounds,
-    super.fillOverrideTable,
-    super.individualStrokeWeights,
-    this.cornerRadius,
-    this.rectangleCornerRadii,
+    required this.x,
+    required this.y,
+    required this.width,
+    required this.height,
   });
 
-  @override
-  List<Object?> get props => [
-    ...super.props,
-    cornerRadius,
-    rectangleCornerRadii,
-  ];
-
-  factory Rectangle.fromJson(Map<String, dynamic> json) =>
+  factory Rectangle.fromJson(Map<String, Object?> json) =>
       _$RectangleFromJson(json);
 
+  /// X coordinate of top left corner of the rectangle.
+  final num x;
+
+  /// Y coordinate of top left corner of the rectangle.
+  final num y;
+
+  /// Width of the rectangle.
+  final num width;
+
+  /// Height of the rectangle.
+  final num height;
+
   @override
-  Map<String, dynamic> toJson() => _$RectangleToJson(this);
+  List<Object?> get props => <Object?>[x, y, width, height];
+
+  Map<String, Object?> toJson() => _$RectangleToJson(this);
 }

@@ -36,7 +36,7 @@ Canvas _$CanvasFromJson(Map<String, dynamic> json) => Canvas(
       .toList(),
   backgroundColor: json['backgroundColor'] == null
       ? null
-      : Color.fromJson(json['backgroundColor'] as Map<String, dynamic>),
+      : Rgba.fromJson(json['backgroundColor'] as Map<String, dynamic>),
 );
 
 Map<String, dynamic> _$CanvasToJson(Canvas instance) => <String, dynamic>{

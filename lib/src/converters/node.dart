@@ -19,11 +19,11 @@ class NodeJsonConverter implements JsonConverter<Node?, Object?> {
       case 'FRAME':
         return Frame.fromJson(json);
       case 'VECTOR':
-        return Vector.fromJson(json);
+        return VectorNode.fromJson(json);
       case 'STAR':
         return Star.fromJson(json);
       case 'BOOLEAN_OPERATION':
-        return BooleanOperation.fromJson(json);
+        return BooleanOperationNode.fromJson(json);
       case 'COMPONENT':
         return ComponentNode.fromJson(json);
       case 'COMPONENT_SET':
@@ -37,7 +37,7 @@ class NodeJsonConverter implements JsonConverter<Node?, Object?> {
       case 'GROUP':
         return Group.fromJson(json);
       case 'RECTANGLE':
-        return Rectangle.fromJson(json);
+        return RectangleNode.fromJson(json);
       case 'REGULAR_POLYGON':
         return RegularPolygon.fromJson(json);
       case 'SLICE':

@@ -69,15 +69,13 @@ RegularPolygon _$RegularPolygonFromJson(
   ),
   absoluteBoundingBox: json['absoluteBoundingBox'] == null
       ? null
-      : SizeRectangle.fromJson(
-          json['absoluteBoundingBox'] as Map<String, dynamic>,
-        ),
+      : Rectangle.fromJson(json['absoluteBoundingBox'] as Map<String, dynamic>),
   effects: (json['effects'] as List<dynamic>?)
       ?.map((e) => Effect.fromJson(e as Map<String, dynamic>))
       .toList(),
   size: json['size'] == null
       ? null
-      : Vector2D.fromJson(json['size'] as Map<String, dynamic>),
+      : Vector.fromJson(json['size'] as Map<String, dynamic>),
   relativeTransform: (json['relativeTransform'] as List<dynamic>?)
       ?.map(
         (e) => (e as List<dynamic>).map((e) => (e as num).toDouble()).toList(),
@@ -91,7 +89,7 @@ RegularPolygon _$RegularPolygonFromJson(
   ),
   absoluteRenderBounds: json['absoluteRenderBounds'] == null
       ? null
-      : SizeRectangle.fromJson(
+      : Rectangle.fromJson(
           json['absoluteRenderBounds'] as Map<String, dynamic>,
         ),
   fillOverrideTable: (json['fillOverrideTable'] as Map<String, dynamic>?)?.map(

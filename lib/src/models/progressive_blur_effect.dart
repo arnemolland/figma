@@ -8,7 +8,7 @@ import 'blur_effect.dart';
 import 'blur_effect_variables.dart';
 import 'blur_type.dart';
 import 'effect_type.dart';
-import 'vector_2d.dart';
+import 'vector.dart';
 
 part 'progressive_blur_effect.g.dart';
 
@@ -33,10 +33,10 @@ class ProgressiveBlurEffect extends BlurEffect {
   final num startRadius;
 
   /// The starting offset of the progressive blur.
-  final Vector2D startOffset;
+  final Vector startOffset;
 
   /// The ending offset of the progressive blur.
-  final Vector2D endOffset;
+  final Vector endOffset;
 
   /// The string literal 'PROGRESSIVE' representing the blur type.
   ///

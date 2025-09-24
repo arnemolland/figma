@@ -4,10 +4,10 @@ import 'package:json_annotation/json_annotation.dart';
 import 'package:meta/meta.dart';
 
 import 'blend_mode.dart';
-import 'color.dart';
 import 'effect_type.dart';
 import 'noise_effect.dart';
 import 'noise_type.dart';
+import 'rgba.dart';
 
 part 'monotone_noise_effect.g.dart';
 

@@ -15,7 +15,7 @@ abstract class _$GradientPaintCWProxy {
 
   GradientPaint type(PaintType type);
 
-  GradientPaint gradientHandlePositions(List<Vector2D> gradientHandlePositions);
+  GradientPaint gradientHandlePositions(List<Vector> gradientHandlePositions);
 
   GradientPaint gradientStops(List<ColorStop> gradientStops);
 
@@ -31,7 +31,7 @@ abstract class _$GradientPaintCWProxy {
     num opacity,
     BlendMode blendMode,
     PaintType type,
-    List<Vector2D> gradientHandlePositions,
+    List<Vector> gradientHandlePositions,
     List<ColorStop> gradientStops,
   });
 }
@@ -56,9 +56,8 @@ class _$GradientPaintCWProxyImpl implements _$GradientPaintCWProxy {
   GradientPaint type(PaintType type) => call(type: type);
 
   @override
-  GradientPaint gradientHandlePositions(
-    List<Vector2D> gradientHandlePositions,
-  ) => call(gradientHandlePositions: gradientHandlePositions);
+  GradientPaint gradientHandlePositions(List<Vector> gradientHandlePositions) =>
+      call(gradientHandlePositions: gradientHandlePositions);
 
   @override
   GradientPaint gradientStops(List<ColorStop> gradientStops) =>
@@ -102,7 +101,7 @@ class _$GradientPaintCWProxyImpl implements _$GradientPaintCWProxy {
               gradientHandlePositions == null
           ? _value.gradientHandlePositions
           // ignore: cast_nullable_to_non_nullable
-          : gradientHandlePositions as List<Vector2D>,
+          : gradientHandlePositions as List<Vector>,
       gradientStops:
           gradientStops == const $CopyWithPlaceholder() || gradientStops == null
           ? _value.gradientStops
@@ -131,7 +130,7 @@ GradientPaint _$GradientPaintFromJson(Map<String, dynamic> json) =>
       type: $enumDecode(_$PaintTypeEnumMap, json['type']),
       gradientHandlePositions:
           (json['gradientHandlePositions'] as List<dynamic>)
-              .map((e) => Vector2D.fromJson(e as Map<String, dynamic>))
+              .map((e) => Vector.fromJson(e as Map<String, dynamic>))
               .toList(),
       gradientStops: (json['gradientStops'] as List<dynamic>)
           .map((e) => ColorStop.fromJson(e as Map<String, dynamic>))

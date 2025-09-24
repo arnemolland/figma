@@ -4,11 +4,11 @@ import 'package:json_annotation/json_annotation.dart';
 import 'package:meta/meta.dart';
 
 import 'blend_mode.dart';
-import 'color.dart';
 import 'effect_type.dart';
+import 'rgba.dart';
 import 'shadow_effect.dart';
 import 'shadow_effect_variables.dart';
-import 'vector_2d.dart';
+import 'vector.dart';
 
 part 'inner_shadow_effect.g.dart';
 

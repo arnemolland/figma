@@ -99,17 +99,15 @@ Frame _$FrameFromJson(Map<String, dynamic> json) => Frame(
   layoutGrow: (json['layoutGrow'] as num?)?.toDouble() ?? 0.0,
   absoluteBoundingBox: json['absoluteBoundingBox'] == null
       ? null
-      : SizeRectangle.fromJson(
-          json['absoluteBoundingBox'] as Map<String, dynamic>,
-        ),
+      : Rectangle.fromJson(json['absoluteBoundingBox'] as Map<String, dynamic>),
   absoluteRenderBounds: json['absoluteRenderBounds'] == null
       ? null
-      : SizeRectangle.fromJson(
+      : Rectangle.fromJson(
           json['absoluteRenderBounds'] as Map<String, dynamic>,
         ),
   size: json['size'] == null
       ? null
-      : Vector2D.fromJson(json['size'] as Map<String, dynamic>),
+      : Vector.fromJson(json['size'] as Map<String, dynamic>),
   strokeWeight: (json['strokeWeight'] as num?)?.toDouble(),
   individualStrokeWeights: json['individualStrokeWeights'] == null
       ? null

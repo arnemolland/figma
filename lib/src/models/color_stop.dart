@@ -5,8 +5,8 @@ import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:meta/meta.dart';
 
-import 'color.dart';
 import 'color_stop_variables.dart';
+import 'rgba.dart';
 
 part 'color_stop.g.dart';
 
@@ -29,7 +29,7 @@ class ColorStop extends Equatable {
   final num position;
 
   /// Color attached to corresponding position.
-  final Color color;
+  final Rgba color;
 
   /// The variables bound to a particular gradient stop.
   final ColorStopVariables boundVariables;

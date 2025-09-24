@@ -1,12 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'star.dart';
+part of 'boolean_operation_node.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-Star _$StarFromJson(Map<String, dynamic> json) => Star(
+BooleanOperationNode _$BooleanOperationNodeFromJson(
+  Map<String, dynamic> json,
+) => BooleanOperationNode(
   id: json['id'] as String,
   visible: json['visible'] as bool? ?? true,
   locked: json['locked'] as bool? ?? false,
@@ -101,9 +103,15 @@ Star _$StarFromJson(Map<String, dynamic> json) => Star(
       : StrokeWeights.fromJson(
           json['individualStrokeWeights'] as Map<String, dynamic>,
         ),
+  children: (json['children'] as List<dynamic>?)
+      ?.map(const NodeJsonConverter().fromJson)
+      .toList(),
+  operation: $enumDecodeNullable(_$BooleanOperationEnumMap, json['operation']),
 );
 
-Map<String, dynamic> _$StarToJson(Star instance) => <String, dynamic>{
+Map<String, dynamic> _$BooleanOperationNodeToJson(
+  BooleanOperationNode instance,
+) => <String, dynamic>{
   'id': instance.id,
   'name': instance.name,
   'visible': instance.visible,
@@ -145,6 +153,8 @@ Map<String, dynamic> _$StarToJson(Star instance) => <String, dynamic>{
   'styles': instance.styles?.map(
     (k, e) => MapEntry(_$StyleTypeKeyEnumMap[k]!, e),
   ),
+  'children': instance.children?.map(const NodeJsonConverter().toJson).toList(),
+  'operation': _$BooleanOperationEnumMap[instance.operation],
 };
 
 const _$StrokeCapEnumMap = {
@@ -230,4 +240,11 @@ const _$StyleTypeKeyEnumMap = {
   StyleTypeKey.text: 'text',
   StyleTypeKey.effect: 'effect',
   StyleTypeKey.grid: 'grid',
+};
+
+const _$BooleanOperationEnumMap = {
+  BooleanOperation.union: 'UNION',
+  BooleanOperation.intersect: 'INTERSECT',
+  BooleanOperation.subtract: 'SUBTRACT',
+  BooleanOperation.exclude: 'EXCLUDE',
 };

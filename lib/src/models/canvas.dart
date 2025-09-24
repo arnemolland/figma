@@ -15,7 +15,7 @@ class Canvas extends Node {
   final List<Node?>? children;
 
   /// Background color of the canvas.
-  final Color? backgroundColor;
+  final Rgba? backgroundColor;
 
   /// An array of export settings representing images to export from the canvas.
   @JsonKey(defaultValue: [])

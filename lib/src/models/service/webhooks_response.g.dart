@@ -9,7 +9,7 @@ part of 'webhooks_response.dart';
 abstract class _$WebhooksResponseCWProxy {
   WebhooksResponse webhooks(List<Webhook>? webhooks);
 
-  WebhooksResponse pagination(Pagination? pagination);
+  WebhooksResponse pagination(ResponsePagination? pagination);
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `WebhooksResponse(...).copyWith.fieldName(value)`.
@@ -18,7 +18,10 @@ abstract class _$WebhooksResponseCWProxy {
   /// ```dart
   /// WebhooksResponse(...).copyWith(id: 12, name: "My name")
   /// ```
-  WebhooksResponse call({List<Webhook>? webhooks, Pagination? pagination});
+  WebhooksResponse call({
+    List<Webhook>? webhooks,
+    ResponsePagination? pagination,
+  });
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -33,7 +36,7 @@ class _$WebhooksResponseCWProxyImpl implements _$WebhooksResponseCWProxy {
       call(webhooks: webhooks);
 
   @override
-  WebhooksResponse pagination(Pagination? pagination) =>
+  WebhooksResponse pagination(ResponsePagination? pagination) =>
       call(pagination: pagination);
 
   @override
@@ -56,7 +59,7 @@ class _$WebhooksResponseCWProxyImpl implements _$WebhooksResponseCWProxy {
       pagination: pagination == const $CopyWithPlaceholder()
           ? _value.pagination
           // ignore: cast_nullable_to_non_nullable
-          : pagination as Pagination?,
+          : pagination as ResponsePagination?,
     );
   }
 }
@@ -79,7 +82,9 @@ WebhooksResponse _$WebhooksResponseFromJson(Map<String, dynamic> json) =>
           .toList(),
       pagination: json['pagination'] == null
           ? null
-          : Pagination.fromJson(json['pagination'] as Map<String, dynamic>),
+          : ResponsePagination.fromJson(
+              json['pagination'] as Map<String, dynamic>,
+            ),
     );
 
 Map<String, dynamic> _$WebhooksResponseToJson(WebhooksResponse instance) =>

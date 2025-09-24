@@ -9,7 +9,7 @@ part of 'color_stop.dart';
 abstract class _$ColorStopCWProxy {
   ColorStop position(num position);
 
-  ColorStop color(Color color);
+  ColorStop color(Rgba color);
 
   ColorStop boundVariables(ColorStopVariables boundVariables);
 
@@ -20,11 +20,7 @@ abstract class _$ColorStopCWProxy {
   /// ```dart
   /// ColorStop(...).copyWith(id: 12, name: "My name")
   /// ```
-  ColorStop call({
-    num position,
-    Color color,
-    ColorStopVariables boundVariables,
-  });
+  ColorStop call({num position, Rgba color, ColorStopVariables boundVariables});
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -38,7 +34,7 @@ class _$ColorStopCWProxyImpl implements _$ColorStopCWProxy {
   ColorStop position(num position) => call(position: position);
 
   @override
-  ColorStop color(Color color) => call(color: color);
+  ColorStop color(Rgba color) => call(color: color);
 
   @override
   ColorStop boundVariables(ColorStopVariables boundVariables) =>
@@ -65,7 +61,7 @@ class _$ColorStopCWProxyImpl implements _$ColorStopCWProxy {
       color: color == const $CopyWithPlaceholder() || color == null
           ? _value.color
           // ignore: cast_nullable_to_non_nullable
-          : color as Color,
+          : color as Rgba,
       boundVariables:
           boundVariables == const $CopyWithPlaceholder() ||
               boundVariables == null
@@ -89,7 +85,7 @@ extension $ColorStopCopyWith on ColorStop {
 
 ColorStop _$ColorStopFromJson(Map<String, dynamic> json) => ColorStop(
   position: json['position'] as num,
-  color: Color.fromJson(json['color'] as Map<String, dynamic>),
+  color: Rgba.fromJson(json['color'] as Map<String, dynamic>),
   boundVariables: json['boundVariables'] == null
       ? const ColorStopVariables()
       : ColorStopVariables.fromJson(

@@ -13,7 +13,7 @@ abstract class _$LayoutGridCWProxy {
 
   LayoutGrid visible(bool visible);
 
-  LayoutGrid color(Color color);
+  LayoutGrid color(Rgba color);
 
   LayoutGrid alignment(LayoutGridAlignment alignment);
 
@@ -36,7 +36,7 @@ abstract class _$LayoutGridCWProxy {
     LayoutGridPattern pattern,
     num sectionSize,
     bool visible,
-    Color color,
+    Rgba color,
     LayoutGridAlignment alignment,
     num gutterSize,
     num offset,
@@ -62,7 +62,7 @@ class _$LayoutGridCWProxyImpl implements _$LayoutGridCWProxy {
   LayoutGrid visible(bool visible) => call(visible: visible);
 
   @override
-  LayoutGrid color(Color color) => call(color: color);
+  LayoutGrid color(Rgba color) => call(color: color);
 
   @override
   LayoutGrid alignment(LayoutGridAlignment alignment) =>
@@ -117,7 +117,7 @@ class _$LayoutGridCWProxyImpl implements _$LayoutGridCWProxy {
       color: color == const $CopyWithPlaceholder() || color == null
           ? _value.color
           // ignore: cast_nullable_to_non_nullable
-          : color as Color,
+          : color as Rgba,
       alignment: alignment == const $CopyWithPlaceholder() || alignment == null
           ? _value.alignment
           // ignore: cast_nullable_to_non_nullable
@@ -160,7 +160,7 @@ LayoutGrid _$LayoutGridFromJson(Map<String, dynamic> json) => LayoutGrid(
   pattern: $enumDecode(_$LayoutGridPatternEnumMap, json['pattern']),
   sectionSize: json['sectionSize'] as num,
   visible: json['visible'] as bool,
-  color: Color.fromJson(json['color'] as Map<String, dynamic>),
+  color: Rgba.fromJson(json['color'] as Map<String, dynamic>),
   alignment: $enumDecode(_$LayoutGridAlignmentEnumMap, json['alignment']),
   gutterSize: json['gutterSize'] as num,
   offset: json['offset'] as num,

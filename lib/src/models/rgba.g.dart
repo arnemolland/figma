@@ -1,64 +1,64 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'color.dart';
+part of 'rgba.dart';
 
 // **************************************************************************
 // CopyWithGenerator
 // **************************************************************************
 
-abstract class _$ColorCWProxy {
-  Color r(num r);
+abstract class _$RgbaCWProxy {
+  Rgba r(num r);
 
-  Color g(num g);
+  Rgba g(num g);
 
-  Color b(num b);
+  Rgba b(num b);
 
-  Color a(num a);
+  Rgba a(num a);
 
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Color(...).copyWith.fieldName(value)`.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Rgba(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
-  /// Color(...).copyWith(id: 12, name: "My name")
+  /// Rgba(...).copyWith(id: 12, name: "My name")
   /// ```
-  Color call({num r, num g, num b, num a});
+  Rgba call({num r, num g, num b, num a});
 }
 
 /// Callable proxy for `copyWith` functionality.
-/// Use as `instanceOfColor.copyWith(...)` or call `instanceOfColor.copyWith.fieldName(value)` for a single field.
-class _$ColorCWProxyImpl implements _$ColorCWProxy {
-  const _$ColorCWProxyImpl(this._value);
+/// Use as `instanceOfRgba.copyWith(...)` or call `instanceOfRgba.copyWith.fieldName(value)` for a single field.
+class _$RgbaCWProxyImpl implements _$RgbaCWProxy {
+  const _$RgbaCWProxyImpl(this._value);
 
-  final Color _value;
-
-  @override
-  Color r(num r) => call(r: r);
+  final Rgba _value;
 
   @override
-  Color g(num g) => call(g: g);
+  Rgba r(num r) => call(r: r);
 
   @override
-  Color b(num b) => call(b: b);
+  Rgba g(num g) => call(g: g);
 
   @override
-  Color a(num a) => call(a: a);
+  Rgba b(num b) => call(b: b);
+
+  @override
+  Rgba a(num a) => call(a: a);
 
   @override
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Color(...).copyWith.fieldName(value)`.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Rgba(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
-  /// Color(...).copyWith(id: 12, name: "My name")
+  /// Rgba(...).copyWith(id: 12, name: "My name")
   /// ```
-  Color call({
+  Rgba call({
     Object? r = const $CopyWithPlaceholder(),
     Object? g = const $CopyWithPlaceholder(),
     Object? b = const $CopyWithPlaceholder(),
     Object? a = const $CopyWithPlaceholder(),
   }) {
-    return Color(
+    return Rgba(
       r: r == const $CopyWithPlaceholder() || r == null
           ? _value.r
           // ignore: cast_nullable_to_non_nullable
@@ -79,25 +79,25 @@ class _$ColorCWProxyImpl implements _$ColorCWProxy {
   }
 }
 
-extension $ColorCopyWith on Color {
+extension $RgbaCopyWith on Rgba {
   /// Returns a callable class used to build a new instance with modified fields.
-  /// Example: `instanceOfColor.copyWith(...)` or `instanceOfColor.copyWith.fieldName(...)`.
+  /// Example: `instanceOfRgba.copyWith(...)` or `instanceOfRgba.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
-  _$ColorCWProxy get copyWith => _$ColorCWProxyImpl(this);
+  _$RgbaCWProxy get copyWith => _$RgbaCWProxyImpl(this);
 }
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-Color _$ColorFromJson(Map<String, dynamic> json) => Color(
+Rgba _$RgbaFromJson(Map<String, dynamic> json) => Rgba(
   r: json['r'] as num,
   g: json['g'] as num,
   b: json['b'] as num,
   a: json['a'] as num,
 );
 
-Map<String, dynamic> _$ColorToJson(Color instance) => <String, dynamic>{
+Map<String, dynamic> _$RgbaToJson(Rgba instance) => <String, dynamic>{
   'r': instance.r,
   'g': instance.g,
   'b': instance.b,

@@ -7,7 +7,7 @@ part of 'multitone_noise_effect.dart';
 // **************************************************************************
 
 abstract class _$MultitoneNoiseEffectCWProxy {
-  MultitoneNoiseEffect color(Color color);
+  MultitoneNoiseEffect color(Rgba color);
 
   MultitoneNoiseEffect visible(bool visible);
 
@@ -27,7 +27,7 @@ abstract class _$MultitoneNoiseEffectCWProxy {
   /// MultitoneNoiseEffect(...).copyWith(id: 12, name: "My name")
   /// ```
   MultitoneNoiseEffect call({
-    Color color,
+    Rgba color,
     bool visible,
     BlendMode blendMode,
     num noiseSize,
@@ -45,7 +45,7 @@ class _$MultitoneNoiseEffectCWProxyImpl
   final MultitoneNoiseEffect _value;
 
   @override
-  MultitoneNoiseEffect color(Color color) => call(color: color);
+  MultitoneNoiseEffect color(Rgba color) => call(color: color);
 
   @override
   MultitoneNoiseEffect visible(bool visible) => call(visible: visible);
@@ -83,7 +83,7 @@ class _$MultitoneNoiseEffectCWProxyImpl
       color: color == const $CopyWithPlaceholder() || color == null
           ? _value.color
           // ignore: cast_nullable_to_non_nullable
-          : color as Color,
+          : color as Rgba,
       visible: visible == const $CopyWithPlaceholder() || visible == null
           ? _value.visible
           // ignore: cast_nullable_to_non_nullable
@@ -123,7 +123,7 @@ extension $MultitoneNoiseEffectCopyWith on MultitoneNoiseEffect {
 MultitoneNoiseEffect _$MultitoneNoiseEffectFromJson(
   Map<String, dynamic> json,
 ) => MultitoneNoiseEffect(
-  color: Color.fromJson(json['color'] as Map<String, dynamic>),
+  color: Rgba.fromJson(json['color'] as Map<String, dynamic>),
   visible: json['visible'] as bool,
   blendMode: $enumDecode(_$BlendModeEnumMap, json['blendMode']),
   noiseSize: json['noiseSize'] as num,

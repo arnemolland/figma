@@ -5,7 +5,7 @@ import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:meta/meta.dart';
 
-import 'resolved_type.dart';
+import 'variable_resolved_type.dart';
 
 part 'published_variable.g.dart';
 
@@ -49,7 +49,7 @@ class PublishedVariable extends Equatable {
   final String variableCollectionId;
 
   /// The resolved type of the variable.
-  final ResolvedType resolvedDataType;
+  final VariableResolvedType resolvedDataType;
 
   /// The UTC ISO 8601 time at which the variable was last updated.
   final DateTime updatedAt;

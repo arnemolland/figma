@@ -5,9 +5,9 @@ import 'package:json_annotation/json_annotation.dart';
 import 'package:meta/meta.dart';
 
 import 'blend_mode.dart';
-import 'color.dart';
 import 'paint.dart';
 import 'paint_type.dart';
+import 'rgba.dart';
 import 'solid_paint_variables.dart';
 
 part 'solid_paint.g.dart';
@@ -28,7 +28,7 @@ class SolidPaint extends Paint {
       _$SolidPaintFromJson(json);
 
   /// Solid color of the paint.
-  final Color color;
+  final Rgba color;
 
   /// The variables bound to a particular field on this paint.
   final SolidPaintVariables boundVariables;

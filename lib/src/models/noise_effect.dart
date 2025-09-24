@@ -4,13 +4,13 @@ import 'package:json_annotation/json_annotation.dart';
 import 'package:meta/meta.dart';
 
 import 'blend_mode.dart';
-import 'color.dart';
 import 'duotone_noise_effect.dart';
 import 'effect.dart';
 import 'effect_type.dart';
 import 'monotone_noise_effect.dart';
 import 'multitone_noise_effect.dart';
 import 'noise_type.dart';
+import 'rgba.dart';
 
 part 'noise_effect.g.dart';
 
@@ -42,7 +42,7 @@ abstract class NoiseEffect extends Effect {
   }
 
   /// The color of the noise effect.
-  final Color color;
+  final Rgba color;
 
   /// Whether the noise effect is visible.
   final bool visible;

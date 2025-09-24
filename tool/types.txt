@@ -3,6 +3,7 @@
 # Enumerations
 BlendMode
 BlurType
+BooleanOperation
 ComponentPropertyType
 ConstraintType
 CounterAxisAlignContent
@@ -30,7 +31,6 @@ LineType
 LinkAccess
 MaskType
 NoiseType
-Operation
 OverflowDirection
 PaintType
 PatternAlignment
@@ -38,7 +38,6 @@ PrimaryAxisAlignItems
 PrimaryAxisSizingMode
 PrototypeDeviceRotation
 PrototypeDeviceType
-ResolvedType
 Role
 ScaleMode
 ScrollBehavior
@@ -55,6 +54,7 @@ TextCase
 TextDecoration
 TextTruncation
 TileType
+VariableResolvedType
 VariableScope
 VerticalConstraint
 WebhookContext
@@ -72,7 +72,6 @@ VariableValue
 ArcData
 BlurEffect
 BlurEffectVariables
-Color
 ColorStop
 ColorStopVariables
 Comment
@@ -85,7 +84,6 @@ ComponentSet
 ComponentsMeta
 Constraint
 ContainingComponentSet
-Cursor
 DevResource
 DevStatus
 DocumentationLink
@@ -117,7 +115,6 @@ MultitoneNoiseEffect
 NoiseEffect
 NormalBlurEffect
 Overrides
-Pagination
 Paint
 PaintOverride
 Path
@@ -132,12 +129,14 @@ PublishedVariable
 PublishedVariableCollection
 PublishedVariablesMeta
 Reaction
+Rectangle
 RectangleCornerRadiiVariables
 ResponseCursor
+ResponsePagination
+Rgba
 ShadowEffect
 ShadowEffectVariables
 Size
-SizeRectangle
 SizeVariables
 SolidPaint
 SolidPaintVariables
@@ -153,7 +152,7 @@ TypeStyleVariables
 User
 VariableAlias
 VariableCodeSyntax
-Vector2D
+Vector
 Version
 
 # Mixins

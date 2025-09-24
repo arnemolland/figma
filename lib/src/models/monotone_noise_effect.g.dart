@@ -8,7 +8,7 @@ part of 'monotone_noise_effect.dart';
 
 MonotoneNoiseEffect _$MonotoneNoiseEffectFromJson(Map<String, dynamic> json) =>
     MonotoneNoiseEffect(
-      color: Color.fromJson(json['color'] as Map<String, dynamic>),
+      color: Rgba.fromJson(json['color'] as Map<String, dynamic>),
       visible: json['visible'] as bool,
       blendMode: $enumDecode(_$BlendModeEnumMap, json['blendMode']),
       noiseSize: json['noiseSize'] as num,

@@ -5,21 +5,21 @@ import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:meta/meta.dart';
 
-part 'color.g.dart';
+part 'rgba.g.dart';
 
 /// An RGBA color.
 @JsonSerializable()
 @CopyWith()
 @immutable
-class Color extends Equatable {
-  const Color({
+class Rgba extends Equatable {
+  const Rgba({
     required this.r,
     required this.g,
     required this.b,
     required this.a,
   });
 
-  factory Color.fromJson(Map<String, Object?> json) => _$ColorFromJson(json);
+  factory Rgba.fromJson(Map<String, Object?> json) => _$RgbaFromJson(json);
 
   /// Red channel value, between 0 and 1.
   final num r;
@@ -36,5 +36,5 @@ class Color extends Equatable {
   @override
   List<Object?> get props => <Object?>[r, g, b, a];
 
-  Map<String, Object?> toJson() => _$ColorToJson(this);
+  Map<String, Object?> toJson() => _$RgbaToJson(this);
 }

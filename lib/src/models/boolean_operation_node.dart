@@ -1,11 +1,22 @@
+import 'package:figma/src/converters/converters.dart';
 import 'package:figma/src/models.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-part 'regular_polygon.g.dart';
+part 'boolean_operation_node.g.dart';
 
+/// Boolean operations combine any set of shape layers through one of four
+/// formulas: Union, Subtract, Intersect, and Exclude.
 @JsonSerializable()
-class RegularPolygon extends VectorNode {
-  const RegularPolygon({
+class BooleanOperationNode extends VectorNode {
+  /// An array of nodes that are being boolean operated on.
+  @NodeJsonConverter()
+  final List<Node?>? children;
+
+  /// A string enum with value of "UNION", "INTERSECT", "SUBTRACT", or "EXCLUDE"
+  /// indicating the type of boolean operation applied.
+  final BooleanOperation? operation;
+
+  const BooleanOperationNode({
     required super.id,
     required super.visible,
     required super.locked,
@@ -43,11 +54,16 @@ class RegularPolygon extends VectorNode {
     super.absoluteRenderBounds,
     super.fillOverrideTable,
     super.individualStrokeWeights,
+    this.children,
+    this.operation,
   });
 
-  factory RegularPolygon.fromJson(Map<String, dynamic> json) =>
-      _$RegularPolygonFromJson(json);
+  @override
+  List<Object?> get props => [...super.props, children, operation];
+
+  factory BooleanOperationNode.fromJson(Map<String, dynamic> json) =>
+      _$BooleanOperationNodeFromJson(json);
 
   @override
-  Map<String, dynamic> toJson() => _$RegularPolygonToJson(this);
+  Map<String, dynamic> toJson() => _$BooleanOperationNodeToJson(this);
 }
