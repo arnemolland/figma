@@ -1,66 +1,39 @@
-import 'package:copy_with_extension/copy_with_extension.dart';
+// Generated from v0.33.0 of the Figma REST API specification
+
 import 'package:equatable/equatable.dart';
-import 'package:figma/src/models.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:meta/meta.dart';
+
+import 'blur_effect.dart';
+import 'effect_type.dart';
+import 'noise_effect.dart';
+import 'shadow_effect.dart';
+import 'texture_effect.dart';
 
 part 'effect.g.dart';
 
-/// A visual effect such as a shadow or blur.
-@JsonSerializable()
-@CopyWith()
-class Effect extends Equatable {
-  /// Type of effect as a string enum.
-  final EffectType? type;
+@JsonSerializable(createFactory: false)
+@immutable
+abstract class Effect extends Equatable {
+  const Effect();
 
-  /// Is the effect active?
-  @JsonKey(defaultValue: true)
-  final bool visible;
+  factory Effect.fromJson(Map<String, Object?> json) {
+    final discriminator = json['type'];
+    final construct = switch (discriminator) {
+      'DROP_SHADOW' || 'INNER_SHADOW' => ShadowEffect.fromJson,
+      'LAYER_BLUR' || 'BACKGROUND_BLUR' => BlurEffect.fromJson,
+      'TEXTURE' => TextureEffect.fromJson,
+      'NOISE' => NoiseEffect.fromJson,
+      _ => throw ArgumentError.value(discriminator, 'type', 'unknown type'),
+    };
 
-  /// Radius of the blur effect (applies to shadows as well).
-  final num? radius;
+    return construct(json);
+  }
 
-  // The following properties are for shadows only:
-
-  // The radius of the shadow.
-  final num? spread;
-
-  /// The color of the shadow.
-  final Color? color;
-
-  /// Blend mode of the shadow.
-  final BlendMode? blendMode;
-
-  /// How far the shadow is projected in the x and y directions.
-  final Vector2D? offset;
-
-  /// Whether to show shadow behind the object.
-  /// Applies only to drop shadow.
-  final bool? showShadowBehindNode;
-
-  const Effect({
-    this.type,
-    required this.visible,
-    this.radius,
-    this.spread,
-    this.color,
-    this.blendMode,
-    this.offset,
-    this.showShadowBehindNode,
-  });
-
+  /// Discriminator for [Effect] types.
+  EffectType get type;
   @override
-  List<Object?> get props => [
-    type,
-    visible,
-    radius,
-    spread,
-    color,
-    blendMode,
-    offset,
-    showShadowBehindNode,
-  ];
+  List<Object?> get props => <Object?>[type];
 
-  factory Effect.fromJson(Map<String, dynamic> json) => _$EffectFromJson(json);
-
-  Map<String, dynamic> toJson() => _$EffectToJson(this);
+  Map<String, Object?> toJson() => _$EffectToJson(this);
 }
