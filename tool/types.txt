@@ -1,6 +1,7 @@
 # Listing of types being generated from the OpenAPI specification
 
 # Enumerations
+ActionType
 BlendMode
 BlurType
 BooleanOperation
@@ -14,9 +15,11 @@ EasingType
 EditorType
 EffectType
 ExportFormat
+ExpressionFunction
 GridChildAlign
 HorizontalConstraint
 HyperlinkType
+InputDevice
 InstanceSwapPreferredValueType
 LayoutAlign
 LayoutGridAlignment
@@ -30,6 +33,7 @@ LineHeightUnit
 LineType
 LinkAccess
 MaskType
+MediaAction
 NoiseType
 OverflowDirection
 PaintType
@@ -54,6 +58,10 @@ TextCase
 TextDecoration
 TextTruncation
 TileType
+TransitionDirection
+TransitionType
+TriggerType
+VariableDataType
 VariableResolvedType
 VariableScope
 VerticalConstraint
@@ -69,6 +77,8 @@ Transform
 VariableValue
 
 # Models
+Action
+AfterTimeoutTrigger
 ArcData
 BlurEffect
 BlurEffectVariables
@@ -82,15 +92,21 @@ ComponentPropertyDefinition
 ComponentPropertyVariables
 ComponentSet
 ComponentsMeta
+ConditionalAction
+ConditionalBlock
 Constraint
 ContainingComponentSet
+CubicBezier
 DevResource
 DevStatus
+DirectionalTransition
 DocumentationLink
 DropShadowEffect
 DuotoneNoiseEffect
+Easing
 Effect
 ExportSetting
+Expression
 FileMeta
 FlowStartingPoint
 FrameInfo
@@ -101,6 +117,7 @@ ImagePaint
 IndividualStrokeWeightsVariables
 InnerShadowEffect
 InstanceSwapPreferredValue
+Interaction
 LayerTraitVariables
 LayoutConstraint
 LayoutGrid
@@ -112,8 +129,16 @@ LocalVariablesMeta
 Mode
 MonotoneNoiseEffect
 MultitoneNoiseEffect
+Navigation
+NodeAction
 NoiseEffect
 NormalBlurEffect
+OnKeyDownTrigger
+OnMediaEndTrigger
+OnMediaHitTrigger
+OnMouseInteractionTrigger
+OnMouseMovementTrigger
+OpenUrlAction
 Overrides
 Paint
 PaintOverride
@@ -133,13 +158,18 @@ Rectangle
 RectangleCornerRadiiVariables
 ResponseCursor
 ResponsePagination
+ReturnAction
 Rgba
+SetVariableAction
+SetVariableModeAction
 ShadowEffect
 ShadowEffectVariables
+SimpleTransition
 Size
 SizeVariables
 SolidPaint
 SolidPaintVariables
+Spring
 StrokeWeights
 Style
 StylesMeta
@@ -147,11 +177,18 @@ TextPathTypeStyle
 TextPathTypeStyle
 TextPathTypeStyleVariables
 TextureEffect
+Transition
+Trigger
 TypeStyle
 TypeStyleVariables
+UpdateMediaRuntimeAction
+UpdateMediaRuntimePlaybackAction
+UpdateMediaRuntimeSkipByAction
+UpdateMediaRuntimeSkipToAction
 User
 VariableAlias
 VariableCodeSyntax
+VariableData
 Vector
 Version
 
