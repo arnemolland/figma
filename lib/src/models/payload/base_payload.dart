@@ -20,8 +20,11 @@ abstract class BasePayload extends Equatable {
       FileCommentPayload.eventType => FileCommentPayload.fromJson,
       DevModeStatusUpdatePayload.eventType =>
         DevModeStatusUpdatePayload.fromJson,
-      _ =>
-        throw ArgumentError.value(type, 'event_type', 'unsupported event type'),
+      _ => throw ArgumentError.value(
+        type,
+        'event_type',
+        'unsupported event type',
+      ),
     };
 
     return construct(json);

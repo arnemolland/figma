@@ -36,13 +36,7 @@ class FrameInfo extends Equatable {
   });
 
   @override
-  List<Object?> get props => [
-        nodeId,
-        name,
-        backgroundColor,
-        pageId,
-        pageName,
-      ];
+  List<Object?> get props => [nodeId, name, backgroundColor, pageId, pageName];
 
   factory FrameInfo.fromJson(Map<String, dynamic> json) =>
       _$FrameInfoFromJson(json);

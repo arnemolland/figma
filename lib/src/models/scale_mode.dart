@@ -16,5 +16,5 @@ enum ScaleMode {
 
   /// Stretch the image to fit the frame.
   @JsonValue('STRETCH')
-  stretch
+  stretch,
 }

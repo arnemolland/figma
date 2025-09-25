@@ -88,7 +88,6 @@ class _$DevModeStatusUpdatePayloadCWProxyImpl
       call(triggeredBy: triggeredBy);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `DevModeStatusUpdatePayload(...).copyWith.fieldName(value)`.
   ///
@@ -161,38 +160,38 @@ extension $DevModeStatusUpdatePayloadCopyWith on DevModeStatusUpdatePayload {
 // **************************************************************************
 
 DevModeStatusUpdatePayload _$DevModeStatusUpdatePayloadFromJson(
-        Map<String, dynamic> json) =>
-    DevModeStatusUpdatePayload(
-      passcode: json['passcode'] as String?,
-      timestamp: json['timestamp'] == null
-          ? null
-          : DateTime.parse(json['timestamp'] as String),
-      webhookId: json['webhook_id'] as String?,
-      fileKey: json['file_key'] as String?,
-      fileName: json['file_name'] as String?,
-      nodeId: json['node_id'] as String?,
-      relatedLinks: (json['related_links'] as List<dynamic>?)
-          ?.map((e) => DevResource.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      status: $enumDecodeNullable(_$DevModeStatusEnumMap, json['status']),
-      triggeredBy: json['triggered_by'] == null
-          ? null
-          : User.fromJson(json['triggered_by'] as Map<String, dynamic>),
-    );
+  Map<String, dynamic> json,
+) => DevModeStatusUpdatePayload(
+  passcode: json['passcode'] as String?,
+  timestamp: json['timestamp'] == null
+      ? null
+      : DateTime.parse(json['timestamp'] as String),
+  webhookId: json['webhook_id'] as String?,
+  fileKey: json['file_key'] as String?,
+  fileName: json['file_name'] as String?,
+  nodeId: json['node_id'] as String?,
+  relatedLinks: (json['related_links'] as List<dynamic>?)
+      ?.map((e) => DevResource.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  status: $enumDecodeNullable(_$DevModeStatusEnumMap, json['status']),
+  triggeredBy: json['triggered_by'] == null
+      ? null
+      : User.fromJson(json['triggered_by'] as Map<String, dynamic>),
+);
 
 Map<String, dynamic> _$DevModeStatusUpdatePayloadToJson(
-        DevModeStatusUpdatePayload instance) =>
-    <String, dynamic>{
-      'passcode': instance.passcode,
-      'timestamp': instance.timestamp?.toIso8601String(),
-      'webhook_id': instance.webhookId,
-      'file_key': instance.fileKey,
-      'file_name': instance.fileName,
-      'node_id': instance.nodeId,
-      'related_links': instance.relatedLinks?.map((e) => e.toJson()).toList(),
-      'status': _$DevModeStatusEnumMap[instance.status],
-      'triggered_by': instance.triggeredBy?.toJson(),
-    };
+  DevModeStatusUpdatePayload instance,
+) => <String, dynamic>{
+  'passcode': instance.passcode,
+  'timestamp': instance.timestamp?.toIso8601String(),
+  'webhook_id': instance.webhookId,
+  'file_key': instance.fileKey,
+  'file_name': instance.fileName,
+  'node_id': instance.nodeId,
+  'related_links': instance.relatedLinks?.map((e) => e.toJson()).toList(),
+  'status': _$DevModeStatusEnumMap[instance.status],
+  'triggered_by': instance.triggeredBy?.toJson(),
+};
 
 const _$DevModeStatusEnumMap = {
   DevModeStatus.none: 'NONE',

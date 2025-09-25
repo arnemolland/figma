@@ -16,7 +16,7 @@ enum ConstraintType {
 
   /// Scale proportionally and set height to value.
   @JsonValue('HEIGHT')
-  height
+  height,
 }
 
 /// Sizing constraint for exports.

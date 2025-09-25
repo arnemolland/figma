@@ -11,5 +11,5 @@ enum LinkAccess {
   @JsonValue('org_edit')
   orgEdit,
   @JsonValue('inherit')
-  inherit
+  inherit,
 }

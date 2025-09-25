@@ -47,5 +47,5 @@ enum StyleTypeKey {
 
   /// A grid style.
   @JsonValue('grid')
-  grid
+  grid,
 }

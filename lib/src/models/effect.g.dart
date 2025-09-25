@@ -75,7 +75,6 @@ class _$EffectCWProxyImpl implements _$EffectCWProxy {
       call(showShadowBehindNode: showShadowBehindNode);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Effect(...).copyWith.fieldName(value)`.
   ///
@@ -142,30 +141,30 @@ extension $EffectCopyWith on Effect {
 // **************************************************************************
 
 Effect _$EffectFromJson(Map<String, dynamic> json) => Effect(
-      type: $enumDecodeNullable(_$EffectTypeEnumMap, json['type']),
-      visible: json['visible'] as bool? ?? true,
-      radius: json['radius'] as num?,
-      spread: json['spread'] as num?,
-      color: json['color'] == null
-          ? null
-          : Color.fromJson(json['color'] as Map<String, dynamic>),
-      blendMode: $enumDecodeNullable(_$BlendModeEnumMap, json['blendMode']),
-      offset: json['offset'] == null
-          ? null
-          : Vector2D.fromJson(json['offset'] as Map<String, dynamic>),
-      showShadowBehindNode: json['showShadowBehindNode'] as bool?,
-    );
+  type: $enumDecodeNullable(_$EffectTypeEnumMap, json['type']),
+  visible: json['visible'] as bool? ?? true,
+  radius: json['radius'] as num?,
+  spread: json['spread'] as num?,
+  color: json['color'] == null
+      ? null
+      : Color.fromJson(json['color'] as Map<String, dynamic>),
+  blendMode: $enumDecodeNullable(_$BlendModeEnumMap, json['blendMode']),
+  offset: json['offset'] == null
+      ? null
+      : Vector2D.fromJson(json['offset'] as Map<String, dynamic>),
+  showShadowBehindNode: json['showShadowBehindNode'] as bool?,
+);
 
 Map<String, dynamic> _$EffectToJson(Effect instance) => <String, dynamic>{
-      'type': _$EffectTypeEnumMap[instance.type],
-      'visible': instance.visible,
-      'radius': instance.radius,
-      'spread': instance.spread,
-      'color': instance.color,
-      'blendMode': _$BlendModeEnumMap[instance.blendMode],
-      'offset': instance.offset,
-      'showShadowBehindNode': instance.showShadowBehindNode,
-    };
+  'type': _$EffectTypeEnumMap[instance.type],
+  'visible': instance.visible,
+  'radius': instance.radius,
+  'spread': instance.spread,
+  'color': instance.color,
+  'blendMode': _$BlendModeEnumMap[instance.blendMode],
+  'offset': instance.offset,
+  'showShadowBehindNode': instance.showShadowBehindNode,
+};
 
 const _$EffectTypeEnumMap = {
   EffectType.innerShadow: 'INNER_SHADOW',

@@ -34,13 +34,7 @@ class Version extends Equatable {
   });
 
   @override
-  List<Object?> get props => [
-        id,
-        createdAt,
-        label,
-        description,
-        user,
-      ];
+  List<Object?> get props => [id, createdAt, label, description, user];
 
   factory Version.fromJson(Map<String, dynamic> json) =>
       _$VersionFromJson(json);

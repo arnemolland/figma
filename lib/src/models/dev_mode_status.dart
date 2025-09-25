@@ -7,5 +7,5 @@ enum DevModeStatus {
   @JsonValue('READY_FOR_DEV')
   readyForDev,
   @JsonValue('COMPLETED')
-  completed
+  completed,
 }

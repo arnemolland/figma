@@ -12,9 +12,7 @@ class FileMetaResponse extends Equatable {
   /// The file's metadata.
   final FileMeta? file;
 
-  const FileMetaResponse({
-    this.file,
-  });
+  const FileMetaResponse({this.file});
 
   @override
   List<Object?> get props => [file];

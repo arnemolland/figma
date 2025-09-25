@@ -95,28 +95,28 @@ class LibraryPublishPayload extends BasePayload {
 
   @override
   List<Object?> get props => [
-        passcode,
-        timestamp,
-        webhookId,
-        createdComponents,
-        createdStyles,
-        createdVariables,
-        modifiedComponents,
-        modifiedStyles,
-        modifiedVariables,
-        deletedComponents,
-        deletedStyles,
-        deletedVariables,
-        description,
-        fileKey,
-        fileName,
-        libraryItem,
-        triggeredBy,
-      ];
+    passcode,
+    timestamp,
+    webhookId,
+    createdComponents,
+    createdStyles,
+    createdVariables,
+    modifiedComponents,
+    modifiedStyles,
+    modifiedVariables,
+    deletedComponents,
+    deletedStyles,
+    deletedVariables,
+    description,
+    fileKey,
+    fileName,
+    libraryItem,
+    triggeredBy,
+  ];
 
   @override
   Map<String, dynamic> toJson() => <String, dynamic>{
-        'event_type': eventType,
-        ..._$LibraryPublishPayloadToJson(this)
-      };
+    'event_type': eventType,
+    ..._$LibraryPublishPayloadToJson(this),
+  };
 }

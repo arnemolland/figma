@@ -89,7 +89,6 @@ class _$FileVersionUpdatePayloadCWProxyImpl
       call(versionId: versionId);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `FileVersionUpdatePayload(...).copyWith.fieldName(value)`.
   ///
@@ -162,35 +161,35 @@ extension $FileVersionUpdatePayloadCopyWith on FileVersionUpdatePayload {
 // **************************************************************************
 
 FileVersionUpdatePayload _$FileVersionUpdatePayloadFromJson(
-        Map<String, dynamic> json) =>
-    FileVersionUpdatePayload(
-      passcode: json['passcode'] as String?,
-      timestamp: json['timestamp'] == null
-          ? null
-          : DateTime.parse(json['timestamp'] as String),
-      webhookId: json['webhook_id'] as String?,
-      createdAt: json['created_at'] == null
-          ? null
-          : DateTime.parse(json['created_at'] as String),
-      description: json['description'] as String?,
-      fileKey: json['file_key'] as String?,
-      fileName: json['file_name'] as String?,
-      triggeredBy: json['triggered_by'] == null
-          ? null
-          : User.fromJson(json['triggered_by'] as Map<String, dynamic>),
-      versionId: json['version_id'] as String?,
-    );
+  Map<String, dynamic> json,
+) => FileVersionUpdatePayload(
+  passcode: json['passcode'] as String?,
+  timestamp: json['timestamp'] == null
+      ? null
+      : DateTime.parse(json['timestamp'] as String),
+  webhookId: json['webhook_id'] as String?,
+  createdAt: json['created_at'] == null
+      ? null
+      : DateTime.parse(json['created_at'] as String),
+  description: json['description'] as String?,
+  fileKey: json['file_key'] as String?,
+  fileName: json['file_name'] as String?,
+  triggeredBy: json['triggered_by'] == null
+      ? null
+      : User.fromJson(json['triggered_by'] as Map<String, dynamic>),
+  versionId: json['version_id'] as String?,
+);
 
 Map<String, dynamic> _$FileVersionUpdatePayloadToJson(
-        FileVersionUpdatePayload instance) =>
-    <String, dynamic>{
-      'passcode': instance.passcode,
-      'timestamp': instance.timestamp?.toIso8601String(),
-      'webhook_id': instance.webhookId,
-      'created_at': instance.createdAt?.toIso8601String(),
-      'description': instance.description,
-      'file_key': instance.fileKey,
-      'file_name': instance.fileName,
-      'triggered_by': instance.triggeredBy?.toJson(),
-      'version_id': instance.versionId,
-    };
+  FileVersionUpdatePayload instance,
+) => <String, dynamic>{
+  'passcode': instance.passcode,
+  'timestamp': instance.timestamp?.toIso8601String(),
+  'webhook_id': instance.webhookId,
+  'created_at': instance.createdAt?.toIso8601String(),
+  'description': instance.description,
+  'file_key': instance.fileKey,
+  'file_name': instance.fileName,
+  'triggered_by': instance.triggeredBy?.toJson(),
+  'version_id': instance.versionId,
+};

@@ -41,17 +41,17 @@ class FileDeletePayload extends BasePayload {
 
   @override
   List<Object?> get props => [
-        passcode,
-        timestamp,
-        webhookId,
-        fileKey,
-        fileName,
-        triggeredBy,
-      ];
+    passcode,
+    timestamp,
+    webhookId,
+    fileKey,
+    fileName,
+    triggeredBy,
+  ];
 
   @override
   Map<String, dynamic> toJson() => <String, dynamic>{
-        'event_type': eventType,
-        ..._$FileDeletePayloadToJson(this)
-      };
+    'event_type': eventType,
+    ..._$FileDeletePayloadToJson(this),
+  };
 }

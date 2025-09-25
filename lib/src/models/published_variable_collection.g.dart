@@ -59,7 +59,6 @@ class _$PublishedVariableCollectionCWProxyImpl
       call(updatedAt: updatedAt);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PublishedVariableCollection(...).copyWith.fieldName(value)`.
   ///
@@ -81,9 +80,9 @@ class _$PublishedVariableCollectionCWProxyImpl
           : id as String,
       subscribedId:
           subscribedId == const $CopyWithPlaceholder() || subscribedId == null
-              ? _value.subscribedId
-              // ignore: cast_nullable_to_non_nullable
-              : subscribedId as String,
+          ? _value.subscribedId
+          // ignore: cast_nullable_to_non_nullable
+          : subscribedId as String,
       name: name == const $CopyWithPlaceholder() || name == null
           ? _value.name
           // ignore: cast_nullable_to_non_nullable
@@ -113,21 +112,21 @@ extension $PublishedVariableCollectionCopyWith on PublishedVariableCollection {
 // **************************************************************************
 
 PublishedVariableCollection _$PublishedVariableCollectionFromJson(
-        Map<String, dynamic> json) =>
-    PublishedVariableCollection(
-      id: json['id'] as String,
-      subscribedId: json['subscribed_id'] as String,
-      name: json['name'] as String,
-      key: json['key'] as String,
-      updatedAt: DateTime.parse(json['updatedAt'] as String),
-    );
+  Map<String, dynamic> json,
+) => PublishedVariableCollection(
+  id: json['id'] as String,
+  subscribedId: json['subscribed_id'] as String,
+  name: json['name'] as String,
+  key: json['key'] as String,
+  updatedAt: DateTime.parse(json['updatedAt'] as String),
+);
 
 Map<String, dynamic> _$PublishedVariableCollectionToJson(
-        PublishedVariableCollection instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'subscribed_id': instance.subscribedId,
-      'name': instance.name,
-      'key': instance.key,
-      'updatedAt': instance.updatedAt.toIso8601String(),
-    };
+  PublishedVariableCollection instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  'subscribed_id': instance.subscribedId,
+  'name': instance.name,
+  'key': instance.key,
+  'updatedAt': instance.updatedAt.toIso8601String(),
+};

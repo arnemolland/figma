@@ -95,12 +95,12 @@ class Text extends Vector {
 
   @override
   List<Object?> get props => [
-        ...super.props,
-        characters,
-        style,
-        characterStyleOverrides,
-        styleOverrideTable,
-      ];
+    ...super.props,
+    characters,
+    style,
+    characterStyleOverrides,
+    styleOverrideTable,
+  ];
 
   factory Text.fromJson(Map<String, dynamic> json) => _$TextFromJson(json);
 

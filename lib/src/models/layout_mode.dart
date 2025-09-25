@@ -12,5 +12,5 @@ enum LayoutMode {
 
   /// Auto-layout in a vertical flow.
   @JsonValue('VERTICAL')
-  vertical
+  vertical,
 }

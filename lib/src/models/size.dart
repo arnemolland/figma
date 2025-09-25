@@ -7,10 +7,7 @@ part 'size.g.dart';
 @JsonSerializable()
 @CopyWith()
 class Size {
-  Size({
-    required this.width,
-    required this.height,
-  });
+  Size({required this.width, required this.height});
 
   /// The width of a size.
   final double width;

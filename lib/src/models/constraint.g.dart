@@ -18,10 +18,7 @@ abstract class _$ConstraintCWProxy {
   /// ```dart
   /// Constraint(...).copyWith(id: 12, name: "My name")
   /// ```
-  Constraint call({
-    ConstraintType? type,
-    num? value,
-  });
+  Constraint call({ConstraintType? type, num? value});
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -38,7 +35,6 @@ class _$ConstraintCWProxyImpl implements _$ConstraintCWProxy {
   Constraint value(num? value) => call(value: value);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Constraint(...).copyWith.fieldName(value)`.
   ///
@@ -75,9 +71,9 @@ extension $ConstraintCopyWith on Constraint {
 // **************************************************************************
 
 Constraint _$ConstraintFromJson(Map<String, dynamic> json) => Constraint(
-      type: $enumDecodeNullable(_$ConstraintTypeEnumMap, json['type']),
-      value: json['value'] as num?,
-    );
+  type: $enumDecodeNullable(_$ConstraintTypeEnumMap, json['type']),
+  value: json['value'] as num?,
+);
 
 Map<String, dynamic> _$ConstraintToJson(Constraint instance) =>
     <String, dynamic>{

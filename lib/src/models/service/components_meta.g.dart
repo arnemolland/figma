@@ -18,10 +18,7 @@ abstract class _$ComponentsMetaCWProxy {
   /// ```dart
   /// ComponentsMeta(...).copyWith(id: 12, name: "My name")
   /// ```
-  ComponentsMeta call({
-    List<Component>? components,
-    Cursor? cursor,
-  });
+  ComponentsMeta call({List<Component>? components, Cursor? cursor});
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -39,7 +36,6 @@ class _$ComponentsMetaCWProxyImpl implements _$ComponentsMetaCWProxy {
   ComponentsMeta cursor(Cursor? cursor) => call(cursor: cursor);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ComponentsMeta(...).copyWith.fieldName(value)`.
   ///

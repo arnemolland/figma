@@ -83,19 +83,19 @@ class LocalVariable extends Equatable {
 
   @override
   List<Object?> get props => [
-        id,
-        name,
-        key,
-        variableCollectionId,
-        resolvedType,
-        valuesByMode,
-        remote,
-        description,
-        hiddenFromPublishing,
-        scopes,
-        codeSyntax,
-        deletedButReferenced,
-      ];
+    id,
+    name,
+    key,
+    variableCollectionId,
+    resolvedType,
+    valuesByMode,
+    remote,
+    description,
+    hiddenFromPublishing,
+    scopes,
+    codeSyntax,
+    deletedButReferenced,
+  ];
 
   factory LocalVariable.fromJson(Map<String, dynamic> json) =>
       _$LocalVariableFromJson(json);

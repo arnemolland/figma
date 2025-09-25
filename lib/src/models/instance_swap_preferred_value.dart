@@ -18,10 +18,7 @@ enum InstanceSwapPreferredValueType {
 @JsonSerializable()
 @CopyWith()
 class InstanceSwapPreferredValue {
-  InstanceSwapPreferredValue({
-    required this.type,
-    required this.key,
-  });
+  InstanceSwapPreferredValue({required this.type, required this.key});
 
   /// Type of node for this preferred value.
   final InstanceSwapPreferredValueType type;

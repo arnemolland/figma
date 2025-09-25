@@ -20,11 +20,7 @@ abstract class _$ArcDataCWProxy {
   /// ```dart
   /// ArcData(...).copyWith(id: 12, name: "My name")
   /// ```
-  ArcData call({
-    double startingAngle,
-    double endingAngle,
-    double innerRadius,
-  });
+  ArcData call({double startingAngle, double endingAngle, double innerRadius});
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -45,7 +41,6 @@ class _$ArcDataCWProxyImpl implements _$ArcDataCWProxy {
   ArcData innerRadius(double innerRadius) => call(innerRadius: innerRadius);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ArcData(...).copyWith.fieldName(value)`.
   ///
@@ -61,19 +56,19 @@ class _$ArcDataCWProxyImpl implements _$ArcDataCWProxy {
     return ArcData(
       startingAngle:
           startingAngle == const $CopyWithPlaceholder() || startingAngle == null
-              ? _value.startingAngle
-              // ignore: cast_nullable_to_non_nullable
-              : startingAngle as double,
+          ? _value.startingAngle
+          // ignore: cast_nullable_to_non_nullable
+          : startingAngle as double,
       endingAngle:
           endingAngle == const $CopyWithPlaceholder() || endingAngle == null
-              ? _value.endingAngle
-              // ignore: cast_nullable_to_non_nullable
-              : endingAngle as double,
+          ? _value.endingAngle
+          // ignore: cast_nullable_to_non_nullable
+          : endingAngle as double,
       innerRadius:
           innerRadius == const $CopyWithPlaceholder() || innerRadius == null
-              ? _value.innerRadius
-              // ignore: cast_nullable_to_non_nullable
-              : innerRadius as double,
+          ? _value.innerRadius
+          // ignore: cast_nullable_to_non_nullable
+          : innerRadius as double,
     );
   }
 }
@@ -90,13 +85,13 @@ extension $ArcDataCopyWith on ArcData {
 // **************************************************************************
 
 ArcData _$ArcDataFromJson(Map<String, dynamic> json) => ArcData(
-      startingAngle: (json['startingAngle'] as num).toDouble(),
-      endingAngle: (json['endingAngle'] as num).toDouble(),
-      innerRadius: (json['innerRadius'] as num).toDouble(),
-    );
+  startingAngle: (json['startingAngle'] as num).toDouble(),
+  endingAngle: (json['endingAngle'] as num).toDouble(),
+  innerRadius: (json['innerRadius'] as num).toDouble(),
+);
 
 Map<String, dynamic> _$ArcDataToJson(ArcData instance) => <String, dynamic>{
-      'startingAngle': instance.startingAngle,
-      'endingAngle': instance.endingAngle,
-      'innerRadius': instance.innerRadius,
-    };
+  'startingAngle': instance.startingAngle,
+  'endingAngle': instance.endingAngle,
+  'innerRadius': instance.innerRadius,
+};

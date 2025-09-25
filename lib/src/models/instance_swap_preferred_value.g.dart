@@ -40,7 +40,6 @@ class _$InstanceSwapPreferredValueCWProxyImpl
   InstanceSwapPreferredValue key(String key) => call(key: key);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `InstanceSwapPreferredValue(...).copyWith.fieldName(value)`.
   ///
@@ -78,18 +77,18 @@ extension $InstanceSwapPreferredValueCopyWith on InstanceSwapPreferredValue {
 // **************************************************************************
 
 InstanceSwapPreferredValue _$InstanceSwapPreferredValueFromJson(
-        Map<String, dynamic> json) =>
-    InstanceSwapPreferredValue(
-      type: $enumDecode(_$InstanceSwapPreferredValueTypeEnumMap, json['type']),
-      key: json['key'] as String,
-    );
+  Map<String, dynamic> json,
+) => InstanceSwapPreferredValue(
+  type: $enumDecode(_$InstanceSwapPreferredValueTypeEnumMap, json['type']),
+  key: json['key'] as String,
+);
 
 Map<String, dynamic> _$InstanceSwapPreferredValueToJson(
-        InstanceSwapPreferredValue instance) =>
-    <String, dynamic>{
-      'type': _$InstanceSwapPreferredValueTypeEnumMap[instance.type]!,
-      'key': instance.key,
-    };
+  InstanceSwapPreferredValue instance,
+) => <String, dynamic>{
+  'type': _$InstanceSwapPreferredValueTypeEnumMap[instance.type]!,
+  'key': instance.key,
+};
 
 const _$InstanceSwapPreferredValueTypeEnumMap = {
   InstanceSwapPreferredValueType.component: 'COMPONENT',

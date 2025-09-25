@@ -22,12 +22,7 @@ abstract class _$UserCWProxy {
   /// ```dart
   /// User(...).copyWith(id: 12, name: "My name")
   /// ```
-  User call({
-    String id,
-    String handle,
-    String? imageUrl,
-    String? email,
-  });
+  User call({String id, String handle, String? imageUrl, String? email});
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -50,7 +45,6 @@ class _$UserCWProxyImpl implements _$UserCWProxy {
   User email(String? email) => call(email: email);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `User(...).copyWith.fieldName(value)`.
   ///
@@ -97,15 +91,15 @@ extension $UserCopyWith on User {
 // **************************************************************************
 
 User _$UserFromJson(Map<String, dynamic> json) => User(
-      id: json['id'] as String,
-      handle: json['handle'] as String,
-      imageUrl: json['img_url'] as String?,
-      email: json['email'] as String?,
-    );
+  id: json['id'] as String,
+  handle: json['handle'] as String,
+  imageUrl: json['img_url'] as String?,
+  email: json['email'] as String?,
+);
 
 Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
-      'id': instance.id,
-      'handle': instance.handle,
-      'img_url': instance.imageUrl,
-      'email': instance.email,
-    };
+  'id': instance.id,
+  'handle': instance.handle,
+  'img_url': instance.imageUrl,
+  'email': instance.email,
+};

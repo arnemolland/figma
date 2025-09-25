@@ -7,5 +7,5 @@ enum CounterAxisSizingMode {
   @JsonValue('FIXED')
   fixed,
   @JsonValue('AUTO')
-  auto
+  auto,
 }

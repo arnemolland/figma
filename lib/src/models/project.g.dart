@@ -18,10 +18,7 @@ abstract class _$ProjectCWProxy {
   /// ```dart
   /// Project(...).copyWith(id: 12, name: "My name")
   /// ```
-  Project call({
-    String? id,
-    String? name,
-  });
+  Project call({String? id, String? name});
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -38,7 +35,6 @@ class _$ProjectCWProxyImpl implements _$ProjectCWProxy {
   Project name(String? name) => call(name: name);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Project(...).copyWith.fieldName(value)`.
   ///
@@ -74,12 +70,10 @@ extension $ProjectCopyWith on Project {
 // JsonSerializableGenerator
 // **************************************************************************
 
-Project _$ProjectFromJson(Map<String, dynamic> json) => Project(
-      id: json['id'] as String?,
-      name: json['name'] as String?,
-    );
+Project _$ProjectFromJson(Map<String, dynamic> json) =>
+    Project(id: json['id'] as String?, name: json['name'] as String?);
 
 Map<String, dynamic> _$ProjectToJson(Project instance) => <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-    };
+  'id': instance.id,
+  'name': instance.name,
+};

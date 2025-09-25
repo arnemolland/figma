@@ -10,7 +10,8 @@ abstract class _$PublishedVariablesMetaCWProxy {
   PublishedVariablesMeta variables(Map<String, PublishedVariable> variables);
 
   PublishedVariablesMeta variableCollections(
-      Map<String, PublishedVariableCollection> variableCollections);
+    Map<String, PublishedVariableCollection> variableCollections,
+  );
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PublishedVariablesMeta(...).copyWith.fieldName(value)`.
@@ -39,11 +40,10 @@ class _$PublishedVariablesMetaCWProxyImpl
 
   @override
   PublishedVariablesMeta variableCollections(
-          Map<String, PublishedVariableCollection> variableCollections) =>
-      call(variableCollections: variableCollections);
+    Map<String, PublishedVariableCollection> variableCollections,
+  ) => call(variableCollections: variableCollections);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PublishedVariablesMeta(...).copyWith.fieldName(value)`.
   ///
@@ -62,10 +62,10 @@ class _$PublishedVariablesMetaCWProxyImpl
           : variables as Map<String, PublishedVariable>,
       variableCollections:
           variableCollections == const $CopyWithPlaceholder() ||
-                  variableCollections == null
-              ? _value.variableCollections
-              // ignore: cast_nullable_to_non_nullable
-              : variableCollections as Map<String, PublishedVariableCollection>,
+              variableCollections == null
+          ? _value.variableCollections
+          // ignore: cast_nullable_to_non_nullable
+          : variableCollections as Map<String, PublishedVariableCollection>,
     );
   }
 }
@@ -83,22 +83,24 @@ extension $PublishedVariablesMetaCopyWith on PublishedVariablesMeta {
 // **************************************************************************
 
 PublishedVariablesMeta _$PublishedVariablesMetaFromJson(
-        Map<String, dynamic> json) =>
-    PublishedVariablesMeta(
-      variables: (json['variables'] as Map<String, dynamic>).map(
-        (k, e) =>
-            MapEntry(k, PublishedVariable.fromJson(e as Map<String, dynamic>)),
-      ),
-      variableCollections:
-          (json['variableCollections'] as Map<String, dynamic>).map(
+  Map<String, dynamic> json,
+) => PublishedVariablesMeta(
+  variables: (json['variables'] as Map<String, dynamic>).map(
+    (k, e) =>
+        MapEntry(k, PublishedVariable.fromJson(e as Map<String, dynamic>)),
+  ),
+  variableCollections: (json['variableCollections'] as Map<String, dynamic>)
+      .map(
         (k, e) => MapEntry(
-            k, PublishedVariableCollection.fromJson(e as Map<String, dynamic>)),
+          k,
+          PublishedVariableCollection.fromJson(e as Map<String, dynamic>),
+        ),
       ),
-    );
+);
 
 Map<String, dynamic> _$PublishedVariablesMetaToJson(
-        PublishedVariablesMeta instance) =>
-    <String, dynamic>{
-      'variables': instance.variables,
-      'variableCollections': instance.variableCollections,
-    };
+  PublishedVariablesMeta instance,
+) => <String, dynamic>{
+  'variables': instance.variables,
+  'variableCollections': instance.variableCollections,
+};

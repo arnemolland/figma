@@ -36,16 +36,16 @@ class FileUpdatePayload extends BasePayload {
 
   @override
   List<Object?> get props => [
-        passcode,
-        timestamp,
-        webhookId,
-        fileKey,
-        fileName,
-      ];
+    passcode,
+    timestamp,
+    webhookId,
+    fileKey,
+    fileName,
+  ];
 
   @override
   Map<String, dynamic> toJson() => <String, dynamic>{
-        'event_type': eventType,
-        ..._$FileUpdatePayloadToJson(this)
-      };
+    'event_type': eventType,
+    ..._$FileUpdatePayloadToJson(this),
+  };
 }

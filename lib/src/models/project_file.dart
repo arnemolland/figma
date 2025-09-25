@@ -30,12 +30,7 @@ class ProjectFile extends Equatable {
   });
 
   @override
-  List<Object?> get props => [
-        key,
-        name,
-        thumbnailUrl,
-        lastModified,
-      ];
+  List<Object?> get props => [key, name, thumbnailUrl, lastModified];
 
   factory ProjectFile.fromJson(Map<String, dynamic> json) =>
       _$ProjectFileFromJson(json);

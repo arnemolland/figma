@@ -57,7 +57,6 @@ class _$FrameInfoCWProxyImpl implements _$FrameInfoCWProxy {
   FrameInfo pageName(String? pageName) => call(pageName: pageName);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `FrameInfo(...).copyWith.fieldName(value)`.
   ///
@@ -109,17 +108,17 @@ extension $FrameInfoCopyWith on FrameInfo {
 // **************************************************************************
 
 FrameInfo _$FrameInfoFromJson(Map<String, dynamic> json) => FrameInfo(
-      nodeId: json['node:_id'] as String?,
-      name: json['name'] as String?,
-      backgroundColor: json['background_color'] as String?,
-      pageId: json['page_id'] as String?,
-      pageName: json['page_name'] as String?,
-    );
+  nodeId: json['node:_id'] as String?,
+  name: json['name'] as String?,
+  backgroundColor: json['background_color'] as String?,
+  pageId: json['page_id'] as String?,
+  pageName: json['page_name'] as String?,
+);
 
 Map<String, dynamic> _$FrameInfoToJson(FrameInfo instance) => <String, dynamic>{
-      'node:_id': instance.nodeId,
-      'name': instance.name,
-      'background_color': instance.backgroundColor,
-      'page_id': instance.pageId,
-      'page_name': instance.pageName,
-    };
+  'node:_id': instance.nodeId,
+  'name': instance.name,
+  'background_color': instance.backgroundColor,
+  'page_id': instance.pageId,
+  'page_name': instance.pageName,
+};

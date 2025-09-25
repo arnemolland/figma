@@ -38,13 +38,13 @@ class NodesResponse extends Equatable {
 
   @override
   List<Object?> get props => [
-        name,
-        role,
-        lastModified,
-        thumbnailUrl,
-        err,
-        nodes,
-      ];
+    name,
+    role,
+    lastModified,
+    thumbnailUrl,
+    err,
+    nodes,
+  ];
 
   factory NodesResponse.fromJson(Map<String, dynamic> json) =>
       _$NodesResponseFromJson(json);

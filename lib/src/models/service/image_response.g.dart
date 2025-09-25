@@ -51,7 +51,6 @@ class _$ImageResponseCWProxyImpl implements _$ImageResponseCWProxy {
   ImageResponse status(int? status) => call(status: status);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ImageResponse(...).copyWith.fieldName(value)`.
   ///
@@ -103,11 +102,10 @@ ImageResponse _$ImageResponseFromJson(Map<String, dynamic> json) =>
       images: (json['images'] as Map<String, dynamic>?)?.map(
         (k, e) => MapEntry(k, e as String),
       ),
-      imageFills: (ImageResponse._readValueWithString(json, 'meta')
-              as Map<String, dynamic>?)
-          ?.map(
-        (k, e) => MapEntry(k, e as String),
-      ),
+      imageFills:
+          (ImageResponse._readValueWithString(json, 'meta')
+                  as Map<String, dynamic>?)
+              ?.map((k, e) => MapEntry(k, e as String)),
       status: (json['status'] as num?)?.toInt(),
     );
 

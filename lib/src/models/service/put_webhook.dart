@@ -39,12 +39,12 @@ class PutWebhook extends Equatable {
 
   @override
   List<Object?> get props => [
-        eventType,
-        endpoint,
-        passcode,
-        status,
-        description,
-      ];
+    eventType,
+    endpoint,
+    passcode,
+    status,
+    description,
+  ];
 
   factory PutWebhook.fromJson(Map<String, dynamic> json) =>
       _$PutWebhookFromJson(json);

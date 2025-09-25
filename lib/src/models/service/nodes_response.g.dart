@@ -64,7 +64,6 @@ class _$NodesResponseCWProxyImpl implements _$NodesResponseCWProxy {
   NodesResponse nodes(Map<String, FileResponse>? nodes) => call(nodes: nodes);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `NodesResponse(...).copyWith.fieldName(value)`.
   ///

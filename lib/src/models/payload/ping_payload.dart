@@ -25,15 +25,11 @@ class PingPayload extends BasePayload {
   }
 
   @override
-  List<Object?> get props => [
-        passcode,
-        timestamp,
-        webhookId,
-      ];
+  List<Object?> get props => [passcode, timestamp, webhookId];
 
   @override
   Map<String, dynamic> toJson() => <String, dynamic>{
-        'event_type': eventType,
-        ..._$PingPayloadToJson(this),
-      };
+    'event_type': eventType,
+    ..._$PingPayloadToJson(this),
+  };
 }

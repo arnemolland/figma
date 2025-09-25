@@ -18,10 +18,7 @@ abstract class _$FlowStartingPointCWProxy {
   /// ```dart
   /// FlowStartingPoint(...).copyWith(id: 12, name: "My name")
   /// ```
-  FlowStartingPoint call({
-    String nodeId,
-    String name,
-  });
+  FlowStartingPoint call({String nodeId, String name});
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -38,7 +35,6 @@ class _$FlowStartingPointCWProxyImpl implements _$FlowStartingPointCWProxy {
   FlowStartingPoint name(String name) => call(name: name);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `FlowStartingPoint(...).copyWith.fieldName(value)`.
   ///
@@ -82,7 +78,4 @@ FlowStartingPoint _$FlowStartingPointFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$FlowStartingPointToJson(FlowStartingPoint instance) =>
-    <String, dynamic>{
-      'nodeId': instance.nodeId,
-      'name': instance.name,
-    };
+    <String, dynamic>{'nodeId': instance.nodeId, 'name': instance.name};

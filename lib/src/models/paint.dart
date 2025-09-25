@@ -91,19 +91,19 @@ class Paint extends Equatable {
 
   @override
   List<Object?> get props => [
-        type,
-        visible,
-        opacity,
-        color,
-        blendMode,
-        gradientHandlePositions,
-        gradientStops,
-        scaleMode,
-        imageTransform,
-        scalingFactor,
-        imageRef,
-        gifRef,
-      ];
+    type,
+    visible,
+    opacity,
+    color,
+    blendMode,
+    gradientHandlePositions,
+    gradientStops,
+    scaleMode,
+    imageTransform,
+    scalingFactor,
+    imageRef,
+    gifRef,
+  ];
 
   factory Paint.fromJson(Map<String, dynamic> json) => _$PaintFromJson(json);
 

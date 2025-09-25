@@ -74,7 +74,6 @@ class _$LayoutGridCWProxyImpl implements _$LayoutGridCWProxy {
   LayoutGrid count(int? count) => call(count: count);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `LayoutGrid(...).copyWith.fieldName(value)`.
   ///
@@ -141,17 +140,17 @@ extension $LayoutGridCopyWith on LayoutGrid {
 // **************************************************************************
 
 LayoutGrid _$LayoutGridFromJson(Map<String, dynamic> json) => LayoutGrid(
-      pattern: $enumDecodeNullable(_$LayoutPatternEnumMap, json['pattern']),
-      sectionSize: (json['sectionSize'] as num?)?.toDouble(),
-      visible: json['visible'] as bool?,
-      color: json['color'] == null
-          ? null
-          : Color.fromJson(json['color'] as Map<String, dynamic>),
-      alignment: $enumDecodeNullable(_$LayoutAlignEnumMap, json['alignment']),
-      gutterSize: (json['gutterSize'] as num?)?.toDouble(),
-      offset: (json['offset'] as num?)?.toDouble(),
-      count: (json['count'] as num?)?.toInt(),
-    );
+  pattern: $enumDecodeNullable(_$LayoutPatternEnumMap, json['pattern']),
+  sectionSize: (json['sectionSize'] as num?)?.toDouble(),
+  visible: json['visible'] as bool?,
+  color: json['color'] == null
+      ? null
+      : Color.fromJson(json['color'] as Map<String, dynamic>),
+  alignment: $enumDecodeNullable(_$LayoutAlignEnumMap, json['alignment']),
+  gutterSize: (json['gutterSize'] as num?)?.toDouble(),
+  offset: (json['offset'] as num?)?.toDouble(),
+  count: (json['count'] as num?)?.toInt(),
+);
 
 Map<String, dynamic> _$LayoutGridToJson(LayoutGrid instance) =>
     <String, dynamic>{

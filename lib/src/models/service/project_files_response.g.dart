@@ -18,10 +18,7 @@ abstract class _$ProjectFilesResponseCWProxy {
   /// ```dart
   /// ProjectFilesResponse(...).copyWith(id: 12, name: "My name")
   /// ```
-  ProjectFilesResponse call({
-    String? name,
-    List<ProjectFile>? files,
-  });
+  ProjectFilesResponse call({String? name, List<ProjectFile>? files});
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -39,7 +36,6 @@ class _$ProjectFilesResponseCWProxyImpl
   ProjectFilesResponse files(List<ProjectFile>? files) => call(files: files);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ProjectFilesResponse(...).copyWith.fieldName(value)`.
   ///
@@ -77,17 +73,14 @@ extension $ProjectFilesResponseCopyWith on ProjectFilesResponse {
 // **************************************************************************
 
 ProjectFilesResponse _$ProjectFilesResponseFromJson(
-        Map<String, dynamic> json) =>
-    ProjectFilesResponse(
-      name: json['name'] as String?,
-      files: (json['files'] as List<dynamic>?)
-          ?.map((e) => ProjectFile.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
+  Map<String, dynamic> json,
+) => ProjectFilesResponse(
+  name: json['name'] as String?,
+  files: (json['files'] as List<dynamic>?)
+      ?.map((e) => ProjectFile.fromJson(e as Map<String, dynamic>))
+      .toList(),
+);
 
 Map<String, dynamic> _$ProjectFilesResponseToJson(
-        ProjectFilesResponse instance) =>
-    <String, dynamic>{
-      'name': instance.name,
-      'files': instance.files,
-    };
+  ProjectFilesResponse instance,
+) => <String, dynamic>{'name': instance.name, 'files': instance.files};

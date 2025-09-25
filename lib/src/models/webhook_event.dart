@@ -17,5 +17,5 @@ enum WebhookEvent {
   @JsonValue('FILE_COMMENT')
   fileComment,
   @JsonValue('DEV_MODE_STATUS_UPDATE')
-  devModeStatusUpdate
+  devModeStatusUpdate,
 }

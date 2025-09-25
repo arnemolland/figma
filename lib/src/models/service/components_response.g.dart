@@ -20,11 +20,7 @@ abstract class _$ComponentsResponseCWProxy {
   /// ```dart
   /// ComponentsResponse(...).copyWith(id: 12, name: "My name")
   /// ```
-  ComponentsResponse call({
-    int? status,
-    bool? error,
-    ComponentsMeta? meta,
-  });
+  ComponentsResponse call({int? status, bool? error, ComponentsMeta? meta});
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -44,7 +40,6 @@ class _$ComponentsResponseCWProxyImpl implements _$ComponentsResponseCWProxy {
   ComponentsResponse meta(ComponentsMeta? meta) => call(meta: meta);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ComponentsResponse(...).copyWith.fieldName(value)`.
   ///

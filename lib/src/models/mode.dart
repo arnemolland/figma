@@ -15,10 +15,7 @@ class Mode extends Equatable {
   final String name;
 
   /// The modes of this variable collection.
-  const Mode({
-    required this.modeId,
-    required this.name,
-  });
+  const Mode({required this.modeId, required this.name});
 
   @override
   List<Object?> get props => [modeId, name];

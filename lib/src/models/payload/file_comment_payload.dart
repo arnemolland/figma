@@ -59,21 +59,21 @@ class FileCommentPayload extends BasePayload {
 
   @override
   List<Object?> get props => [
-        passcode,
-        timestamp,
-        webhookId,
-        comment,
-        commentId,
-        createdAt,
-        fileKey,
-        fileName,
-        mentions,
-        triggeredBy,
-      ];
+    passcode,
+    timestamp,
+    webhookId,
+    comment,
+    commentId,
+    createdAt,
+    fileKey,
+    fileName,
+    mentions,
+    triggeredBy,
+  ];
 
   @override
   Map<String, dynamic> toJson() => <String, dynamic>{
-        'event_type': eventType,
-        ..._$FileCommentPayloadToJson(this)
-      };
+    'event_type': eventType,
+    ..._$FileCommentPayloadToJson(this),
+  };
 }

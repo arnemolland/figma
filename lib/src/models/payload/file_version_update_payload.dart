@@ -54,20 +54,20 @@ class FileVersionUpdatePayload extends BasePayload {
 
   @override
   List<Object?> get props => [
-        passcode,
-        timestamp,
-        webhookId,
-        createdAt,
-        description,
-        fileKey,
-        fileName,
-        triggeredBy,
-        versionId,
-      ];
+    passcode,
+    timestamp,
+    webhookId,
+    createdAt,
+    description,
+    fileKey,
+    fileName,
+    triggeredBy,
+    versionId,
+  ];
 
   @override
   Map<String, dynamic> toJson() => <String, dynamic>{
-        'event_type': eventType,
-        ..._$FileVersionUpdatePayloadToJson(this)
-      };
+    'event_type': eventType,
+    ..._$FileVersionUpdatePayloadToJson(this),
+  };
 }

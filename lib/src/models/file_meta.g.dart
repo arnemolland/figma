@@ -95,7 +95,6 @@ class _$FileMetaCWProxyImpl implements _$FileMetaCWProxy {
   FileMeta version(String? version) => call(version: version);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `FileMeta(...).copyWith.fieldName(value)`.
   ///
@@ -177,38 +176,38 @@ extension $FileMetaCopyWith on FileMeta {
 // **************************************************************************
 
 FileMeta _$FileMetaFromJson(Map<String, dynamic> json) => FileMeta(
-      name: json['name'] as String?,
-      folderName: json['folder_name'] as String?,
-      lastTouchedAt: json['last_touched_at'] == null
-          ? null
-          : DateTime.parse(json['last_touched_at'] as String),
-      creator: json['creator'] == null
-          ? null
-          : User.fromJson(json['creator'] as Map<String, dynamic>),
-      lastTouchedBy: json['last_touched_by'] == null
-          ? null
-          : User.fromJson(json['last_touched_by'] as Map<String, dynamic>),
-      thumbnailUrl: json['thumbnail_url'] as String?,
-      editorType: $enumDecodeNullable(_$EditorTypeEnumMap, json['editorType']),
-      role: $enumDecodeNullable(_$RoleEnumMap, json['role']),
-      linkAccess: $enumDecodeNullable(_$LinkAccessEnumMap, json['link_access']),
-      url: json['url'] as String?,
-      version: json['version'] as String?,
-    );
+  name: json['name'] as String?,
+  folderName: json['folder_name'] as String?,
+  lastTouchedAt: json['last_touched_at'] == null
+      ? null
+      : DateTime.parse(json['last_touched_at'] as String),
+  creator: json['creator'] == null
+      ? null
+      : User.fromJson(json['creator'] as Map<String, dynamic>),
+  lastTouchedBy: json['last_touched_by'] == null
+      ? null
+      : User.fromJson(json['last_touched_by'] as Map<String, dynamic>),
+  thumbnailUrl: json['thumbnail_url'] as String?,
+  editorType: $enumDecodeNullable(_$EditorTypeEnumMap, json['editorType']),
+  role: $enumDecodeNullable(_$RoleEnumMap, json['role']),
+  linkAccess: $enumDecodeNullable(_$LinkAccessEnumMap, json['link_access']),
+  url: json['url'] as String?,
+  version: json['version'] as String?,
+);
 
 Map<String, dynamic> _$FileMetaToJson(FileMeta instance) => <String, dynamic>{
-      'name': instance.name,
-      'folder_name': instance.folderName,
-      'last_touched_at': instance.lastTouchedAt?.toIso8601String(),
-      'creator': instance.creator,
-      'last_touched_by': instance.lastTouchedBy,
-      'thumbnail_url': instance.thumbnailUrl,
-      'editorType': _$EditorTypeEnumMap[instance.editorType],
-      'role': _$RoleEnumMap[instance.role],
-      'link_access': _$LinkAccessEnumMap[instance.linkAccess],
-      'url': instance.url,
-      'version': instance.version,
-    };
+  'name': instance.name,
+  'folder_name': instance.folderName,
+  'last_touched_at': instance.lastTouchedAt?.toIso8601String(),
+  'creator': instance.creator,
+  'last_touched_by': instance.lastTouchedBy,
+  'thumbnail_url': instance.thumbnailUrl,
+  'editorType': _$EditorTypeEnumMap[instance.editorType],
+  'role': _$RoleEnumMap[instance.role],
+  'link_access': _$LinkAccessEnumMap[instance.linkAccess],
+  'url': instance.url,
+  'version': instance.version,
+};
 
 const _$EditorTypeEnumMap = {
   EditorType.figma: 'figma',

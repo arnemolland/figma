@@ -46,7 +46,6 @@ class _$PublishedVariablesResponseCWProxyImpl
       call(meta: meta);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PublishedVariablesResponse(...).copyWith.fieldName(value)`.
   ///
@@ -89,20 +88,19 @@ extension $PublishedVariablesResponseCopyWith on PublishedVariablesResponse {
 // **************************************************************************
 
 PublishedVariablesResponse _$PublishedVariablesResponseFromJson(
-        Map<String, dynamic> json) =>
-    PublishedVariablesResponse(
-      status: (json['status'] as num?)?.toInt(),
-      error: json['error'] as bool?,
-      meta: json['meta'] == null
-          ? null
-          : PublishedVariablesMeta.fromJson(
-              json['meta'] as Map<String, dynamic>),
-    );
+  Map<String, dynamic> json,
+) => PublishedVariablesResponse(
+  status: (json['status'] as num?)?.toInt(),
+  error: json['error'] as bool?,
+  meta: json['meta'] == null
+      ? null
+      : PublishedVariablesMeta.fromJson(json['meta'] as Map<String, dynamic>),
+);
 
 Map<String, dynamic> _$PublishedVariablesResponseToJson(
-        PublishedVariablesResponse instance) =>
-    <String, dynamic>{
-      'status': instance.status,
-      'error': instance.error,
-      'meta': instance.meta,
-    };
+  PublishedVariablesResponse instance,
+) => <String, dynamic>{
+  'status': instance.status,
+  'error': instance.error,
+  'meta': instance.meta,
+};

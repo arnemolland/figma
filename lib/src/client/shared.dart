@@ -1,12 +1,13 @@
 import 'dart:convert';
 import 'package:http/http.dart';
 
-typedef SendRequest = Future<Response> Function(
-  String method,
-  Uri uri,
-  Map<String, String> headers, [
-  String? body,
-]);
+typedef SendRequest =
+    Future<Response> Function(
+      String method,
+      Uri uri,
+      Map<String, String> headers, [
+      String? body,
+    ]);
 
 /// Figma API base URL.
 const String base = 'api.figma.com';

@@ -13,7 +13,7 @@ enum Operation {
   @JsonValue('SUBTRACT')
   subtract,
   @JsonValue('EXCLUDE')
-  exclude
+  exclude,
 }
 
 /// Boolean operations combine any set of shape layers through one of four
@@ -71,11 +71,7 @@ class BooleanOperation extends Vector {
   });
 
   @override
-  List<Object?> get props => [
-        ...super.props,
-        children,
-        operation,
-      ];
+  List<Object?> get props => [...super.props, children, operation];
 
   factory BooleanOperation.fromJson(Map<String, dynamic> json) =>
       _$BooleanOperationFromJson(json);

@@ -69,7 +69,6 @@ class _$PostWebhookCWProxyImpl implements _$PostWebhookCWProxy {
       call(description: description);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PostWebhook(...).copyWith.fieldName(value)`.
   ///
@@ -131,14 +130,14 @@ extension $PostWebhookCopyWith on PostWebhook {
 // **************************************************************************
 
 PostWebhook _$PostWebhookFromJson(Map<String, dynamic> json) => PostWebhook(
-      eventType: $enumDecodeNullable(_$WebhookEventEnumMap, json['event_type']),
-      context: $enumDecodeNullable(_$WebhookContextEnumMap, json['context']),
-      contextId: json['context_id'] as String?,
-      endpoint: json['endpoint'] as String?,
-      passcode: json['passcode'] as String?,
-      status: $enumDecodeNullable(_$WebhookStatusEnumMap, json['status']),
-      description: json['description'] as String?,
-    );
+  eventType: $enumDecodeNullable(_$WebhookEventEnumMap, json['event_type']),
+  context: $enumDecodeNullable(_$WebhookContextEnumMap, json['context']),
+  contextId: json['context_id'] as String?,
+  endpoint: json['endpoint'] as String?,
+  passcode: json['passcode'] as String?,
+  status: $enumDecodeNullable(_$WebhookStatusEnumMap, json['status']),
+  description: json['description'] as String?,
+);
 
 Map<String, dynamic> _$PostWebhookToJson(PostWebhook instance) =>
     <String, dynamic>{

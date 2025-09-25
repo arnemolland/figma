@@ -91,7 +91,6 @@ class _$FileResponseCWProxyImpl implements _$FileResponseCWProxy {
   FileResponse styles(Map<String, Style>? styles) => call(styles: styles);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `FileResponse(...).copyWith.fieldName(value)`.
   ///
@@ -168,25 +167,25 @@ extension $FileResponseCopyWith on FileResponse {
 // **************************************************************************
 
 FileResponse _$FileResponseFromJson(Map<String, dynamic> json) => FileResponse(
-      name: json['name'] as String?,
-      role: json['role'] as String?,
-      lastModified: json['lastModified'] == null
-          ? null
-          : DateTime.parse(json['lastModified'] as String),
-      thumbnailUrl: json['thumbnailUrl'] as String?,
-      version: json['version'] as String?,
-      document: const NodeJsonConverter().fromJson(json['document']),
-      components: (json['components'] as Map<String, dynamic>?)?.map(
-        (k, e) => MapEntry(k, Component.fromJson(e as Map<String, dynamic>)),
-      ),
-      componentSets: (json['componentSets'] as Map<String, dynamic>?)?.map(
-        (k, e) => MapEntry(k, ComponentSet.fromJson(e as Map<String, dynamic>)),
-      ),
-      schemaVersion: (json['schemaVersion'] as num?)?.toInt(),
-      styles: (json['styles'] as Map<String, dynamic>?)?.map(
-        (k, e) => MapEntry(k, Style.fromJson(e as Map<String, dynamic>)),
-      ),
-    );
+  name: json['name'] as String?,
+  role: json['role'] as String?,
+  lastModified: json['lastModified'] == null
+      ? null
+      : DateTime.parse(json['lastModified'] as String),
+  thumbnailUrl: json['thumbnailUrl'] as String?,
+  version: json['version'] as String?,
+  document: const NodeJsonConverter().fromJson(json['document']),
+  components: (json['components'] as Map<String, dynamic>?)?.map(
+    (k, e) => MapEntry(k, Component.fromJson(e as Map<String, dynamic>)),
+  ),
+  componentSets: (json['componentSets'] as Map<String, dynamic>?)?.map(
+    (k, e) => MapEntry(k, ComponentSet.fromJson(e as Map<String, dynamic>)),
+  ),
+  schemaVersion: (json['schemaVersion'] as num?)?.toInt(),
+  styles: (json['styles'] as Map<String, dynamic>?)?.map(
+    (k, e) => MapEntry(k, Style.fromJson(e as Map<String, dynamic>)),
+  ),
+);
 
 Map<String, dynamic> _$FileResponseToJson(FileResponse instance) =>
     <String, dynamic>{

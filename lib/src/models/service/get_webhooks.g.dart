@@ -50,7 +50,6 @@ class _$GetWebhooksCWProxyImpl implements _$GetWebhooksCWProxy {
   GetWebhooks cursor(String? cursor) => call(cursor: cursor);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `GetWebhooks(...).copyWith.fieldName(value)`.
   ///
@@ -97,11 +96,11 @@ extension $GetWebhooksCopyWith on GetWebhooks {
 // **************************************************************************
 
 GetWebhooks _$GetWebhooksFromJson(Map<String, dynamic> json) => GetWebhooks(
-      context: $enumDecodeNullable(_$WebhookContextEnumMap, json['context']),
-      contextId: json['context_id'] as String?,
-      planApiId: json['plan_api_id'] as String?,
-      cursor: json['cursor'] as String?,
-    );
+  context: $enumDecodeNullable(_$WebhookContextEnumMap, json['context']),
+  contextId: json['context_id'] as String?,
+  planApiId: json['plan_api_id'] as String?,
+  cursor: json['cursor'] as String?,
+);
 
 Map<String, dynamic> _$GetWebhooksToJson(GetWebhooks instance) =>
     <String, dynamic>{

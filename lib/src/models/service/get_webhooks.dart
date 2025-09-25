@@ -38,12 +38,7 @@ class GetWebhooks extends Equatable {
   });
 
   @override
-  List<Object?> get props => [
-        context,
-        contextId,
-        planApiId,
-        cursor,
-      ];
+  List<Object?> get props => [context, contextId, planApiId, cursor];
 
   factory GetWebhooks.fromJson(Map<String, dynamic> json) =>
       _$GetWebhooksFromJson(json);

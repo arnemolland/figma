@@ -40,7 +40,6 @@ class _$LayoutConstraintCWProxyImpl implements _$LayoutConstraintCWProxy {
       call(horizontal: horizontal);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `LayoutConstraint(...).copyWith.fieldName(value)`.
   ///
@@ -78,10 +77,14 @@ extension $LayoutConstraintCopyWith on LayoutConstraint {
 
 LayoutConstraint _$LayoutConstraintFromJson(Map<String, dynamic> json) =>
     LayoutConstraint(
-      vertical:
-          $enumDecodeNullable(_$VerticalConstraintEnumMap, json['vertical']),
+      vertical: $enumDecodeNullable(
+        _$VerticalConstraintEnumMap,
+        json['vertical'],
+      ),
       horizontal: $enumDecodeNullable(
-          _$HorizontalConstraintEnumMap, json['horizontal']),
+        _$HorizontalConstraintEnumMap,
+        json['horizontal'],
+      ),
     );
 
 Map<String, dynamic> _$LayoutConstraintToJson(LayoutConstraint instance) =>

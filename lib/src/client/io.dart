@@ -7,8 +7,8 @@ import 'shared.dart';
 
 final SendRequest? http2 =
     HttpClient.findProxyFromEnvironment(Uri.https(base)) == 'DIRECT'
-        ? _http2
-        : null;
+    ? _http2
+    : null;
 
 Future<Response> _http2(
   String method,
@@ -17,25 +17,16 @@ Future<Response> _http2(
   String? body,
 ]) async {
   final transport = ClientTransportConnection.viaSocket(
-    await SecureSocket.connect(
-      uri.host,
-      uri.port,
-      supportedProtocols: ['h2'],
-    ),
+    await SecureSocket.connect(uri.host, uri.port, supportedProtocols: ['h2']),
   );
 
-  final stream = transport.makeRequest(
-    [
-      Header.ascii(':method', method),
-      Header.ascii(':path', uri.path + (uri.hasQuery ? '?${uri.query}' : '')),
-      Header.ascii(':scheme', uri.scheme),
-      Header.ascii(':authority', uri.host),
-      ...headers.entries.map(
-        (e) => Header.ascii(e.key.toLowerCase(), e.value),
-      ),
-    ],
-    endStream: body == null,
-  );
+  final stream = transport.makeRequest([
+    Header.ascii(':method', method),
+    Header.ascii(':path', uri.path + (uri.hasQuery ? '?${uri.query}' : '')),
+    Header.ascii(':scheme', uri.scheme),
+    Header.ascii(':authority', uri.host),
+    ...headers.entries.map((e) => Header.ascii(e.key.toLowerCase(), e.value)),
+  ], endStream: body == null);
 
   if (body != null) {
     stream.sendData(utf8.encode(body), endStream: true);

@@ -52,7 +52,6 @@ class _$PrototypeDeviceCWProxyImpl implements _$PrototypeDeviceCWProxy {
       call(presetIdentifier: presetIdentifier);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PrototypeDevice(...).copyWith.fieldName(value)`.
   ///
@@ -100,10 +99,14 @@ extension $PrototypeDeviceCopyWith on PrototypeDevice {
 
 PrototypeDevice _$PrototypeDeviceFromJson(Map<String, dynamic> json) =>
     PrototypeDevice(
-      type: $enumDecodeNullable(_$PrototypeDeviceTypeEnumMap, json['type']) ??
+      type:
+          $enumDecodeNullable(_$PrototypeDeviceTypeEnumMap, json['type']) ??
           PrototypeDeviceType.none,
-      rotation: $enumDecodeNullable(
-              _$PrototypeDeviceRotationEnumMap, json['rotation']) ??
+      rotation:
+          $enumDecodeNullable(
+            _$PrototypeDeviceRotationEnumMap,
+            json['rotation'],
+          ) ??
           PrototypeDeviceRotation.none,
       size: json['size'] == null
           ? null

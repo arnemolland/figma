@@ -18,10 +18,7 @@ abstract class _$PaginationCWProxy {
   /// ```dart
   /// Pagination(...).copyWith(id: 12, name: "My name")
   /// ```
-  Pagination call({
-    String? previous,
-    String? next,
-  });
+  Pagination call({String? previous, String? next});
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -38,7 +35,6 @@ class _$PaginationCWProxyImpl implements _$PaginationCWProxy {
   Pagination next(String? next) => call(next: next);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Pagination(...).copyWith.fieldName(value)`.
   ///
@@ -75,9 +71,9 @@ extension $PaginationCopyWith on Pagination {
 // **************************************************************************
 
 Pagination _$PaginationFromJson(Map<String, dynamic> json) => Pagination(
-      previous: json['prev_page'] as String?,
-      next: json['next_page'] as String?,
-    );
+  previous: json['prev_page'] as String?,
+  next: json['next_page'] as String?,
+);
 
 Map<String, dynamic> _$PaginationToJson(Pagination instance) =>
     <String, dynamic>{

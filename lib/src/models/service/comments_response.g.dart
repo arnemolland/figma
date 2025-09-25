@@ -16,9 +16,7 @@ abstract class _$CommentsResponseCWProxy {
   /// ```dart
   /// CommentsResponse(...).copyWith(id: 12, name: "My name")
   /// ```
-  CommentsResponse call({
-    List<Comment>? comments,
-  });
+  CommentsResponse call({List<Comment>? comments});
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -33,7 +31,6 @@ class _$CommentsResponseCWProxyImpl implements _$CommentsResponseCWProxy {
       call(comments: comments);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `CommentsResponse(...).copyWith.fieldName(value)`.
   ///
@@ -41,9 +38,7 @@ class _$CommentsResponseCWProxyImpl implements _$CommentsResponseCWProxy {
   /// ```dart
   /// CommentsResponse(...).copyWith(id: 12, name: "My name")
   /// ```
-  CommentsResponse call({
-    Object? comments = const $CopyWithPlaceholder(),
-  }) {
+  CommentsResponse call({Object? comments = const $CopyWithPlaceholder()}) {
     return CommentsResponse(
       comments: comments == const $CopyWithPlaceholder()
           ? _value.comments
@@ -72,6 +67,4 @@ CommentsResponse _$CommentsResponseFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$CommentsResponseToJson(CommentsResponse instance) =>
-    <String, dynamic>{
-      'comments': instance.comments,
-    };
+    <String, dynamic>{'comments': instance.comments};

@@ -20,11 +20,7 @@ abstract class _$PostCommentCWProxy {
   /// ```dart
   /// PostComment(...).copyWith(id: 12, name: "My name")
   /// ```
-  PostComment call({
-    String? message,
-    dynamic clientMeta,
-    String? commentId,
-  });
+  PostComment call({String? message, dynamic clientMeta, String? commentId});
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -44,7 +40,6 @@ class _$PostCommentCWProxyImpl implements _$PostCommentCWProxy {
   PostComment commentId(String? commentId) => call(commentId: commentId);
 
   @override
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PostComment(...).copyWith.fieldName(value)`.
   ///
@@ -86,10 +81,10 @@ extension $PostCommentCopyWith on PostComment {
 // **************************************************************************
 
 PostComment _$PostCommentFromJson(Map<String, dynamic> json) => PostComment(
-      message: json['message'] as String?,
-      clientMeta: json['client_meta'],
-      commentId: json['comment_id'] as String?,
-    );
+  message: json['message'] as String?,
+  clientMeta: json['client_meta'],
+  commentId: json['comment_id'] as String?,
+);
 
 Map<String, dynamic> _$PostCommentToJson(PostComment instance) =>
     <String, dynamic>{

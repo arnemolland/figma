@@ -22,10 +22,7 @@ class Path {
   /// The winding rule.
   final WindingRule windingRule;
 
-  const Path({
-    required this.path,
-    required this.windingRule,
-  });
+  const Path({required this.path, required this.windingRule});
 
   factory Path.fromJson(Map<String, dynamic> json) => _$PathFromJson(json);
 
