@@ -82,29 +82,32 @@ class FigmaClient {
   }
 
   /// Retrieves the Figma file specified by [key].
-  Future<FileResponse> getFile(String key, [FigmaQuery? query]) => _getFigma(
+  Future<FileResponse> getFile(String key, [GetFile? query]) => _getFigma(
     apiVersion,
     '/files/$key',
-    query?.params,
+    query?.queryParams,
   ).then(FileResponse.fromJson);
 
   /// Retrieves the file nodes specified.
-  Future<NodesResponse> getFileNodes(String key, FigmaQuery query) => _getFigma(
-    apiVersion,
-    '/files/$key/nodes',
-    query.params,
-  ).then(NodesResponse.fromJson);
+  Future<NodesResponse> getFileNodes(String key, GetFileNodes query) =>
+      _getFigma(
+        apiVersion,
+        '/files/$key/nodes',
+        query.queryParams,
+      ).then(NodesResponse.fromJson);
 
   /// Retrieves the images specified.
-  Future<ImageResponse> getImages(String key, FigmaQuery query) => _getFigma(
+  Future<ImagesResponse> getImages(String key, GetImages query) => _getFigma(
     apiVersion,
     '/images/$key',
-    query.params,
-  ).then(ImageResponse.fromJson);
+    query.queryParams,
+  ).then(ImagesResponse.fromJson);
 
   /// Retrieves the image fills specified.
-  Future<ImageResponse> getImageFills(String? key) =>
-      _getFigma(apiVersion, '/files/$key/images').then(ImageResponse.fromJson);
+  Future<ImageFillsResponse> getImageFills(String? key) => _getFigma(
+    apiVersion,
+    '/files/$key/images',
+  ).then(ImageFillsResponse.fromJson);
 
   /// Retrieves the image fills specified.
   Future<FileMetaResponse> getFileMetadata(String key) =>
@@ -114,7 +117,7 @@ class FigmaClient {
   Future<List<Comment>> getComments(String key) => _getFigma(
     apiVersion,
     '/files/$key/comments',
-  ).then((data) => CommentsResponse.fromJson(data).comments!);
+  ).then((data) => CommentsResponse.fromJson(data).comments);
 
   /// Posts the given [Comment] to the Figma file specified by [key].
   Future<Comment> postComment(String key, PostComment comment) => _postFigma(
@@ -135,7 +138,7 @@ class FigmaClient {
   Future<List<Version>> getFileVersions(String key) => _getFigma(
     apiVersion,
     '/files/$key/versions',
-  ).then((data) => VersionsResponse.fromJson(data).versions!);
+  ).then((data) => VersionsResponse.fromJson(data).versions);
 
   /// Retrieves all projects for the specified [team].
   Future<TeamProjectsResponse> getTeamProjects(String team) => _getFigma(
@@ -149,24 +152,21 @@ class FigmaClient {
     '/projects/$project/files',
   ).then(ProjectFilesResponse.fromJson);
 
-  /// Retrieves all components from the Figma team specified by [team].
-  Future<ComponentsResponse> getTeamComponents(
-    String team, [
-    FigmaQuery? query,
-  ]) => _getFigma(
-    apiVersion,
-    '/teams/$team/components',
-    query?.params,
-  ).then(ComponentsResponse.fromJson);
+  /// Retrieves all components from the Figma [team].
+  ///
+  /// The results are paginated. Use [query].to retrieve additional results by
+  /// using the values from the [ResponseCursor].
+  Future<ComponentsResponse> getTeamComponents(String team, [GetPage? query]) =>
+      _getFigma(
+        apiVersion,
+        '/teams/$team/components',
+        query?.queryParams,
+      ).then(ComponentsResponse.fromJson);
 
   /// Retrieves all components from the Figma file specified by [key].
-  Future<ComponentsResponse> getFileComponents(
-    String key, [
-    FigmaQuery? query,
-  ]) => _getFigma(
+  Future<ComponentsResponse> getFileComponents(String key) => _getFigma(
     apiVersion,
     '/files/$key/components',
-    query?.params,
   ).then(ComponentsResponse.fromJson);
 
   /// Retrieves a specific component specified by [key].
@@ -175,21 +175,45 @@ class FigmaClient {
     '/components/$key',
   ).then(ComponentResponse.fromJson);
 
-  /// Retrieves all styles for the Figma team specified by [team].
-  Future<StylesResponse> getTeamStyles(String team, [FigmaQuery? query]) =>
+  /// Retrieves all component sets from the Figma [team].
+  ///
+  /// The results are paginated. Use [query].to retrieve additional results by
+  /// using the values from the [ResponseCursor].
+  Future<ComponentSetsResponse> getTeamComponentSets(
+    String team, [
+    GetPage? query,
+  ]) => _getFigma(
+    apiVersion,
+    '/teams/$team/component_sets',
+    query?.queryParams,
+  ).then(ComponentSetsResponse.fromJson);
+
+  /// Retrieves all component sets from the Figma file specified by [key].
+  Future<ComponentSetsResponse> getFileComponentSets(String key) => _getFigma(
+    apiVersion,
+    '/files/$key/component_sets',
+  ).then(ComponentSetsResponse.fromJson);
+
+  /// Retrieves a specific component set specified by [key].
+  Future<ComponentSetResponse> getComponentSet(String key) => _getFigma(
+    apiVersion,
+    '/component_sets/$key',
+  ).then(ComponentSetResponse.fromJson);
+
+  /// Retrieves all styles for the Figma [team].
+  ///
+  /// The results are paginated. Use [query].to retrieve additional results by
+  /// using the values from the [ResponseCursor].
+  Future<StylesResponse> getTeamStyles(String team, [GetPage? query]) =>
       _getFigma(
         apiVersion,
         '/teams/$team/styles',
-        query?.params,
+        query?.queryParams,
       ).then(StylesResponse.fromJson);
 
   /// Retrieves all styles from the Figma file specified by [key].
-  Future<StylesResponse> getFileStyles(String key, [FigmaQuery? query]) =>
-      _getFigma(
-        apiVersion,
-        '/files/$key/styles',
-        query?.params,
-      ).then(StylesResponse.fromJson);
+  Future<StylesResponse> getFileStyles(String key) =>
+      _getFigma(apiVersion, '/files/$key/styles').then(StylesResponse.fromJson);
 
   /// Retrieves all local variables from the Figma file specified by [key].
   ///
@@ -212,11 +236,11 @@ class FigmaClient {
   Future<StyleResponse> getStyle(String key) =>
       _getFigma(apiVersion, '/styles/$key').then(StyleResponse.fromJson);
 
-  /// Retrieves the specified [webhooks].
-  Future<WebhooksResponse> getWebhooks(GetWebhooks webhooks) => _getFigma(
+  /// Retrieves the specified webhooks [query].
+  Future<WebhooksResponse> getWebhooks(GetWebhooks query) => _getFigma(
     webhookVersion,
     '/webhooks',
-    webhooks.params,
+    query.queryParams,
   ).then(WebhooksResponse.fromJson);
 
   /// Posts the given [webhook].

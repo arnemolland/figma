@@ -90,6 +90,7 @@ ArcData
 BlurEffect
 BlurEffectVariables
 BooleanOperationNode
+Branch
 Canvas
 ColorStop
 ColorStopVariables
@@ -102,6 +103,7 @@ ComponentPropertyDefinition
 ComponentPropertyVariables
 ComponentSet
 ComponentSetNode
+ComponentSetsMeta
 ComponentsMeta
 ConditionalAction
 ConditionalBlock
@@ -131,6 +133,7 @@ FrameInfo
 GradientPaint
 GroupNode
 Hyperlink
+ImageFillsMeta
 ImageFilters
 ImagePaint
 IndividualStrokeWeightsVariables
@@ -159,6 +162,7 @@ MultitoneNoiseEffect
 Navigation
 Node
 NodeAction
+NodeMeta
 NoiseEffect
 NormalBlurEffect
 OnKeyDownTrigger
@@ -177,6 +181,7 @@ Project
 ProjectFile
 PrototypeDevice
 PublishedComponent
+PublishedComponentSet
 PublishedStyle
 PublishedVariable
 PublishedVariableCollection
@@ -213,7 +218,6 @@ TableCellNode
 TableNode
 TextNode
 TextPathNode
-TextPathTypeStyle
 TextPathTypeStyle
 TextPathTypeStyleVariables
 TextureEffect
@@ -272,3 +276,33 @@ FileVersionUpdatePayload
 LibraryPublishPayload
 PingPayload
 WebhookPayload
+
+# Request query parameters
+GetFile
+GetFileNodes
+GetImages
+GetPage
+GetWebhooks
+PostComment
+PostWebhook
+PutWebhook
+
+# Responses
+CommentsResponse
+ComponentResponse
+ComponentSetResponse
+ComponentSetsResponse
+ComponentsResponse
+FileMetaResponse
+FileResponse
+ImageFillsResponse
+ImagesResponse
+LocalVariablesResponse
+NodesResponse
+ProjectFilesResponse
+PublishedVariablesResponse
+StyleResponse
+StylesResponse
+TeamProjectsResponse
+VersionsResponse
+WebhooksResponse

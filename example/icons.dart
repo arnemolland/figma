@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:args/args.dart';
 import 'package:figma/figma.dart';
 import 'package:http/http.dart';
+import 'package:path/path.dart' as p;
 
 /// This script downloads all icons from Figma and
 /// generates an icon font from them. It also optimizes the SVGs using SVGO.
@@ -82,34 +83,27 @@ Future<void> download(
   });
 
   // Retrieve icon canvas.
-  final canvas = (file.document as Document?)?.children
+  final canvas = file.document.children
       .where((node) => node.name == pageRef)
       .single;
 
-  if (canvas?.id == null) {
-    throw Exception('Could not find icon canvas');
-  }
-
   // Get nodes from icon canvas.
-  final node = await client.getFileNodes(
-    ref,
-    FigmaQuery(ids: [canvas!.id], format: 'svg'),
-  );
+  final node = await client.getFileNodes(ref, GetFileNodes(ids: canvas.id));
 
-  final components = node.nodes?[canvas.id]?.components;
-  final ids = components?.keys.toList();
+  final components = node.nodes[canvas.id]!.components;
+  final ids = components.keys.toList();
 
-  if (ids == null) {
+  if (ids.isEmpty) {
     throw Exception('Could not find any icons');
   }
 
   // Retrieve SVG for each component.
   final res = await client.getImages(
     ref,
-    FigmaQuery(ids: ids, format: 'svg', svgIncludeId: true),
+    GetImages(ids: ids.join(','), format: ExportFormat.svg, svgIncludeId: true),
   );
 
-  if (res.err != null || res.images == null) {
+  if (res.images.isEmpty) {
     throw Exception('Could not retrieve images');
   }
 
@@ -117,8 +111,8 @@ Future<void> download(
   final futures = <Future>[];
 
   // Loop through each URL and download the SVG.
-  for (final url in res.images!.entries) {
-    final component = components?[url.key];
+  for (final url in res.images.entries) {
+    final component = components[url.key];
 
     if (component == null) {
       throw Exception('Could not find component for ${url.key}');
@@ -128,7 +122,7 @@ Future<void> download(
     final name = component.name.replaceAll('some_', '');
 
     // Add future to list.
-    final future = get(Uri.parse(url.value)).then((svgRes) async {
+    final future = get(url.value!).then((svgRes) async {
       if (svgRes.statusCode == 200) {
         final path = '${dir.path}/$name.svg';
         final file = File(path);
@@ -148,7 +142,7 @@ Future<void> download(
 
   // Execute requests in parallel.
   return Future.wait(futures).then((_) {
-    print('Saved ${res.images!.length} icons');
+    print('Saved ${res.images.length} icons');
   });
 }
 
@@ -217,6 +211,11 @@ Future<void> main(List<String> args) async {
       defaultsTo: 'ExampleIcons',
     )
     ..addOption(
+      'download',
+      help: 'Path to save SVG files to',
+      defaultsTo: p.join(Directory.current.path, '.cache'),
+    )
+    ..addOption(
       'dart-out',
       help: 'Path to save Flutter icon class to',
       defaultsTo: 'example.dart',
@@ -235,8 +234,7 @@ Future<void> main(List<String> args) async {
   final pageRef = results['page'];
   final accessToken = results['token'];
   final className = results['class-name'];
-
-  final dir = Directory('${Directory.current.path}/.cache');
+  final dir = Directory(results['download']);
 
   // Download icons.
   await download(dir, ref, pageRef, accessToken).catchError((e) {
