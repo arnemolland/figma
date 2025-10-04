@@ -1,12 +1,12 @@
+// Generated from v0.33.0 of the Figma REST API specification
+
 import 'package:json_annotation/json_annotation.dart';
 
-/// Type of layout positioning applied to a node.
+/// Determines whether a layer's size and position should be determined by
+/// auto-layout settings or manually adjustable.
 enum LayoutPositioning {
-  /// Default positioning of the node within its parent.
   @JsonValue('AUTO')
   auto,
-
-  /// Absolute positioning of the node within its parent.
   @JsonValue('ABSOLUTE')
   absolute,
 }

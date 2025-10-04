@@ -12,7 +12,7 @@ part 'layout_grid.g.dart';
 @CopyWith()
 class LayoutGrid extends Equatable {
   /// Orientation of the grid as a string enum.
-  final LayoutPattern? pattern;
+  final LayoutGridPattern? pattern;
 
   /// Width of column grid or height of row grid or square grid spacing.
   final double? sectionSize;

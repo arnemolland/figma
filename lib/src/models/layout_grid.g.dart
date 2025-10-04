@@ -7,7 +7,7 @@ part of 'layout_grid.dart';
 // **************************************************************************
 
 abstract class _$LayoutGridCWProxy {
-  LayoutGrid pattern(LayoutPattern? pattern);
+  LayoutGrid pattern(LayoutGridPattern? pattern);
 
   LayoutGrid sectionSize(double? sectionSize);
 
@@ -31,7 +31,7 @@ abstract class _$LayoutGridCWProxy {
   /// LayoutGrid(...).copyWith(id: 12, name: "My name")
   /// ```
   LayoutGrid call({
-    LayoutPattern? pattern,
+    LayoutGridPattern? pattern,
     double? sectionSize,
     bool? visible,
     Color? color,
@@ -50,7 +50,7 @@ class _$LayoutGridCWProxyImpl implements _$LayoutGridCWProxy {
   final LayoutGrid _value;
 
   @override
-  LayoutGrid pattern(LayoutPattern? pattern) => call(pattern: pattern);
+  LayoutGrid pattern(LayoutGridPattern? pattern) => call(pattern: pattern);
 
   @override
   LayoutGrid sectionSize(double? sectionSize) => call(sectionSize: sectionSize);
@@ -95,7 +95,7 @@ class _$LayoutGridCWProxyImpl implements _$LayoutGridCWProxy {
       pattern: pattern == const $CopyWithPlaceholder()
           ? _value.pattern
           // ignore: cast_nullable_to_non_nullable
-          : pattern as LayoutPattern?,
+          : pattern as LayoutGridPattern?,
       sectionSize: sectionSize == const $CopyWithPlaceholder()
           ? _value.sectionSize
           // ignore: cast_nullable_to_non_nullable
@@ -140,7 +140,7 @@ extension $LayoutGridCopyWith on LayoutGrid {
 // **************************************************************************
 
 LayoutGrid _$LayoutGridFromJson(Map<String, dynamic> json) => LayoutGrid(
-  pattern: $enumDecodeNullable(_$LayoutPatternEnumMap, json['pattern']),
+  pattern: $enumDecodeNullable(_$LayoutGridPatternEnumMap, json['pattern']),
   sectionSize: (json['sectionSize'] as num?)?.toDouble(),
   visible: json['visible'] as bool?,
   color: json['color'] == null
@@ -154,7 +154,7 @@ LayoutGrid _$LayoutGridFromJson(Map<String, dynamic> json) => LayoutGrid(
 
 Map<String, dynamic> _$LayoutGridToJson(LayoutGrid instance) =>
     <String, dynamic>{
-      'pattern': _$LayoutPatternEnumMap[instance.pattern],
+      'pattern': _$LayoutGridPatternEnumMap[instance.pattern],
       'sectionSize': instance.sectionSize,
       'visible': instance.visible,
       'color': instance.color,
@@ -164,16 +164,16 @@ Map<String, dynamic> _$LayoutGridToJson(LayoutGrid instance) =>
       'count': instance.count,
     };
 
-const _$LayoutPatternEnumMap = {
-  LayoutPattern.columns: 'COLUMNS',
-  LayoutPattern.rows: 'ROWS',
-  LayoutPattern.grid: 'GRID',
+const _$LayoutGridPatternEnumMap = {
+  LayoutGridPattern.columns: 'COLUMNS',
+  LayoutGridPattern.rows: 'ROWS',
+  LayoutGridPattern.grid: 'GRID',
 };
 
 const _$LayoutAlignEnumMap = {
+  LayoutAlign.inherit: 'INHERIT',
+  LayoutAlign.stretch: 'STRETCH',
   LayoutAlign.min: 'MIN',
   LayoutAlign.center: 'CENTER',
   LayoutAlign.max: 'MAX',
-  LayoutAlign.stretch: 'STRETCH',
-  LayoutAlign.inherit: 'INHERIT',
 };

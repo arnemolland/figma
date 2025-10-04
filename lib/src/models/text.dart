@@ -3,20 +3,6 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'text.g.dart';
 
-enum LineType {
-  /// Text is an ordered list (numbered).
-  @JsonValue('ORDERED')
-  ordered,
-
-  /// Text is an unordered list (bulleted).
-  @JsonValue('UNORDERED')
-  unordered,
-
-  /// Text is plain text and not part of any list.
-  @JsonValue('NONE')
-  none,
-}
-
 /// A text node, represented as a [Vector] and modified by a [TypeStyle].
 @JsonSerializable()
 class Text extends Vector {

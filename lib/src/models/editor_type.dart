@@ -1,6 +1,7 @@
+// Generated from v0.33.0 of the Figma REST API specification
+
 import 'package:json_annotation/json_annotation.dart';
 
-/// The type of editor associated with a file.
 enum EditorType {
   @JsonValue('figma')
   figma,
@@ -8,4 +9,10 @@ enum EditorType {
   figjam,
   @JsonValue('slides')
   slides,
+  @JsonValue('buzz')
+  buzz,
+  @JsonValue('sites')
+  sites,
+  @JsonValue('make')
+  make,
 }

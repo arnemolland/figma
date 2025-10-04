@@ -111,7 +111,7 @@ Map<String, dynamic> _$GetWebhooksToJson(GetWebhooks instance) =>
     };
 
 const _$WebhookContextEnumMap = {
-  WebhookContext.project: 'project',
-  WebhookContext.team: 'team',
-  WebhookContext.file: 'file',
+  WebhookContext.project: 'PROJECT',
+  WebhookContext.team: 'TEAM',
+  WebhookContext.file: 'FILE',
 };

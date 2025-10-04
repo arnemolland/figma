@@ -1,14 +1,13 @@
+// Generated from v0.33.0 of the Figma REST API specification
+
 import 'package:json_annotation/json_annotation.dart';
 
-/// The context for the webhook.
-///
-/// A webhook can be associated to a team, a project, or a file.
+/// An enum representing the possible statuses you can set a webhook to:
+/// - `ACTIVE`: The webhook is healthy and receive all events.
+/// - `PAUSED`: The webhook is paused and will not receive any events.
 enum WebhookStatus {
-  /// The webhook is healthy and receive all events.
   @JsonValue('ACTIVE')
   active,
-
-  /// The webhook is paused and will not receive any events.
   @JsonValue('PAUSED')
   paused,
 }

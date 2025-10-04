@@ -1,6 +1,8 @@
+// Generated from v0.33.0 of the Figma REST API specification
+
 import 'package:json_annotation/json_annotation.dart';
 
-/// Access policy for users who have a link to a file.
+/// Access policy for users who have the link to the file.
 enum LinkAccess {
   @JsonValue('view')
   view,

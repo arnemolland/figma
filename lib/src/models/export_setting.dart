@@ -5,18 +5,6 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'export_setting.g.dart';
 
-/// Image type, supports JPG, PDF, PNG and SVG formats.
-enum ExportFormat {
-  @JsonValue('JPG')
-  jpg,
-  @JsonValue('PNG')
-  png,
-  @JsonValue('SVG')
-  svg,
-  @JsonValue('PDF')
-  pdf,
-}
-
 /// Format and size to export an asset at.
 @JsonSerializable()
 @CopyWith()

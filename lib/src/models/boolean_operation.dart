@@ -4,18 +4,6 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'boolean_operation.g.dart';
 
-/// A string enum indicating the type of boolean operation applied.
-enum Operation {
-  @JsonValue('UNION')
-  union,
-  @JsonValue('INTERSECT')
-  intersect,
-  @JsonValue('SUBTRACT')
-  subtract,
-  @JsonValue('EXCLUDE')
-  exclude,
-}
-
 /// Boolean operations combine any set of shape layers through one of four
 /// formulas: Union, Subtract, Intersect, and Exclude.
 @JsonSerializable()

@@ -1,8 +1,8 @@
+// Generated from v0.33.0 of the Figma REST API specification
+
 import 'package:json_annotation/json_annotation.dart';
 
-/// The context for the webhook.
-///
-/// A webhook can be associated to a team, a project, or a file.
+/// An enum representing the possible events that a webhook can subscribe to.
 enum WebhookEvent {
   @JsonValue('PING')
   ping,

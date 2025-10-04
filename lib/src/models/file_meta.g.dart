@@ -213,6 +213,9 @@ const _$EditorTypeEnumMap = {
   EditorType.figma: 'figma',
   EditorType.figjam: 'figjam',
   EditorType.slides: 'slides',
+  EditorType.buzz: 'buzz',
+  EditorType.sites: 'sites',
+  EditorType.make: 'make',
 };
 
 const _$RoleEnumMap = {
