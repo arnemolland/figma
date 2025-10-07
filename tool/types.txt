@@ -4,6 +4,7 @@
 BlendMode
 ComponentPropertyType
 ConstraintType
+CounterAxisAlignContent
 CounterAxisAlignItems
 CounterAxisSizingMode
 DevModeStatus
@@ -11,16 +12,22 @@ EasingType
 EditorType
 EffectType
 ExportFormat
+GridChildAlign
 HorizontalConstraint
+HyperlinkType
 InstanceSwapPreferredValueType
 LayoutAlign
 LayoutGridAlignment
 LayoutGridPattern
+LayoutGrow
 LayoutMode
 LayoutPositioning
+LayoutSizing
+LayoutWrap
 LineHeightUnit
 LineType
 LinkAccess
+MaskType
 Operation
 OverflowDirection
 PaintType
@@ -31,6 +38,9 @@ PrototypeDeviceType
 ResolvedType
 Role
 ScaleMode
+ScrollBehavior
+SemanticItalic
+SemanticWeight
 StrokeAlign
 StrokeCap
 StrokeJoin
@@ -40,6 +50,7 @@ TextAlignVertical
 TextAutoResize
 TextCase
 TextDecoration
+TextTruncation
 VariableScope
 VerticalConstraint
 WebhookContext
@@ -50,6 +61,7 @@ WindingRule
 # Type definitions
 ClientMeta
 Emoji
+Transform
 VariableValue
 
 # Models
@@ -69,12 +81,16 @@ Constraint
 ContainingComponentSet
 Cursor
 DevResource
+DevStatus
 DocumentationLink
 ExportSetting
 FileMeta
 FlowStartingPoint
 FrameInfo
+Hyperlink
+IndividualStrokeWeightsVariables
 InstanceSwapPreferredValue
+LayerTraitVariables
 LayoutConstraint
 LayoutGrid
 LayoutGridVariables
@@ -96,17 +112,47 @@ PublishedVariable
 PublishedVariableCollection
 PublishedVariablesMeta
 Reaction
+RectangleCornerRadiiVariables
 ResponseCursor
 Size
 SizeRectangle
+SizeVariables
 StrokeWeights
 Style
 StylesMeta
+TextPathTypeStyle
+TextPathTypeStyle
+TextPathTypeStyleVariables
+TypeStyle
+TypeStyleVariables
 User
 VariableAlias
 VariableCodeSyntax
 Vector2D
 Version
+
+# Mixins
+AnnotationsTrait
+BaseTypeStyle
+ComponentPropertiesTrait
+CornerTrait
+DevStatusTrait
+HasBlendModeAndOpacityTrait
+HasChildrenTrait
+HasEffectsTrait
+HasExportSettingsTrait
+HasFramePropertiesTrait
+HasGeometryTrait
+HasLayoutTrait
+HasMaskTrait
+HasTextSublayerTrait
+IndividualStrokesTrait
+IsLayerTrait
+MinimalFillsTrait
+MinimalStrokesTrait
+TextPathPropertiesTrait
+TransitionSourceTrait
+TypePropertiesTrait
 
 # Payloads
 DevModeStatusUpdatePayload

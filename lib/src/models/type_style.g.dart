@@ -11,11 +11,9 @@ abstract class _$TypeStyleCWProxy {
 
   TypeStyle fontPostScriptName(String? fontPostScriptName);
 
-  TypeStyle paragraphSpacing(num? paragraphSpacing);
+  TypeStyle fontStyle(String? fontStyle);
 
-  TypeStyle paragraphIndent(num? paragraphIndent);
-
-  TypeStyle italic(bool? italic);
+  TypeStyle italic(bool italic);
 
   TypeStyle fontWeight(num? fontWeight);
 
@@ -23,27 +21,47 @@ abstract class _$TypeStyleCWProxy {
 
   TypeStyle textCase(TextCase? textCase);
 
-  TypeStyle textDecoration(TextDecoration? textDecoration);
-
-  TypeStyle textAutoResize(TextAutoResize? textAutoResize);
-
   TypeStyle textAlignHorizontal(TextAlignHorizontal? textAlignHorizontal);
 
   TypeStyle textAlignVertical(TextAlignVertical? textAlignVertical);
 
   TypeStyle letterSpacing(num? letterSpacing);
 
-  TypeStyle fills(List<Paint>? fills);
+  TypeStyle fills(List<Paint> fills);
 
-  TypeStyle opentypeFlags(Map<String, num>? opentypeFlags);
+  TypeStyle hyperlink(Hyperlink? hyperlink);
+
+  TypeStyle openTypeFlags(Map<String, num> openTypeFlags);
+
+  TypeStyle semanticWeight(SemanticWeight? semanticWeight);
+
+  TypeStyle semanticItalic(SemanticItalic? semanticItalic);
+
+  TypeStyle paragraphSpacing(num paragraphSpacing);
+
+  TypeStyle paragraphIndent(num paragraphIndent);
+
+  TypeStyle listSpacing(num listSpacing);
+
+  TypeStyle textDecoration(TextDecoration textDecoration);
+
+  TypeStyle textAutoResize(TextAutoResize textAutoResize);
+
+  TypeStyle textTruncation(TextTruncation textTruncation);
+
+  TypeStyle maxLines(num? maxLines);
 
   TypeStyle lineHeightPx(num? lineHeightPx);
 
-  TypeStyle lineHeightPercent(num? lineHeightPercent);
+  TypeStyle lineHeightPercent(num lineHeightPercent);
 
   TypeStyle lineHeightPercentFontSize(num? lineHeightPercentFontSize);
 
   TypeStyle lineHeightUnit(LineHeightUnit? lineHeightUnit);
+
+  TypeStyle isOverrideOverTextStyle(bool? isOverrideOverTextStyle);
+
+  TypeStyle boundVariables(TypeStyleVariables boundVariables);
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `TypeStyle(...).copyWith.fieldName(value)`.
@@ -55,23 +73,32 @@ abstract class _$TypeStyleCWProxy {
   TypeStyle call({
     String? fontFamily,
     String? fontPostScriptName,
-    num? paragraphSpacing,
-    num? paragraphIndent,
-    bool? italic,
+    String? fontStyle,
+    bool italic,
     num? fontWeight,
     num? fontSize,
     TextCase? textCase,
-    TextDecoration? textDecoration,
-    TextAutoResize? textAutoResize,
     TextAlignHorizontal? textAlignHorizontal,
     TextAlignVertical? textAlignVertical,
     num? letterSpacing,
-    List<Paint>? fills,
-    Map<String, num>? opentypeFlags,
+    List<Paint> fills,
+    Hyperlink? hyperlink,
+    Map<String, num> openTypeFlags,
+    SemanticWeight? semanticWeight,
+    SemanticItalic? semanticItalic,
+    num paragraphSpacing,
+    num paragraphIndent,
+    num listSpacing,
+    TextDecoration textDecoration,
+    TextAutoResize textAutoResize,
+    TextTruncation textTruncation,
+    num? maxLines,
     num? lineHeightPx,
-    num? lineHeightPercent,
+    num lineHeightPercent,
     num? lineHeightPercentFontSize,
     LineHeightUnit? lineHeightUnit,
+    bool? isOverrideOverTextStyle,
+    TypeStyleVariables boundVariables,
   });
 }
 
@@ -90,15 +117,10 @@ class _$TypeStyleCWProxyImpl implements _$TypeStyleCWProxy {
       call(fontPostScriptName: fontPostScriptName);
 
   @override
-  TypeStyle paragraphSpacing(num? paragraphSpacing) =>
-      call(paragraphSpacing: paragraphSpacing);
+  TypeStyle fontStyle(String? fontStyle) => call(fontStyle: fontStyle);
 
   @override
-  TypeStyle paragraphIndent(num? paragraphIndent) =>
-      call(paragraphIndent: paragraphIndent);
-
-  @override
-  TypeStyle italic(bool? italic) => call(italic: italic);
+  TypeStyle italic(bool italic) => call(italic: italic);
 
   @override
   TypeStyle fontWeight(num? fontWeight) => call(fontWeight: fontWeight);
@@ -108,14 +130,6 @@ class _$TypeStyleCWProxyImpl implements _$TypeStyleCWProxy {
 
   @override
   TypeStyle textCase(TextCase? textCase) => call(textCase: textCase);
-
-  @override
-  TypeStyle textDecoration(TextDecoration? textDecoration) =>
-      call(textDecoration: textDecoration);
-
-  @override
-  TypeStyle textAutoResize(TextAutoResize? textAutoResize) =>
-      call(textAutoResize: textAutoResize);
 
   @override
   TypeStyle textAlignHorizontal(TextAlignHorizontal? textAlignHorizontal) =>
@@ -130,17 +144,54 @@ class _$TypeStyleCWProxyImpl implements _$TypeStyleCWProxy {
       call(letterSpacing: letterSpacing);
 
   @override
-  TypeStyle fills(List<Paint>? fills) => call(fills: fills);
+  TypeStyle fills(List<Paint> fills) => call(fills: fills);
 
   @override
-  TypeStyle opentypeFlags(Map<String, num>? opentypeFlags) =>
-      call(opentypeFlags: opentypeFlags);
+  TypeStyle hyperlink(Hyperlink? hyperlink) => call(hyperlink: hyperlink);
+
+  @override
+  TypeStyle openTypeFlags(Map<String, num> openTypeFlags) =>
+      call(openTypeFlags: openTypeFlags);
+
+  @override
+  TypeStyle semanticWeight(SemanticWeight? semanticWeight) =>
+      call(semanticWeight: semanticWeight);
+
+  @override
+  TypeStyle semanticItalic(SemanticItalic? semanticItalic) =>
+      call(semanticItalic: semanticItalic);
+
+  @override
+  TypeStyle paragraphSpacing(num paragraphSpacing) =>
+      call(paragraphSpacing: paragraphSpacing);
+
+  @override
+  TypeStyle paragraphIndent(num paragraphIndent) =>
+      call(paragraphIndent: paragraphIndent);
+
+  @override
+  TypeStyle listSpacing(num listSpacing) => call(listSpacing: listSpacing);
+
+  @override
+  TypeStyle textDecoration(TextDecoration textDecoration) =>
+      call(textDecoration: textDecoration);
+
+  @override
+  TypeStyle textAutoResize(TextAutoResize textAutoResize) =>
+      call(textAutoResize: textAutoResize);
+
+  @override
+  TypeStyle textTruncation(TextTruncation textTruncation) =>
+      call(textTruncation: textTruncation);
+
+  @override
+  TypeStyle maxLines(num? maxLines) => call(maxLines: maxLines);
 
   @override
   TypeStyle lineHeightPx(num? lineHeightPx) => call(lineHeightPx: lineHeightPx);
 
   @override
-  TypeStyle lineHeightPercent(num? lineHeightPercent) =>
+  TypeStyle lineHeightPercent(num lineHeightPercent) =>
       call(lineHeightPercent: lineHeightPercent);
 
   @override
@@ -150,6 +201,14 @@ class _$TypeStyleCWProxyImpl implements _$TypeStyleCWProxy {
   @override
   TypeStyle lineHeightUnit(LineHeightUnit? lineHeightUnit) =>
       call(lineHeightUnit: lineHeightUnit);
+
+  @override
+  TypeStyle isOverrideOverTextStyle(bool? isOverrideOverTextStyle) =>
+      call(isOverrideOverTextStyle: isOverrideOverTextStyle);
+
+  @override
+  TypeStyle boundVariables(TypeStyleVariables boundVariables) =>
+      call(boundVariables: boundVariables);
 
   @override
   /// Creates a new instance with the provided field values.
@@ -162,23 +221,32 @@ class _$TypeStyleCWProxyImpl implements _$TypeStyleCWProxy {
   TypeStyle call({
     Object? fontFamily = const $CopyWithPlaceholder(),
     Object? fontPostScriptName = const $CopyWithPlaceholder(),
-    Object? paragraphSpacing = const $CopyWithPlaceholder(),
-    Object? paragraphIndent = const $CopyWithPlaceholder(),
+    Object? fontStyle = const $CopyWithPlaceholder(),
     Object? italic = const $CopyWithPlaceholder(),
     Object? fontWeight = const $CopyWithPlaceholder(),
     Object? fontSize = const $CopyWithPlaceholder(),
     Object? textCase = const $CopyWithPlaceholder(),
-    Object? textDecoration = const $CopyWithPlaceholder(),
-    Object? textAutoResize = const $CopyWithPlaceholder(),
     Object? textAlignHorizontal = const $CopyWithPlaceholder(),
     Object? textAlignVertical = const $CopyWithPlaceholder(),
     Object? letterSpacing = const $CopyWithPlaceholder(),
     Object? fills = const $CopyWithPlaceholder(),
-    Object? opentypeFlags = const $CopyWithPlaceholder(),
+    Object? hyperlink = const $CopyWithPlaceholder(),
+    Object? openTypeFlags = const $CopyWithPlaceholder(),
+    Object? semanticWeight = const $CopyWithPlaceholder(),
+    Object? semanticItalic = const $CopyWithPlaceholder(),
+    Object? paragraphSpacing = const $CopyWithPlaceholder(),
+    Object? paragraphIndent = const $CopyWithPlaceholder(),
+    Object? listSpacing = const $CopyWithPlaceholder(),
+    Object? textDecoration = const $CopyWithPlaceholder(),
+    Object? textAutoResize = const $CopyWithPlaceholder(),
+    Object? textTruncation = const $CopyWithPlaceholder(),
+    Object? maxLines = const $CopyWithPlaceholder(),
     Object? lineHeightPx = const $CopyWithPlaceholder(),
     Object? lineHeightPercent = const $CopyWithPlaceholder(),
     Object? lineHeightPercentFontSize = const $CopyWithPlaceholder(),
     Object? lineHeightUnit = const $CopyWithPlaceholder(),
+    Object? isOverrideOverTextStyle = const $CopyWithPlaceholder(),
+    Object? boundVariables = const $CopyWithPlaceholder(),
   }) {
     return TypeStyle(
       fontFamily: fontFamily == const $CopyWithPlaceholder()
@@ -189,18 +257,14 @@ class _$TypeStyleCWProxyImpl implements _$TypeStyleCWProxy {
           ? _value.fontPostScriptName
           // ignore: cast_nullable_to_non_nullable
           : fontPostScriptName as String?,
-      paragraphSpacing: paragraphSpacing == const $CopyWithPlaceholder()
-          ? _value.paragraphSpacing
+      fontStyle: fontStyle == const $CopyWithPlaceholder()
+          ? _value.fontStyle
           // ignore: cast_nullable_to_non_nullable
-          : paragraphSpacing as num?,
-      paragraphIndent: paragraphIndent == const $CopyWithPlaceholder()
-          ? _value.paragraphIndent
-          // ignore: cast_nullable_to_non_nullable
-          : paragraphIndent as num?,
-      italic: italic == const $CopyWithPlaceholder()
+          : fontStyle as String?,
+      italic: italic == const $CopyWithPlaceholder() || italic == null
           ? _value.italic
           // ignore: cast_nullable_to_non_nullable
-          : italic as bool?,
+          : italic as bool,
       fontWeight: fontWeight == const $CopyWithPlaceholder()
           ? _value.fontWeight
           // ignore: cast_nullable_to_non_nullable
@@ -213,14 +277,6 @@ class _$TypeStyleCWProxyImpl implements _$TypeStyleCWProxy {
           ? _value.textCase
           // ignore: cast_nullable_to_non_nullable
           : textCase as TextCase?,
-      textDecoration: textDecoration == const $CopyWithPlaceholder()
-          ? _value.textDecoration
-          // ignore: cast_nullable_to_non_nullable
-          : textDecoration as TextDecoration?,
-      textAutoResize: textAutoResize == const $CopyWithPlaceholder()
-          ? _value.textAutoResize
-          // ignore: cast_nullable_to_non_nullable
-          : textAutoResize as TextAutoResize?,
       textAlignHorizontal: textAlignHorizontal == const $CopyWithPlaceholder()
           ? _value.textAlignHorizontal
           // ignore: cast_nullable_to_non_nullable
@@ -233,22 +289,76 @@ class _$TypeStyleCWProxyImpl implements _$TypeStyleCWProxy {
           ? _value.letterSpacing
           // ignore: cast_nullable_to_non_nullable
           : letterSpacing as num?,
-      fills: fills == const $CopyWithPlaceholder()
+      fills: fills == const $CopyWithPlaceholder() || fills == null
           ? _value.fills
           // ignore: cast_nullable_to_non_nullable
-          : fills as List<Paint>?,
-      opentypeFlags: opentypeFlags == const $CopyWithPlaceholder()
-          ? _value.opentypeFlags
+          : fills as List<Paint>,
+      hyperlink: hyperlink == const $CopyWithPlaceholder()
+          ? _value.hyperlink
           // ignore: cast_nullable_to_non_nullable
-          : opentypeFlags as Map<String, num>?,
+          : hyperlink as Hyperlink?,
+      openTypeFlags:
+          openTypeFlags == const $CopyWithPlaceholder() || openTypeFlags == null
+          ? _value.openTypeFlags
+          // ignore: cast_nullable_to_non_nullable
+          : openTypeFlags as Map<String, num>,
+      semanticWeight: semanticWeight == const $CopyWithPlaceholder()
+          ? _value.semanticWeight
+          // ignore: cast_nullable_to_non_nullable
+          : semanticWeight as SemanticWeight?,
+      semanticItalic: semanticItalic == const $CopyWithPlaceholder()
+          ? _value.semanticItalic
+          // ignore: cast_nullable_to_non_nullable
+          : semanticItalic as SemanticItalic?,
+      paragraphSpacing:
+          paragraphSpacing == const $CopyWithPlaceholder() ||
+              paragraphSpacing == null
+          ? _value.paragraphSpacing
+          // ignore: cast_nullable_to_non_nullable
+          : paragraphSpacing as num,
+      paragraphIndent:
+          paragraphIndent == const $CopyWithPlaceholder() ||
+              paragraphIndent == null
+          ? _value.paragraphIndent
+          // ignore: cast_nullable_to_non_nullable
+          : paragraphIndent as num,
+      listSpacing:
+          listSpacing == const $CopyWithPlaceholder() || listSpacing == null
+          ? _value.listSpacing
+          // ignore: cast_nullable_to_non_nullable
+          : listSpacing as num,
+      textDecoration:
+          textDecoration == const $CopyWithPlaceholder() ||
+              textDecoration == null
+          ? _value.textDecoration
+          // ignore: cast_nullable_to_non_nullable
+          : textDecoration as TextDecoration,
+      textAutoResize:
+          textAutoResize == const $CopyWithPlaceholder() ||
+              textAutoResize == null
+          ? _value.textAutoResize
+          // ignore: cast_nullable_to_non_nullable
+          : textAutoResize as TextAutoResize,
+      textTruncation:
+          textTruncation == const $CopyWithPlaceholder() ||
+              textTruncation == null
+          ? _value.textTruncation
+          // ignore: cast_nullable_to_non_nullable
+          : textTruncation as TextTruncation,
+      maxLines: maxLines == const $CopyWithPlaceholder()
+          ? _value.maxLines
+          // ignore: cast_nullable_to_non_nullable
+          : maxLines as num?,
       lineHeightPx: lineHeightPx == const $CopyWithPlaceholder()
           ? _value.lineHeightPx
           // ignore: cast_nullable_to_non_nullable
           : lineHeightPx as num?,
-      lineHeightPercent: lineHeightPercent == const $CopyWithPlaceholder()
+      lineHeightPercent:
+          lineHeightPercent == const $CopyWithPlaceholder() ||
+              lineHeightPercent == null
           ? _value.lineHeightPercent
           // ignore: cast_nullable_to_non_nullable
-          : lineHeightPercent as num?,
+          : lineHeightPercent as num,
       lineHeightPercentFontSize:
           lineHeightPercentFontSize == const $CopyWithPlaceholder()
           ? _value.lineHeightPercentFontSize
@@ -258,6 +368,17 @@ class _$TypeStyleCWProxyImpl implements _$TypeStyleCWProxy {
           ? _value.lineHeightUnit
           // ignore: cast_nullable_to_non_nullable
           : lineHeightUnit as LineHeightUnit?,
+      isOverrideOverTextStyle:
+          isOverrideOverTextStyle == const $CopyWithPlaceholder()
+          ? _value.isOverrideOverTextStyle
+          // ignore: cast_nullable_to_non_nullable
+          : isOverrideOverTextStyle as bool?,
+      boundVariables:
+          boundVariables == const $CopyWithPlaceholder() ||
+              boundVariables == null
+          ? _value.boundVariables
+          // ignore: cast_nullable_to_non_nullable
+          : boundVariables as TypeStyleVariables,
     );
   }
 }
@@ -276,20 +397,11 @@ extension $TypeStyleCopyWith on TypeStyle {
 TypeStyle _$TypeStyleFromJson(Map<String, dynamic> json) => TypeStyle(
   fontFamily: json['fontFamily'] as String?,
   fontPostScriptName: json['fontPostScriptName'] as String?,
-  paragraphSpacing: json['paragraphSpacing'] as num?,
-  paragraphIndent: json['paragraphIndent'] as num?,
-  italic: json['italic'] as bool?,
+  fontStyle: json['fontStyle'] as String?,
+  italic: json['italic'] as bool? ?? false,
   fontWeight: json['fontWeight'] as num?,
   fontSize: json['fontSize'] as num?,
   textCase: $enumDecodeNullable(_$TextCaseEnumMap, json['textCase']),
-  textDecoration: $enumDecodeNullable(
-    _$TextDecorationEnumMap,
-    json['textDecoration'],
-  ),
-  textAutoResize: $enumDecodeNullable(
-    _$TextAutoResizeEnumMap,
-    json['textAutoResize'],
-  ),
   textAlignHorizontal: $enumDecodeNullable(
     _$TextAlignHorizontalEnumMap,
     json['textAlignHorizontal'],
@@ -299,42 +411,85 @@ TypeStyle _$TypeStyleFromJson(Map<String, dynamic> json) => TypeStyle(
     json['textAlignVertical'],
   ),
   letterSpacing: json['letterSpacing'] as num?,
-  fills: (json['fills'] as List<dynamic>?)
-      ?.map((e) => Paint.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  opentypeFlags: (json['opentypeFlags'] as Map<String, dynamic>?)?.map(
-    (k, e) => MapEntry(k, e as num),
+  fills:
+      (json['fills'] as List<dynamic>?)
+          ?.map((e) => Paint.fromJson(e as Map<String, dynamic>))
+          .toList() ??
+      [],
+  hyperlink: json['hyperlink'] == null
+      ? null
+      : Hyperlink.fromJson(json['hyperlink'] as Map<String, dynamic>),
+  openTypeFlags:
+      (json['opentypeFlags'] as Map<String, dynamic>?)?.map(
+        (k, e) => MapEntry(k, e as num),
+      ) ??
+      {},
+  semanticWeight: $enumDecodeNullable(
+    _$SemanticWeightEnumMap,
+    json['semanticWeight'],
   ),
+  semanticItalic: $enumDecodeNullable(
+    _$SemanticItalicEnumMap,
+    json['semanticItalic'],
+  ),
+  paragraphSpacing: json['paragraphSpacing'] as num? ?? 0,
+  paragraphIndent: json['paragraphIndent'] as num? ?? 0,
+  listSpacing: json['listSpacing'] as num? ?? 0,
+  textDecoration:
+      $enumDecodeNullable(_$TextDecorationEnumMap, json['textDecoration']) ??
+      TextDecoration.none,
+  textAutoResize:
+      $enumDecodeNullable(_$TextAutoResizeEnumMap, json['textAutoResize']) ??
+      TextAutoResize.none,
+  textTruncation:
+      $enumDecodeNullable(_$TextTruncationEnumMap, json['textTruncation']) ??
+      TextTruncation.disabled,
+  maxLines: json['maxLines'] as num?,
   lineHeightPx: json['lineHeightPx'] as num?,
-  lineHeightPercent: json['lineHeightPercent'] as num?,
+  lineHeightPercent: json['lineHeightPercent'] as num? ?? 100,
   lineHeightPercentFontSize: json['lineHeightPercentFontSize'] as num?,
   lineHeightUnit: $enumDecodeNullable(
     _$LineHeightUnitEnumMap,
     json['lineHeightUnit'],
   ),
+  isOverrideOverTextStyle: json['isOverrideOverTextStyle'] as bool?,
+  boundVariables: json['boundVariables'] == null
+      ? const TypeStyleVariables()
+      : TypeStyleVariables.fromJson(
+          json['boundVariables'] as Map<String, dynamic>,
+        ),
 );
 
 Map<String, dynamic> _$TypeStyleToJson(TypeStyle instance) => <String, dynamic>{
-  'fontFamily': instance.fontFamily,
-  'fontPostScriptName': instance.fontPostScriptName,
+  'fontFamily': ?instance.fontFamily,
+  'fontPostScriptName': ?instance.fontPostScriptName,
+  'fontStyle': ?instance.fontStyle,
+  'italic': instance.italic,
+  'fontWeight': ?instance.fontWeight,
+  'fontSize': ?instance.fontSize,
+  'textCase': ?_$TextCaseEnumMap[instance.textCase],
+  'textAlignHorizontal':
+      ?_$TextAlignHorizontalEnumMap[instance.textAlignHorizontal],
+  'textAlignVertical': ?_$TextAlignVerticalEnumMap[instance.textAlignVertical],
+  'letterSpacing': ?instance.letterSpacing,
+  'fills': instance.fills.map((e) => e.toJson()).toList(),
+  'hyperlink': ?instance.hyperlink?.toJson(),
+  'opentypeFlags': instance.openTypeFlags,
+  'semanticWeight': ?_$SemanticWeightEnumMap[instance.semanticWeight],
+  'semanticItalic': ?_$SemanticItalicEnumMap[instance.semanticItalic],
   'paragraphSpacing': instance.paragraphSpacing,
   'paragraphIndent': instance.paragraphIndent,
-  'italic': instance.italic,
-  'fontWeight': instance.fontWeight,
-  'fontSize': instance.fontSize,
-  'textCase': _$TextCaseEnumMap[instance.textCase],
-  'textDecoration': _$TextDecorationEnumMap[instance.textDecoration],
-  'textAutoResize': _$TextAutoResizeEnumMap[instance.textAutoResize],
-  'textAlignHorizontal':
-      _$TextAlignHorizontalEnumMap[instance.textAlignHorizontal],
-  'textAlignVertical': _$TextAlignVerticalEnumMap[instance.textAlignVertical],
-  'letterSpacing': instance.letterSpacing,
-  'fills': instance.fills,
-  'opentypeFlags': instance.opentypeFlags,
-  'lineHeightPx': instance.lineHeightPx,
+  'listSpacing': instance.listSpacing,
+  'textDecoration': _$TextDecorationEnumMap[instance.textDecoration]!,
+  'textAutoResize': _$TextAutoResizeEnumMap[instance.textAutoResize]!,
+  'textTruncation': _$TextTruncationEnumMap[instance.textTruncation]!,
+  'maxLines': ?instance.maxLines,
+  'lineHeightPx': ?instance.lineHeightPx,
   'lineHeightPercent': instance.lineHeightPercent,
-  'lineHeightPercentFontSize': instance.lineHeightPercentFontSize,
-  'lineHeightUnit': _$LineHeightUnitEnumMap[instance.lineHeightUnit],
+  'lineHeightPercentFontSize': ?instance.lineHeightPercentFontSize,
+  'lineHeightUnit': ?_$LineHeightUnitEnumMap[instance.lineHeightUnit],
+  'isOverrideOverTextStyle': ?instance.isOverrideOverTextStyle,
+  'boundVariables': instance.boundVariables.toJson(),
 };
 
 const _$TextCaseEnumMap = {
@@ -343,6 +498,29 @@ const _$TextCaseEnumMap = {
   TextCase.title: 'TITLE',
   TextCase.smallCaps: 'SMALL_CAPS',
   TextCase.smallCapsForced: 'SMALL_CAPS_FORCED',
+};
+
+const _$TextAlignHorizontalEnumMap = {
+  TextAlignHorizontal.left: 'LEFT',
+  TextAlignHorizontal.right: 'RIGHT',
+  TextAlignHorizontal.center: 'CENTER',
+  TextAlignHorizontal.justified: 'JUSTIFIED',
+};
+
+const _$TextAlignVerticalEnumMap = {
+  TextAlignVertical.top: 'TOP',
+  TextAlignVertical.center: 'CENTER',
+  TextAlignVertical.bottom: 'BOTTOM',
+};
+
+const _$SemanticWeightEnumMap = {
+  SemanticWeight.bold: 'BOLD',
+  SemanticWeight.normal: 'NORMAL',
+};
+
+const _$SemanticItalicEnumMap = {
+  SemanticItalic.italic: 'ITALIC',
+  SemanticItalic.normal: 'NORMAL',
 };
 
 const _$TextDecorationEnumMap = {
@@ -358,17 +536,9 @@ const _$TextAutoResizeEnumMap = {
   TextAutoResize.truncate: 'TRUNCATE',
 };
 
-const _$TextAlignHorizontalEnumMap = {
-  TextAlignHorizontal.left: 'LEFT',
-  TextAlignHorizontal.right: 'RIGHT',
-  TextAlignHorizontal.center: 'CENTER',
-  TextAlignHorizontal.justified: 'JUSTIFIED',
-};
-
-const _$TextAlignVerticalEnumMap = {
-  TextAlignVertical.top: 'TOP',
-  TextAlignVertical.center: 'CENTER',
-  TextAlignVertical.bottom: 'BOTTOM',
+const _$TextTruncationEnumMap = {
+  TextTruncation.disabled: 'DISABLED',
+  TextTruncation.ending: 'ENDING',
 };
 
 const _$LineHeightUnitEnumMap = {
