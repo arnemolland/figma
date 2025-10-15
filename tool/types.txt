@@ -31,6 +31,7 @@ MaskType
 Operation
 OverflowDirection
 PaintType
+PatternAlignment
 PrimaryAxisAlignItems
 PrimaryAxisSizingMode
 PrototypeDeviceRotation
@@ -51,6 +52,7 @@ TextAutoResize
 TextCase
 TextDecoration
 TextTruncation
+TileType
 VariableScope
 VerticalConstraint
 WebhookContext
@@ -87,7 +89,10 @@ ExportSetting
 FileMeta
 FlowStartingPoint
 FrameInfo
+GradientPaint
 Hyperlink
+ImageFilters
+ImagePaint
 IndividualStrokeWeightsVariables
 InstanceSwapPreferredValue
 LayerTraitVariables
@@ -101,8 +106,10 @@ LocalVariablesMeta
 Mode
 Overrides
 Pagination
+Paint
 PaintOverride
 Path
+PatternPaint
 Project
 ProjectFile
 PrototypeDevice
@@ -117,6 +124,8 @@ ResponseCursor
 Size
 SizeRectangle
 SizeVariables
+SolidPaint
+SolidPaintVariables
 StrokeWeights
 Style
 StylesMeta
