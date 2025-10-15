@@ -2,6 +2,7 @@
 
 # Enumerations
 BlendMode
+BlurType
 ComponentPropertyType
 ConstraintType
 CounterAxisAlignContent
@@ -28,6 +29,7 @@ LineHeightUnit
 LineType
 LinkAccess
 MaskType
+NoiseType
 Operation
 OverflowDirection
 PaintType
@@ -68,6 +70,8 @@ VariableValue
 
 # Models
 ArcData
+BlurEffect
+BlurEffectVariables
 Color
 ColorStop
 ColorStopVariables
@@ -85,6 +89,9 @@ Cursor
 DevResource
 DevStatus
 DocumentationLink
+DropShadowEffect
+DuotoneNoiseEffect
+Effect
 ExportSetting
 FileMeta
 FlowStartingPoint
@@ -94,6 +101,7 @@ Hyperlink
 ImageFilters
 ImagePaint
 IndividualStrokeWeightsVariables
+InnerShadowEffect
 InstanceSwapPreferredValue
 LayerTraitVariables
 LayoutConstraint
@@ -104,12 +112,17 @@ LocalVariable
 LocalVariableCollection
 LocalVariablesMeta
 Mode
+MonotoneNoiseEffect
+MultitoneNoiseEffect
+NoiseEffect
+NormalBlurEffect
 Overrides
 Pagination
 Paint
 PaintOverride
 Path
 PatternPaint
+ProgressiveBlurEffect
 Project
 ProjectFile
 PrototypeDevice
@@ -121,6 +134,8 @@ PublishedVariablesMeta
 Reaction
 RectangleCornerRadiiVariables
 ResponseCursor
+ShadowEffect
+ShadowEffectVariables
 Size
 SizeRectangle
 SizeVariables
@@ -132,6 +147,7 @@ StylesMeta
 TextPathTypeStyle
 TextPathTypeStyle
 TextPathTypeStyleVariables
+TextureEffect
 TypeStyle
 TypeStyleVariables
 User
