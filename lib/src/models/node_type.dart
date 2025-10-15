@@ -1,0 +1,62 @@
+// Generated from v0.33.0 of the Figma REST API specification
+
+import 'package:json_annotation/json_annotation.dart';
+
+enum NodeType {
+  @JsonValue('BOOLEAN_OPERATION')
+  booleanOperation,
+  @JsonValue('COMPONENT')
+  component,
+  @JsonValue('COMPONENT_SET')
+  componentSet,
+  @JsonValue('CONNECTOR')
+  connector,
+  @JsonValue('ELLIPSE')
+  ellipse,
+  @JsonValue('EMBED')
+  embed,
+  @JsonValue('FRAME')
+  frame,
+  @JsonValue('GROUP')
+  group,
+  @JsonValue('INSTANCE')
+  instance,
+  @JsonValue('LINE')
+  line,
+  @JsonValue('LINK_UNFURL')
+  linkUnfurl,
+  @JsonValue('RECTANGLE')
+  rectangle,
+  @JsonValue('REGULAR_POLYGON')
+  regularPolygon,
+  @JsonValue('SECTION')
+  section,
+  @JsonValue('SHAPE_WITH_TEXT')
+  shapeWithText,
+  @JsonValue('SLICE')
+  slice,
+  @JsonValue('STAR')
+  star,
+  @JsonValue('STICKY')
+  sticky,
+  @JsonValue('TABLE')
+  table,
+  @JsonValue('TABLE_CELL')
+  tableCell,
+  @JsonValue('TEXT')
+  text,
+  @JsonValue('TEXT_PATH')
+  textPath,
+  @JsonValue('TRANSFORM_GROUP')
+  transformGroup,
+  @JsonValue('VECTOR')
+  vector,
+  @JsonValue('WASHI_TAPE')
+  washiTape,
+  @JsonValue('WIDGET')
+  widget,
+  @JsonValue('DOCUMENT')
+  document,
+  @JsonValue('CANVAS')
+  canvas,
+}

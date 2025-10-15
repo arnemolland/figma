@@ -83,7 +83,7 @@ Future<void> download(
 
   // Retrieve icon canvas.
   final canvas = (file.document as Document?)?.children
-      ?.where((node) => node?.name == pageRef)
+      .where((node) => node.name == pageRef)
       .single;
 
   if (canvas?.id == null) {

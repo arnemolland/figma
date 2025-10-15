@@ -1,36 +1,103 @@
-import 'package:figma/src/converters/converters.dart';
-import 'package:figma/src/models.dart';
+// Generated from v0.33.0 of the Figma REST API specification
+
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:meta/meta.dart';
+
+import 'canvas.dart';
+import 'is_layer_trait.dart';
+import 'layer_trait_variables.dart';
+import 'node.dart';
+import 'node_type.dart';
+import 'scroll_behavior.dart';
 
 part 'document.g.dart';
 
-/// At the root of every File is a Document node, and from that Document
-///  node stems any Canvas nodes.
-@JsonSerializable()
-class Document extends Node {
-  /// An array of canvases attached to the document.
-  @NodeJsonConverter()
-  final List<Node?>? children;
-
+@JsonSerializable(explicitToJson: true)
+@CopyWith()
+@immutable
+class Document extends Node with IsLayerTrait {
   const Document({
-    required super.id,
-    required super.visible,
-    super.componentPropertyReferences,
-    super.rotation,
-    super.type,
-    super.name,
-    super.pluginData,
-    super.sharedPluginData,
-    this.children,
+    required this.id,
+    required this.name,
+    this.visible = true,
+    this.locked = false,
+    required this.scrollBehavior,
+    this.rotation = 0,
+    this.componentPropertyReferences = const {},
+    this.pluginData,
+    this.sharedPluginData,
+    this.boundVariables = const LayerTraitVariables(),
+    this.explicitVariableModes = const {},
+    required this.children,
   });
 
-  @override
-  List<Object?> get props => [...super.props, children];
-
-  @override
-  factory Document.fromJson(Map<String, dynamic> json) =>
+  factory Document.fromJson(Map<String, Object?> json) =>
       _$DocumentFromJson(json);
 
   @override
-  Map<String, dynamic> toJson() => _$DocumentToJson(this);
+  final String id;
+
+  @override
+  final String name;
+
+  @JsonKey(defaultValue: true)
+  @override
+  final bool visible;
+
+  @JsonKey(defaultValue: false)
+  @override
+  final bool locked;
+
+  @override
+  final ScrollBehavior scrollBehavior;
+
+  @JsonKey(defaultValue: 0)
+  @override
+  final num rotation;
+
+  @JsonKey(defaultValue: {})
+  @override
+  final Map<String, String> componentPropertyReferences;
+
+  @JsonKey(includeIfNull: false)
+  @override
+  final Object? pluginData;
+
+  @JsonKey(includeIfNull: false)
+  @override
+  final Object? sharedPluginData;
+
+  @override
+  final LayerTraitVariables boundVariables;
+
+  @JsonKey(defaultValue: {})
+  @override
+  final Map<String, String> explicitVariableModes;
+
+  final List<Canvas> children;
+
+  @JsonKey(includeToJson: true)
+  @override
+  NodeType get type => NodeType.document;
+
+  @override
+  List<Object?> get props => <Object?>[
+    ...super.props,
+    children,
+    id,
+    name,
+    visible,
+    locked,
+    scrollBehavior,
+    rotation,
+    componentPropertyReferences,
+    pluginData,
+    sharedPluginData,
+    boundVariables,
+    explicitVariableModes,
+  ];
+
+  @override
+  Map<String, Object?> toJson() => _$DocumentToJson(this);
 }
