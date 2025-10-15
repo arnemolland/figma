@@ -3,9 +3,9 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'text.g.dart';
 
-/// A text node, represented as a [Vector] and modified by a [TypeStyle].
+/// A text node, represented as a [VectorNode] and modified by a [TypeStyle].
 @JsonSerializable()
-class Text extends Vector {
+class Text extends VectorNode {
   /// Text contained within a text box. Newline characters are preserved and map
   /// to a new line in the UI when rendered.
   final String? characters;

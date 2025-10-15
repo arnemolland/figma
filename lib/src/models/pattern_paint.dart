@@ -9,7 +9,7 @@ import 'paint.dart';
 import 'paint_type.dart';
 import 'pattern_alignment.dart';
 import 'tile_type.dart';
-import 'vector_2d.dart';
+import 'vector.dart';
 
 part 'pattern_paint.g.dart';
 
@@ -42,7 +42,7 @@ class PatternPaint extends Paint {
   final num scalingFactor;
 
   /// The spacing for the pattern.
-  final Vector2D spacing;
+  final Vector spacing;
 
   /// The horizontal alignment for the pattern.
   final PatternAlignment horizontalAlignment;

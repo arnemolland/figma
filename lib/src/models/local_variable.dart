@@ -5,8 +5,8 @@ import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:meta/meta.dart';
 
-import 'resolved_type.dart';
 import 'variable_code_syntax.dart';
+import 'variable_resolved_type.dart';
 import 'variable_scope.dart';
 import 'variable_value.dart';
 
@@ -50,7 +50,7 @@ class LocalVariable extends Equatable {
   /// The id of the variable collection that contains this variable.
   final String variableCollectionId;
 
-  final ResolvedType resolvedType;
+  final VariableResolvedType resolvedType;
 
   /// The values for each mode of this variable.
   final Map<String, VariableValue> valuesByMode;

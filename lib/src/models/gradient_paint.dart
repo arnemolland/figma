@@ -8,7 +8,7 @@ import 'blend_mode.dart';
 import 'color_stop.dart';
 import 'paint.dart';
 import 'paint_type.dart';
-import 'vector_2d.dart';
+import 'vector.dart';
 
 part 'gradient_paint.g.dart';
 
@@ -40,7 +40,7 @@ class GradientPaint extends Paint {
   /// the purposes of calculating gradient stops), the second position is the
   /// end of the gradient (value 1), and the third handle position determines
   /// the width of the gradient.
-  final List<Vector2D> gradientHandlePositions;
+  final List<Vector> gradientHandlePositions;
 
   /// Positions of key points along the gradient axis with the colors anchored
   /// there.

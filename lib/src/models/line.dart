@@ -4,7 +4,7 @@ import 'package:json_annotation/json_annotation.dart';
 part 'line.g.dart';
 
 @JsonSerializable()
-class Line extends Vector {
+class Line extends VectorNode {
   const Line({
     required super.id,
     required super.visible,

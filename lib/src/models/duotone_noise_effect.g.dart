@@ -7,7 +7,7 @@ part of 'duotone_noise_effect.dart';
 // **************************************************************************
 
 abstract class _$DuotoneNoiseEffectCWProxy {
-  DuotoneNoiseEffect color(Color color);
+  DuotoneNoiseEffect color(Rgba color);
 
   DuotoneNoiseEffect visible(bool visible);
 
@@ -17,7 +17,7 @@ abstract class _$DuotoneNoiseEffectCWProxy {
 
   DuotoneNoiseEffect density(num density);
 
-  DuotoneNoiseEffect secondaryColor(Color secondaryColor);
+  DuotoneNoiseEffect secondaryColor(Rgba secondaryColor);
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `DuotoneNoiseEffect(...).copyWith.fieldName(value)`.
@@ -27,12 +27,12 @@ abstract class _$DuotoneNoiseEffectCWProxy {
   /// DuotoneNoiseEffect(...).copyWith(id: 12, name: "My name")
   /// ```
   DuotoneNoiseEffect call({
-    Color color,
+    Rgba color,
     bool visible,
     BlendMode blendMode,
     num noiseSize,
     num density,
-    Color secondaryColor,
+    Rgba secondaryColor,
   });
 }
 
@@ -44,7 +44,7 @@ class _$DuotoneNoiseEffectCWProxyImpl implements _$DuotoneNoiseEffectCWProxy {
   final DuotoneNoiseEffect _value;
 
   @override
-  DuotoneNoiseEffect color(Color color) => call(color: color);
+  DuotoneNoiseEffect color(Rgba color) => call(color: color);
 
   @override
   DuotoneNoiseEffect visible(bool visible) => call(visible: visible);
@@ -60,7 +60,7 @@ class _$DuotoneNoiseEffectCWProxyImpl implements _$DuotoneNoiseEffectCWProxy {
   DuotoneNoiseEffect density(num density) => call(density: density);
 
   @override
-  DuotoneNoiseEffect secondaryColor(Color secondaryColor) =>
+  DuotoneNoiseEffect secondaryColor(Rgba secondaryColor) =>
       call(secondaryColor: secondaryColor);
 
   @override
@@ -83,7 +83,7 @@ class _$DuotoneNoiseEffectCWProxyImpl implements _$DuotoneNoiseEffectCWProxy {
       color: color == const $CopyWithPlaceholder() || color == null
           ? _value.color
           // ignore: cast_nullable_to_non_nullable
-          : color as Color,
+          : color as Rgba,
       visible: visible == const $CopyWithPlaceholder() || visible == null
           ? _value.visible
           // ignore: cast_nullable_to_non_nullable
@@ -105,7 +105,7 @@ class _$DuotoneNoiseEffectCWProxyImpl implements _$DuotoneNoiseEffectCWProxy {
               secondaryColor == null
           ? _value.secondaryColor
           // ignore: cast_nullable_to_non_nullable
-          : secondaryColor as Color,
+          : secondaryColor as Rgba,
     );
   }
 }
@@ -124,12 +124,12 @@ extension $DuotoneNoiseEffectCopyWith on DuotoneNoiseEffect {
 
 DuotoneNoiseEffect _$DuotoneNoiseEffectFromJson(Map<String, dynamic> json) =>
     DuotoneNoiseEffect(
-      color: Color.fromJson(json['color'] as Map<String, dynamic>),
+      color: Rgba.fromJson(json['color'] as Map<String, dynamic>),
       visible: json['visible'] as bool,
       blendMode: $enumDecode(_$BlendModeEnumMap, json['blendMode']),
       noiseSize: json['noiseSize'] as num,
       density: json['density'] as num,
-      secondaryColor: Color.fromJson(
+      secondaryColor: Rgba.fromJson(
         json['secondaryColor'] as Map<String, dynamic>,
       ),
     );

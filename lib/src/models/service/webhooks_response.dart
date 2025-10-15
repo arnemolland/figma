@@ -13,7 +13,7 @@ class WebhooksResponse extends Equatable {
   final List<Webhook>? webhooks;
 
   /// Pagination
-  final Pagination? pagination;
+  final ResponsePagination? pagination;
 
   const WebhooksResponse({this.webhooks, this.pagination});
 

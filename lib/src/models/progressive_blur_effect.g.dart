@@ -17,9 +17,9 @@ abstract class _$ProgressiveBlurEffectCWProxy {
 
   ProgressiveBlurEffect startRadius(num startRadius);
 
-  ProgressiveBlurEffect startOffset(Vector2D startOffset);
+  ProgressiveBlurEffect startOffset(Vector startOffset);
 
-  ProgressiveBlurEffect endOffset(Vector2D endOffset);
+  ProgressiveBlurEffect endOffset(Vector endOffset);
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ProgressiveBlurEffect(...).copyWith.fieldName(value)`.
@@ -34,8 +34,8 @@ abstract class _$ProgressiveBlurEffectCWProxy {
     num radius,
     BlurEffectVariables boundVariables,
     num startRadius,
-    Vector2D startOffset,
-    Vector2D endOffset,
+    Vector startOffset,
+    Vector endOffset,
   });
 }
 
@@ -65,11 +65,11 @@ class _$ProgressiveBlurEffectCWProxyImpl
       call(startRadius: startRadius);
 
   @override
-  ProgressiveBlurEffect startOffset(Vector2D startOffset) =>
+  ProgressiveBlurEffect startOffset(Vector startOffset) =>
       call(startOffset: startOffset);
 
   @override
-  ProgressiveBlurEffect endOffset(Vector2D endOffset) =>
+  ProgressiveBlurEffect endOffset(Vector endOffset) =>
       call(endOffset: endOffset);
 
   @override
@@ -117,11 +117,11 @@ class _$ProgressiveBlurEffectCWProxyImpl
           startOffset == const $CopyWithPlaceholder() || startOffset == null
           ? _value.startOffset
           // ignore: cast_nullable_to_non_nullable
-          : startOffset as Vector2D,
+          : startOffset as Vector,
       endOffset: endOffset == const $CopyWithPlaceholder() || endOffset == null
           ? _value.endOffset
           // ignore: cast_nullable_to_non_nullable
-          : endOffset as Vector2D,
+          : endOffset as Vector,
     );
   }
 }
@@ -150,8 +150,8 @@ ProgressiveBlurEffect _$ProgressiveBlurEffectFromJson(
           json['boundVariables'] as Map<String, dynamic>,
         ),
   startRadius: json['startRadius'] as num,
-  startOffset: Vector2D.fromJson(json['startOffset'] as Map<String, dynamic>),
-  endOffset: Vector2D.fromJson(json['endOffset'] as Map<String, dynamic>),
+  startOffset: Vector.fromJson(json['startOffset'] as Map<String, dynamic>),
+  endOffset: Vector.fromJson(json['endOffset'] as Map<String, dynamic>),
 );
 
 Map<String, dynamic> _$ProgressiveBlurEffectToJson(

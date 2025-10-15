@@ -4,12 +4,12 @@ import 'package:json_annotation/json_annotation.dart';
 import 'package:meta/meta.dart';
 
 import 'blend_mode.dart';
-import 'color.dart';
 import 'drop_shadow_effect.dart';
 import 'effect.dart';
 import 'inner_shadow_effect.dart';
+import 'rgba.dart';
 import 'shadow_effect_variables.dart';
-import 'vector_2d.dart';
+import 'vector.dart';
 
 part 'shadow_effect.g.dart';
 
@@ -38,13 +38,13 @@ abstract class ShadowEffect extends Effect {
   }
 
   /// The color of the shadow.
-  final Color color;
+  final Rgba color;
 
   /// Blend mode of the shadow.
   final BlendMode blendMode;
 
   /// How far the shadow is projected in the x and y directions.
-  final Vector2D offset;
+  final Vector offset;
 
   /// Radius of the blur effect (applies to shadows as well).
   final num radius;

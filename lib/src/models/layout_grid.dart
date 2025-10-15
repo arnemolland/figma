@@ -5,10 +5,10 @@ import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:meta/meta.dart';
 
-import 'color.dart';
 import 'layout_grid_alignment.dart';
 import 'layout_grid_pattern.dart';
 import 'layout_grid_variables.dart';
+import 'rgba.dart';
 
 part 'layout_grid.g.dart';
 
@@ -46,7 +46,7 @@ class LayoutGrid extends Equatable {
   final bool visible;
 
   /// Color of the grid.
-  final Color color;
+  final Rgba color;
 
   /// Positioning of grid as a string enum.
   ///

@@ -28,12 +28,10 @@ Section _$SectionFromJson(Map<String, dynamic> json) => Section(
       .toList(),
   absoluteBoundingBox: json['absoluteBoundingBox'] == null
       ? null
-      : SizeRectangle.fromJson(
-          json['absoluteBoundingBox'] as Map<String, dynamic>,
-        ),
+      : Rectangle.fromJson(json['absoluteBoundingBox'] as Map<String, dynamic>),
   absoluteRenderBounds: json['absoluteRenderBounds'] == null
       ? null
-      : SizeRectangle.fromJson(
+      : Rectangle.fromJson(
           json['absoluteRenderBounds'] as Map<String, dynamic>,
         ),
 );

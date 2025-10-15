@@ -7,11 +7,11 @@ part of 'drop_shadow_effect.dart';
 // **************************************************************************
 
 abstract class _$DropShadowEffectCWProxy {
-  DropShadowEffect color(Color color);
+  DropShadowEffect color(Rgba color);
 
   DropShadowEffect blendMode(BlendMode blendMode);
 
-  DropShadowEffect offset(Vector2D offset);
+  DropShadowEffect offset(Vector offset);
 
   DropShadowEffect radius(num radius);
 
@@ -31,9 +31,9 @@ abstract class _$DropShadowEffectCWProxy {
   /// DropShadowEffect(...).copyWith(id: 12, name: "My name")
   /// ```
   DropShadowEffect call({
-    Color color,
+    Rgba color,
     BlendMode blendMode,
-    Vector2D offset,
+    Vector offset,
     num radius,
     num spread,
     bool visible,
@@ -50,13 +50,13 @@ class _$DropShadowEffectCWProxyImpl implements _$DropShadowEffectCWProxy {
   final DropShadowEffect _value;
 
   @override
-  DropShadowEffect color(Color color) => call(color: color);
+  DropShadowEffect color(Rgba color) => call(color: color);
 
   @override
   DropShadowEffect blendMode(BlendMode blendMode) => call(blendMode: blendMode);
 
   @override
-  DropShadowEffect offset(Vector2D offset) => call(offset: offset);
+  DropShadowEffect offset(Vector offset) => call(offset: offset);
 
   @override
   DropShadowEffect radius(num radius) => call(radius: radius);
@@ -97,7 +97,7 @@ class _$DropShadowEffectCWProxyImpl implements _$DropShadowEffectCWProxy {
       color: color == const $CopyWithPlaceholder() || color == null
           ? _value.color
           // ignore: cast_nullable_to_non_nullable
-          : color as Color,
+          : color as Rgba,
       blendMode: blendMode == const $CopyWithPlaceholder() || blendMode == null
           ? _value.blendMode
           // ignore: cast_nullable_to_non_nullable
@@ -105,7 +105,7 @@ class _$DropShadowEffectCWProxyImpl implements _$DropShadowEffectCWProxy {
       offset: offset == const $CopyWithPlaceholder() || offset == null
           ? _value.offset
           // ignore: cast_nullable_to_non_nullable
-          : offset as Vector2D,
+          : offset as Vector,
       radius: radius == const $CopyWithPlaceholder() || radius == null
           ? _value.radius
           // ignore: cast_nullable_to_non_nullable
@@ -147,9 +147,9 @@ extension $DropShadowEffectCopyWith on DropShadowEffect {
 
 DropShadowEffect _$DropShadowEffectFromJson(Map<String, dynamic> json) =>
     DropShadowEffect(
-      color: Color.fromJson(json['color'] as Map<String, dynamic>),
+      color: Rgba.fromJson(json['color'] as Map<String, dynamic>),
       blendMode: $enumDecode(_$BlendModeEnumMap, json['blendMode']),
-      offset: Vector2D.fromJson(json['offset'] as Map<String, dynamic>),
+      offset: Vector.fromJson(json['offset'] as Map<String, dynamic>),
       radius: json['radius'] as num,
       spread: json['spread'] as num? ?? 0,
       visible: json['visible'] as bool,

@@ -3,9 +3,9 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'star.g.dart';
 
-/// A star shape represented as a [Vector].
+/// A star shape represented as a [VectorNode].
 @JsonSerializable()
-class Star extends Vector {
+class Star extends VectorNode {
   const Star({
     required super.id,
     required super.visible,

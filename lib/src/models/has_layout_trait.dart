@@ -6,13 +6,13 @@ import 'layout_constraint.dart';
 import 'layout_grow.dart';
 import 'layout_positioning.dart';
 import 'layout_sizing.dart';
-import 'size_rectangle.dart';
+import 'rectangle.dart';
 import 'transform.dart';
-import 'vector_2d.dart';
+import 'vector.dart';
 
 abstract mixin class HasLayoutTrait {
   /// Bounding box of the node in absolute space coordinates.
-  SizeRectangle? get absoluteBoundingBox;
+  Rectangle? get absoluteBoundingBox;
 
   /// The actual bounds of a node accounting for drop shadows, thick strokes,
   /// and anything else that may fall outside the node's regular bounding box
@@ -20,7 +20,7 @@ abstract mixin class HasLayoutTrait {
   ///
   /// The `x` and `y` inside this property represent the absolute position of
   /// the node on the page. This value will be `null` if the node is invisible.
-  SizeRectangle? get absoluteRenderBounds;
+  Rectangle? get absoluteRenderBounds;
 
   /// Keep height and width constrained to same ratio.
   bool get preserveRatio;
@@ -41,7 +41,7 @@ abstract mixin class HasLayoutTrait {
   /// This is different from the width and height of the bounding box in that
   /// the absolute bounding box represents the element after scaling and
   /// rotation. Only present if `geometry=paths` is passed.
-  Vector2D? get size;
+  Vector? get size;
 
   /// Determines if the layer should stretch along the parent's counter axis.
   ///

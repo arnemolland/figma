@@ -8,9 +8,9 @@ part of 'inner_shadow_effect.dart';
 
 InnerShadowEffect _$InnerShadowEffectFromJson(Map<String, dynamic> json) =>
     InnerShadowEffect(
-      color: Color.fromJson(json['color'] as Map<String, dynamic>),
+      color: Rgba.fromJson(json['color'] as Map<String, dynamic>),
       blendMode: $enumDecode(_$BlendModeEnumMap, json['blendMode']),
-      offset: Vector2D.fromJson(json['offset'] as Map<String, dynamic>),
+      offset: Vector.fromJson(json['offset'] as Map<String, dynamic>),
       radius: json['radius'] as num,
       spread: json['spread'] as num? ?? 0,
       visible: json['visible'] as bool,

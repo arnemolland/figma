@@ -1,12 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'star.dart';
+part of 'rectangle_node.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-Star _$StarFromJson(Map<String, dynamic> json) => Star(
+RectangleNode _$RectangleNodeFromJson(
+  Map<String, dynamic> json,
+) => RectangleNode(
   id: json['id'] as String,
   visible: json['visible'] as bool? ?? true,
   locked: json['locked'] as bool? ?? false,
@@ -101,51 +103,58 @@ Star _$StarFromJson(Map<String, dynamic> json) => Star(
       : StrokeWeights.fromJson(
           json['individualStrokeWeights'] as Map<String, dynamic>,
         ),
+  cornerRadius: (json['cornerRadius'] as num?)?.toDouble(),
+  rectangleCornerRadii: (json['rectangleCornerRadii'] as List<dynamic>?)
+      ?.map((e) => (e as num).toDouble())
+      .toList(),
 );
 
-Map<String, dynamic> _$StarToJson(Star instance) => <String, dynamic>{
-  'id': instance.id,
-  'name': instance.name,
-  'visible': instance.visible,
-  'pluginData': instance.pluginData,
-  'sharedPluginData': instance.sharedPluginData,
-  'rotation': instance.rotation,
-  'componentPropertyReferences': instance.componentPropertyReferences,
-  'locked': instance.locked,
-  'exportSettings': instance.exportSettings,
-  'blendMode': _$BlendModeEnumMap[instance.blendMode],
-  'preserveRatio': instance.preserveRatio,
-  'layoutAlign': _$LayoutAlignEnumMap[instance.layoutAlign],
-  'layoutGrow': instance.layoutGrow,
-  'constraints': instance.constraints,
-  'transitionNodeID': instance.transitionNodeID,
-  'transitionDuration': instance.transitionDuration,
-  'transitionEasing': _$EasingTypeEnumMap[instance.transitionEasing],
-  'opacity': instance.opacity,
-  'absoluteBoundingBox': instance.absoluteBoundingBox,
-  'absoluteRenderBounds': instance.absoluteRenderBounds,
-  'effects': instance.effects,
-  'size': instance.size,
-  'relativeTransform': instance.relativeTransform,
-  'isMask': instance.isMask,
-  'fills': instance.fills,
-  'fillGeometry': instance.fillGeometry,
-  'fillOverrideTable': instance.fillOverrideTable?.map(
-    (k, e) => MapEntry(k.toString(), e),
-  ),
-  'strokes': instance.strokes,
-  'strokeWeight': instance.strokeWeight,
-  'individualStrokeWeights': instance.individualStrokeWeights,
-  'strokeCap': _$StrokeCapEnumMap[instance.strokeCap]!,
-  'strokeJoin': _$StrokeJoinEnumMap[instance.strokeJoin]!,
-  'strokeDashes': instance.strokeDashes,
-  'strokeMiterAngle': instance.strokeMiterAngle,
-  'strokeGeometry': instance.strokeGeometry,
-  'strokeAlign': _$StrokeAlignEnumMap[instance.strokeAlign],
-  'styles': instance.styles?.map(
-    (k, e) => MapEntry(_$StyleTypeKeyEnumMap[k]!, e),
-  ),
-};
+Map<String, dynamic> _$RectangleNodeToJson(RectangleNode instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'visible': instance.visible,
+      'pluginData': instance.pluginData,
+      'sharedPluginData': instance.sharedPluginData,
+      'rotation': instance.rotation,
+      'componentPropertyReferences': instance.componentPropertyReferences,
+      'locked': instance.locked,
+      'exportSettings': instance.exportSettings,
+      'blendMode': _$BlendModeEnumMap[instance.blendMode],
+      'preserveRatio': instance.preserveRatio,
+      'layoutAlign': _$LayoutAlignEnumMap[instance.layoutAlign],
+      'layoutGrow': instance.layoutGrow,
+      'constraints': instance.constraints,
+      'transitionNodeID': instance.transitionNodeID,
+      'transitionDuration': instance.transitionDuration,
+      'transitionEasing': _$EasingTypeEnumMap[instance.transitionEasing],
+      'opacity': instance.opacity,
+      'absoluteBoundingBox': instance.absoluteBoundingBox,
+      'absoluteRenderBounds': instance.absoluteRenderBounds,
+      'effects': instance.effects,
+      'size': instance.size,
+      'relativeTransform': instance.relativeTransform,
+      'isMask': instance.isMask,
+      'fills': instance.fills,
+      'fillGeometry': instance.fillGeometry,
+      'fillOverrideTable': instance.fillOverrideTable?.map(
+        (k, e) => MapEntry(k.toString(), e),
+      ),
+      'strokes': instance.strokes,
+      'strokeWeight': instance.strokeWeight,
+      'individualStrokeWeights': instance.individualStrokeWeights,
+      'strokeCap': _$StrokeCapEnumMap[instance.strokeCap]!,
+      'strokeJoin': _$StrokeJoinEnumMap[instance.strokeJoin]!,
+      'strokeDashes': instance.strokeDashes,
+      'strokeMiterAngle': instance.strokeMiterAngle,
+      'strokeGeometry': instance.strokeGeometry,
+      'strokeAlign': _$StrokeAlignEnumMap[instance.strokeAlign],
+      'styles': instance.styles?.map(
+        (k, e) => MapEntry(_$StyleTypeKeyEnumMap[k]!, e),
+      ),
+      'cornerRadius': instance.cornerRadius,
+      'rectangleCornerRadii': instance.rectangleCornerRadii,
+    };
 
 const _$StrokeCapEnumMap = {
   StrokeCap.none: 'NONE',

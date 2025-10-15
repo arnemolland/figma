@@ -5,7 +5,7 @@ part 'ellipse.g.dart';
 
 /// An ellipse shaped vector.
 @JsonSerializable()
-class Ellipse extends Vector {
+class Ellipse extends VectorNode {
   const Ellipse({
     required super.id,
     required super.visible,

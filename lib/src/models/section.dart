@@ -32,10 +32,10 @@ class Section extends Node {
   final List<Node> children;
 
   /// Bounding box of the node in absolute space coordinates.
-  final SizeRectangle? absoluteBoundingBox;
+  final Rectangle? absoluteBoundingBox;
 
   /// The bounds of the rendered node in the file in absolute space coordinates.
-  final SizeRectangle? absoluteRenderBounds;
+  final Rectangle? absoluteRenderBounds;
 
   const Section({
     required super.id,

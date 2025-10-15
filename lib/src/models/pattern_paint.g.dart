@@ -19,7 +19,7 @@ abstract class _$PatternPaintCWProxy {
 
   PatternPaint scalingFactor(num scalingFactor);
 
-  PatternPaint spacing(Vector2D spacing);
+  PatternPaint spacing(Vector spacing);
 
   PatternPaint horizontalAlignment(PatternAlignment horizontalAlignment);
 
@@ -39,7 +39,7 @@ abstract class _$PatternPaintCWProxy {
     String sourceNodeId,
     TileType tileType,
     num scalingFactor,
-    Vector2D spacing,
+    Vector spacing,
     PatternAlignment horizontalAlignment,
     PatternAlignment verticalAlignment,
   });
@@ -73,7 +73,7 @@ class _$PatternPaintCWProxyImpl implements _$PatternPaintCWProxy {
       call(scalingFactor: scalingFactor);
 
   @override
-  PatternPaint spacing(Vector2D spacing) => call(spacing: spacing);
+  PatternPaint spacing(Vector spacing) => call(spacing: spacing);
 
   @override
   PatternPaint horizontalAlignment(PatternAlignment horizontalAlignment) =>
@@ -132,7 +132,7 @@ class _$PatternPaintCWProxyImpl implements _$PatternPaintCWProxy {
       spacing: spacing == const $CopyWithPlaceholder() || spacing == null
           ? _value.spacing
           // ignore: cast_nullable_to_non_nullable
-          : spacing as Vector2D,
+          : spacing as Vector,
       horizontalAlignment:
           horizontalAlignment == const $CopyWithPlaceholder() ||
               horizontalAlignment == null
@@ -167,7 +167,7 @@ PatternPaint _$PatternPaintFromJson(Map<String, dynamic> json) => PatternPaint(
   sourceNodeId: json['sourceNodeId'] as String,
   tileType: $enumDecode(_$TileTypeEnumMap, json['tileType']),
   scalingFactor: json['scalingFactor'] as num,
-  spacing: Vector2D.fromJson(json['spacing'] as Map<String, dynamic>),
+  spacing: Vector.fromJson(json['spacing'] as Map<String, dynamic>),
   horizontalAlignment: $enumDecode(
     _$PatternAlignmentEnumMap,
     json['horizontalAlignment'],

@@ -13,7 +13,7 @@ abstract class _$SolidPaintCWProxy {
 
   SolidPaint blendMode(BlendMode blendMode);
 
-  SolidPaint color(Color color);
+  SolidPaint color(Rgba color);
 
   SolidPaint boundVariables(SolidPaintVariables boundVariables);
 
@@ -28,7 +28,7 @@ abstract class _$SolidPaintCWProxy {
     bool visible,
     num opacity,
     BlendMode blendMode,
-    Color color,
+    Rgba color,
     SolidPaintVariables boundVariables,
   });
 }
@@ -50,7 +50,7 @@ class _$SolidPaintCWProxyImpl implements _$SolidPaintCWProxy {
   SolidPaint blendMode(BlendMode blendMode) => call(blendMode: blendMode);
 
   @override
-  SolidPaint color(Color color) => call(color: color);
+  SolidPaint color(Rgba color) => call(color: color);
 
   @override
   SolidPaint boundVariables(SolidPaintVariables boundVariables) =>
@@ -87,7 +87,7 @@ class _$SolidPaintCWProxyImpl implements _$SolidPaintCWProxy {
       color: color == const $CopyWithPlaceholder() || color == null
           ? _value.color
           // ignore: cast_nullable_to_non_nullable
-          : color as Color,
+          : color as Rgba,
       boundVariables:
           boundVariables == const $CopyWithPlaceholder() ||
               boundVariables == null
@@ -113,7 +113,7 @@ SolidPaint _$SolidPaintFromJson(Map<String, dynamic> json) => SolidPaint(
   visible: json['visible'] as bool? ?? true,
   opacity: json['opacity'] as num? ?? 1,
   blendMode: $enumDecode(_$BlendModeEnumMap, json['blendMode']),
-  color: Color.fromJson(json['color'] as Map<String, dynamic>),
+  color: Rgba.fromJson(json['color'] as Map<String, dynamic>),
   boundVariables: json['boundVariables'] == null
       ? const SolidPaintVariables()
       : SolidPaintVariables.fromJson(

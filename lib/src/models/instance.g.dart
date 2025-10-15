@@ -88,7 +88,7 @@ Instance _$InstanceFromJson(Map<String, dynamic> json) => Instance(
   paddingTop: (json['paddingTop'] as num?)?.toDouble() ?? 0.0,
   size: json['size'] == null
       ? null
-      : Vector2D.fromJson(json['size'] as Map<String, dynamic>),
+      : Vector.fromJson(json['size'] as Map<String, dynamic>),
   preserveRatio: json['preserveRatio'] as bool? ?? false,
   layoutGrow: (json['layoutGrow'] as num?)?.toDouble() ?? 0.0,
   styles: (json['styles'] as Map<String, dynamic>?)?.map(
@@ -100,12 +100,10 @@ Instance _$InstanceFromJson(Map<String, dynamic> json) => Instance(
       ),
   absoluteBoundingBox: json['absoluteBoundingBox'] == null
       ? null
-      : SizeRectangle.fromJson(
-          json['absoluteBoundingBox'] as Map<String, dynamic>,
-        ),
+      : Rectangle.fromJson(json['absoluteBoundingBox'] as Map<String, dynamic>),
   absoluteRenderBounds: json['absoluteRenderBounds'] == null
       ? null
-      : SizeRectangle.fromJson(
+      : Rectangle.fromJson(
           json['absoluteRenderBounds'] as Map<String, dynamic>,
         ),
   rotation: (json['rotation'] as num?)?.toDouble(),
