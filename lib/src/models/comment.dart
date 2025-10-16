@@ -6,6 +6,7 @@ import 'package:json_annotation/json_annotation.dart';
 import 'package:meta/meta.dart';
 
 import 'client_meta.dart';
+import 'client_meta_convert.dart';
 import 'reaction.dart';
 import 'user.dart';
 
@@ -42,6 +43,7 @@ class Comment extends Equatable {
   /// frame. If the comment is a region, it will also contain the region height,
   /// width, and position of the anchor in regards to the region.
   @JsonKey(name: 'client_meta')
+  @ClientMetaNullableConverter()
   final ClientMeta? clientMeta;
 
   /// The file in which the comment lives.

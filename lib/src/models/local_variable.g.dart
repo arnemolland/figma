@@ -210,8 +210,8 @@ LocalVariable _$LocalVariableFromJson(Map<String, dynamic> json) =>
         _$VariableResolvedTypeEnumMap,
         json['resolvedType'],
       ),
-      valuesByMode: (json['valuesByMode'] as Map<String, dynamic>).map(
-        (k, e) => MapEntry(k, e as Object),
+      valuesByMode: const VariableValueMapConverter().fromJson(
+        json['valuesByMode'] as Map<String, Object?>,
       ),
       remote: json['remote'] as bool,
       description: json['description'] as String,
@@ -232,7 +232,9 @@ Map<String, dynamic> _$LocalVariableToJson(LocalVariable instance) =>
       'key': instance.key,
       'variableCollectionId': instance.variableCollectionId,
       'resolvedType': _$VariableResolvedTypeEnumMap[instance.resolvedType]!,
-      'valuesByMode': instance.valuesByMode,
+      'valuesByMode': const VariableValueMapConverter().toJson(
+        instance.valuesByMode,
+      ),
       'remote': instance.remote,
       'description': instance.description,
       'hiddenFromPublishing': instance.hiddenFromPublishing,

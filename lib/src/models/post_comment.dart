@@ -6,6 +6,7 @@ import 'package:json_annotation/json_annotation.dart';
 import 'package:meta/meta.dart';
 
 import 'client_meta.dart';
+import 'client_meta_convert.dart';
 
 part 'post_comment.g.dart';
 
@@ -30,6 +31,7 @@ class PostComment extends Equatable {
 
   /// The position where to place the comment.
   @JsonKey(name: 'client_meta', includeIfNull: false)
+  @ClientMetaNullableConverter()
   final ClientMeta? clientMeta;
 
   @override

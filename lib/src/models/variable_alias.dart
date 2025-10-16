@@ -26,5 +26,8 @@ class VariableAlias extends Equatable {
   @override
   List<Object?> get props => <Object?>[id];
 
-  Map<String, Object?> toJson() => _$VariableAliasToJson(this);
+  Map<String, Object?> toJson() => <String, Object?>{
+    ..._$VariableAliasToJson(this),
+    'type': 'VARIABLE_ALIAS',
+  };
 }

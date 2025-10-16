@@ -9,6 +9,7 @@ import 'variable_code_syntax.dart';
 import 'variable_resolved_type.dart';
 import 'variable_scope.dart';
 import 'variable_value.dart';
+import 'variable_value_convert.dart';
 
 part 'local_variable.g.dart';
 
@@ -53,6 +54,7 @@ class LocalVariable extends Equatable {
   final VariableResolvedType resolvedType;
 
   /// The values for each mode of this variable.
+  @VariableValueMapConverter()
   final Map<String, VariableValue> valuesByMode;
 
   /// Whether this variable is remote.

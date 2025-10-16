@@ -91,14 +91,14 @@ VariableData _$VariableDataFromJson(Map<String, dynamic> json) => VariableData(
     _$VariableResolvedTypeEnumMap,
     json['resolvedType'],
   ),
-  value: json['value'],
+  value: const VariableValueNullableConverter().fromJson(json['value']),
 );
 
 Map<String, dynamic> _$VariableDataToJson(VariableData instance) =>
     <String, dynamic>{
       'type': ?_$VariableDataTypeEnumMap[instance.type],
       'resolvedType': ?_$VariableResolvedTypeEnumMap[instance.resolvedType],
-      'value': ?instance.value,
+      'value': ?const VariableValueNullableConverter().toJson(instance.value),
     };
 
 const _$VariableDataTypeEnumMap = {

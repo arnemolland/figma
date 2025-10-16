@@ -84,12 +84,14 @@ extension $PostCommentCopyWith on PostComment {
 PostComment _$PostCommentFromJson(Map<String, dynamic> json) => PostComment(
   message: json['message'] as String,
   commentId: json['comment_id'] as String?,
-  clientMeta: json['client_meta'],
+  clientMeta: const ClientMetaNullableConverter().fromJson(json['client_meta']),
 );
 
 Map<String, dynamic> _$PostCommentToJson(PostComment instance) =>
     <String, dynamic>{
       'message': instance.message,
       'comment_id': ?instance.commentId,
-      'client_meta': ?instance.clientMeta,
+      'client_meta': ?const ClientMetaNullableConverter().toJson(
+        instance.clientMeta,
+      ),
     };
