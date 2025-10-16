@@ -9,7 +9,7 @@ part of 'post_webhook.dart';
 abstract class _$PostWebhookCWProxy {
   PostWebhook eventType(WebhookEvent eventType);
 
-  PostWebhook context(String context);
+  PostWebhook context(WebhookContext context);
 
   PostWebhook contextId(String contextId);
 
@@ -30,7 +30,7 @@ abstract class _$PostWebhookCWProxy {
   /// ```
   PostWebhook call({
     WebhookEvent eventType,
-    String context,
+    WebhookContext context,
     String contextId,
     String endpoint,
     String passcode,
@@ -50,7 +50,7 @@ class _$PostWebhookCWProxyImpl implements _$PostWebhookCWProxy {
   PostWebhook eventType(WebhookEvent eventType) => call(eventType: eventType);
 
   @override
-  PostWebhook context(String context) => call(context: context);
+  PostWebhook context(WebhookContext context) => call(context: context);
 
   @override
   PostWebhook contextId(String contextId) => call(contextId: contextId);
@@ -93,7 +93,7 @@ class _$PostWebhookCWProxyImpl implements _$PostWebhookCWProxy {
       context: context == const $CopyWithPlaceholder() || context == null
           ? _value.context
           // ignore: cast_nullable_to_non_nullable
-          : context as String,
+          : context as WebhookContext,
       contextId: contextId == const $CopyWithPlaceholder() || contextId == null
           ? _value.contextId
           // ignore: cast_nullable_to_non_nullable
@@ -131,7 +131,7 @@ extension $PostWebhookCopyWith on PostWebhook {
 
 PostWebhook _$PostWebhookFromJson(Map<String, dynamic> json) => PostWebhook(
   eventType: $enumDecode(_$WebhookEventEnumMap, json['event_type']),
-  context: json['context'] as String,
+  context: $enumDecode(_$WebhookContextEnumMap, json['context']),
   contextId: json['context_id'] as String,
   endpoint: json['endpoint'] as String,
   passcode: json['passcode'] as String,
@@ -142,7 +142,7 @@ PostWebhook _$PostWebhookFromJson(Map<String, dynamic> json) => PostWebhook(
 Map<String, dynamic> _$PostWebhookToJson(PostWebhook instance) =>
     <String, dynamic>{
       'event_type': _$WebhookEventEnumMap[instance.eventType]!,
-      'context': instance.context,
+      'context': _$WebhookContextEnumMap[instance.context]!,
       'context_id': instance.contextId,
       'endpoint': instance.endpoint,
       'passcode': instance.passcode,
@@ -158,6 +158,12 @@ const _$WebhookEventEnumMap = {
   WebhookEvent.libraryPublish: 'LIBRARY_PUBLISH',
   WebhookEvent.fileComment: 'FILE_COMMENT',
   WebhookEvent.devModeStatusUpdate: 'DEV_MODE_STATUS_UPDATE',
+};
+
+const _$WebhookContextEnumMap = {
+  WebhookContext.project: 'PROJECT',
+  WebhookContext.team: 'TEAM',
+  WebhookContext.file: 'FILE',
 };
 
 const _$WebhookStatusEnumMap = {

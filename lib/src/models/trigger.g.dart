@@ -18,6 +18,7 @@ const _$TriggerTypeEnumMap = {
   TriggerType.onHover: 'ON_HOVER',
   TriggerType.onPress: 'ON_PRESS',
   TriggerType.onDrag: 'ON_DRAG',
+  TriggerType.drag: 'DRAG',
   TriggerType.afterTimeout: 'AFTER_TIMEOUT',
   TriggerType.mouseEnter: 'MOUSE_ENTER',
   TriggerType.mouseLeave: 'MOUSE_LEAVE',

@@ -11,6 +11,8 @@ enum TriggerType {
   onPress,
   @JsonValue('ON_DRAG')
   onDrag,
+  @JsonValue('DRAG')
+  drag,
   @JsonValue('AFTER_TIMEOUT')
   afterTimeout,
   @JsonValue('MOUSE_ENTER')
