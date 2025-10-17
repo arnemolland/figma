@@ -51,36 +51,34 @@ void main() {
 
     const assets = '0:1';
 
-    const basicQuery = FigmaQuery(ids: [assets]);
-
     final testComment = PostComment(message: 'Hello from Dart! 🎯');
 
     test(
       'getFile() retrieves file',
       () => client
           .getFile(testFile)
-          .then((res) => expect(res.document != null, true)),
+          .then((res) => expect(res, isA<FileResponse>())),
     );
 
     test(
       'getFileNodes() retrieves file nodes',
       () => client
-          .getFileNodes(testFile, basicQuery)
+          .getFileNodes(testFile, GetFileNodes(ids: assets))
           .then((res) => expect(res, isA<NodesResponse>())),
     );
 
     test(
       'getImages() retrieves images',
       () => client
-          .getImages(testFile, basicQuery)
-          .then((res) => expect(res.status == null, true)),
+          .getImages(testFile, GetImages(ids: assets))
+          .then((res) => expect(res.images, isNotEmpty)),
     );
 
     test(
       'getImageFills() retrieves image fills',
       () => client
           .getImageFills(testFile)
-          .then((res) => expect(res.err == null, true)),
+          .then((res) => expect(res.meta.images, isNotEmpty)),
     );
 
     test(
@@ -111,14 +109,14 @@ void main() {
       'getTeamProjects() gets team projects',
       () => client
           .getTeamProjects(testTeam)
-          .then((res) => expect(res.projects?.isNotEmpty, true)),
+          .then((res) => expect(res.projects.isNotEmpty, true)),
     );
 
     test(
       'getProjectFiles() gets project files',
       () => client
           .getProjectFiles(testProject)
-          .then((res) => expect(res.files?.isNotEmpty, true)),
+          .then((res) => expect(res.files.isNotEmpty, true)),
     );
 
     test(
@@ -132,14 +130,14 @@ void main() {
       'getTeamStyles() gets team styles',
       () => client
           .getTeamStyles(testTeam)
-          .then((res) => expect(res.meta != null, true)),
+          .then((res) => expect(res.status == 200, true)),
     );
 
     test(
       'getFileStyles() gets file styles',
       () => client.getFileStyles(testFile).then((res) {
         // This will always be empty as published styles are a paid feature.
-        expect(res.meta?.styles, isA<List<Style>>());
+        expect(res.meta.styles, isA<List<Style>>());
       }),
     );
 

@@ -1,82 +1,58 @@
-/// A wrapper that wraps all available query values for the Figma API.
-class FigmaQuery {
-  /// Comma separated list of nodes that you care about in the document.
-  /// If specified, only a subset of the document will be returned corresponding
-  /// to the nodes listed, their children, and everything between the root node
-  /// and the listed nodes.
-  final List<String>? ids;
+import 'package:meta/meta.dart';
 
-  /// A number between 0.01 and 4, the image scaling factor.
-  final double? scale;
+import 'models.dart';
 
-  /// A string enum for the image output format, can be jpg, png, svg, or pdf.
-  final String? format;
+String _toString(Object? value) => switch (value) {
+  List() => value.map(_toString).join(','),
+  String() => value,
+  _ => value.toString(),
+};
 
-  /// A specific version ID to get. Omitting this will get the current version
-  /// of the file.
-  final String? version;
+Map<String, String> _queryParams(Map<String, Object?> value) {
+  final converted = <String, String>{};
 
-  /// Positive integer representing how deep into the document tree to traverse.
-  /// For example, setting this to 1 returns only Pages, setting it to 2 returns
-  /// Pages and all top level objects on each page. Not setting this parameter
-  /// returns all nodes.
-  final int? depth;
+  for (final entry in value.entries) {
+    converted[entry.key] = _toString(entry.value);
+  }
 
-  /// Set to "paths" to export vector data.
-  final String? geometry;
+  return converted;
+}
 
-  /// Whether to include id attributes for all SVG elements. Default: false.
-  final bool? svgIncludeId;
+@internal
+extension GetFileQueryParams on GetFile {
+  Map<String, String> get queryParams => _queryParams(toJson());
+}
 
-  /// Whether to simplify inside/outside strokes and use stroke attribute if
-  /// possible instead of `<mask>`. Default: true.
-  final bool? svgSimplifyStroke;
+@internal
+extension GetFileNodesQueryParams on GetFileNodes {
+  Map<String, String> get queryParams => _queryParams(toJson());
+}
 
-  /// Use the full dimensions of the node regardless of whether or not it is
-  /// cropped or the space around it is empty. Use this to export text nodes
-  /// without cropping. Default: false.
-  final bool? useAbsoluteBounds;
+@internal
+extension GetImagesQueryParams on GetImages {
+  Map<String, String> get queryParams {
+    final params = _queryParams(toJson());
 
-  /// Number of items in a paged list of results. Defaults to 30.
-  final int? pageSize;
+    // The value of `format` needs to be all lowercase
+    params['format'] = params['format']!.toLowerCase();
 
-  /// A map that indicates the starting/ending point from which objects are
-  /// returned. The cursor value is an internally tracked integer that doesn't
-  /// correspond to any IDs.
-  final Map<String, int>? cursor;
+    return params;
+  }
+}
 
-  /// A comma separated list of plugin IDs and/or the string "shared". Any data
-  /// present in the document written by those plugins will be included in the
-  /// result in the `pluginData` and `sharedPluginData` properties.
-  final String? pluginData;
+@internal
+extension GetPageQueryParams on GetPage {
+  Map<String, String> get queryParams => _queryParams(toJson());
+}
 
-  const FigmaQuery({
-    this.ids,
-    this.scale,
-    this.format,
-    this.version,
-    this.depth,
-    this.geometry,
-    this.svgIncludeId,
-    this.svgSimplifyStroke,
-    this.useAbsoluteBounds,
-    this.pageSize,
-    this.cursor,
-    this.pluginData,
-  });
+@internal
+extension GetWebhooksQueryParams on GetWebhooks {
+  Map<String, String> get queryParams {
+    final params = _queryParams(toJson());
 
-  Map<String, String?> get params => <String, String?>{
-    'ids': ids?.join(','),
-    'scale': scale?.toString(),
-    'format': format,
-    'version': version,
-    'depth': depth?.toString(),
-    'geometry': geometry,
-    'svg_include_id': svgIncludeId?.toString(),
-    'svg_simplify_stroke': svgSimplifyStroke?.toString(),
-    'use_absolute_bounds': useAbsoluteBounds?.toString(),
-    'page_size': pageSize?.toString(),
-    'cursor': cursor?.toString(),
-    'plugin_data': pluginData,
-  }..removeWhere((k, v) => v == null);
+    // The value of `context` needs to be all lowercase
+    params['context'] = params['context']!.toLowerCase();
+
+    return params;
+  }
 }
