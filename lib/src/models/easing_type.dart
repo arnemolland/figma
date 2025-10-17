@@ -38,6 +38,8 @@ enum EasingType {
   easeOutBack,
   @JsonValue('EASE_IN_AND_OUT_BACK')
   easeInAndOutBack,
+  @JsonValue('CUSTOM_BEZIER')
+  customBezier,
   @JsonValue('CUSTOM_CUBIC_BEZIER')
   customCubicBezier,
   @JsonValue('GENTLE')

@@ -26,7 +26,7 @@ class Interaction extends Equatable {
 
   /// The actions that are performed when the trigger is activated.
   @JsonKey(defaultValue: [])
-  final List<Action> actions;
+  final List<Action?> actions;
 
   @override
   List<Object?> get props => <Object?>[trigger, actions];

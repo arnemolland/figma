@@ -5,6 +5,7 @@ import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:meta/meta.dart';
 
+import 'webhook_context.dart';
 import 'webhook_event.dart';
 import 'webhook_status.dart';
 
@@ -33,7 +34,7 @@ class PostWebhook extends Equatable {
   /// Context to create the webhook for.
   ///
   /// Must be "team", "project", or "file".
-  final String context;
+  final WebhookContext context;
 
   /// The id of the context you want to receive updates about.
   @JsonKey(name: 'context_id')

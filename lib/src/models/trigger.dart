@@ -33,7 +33,8 @@ abstract class Trigger extends Equatable {
       'ON_CLICK' ||
       'ON_HOVER' ||
       'ON_PRESS' ||
-      'ON_DRAG' => OnMouseInteractionTrigger.fromJson,
+      'ON_DRAG' ||
+      'DRAG' => OnMouseInteractionTrigger.fromJson,
       'AFTER_TIMEOUT' => AfterTimeoutTrigger.fromJson,
       'MOUSE_ENTER' ||
       'MOUSE_LEAVE' ||

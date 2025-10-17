@@ -1153,6 +1153,7 @@ const _$EasingTypeEnumMap = {
   EasingType.easeInBack: 'EASE_IN_BACK',
   EasingType.easeOutBack: 'EASE_OUT_BACK',
   EasingType.easeInAndOutBack: 'EASE_IN_AND_OUT_BACK',
+  EasingType.customBezier: 'CUSTOM_BEZIER',
   EasingType.customCubicBezier: 'CUSTOM_CUBIC_BEZIER',
   EasingType.gentle: 'GENTLE',
   EasingType.quick: 'QUICK',
