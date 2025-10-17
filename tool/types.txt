@@ -5,6 +5,7 @@ ActionType
 BlendMode
 BlurType
 BooleanOperation
+CommentPinCorner
 ComponentPropertyType
 ConnectorLineType
 ConnectorStrokeCap
@@ -130,6 +131,8 @@ FileMeta
 FlowStartingPoint
 Frame
 FrameInfo
+FrameOffset
+FrameOffsetRegion
 GradientPaint
 GroupNode
 Hyperlink
@@ -190,6 +193,7 @@ Reaction
 Rectangle
 RectangleCornerRadiiVariables
 RectangleNode
+Region
 RegularPolygonNode
 ResponseCursor
 ResponsePagination

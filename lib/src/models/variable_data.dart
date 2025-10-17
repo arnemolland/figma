@@ -8,6 +8,7 @@ import 'package:meta/meta.dart';
 import 'variable_data_type.dart';
 import 'variable_resolved_type.dart';
 import 'variable_value.dart';
+import 'variable_value_convert.dart';
 
 part 'variable_data.g.dart';
 
@@ -28,6 +29,7 @@ class VariableData extends Equatable {
   final VariableResolvedType? resolvedType;
 
   @JsonKey(includeIfNull: false)
+  @VariableValueNullableConverter()
   final VariableValue? value;
 
   @override

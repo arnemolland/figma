@@ -163,7 +163,7 @@ extension $CommentCopyWith on Comment {
 
 Comment _$CommentFromJson(Map<String, dynamic> json) => Comment(
   id: json['id'] as String,
-  clientMeta: json['client_meta'],
+  clientMeta: const ClientMetaNullableConverter().fromJson(json['client_meta']),
   fileKey: json['file_key'] as String,
   parentId: json['parent_id'] as String?,
   user: User.fromJson(json['user'] as Map<String, dynamic>),
@@ -180,7 +180,9 @@ Comment _$CommentFromJson(Map<String, dynamic> json) => Comment(
 
 Map<String, dynamic> _$CommentToJson(Comment instance) => <String, dynamic>{
   'id': instance.id,
-  'client_meta': instance.clientMeta,
+  'client_meta': const ClientMetaNullableConverter().toJson(
+    instance.clientMeta,
+  ),
   'file_key': instance.fileKey,
   'parent_id': ?instance.parentId,
   'user': instance.user.toJson(),
