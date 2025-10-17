@@ -6,7 +6,7 @@ import 'package:json_annotation/json_annotation.dart';
 import 'package:meta/meta.dart';
 
 import 'variable_data_type.dart';
-import 'variable_resolved_type.dart';
+import 'variable_resolved_data_type.dart';
 import 'variable_value.dart';
 import 'variable_value_convert.dart';
 
@@ -26,7 +26,7 @@ class VariableData extends Equatable {
   final VariableDataType? type;
 
   @JsonKey(includeIfNull: false)
-  final VariableResolvedType? resolvedType;
+  final VariableResolvedDataType? resolvedType;
 
   @JsonKey(includeIfNull: false)
   @VariableValueNullableConverter()

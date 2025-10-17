@@ -9,7 +9,7 @@ part of 'variable_data.dart';
 abstract class _$VariableDataCWProxy {
   VariableData type(VariableDataType? type);
 
-  VariableData resolvedType(VariableResolvedType? resolvedType);
+  VariableData resolvedType(VariableResolvedDataType? resolvedType);
 
   VariableData value(VariableValue? value);
 
@@ -22,7 +22,7 @@ abstract class _$VariableDataCWProxy {
   /// ```
   VariableData call({
     VariableDataType? type,
-    VariableResolvedType? resolvedType,
+    VariableResolvedDataType? resolvedType,
     VariableValue? value,
   });
 }
@@ -38,7 +38,7 @@ class _$VariableDataCWProxyImpl implements _$VariableDataCWProxy {
   VariableData type(VariableDataType? type) => call(type: type);
 
   @override
-  VariableData resolvedType(VariableResolvedType? resolvedType) =>
+  VariableData resolvedType(VariableResolvedDataType? resolvedType) =>
       call(resolvedType: resolvedType);
 
   @override
@@ -65,7 +65,7 @@ class _$VariableDataCWProxyImpl implements _$VariableDataCWProxy {
       resolvedType: resolvedType == const $CopyWithPlaceholder()
           ? _value.resolvedType
           // ignore: cast_nullable_to_non_nullable
-          : resolvedType as VariableResolvedType?,
+          : resolvedType as VariableResolvedDataType?,
       value: value == const $CopyWithPlaceholder()
           ? _value.value
           // ignore: cast_nullable_to_non_nullable
@@ -88,7 +88,7 @@ extension $VariableDataCopyWith on VariableData {
 VariableData _$VariableDataFromJson(Map<String, dynamic> json) => VariableData(
   type: $enumDecodeNullable(_$VariableDataTypeEnumMap, json['type']),
   resolvedType: $enumDecodeNullable(
-    _$VariableResolvedTypeEnumMap,
+    _$VariableResolvedDataTypeEnumMap,
     json['resolvedType'],
   ),
   value: const VariableValueNullableConverter().fromJson(json['value']),
@@ -97,7 +97,7 @@ VariableData _$VariableDataFromJson(Map<String, dynamic> json) => VariableData(
 Map<String, dynamic> _$VariableDataToJson(VariableData instance) =>
     <String, dynamic>{
       'type': ?_$VariableDataTypeEnumMap[instance.type],
-      'resolvedType': ?_$VariableResolvedTypeEnumMap[instance.resolvedType],
+      'resolvedType': ?_$VariableResolvedDataTypeEnumMap[instance.resolvedType],
       'value': ?const VariableValueNullableConverter().toJson(instance.value),
     };
 
@@ -110,9 +110,9 @@ const _$VariableDataTypeEnumMap = {
   VariableDataType.expression: 'EXPRESSION',
 };
 
-const _$VariableResolvedTypeEnumMap = {
-  VariableResolvedType.boolean: 'BOOLEAN',
-  VariableResolvedType.float: 'FLOAT',
-  VariableResolvedType.string: 'STRING',
-  VariableResolvedType.color: 'COLOR',
+const _$VariableResolvedDataTypeEnumMap = {
+  VariableResolvedDataType.boolean: 'BOOLEAN',
+  VariableResolvedDataType.float: 'FLOAT',
+  VariableResolvedDataType.string: 'STRING',
+  VariableResolvedDataType.color: 'COLOR',
 };

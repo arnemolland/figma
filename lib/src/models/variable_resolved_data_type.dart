@@ -3,7 +3,7 @@
 import 'package:json_annotation/json_annotation.dart';
 
 /// Defines the types of data a VariableData object can eventually equal.
-enum VariableResolvedType {
+enum VariableResolvedDataType {
   @JsonValue('BOOLEAN')
   boolean,
   @JsonValue('FLOAT')

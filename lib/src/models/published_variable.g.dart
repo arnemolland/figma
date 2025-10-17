@@ -17,7 +17,7 @@ abstract class _$PublishedVariableCWProxy {
 
   PublishedVariable variableCollectionId(String variableCollectionId);
 
-  PublishedVariable resolvedDataType(VariableResolvedType resolvedDataType);
+  PublishedVariable resolvedDataType(VariableResolvedDataType resolvedDataType);
 
   PublishedVariable updatedAt(DateTime updatedAt);
 
@@ -34,7 +34,7 @@ abstract class _$PublishedVariableCWProxy {
     String name,
     String key,
     String variableCollectionId,
-    VariableResolvedType resolvedDataType,
+    VariableResolvedDataType resolvedDataType,
     DateTime updatedAt,
   });
 }
@@ -64,8 +64,9 @@ class _$PublishedVariableCWProxyImpl implements _$PublishedVariableCWProxy {
       call(variableCollectionId: variableCollectionId);
 
   @override
-  PublishedVariable resolvedDataType(VariableResolvedType resolvedDataType) =>
-      call(resolvedDataType: resolvedDataType);
+  PublishedVariable resolvedDataType(
+    VariableResolvedDataType resolvedDataType,
+  ) => call(resolvedDataType: resolvedDataType);
 
   @override
   PublishedVariable updatedAt(DateTime updatedAt) => call(updatedAt: updatedAt);
@@ -116,7 +117,7 @@ class _$PublishedVariableCWProxyImpl implements _$PublishedVariableCWProxy {
               resolvedDataType == null
           ? _value.resolvedDataType
           // ignore: cast_nullable_to_non_nullable
-          : resolvedDataType as VariableResolvedType,
+          : resolvedDataType as VariableResolvedDataType,
       updatedAt: updatedAt == const $CopyWithPlaceholder() || updatedAt == null
           ? _value.updatedAt
           // ignore: cast_nullable_to_non_nullable
@@ -145,27 +146,27 @@ PublishedVariable _$PublishedVariableFromJson(Map<String, dynamic> json) =>
       key: json['key'] as String,
       variableCollectionId: json['variableCollectionId'] as String,
       resolvedDataType: $enumDecode(
-        _$VariableResolvedTypeEnumMap,
+        _$VariableResolvedDataTypeEnumMap,
         json['resolvedDataType'],
       ),
       updatedAt: DateTime.parse(json['updatedAt'] as String),
     );
 
-Map<String, dynamic> _$PublishedVariableToJson(
-  PublishedVariable instance,
-) => <String, dynamic>{
-  'id': instance.id,
-  'subscribed_id': instance.subscribedId,
-  'name': instance.name,
-  'key': instance.key,
-  'variableCollectionId': instance.variableCollectionId,
-  'resolvedDataType': _$VariableResolvedTypeEnumMap[instance.resolvedDataType]!,
-  'updatedAt': instance.updatedAt.toIso8601String(),
-};
+Map<String, dynamic> _$PublishedVariableToJson(PublishedVariable instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'subscribed_id': instance.subscribedId,
+      'name': instance.name,
+      'key': instance.key,
+      'variableCollectionId': instance.variableCollectionId,
+      'resolvedDataType':
+          _$VariableResolvedDataTypeEnumMap[instance.resolvedDataType]!,
+      'updatedAt': instance.updatedAt.toIso8601String(),
+    };
 
-const _$VariableResolvedTypeEnumMap = {
-  VariableResolvedType.boolean: 'BOOLEAN',
-  VariableResolvedType.float: 'FLOAT',
-  VariableResolvedType.string: 'STRING',
-  VariableResolvedType.color: 'COLOR',
+const _$VariableResolvedDataTypeEnumMap = {
+  VariableResolvedDataType.boolean: 'BOOLEAN',
+  VariableResolvedDataType.float: 'FLOAT',
+  VariableResolvedDataType.string: 'STRING',
+  VariableResolvedDataType.color: 'COLOR',
 };

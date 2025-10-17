@@ -281,7 +281,7 @@ export 'models/variable_alias.dart';
 export 'models/variable_code_syntax.dart';
 export 'models/variable_data.dart';
 export 'models/variable_data_type.dart';
-export 'models/variable_resolved_type.dart';
+export 'models/variable_resolved_data_type.dart';
 export 'models/variable_scope.dart';
 export 'models/variable_value.dart';
 export 'models/vector.dart';
