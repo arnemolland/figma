@@ -246,7 +246,7 @@ void main() {
       );
       expect(
         expression.expressionArguments[0].resolvedType,
-        equals(VariableResolvedType.boolean),
+        equals(VariableResolvedDataType.boolean),
       );
       expect(expression.expressionArguments[0].value, isTrue);
 

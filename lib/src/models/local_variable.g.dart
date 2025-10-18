@@ -15,7 +15,7 @@ abstract class _$LocalVariableCWProxy {
 
   LocalVariable variableCollectionId(String variableCollectionId);
 
-  LocalVariable resolvedType(VariableResolvedType resolvedType);
+  LocalVariable resolvedType(VariableResolvedDataType resolvedType);
 
   LocalVariable valuesByMode(Map<String, VariableValue> valuesByMode);
 
@@ -43,7 +43,7 @@ abstract class _$LocalVariableCWProxy {
     String name,
     String key,
     String variableCollectionId,
-    VariableResolvedType resolvedType,
+    VariableResolvedDataType resolvedType,
     Map<String, VariableValue> valuesByMode,
     bool remote,
     String description,
@@ -75,7 +75,7 @@ class _$LocalVariableCWProxyImpl implements _$LocalVariableCWProxy {
       call(variableCollectionId: variableCollectionId);
 
   @override
-  LocalVariable resolvedType(VariableResolvedType resolvedType) =>
+  LocalVariable resolvedType(VariableResolvedDataType resolvedType) =>
       call(resolvedType: resolvedType);
 
   @override
@@ -149,7 +149,7 @@ class _$LocalVariableCWProxyImpl implements _$LocalVariableCWProxy {
           resolvedType == const $CopyWithPlaceholder() || resolvedType == null
           ? _value.resolvedType
           // ignore: cast_nullable_to_non_nullable
-          : resolvedType as VariableResolvedType,
+          : resolvedType as VariableResolvedDataType,
       valuesByMode:
           valuesByMode == const $CopyWithPlaceholder() || valuesByMode == null
           ? _value.valuesByMode
@@ -207,7 +207,7 @@ LocalVariable _$LocalVariableFromJson(Map<String, dynamic> json) =>
       key: json['key'] as String,
       variableCollectionId: json['variableCollectionId'] as String,
       resolvedType: $enumDecode(
-        _$VariableResolvedTypeEnumMap,
+        _$VariableResolvedDataTypeEnumMap,
         json['resolvedType'],
       ),
       valuesByMode: const VariableValueMapConverter().fromJson(
@@ -231,7 +231,7 @@ Map<String, dynamic> _$LocalVariableToJson(LocalVariable instance) =>
       'name': instance.name,
       'key': instance.key,
       'variableCollectionId': instance.variableCollectionId,
-      'resolvedType': _$VariableResolvedTypeEnumMap[instance.resolvedType]!,
+      'resolvedType': _$VariableResolvedDataTypeEnumMap[instance.resolvedType]!,
       'valuesByMode': const VariableValueMapConverter().toJson(
         instance.valuesByMode,
       ),
@@ -243,11 +243,11 @@ Map<String, dynamic> _$LocalVariableToJson(LocalVariable instance) =>
       'deletedButReferenced': instance.deletedButReferenced,
     };
 
-const _$VariableResolvedTypeEnumMap = {
-  VariableResolvedType.boolean: 'BOOLEAN',
-  VariableResolvedType.float: 'FLOAT',
-  VariableResolvedType.string: 'STRING',
-  VariableResolvedType.color: 'COLOR',
+const _$VariableResolvedDataTypeEnumMap = {
+  VariableResolvedDataType.boolean: 'BOOLEAN',
+  VariableResolvedDataType.float: 'FLOAT',
+  VariableResolvedDataType.string: 'STRING',
+  VariableResolvedDataType.color: 'COLOR',
 };
 
 const _$VariableScopeEnumMap = {

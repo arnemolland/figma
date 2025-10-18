@@ -70,7 +70,7 @@ TransitionDirection
 TransitionType
 TriggerType
 VariableDataType
-VariableResolvedType
+VariableResolvedDataType
 VariableScope
 VerticalConstraint
 WebhookContext
