@@ -1,3 +1,8 @@
+## 8.0.0
+
+- Generate models from Figma's REST API specification ([@donny-dont](https://github.com/donny-dont))
+- Require `sdk: ^3.8.0`
+
 ## 7.5.0
 
 - Bump dependencies
