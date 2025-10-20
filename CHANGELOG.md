@@ -1,4 +1,4 @@
-## 8.0.0
+## 8.0.0-alpha
 
 - Generate models from Figma's REST API specification ([@donny-dont](https://github.com/donny-dont))
 - Require `sdk: ^3.8.0`
