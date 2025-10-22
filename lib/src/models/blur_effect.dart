@@ -23,7 +23,7 @@ abstract class BlurEffect extends Effect {
   });
 
   factory BlurEffect.fromJson(Map<String, Object?> json) {
-    final discriminator = json['blurType'];
+    final discriminator = json['blurType'] ?? 'NORMAL';
     final construct = switch (discriminator) {
       'NORMAL' => NormalBlurEffect.fromJson,
       'PROGRESSIVE' => ProgressiveBlurEffect.fromJson,
