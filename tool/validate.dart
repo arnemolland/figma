@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:args/args.dart';
 import 'package:collection/collection.dart';
 import 'package:markdown/markdown.dart';
+import 'package:pub_semver/pub_semver.dart';
 import 'package:yaml/yaml.dart';
 
 Future<void> main(List<String> arguments) async {
@@ -12,8 +13,9 @@ Future<void> main(List<String> arguments) async {
   final tag = argResults['tag'].toString();
 
   // Validate that the tag is a valid semver.
-  final semver = RegExp(r'^\d+\.\d+\.\d+$');
-  if (!semver.hasMatch(tag)) {
+  try {
+    Version.parse(tag);
+  } on FormatException {
     exitCode = 1;
     stderr.writeln('error: tag $tag is not a valid semver');
   }
