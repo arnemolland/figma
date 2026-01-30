@@ -4,6 +4,18 @@ typedef JsonMap = Map<String, Object?>;
 /// Type definition of a [JsonMap] key.
 typedef JsonMapEntry = MapEntry<String, Object?>;
 
+Map<K, V> _map<K, V>(Map? value, Map<K, V> defaultTo) {
+  if (value == null) {
+    return defaultTo;
+  }
+
+  if (value is Map<K, V>) {
+    return value;
+  }
+
+  return value.cast<K, V>();
+}
+
 /// Helpers for accessing JSON data.
 extension JsonMapValue on JsonMap {
   /// Retrieve a [bool] at the given [key].
@@ -39,19 +51,8 @@ extension JsonMapValue on JsonMap {
   /// Retrieves a [Map] at the given [key].
   ///
   /// If the [key] is not present an empty [Map] is returned.
-  Map<K, V> getMap<K, V>(String key, {Map<K, V> defaultTo = const {}}) {
-    final value = this[key] as Map?;
-
-    if (value == null) {
-      return defaultTo;
-    }
-
-    if (value is Map<K, V>) {
-      return value;
-    }
-
-    return value.cast<K, V>();
-  }
+  Map<K, V> getMap<K, V>(String key, {Map<K, V> defaultTo = const {}}) =>
+      _map<K, V>(this[key] as Map?, defaultTo);
 
   /// Retrieve a [List] of [Map]s at the given [key].
   ///
@@ -82,4 +83,27 @@ extension JsonMapValue on JsonMap {
   ///
   /// Uses [getMap] with the expected type parameters.
   List<JsonMap> getJsonList(String key) => getMapList<String, Object?>(key);
+
+  /// Retrieves a [JsonMap] from the given [path].
+  ///
+  /// The [path] is a bunch of individual segments going deeper into the
+  /// structure. This is done to handle `$ref` values within the map.
+  JsonMap getJsonFromPath(List<String> path) {
+    var map = this;
+
+    for (final segment in path) {
+      map = map.getMap<String, Object?>(segment);
+    }
+
+    return map;
+  }
+}
+
+/// Helpers for getting [JsonMap] values from a [JsonMapEntry].
+extension JsonMapEntryValue on JsonMapEntry {
+  /// Gets a JSON from the [value].
+  ///
+  /// If the value is `null` an empty [JsonMap] is returned; otherwise returns
+  /// a [JsonMap].
+  JsonMap get valueJson => _map<String, Object?>(value as Map?, const {});
 }

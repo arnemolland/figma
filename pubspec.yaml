@@ -20,6 +20,7 @@ dependencies:
 dev_dependencies:
   args: ^2.7.0
   build_runner: ^2.8.0
+  change_case: ^2.2.0
   cli_util: ^0.4.2
   copy_with_extension_gen: ">=10.0.0 <13.0.0"
   json_serializable: ^6.11.1
