@@ -6,11 +6,23 @@ import 'json_map.dart';
 
 /// Load a YAML file from the [path].
 Future<JsonMap> loadYamlFile(String path) async {
-  final file = File(path);
-  final contents = await file.readAsString();
+  final contents = await _fileContents(path);
 
   return _deepCloneJsonMap(loadYaml(contents) as Map);
 }
+
+/// Load a text file containing a listing of types to generate from the [path].
+Future<List<String>> loadTypeListing(String path) async {
+  final contents = await _fileContents(path);
+
+  return contents
+      .split('\n')
+      .map((s) => s.trim())
+      .where((s) => s.isNotEmpty && !s.startsWith('#'))
+      .toList();
+}
+
+Future<String> _fileContents(String path) => File(path).readAsString();
 
 /// Perform a deep clone of the [map].
 ///
