@@ -10,7 +10,7 @@ environment:
 
 dependencies:
   collection: ^1.19.0
-  copy_with_extension: ^10.0.0
+  copy_with_extension: ^11.0.0
   equatable: ^2.0.0
   http: ^1.0.0
   http2: ^2.0.0
@@ -20,7 +20,7 @@ dependencies:
 dev_dependencies:
   args: ^2.7.0
   build_runner: ^2.8.0
-  copy_with_extension_gen: ^10.0.0
+  copy_with_extension_gen: ^11.0.0
   json_serializable: ^6.11.1
   lints: ^6.0.0
   markdown: ^7.3.0
