@@ -19,6 +19,20 @@ abstract class _$LocalVariableCollectionCWProxy {
 
   LocalVariableCollection remote(bool remote);
 
+  LocalVariableCollection isExtension(bool? isExtension);
+
+  LocalVariableCollection parentVariableCollectionId(
+    String? parentVariableCollectionId,
+  );
+
+  LocalVariableCollection rootVariableCollectionId(
+    String? rootVariableCollectionId,
+  );
+
+  LocalVariableCollection variableOverrides(
+    Map<String, Map<String, VariableValue>> variableOverrides,
+  );
+
   LocalVariableCollection hiddenFromPublishing(bool hiddenFromPublishing);
 
   LocalVariableCollection variableIds(List<String> variableIds);
@@ -37,6 +51,10 @@ abstract class _$LocalVariableCollectionCWProxy {
     List<Mode> modes,
     String defaultModeId,
     bool remote,
+    bool? isExtension,
+    String? parentVariableCollectionId,
+    String? rootVariableCollectionId,
+    Map<String, Map<String, VariableValue>> variableOverrides,
     bool hiddenFromPublishing,
     List<String> variableIds,
   });
@@ -70,6 +88,25 @@ class _$LocalVariableCollectionCWProxyImpl
   LocalVariableCollection remote(bool remote) => call(remote: remote);
 
   @override
+  LocalVariableCollection isExtension(bool? isExtension) =>
+      call(isExtension: isExtension);
+
+  @override
+  LocalVariableCollection parentVariableCollectionId(
+    String? parentVariableCollectionId,
+  ) => call(parentVariableCollectionId: parentVariableCollectionId);
+
+  @override
+  LocalVariableCollection rootVariableCollectionId(
+    String? rootVariableCollectionId,
+  ) => call(rootVariableCollectionId: rootVariableCollectionId);
+
+  @override
+  LocalVariableCollection variableOverrides(
+    Map<String, Map<String, VariableValue>> variableOverrides,
+  ) => call(variableOverrides: variableOverrides);
+
+  @override
   LocalVariableCollection hiddenFromPublishing(bool hiddenFromPublishing) =>
       call(hiddenFromPublishing: hiddenFromPublishing);
 
@@ -92,6 +129,10 @@ class _$LocalVariableCollectionCWProxyImpl
     Object? modes = const $CopyWithPlaceholder(),
     Object? defaultModeId = const $CopyWithPlaceholder(),
     Object? remote = const $CopyWithPlaceholder(),
+    Object? isExtension = const $CopyWithPlaceholder(),
+    Object? parentVariableCollectionId = const $CopyWithPlaceholder(),
+    Object? rootVariableCollectionId = const $CopyWithPlaceholder(),
+    Object? variableOverrides = const $CopyWithPlaceholder(),
     Object? hiddenFromPublishing = const $CopyWithPlaceholder(),
     Object? variableIds = const $CopyWithPlaceholder(),
   }) {
@@ -121,6 +162,26 @@ class _$LocalVariableCollectionCWProxyImpl
           ? _value.remote
           // ignore: cast_nullable_to_non_nullable
           : remote as bool,
+      isExtension: isExtension == const $CopyWithPlaceholder()
+          ? _value.isExtension
+          // ignore: cast_nullable_to_non_nullable
+          : isExtension as bool?,
+      parentVariableCollectionId:
+          parentVariableCollectionId == const $CopyWithPlaceholder()
+          ? _value.parentVariableCollectionId
+          // ignore: cast_nullable_to_non_nullable
+          : parentVariableCollectionId as String?,
+      rootVariableCollectionId:
+          rootVariableCollectionId == const $CopyWithPlaceholder()
+          ? _value.rootVariableCollectionId
+          // ignore: cast_nullable_to_non_nullable
+          : rootVariableCollectionId as String?,
+      variableOverrides:
+          variableOverrides == const $CopyWithPlaceholder() ||
+              variableOverrides == null
+          ? _value.variableOverrides
+          // ignore: cast_nullable_to_non_nullable
+          : variableOverrides as Map<String, Map<String, VariableValue>>,
       hiddenFromPublishing:
           hiddenFromPublishing == const $CopyWithPlaceholder() ||
               hiddenFromPublishing == null
@@ -159,6 +220,14 @@ LocalVariableCollection _$LocalVariableCollectionFromJson(
       .toList(),
   defaultModeId: json['defaultModeId'] as String,
   remote: json['remote'] as bool,
+  isExtension: json['isExtension'] as bool?,
+  parentVariableCollectionId: json['parentVariableCollectionId'] as String?,
+  rootVariableCollectionId: json['rootVariableCollectionId'] as String?,
+  variableOverrides: json['variableOverrides'] == null
+      ? {}
+      : const MapVariableValueMapConverter().fromJson(
+          json['variableOverrides'] as Map<String, Object?>,
+        ),
   hiddenFromPublishing: json['hiddenFromPublishing'] as bool,
   variableIds: (json['variableIds'] as List<dynamic>)
       .map((e) => e as String)
@@ -174,6 +243,12 @@ Map<String, dynamic> _$LocalVariableCollectionToJson(
   'modes': instance.modes.map((e) => e.toJson()).toList(),
   'defaultModeId': instance.defaultModeId,
   'remote': instance.remote,
+  'isExtension': ?instance.isExtension,
+  'parentVariableCollectionId': ?instance.parentVariableCollectionId,
+  'rootVariableCollectionId': ?instance.rootVariableCollectionId,
+  'variableOverrides': const MapVariableValueMapConverter().toJson(
+    instance.variableOverrides,
+  ),
   'hiddenFromPublishing': instance.hiddenFromPublishing,
   'variableIds': instance.variableIds,
 };

@@ -9,6 +9,8 @@ part of 'mode.dart';
 abstract class _$ModeCWProxy {
   Mode modeId(String modeId);
 
+  Mode parentModeId(String? parentModeId);
+
   Mode name(String name);
 
   /// Creates a new instance with the provided field values.
@@ -18,7 +20,7 @@ abstract class _$ModeCWProxy {
   /// ```dart
   /// Mode(...).copyWith(id: 12, name: "My name")
   /// ```
-  Mode call({String modeId, String name});
+  Mode call({String modeId, String? parentModeId, String name});
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -30,6 +32,9 @@ class _$ModeCWProxyImpl implements _$ModeCWProxy {
 
   @override
   Mode modeId(String modeId) => call(modeId: modeId);
+
+  @override
+  Mode parentModeId(String? parentModeId) => call(parentModeId: parentModeId);
 
   @override
   Mode name(String name) => call(name: name);
@@ -44,6 +49,7 @@ class _$ModeCWProxyImpl implements _$ModeCWProxy {
   /// ```
   Mode call({
     Object? modeId = const $CopyWithPlaceholder(),
+    Object? parentModeId = const $CopyWithPlaceholder(),
     Object? name = const $CopyWithPlaceholder(),
   }) {
     return Mode(
@@ -51,6 +57,10 @@ class _$ModeCWProxyImpl implements _$ModeCWProxy {
           ? _value.modeId
           // ignore: cast_nullable_to_non_nullable
           : modeId as String,
+      parentModeId: parentModeId == const $CopyWithPlaceholder()
+          ? _value.parentModeId
+          // ignore: cast_nullable_to_non_nullable
+          : parentModeId as String?,
       name: name == const $CopyWithPlaceholder() || name == null
           ? _value.name
           // ignore: cast_nullable_to_non_nullable
@@ -70,10 +80,14 @@ extension $ModeCopyWith on Mode {
 // JsonSerializableGenerator
 // **************************************************************************
 
-Mode _$ModeFromJson(Map<String, dynamic> json) =>
-    Mode(modeId: json['modeId'] as String, name: json['name'] as String);
+Mode _$ModeFromJson(Map<String, dynamic> json) => Mode(
+  modeId: json['modeId'] as String,
+  parentModeId: json['parentModeId'] as String?,
+  name: json['name'] as String,
+);
 
 Map<String, dynamic> _$ModeToJson(Mode instance) => <String, dynamic>{
   'modeId': instance.modeId,
+  'parentModeId': ?instance.parentModeId,
   'name': instance.name,
 };
