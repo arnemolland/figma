@@ -1,4 +1,4 @@
-// Generated from v0.33.0 of the Figma REST API specification
+// Generated from v0.36.0 of the Figma REST API specification
 
 import 'minimal_fills_trait.dart';
 import 'minimal_strokes_trait.dart';

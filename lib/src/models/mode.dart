@@ -1,4 +1,4 @@
-// Generated from v0.33.0 of the Figma REST API specification
+// Generated from v0.36.0 of the Figma REST API specification
 
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:equatable/equatable.dart';
@@ -11,18 +11,25 @@ part 'mode.g.dart';
 @CopyWith()
 @immutable
 class Mode extends Equatable {
-  const Mode({required this.modeId, required this.name});
+  const Mode({required this.modeId, this.parentModeId, required this.name});
 
   factory Mode.fromJson(Map<String, Object?> json) => _$ModeFromJson(json);
 
   /// The unique identifier of this mode.
   final String modeId;
 
+  /// The unique identifier of this mode's parent mode from the parent variable
+  /// collection.
+  ///
+  /// This will be `undefined` if this mode does not inherit from a parent mode.
+  @JsonKey(includeIfNull: false)
+  final String? parentModeId;
+
   /// The name of this mode.
   final String name;
 
   @override
-  List<Object?> get props => <Object?>[modeId, name];
+  List<Object?> get props => <Object?>[modeId, parentModeId, name];
 
   Map<String, Object?> toJson() => _$ModeToJson(this);
 }

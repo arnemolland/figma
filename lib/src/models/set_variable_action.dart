@@ -1,4 +1,4 @@
-// Generated from v0.33.0 of the Figma REST API specification
+// Generated from v0.36.0 of the Figma REST API specification
 
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -7,6 +7,7 @@ import 'package:meta/meta.dart';
 import 'action.dart';
 import 'action_type.dart';
 import 'variable_data.dart';
+import 'variable_value_convert.dart';
 
 part 'set_variable_action.g.dart';
 
@@ -23,6 +24,7 @@ class SetVariableAction extends Action {
   final String? variableId;
 
   @JsonKey(includeIfNull: false)
+  @VariableValueNullableConverter()
   final VariableData? variableValue;
 
   @JsonKey(includeToJson: true)
