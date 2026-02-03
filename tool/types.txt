@@ -247,6 +247,7 @@ WidgetNode
 # Mixins
 AnnotationsTrait
 BaseTypeStyle
+ComplexStrokesTrait
 ComponentPropertiesTrait
 CornerRadiusShapeTraits
 CornerTrait
@@ -268,8 +269,10 @@ MinimalFillsTrait
 MinimalStrokesTrait
 RectangularShapeTraits
 TextPathPropertiesTrait
+TransformModifiersTrait
 TransitionSourceTrait
 TypePropertiesTrait
+VariableWidthStrokesTrait
 
 # Payloads
 DevModeStatusUpdatePayload

@@ -1,4 +1,4 @@
-// Generated from v0.33.0 of the Figma REST API specification
+// Generated from v0.36.0 of the Figma REST API specification
 
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -40,6 +40,7 @@ import 'stroke_join.dart';
 import 'stroke_weights.dart';
 import 'sub_canvas_node.dart';
 import 'transform.dart';
+import 'transform_modifiers_trait.dart';
 import 'vector.dart';
 
 part 'transform_group_node.g.dart';
@@ -47,7 +48,8 @@ part 'transform_group_node.g.dart';
 @JsonSerializable(explicitToJson: true)
 @CopyWith()
 @immutable
-class TransformGroupNode extends SubCanvasNode with FrameTraits {
+class TransformGroupNode extends SubCanvasNode
+    with FrameTraits, TransformModifiersTrait {
   const TransformGroupNode({
     required this.id,
     required this.name,

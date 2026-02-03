@@ -80,3 +80,33 @@ class VariableValueMapConverter
         MapEntry<String, Object?>(k, const VariableValueConverter().toJson(v)),
   );
 }
+
+@internal
+class MapVariableValueMapConverter
+    implements
+        JsonConverter<
+          Map<String, Map<String, VariableValue>>,
+          Map<String, Object?>
+        > {
+  const MapVariableValueMapConverter();
+
+  @override
+  Map<String, Map<String, VariableValue>> fromJson(Map<String, Object?> json) =>
+      json.map(
+        (k, v) => MapEntry<String, Map<String, VariableValue>>(
+          k,
+          const VariableValueMapConverter().fromJson(
+            (v! as Map).cast<String, Object?>(),
+          ),
+        ),
+      );
+
+  @override
+  Map<String, Object?> toJson(Map<String, Map<String, VariableValue>> object) =>
+      object.map(
+        (k, v) => MapEntry<String, Object?>(
+          k,
+          const VariableValueMapConverter().toJson(v),
+        ),
+      );
+}
