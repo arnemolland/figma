@@ -1,4 +1,4 @@
-// Generated from v0.33.0 of the Figma REST API specification
+// Generated from v0.36.0 of the Figma REST API specification
 
 import 'annotations_trait.dart';
 import 'corner_trait.dart';

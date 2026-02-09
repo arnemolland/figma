@@ -1,4 +1,4 @@
-// Generated from v0.33.0 of the Figma REST API specification
+// Generated from v0.36.0 of the Figma REST API specification
 
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:equatable/equatable.dart';
@@ -6,6 +6,8 @@ import 'package:json_annotation/json_annotation.dart';
 import 'package:meta/meta.dart';
 
 import 'mode.dart';
+import 'variable_value.dart';
+import 'variable_value_convert.dart';
 
 part 'local_variable_collection.g.dart';
 
@@ -21,6 +23,10 @@ class LocalVariableCollection extends Equatable {
     required this.modes,
     required this.defaultModeId,
     required this.remote,
+    this.isExtension,
+    this.parentVariableCollectionId,
+    this.rootVariableCollectionId,
+    this.variableOverrides = const {},
     required this.hiddenFromPublishing,
     required this.variableIds,
   });
@@ -46,6 +52,34 @@ class LocalVariableCollection extends Equatable {
   /// Whether this variable collection is remote.
   final bool remote;
 
+  /// Whether this variable collection is an extension of another variable
+  /// collection.
+  @JsonKey(includeIfNull: false)
+  final bool? isExtension;
+
+  /// The id of the parent variable collection that this variable collection is
+  /// an extension of.
+  ///
+  /// If this variable collection is not an extension, this value will be
+  /// `undefined`.
+  @JsonKey(includeIfNull: false)
+  final String? parentVariableCollectionId;
+
+  /// The id of the root variable collection in the extension chain.
+  ///
+  /// This is the ID of the original (non-extended) collection at the top of the
+  /// parent chain. For example, if Collection C extends B which extends A
+  /// (root), then `rootVariableCollectionId` is A's ID. If this variable
+  /// collection is not an extension, this value will be `undefined`.
+  @JsonKey(includeIfNull: false)
+  final String? rootVariableCollectionId;
+
+  /// The overrides for the variables in this variable collection as a map of
+  /// variable ids to a map of mode ids to variable values.
+  @JsonKey(defaultValue: {})
+  @MapVariableValueMapConverter()
+  final Map<String, Map<String, VariableValue>> variableOverrides;
+
   /// Whether this variable collection is hidden when publishing the current
   /// file as a library.
   final bool hiddenFromPublishing;
@@ -66,6 +100,10 @@ class LocalVariableCollection extends Equatable {
     modes,
     defaultModeId,
     remote,
+    isExtension,
+    parentVariableCollectionId,
+    rootVariableCollectionId,
+    variableOverrides,
     hiddenFromPublishing,
     variableIds,
   ];
