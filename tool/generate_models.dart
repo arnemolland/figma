@@ -4,6 +4,7 @@ import 'package:path/path.dart' as p;
 
 import 'src/io.dart';
 import 'src/logging.dart';
+import 'src/parse.dart';
 import 'src/schema.dart';
 
 Future<void> main() async {
@@ -18,5 +19,12 @@ Future<void> main() async {
   );
   final document = await loadYamlFile(specPath);
   final info = document.info;
-  loadProgress.finish(message: 'loaded v${info.version} of "${info.title}"');
+  loadProgress.finish(message: 'Loaded v${info.version} of "${info.title}"');
+
+  // Parse schema definition
+  final parsingProgress = logger.progress(
+    'Parsing OpenAPI specification from $specPath',
+  );
+  final definitions = parseSchemaDefinitions(document).toList();
+  parsingProgress.finish(message: 'Parsed ${definitions.length} definitions');
 }
