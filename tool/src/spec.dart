@@ -1,11 +1,27 @@
 import 'package:code_builder/code_builder.dart' as code;
 import 'package:collection/collection.dart';
+import 'package:dart_style/dart_style.dart';
 
 import 'annotate.dart' as annotate;
 import 'documentation.dart';
 import 'hierarchy.dart';
 import 'parse.dart';
 import 'reference.dart' as reference;
+
+final DartFormatter _formatter = DartFormatter(
+  languageVersion: DartFormatter.latestLanguageVersion,
+);
+
+/// Generate source code from the [library].
+String librarySource(code.Library library) {
+  final emitter = code.DartEmitter(
+    allocator: code.Allocator(),
+    orderDirectives: true,
+    useNullSafetySyntax: true,
+  );
+
+  return _formatter.format('${library.accept(emitter)}');
+}
 
 /// Create a [code.Library] from the [definition].
 code.Library librarySpec(TypeDefinition definition, {String? comment}) {
