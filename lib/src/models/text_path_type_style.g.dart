@@ -328,6 +328,7 @@ Map<String, dynamic> _$TextPathTypeStyleToJson(
 };
 
 const _$TextCaseEnumMap = {
+  TextCase.original: 'ORIGINAL',
   TextCase.upper: 'UPPER',
   TextCase.lower: 'LOWER',
   TextCase.title: 'TITLE',
