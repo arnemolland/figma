@@ -10,6 +10,8 @@ enum ComponentPropertyType {
   instanceSwap,
   @JsonValue('TEXT')
   text,
+  @JsonValue('SLOT')
+  slot,
   @JsonValue('VARIANT')
   variant,
 }

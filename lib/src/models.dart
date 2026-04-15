@@ -231,6 +231,7 @@ export 'models/simple_transition.dart';
 export 'models/size.dart';
 export 'models/size_variables.dart';
 export 'models/slice_node.dart';
+export 'models/slot.dart';
 export 'models/solid_paint.dart';
 export 'models/solid_paint_variables.dart';
 export 'models/spring.dart';

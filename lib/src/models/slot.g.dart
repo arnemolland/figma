@@ -1,148 +1,190 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'washi_tape_node.dart';
+part of 'slot.dart';
 
 // **************************************************************************
 // CopyWithGenerator
 // **************************************************************************
 
-abstract class _$WashiTapeNodeCWProxy {
-  WashiTapeNode id(String id);
+abstract class _$SlotCWProxy {
+  Slot id(String id);
 
-  WashiTapeNode name(String name);
+  Slot name(String name);
 
-  WashiTapeNode visible(bool visible);
+  Slot visible(bool visible);
 
-  WashiTapeNode locked(bool locked);
+  Slot locked(bool locked);
 
-  WashiTapeNode scrollBehavior(ScrollBehavior scrollBehavior);
+  Slot scrollBehavior(ScrollBehavior scrollBehavior);
 
-  WashiTapeNode rotation(num rotation);
+  Slot rotation(num rotation);
 
-  WashiTapeNode componentPropertyReferences(
+  Slot componentPropertyReferences(
     Map<String, String> componentPropertyReferences,
   );
 
-  WashiTapeNode pluginData(Object? pluginData);
+  Slot pluginData(Object? pluginData);
 
-  WashiTapeNode sharedPluginData(Object? sharedPluginData);
+  Slot sharedPluginData(Object? sharedPluginData);
 
-  WashiTapeNode boundVariables(LayerTraitVariables boundVariables);
+  Slot boundVariables(LayerTraitVariables boundVariables);
 
-  WashiTapeNode explicitVariableModes(
-    Map<String, String> explicitVariableModes,
-  );
+  Slot explicitVariableModes(Map<String, String> explicitVariableModes);
 
-  WashiTapeNode blendMode(BlendMode blendMode);
+  Slot blendMode(BlendMode blendMode);
 
-  WashiTapeNode opacity(num opacity);
+  Slot opacity(num opacity);
 
-  WashiTapeNode absoluteBoundingBox(Rectangle? absoluteBoundingBox);
+  Slot children(List<SubCanvasNode> children);
 
-  WashiTapeNode absoluteRenderBounds(Rectangle? absoluteRenderBounds);
+  Slot absoluteBoundingBox(Rectangle? absoluteBoundingBox);
 
-  WashiTapeNode preserveRatio(bool preserveRatio);
+  Slot absoluteRenderBounds(Rectangle? absoluteRenderBounds);
 
-  WashiTapeNode constraints(LayoutConstraint? constraints);
+  Slot preserveRatio(bool preserveRatio);
 
-  WashiTapeNode relativeTransform(Transform? relativeTransform);
+  Slot constraints(LayoutConstraint? constraints);
 
-  WashiTapeNode size(Vector? size);
+  Slot relativeTransform(Transform? relativeTransform);
 
-  WashiTapeNode layoutAlign(LayoutAlign? layoutAlign);
+  Slot size(Vector? size);
 
-  WashiTapeNode layoutGrow(LayoutGrow layoutGrow);
+  Slot layoutAlign(LayoutAlign? layoutAlign);
 
-  WashiTapeNode layoutPositioning(LayoutPositioning layoutPositioning);
+  Slot layoutGrow(LayoutGrow layoutGrow);
 
-  WashiTapeNode minWidth(num minWidth);
+  Slot layoutPositioning(LayoutPositioning layoutPositioning);
 
-  WashiTapeNode maxWidth(num maxWidth);
+  Slot minWidth(num minWidth);
 
-  WashiTapeNode minHeight(num minHeight);
+  Slot maxWidth(num maxWidth);
 
-  WashiTapeNode maxHeight(num maxHeight);
+  Slot minHeight(num minHeight);
 
-  WashiTapeNode layoutSizingHorizontal(LayoutSizing? layoutSizingHorizontal);
+  Slot maxHeight(num maxHeight);
 
-  WashiTapeNode layoutSizingVertical(LayoutSizing? layoutSizingVertical);
+  Slot layoutSizingHorizontal(LayoutSizing? layoutSizingHorizontal);
 
-  WashiTapeNode gridRowCount(num? gridRowCount);
+  Slot layoutSizingVertical(LayoutSizing? layoutSizingVertical);
 
-  WashiTapeNode gridColumnCount(num? gridColumnCount);
+  Slot gridRowCount(num? gridRowCount);
 
-  WashiTapeNode gridRowGap(num gridRowGap);
+  Slot gridColumnCount(num? gridColumnCount);
 
-  WashiTapeNode gridColumnGap(num gridColumnGap);
+  Slot gridRowGap(num gridRowGap);
 
-  WashiTapeNode gridColumnsSizing(String? gridColumnsSizing);
+  Slot gridColumnGap(num gridColumnGap);
 
-  WashiTapeNode gridRowsSizing(String? gridRowsSizing);
+  Slot gridColumnsSizing(String? gridColumnsSizing);
 
-  WashiTapeNode gridChildHorizontalAlign(
-    GridChildAlign? gridChildHorizontalAlign,
-  );
+  Slot gridRowsSizing(String? gridRowsSizing);
 
-  WashiTapeNode gridChildVerticalAlign(GridChildAlign? gridChildVerticalAlign);
+  Slot gridChildHorizontalAlign(GridChildAlign? gridChildHorizontalAlign);
 
-  WashiTapeNode gridRowSpan(num gridRowSpan);
+  Slot gridChildVerticalAlign(GridChildAlign? gridChildVerticalAlign);
 
-  WashiTapeNode gridColumnSpan(num gridColumnSpan);
+  Slot gridRowSpan(num gridRowSpan);
 
-  WashiTapeNode gridRowAnchorIndex(num gridRowAnchorIndex);
+  Slot gridColumnSpan(num gridColumnSpan);
 
-  WashiTapeNode gridColumnAnchorIndex(num gridColumnAnchorIndex);
+  Slot gridRowAnchorIndex(num gridRowAnchorIndex);
 
-  WashiTapeNode fills(List<Paint> fills);
+  Slot gridColumnAnchorIndex(num gridColumnAnchorIndex);
 
-  WashiTapeNode styles(Map<String, String> styles);
+  Slot clipsContent(bool clipsContent);
 
-  WashiTapeNode strokes(List<Paint> strokes);
+  Slot layoutGrids(List<LayoutGrid> layoutGrids);
 
-  WashiTapeNode strokeWeight(num strokeWeight);
+  Slot overflowDirection(OverflowDirection overflowDirection);
 
-  WashiTapeNode strokeAlign(StrokeAlign? strokeAlign);
+  Slot layoutMode(LayoutMode layoutMode);
 
-  WashiTapeNode strokeJoin(StrokeJoin strokeJoin);
+  Slot primaryAxisSizingMode(PrimaryAxisSizingMode primaryAxisSizingMode);
 
-  WashiTapeNode strokeDashes(List<num> strokeDashes);
+  Slot counterAxisSizingMode(CounterAxisSizingMode counterAxisSizingMode);
 
-  WashiTapeNode fillOverrideTable(
-    Map<String, PaintOverride?> fillOverrideTable,
-  );
+  Slot primaryAxisAlignItems(PrimaryAxisAlignItems primaryAxisAlignItems);
 
-  WashiTapeNode fillGeometry(List<Path> fillGeometry);
+  Slot counterAxisAlignItems(CounterAxisAlignItems counterAxisAlignItems);
 
-  WashiTapeNode strokeGeometry(List<Path> strokeGeometry);
+  Slot paddingLeft(num paddingLeft);
 
-  WashiTapeNode strokeCap(StrokeCap strokeCap);
+  Slot paddingRight(num paddingRight);
 
-  WashiTapeNode strokeMiterAngle(num strokeMiterAngle);
+  Slot paddingTop(num paddingTop);
 
-  WashiTapeNode exportSettings(List<ExportSetting> exportSettings);
+  Slot paddingBottom(num paddingBottom);
 
-  WashiTapeNode effects(List<Effect> effects);
+  Slot itemSpacing(num itemSpacing);
 
-  WashiTapeNode isMask(bool isMask);
+  Slot itemReverseZIndex(bool itemReverseZIndex);
 
-  WashiTapeNode maskType(MaskType? maskType);
+  Slot strokesIncludedInLayout(bool strokesIncludedInLayout);
 
-  WashiTapeNode transitionNodeId(String? transitionNodeId);
+  Slot layoutWrap(LayoutWrap? layoutWrap);
 
-  WashiTapeNode transitionDuration(num? transitionDuration);
+  Slot counterAxisSpacing(num? counterAxisSpacing);
 
-  WashiTapeNode transitionEasing(EasingType? transitionEasing);
+  Slot counterAxisAlignContent(CounterAxisAlignContent counterAxisAlignContent);
 
-  WashiTapeNode interactions(List<Interaction> interactions);
+  Slot cornerRadius(num cornerRadius);
+
+  Slot cornerSmoothing(num cornerSmoothing);
+
+  Slot rectangleCornerRadii(List<num> rectangleCornerRadii);
+
+  Slot fills(List<Paint> fills);
+
+  Slot styles(Map<String, String> styles);
+
+  Slot strokes(List<Paint> strokes);
+
+  Slot strokeWeight(num strokeWeight);
+
+  Slot strokeAlign(StrokeAlign? strokeAlign);
+
+  Slot strokeJoin(StrokeJoin strokeJoin);
+
+  Slot strokeDashes(List<num> strokeDashes);
+
+  Slot fillOverrideTable(Map<String, PaintOverride?> fillOverrideTable);
+
+  Slot fillGeometry(List<Path> fillGeometry);
+
+  Slot strokeGeometry(List<Path> strokeGeometry);
+
+  Slot strokeCap(StrokeCap strokeCap);
+
+  Slot strokeMiterAngle(num strokeMiterAngle);
+
+  Slot exportSettings(List<ExportSetting> exportSettings);
+
+  Slot effects(List<Effect> effects);
+
+  Slot isMask(bool isMask);
+
+  Slot maskType(MaskType? maskType);
+
+  Slot transitionNodeId(String? transitionNodeId);
+
+  Slot transitionDuration(num? transitionDuration);
+
+  Slot transitionEasing(EasingType? transitionEasing);
+
+  Slot interactions(List<Interaction> interactions);
+
+  Slot individualStrokeWeights(StrokeWeights? individualStrokeWeights);
+
+  Slot devStatus(DevStatus? devStatus);
 
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `WashiTapeNode(...).copyWith.fieldName(value)`.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Slot(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
-  /// WashiTapeNode(...).copyWith(id: 12, name: "My name")
+  /// Slot(...).copyWith(id: 12, name: "My name")
   /// ```
-  WashiTapeNode call({
+  Slot call({
     String id,
     String name,
     bool visible,
@@ -156,6 +198,7 @@ abstract class _$WashiTapeNodeCWProxy {
     Map<String, String> explicitVariableModes,
     BlendMode blendMode,
     num opacity,
+    List<SubCanvasNode> children,
     Rectangle? absoluteBoundingBox,
     Rectangle? absoluteRenderBounds,
     bool preserveRatio,
@@ -183,6 +226,27 @@ abstract class _$WashiTapeNodeCWProxy {
     num gridColumnSpan,
     num gridRowAnchorIndex,
     num gridColumnAnchorIndex,
+    bool clipsContent,
+    List<LayoutGrid> layoutGrids,
+    OverflowDirection overflowDirection,
+    LayoutMode layoutMode,
+    PrimaryAxisSizingMode primaryAxisSizingMode,
+    CounterAxisSizingMode counterAxisSizingMode,
+    PrimaryAxisAlignItems primaryAxisAlignItems,
+    CounterAxisAlignItems counterAxisAlignItems,
+    num paddingLeft,
+    num paddingRight,
+    num paddingTop,
+    num paddingBottom,
+    num itemSpacing,
+    bool itemReverseZIndex,
+    bool strokesIncludedInLayout,
+    LayoutWrap? layoutWrap,
+    num? counterAxisSpacing,
+    CounterAxisAlignContent counterAxisAlignContent,
+    num cornerRadius,
+    num cornerSmoothing,
+    List<num> rectangleCornerRadii,
     List<Paint> fills,
     Map<String, String> styles,
     List<Paint> strokes,
@@ -203,248 +267,323 @@ abstract class _$WashiTapeNodeCWProxy {
     num? transitionDuration,
     EasingType? transitionEasing,
     List<Interaction> interactions,
+    StrokeWeights? individualStrokeWeights,
+    DevStatus? devStatus,
   });
 }
 
 /// Callable proxy for `copyWith` functionality.
-/// Use as `instanceOfWashiTapeNode.copyWith(...)` or call `instanceOfWashiTapeNode.copyWith.fieldName(value)` for a single field.
-class _$WashiTapeNodeCWProxyImpl implements _$WashiTapeNodeCWProxy {
-  const _$WashiTapeNodeCWProxyImpl(this._value);
+/// Use as `instanceOfSlot.copyWith(...)` or call `instanceOfSlot.copyWith.fieldName(value)` for a single field.
+class _$SlotCWProxyImpl implements _$SlotCWProxy {
+  const _$SlotCWProxyImpl(this._value);
 
-  final WashiTapeNode _value;
-
-  @override
-  WashiTapeNode id(String id) => call(id: id);
+  final Slot _value;
 
   @override
-  WashiTapeNode name(String name) => call(name: name);
+  Slot id(String id) => call(id: id);
 
   @override
-  WashiTapeNode visible(bool visible) => call(visible: visible);
+  Slot name(String name) => call(name: name);
 
   @override
-  WashiTapeNode locked(bool locked) => call(locked: locked);
+  Slot visible(bool visible) => call(visible: visible);
 
   @override
-  WashiTapeNode scrollBehavior(ScrollBehavior scrollBehavior) =>
+  Slot locked(bool locked) => call(locked: locked);
+
+  @override
+  Slot scrollBehavior(ScrollBehavior scrollBehavior) =>
       call(scrollBehavior: scrollBehavior);
 
   @override
-  WashiTapeNode rotation(num rotation) => call(rotation: rotation);
+  Slot rotation(num rotation) => call(rotation: rotation);
 
   @override
-  WashiTapeNode componentPropertyReferences(
+  Slot componentPropertyReferences(
     Map<String, String> componentPropertyReferences,
   ) => call(componentPropertyReferences: componentPropertyReferences);
 
   @override
-  WashiTapeNode pluginData(Object? pluginData) => call(pluginData: pluginData);
+  Slot pluginData(Object? pluginData) => call(pluginData: pluginData);
 
   @override
-  WashiTapeNode sharedPluginData(Object? sharedPluginData) =>
+  Slot sharedPluginData(Object? sharedPluginData) =>
       call(sharedPluginData: sharedPluginData);
 
   @override
-  WashiTapeNode boundVariables(LayerTraitVariables boundVariables) =>
+  Slot boundVariables(LayerTraitVariables boundVariables) =>
       call(boundVariables: boundVariables);
 
   @override
-  WashiTapeNode explicitVariableModes(
-    Map<String, String> explicitVariableModes,
-  ) => call(explicitVariableModes: explicitVariableModes);
+  Slot explicitVariableModes(Map<String, String> explicitVariableModes) =>
+      call(explicitVariableModes: explicitVariableModes);
 
   @override
-  WashiTapeNode blendMode(BlendMode blendMode) => call(blendMode: blendMode);
+  Slot blendMode(BlendMode blendMode) => call(blendMode: blendMode);
 
   @override
-  WashiTapeNode opacity(num opacity) => call(opacity: opacity);
+  Slot opacity(num opacity) => call(opacity: opacity);
 
   @override
-  WashiTapeNode absoluteBoundingBox(Rectangle? absoluteBoundingBox) =>
+  Slot children(List<SubCanvasNode> children) => call(children: children);
+
+  @override
+  Slot absoluteBoundingBox(Rectangle? absoluteBoundingBox) =>
       call(absoluteBoundingBox: absoluteBoundingBox);
 
   @override
-  WashiTapeNode absoluteRenderBounds(Rectangle? absoluteRenderBounds) =>
+  Slot absoluteRenderBounds(Rectangle? absoluteRenderBounds) =>
       call(absoluteRenderBounds: absoluteRenderBounds);
 
   @override
-  WashiTapeNode preserveRatio(bool preserveRatio) =>
-      call(preserveRatio: preserveRatio);
+  Slot preserveRatio(bool preserveRatio) => call(preserveRatio: preserveRatio);
 
   @override
-  WashiTapeNode constraints(LayoutConstraint? constraints) =>
+  Slot constraints(LayoutConstraint? constraints) =>
       call(constraints: constraints);
 
   @override
-  WashiTapeNode relativeTransform(Transform? relativeTransform) =>
+  Slot relativeTransform(Transform? relativeTransform) =>
       call(relativeTransform: relativeTransform);
 
   @override
-  WashiTapeNode size(Vector? size) => call(size: size);
+  Slot size(Vector? size) => call(size: size);
 
   @override
-  WashiTapeNode layoutAlign(LayoutAlign? layoutAlign) =>
-      call(layoutAlign: layoutAlign);
+  Slot layoutAlign(LayoutAlign? layoutAlign) => call(layoutAlign: layoutAlign);
 
   @override
-  WashiTapeNode layoutGrow(LayoutGrow layoutGrow) =>
-      call(layoutGrow: layoutGrow);
+  Slot layoutGrow(LayoutGrow layoutGrow) => call(layoutGrow: layoutGrow);
 
   @override
-  WashiTapeNode layoutPositioning(LayoutPositioning layoutPositioning) =>
+  Slot layoutPositioning(LayoutPositioning layoutPositioning) =>
       call(layoutPositioning: layoutPositioning);
 
   @override
-  WashiTapeNode minWidth(num minWidth) => call(minWidth: minWidth);
+  Slot minWidth(num minWidth) => call(minWidth: minWidth);
 
   @override
-  WashiTapeNode maxWidth(num maxWidth) => call(maxWidth: maxWidth);
+  Slot maxWidth(num maxWidth) => call(maxWidth: maxWidth);
 
   @override
-  WashiTapeNode minHeight(num minHeight) => call(minHeight: minHeight);
+  Slot minHeight(num minHeight) => call(minHeight: minHeight);
 
   @override
-  WashiTapeNode maxHeight(num maxHeight) => call(maxHeight: maxHeight);
+  Slot maxHeight(num maxHeight) => call(maxHeight: maxHeight);
 
   @override
-  WashiTapeNode layoutSizingHorizontal(LayoutSizing? layoutSizingHorizontal) =>
+  Slot layoutSizingHorizontal(LayoutSizing? layoutSizingHorizontal) =>
       call(layoutSizingHorizontal: layoutSizingHorizontal);
 
   @override
-  WashiTapeNode layoutSizingVertical(LayoutSizing? layoutSizingVertical) =>
+  Slot layoutSizingVertical(LayoutSizing? layoutSizingVertical) =>
       call(layoutSizingVertical: layoutSizingVertical);
 
   @override
-  WashiTapeNode gridRowCount(num? gridRowCount) =>
-      call(gridRowCount: gridRowCount);
+  Slot gridRowCount(num? gridRowCount) => call(gridRowCount: gridRowCount);
 
   @override
-  WashiTapeNode gridColumnCount(num? gridColumnCount) =>
+  Slot gridColumnCount(num? gridColumnCount) =>
       call(gridColumnCount: gridColumnCount);
 
   @override
-  WashiTapeNode gridRowGap(num gridRowGap) => call(gridRowGap: gridRowGap);
+  Slot gridRowGap(num gridRowGap) => call(gridRowGap: gridRowGap);
 
   @override
-  WashiTapeNode gridColumnGap(num gridColumnGap) =>
-      call(gridColumnGap: gridColumnGap);
+  Slot gridColumnGap(num gridColumnGap) => call(gridColumnGap: gridColumnGap);
 
   @override
-  WashiTapeNode gridColumnsSizing(String? gridColumnsSizing) =>
+  Slot gridColumnsSizing(String? gridColumnsSizing) =>
       call(gridColumnsSizing: gridColumnsSizing);
 
   @override
-  WashiTapeNode gridRowsSizing(String? gridRowsSizing) =>
+  Slot gridRowsSizing(String? gridRowsSizing) =>
       call(gridRowsSizing: gridRowsSizing);
 
   @override
-  WashiTapeNode gridChildHorizontalAlign(
-    GridChildAlign? gridChildHorizontalAlign,
-  ) => call(gridChildHorizontalAlign: gridChildHorizontalAlign);
+  Slot gridChildHorizontalAlign(GridChildAlign? gridChildHorizontalAlign) =>
+      call(gridChildHorizontalAlign: gridChildHorizontalAlign);
 
   @override
-  WashiTapeNode gridChildVerticalAlign(
-    GridChildAlign? gridChildVerticalAlign,
-  ) => call(gridChildVerticalAlign: gridChildVerticalAlign);
+  Slot gridChildVerticalAlign(GridChildAlign? gridChildVerticalAlign) =>
+      call(gridChildVerticalAlign: gridChildVerticalAlign);
 
   @override
-  WashiTapeNode gridRowSpan(num gridRowSpan) => call(gridRowSpan: gridRowSpan);
+  Slot gridRowSpan(num gridRowSpan) => call(gridRowSpan: gridRowSpan);
 
   @override
-  WashiTapeNode gridColumnSpan(num gridColumnSpan) =>
+  Slot gridColumnSpan(num gridColumnSpan) =>
       call(gridColumnSpan: gridColumnSpan);
 
   @override
-  WashiTapeNode gridRowAnchorIndex(num gridRowAnchorIndex) =>
+  Slot gridRowAnchorIndex(num gridRowAnchorIndex) =>
       call(gridRowAnchorIndex: gridRowAnchorIndex);
 
   @override
-  WashiTapeNode gridColumnAnchorIndex(num gridColumnAnchorIndex) =>
+  Slot gridColumnAnchorIndex(num gridColumnAnchorIndex) =>
       call(gridColumnAnchorIndex: gridColumnAnchorIndex);
 
   @override
-  WashiTapeNode fills(List<Paint> fills) => call(fills: fills);
+  Slot clipsContent(bool clipsContent) => call(clipsContent: clipsContent);
 
   @override
-  WashiTapeNode styles(Map<String, String> styles) => call(styles: styles);
+  Slot layoutGrids(List<LayoutGrid> layoutGrids) =>
+      call(layoutGrids: layoutGrids);
 
   @override
-  WashiTapeNode strokes(List<Paint> strokes) => call(strokes: strokes);
+  Slot overflowDirection(OverflowDirection overflowDirection) =>
+      call(overflowDirection: overflowDirection);
 
   @override
-  WashiTapeNode strokeWeight(num strokeWeight) =>
-      call(strokeWeight: strokeWeight);
+  Slot layoutMode(LayoutMode layoutMode) => call(layoutMode: layoutMode);
 
   @override
-  WashiTapeNode strokeAlign(StrokeAlign? strokeAlign) =>
-      call(strokeAlign: strokeAlign);
+  Slot primaryAxisSizingMode(PrimaryAxisSizingMode primaryAxisSizingMode) =>
+      call(primaryAxisSizingMode: primaryAxisSizingMode);
 
   @override
-  WashiTapeNode strokeJoin(StrokeJoin strokeJoin) =>
-      call(strokeJoin: strokeJoin);
+  Slot counterAxisSizingMode(CounterAxisSizingMode counterAxisSizingMode) =>
+      call(counterAxisSizingMode: counterAxisSizingMode);
 
   @override
-  WashiTapeNode strokeDashes(List<num> strokeDashes) =>
-      call(strokeDashes: strokeDashes);
+  Slot primaryAxisAlignItems(PrimaryAxisAlignItems primaryAxisAlignItems) =>
+      call(primaryAxisAlignItems: primaryAxisAlignItems);
 
   @override
-  WashiTapeNode fillOverrideTable(
-    Map<String, PaintOverride?> fillOverrideTable,
-  ) => call(fillOverrideTable: fillOverrideTable);
+  Slot counterAxisAlignItems(CounterAxisAlignItems counterAxisAlignItems) =>
+      call(counterAxisAlignItems: counterAxisAlignItems);
 
   @override
-  WashiTapeNode fillGeometry(List<Path> fillGeometry) =>
+  Slot paddingLeft(num paddingLeft) => call(paddingLeft: paddingLeft);
+
+  @override
+  Slot paddingRight(num paddingRight) => call(paddingRight: paddingRight);
+
+  @override
+  Slot paddingTop(num paddingTop) => call(paddingTop: paddingTop);
+
+  @override
+  Slot paddingBottom(num paddingBottom) => call(paddingBottom: paddingBottom);
+
+  @override
+  Slot itemSpacing(num itemSpacing) => call(itemSpacing: itemSpacing);
+
+  @override
+  Slot itemReverseZIndex(bool itemReverseZIndex) =>
+      call(itemReverseZIndex: itemReverseZIndex);
+
+  @override
+  Slot strokesIncludedInLayout(bool strokesIncludedInLayout) =>
+      call(strokesIncludedInLayout: strokesIncludedInLayout);
+
+  @override
+  Slot layoutWrap(LayoutWrap? layoutWrap) => call(layoutWrap: layoutWrap);
+
+  @override
+  Slot counterAxisSpacing(num? counterAxisSpacing) =>
+      call(counterAxisSpacing: counterAxisSpacing);
+
+  @override
+  Slot counterAxisAlignContent(
+    CounterAxisAlignContent counterAxisAlignContent,
+  ) => call(counterAxisAlignContent: counterAxisAlignContent);
+
+  @override
+  Slot cornerRadius(num cornerRadius) => call(cornerRadius: cornerRadius);
+
+  @override
+  Slot cornerSmoothing(num cornerSmoothing) =>
+      call(cornerSmoothing: cornerSmoothing);
+
+  @override
+  Slot rectangleCornerRadii(List<num> rectangleCornerRadii) =>
+      call(rectangleCornerRadii: rectangleCornerRadii);
+
+  @override
+  Slot fills(List<Paint> fills) => call(fills: fills);
+
+  @override
+  Slot styles(Map<String, String> styles) => call(styles: styles);
+
+  @override
+  Slot strokes(List<Paint> strokes) => call(strokes: strokes);
+
+  @override
+  Slot strokeWeight(num strokeWeight) => call(strokeWeight: strokeWeight);
+
+  @override
+  Slot strokeAlign(StrokeAlign? strokeAlign) => call(strokeAlign: strokeAlign);
+
+  @override
+  Slot strokeJoin(StrokeJoin strokeJoin) => call(strokeJoin: strokeJoin);
+
+  @override
+  Slot strokeDashes(List<num> strokeDashes) => call(strokeDashes: strokeDashes);
+
+  @override
+  Slot fillOverrideTable(Map<String, PaintOverride?> fillOverrideTable) =>
+      call(fillOverrideTable: fillOverrideTable);
+
+  @override
+  Slot fillGeometry(List<Path> fillGeometry) =>
       call(fillGeometry: fillGeometry);
 
   @override
-  WashiTapeNode strokeGeometry(List<Path> strokeGeometry) =>
+  Slot strokeGeometry(List<Path> strokeGeometry) =>
       call(strokeGeometry: strokeGeometry);
 
   @override
-  WashiTapeNode strokeCap(StrokeCap strokeCap) => call(strokeCap: strokeCap);
+  Slot strokeCap(StrokeCap strokeCap) => call(strokeCap: strokeCap);
 
   @override
-  WashiTapeNode strokeMiterAngle(num strokeMiterAngle) =>
+  Slot strokeMiterAngle(num strokeMiterAngle) =>
       call(strokeMiterAngle: strokeMiterAngle);
 
   @override
-  WashiTapeNode exportSettings(List<ExportSetting> exportSettings) =>
+  Slot exportSettings(List<ExportSetting> exportSettings) =>
       call(exportSettings: exportSettings);
 
   @override
-  WashiTapeNode effects(List<Effect> effects) => call(effects: effects);
+  Slot effects(List<Effect> effects) => call(effects: effects);
 
   @override
-  WashiTapeNode isMask(bool isMask) => call(isMask: isMask);
+  Slot isMask(bool isMask) => call(isMask: isMask);
 
   @override
-  WashiTapeNode maskType(MaskType? maskType) => call(maskType: maskType);
+  Slot maskType(MaskType? maskType) => call(maskType: maskType);
 
   @override
-  WashiTapeNode transitionNodeId(String? transitionNodeId) =>
+  Slot transitionNodeId(String? transitionNodeId) =>
       call(transitionNodeId: transitionNodeId);
 
   @override
-  WashiTapeNode transitionDuration(num? transitionDuration) =>
+  Slot transitionDuration(num? transitionDuration) =>
       call(transitionDuration: transitionDuration);
 
   @override
-  WashiTapeNode transitionEasing(EasingType? transitionEasing) =>
+  Slot transitionEasing(EasingType? transitionEasing) =>
       call(transitionEasing: transitionEasing);
 
   @override
-  WashiTapeNode interactions(List<Interaction> interactions) =>
+  Slot interactions(List<Interaction> interactions) =>
       call(interactions: interactions);
 
   @override
+  Slot individualStrokeWeights(StrokeWeights? individualStrokeWeights) =>
+      call(individualStrokeWeights: individualStrokeWeights);
+
+  @override
+  Slot devStatus(DevStatus? devStatus) => call(devStatus: devStatus);
+
+  @override
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `WashiTapeNode(...).copyWith.fieldName(value)`.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Slot(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
-  /// WashiTapeNode(...).copyWith(id: 12, name: "My name")
+  /// Slot(...).copyWith(id: 12, name: "My name")
   /// ```
-  WashiTapeNode call({
+  Slot call({
     Object? id = const $CopyWithPlaceholder(),
     Object? name = const $CopyWithPlaceholder(),
     Object? visible = const $CopyWithPlaceholder(),
@@ -458,6 +597,7 @@ class _$WashiTapeNodeCWProxyImpl implements _$WashiTapeNodeCWProxy {
     Object? explicitVariableModes = const $CopyWithPlaceholder(),
     Object? blendMode = const $CopyWithPlaceholder(),
     Object? opacity = const $CopyWithPlaceholder(),
+    Object? children = const $CopyWithPlaceholder(),
     Object? absoluteBoundingBox = const $CopyWithPlaceholder(),
     Object? absoluteRenderBounds = const $CopyWithPlaceholder(),
     Object? preserveRatio = const $CopyWithPlaceholder(),
@@ -485,6 +625,27 @@ class _$WashiTapeNodeCWProxyImpl implements _$WashiTapeNodeCWProxy {
     Object? gridColumnSpan = const $CopyWithPlaceholder(),
     Object? gridRowAnchorIndex = const $CopyWithPlaceholder(),
     Object? gridColumnAnchorIndex = const $CopyWithPlaceholder(),
+    Object? clipsContent = const $CopyWithPlaceholder(),
+    Object? layoutGrids = const $CopyWithPlaceholder(),
+    Object? overflowDirection = const $CopyWithPlaceholder(),
+    Object? layoutMode = const $CopyWithPlaceholder(),
+    Object? primaryAxisSizingMode = const $CopyWithPlaceholder(),
+    Object? counterAxisSizingMode = const $CopyWithPlaceholder(),
+    Object? primaryAxisAlignItems = const $CopyWithPlaceholder(),
+    Object? counterAxisAlignItems = const $CopyWithPlaceholder(),
+    Object? paddingLeft = const $CopyWithPlaceholder(),
+    Object? paddingRight = const $CopyWithPlaceholder(),
+    Object? paddingTop = const $CopyWithPlaceholder(),
+    Object? paddingBottom = const $CopyWithPlaceholder(),
+    Object? itemSpacing = const $CopyWithPlaceholder(),
+    Object? itemReverseZIndex = const $CopyWithPlaceholder(),
+    Object? strokesIncludedInLayout = const $CopyWithPlaceholder(),
+    Object? layoutWrap = const $CopyWithPlaceholder(),
+    Object? counterAxisSpacing = const $CopyWithPlaceholder(),
+    Object? counterAxisAlignContent = const $CopyWithPlaceholder(),
+    Object? cornerRadius = const $CopyWithPlaceholder(),
+    Object? cornerSmoothing = const $CopyWithPlaceholder(),
+    Object? rectangleCornerRadii = const $CopyWithPlaceholder(),
     Object? fills = const $CopyWithPlaceholder(),
     Object? styles = const $CopyWithPlaceholder(),
     Object? strokes = const $CopyWithPlaceholder(),
@@ -505,8 +666,10 @@ class _$WashiTapeNodeCWProxyImpl implements _$WashiTapeNodeCWProxy {
     Object? transitionDuration = const $CopyWithPlaceholder(),
     Object? transitionEasing = const $CopyWithPlaceholder(),
     Object? interactions = const $CopyWithPlaceholder(),
+    Object? individualStrokeWeights = const $CopyWithPlaceholder(),
+    Object? devStatus = const $CopyWithPlaceholder(),
   }) {
-    return WashiTapeNode(
+    return Slot(
       id: id == const $CopyWithPlaceholder() || id == null
           ? _value.id
           // ignore: cast_nullable_to_non_nullable
@@ -567,6 +730,10 @@ class _$WashiTapeNodeCWProxyImpl implements _$WashiTapeNodeCWProxy {
           ? _value.opacity
           // ignore: cast_nullable_to_non_nullable
           : opacity as num,
+      children: children == const $CopyWithPlaceholder() || children == null
+          ? _value.children
+          // ignore: cast_nullable_to_non_nullable
+          : children as List<SubCanvasNode>,
       absoluteBoundingBox: absoluteBoundingBox == const $CopyWithPlaceholder()
           ? _value.absoluteBoundingBox
           // ignore: cast_nullable_to_non_nullable
@@ -691,6 +858,119 @@ class _$WashiTapeNodeCWProxyImpl implements _$WashiTapeNodeCWProxy {
           ? _value.gridColumnAnchorIndex
           // ignore: cast_nullable_to_non_nullable
           : gridColumnAnchorIndex as num,
+      clipsContent:
+          clipsContent == const $CopyWithPlaceholder() || clipsContent == null
+          ? _value.clipsContent
+          // ignore: cast_nullable_to_non_nullable
+          : clipsContent as bool,
+      layoutGrids:
+          layoutGrids == const $CopyWithPlaceholder() || layoutGrids == null
+          ? _value.layoutGrids
+          // ignore: cast_nullable_to_non_nullable
+          : layoutGrids as List<LayoutGrid>,
+      overflowDirection:
+          overflowDirection == const $CopyWithPlaceholder() ||
+              overflowDirection == null
+          ? _value.overflowDirection
+          // ignore: cast_nullable_to_non_nullable
+          : overflowDirection as OverflowDirection,
+      layoutMode:
+          layoutMode == const $CopyWithPlaceholder() || layoutMode == null
+          ? _value.layoutMode
+          // ignore: cast_nullable_to_non_nullable
+          : layoutMode as LayoutMode,
+      primaryAxisSizingMode:
+          primaryAxisSizingMode == const $CopyWithPlaceholder() ||
+              primaryAxisSizingMode == null
+          ? _value.primaryAxisSizingMode
+          // ignore: cast_nullable_to_non_nullable
+          : primaryAxisSizingMode as PrimaryAxisSizingMode,
+      counterAxisSizingMode:
+          counterAxisSizingMode == const $CopyWithPlaceholder() ||
+              counterAxisSizingMode == null
+          ? _value.counterAxisSizingMode
+          // ignore: cast_nullable_to_non_nullable
+          : counterAxisSizingMode as CounterAxisSizingMode,
+      primaryAxisAlignItems:
+          primaryAxisAlignItems == const $CopyWithPlaceholder() ||
+              primaryAxisAlignItems == null
+          ? _value.primaryAxisAlignItems
+          // ignore: cast_nullable_to_non_nullable
+          : primaryAxisAlignItems as PrimaryAxisAlignItems,
+      counterAxisAlignItems:
+          counterAxisAlignItems == const $CopyWithPlaceholder() ||
+              counterAxisAlignItems == null
+          ? _value.counterAxisAlignItems
+          // ignore: cast_nullable_to_non_nullable
+          : counterAxisAlignItems as CounterAxisAlignItems,
+      paddingLeft:
+          paddingLeft == const $CopyWithPlaceholder() || paddingLeft == null
+          ? _value.paddingLeft
+          // ignore: cast_nullable_to_non_nullable
+          : paddingLeft as num,
+      paddingRight:
+          paddingRight == const $CopyWithPlaceholder() || paddingRight == null
+          ? _value.paddingRight
+          // ignore: cast_nullable_to_non_nullable
+          : paddingRight as num,
+      paddingTop:
+          paddingTop == const $CopyWithPlaceholder() || paddingTop == null
+          ? _value.paddingTop
+          // ignore: cast_nullable_to_non_nullable
+          : paddingTop as num,
+      paddingBottom:
+          paddingBottom == const $CopyWithPlaceholder() || paddingBottom == null
+          ? _value.paddingBottom
+          // ignore: cast_nullable_to_non_nullable
+          : paddingBottom as num,
+      itemSpacing:
+          itemSpacing == const $CopyWithPlaceholder() || itemSpacing == null
+          ? _value.itemSpacing
+          // ignore: cast_nullable_to_non_nullable
+          : itemSpacing as num,
+      itemReverseZIndex:
+          itemReverseZIndex == const $CopyWithPlaceholder() ||
+              itemReverseZIndex == null
+          ? _value.itemReverseZIndex
+          // ignore: cast_nullable_to_non_nullable
+          : itemReverseZIndex as bool,
+      strokesIncludedInLayout:
+          strokesIncludedInLayout == const $CopyWithPlaceholder() ||
+              strokesIncludedInLayout == null
+          ? _value.strokesIncludedInLayout
+          // ignore: cast_nullable_to_non_nullable
+          : strokesIncludedInLayout as bool,
+      layoutWrap: layoutWrap == const $CopyWithPlaceholder()
+          ? _value.layoutWrap
+          // ignore: cast_nullable_to_non_nullable
+          : layoutWrap as LayoutWrap?,
+      counterAxisSpacing: counterAxisSpacing == const $CopyWithPlaceholder()
+          ? _value.counterAxisSpacing
+          // ignore: cast_nullable_to_non_nullable
+          : counterAxisSpacing as num?,
+      counterAxisAlignContent:
+          counterAxisAlignContent == const $CopyWithPlaceholder() ||
+              counterAxisAlignContent == null
+          ? _value.counterAxisAlignContent
+          // ignore: cast_nullable_to_non_nullable
+          : counterAxisAlignContent as CounterAxisAlignContent,
+      cornerRadius:
+          cornerRadius == const $CopyWithPlaceholder() || cornerRadius == null
+          ? _value.cornerRadius
+          // ignore: cast_nullable_to_non_nullable
+          : cornerRadius as num,
+      cornerSmoothing:
+          cornerSmoothing == const $CopyWithPlaceholder() ||
+              cornerSmoothing == null
+          ? _value.cornerSmoothing
+          // ignore: cast_nullable_to_non_nullable
+          : cornerSmoothing as num,
+      rectangleCornerRadii:
+          rectangleCornerRadii == const $CopyWithPlaceholder() ||
+              rectangleCornerRadii == null
+          ? _value.rectangleCornerRadii
+          // ignore: cast_nullable_to_non_nullable
+          : rectangleCornerRadii as List<num>,
       fills: fills == const $CopyWithPlaceholder() || fills == null
           ? _value.fills
           // ignore: cast_nullable_to_non_nullable
@@ -784,24 +1064,31 @@ class _$WashiTapeNodeCWProxyImpl implements _$WashiTapeNodeCWProxy {
           ? _value.interactions
           // ignore: cast_nullable_to_non_nullable
           : interactions as List<Interaction>,
+      individualStrokeWeights:
+          individualStrokeWeights == const $CopyWithPlaceholder()
+          ? _value.individualStrokeWeights
+          // ignore: cast_nullable_to_non_nullable
+          : individualStrokeWeights as StrokeWeights?,
+      devStatus: devStatus == const $CopyWithPlaceholder()
+          ? _value.devStatus
+          // ignore: cast_nullable_to_non_nullable
+          : devStatus as DevStatus?,
     );
   }
 }
 
-extension $WashiTapeNodeCopyWith on WashiTapeNode {
+extension $SlotCopyWith on Slot {
   /// Returns a callable class used to build a new instance with modified fields.
-  /// Example: `instanceOfWashiTapeNode.copyWith(...)` or `instanceOfWashiTapeNode.copyWith.fieldName(...)`.
+  /// Example: `instanceOfSlot.copyWith(...)` or `instanceOfSlot.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
-  _$WashiTapeNodeCWProxy get copyWith => _$WashiTapeNodeCWProxyImpl(this);
+  _$SlotCWProxy get copyWith => _$SlotCWProxyImpl(this);
 }
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-WashiTapeNode _$WashiTapeNodeFromJson(
-  Map<String, dynamic> json,
-) => WashiTapeNode(
+Slot _$SlotFromJson(Map<String, dynamic> json) => Slot(
   id: json['id'] as String,
   name: json['name'] as String,
   visible: json['visible'] as bool? ?? true,
@@ -827,6 +1114,9 @@ WashiTapeNode _$WashiTapeNodeFromJson(
       {},
   blendMode: $enumDecode(_$BlendModeEnumMap, json['blendMode']),
   opacity: json['opacity'] as num? ?? 1,
+  children: (json['children'] as List<dynamic>)
+      .map((e) => SubCanvasNode.fromJson(e as Map<String, dynamic>))
+      .toList(),
   absoluteBoundingBox: json['absoluteBoundingBox'] == null
       ? null
       : Rectangle.fromJson(json['absoluteBoundingBox'] as Map<String, dynamic>),
@@ -885,6 +1175,67 @@ WashiTapeNode _$WashiTapeNodeFromJson(
   gridColumnSpan: json['gridColumnSpan'] as num? ?? 1,
   gridRowAnchorIndex: json['gridRowAnchorIndex'] as num? ?? 0,
   gridColumnAnchorIndex: json['gridColumnAnchorIndex'] as num? ?? 0,
+  clipsContent: json['clipsContent'] as bool,
+  layoutGrids:
+      (json['layoutGrids'] as List<dynamic>?)
+          ?.map((e) => LayoutGrid.fromJson(e as Map<String, dynamic>))
+          .toList() ??
+      [],
+  overflowDirection:
+      $enumDecodeNullable(
+        _$OverflowDirectionEnumMap,
+        json['overflowDirection'],
+      ) ??
+      OverflowDirection.none,
+  layoutMode:
+      $enumDecodeNullable(_$LayoutModeEnumMap, json['layoutMode']) ??
+      LayoutMode.none,
+  primaryAxisSizingMode:
+      $enumDecodeNullable(
+        _$PrimaryAxisSizingModeEnumMap,
+        json['primaryAxisSizingMode'],
+      ) ??
+      PrimaryAxisSizingMode.auto,
+  counterAxisSizingMode:
+      $enumDecodeNullable(
+        _$CounterAxisSizingModeEnumMap,
+        json['counterAxisSizingMode'],
+      ) ??
+      CounterAxisSizingMode.auto,
+  primaryAxisAlignItems:
+      $enumDecodeNullable(
+        _$PrimaryAxisAlignItemsEnumMap,
+        json['primaryAxisAlignItems'],
+      ) ??
+      PrimaryAxisAlignItems.min,
+  counterAxisAlignItems:
+      $enumDecodeNullable(
+        _$CounterAxisAlignItemsEnumMap,
+        json['counterAxisAlignItems'],
+      ) ??
+      CounterAxisAlignItems.min,
+  paddingLeft: json['paddingLeft'] as num? ?? 0,
+  paddingRight: json['paddingRight'] as num? ?? 0,
+  paddingTop: json['paddingTop'] as num? ?? 0,
+  paddingBottom: json['paddingBottom'] as num? ?? 0,
+  itemSpacing: json['itemSpacing'] as num? ?? 0,
+  itemReverseZIndex: json['itemReverseZIndex'] as bool? ?? false,
+  strokesIncludedInLayout: json['strokesIncludedInLayout'] as bool? ?? false,
+  layoutWrap: $enumDecodeNullable(_$LayoutWrapEnumMap, json['layoutWrap']),
+  counterAxisSpacing: json['counterAxisSpacing'] as num?,
+  counterAxisAlignContent:
+      $enumDecodeNullable(
+        _$CounterAxisAlignContentEnumMap,
+        json['counterAxisAlignContent'],
+      ) ??
+      CounterAxisAlignContent.auto,
+  cornerRadius: json['cornerRadius'] as num? ?? 0,
+  cornerSmoothing: json['cornerSmoothing'] as num? ?? 0,
+  rectangleCornerRadii:
+      (json['rectangleCornerRadii'] as List<dynamic>?)
+          ?.map((e) => e as num)
+          .toList() ??
+      [],
   fills: (json['fills'] as List<dynamic>)
       .map((e) => Paint.fromJson(e as Map<String, dynamic>))
       .toList(),
@@ -949,11 +1300,17 @@ WashiTapeNode _$WashiTapeNodeFromJson(
           ?.map((e) => Interaction.fromJson(e as Map<String, dynamic>))
           .toList() ??
       [],
+  individualStrokeWeights: json['individualStrokeWeights'] == null
+      ? null
+      : StrokeWeights.fromJson(
+          json['individualStrokeWeights'] as Map<String, dynamic>,
+        ),
+  devStatus: json['devStatus'] == null
+      ? null
+      : DevStatus.fromJson(json['devStatus'] as Map<String, dynamic>),
 );
 
-Map<String, dynamic> _$WashiTapeNodeToJson(
-  WashiTapeNode instance,
-) => <String, dynamic>{
+Map<String, dynamic> _$SlotToJson(Slot instance) => <String, dynamic>{
   'id': instance.id,
   'name': instance.name,
   'visible': instance.visible,
@@ -967,6 +1324,7 @@ Map<String, dynamic> _$WashiTapeNodeToJson(
   'explicitVariableModes': instance.explicitVariableModes,
   'blendMode': _$BlendModeEnumMap[instance.blendMode]!,
   'opacity': instance.opacity,
+  'children': instance.children.map((e) => e.toJson()).toList(),
   'absoluteBoundingBox': instance.absoluteBoundingBox?.toJson(),
   'absoluteRenderBounds': instance.absoluteRenderBounds?.toJson(),
   'preserveRatio': instance.preserveRatio,
@@ -997,6 +1355,32 @@ Map<String, dynamic> _$WashiTapeNodeToJson(
   'gridColumnSpan': instance.gridColumnSpan,
   'gridRowAnchorIndex': instance.gridRowAnchorIndex,
   'gridColumnAnchorIndex': instance.gridColumnAnchorIndex,
+  'clipsContent': instance.clipsContent,
+  'layoutGrids': instance.layoutGrids.map((e) => e.toJson()).toList(),
+  'overflowDirection': _$OverflowDirectionEnumMap[instance.overflowDirection]!,
+  'layoutMode': _$LayoutModeEnumMap[instance.layoutMode]!,
+  'primaryAxisSizingMode':
+      _$PrimaryAxisSizingModeEnumMap[instance.primaryAxisSizingMode]!,
+  'counterAxisSizingMode':
+      _$CounterAxisSizingModeEnumMap[instance.counterAxisSizingMode]!,
+  'primaryAxisAlignItems':
+      _$PrimaryAxisAlignItemsEnumMap[instance.primaryAxisAlignItems]!,
+  'counterAxisAlignItems':
+      _$CounterAxisAlignItemsEnumMap[instance.counterAxisAlignItems]!,
+  'paddingLeft': instance.paddingLeft,
+  'paddingRight': instance.paddingRight,
+  'paddingTop': instance.paddingTop,
+  'paddingBottom': instance.paddingBottom,
+  'itemSpacing': instance.itemSpacing,
+  'itemReverseZIndex': instance.itemReverseZIndex,
+  'strokesIncludedInLayout': instance.strokesIncludedInLayout,
+  'layoutWrap': ?_$LayoutWrapEnumMap[instance.layoutWrap],
+  'counterAxisSpacing': ?instance.counterAxisSpacing,
+  'counterAxisAlignContent':
+      _$CounterAxisAlignContentEnumMap[instance.counterAxisAlignContent]!,
+  'cornerRadius': instance.cornerRadius,
+  'cornerSmoothing': instance.cornerSmoothing,
+  'rectangleCornerRadii': instance.rectangleCornerRadii,
   'fills': instance.fills.map((e) => e.toJson()).toList(),
   'styles': instance.styles,
   'strokes': instance.strokes.map((e) => e.toJson()).toList(),
@@ -1019,6 +1403,8 @@ Map<String, dynamic> _$WashiTapeNodeToJson(
   'transitionDuration': ?instance.transitionDuration,
   'transitionEasing': ?_$EasingTypeEnumMap[instance.transitionEasing],
   'interactions': instance.interactions.map((e) => e.toJson()).toList(),
+  'individualStrokeWeights': ?instance.individualStrokeWeights?.toJson(),
+  'devStatus': ?instance.devStatus?.toJson(),
   'type': _$NodeTypeEnumMap[instance.type]!,
 };
 
@@ -1076,6 +1462,55 @@ const _$GridChildAlignEnumMap = {
   GridChildAlign.min: 'MIN',
   GridChildAlign.center: 'CENTER',
   GridChildAlign.max: 'MAX',
+};
+
+const _$OverflowDirectionEnumMap = {
+  OverflowDirection.horizontalScrolling: 'HORIZONTAL_SCROLLING',
+  OverflowDirection.verticalScrolling: 'VERTICAL_SCROLLING',
+  OverflowDirection.horizontalAndVerticalScrolling:
+      'HORIZONTAL_AND_VERTICAL_SCROLLING',
+  OverflowDirection.none: 'NONE',
+};
+
+const _$LayoutModeEnumMap = {
+  LayoutMode.none: 'NONE',
+  LayoutMode.horizontal: 'HORIZONTAL',
+  LayoutMode.vertical: 'VERTICAL',
+  LayoutMode.grid: 'GRID',
+};
+
+const _$PrimaryAxisSizingModeEnumMap = {
+  PrimaryAxisSizingMode.fixed: 'FIXED',
+  PrimaryAxisSizingMode.auto: 'AUTO',
+};
+
+const _$CounterAxisSizingModeEnumMap = {
+  CounterAxisSizingMode.fixed: 'FIXED',
+  CounterAxisSizingMode.auto: 'AUTO',
+};
+
+const _$PrimaryAxisAlignItemsEnumMap = {
+  PrimaryAxisAlignItems.min: 'MIN',
+  PrimaryAxisAlignItems.center: 'CENTER',
+  PrimaryAxisAlignItems.max: 'MAX',
+  PrimaryAxisAlignItems.spaceBetween: 'SPACE_BETWEEN',
+};
+
+const _$CounterAxisAlignItemsEnumMap = {
+  CounterAxisAlignItems.min: 'MIN',
+  CounterAxisAlignItems.center: 'CENTER',
+  CounterAxisAlignItems.max: 'MAX',
+  CounterAxisAlignItems.baseline: 'BASELINE',
+};
+
+const _$LayoutWrapEnumMap = {
+  LayoutWrap.noWrap: 'NO_WRAP',
+  LayoutWrap.wrap: 'WRAP',
+};
+
+const _$CounterAxisAlignContentEnumMap = {
+  CounterAxisAlignContent.auto: 'AUTO',
+  CounterAxisAlignContent.spaceBetween: 'SPACE_BETWEEN',
 };
 
 const _$StrokeAlignEnumMap = {
