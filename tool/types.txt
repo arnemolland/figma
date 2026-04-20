@@ -101,6 +101,7 @@ Component
 ComponentNode
 ComponentProperty
 ComponentPropertyDefinition
+ComponentPropertyDefinitionVariables
 ComponentPropertyVariables
 ComponentSet
 ComponentSetNode

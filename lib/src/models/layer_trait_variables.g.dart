@@ -77,6 +77,10 @@ abstract class _$LayerTraitVariablesCWProxy {
 
   LayerTraitVariables layoutGrids(List<VariableAlias> layoutGrids);
 
+  LayerTraitVariables gridColumnGap(VariableAlias? gridColumnGap);
+
+  LayerTraitVariables gridRowGap(VariableAlias? gridRowGap);
+
   LayerTraitVariables rectangleCornerRadii(
     RectangleCornerRadiiVariables? rectangleCornerRadii,
   );
@@ -122,6 +126,8 @@ abstract class _$LayerTraitVariablesCWProxy {
     List<VariableAlias> textRangeFills,
     List<VariableAlias> effects,
     List<VariableAlias> layoutGrids,
+    VariableAlias? gridColumnGap,
+    VariableAlias? gridRowGap,
     RectangleCornerRadiiVariables? rectangleCornerRadii,
   });
 }
@@ -264,6 +270,14 @@ class _$LayerTraitVariablesCWProxyImpl implements _$LayerTraitVariablesCWProxy {
       call(layoutGrids: layoutGrids);
 
   @override
+  LayerTraitVariables gridColumnGap(VariableAlias? gridColumnGap) =>
+      call(gridColumnGap: gridColumnGap);
+
+  @override
+  LayerTraitVariables gridRowGap(VariableAlias? gridRowGap) =>
+      call(gridRowGap: gridRowGap);
+
+  @override
   LayerTraitVariables rectangleCornerRadii(
     RectangleCornerRadiiVariables? rectangleCornerRadii,
   ) => call(rectangleCornerRadii: rectangleCornerRadii);
@@ -310,6 +324,8 @@ class _$LayerTraitVariablesCWProxyImpl implements _$LayerTraitVariablesCWProxy {
     Object? textRangeFills = const $CopyWithPlaceholder(),
     Object? effects = const $CopyWithPlaceholder(),
     Object? layoutGrids = const $CopyWithPlaceholder(),
+    Object? gridColumnGap = const $CopyWithPlaceholder(),
+    Object? gridRowGap = const $CopyWithPlaceholder(),
     Object? rectangleCornerRadii = const $CopyWithPlaceholder(),
   }) {
     return LayerTraitVariables(
@@ -459,6 +475,14 @@ class _$LayerTraitVariablesCWProxyImpl implements _$LayerTraitVariablesCWProxy {
           ? _value.layoutGrids
           // ignore: cast_nullable_to_non_nullable
           : layoutGrids as List<VariableAlias>,
+      gridColumnGap: gridColumnGap == const $CopyWithPlaceholder()
+          ? _value.gridColumnGap
+          // ignore: cast_nullable_to_non_nullable
+          : gridColumnGap as VariableAlias?,
+      gridRowGap: gridRowGap == const $CopyWithPlaceholder()
+          ? _value.gridRowGap
+          // ignore: cast_nullable_to_non_nullable
+          : gridRowGap as VariableAlias?,
       rectangleCornerRadii: rectangleCornerRadii == const $CopyWithPlaceholder()
           ? _value.rectangleCornerRadii
           // ignore: cast_nullable_to_non_nullable
@@ -618,6 +642,12 @@ LayerTraitVariables _$LayerTraitVariablesFromJson(
           ?.map((e) => VariableAlias.fromJson(e as Map<String, dynamic>))
           .toList() ??
       [],
+  gridColumnGap: json['gridColumnGap'] == null
+      ? null
+      : VariableAlias.fromJson(json['gridColumnGap'] as Map<String, dynamic>),
+  gridRowGap: json['gridRowGap'] == null
+      ? null
+      : VariableAlias.fromJson(json['gridRowGap'] as Map<String, dynamic>),
   rectangleCornerRadii: json['rectangleCornerRadii'] == null
       ? null
       : RectangleCornerRadiiVariables.fromJson(
@@ -663,5 +693,7 @@ Map<String, dynamic> _$LayerTraitVariablesToJson(
   'textRangeFills': instance.textRangeFills.map((e) => e.toJson()).toList(),
   'effects': instance.effects.map((e) => e.toJson()).toList(),
   'layoutGrids': instance.layoutGrids.map((e) => e.toJson()).toList(),
+  'gridColumnGap': ?instance.gridColumnGap?.toJson(),
+  'gridRowGap': ?instance.gridRowGap?.toJson(),
   'rectangleCornerRadii': ?instance.rectangleCornerRadii?.toJson(),
 };
