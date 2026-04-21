@@ -56,6 +56,8 @@ class LayerTraitVariables extends Equatable {
     this.textRangeFills = const [],
     this.effects = const [],
     this.layoutGrids = const [],
+    this.gridColumnGap,
+    this.gridRowGap,
     this.rectangleCornerRadii,
   });
 
@@ -162,6 +164,12 @@ class LayerTraitVariables extends Equatable {
   final List<VariableAlias> layoutGrids;
 
   @JsonKey(includeIfNull: false)
+  final VariableAlias? gridColumnGap;
+
+  @JsonKey(includeIfNull: false)
+  final VariableAlias? gridRowGap;
+
+  @JsonKey(includeIfNull: false)
   final RectangleCornerRadiiVariables? rectangleCornerRadii;
 
   @override
@@ -199,6 +207,8 @@ class LayerTraitVariables extends Equatable {
     textRangeFills,
     effects,
     layoutGrids,
+    gridColumnGap,
+    gridRowGap,
     rectangleCornerRadii,
   ];
 

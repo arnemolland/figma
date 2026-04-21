@@ -5,6 +5,7 @@ import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:meta/meta.dart';
 
+import 'component_property_definition_variables.dart';
 import 'component_property_type.dart';
 import 'instance_swap_preferred_value.dart';
 
@@ -20,6 +21,7 @@ class ComponentPropertyDefinition extends Equatable {
     required this.defaultValue,
     this.variantOptions = const [],
     this.preferredValues = const [],
+    this.boundVariables = const ComponentPropertyDefinitionVariables(),
   });
 
   factory ComponentPropertyDefinition.fromJson(Map<String, Object?> json) =>
@@ -43,12 +45,16 @@ class ComponentPropertyDefinition extends Equatable {
   @JsonKey(defaultValue: [])
   final List<InstanceSwapPreferredValue> preferredValues;
 
+  /// The variables bound to a particular field on this component property.
+  final ComponentPropertyDefinitionVariables boundVariables;
+
   @override
   List<Object?> get props => <Object?>[
     type,
     defaultValue,
     variantOptions,
     preferredValues,
+    boundVariables,
   ];
 
   Map<String, Object?> toJson() => _$ComponentPropertyDefinitionToJson(this);

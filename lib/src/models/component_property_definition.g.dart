@@ -17,6 +17,10 @@ abstract class _$ComponentPropertyDefinitionCWProxy {
     List<InstanceSwapPreferredValue> preferredValues,
   );
 
+  ComponentPropertyDefinition boundVariables(
+    ComponentPropertyDefinitionVariables boundVariables,
+  );
+
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ComponentPropertyDefinition(...).copyWith.fieldName(value)`.
   ///
@@ -29,6 +33,7 @@ abstract class _$ComponentPropertyDefinitionCWProxy {
     Object defaultValue,
     List<String> variantOptions,
     List<InstanceSwapPreferredValue> preferredValues,
+    ComponentPropertyDefinitionVariables boundVariables,
   });
 }
 
@@ -58,6 +63,11 @@ class _$ComponentPropertyDefinitionCWProxyImpl
   ) => call(preferredValues: preferredValues);
 
   @override
+  ComponentPropertyDefinition boundVariables(
+    ComponentPropertyDefinitionVariables boundVariables,
+  ) => call(boundVariables: boundVariables);
+
+  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ComponentPropertyDefinition(...).copyWith.fieldName(value)`.
   ///
@@ -70,6 +80,7 @@ class _$ComponentPropertyDefinitionCWProxyImpl
     Object? defaultValue = const $CopyWithPlaceholder(),
     Object? variantOptions = const $CopyWithPlaceholder(),
     Object? preferredValues = const $CopyWithPlaceholder(),
+    Object? boundVariables = const $CopyWithPlaceholder(),
   }) {
     return ComponentPropertyDefinition(
       type: type == const $CopyWithPlaceholder() || type == null
@@ -93,6 +104,12 @@ class _$ComponentPropertyDefinitionCWProxyImpl
           ? _value.preferredValues
           // ignore: cast_nullable_to_non_nullable
           : preferredValues as List<InstanceSwapPreferredValue>,
+      boundVariables:
+          boundVariables == const $CopyWithPlaceholder() ||
+              boundVariables == null
+          ? _value.boundVariables
+          // ignore: cast_nullable_to_non_nullable
+          : boundVariables as ComponentPropertyDefinitionVariables,
     );
   }
 }
@@ -127,6 +144,11 @@ ComponentPropertyDefinition _$ComponentPropertyDefinitionFromJson(
           )
           .toList() ??
       [],
+  boundVariables: json['boundVariables'] == null
+      ? const ComponentPropertyDefinitionVariables()
+      : ComponentPropertyDefinitionVariables.fromJson(
+          json['boundVariables'] as Map<String, dynamic>,
+        ),
 );
 
 Map<String, dynamic> _$ComponentPropertyDefinitionToJson(
@@ -136,6 +158,7 @@ Map<String, dynamic> _$ComponentPropertyDefinitionToJson(
   'defaultValue': instance.defaultValue,
   'variantOptions': instance.variantOptions,
   'preferredValues': instance.preferredValues.map((e) => e.toJson()).toList(),
+  'boundVariables': instance.boundVariables.toJson(),
 };
 
 const _$ComponentPropertyTypeEnumMap = {

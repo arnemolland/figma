@@ -25,6 +25,7 @@ export 'models/component_node.dart';
 export 'models/component_properties_trait.dart';
 export 'models/component_property.dart';
 export 'models/component_property_definition.dart';
+export 'models/component_property_definition_variables.dart';
 export 'models/component_property_type.dart';
 export 'models/component_property_variables.dart';
 export 'models/component_response.dart';
