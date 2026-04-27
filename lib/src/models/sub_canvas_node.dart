@@ -20,6 +20,7 @@ import 'regular_polygon_node.dart';
 import 'section.dart';
 import 'shape_with_text_node.dart';
 import 'slice_node.dart';
+import 'slot.dart';
 import 'star_node.dart';
 import 'sticky_node.dart';
 import 'table_cell_node.dart';
@@ -67,6 +68,7 @@ abstract class SubCanvasNode extends Node {
       'VECTOR' => VectorNode.fromJson,
       'WASHI_TAPE' => WashiTapeNode.fromJson,
       'WIDGET' => WidgetNode.fromJson,
+      'SLOT' => Slot.fromJson,
       _ => throw ArgumentError.value(discriminator, 'type', 'unknown type'),
     };
 

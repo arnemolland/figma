@@ -165,5 +165,6 @@ const _$ComponentPropertyTypeEnumMap = {
   ComponentPropertyType.boolean: 'BOOLEAN',
   ComponentPropertyType.instanceSwap: 'INSTANCE_SWAP',
   ComponentPropertyType.text: 'TEXT',
+  ComponentPropertyType.slot: 'SLOT',
   ComponentPropertyType.variant: 'VARIANT',
 };
