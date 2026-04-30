@@ -1247,6 +1247,7 @@ const _$NodeTypeEnumMap = {
   NodeType.section: 'SECTION',
   NodeType.shapeWithText: 'SHAPE_WITH_TEXT',
   NodeType.slice: 'SLICE',
+  NodeType.slot: 'SLOT',
   NodeType.star: 'STAR',
   NodeType.sticky: 'STICKY',
   NodeType.table: 'TABLE',

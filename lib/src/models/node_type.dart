@@ -35,6 +35,8 @@ enum NodeType {
   shapeWithText,
   @JsonValue('SLICE')
   slice,
+  @JsonValue('SLOT')
+  slot,
   @JsonValue('STAR')
   star,
   @JsonValue('STICKY')
