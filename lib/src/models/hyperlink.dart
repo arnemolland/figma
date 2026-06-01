@@ -22,6 +22,7 @@ class Hyperlink extends Equatable {
   /// The type of hyperlink.
   ///
   /// Can be either `URL` or `NODE`.
+  @JsonKey(defaultValue: HyperlinkType.url)
   final HyperlinkType type;
 
   /// The URL that the hyperlink points to, if `type` is `URL`.

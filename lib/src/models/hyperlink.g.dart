@@ -81,7 +81,9 @@ extension $HyperlinkCopyWith on Hyperlink {
 // **************************************************************************
 
 Hyperlink _$HyperlinkFromJson(Map<String, dynamic> json) => Hyperlink(
-  type: $enumDecode(_$HyperlinkTypeEnumMap, json['type']),
+  type:
+      $enumDecodeNullable(_$HyperlinkTypeEnumMap, json['type']) ??
+      HyperlinkType.url,
   url: json['url'] as String?,
   nodeId: json['nodeID'] as String?,
 );
