@@ -34,6 +34,7 @@ Future<Response> _http2(
 
   var status = 200;
   final buffer = <int>[];
+  final responseHeaders = <String, String>{};
 
   await for (final message in stream.incomingMessages) {
     if (message is HeadersStreamMessage) {
@@ -42,6 +43,8 @@ Future<Response> _http2(
         final value = utf8.decode(header.value);
         if (name == ':status') {
           status = int.parse(value);
+        } else {
+          responseHeaders[name] = value;
         }
       }
     } else if (message is DataStreamMessage) {
@@ -51,5 +54,5 @@ Future<Response> _http2(
 
   await transport.finish();
 
-  return Response(status, utf8.decode(buffer));
+  return Response(status, responseHeaders, utf8.decode(buffer));
 }

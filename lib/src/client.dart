@@ -73,11 +73,9 @@ class FigmaClient {
     final uri = Uri.parse(url);
 
     return _send('GET', uri, _authHeaders).then((res) {
-      if (res.statusCode >= 200 && res.statusCode < 300) {
-        return jsonDecode(res.body);
-      } else {
-        throw FigmaException(code: res.statusCode, message: res.body);
-      }
+      _checkResponse(res);
+
+      return jsonDecode(res.body);
     });
   }
 
@@ -280,11 +278,9 @@ class FigmaClient {
     final uri = Uri.https(base, '$version$path', query);
 
     return _send('GET', uri, _authHeaders).then((res) {
-      if (res.statusCode >= 200 && res.statusCode < 300) {
-        return jsonDecode(res.body);
-      } else {
-        throw FigmaException(code: res.statusCode, message: res.body);
-      }
+      _checkResponse(res);
+
+      return jsonDecode(res.body);
     });
   }
 
@@ -297,11 +293,9 @@ class FigmaClient {
     final uri = Uri.https(base, '$version$path');
 
     return _send('POST', uri, _authHeaders, body).then((res) {
-      if (res.statusCode >= 200 && res.statusCode < 300) {
-        return jsonDecode(res.body);
-      } else {
-        throw FigmaException(code: res.statusCode, message: res.body);
-      }
+      _checkResponse(res);
+
+      return jsonDecode(res.body);
     });
   }
 
@@ -314,11 +308,9 @@ class FigmaClient {
     final uri = Uri.https(base, '$version$path');
 
     return _send('PUT', uri, _authHeaders, body).then((res) {
-      if (res.statusCode >= 200 && res.statusCode < 300) {
-        return jsonDecode(res.body);
-      } else {
-        throw FigmaException(code: res.statusCode, message: res.body);
-      }
+      _checkResponse(res);
+
+      return jsonDecode(res.body);
     });
   }
 
@@ -326,13 +318,42 @@ class FigmaClient {
   Future<dynamic> _deleteFigma(String version, String path) {
     final uri = Uri.https(base, '$version$path');
 
-    return _send('DELETE', uri, _authHeaders).then((res) {
-      if (res.statusCode >= 200 && res.statusCode < 300) {
-        return;
-      } else {
-        throw FigmaException(code: res.statusCode, message: res.body);
-      }
-    });
+    return _send('DELETE', uri, _authHeaders).then(_checkResponse);
+  }
+
+  void _checkResponse(Response res) {
+    final statusCode = res.statusCode;
+    if (statusCode >= 200 && statusCode < 300) {
+      return;
+    }
+
+    final errorResponse = jsonDecode(res.body)! as Map;
+    final message = errorResponse['message'] as String? ?? '';
+
+    // Rate limit errors contain additional data in the headers
+    if (statusCode == 429) {
+      final headers = res.headers;
+      final retryAfter = headers['Retry-After'];
+
+      throw FigmaRateLimitException(
+        retryAfter: retryAfter != null ? int.parse(retryAfter) : 0,
+        planTier: switch (headers['X-Figma-Plan-Tier']) {
+          'enterprise' => FigmaPlanTier.enterprise,
+          'org' => FigmaPlanTier.org,
+          'pro' => FigmaPlanTier.pro,
+          'student' => FigmaPlanTier.student,
+          _ => FigmaPlanTier.starter,
+        },
+        rateLimitType: headers['X-Figma-Rate-Limit-Type'] == 'high'
+            ? FigmaRateLimitType.high
+            : FigmaRateLimitType.low,
+        upgradeLink: headers['X-Figma-Upgrade-Link'] ?? '',
+        code: statusCode,
+        message: message,
+      );
+    }
+
+    throw FigmaException(code: statusCode, message: message);
   }
 
   Map<String, String> get _authHeaders {
@@ -348,11 +369,39 @@ class FigmaClient {
 
 /// An error from the [Figma API docs](https://www.figma.com/developers/api#errors).
 class FigmaException implements Exception {
+  const FigmaException({required this.code, required this.message});
+
   /// HTTP status code.
-  final int? code;
+  final int code;
 
   /// Error message.
-  final String? message;
-
-  const FigmaException({this.code, this.message});
+  final String message;
 }
+
+class FigmaRateLimitException extends FigmaException {
+  const FigmaRateLimitException({
+    required this.retryAfter,
+    required this.planTier,
+    required this.rateLimitType,
+    required this.upgradeLink,
+    required super.code,
+    required super.message,
+  });
+
+  /// In seconds, how long before you should retry sending the request.
+  final int retryAfter;
+
+  /// The current plan tier of the resource the user is requesting.
+  final FigmaPlanTier planTier;
+
+  /// The type of rate limit the user is encountering, based on their seat type.
+  final FigmaRateLimitType rateLimitType;
+
+  /// A link to either the /pricing or /settings pages depending on the
+  /// plan/seat of the user.
+  final String upgradeLink;
+}
+
+enum FigmaPlanTier { enterprise, org, pro, starter, student }
+
+enum FigmaRateLimitType { low, high }

@@ -13,10 +13,11 @@ typedef SendRequest =
 const String base = 'api.figma.com';
 
 class Response {
-  final int statusCode;
-  final String body;
+  const Response(this.statusCode, this.headers, this.body);
 
-  const Response(this.statusCode, this.body);
+  final int statusCode;
+  final Map<String, String> headers;
+  final String body;
 }
 
 Future<Response> http(
@@ -32,7 +33,11 @@ Future<Response> http(
       ..body = body ?? '';
     final response = await client.send(request);
     final responseBody = await response.stream.toBytes();
-    return Response(response.statusCode, utf8.decode(responseBody));
+    return Response(
+      response.statusCode,
+      response.headers,
+      utf8.decode(responseBody),
+    );
   } finally {
     client.close();
   }
