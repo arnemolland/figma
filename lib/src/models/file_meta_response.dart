@@ -1,4 +1,4 @@
-// Generated from v0.36.0 of the Figma REST API specification
+// Generated from v0.40.0 of the Figma REST API specification
 
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:equatable/equatable.dart';
@@ -18,6 +18,7 @@ class FileMetaResponse extends Equatable {
   factory FileMetaResponse.fromJson(Map<String, Object?> json) =>
       _$FileMetaResponseFromJson(json);
 
+  /// The file metadata.
   final FileMeta file;
 
   @override

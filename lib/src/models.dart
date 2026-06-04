@@ -191,6 +191,7 @@ export 'models/progressive_blur_effect.dart';
 export 'models/project.dart';
 export 'models/project_file.dart';
 export 'models/project_files_response.dart';
+export 'models/project_meta_response.dart';
 export 'models/prototype_device.dart';
 export 'models/prototype_device_rotation.dart';
 export 'models/prototype_device_type.dart';

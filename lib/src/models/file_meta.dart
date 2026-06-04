@@ -1,4 +1,4 @@
-// Generated from v0.36.0 of the Figma REST API specification
+// Generated from v0.40.0 of the Figma REST API specification
 
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:equatable/equatable.dart';
@@ -12,6 +12,7 @@ import 'user.dart';
 
 part 'file_meta.g.dart';
 
+/// The file metadata.
 @JsonSerializable(explicitToJson: true)
 @CopyWith()
 @immutable

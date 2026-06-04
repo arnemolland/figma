@@ -309,6 +309,7 @@ ImagesResponse
 LocalVariablesResponse
 NodesResponse
 ProjectFilesResponse
+ProjectMetaResponse
 PublishedVariablesResponse
 StyleResponse
 StylesResponse

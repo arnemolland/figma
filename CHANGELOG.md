@@ -1,7 +1,7 @@
 ## 8.0.0-alpha.2
 
 - Generate models from Figma's REST API specification ([@donny-dont](https://github.com/donny-dont))
-- Update to v0.36.0 of REST API specification ([@donny-dont](https://github.com/donny-dont))
+- Update to v0.40.0 of REST API specification ([@donny-dont](https://github.com/donny-dont))
 - Add `Slot` support ([@donny-dont](https://github.com/donny-dont))
 - Require `sdk: ^3.8.0`
 

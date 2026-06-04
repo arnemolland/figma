@@ -146,6 +146,12 @@ class FigmaClient {
     '/teams/$team/projects',
   ).then(TeamProjectsResponse.fromJson);
 
+  /// Retrieves the [project] metadata.
+  Future<ProjectMetaResponse> getProjectMeta(String project) => _getFigma(
+    apiVersion,
+    '/projects/$project/meta',
+  ).then(ProjectMetaResponse.fromJson);
+
   /// Retrieves all project files specified by [project].
   Future<ProjectFilesResponse> getProjectFiles(String project) => _getFigma(
     apiVersion,
