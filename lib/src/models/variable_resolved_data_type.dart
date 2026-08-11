@@ -12,4 +12,8 @@ enum VariableResolvedDataType {
   string,
   @JsonValue('COLOR')
   color,
+  @JsonValue('TIMING')
+  timing,
+  @JsonValue('EASING')
+  easing,
 }
