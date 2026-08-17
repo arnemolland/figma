@@ -160,7 +160,6 @@ class _$LibraryPublishPayloadCWProxyImpl
   LibraryPublishPayload triggeredBy(User triggeredBy) =>
       call(triggeredBy: triggeredBy);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `LibraryPublishPayload(...).copyWith.fieldName(value)`.
   ///
@@ -168,6 +167,7 @@ class _$LibraryPublishPayloadCWProxyImpl
   /// ```dart
   /// LibraryPublishPayload(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   LibraryPublishPayload call({
     Object? passcode = const $CopyWithPlaceholder(),
     Object? timestamp = const $CopyWithPlaceholder(),

@@ -45,7 +45,6 @@ class _$OnMouseMovementTriggerCWProxyImpl
   OnMouseMovementTrigger deprecatedVersion(bool? deprecatedVersion) =>
       call(deprecatedVersion: deprecatedVersion);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `OnMouseMovementTrigger(...).copyWith.fieldName(value)`.
   ///
@@ -53,6 +52,7 @@ class _$OnMouseMovementTriggerCWProxyImpl
   /// ```dart
   /// OnMouseMovementTrigger(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   OnMouseMovementTrigger call({
     Object? type = const $CopyWithPlaceholder(),
     Object? delay = const $CopyWithPlaceholder(),

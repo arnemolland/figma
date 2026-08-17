@@ -39,7 +39,6 @@ class _$SimpleTransitionCWProxyImpl implements _$SimpleTransitionCWProxy {
   @override
   SimpleTransition easing(Easing easing) => call(easing: easing);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `SimpleTransition(...).copyWith.fieldName(value)`.
   ///
@@ -47,6 +46,7 @@ class _$SimpleTransitionCWProxyImpl implements _$SimpleTransitionCWProxy {
   /// ```dart
   /// SimpleTransition(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   SimpleTransition call({
     Object? type = const $CopyWithPlaceholder(),
     Object? duration = const $CopyWithPlaceholder(),

@@ -414,7 +414,6 @@ class _$ShapeWithTextNodeCWProxyImpl implements _$ShapeWithTextNodeCWProxy {
   ShapeWithTextNode shapeType(ShapeType shapeType) =>
       call(shapeType: shapeType);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ShapeWithTextNode(...).copyWith.fieldName(value)`.
   ///
@@ -422,6 +421,7 @@ class _$ShapeWithTextNodeCWProxyImpl implements _$ShapeWithTextNodeCWProxy {
   /// ```dart
   /// ShapeWithTextNode(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   ShapeWithTextNode call({
     Object? id = const $CopyWithPlaceholder(),
     Object? name = const $CopyWithPlaceholder(),

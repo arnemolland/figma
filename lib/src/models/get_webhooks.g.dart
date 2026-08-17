@@ -49,7 +49,6 @@ class _$GetWebhooksCWProxyImpl implements _$GetWebhooksCWProxy {
   @override
   GetWebhooks cursor(String? cursor) => call(cursor: cursor);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `GetWebhooks(...).copyWith.fieldName(value)`.
   ///
@@ -57,6 +56,7 @@ class _$GetWebhooksCWProxyImpl implements _$GetWebhooksCWProxy {
   /// ```dart
   /// GetWebhooks(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   GetWebhooks call({
     Object? context = const $CopyWithPlaceholder(),
     Object? contextId = const $CopyWithPlaceholder(),

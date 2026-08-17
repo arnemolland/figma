@@ -99,7 +99,6 @@ class _$SliceNodeCWProxyImpl implements _$SliceNodeCWProxy {
   SliceNode explicitVariableModes(Map<String, String> explicitVariableModes) =>
       call(explicitVariableModes: explicitVariableModes);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `SliceNode(...).copyWith.fieldName(value)`.
   ///
@@ -107,6 +106,7 @@ class _$SliceNodeCWProxyImpl implements _$SliceNodeCWProxy {
   /// ```dart
   /// SliceNode(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   SliceNode call({
     Object? id = const $CopyWithPlaceholder(),
     Object? name = const $CopyWithPlaceholder(),

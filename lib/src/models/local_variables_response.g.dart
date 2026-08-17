@@ -30,7 +30,6 @@ class _$LocalVariablesResponseCWProxyImpl
   @override
   LocalVariablesResponse meta(LocalVariablesMeta meta) => call(meta: meta);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `LocalVariablesResponse(...).copyWith.fieldName(value)`.
   ///
@@ -38,6 +37,7 @@ class _$LocalVariablesResponseCWProxyImpl
   /// ```dart
   /// LocalVariablesResponse(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   LocalVariablesResponse call({Object? meta = const $CopyWithPlaceholder()}) {
     return LocalVariablesResponse(
       meta: meta == const $CopyWithPlaceholder() || meta == null

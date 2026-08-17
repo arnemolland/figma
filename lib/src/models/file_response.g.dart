@@ -117,7 +117,6 @@ class _$FileResponseCWProxyImpl implements _$FileResponseCWProxy {
   @override
   FileResponse branches(List<Branch> branches) => call(branches: branches);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `FileResponse(...).copyWith.fieldName(value)`.
   ///
@@ -125,6 +124,7 @@ class _$FileResponseCWProxyImpl implements _$FileResponseCWProxy {
   /// ```dart
   /// FileResponse(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   FileResponse call({
     Object? name = const $CopyWithPlaceholder(),
     Object? role = const $CopyWithPlaceholder(),

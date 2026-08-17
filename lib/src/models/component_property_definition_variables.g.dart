@@ -34,7 +34,6 @@ class _$ComponentPropertyDefinitionVariablesCWProxyImpl
     VariableAlias? defaultValue,
   ) => call(defaultValue: defaultValue);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ComponentPropertyDefinitionVariables(...).copyWith.fieldName(value)`.
   ///
@@ -42,6 +41,7 @@ class _$ComponentPropertyDefinitionVariablesCWProxyImpl
   /// ```dart
   /// ComponentPropertyDefinitionVariables(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   ComponentPropertyDefinitionVariables call({
     Object? defaultValue = const $CopyWithPlaceholder(),
   }) {

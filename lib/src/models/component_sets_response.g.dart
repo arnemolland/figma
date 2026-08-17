@@ -30,7 +30,6 @@ class _$ComponentSetsResponseCWProxyImpl
   @override
   ComponentSetsResponse meta(ComponentSetsMeta meta) => call(meta: meta);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ComponentSetsResponse(...).copyWith.fieldName(value)`.
   ///
@@ -38,6 +37,7 @@ class _$ComponentSetsResponseCWProxyImpl
   /// ```dart
   /// ComponentSetsResponse(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   ComponentSetsResponse call({Object? meta = const $CopyWithPlaceholder()}) {
     return ComponentSetsResponse(
       meta: meta == const $CopyWithPlaceholder() || meta == null

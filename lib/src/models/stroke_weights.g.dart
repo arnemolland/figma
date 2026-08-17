@@ -44,7 +44,6 @@ class _$StrokeWeightsCWProxyImpl implements _$StrokeWeightsCWProxy {
   @override
   StrokeWeights left(num left) => call(left: left);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `StrokeWeights(...).copyWith.fieldName(value)`.
   ///
@@ -52,6 +51,7 @@ class _$StrokeWeightsCWProxyImpl implements _$StrokeWeightsCWProxy {
   /// ```dart
   /// StrokeWeights(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   StrokeWeights call({
     Object? top = const $CopyWithPlaceholder(),
     Object? right = const $CopyWithPlaceholder(),

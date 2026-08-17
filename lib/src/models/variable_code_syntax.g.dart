@@ -39,7 +39,6 @@ class _$VariableCodeSyntaxCWProxyImpl implements _$VariableCodeSyntaxCWProxy {
   @override
   VariableCodeSyntax iOs(String? iOs) => call(iOs: iOs);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `VariableCodeSyntax(...).copyWith.fieldName(value)`.
   ///
@@ -47,6 +46,7 @@ class _$VariableCodeSyntaxCWProxyImpl implements _$VariableCodeSyntaxCWProxy {
   /// ```dart
   /// VariableCodeSyntax(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   VariableCodeSyntax call({
     Object? web = const $CopyWithPlaceholder(),
     Object? android = const $CopyWithPlaceholder(),

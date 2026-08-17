@@ -649,7 +649,6 @@ class _$InstanceNodeCWProxyImpl implements _$InstanceNodeCWProxy {
   InstanceNode overrides(List<Overrides> overrides) =>
       call(overrides: overrides);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `InstanceNode(...).copyWith.fieldName(value)`.
   ///
@@ -657,6 +656,7 @@ class _$InstanceNodeCWProxyImpl implements _$InstanceNodeCWProxy {
   /// ```dart
   /// InstanceNode(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   InstanceNode call({
     Object? id = const $CopyWithPlaceholder(),
     Object? name = const $CopyWithPlaceholder(),

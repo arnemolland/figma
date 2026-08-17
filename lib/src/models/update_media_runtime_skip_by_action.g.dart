@@ -47,7 +47,6 @@ class _$UpdateMediaRuntimeSkipByActionCWProxyImpl
   UpdateMediaRuntimeSkipByAction amountToSkip(num amountToSkip) =>
       call(amountToSkip: amountToSkip);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `UpdateMediaRuntimeSkipByAction(...).copyWith.fieldName(value)`.
   ///
@@ -55,6 +54,7 @@ class _$UpdateMediaRuntimeSkipByActionCWProxyImpl
   /// ```dart
   /// UpdateMediaRuntimeSkipByAction(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   UpdateMediaRuntimeSkipByAction call({
     Object? destinationId = const $CopyWithPlaceholder(),
     Object? mediaAction = const $CopyWithPlaceholder(),

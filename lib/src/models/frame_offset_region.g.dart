@@ -59,7 +59,6 @@ class _$FrameOffsetRegionCWProxyImpl implements _$FrameOffsetRegionCWProxy {
   FrameOffsetRegion commentPinCorner(CommentPinCorner commentPinCorner) =>
       call(commentPinCorner: commentPinCorner);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `FrameOffsetRegion(...).copyWith.fieldName(value)`.
   ///
@@ -67,6 +66,7 @@ class _$FrameOffsetRegionCWProxyImpl implements _$FrameOffsetRegionCWProxy {
   /// ```dart
   /// FrameOffsetRegion(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   FrameOffsetRegion call({
     Object? nodeId = const $CopyWithPlaceholder(),
     Object? nodeOffset = const $CopyWithPlaceholder(),

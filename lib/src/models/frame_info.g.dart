@@ -66,7 +66,6 @@ class _$FrameInfoCWProxyImpl implements _$FrameInfoCWProxy {
     ContainingComponentSet? containingComponentSet,
   ) => call(containingComponentSet: containingComponentSet);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `FrameInfo(...).copyWith.fieldName(value)`.
   ///
@@ -74,6 +73,7 @@ class _$FrameInfoCWProxyImpl implements _$FrameInfoCWProxy {
   /// ```dart
   /// FrameInfo(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   FrameInfo call({
     Object? nodeId = const $CopyWithPlaceholder(),
     Object? name = const $CopyWithPlaceholder(),

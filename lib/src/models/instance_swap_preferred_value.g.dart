@@ -39,7 +39,6 @@ class _$InstanceSwapPreferredValueCWProxyImpl
   @override
   InstanceSwapPreferredValue key(String key) => call(key: key);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `InstanceSwapPreferredValue(...).copyWith.fieldName(value)`.
   ///
@@ -47,6 +46,7 @@ class _$InstanceSwapPreferredValueCWProxyImpl
   /// ```dart
   /// InstanceSwapPreferredValue(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   InstanceSwapPreferredValue call({
     Object? type = const $CopyWithPlaceholder(),
     Object? key = const $CopyWithPlaceholder(),

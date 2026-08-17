@@ -29,7 +29,6 @@ class _$OpenUrlActionCWProxyImpl implements _$OpenUrlActionCWProxy {
   @override
   OpenUrlAction url(String url) => call(url: url);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `OpenUrlAction(...).copyWith.fieldName(value)`.
   ///
@@ -37,6 +36,7 @@ class _$OpenUrlActionCWProxyImpl implements _$OpenUrlActionCWProxy {
   /// ```dart
   /// OpenUrlAction(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   OpenUrlAction call({Object? url = const $CopyWithPlaceholder()}) {
     return OpenUrlAction(
       url: url == const $CopyWithPlaceholder() || url == null

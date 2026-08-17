@@ -34,7 +34,6 @@ class _$ResponsePaginationCWProxyImpl implements _$ResponsePaginationCWProxy {
   @override
   ResponsePagination nextPage(String? nextPage) => call(nextPage: nextPage);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ResponsePagination(...).copyWith.fieldName(value)`.
   ///
@@ -42,6 +41,7 @@ class _$ResponsePaginationCWProxyImpl implements _$ResponsePaginationCWProxy {
   /// ```dart
   /// ResponsePagination(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   ResponsePagination call({
     Object? prevPage = const $CopyWithPlaceholder(),
     Object? nextPage = const $CopyWithPlaceholder(),

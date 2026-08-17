@@ -39,7 +39,6 @@ class _$HyperlinkCWProxyImpl implements _$HyperlinkCWProxy {
   @override
   Hyperlink nodeId(String? nodeId) => call(nodeId: nodeId);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Hyperlink(...).copyWith.fieldName(value)`.
   ///
@@ -47,6 +46,7 @@ class _$HyperlinkCWProxyImpl implements _$HyperlinkCWProxy {
   /// ```dart
   /// Hyperlink(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   Hyperlink call({
     Object? type = const $CopyWithPlaceholder(),
     Object? url = const $CopyWithPlaceholder(),

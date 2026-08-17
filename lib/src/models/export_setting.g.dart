@@ -44,7 +44,6 @@ class _$ExportSettingCWProxyImpl implements _$ExportSettingCWProxy {
   ExportSetting constraint(Constraint constraint) =>
       call(constraint: constraint);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ExportSetting(...).copyWith.fieldName(value)`.
   ///
@@ -52,6 +51,7 @@ class _$ExportSettingCWProxyImpl implements _$ExportSettingCWProxy {
   /// ```dart
   /// ExportSetting(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   ExportSetting call({
     Object? suffix = const $CopyWithPlaceholder(),
     Object? format = const $CopyWithPlaceholder(),

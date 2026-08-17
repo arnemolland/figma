@@ -62,7 +62,6 @@ class _$VersionCWProxyImpl implements _$VersionCWProxy {
   Version thumbnailUrl(String? thumbnailUrl) =>
       call(thumbnailUrl: thumbnailUrl);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Version(...).copyWith.fieldName(value)`.
   ///
@@ -70,6 +69,7 @@ class _$VersionCWProxyImpl implements _$VersionCWProxy {
   /// ```dart
   /// Version(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   Version call({
     Object? id = const $CopyWithPlaceholder(),
     Object? createdAt = const $CopyWithPlaceholder(),

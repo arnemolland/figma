@@ -40,7 +40,6 @@ class _$SetVariableModeActionCWProxyImpl
   SetVariableModeAction variableModeId(String? variableModeId) =>
       call(variableModeId: variableModeId);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `SetVariableModeAction(...).copyWith.fieldName(value)`.
   ///
@@ -48,6 +47,7 @@ class _$SetVariableModeActionCWProxyImpl
   /// ```dart
   /// SetVariableModeAction(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   SetVariableModeAction call({
     Object? variableCollectionId = const $CopyWithPlaceholder(),
     Object? variableModeId = const $CopyWithPlaceholder(),

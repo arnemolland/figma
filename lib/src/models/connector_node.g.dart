@@ -399,7 +399,6 @@ class _$ConnectorNodeCWProxyImpl implements _$ConnectorNodeCWProxy {
   ConnectorNode textBackground(ConnectorTextBackground? textBackground) =>
       call(textBackground: textBackground);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ConnectorNode(...).copyWith.fieldName(value)`.
   ///
@@ -407,6 +406,7 @@ class _$ConnectorNodeCWProxyImpl implements _$ConnectorNodeCWProxy {
   /// ```dart
   /// ConnectorNode(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   ConnectorNode call({
     Object? id = const $CopyWithPlaceholder(),
     Object? name = const $CopyWithPlaceholder(),

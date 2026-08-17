@@ -30,7 +30,6 @@ class _$ComponentResponseCWProxyImpl implements _$ComponentResponseCWProxy {
   ComponentResponse component(PublishedComponent component) =>
       call(component: component);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ComponentResponse(...).copyWith.fieldName(value)`.
   ///
@@ -38,6 +37,7 @@ class _$ComponentResponseCWProxyImpl implements _$ComponentResponseCWProxy {
   /// ```dart
   /// ComponentResponse(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   ComponentResponse call({Object? component = const $CopyWithPlaceholder()}) {
     return ComponentResponse(
       component: component == const $CopyWithPlaceholder() || component == null

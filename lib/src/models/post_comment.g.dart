@@ -40,7 +40,6 @@ class _$PostCommentCWProxyImpl implements _$PostCommentCWProxy {
   PostComment clientMeta(ClientMeta? clientMeta) =>
       call(clientMeta: clientMeta);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PostComment(...).copyWith.fieldName(value)`.
   ///
@@ -48,6 +47,7 @@ class _$PostCommentCWProxyImpl implements _$PostCommentCWProxy {
   /// ```dart
   /// PostComment(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   PostComment call({
     Object? message = const $CopyWithPlaceholder(),
     Object? commentId = const $CopyWithPlaceholder(),

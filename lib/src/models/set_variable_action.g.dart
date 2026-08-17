@@ -36,7 +36,6 @@ class _$SetVariableActionCWProxyImpl implements _$SetVariableActionCWProxy {
   SetVariableAction variableValue(VariableData? variableValue) =>
       call(variableValue: variableValue);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `SetVariableAction(...).copyWith.fieldName(value)`.
   ///
@@ -44,6 +43,7 @@ class _$SetVariableActionCWProxyImpl implements _$SetVariableActionCWProxy {
   /// ```dart
   /// SetVariableAction(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   SetVariableAction call({
     Object? variableId = const $CopyWithPlaceholder(),
     Object? variableValue = const $CopyWithPlaceholder(),

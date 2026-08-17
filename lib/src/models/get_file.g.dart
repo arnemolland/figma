@@ -61,7 +61,6 @@ class _$GetFileCWProxyImpl implements _$GetFileCWProxy {
   @override
   GetFile branchData(bool branchData) => call(branchData: branchData);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `GetFile(...).copyWith.fieldName(value)`.
   ///
@@ -69,6 +68,7 @@ class _$GetFileCWProxyImpl implements _$GetFileCWProxy {
   /// ```dart
   /// GetFile(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   GetFile call({
     Object? version = const $CopyWithPlaceholder(),
     Object? ids = const $CopyWithPlaceholder(),

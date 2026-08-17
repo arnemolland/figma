@@ -63,7 +63,6 @@ class _$GradientPaintCWProxyImpl implements _$GradientPaintCWProxy {
   GradientPaint gradientStops(List<ColorStop> gradientStops) =>
       call(gradientStops: gradientStops);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `GradientPaint(...).copyWith.fieldName(value)`.
   ///
@@ -71,6 +70,7 @@ class _$GradientPaintCWProxyImpl implements _$GradientPaintCWProxy {
   /// ```dart
   /// GradientPaint(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   GradientPaint call({
     Object? visible = const $CopyWithPlaceholder(),
     Object? opacity = const $CopyWithPlaceholder(),

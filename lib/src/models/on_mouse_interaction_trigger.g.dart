@@ -30,7 +30,6 @@ class _$OnMouseInteractionTriggerCWProxyImpl
   @override
   OnMouseInteractionTrigger type(TriggerType type) => call(type: type);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `OnMouseInteractionTrigger(...).copyWith.fieldName(value)`.
   ///
@@ -38,6 +37,7 @@ class _$OnMouseInteractionTriggerCWProxyImpl
   /// ```dart
   /// OnMouseInteractionTrigger(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   OnMouseInteractionTrigger call({
     Object? type = const $CopyWithPlaceholder(),
   }) {

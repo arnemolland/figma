@@ -50,7 +50,6 @@ class _$BranchCWProxyImpl implements _$BranchCWProxy {
   Branch lastModified(DateTime lastModified) =>
       call(lastModified: lastModified);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Branch(...).copyWith.fieldName(value)`.
   ///
@@ -58,6 +57,7 @@ class _$BranchCWProxyImpl implements _$BranchCWProxy {
   /// ```dart
   /// Branch(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   Branch call({
     Object? key = const $CopyWithPlaceholder(),
     Object? name = const $CopyWithPlaceholder(),

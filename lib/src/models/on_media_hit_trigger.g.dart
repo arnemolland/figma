@@ -30,7 +30,6 @@ class _$OnMediaHitTriggerCWProxyImpl implements _$OnMediaHitTriggerCWProxy {
   OnMediaHitTrigger mediaHitTime(num mediaHitTime) =>
       call(mediaHitTime: mediaHitTime);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `OnMediaHitTrigger(...).copyWith.fieldName(value)`.
   ///
@@ -38,6 +37,7 @@ class _$OnMediaHitTriggerCWProxyImpl implements _$OnMediaHitTriggerCWProxy {
   /// ```dart
   /// OnMediaHitTrigger(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   OnMediaHitTrigger call({
     Object? mediaHitTime = const $CopyWithPlaceholder(),
   }) {

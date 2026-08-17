@@ -64,7 +64,6 @@ class _$ProjectMetaResponseCWProxyImpl implements _$ProjectMetaResponseCWProxy {
   ProjectMetaResponse createdAt(DateTime createdAt) =>
       call(createdAt: createdAt);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ProjectMetaResponse(...).copyWith.fieldName(value)`.
   ///
@@ -72,6 +71,7 @@ class _$ProjectMetaResponseCWProxyImpl implements _$ProjectMetaResponseCWProxy {
   /// ```dart
   /// ProjectMetaResponse(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   ProjectMetaResponse call({
     Object? id = const $CopyWithPlaceholder(),
     Object? name = const $CopyWithPlaceholder(),

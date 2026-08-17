@@ -44,7 +44,6 @@ class _$VariableDataCWProxyImpl implements _$VariableDataCWProxy {
   @override
   VariableData value(VariableValue? value) => call(value: value);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `VariableData(...).copyWith.fieldName(value)`.
   ///
@@ -52,6 +51,7 @@ class _$VariableDataCWProxyImpl implements _$VariableDataCWProxy {
   /// ```dart
   /// VariableData(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   VariableData call({
     Object? type = const $CopyWithPlaceholder(),
     Object? resolvedType = const $CopyWithPlaceholder(),

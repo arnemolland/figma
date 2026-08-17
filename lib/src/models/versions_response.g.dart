@@ -38,7 +38,6 @@ class _$VersionsResponseCWProxyImpl implements _$VersionsResponseCWProxy {
   VersionsResponse pagination(ResponsePagination pagination) =>
       call(pagination: pagination);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `VersionsResponse(...).copyWith.fieldName(value)`.
   ///
@@ -46,6 +45,7 @@ class _$VersionsResponseCWProxyImpl implements _$VersionsResponseCWProxy {
   /// ```dart
   /// VersionsResponse(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   VersionsResponse call({
     Object? versions = const $CopyWithPlaceholder(),
     Object? pagination = const $CopyWithPlaceholder(),

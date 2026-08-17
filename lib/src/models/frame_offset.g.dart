@@ -34,7 +34,6 @@ class _$FrameOffsetCWProxyImpl implements _$FrameOffsetCWProxy {
   @override
   FrameOffset nodeOffset(Vector nodeOffset) => call(nodeOffset: nodeOffset);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `FrameOffset(...).copyWith.fieldName(value)`.
   ///
@@ -42,6 +41,7 @@ class _$FrameOffsetCWProxyImpl implements _$FrameOffsetCWProxy {
   /// ```dart
   /// FrameOffset(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   FrameOffset call({
     Object? nodeId = const $CopyWithPlaceholder(),
     Object? nodeOffset = const $CopyWithPlaceholder(),

@@ -55,7 +55,6 @@ class _$PutWebhookCWProxyImpl implements _$PutWebhookCWProxy {
   @override
   PutWebhook description(String? description) => call(description: description);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PutWebhook(...).copyWith.fieldName(value)`.
   ///
@@ -63,6 +62,7 @@ class _$PutWebhookCWProxyImpl implements _$PutWebhookCWProxy {
   /// ```dart
   /// PutWebhook(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   PutWebhook call({
     Object? eventType = const $CopyWithPlaceholder(),
     Object? endpoint = const $CopyWithPlaceholder(),

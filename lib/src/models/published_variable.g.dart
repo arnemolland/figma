@@ -71,7 +71,6 @@ class _$PublishedVariableCWProxyImpl implements _$PublishedVariableCWProxy {
   @override
   PublishedVariable updatedAt(DateTime updatedAt) => call(updatedAt: updatedAt);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PublishedVariable(...).copyWith.fieldName(value)`.
   ///
@@ -79,6 +78,7 @@ class _$PublishedVariableCWProxyImpl implements _$PublishedVariableCWProxy {
   /// ```dart
   /// PublishedVariable(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   PublishedVariable call({
     Object? id = const $CopyWithPlaceholder(),
     Object? subscribedId = const $CopyWithPlaceholder(),

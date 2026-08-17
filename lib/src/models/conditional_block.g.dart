@@ -35,7 +35,6 @@ class _$ConditionalBlockCWProxyImpl implements _$ConditionalBlockCWProxy {
   @override
   ConditionalBlock actions(List<Action> actions) => call(actions: actions);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ConditionalBlock(...).copyWith.fieldName(value)`.
   ///
@@ -43,6 +42,7 @@ class _$ConditionalBlockCWProxyImpl implements _$ConditionalBlockCWProxy {
   /// ```dart
   /// ConditionalBlock(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   ConditionalBlock call({
     Object? condition = const $CopyWithPlaceholder(),
     Object? actions = const $CopyWithPlaceholder(),

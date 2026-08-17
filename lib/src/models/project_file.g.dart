@@ -51,7 +51,6 @@ class _$ProjectFileCWProxyImpl implements _$ProjectFileCWProxy {
   ProjectFile lastModified(DateTime lastModified) =>
       call(lastModified: lastModified);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ProjectFile(...).copyWith.fieldName(value)`.
   ///
@@ -59,6 +58,7 @@ class _$ProjectFileCWProxyImpl implements _$ProjectFileCWProxy {
   /// ```dart
   /// ProjectFile(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   ProjectFile call({
     Object? key = const $CopyWithPlaceholder(),
     Object? name = const $CopyWithPlaceholder(),

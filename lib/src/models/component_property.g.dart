@@ -54,7 +54,6 @@ class _$ComponentPropertyCWProxyImpl implements _$ComponentPropertyCWProxy {
   ComponentProperty boundVariables(ComponentPropertyVariables boundVariables) =>
       call(boundVariables: boundVariables);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ComponentProperty(...).copyWith.fieldName(value)`.
   ///
@@ -62,6 +61,7 @@ class _$ComponentPropertyCWProxyImpl implements _$ComponentPropertyCWProxy {
   /// ```dart
   /// ComponentProperty(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   ComponentProperty call({
     Object? type = const $CopyWithPlaceholder(),
     Object? value = const $CopyWithPlaceholder(),

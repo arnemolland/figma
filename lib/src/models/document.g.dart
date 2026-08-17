@@ -105,7 +105,6 @@ class _$DocumentCWProxyImpl implements _$DocumentCWProxy {
   @override
   Document children(List<Canvas> children) => call(children: children);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Document(...).copyWith.fieldName(value)`.
   ///
@@ -113,6 +112,7 @@ class _$DocumentCWProxyImpl implements _$DocumentCWProxy {
   /// ```dart
   /// Document(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   Document call({
     Object? id = const $CopyWithPlaceholder(),
     Object? name = const $CopyWithPlaceholder(),

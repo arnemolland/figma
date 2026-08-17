@@ -90,7 +90,6 @@ class _$PublishedComponentCWProxyImpl implements _$PublishedComponentCWProxy {
   PublishedComponent containingFrame(FrameInfo? containingFrame) =>
       call(containingFrame: containingFrame);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PublishedComponent(...).copyWith.fieldName(value)`.
   ///
@@ -98,6 +97,7 @@ class _$PublishedComponentCWProxyImpl implements _$PublishedComponentCWProxy {
   /// ```dart
   /// PublishedComponent(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   PublishedComponent call({
     Object? key = const $CopyWithPlaceholder(),
     Object? fileKey = const $CopyWithPlaceholder(),

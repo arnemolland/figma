@@ -104,7 +104,6 @@ class _$LocalVariableCWProxyImpl implements _$LocalVariableCWProxy {
   LocalVariable deletedButReferenced(bool deletedButReferenced) =>
       call(deletedButReferenced: deletedButReferenced);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `LocalVariable(...).copyWith.fieldName(value)`.
   ///
@@ -112,6 +111,7 @@ class _$LocalVariableCWProxyImpl implements _$LocalVariableCWProxy {
   /// ```dart
   /// LocalVariable(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   LocalVariable call({
     Object? id = const $CopyWithPlaceholder(),
     Object? name = const $CopyWithPlaceholder(),

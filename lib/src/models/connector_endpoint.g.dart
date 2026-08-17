@@ -44,7 +44,6 @@ class _$ConnectorEndpointCWProxyImpl implements _$ConnectorEndpointCWProxy {
   @override
   ConnectorEndpoint magnet(Magnet? magnet) => call(magnet: magnet);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ConnectorEndpoint(...).copyWith.fieldName(value)`.
   ///
@@ -52,6 +51,7 @@ class _$ConnectorEndpointCWProxyImpl implements _$ConnectorEndpointCWProxy {
   /// ```dart
   /// ConnectorEndpoint(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   ConnectorEndpoint call({
     Object? endpointNodeId = const $CopyWithPlaceholder(),
     Object? position = const $CopyWithPlaceholder(),

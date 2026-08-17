@@ -30,7 +30,6 @@ class _$MeasurementOffsetInnerCWProxyImpl
   @override
   MeasurementOffsetInner relative(num relative) => call(relative: relative);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `MeasurementOffsetInner(...).copyWith.fieldName(value)`.
   ///
@@ -38,6 +37,7 @@ class _$MeasurementOffsetInnerCWProxyImpl
   /// ```dart
   /// MeasurementOffsetInner(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   MeasurementOffsetInner call({
     Object? relative = const $CopyWithPlaceholder(),
   }) {

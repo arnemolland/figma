@@ -34,7 +34,6 @@ class _$CommentFragmentCWProxyImpl implements _$CommentFragmentCWProxy {
   @override
   CommentFragment mention(String? mention) => call(mention: mention);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `CommentFragment(...).copyWith.fieldName(value)`.
   ///
@@ -42,6 +41,7 @@ class _$CommentFragmentCWProxyImpl implements _$CommentFragmentCWProxy {
   /// ```dart
   /// CommentFragment(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   CommentFragment call({
     Object? text = const $CopyWithPlaceholder(),
     Object? mention = const $CopyWithPlaceholder(),

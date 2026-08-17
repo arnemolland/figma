@@ -61,7 +61,6 @@ class _$ConnectorTextBackgroundCWProxyImpl
   ConnectorTextBackground styles(Map<String, String> styles) =>
       call(styles: styles);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ConnectorTextBackground(...).copyWith.fieldName(value)`.
   ///
@@ -69,6 +68,7 @@ class _$ConnectorTextBackgroundCWProxyImpl
   /// ```dart
   /// ConnectorTextBackground(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   ConnectorTextBackground call({
     Object? cornerRadius = const $CopyWithPlaceholder(),
     Object? cornerSmoothing = const $CopyWithPlaceholder(),

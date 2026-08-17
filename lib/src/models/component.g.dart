@@ -63,7 +63,6 @@ class _$ComponentCWProxyImpl implements _$ComponentCWProxy {
   @override
   Component remote(bool remote) => call(remote: remote);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Component(...).copyWith.fieldName(value)`.
   ///
@@ -71,6 +70,7 @@ class _$ComponentCWProxyImpl implements _$ComponentCWProxy {
   /// ```dart
   /// Component(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   Component call({
     Object? key = const $CopyWithPlaceholder(),
     Object? name = const $CopyWithPlaceholder(),

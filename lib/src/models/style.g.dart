@@ -55,7 +55,6 @@ class _$StyleCWProxyImpl implements _$StyleCWProxy {
   @override
   Style styleType(StyleType styleType) => call(styleType: styleType);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Style(...).copyWith.fieldName(value)`.
   ///
@@ -63,6 +62,7 @@ class _$StyleCWProxyImpl implements _$StyleCWProxy {
   /// ```dart
   /// Style(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   Style call({
     Object? key = const $CopyWithPlaceholder(),
     Object? name = const $CopyWithPlaceholder(),

@@ -63,7 +63,6 @@ class _$MultitoneNoiseEffectCWProxyImpl
   @override
   MultitoneNoiseEffect opacity(num opacity) => call(opacity: opacity);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `MultitoneNoiseEffect(...).copyWith.fieldName(value)`.
   ///
@@ -71,6 +70,7 @@ class _$MultitoneNoiseEffectCWProxyImpl
   /// ```dart
   /// MultitoneNoiseEffect(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   MultitoneNoiseEffect call({
     Object? color = const $CopyWithPlaceholder(),
     Object? visible = const $CopyWithPlaceholder(),

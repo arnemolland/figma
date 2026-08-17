@@ -29,7 +29,6 @@ class _$FileMetaResponseCWProxyImpl implements _$FileMetaResponseCWProxy {
   @override
   FileMetaResponse file(FileMeta file) => call(file: file);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `FileMetaResponse(...).copyWith.fieldName(value)`.
   ///
@@ -37,6 +36,7 @@ class _$FileMetaResponseCWProxyImpl implements _$FileMetaResponseCWProxy {
   /// ```dart
   /// FileMetaResponse(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   FileMetaResponse call({Object? file = const $CopyWithPlaceholder()}) {
     return FileMetaResponse(
       file: file == const $CopyWithPlaceholder() || file == null

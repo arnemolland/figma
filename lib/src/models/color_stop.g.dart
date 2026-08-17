@@ -40,7 +40,6 @@ class _$ColorStopCWProxyImpl implements _$ColorStopCWProxy {
   ColorStop boundVariables(ColorStopVariables boundVariables) =>
       call(boundVariables: boundVariables);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ColorStop(...).copyWith.fieldName(value)`.
   ///
@@ -48,6 +47,7 @@ class _$ColorStopCWProxyImpl implements _$ColorStopCWProxy {
   /// ```dart
   /// ColorStop(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   ColorStop call({
     Object? position = const $CopyWithPlaceholder(),
     Object? color = const $CopyWithPlaceholder(),
