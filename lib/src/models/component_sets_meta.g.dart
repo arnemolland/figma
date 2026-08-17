@@ -38,7 +38,6 @@ class _$ComponentSetsMetaCWProxyImpl implements _$ComponentSetsMetaCWProxy {
   @override
   ComponentSetsMeta cursor(ResponseCursor? cursor) => call(cursor: cursor);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ComponentSetsMeta(...).copyWith.fieldName(value)`.
   ///
@@ -46,6 +45,7 @@ class _$ComponentSetsMetaCWProxyImpl implements _$ComponentSetsMetaCWProxy {
   /// ```dart
   /// ComponentSetsMeta(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   ComponentSetsMeta call({
     Object? componentSets = const $CopyWithPlaceholder(),
     Object? cursor = const $CopyWithPlaceholder(),

@@ -30,7 +30,6 @@ class _$MeasurementOffsetOuterCWProxyImpl
   @override
   MeasurementOffsetOuter fixed(num fixed) => call(fixed: fixed);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `MeasurementOffsetOuter(...).copyWith.fieldName(value)`.
   ///
@@ -38,6 +37,7 @@ class _$MeasurementOffsetOuterCWProxyImpl
   /// ```dart
   /// MeasurementOffsetOuter(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   MeasurementOffsetOuter call({Object? fixed = const $CopyWithPlaceholder()}) {
     return MeasurementOffsetOuter(
       fixed: fixed == const $CopyWithPlaceholder() || fixed == null

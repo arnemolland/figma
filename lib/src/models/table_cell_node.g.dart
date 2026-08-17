@@ -306,7 +306,6 @@ class _$TableCellNodeCWProxyImpl implements _$TableCellNodeCWProxy {
   @override
   TableCellNode characters(String characters) => call(characters: characters);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `TableCellNode(...).copyWith.fieldName(value)`.
   ///
@@ -314,6 +313,7 @@ class _$TableCellNodeCWProxyImpl implements _$TableCellNodeCWProxy {
   /// ```dart
   /// TableCellNode(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   TableCellNode call({
     Object? id = const $CopyWithPlaceholder(),
     Object? name = const $CopyWithPlaceholder(),

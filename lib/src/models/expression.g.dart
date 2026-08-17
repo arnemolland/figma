@@ -39,7 +39,6 @@ class _$ExpressionCWProxyImpl implements _$ExpressionCWProxy {
   Expression expressionArguments(List<VariableData> expressionArguments) =>
       call(expressionArguments: expressionArguments);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Expression(...).copyWith.fieldName(value)`.
   ///
@@ -47,6 +46,7 @@ class _$ExpressionCWProxyImpl implements _$ExpressionCWProxy {
   /// ```dart
   /// Expression(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   Expression call({
     Object? expressionFunction = const $CopyWithPlaceholder(),
     Object? expressionArguments = const $CopyWithPlaceholder(),

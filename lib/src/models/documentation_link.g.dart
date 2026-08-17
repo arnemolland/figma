@@ -29,7 +29,6 @@ class _$DocumentationLinkCWProxyImpl implements _$DocumentationLinkCWProxy {
   @override
   DocumentationLink uri(String uri) => call(uri: uri);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `DocumentationLink(...).copyWith.fieldName(value)`.
   ///
@@ -37,6 +36,7 @@ class _$DocumentationLinkCWProxyImpl implements _$DocumentationLinkCWProxy {
   /// ```dart
   /// DocumentationLink(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   DocumentationLink call({Object? uri = const $CopyWithPlaceholder()}) {
     return DocumentationLink(
       uri: uri == const $CopyWithPlaceholder() || uri == null

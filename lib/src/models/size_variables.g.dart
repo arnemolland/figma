@@ -34,7 +34,6 @@ class _$SizeVariablesCWProxyImpl implements _$SizeVariablesCWProxy {
   @override
   SizeVariables y(VariableAlias? y) => call(y: y);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `SizeVariables(...).copyWith.fieldName(value)`.
   ///
@@ -42,6 +41,7 @@ class _$SizeVariablesCWProxyImpl implements _$SizeVariablesCWProxy {
   /// ```dart
   /// SizeVariables(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   SizeVariables call({
     Object? x = const $CopyWithPlaceholder(),
     Object? y = const $CopyWithPlaceholder(),

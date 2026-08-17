@@ -34,7 +34,6 @@ class _$DevStatusCWProxyImpl implements _$DevStatusCWProxy {
   @override
   DevStatus description(String? description) => call(description: description);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `DevStatus(...).copyWith.fieldName(value)`.
   ///
@@ -42,6 +41,7 @@ class _$DevStatusCWProxyImpl implements _$DevStatusCWProxy {
   /// ```dart
   /// DevStatus(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   DevStatus call({
     Object? type = const $CopyWithPlaceholder(),
     Object? description = const $CopyWithPlaceholder(),

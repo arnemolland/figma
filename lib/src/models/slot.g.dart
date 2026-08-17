@@ -575,7 +575,6 @@ class _$SlotCWProxyImpl implements _$SlotCWProxy {
   @override
   Slot devStatus(DevStatus? devStatus) => call(devStatus: devStatus);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Slot(...).copyWith.fieldName(value)`.
   ///
@@ -583,6 +582,7 @@ class _$SlotCWProxyImpl implements _$SlotCWProxy {
   /// ```dart
   /// Slot(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   Slot call({
     Object? id = const $CopyWithPlaceholder(),
     Object? name = const $CopyWithPlaceholder(),

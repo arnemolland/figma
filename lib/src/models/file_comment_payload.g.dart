@@ -89,7 +89,6 @@ class _$FileCommentPayloadCWProxyImpl implements _$FileCommentPayloadCWProxy {
   FileCommentPayload triggeredBy(User triggeredBy) =>
       call(triggeredBy: triggeredBy);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `FileCommentPayload(...).copyWith.fieldName(value)`.
   ///
@@ -97,6 +96,7 @@ class _$FileCommentPayloadCWProxyImpl implements _$FileCommentPayloadCWProxy {
   /// ```dart
   /// FileCommentPayload(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   FileCommentPayload call({
     Object? passcode = const $CopyWithPlaceholder(),
     Object? timestamp = const $CopyWithPlaceholder(),

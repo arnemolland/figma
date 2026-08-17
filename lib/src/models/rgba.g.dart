@@ -44,7 +44,6 @@ class _$RgbaCWProxyImpl implements _$RgbaCWProxy {
   @override
   Rgba a(num a) => call(a: a);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Rgba(...).copyWith.fieldName(value)`.
   ///
@@ -52,6 +51,7 @@ class _$RgbaCWProxyImpl implements _$RgbaCWProxy {
   /// ```dart
   /// Rgba(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   Rgba call({
     Object? r = const $CopyWithPlaceholder(),
     Object? g = const $CopyWithPlaceholder(),

@@ -75,7 +75,6 @@ class _$DropShadowEffectCWProxyImpl implements _$DropShadowEffectCWProxy {
   DropShadowEffect showShadowBehindNode(bool showShadowBehindNode) =>
       call(showShadowBehindNode: showShadowBehindNode);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `DropShadowEffect(...).copyWith.fieldName(value)`.
   ///
@@ -83,6 +82,7 @@ class _$DropShadowEffectCWProxyImpl implements _$DropShadowEffectCWProxy {
   /// ```dart
   /// DropShadowEffect(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   DropShadowEffect call({
     Object? color = const $CopyWithPlaceholder(),
     Object? blendMode = const $CopyWithPlaceholder(),

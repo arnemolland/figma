@@ -62,7 +62,6 @@ class _$FileDeletePayloadCWProxyImpl implements _$FileDeletePayloadCWProxy {
   FileDeletePayload triggeredBy(User triggeredBy) =>
       call(triggeredBy: triggeredBy);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `FileDeletePayload(...).copyWith.fieldName(value)`.
   ///
@@ -70,6 +69,7 @@ class _$FileDeletePayloadCWProxyImpl implements _$FileDeletePayloadCWProxy {
   /// ```dart
   /// FileDeletePayload(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   FileDeletePayload call({
     Object? passcode = const $CopyWithPlaceholder(),
     Object? timestamp = const $CopyWithPlaceholder(),

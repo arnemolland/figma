@@ -34,7 +34,6 @@ class _$SizeCWProxyImpl implements _$SizeCWProxy {
   @override
   Size height(num height) => call(height: height);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Size(...).copyWith.fieldName(value)`.
   ///
@@ -42,6 +41,7 @@ class _$SizeCWProxyImpl implements _$SizeCWProxy {
   /// ```dart
   /// Size(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   Size call({
     Object? width = const $CopyWithPlaceholder(),
     Object? height = const $CopyWithPlaceholder(),

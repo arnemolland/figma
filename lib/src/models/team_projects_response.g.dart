@@ -36,7 +36,6 @@ class _$TeamProjectsResponseCWProxyImpl
   TeamProjectsResponse projects(List<Project> projects) =>
       call(projects: projects);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `TeamProjectsResponse(...).copyWith.fieldName(value)`.
   ///
@@ -44,6 +43,7 @@ class _$TeamProjectsResponseCWProxyImpl
   /// ```dart
   /// TeamProjectsResponse(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   TeamProjectsResponse call({
     Object? name = const $CopyWithPlaceholder(),
     Object? projects = const $CopyWithPlaceholder(),

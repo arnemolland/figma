@@ -81,7 +81,6 @@ class _$TypeStyleVariablesCWProxyImpl implements _$TypeStyleVariablesCWProxy {
   TypeStyleVariables paragraphIndent(VariableAlias? paragraphIndent) =>
       call(paragraphIndent: paragraphIndent);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `TypeStyleVariables(...).copyWith.fieldName(value)`.
   ///
@@ -89,6 +88,7 @@ class _$TypeStyleVariablesCWProxyImpl implements _$TypeStyleVariablesCWProxy {
   /// ```dart
   /// TypeStyleVariables(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   TypeStyleVariables call({
     Object? fontFamily = const $CopyWithPlaceholder(),
     Object? fontSize = const $CopyWithPlaceholder(),

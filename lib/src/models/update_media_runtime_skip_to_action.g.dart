@@ -40,7 +40,6 @@ class _$UpdateMediaRuntimeSkipToActionCWProxyImpl
   UpdateMediaRuntimeSkipToAction newTimestamp(num newTimestamp) =>
       call(newTimestamp: newTimestamp);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `UpdateMediaRuntimeSkipToAction(...).copyWith.fieldName(value)`.
   ///
@@ -48,6 +47,7 @@ class _$UpdateMediaRuntimeSkipToActionCWProxyImpl
   /// ```dart
   /// UpdateMediaRuntimeSkipToAction(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   UpdateMediaRuntimeSkipToAction call({
     Object? destinationId = const $CopyWithPlaceholder(),
     Object? newTimestamp = const $CopyWithPlaceholder(),

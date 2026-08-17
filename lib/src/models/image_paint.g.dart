@@ -87,7 +87,6 @@ class _$ImagePaintCWProxyImpl implements _$ImagePaintCWProxy {
   @override
   ImagePaint gifRef(String? gifRef) => call(gifRef: gifRef);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ImagePaint(...).copyWith.fieldName(value)`.
   ///
@@ -95,6 +94,7 @@ class _$ImagePaintCWProxyImpl implements _$ImagePaintCWProxy {
   /// ```dart
   /// ImagePaint(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   ImagePaint call({
     Object? visible = const $CopyWithPlaceholder(),
     Object? opacity = const $CopyWithPlaceholder(),

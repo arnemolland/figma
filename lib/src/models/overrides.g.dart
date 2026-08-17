@@ -35,7 +35,6 @@ class _$OverridesCWProxyImpl implements _$OverridesCWProxy {
   Overrides overriddenFields(List<String> overriddenFields) =>
       call(overriddenFields: overriddenFields);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Overrides(...).copyWith.fieldName(value)`.
   ///
@@ -43,6 +42,7 @@ class _$OverridesCWProxyImpl implements _$OverridesCWProxy {
   /// ```dart
   /// Overrides(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   Overrides call({
     Object? id = const $CopyWithPlaceholder(),
     Object? overriddenFields = const $CopyWithPlaceholder(),

@@ -39,7 +39,6 @@ class _$LayoutConstraintCWProxyImpl implements _$LayoutConstraintCWProxy {
   LayoutConstraint horizontal(HorizontalConstraint horizontal) =>
       call(horizontal: horizontal);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `LayoutConstraint(...).copyWith.fieldName(value)`.
   ///
@@ -47,6 +46,7 @@ class _$LayoutConstraintCWProxyImpl implements _$LayoutConstraintCWProxy {
   /// ```dart
   /// LayoutConstraint(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   LayoutConstraint call({
     Object? vertical = const $CopyWithPlaceholder(),
     Object? horizontal = const $CopyWithPlaceholder(),

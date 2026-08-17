@@ -435,7 +435,6 @@ class _$EllipseNodeCWProxyImpl implements _$EllipseNodeCWProxy {
   @override
   EllipseNode arcData(ArcData arcData) => call(arcData: arcData);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `EllipseNode(...).copyWith.fieldName(value)`.
   ///
@@ -443,6 +442,7 @@ class _$EllipseNodeCWProxyImpl implements _$EllipseNodeCWProxy {
   /// ```dart
   /// EllipseNode(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   EllipseNode call({
     Object? id = const $CopyWithPlaceholder(),
     Object? name = const $CopyWithPlaceholder(),

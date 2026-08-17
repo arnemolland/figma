@@ -34,7 +34,6 @@ class _$StylesMetaCWProxyImpl implements _$StylesMetaCWProxy {
   @override
   StylesMeta cursor(ResponseCursor? cursor) => call(cursor: cursor);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `StylesMeta(...).copyWith.fieldName(value)`.
   ///
@@ -42,6 +41,7 @@ class _$StylesMetaCWProxyImpl implements _$StylesMetaCWProxy {
   /// ```dart
   /// StylesMeta(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   StylesMeta call({
     Object? styles = const $CopyWithPlaceholder(),
     Object? cursor = const $CopyWithPlaceholder(),

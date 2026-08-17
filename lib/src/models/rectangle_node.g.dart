@@ -465,7 +465,6 @@ class _$RectangleNodeCWProxyImpl implements _$RectangleNodeCWProxy {
     StrokeWeights? individualStrokeWeights,
   ) => call(individualStrokeWeights: individualStrokeWeights);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `RectangleNode(...).copyWith.fieldName(value)`.
   ///
@@ -473,6 +472,7 @@ class _$RectangleNodeCWProxyImpl implements _$RectangleNodeCWProxy {
   /// ```dart
   /// RectangleNode(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   RectangleNode call({
     Object? id = const $CopyWithPlaceholder(),
     Object? name = const $CopyWithPlaceholder(),

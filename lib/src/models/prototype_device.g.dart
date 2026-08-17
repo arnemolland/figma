@@ -51,7 +51,6 @@ class _$PrototypeDeviceCWProxyImpl implements _$PrototypeDeviceCWProxy {
   PrototypeDevice rotation(PrototypeDeviceRotation rotation) =>
       call(rotation: rotation);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PrototypeDevice(...).copyWith.fieldName(value)`.
   ///
@@ -59,6 +58,7 @@ class _$PrototypeDeviceCWProxyImpl implements _$PrototypeDeviceCWProxy {
   /// ```dart
   /// PrototypeDevice(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   PrototypeDevice call({
     Object? type = const $CopyWithPlaceholder(),
     Object? size = const $CopyWithPlaceholder(),

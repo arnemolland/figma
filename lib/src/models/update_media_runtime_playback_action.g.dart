@@ -40,7 +40,6 @@ class _$UpdateMediaRuntimePlaybackActionCWProxyImpl
   UpdateMediaRuntimePlaybackAction mediaAction(MediaAction mediaAction) =>
       call(mediaAction: mediaAction);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `UpdateMediaRuntimePlaybackAction(...).copyWith.fieldName(value)`.
   ///
@@ -48,6 +47,7 @@ class _$UpdateMediaRuntimePlaybackActionCWProxyImpl
   /// ```dart
   /// UpdateMediaRuntimePlaybackAction(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   UpdateMediaRuntimePlaybackAction call({
     Object? destinationId = const $CopyWithPlaceholder(),
     Object? mediaAction = const $CopyWithPlaceholder(),

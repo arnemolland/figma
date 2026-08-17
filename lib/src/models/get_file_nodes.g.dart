@@ -55,7 +55,6 @@ class _$GetFileNodesCWProxyImpl implements _$GetFileNodesCWProxy {
   @override
   GetFileNodes pluginData(String? pluginData) => call(pluginData: pluginData);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `GetFileNodes(...).copyWith.fieldName(value)`.
   ///
@@ -63,6 +62,7 @@ class _$GetFileNodesCWProxyImpl implements _$GetFileNodesCWProxy {
   /// ```dart
   /// GetFileNodes(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   GetFileNodes call({
     Object? ids = const $CopyWithPlaceholder(),
     Object? version = const $CopyWithPlaceholder(),

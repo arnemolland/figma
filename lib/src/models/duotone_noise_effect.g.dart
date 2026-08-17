@@ -63,7 +63,6 @@ class _$DuotoneNoiseEffectCWProxyImpl implements _$DuotoneNoiseEffectCWProxy {
   DuotoneNoiseEffect secondaryColor(Rgba secondaryColor) =>
       call(secondaryColor: secondaryColor);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `DuotoneNoiseEffect(...).copyWith.fieldName(value)`.
   ///
@@ -71,6 +70,7 @@ class _$DuotoneNoiseEffectCWProxyImpl implements _$DuotoneNoiseEffectCWProxy {
   /// ```dart
   /// DuotoneNoiseEffect(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   DuotoneNoiseEffect call({
     Object? color = const $CopyWithPlaceholder(),
     Object? visible = const $CopyWithPlaceholder(),

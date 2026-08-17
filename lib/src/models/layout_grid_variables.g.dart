@@ -52,7 +52,6 @@ class _$LayoutGridVariablesCWProxyImpl implements _$LayoutGridVariablesCWProxy {
   @override
   LayoutGridVariables offset(VariableAlias? offset) => call(offset: offset);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `LayoutGridVariables(...).copyWith.fieldName(value)`.
   ///
@@ -60,6 +59,7 @@ class _$LayoutGridVariablesCWProxyImpl implements _$LayoutGridVariablesCWProxy {
   /// ```dart
   /// LayoutGridVariables(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   LayoutGridVariables call({
     Object? gutterSize = const $CopyWithPlaceholder(),
     Object? numSections = const $CopyWithPlaceholder(),

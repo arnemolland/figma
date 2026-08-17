@@ -436,7 +436,6 @@ class _$WashiTapeNodeCWProxyImpl implements _$WashiTapeNodeCWProxy {
   WashiTapeNode interactions(List<Interaction> interactions) =>
       call(interactions: interactions);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `WashiTapeNode(...).copyWith.fieldName(value)`.
   ///
@@ -444,6 +443,7 @@ class _$WashiTapeNodeCWProxyImpl implements _$WashiTapeNodeCWProxy {
   /// ```dart
   /// WashiTapeNode(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   WashiTapeNode call({
     Object? id = const $CopyWithPlaceholder(),
     Object? name = const $CopyWithPlaceholder(),

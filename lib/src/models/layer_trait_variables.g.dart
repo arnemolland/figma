@@ -282,7 +282,6 @@ class _$LayerTraitVariablesCWProxyImpl implements _$LayerTraitVariablesCWProxy {
     RectangleCornerRadiiVariables? rectangleCornerRadii,
   ) => call(rectangleCornerRadii: rectangleCornerRadii);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `LayerTraitVariables(...).copyWith.fieldName(value)`.
   ///
@@ -290,6 +289,7 @@ class _$LayerTraitVariablesCWProxyImpl implements _$LayerTraitVariablesCWProxy {
   /// ```dart
   /// LayerTraitVariables(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   LayerTraitVariables call({
     Object? size = const $CopyWithPlaceholder(),
     Object? individualStrokeWeights = const $CopyWithPlaceholder(),

@@ -39,7 +39,6 @@ class _$UserCWProxyImpl implements _$UserCWProxy {
   @override
   User imgUrl(String imgUrl) => call(imgUrl: imgUrl);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `User(...).copyWith.fieldName(value)`.
   ///
@@ -47,6 +46,7 @@ class _$UserCWProxyImpl implements _$UserCWProxy {
   /// ```dart
   /// User(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   User call({
     Object? id = const $CopyWithPlaceholder(),
     Object? handle = const $CopyWithPlaceholder(),

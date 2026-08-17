@@ -29,7 +29,6 @@ class _$BlurEffectVariablesCWProxyImpl implements _$BlurEffectVariablesCWProxy {
   @override
   BlurEffectVariables radius(VariableAlias? radius) => call(radius: radius);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `BlurEffectVariables(...).copyWith.fieldName(value)`.
   ///
@@ -37,6 +36,7 @@ class _$BlurEffectVariablesCWProxyImpl implements _$BlurEffectVariablesCWProxy {
   /// ```dart
   /// BlurEffectVariables(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   BlurEffectVariables call({Object? radius = const $CopyWithPlaceholder()}) {
     return BlurEffectVariables(
       radius: radius == const $CopyWithPlaceholder()

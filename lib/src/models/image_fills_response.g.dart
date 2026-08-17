@@ -29,7 +29,6 @@ class _$ImageFillsResponseCWProxyImpl implements _$ImageFillsResponseCWProxy {
   @override
   ImageFillsResponse meta(ImageFillsMeta meta) => call(meta: meta);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ImageFillsResponse(...).copyWith.fieldName(value)`.
   ///
@@ -37,6 +36,7 @@ class _$ImageFillsResponseCWProxyImpl implements _$ImageFillsResponseCWProxy {
   /// ```dart
   /// ImageFillsResponse(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   ImageFillsResponse call({Object? meta = const $CopyWithPlaceholder()}) {
     return ImageFillsResponse(
       meta: meta == const $CopyWithPlaceholder() || meta == null

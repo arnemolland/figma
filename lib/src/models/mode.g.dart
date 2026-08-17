@@ -39,7 +39,6 @@ class _$ModeCWProxyImpl implements _$ModeCWProxy {
   @override
   Mode name(String name) => call(name: name);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Mode(...).copyWith.fieldName(value)`.
   ///
@@ -47,6 +46,7 @@ class _$ModeCWProxyImpl implements _$ModeCWProxy {
   /// ```dart
   /// Mode(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   Mode call({
     Object? modeId = const $CopyWithPlaceholder(),
     Object? parentModeId = const $CopyWithPlaceholder(),

@@ -34,7 +34,6 @@ class _$ResponseCursorCWProxyImpl implements _$ResponseCursorCWProxy {
   @override
   ResponseCursor after(num? after) => call(after: after);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ResponseCursor(...).copyWith.fieldName(value)`.
   ///
@@ -42,6 +41,7 @@ class _$ResponseCursorCWProxyImpl implements _$ResponseCursorCWProxy {
   /// ```dart
   /// ResponseCursor(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   ResponseCursor call({
     Object? before = const $CopyWithPlaceholder(),
     Object? after = const $CopyWithPlaceholder(),

@@ -29,7 +29,6 @@ class _$AfterTimeoutTriggerCWProxyImpl implements _$AfterTimeoutTriggerCWProxy {
   @override
   AfterTimeoutTrigger timeout(num timeout) => call(timeout: timeout);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `AfterTimeoutTrigger(...).copyWith.fieldName(value)`.
   ///
@@ -37,6 +36,7 @@ class _$AfterTimeoutTriggerCWProxyImpl implements _$AfterTimeoutTriggerCWProxy {
   /// ```dart
   /// AfterTimeoutTrigger(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   AfterTimeoutTrigger call({Object? timeout = const $CopyWithPlaceholder()}) {
     return AfterTimeoutTrigger(
       timeout: timeout == const $CopyWithPlaceholder() || timeout == null

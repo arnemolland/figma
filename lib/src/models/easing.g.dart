@@ -45,7 +45,6 @@ class _$EasingCWProxyImpl implements _$EasingCWProxy {
   Easing easingFunctionSpring(Spring? easingFunctionSpring) =>
       call(easingFunctionSpring: easingFunctionSpring);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Easing(...).copyWith.fieldName(value)`.
   ///
@@ -53,6 +52,7 @@ class _$EasingCWProxyImpl implements _$EasingCWProxy {
   /// ```dart
   /// Easing(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   Easing call({
     Object? type = const $CopyWithPlaceholder(),
     Object? easingFunctionCubicBezier = const $CopyWithPlaceholder(),

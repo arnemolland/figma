@@ -44,7 +44,6 @@ class _$RectangleCWProxyImpl implements _$RectangleCWProxy {
   @override
   Rectangle height(num height) => call(height: height);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Rectangle(...).copyWith.fieldName(value)`.
   ///
@@ -52,6 +51,7 @@ class _$RectangleCWProxyImpl implements _$RectangleCWProxy {
   /// ```dart
   /// Rectangle(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   Rectangle call({
     Object? x = const $CopyWithPlaceholder(),
     Object? y = const $CopyWithPlaceholder(),

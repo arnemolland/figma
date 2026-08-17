@@ -88,7 +88,6 @@ class _$FileVersionUpdatePayloadCWProxyImpl
   FileVersionUpdatePayload versionId(String versionId) =>
       call(versionId: versionId);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `FileVersionUpdatePayload(...).copyWith.fieldName(value)`.
   ///
@@ -96,6 +95,7 @@ class _$FileVersionUpdatePayloadCWProxyImpl
   /// ```dart
   /// FileVersionUpdatePayload(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   FileVersionUpdatePayload call({
     Object? passcode = const $CopyWithPlaceholder(),
     Object? timestamp = const $CopyWithPlaceholder(),

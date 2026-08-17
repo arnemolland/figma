@@ -29,7 +29,6 @@ class _$SolidPaintVariablesCWProxyImpl implements _$SolidPaintVariablesCWProxy {
   @override
   SolidPaintVariables color(VariableAlias? color) => call(color: color);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `SolidPaintVariables(...).copyWith.fieldName(value)`.
   ///
@@ -37,6 +36,7 @@ class _$SolidPaintVariablesCWProxyImpl implements _$SolidPaintVariablesCWProxy {
   /// ```dart
   /// SolidPaintVariables(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   SolidPaintVariables call({Object? color = const $CopyWithPlaceholder()}) {
     return SolidPaintVariables(
       color: color == const $CopyWithPlaceholder()

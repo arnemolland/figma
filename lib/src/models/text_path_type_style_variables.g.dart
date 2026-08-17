@@ -61,7 +61,6 @@ class _$TextPathTypeStyleVariablesCWProxyImpl
   TextPathTypeStyleVariables letterSpacing(VariableAlias? letterSpacing) =>
       call(letterSpacing: letterSpacing);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `TextPathTypeStyleVariables(...).copyWith.fieldName(value)`.
   ///
@@ -69,6 +68,7 @@ class _$TextPathTypeStyleVariablesCWProxyImpl
   /// ```dart
   /// TextPathTypeStyleVariables(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   TextPathTypeStyleVariables call({
     Object? fontFamily = const $CopyWithPlaceholder(),
     Object? fontSize = const $CopyWithPlaceholder(),

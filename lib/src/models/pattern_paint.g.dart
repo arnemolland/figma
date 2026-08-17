@@ -83,7 +83,6 @@ class _$PatternPaintCWProxyImpl implements _$PatternPaintCWProxy {
   PatternPaint verticalAlignment(PatternAlignment verticalAlignment) =>
       call(verticalAlignment: verticalAlignment);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PatternPaint(...).copyWith.fieldName(value)`.
   ///
@@ -91,6 +90,7 @@ class _$PatternPaintCWProxyImpl implements _$PatternPaintCWProxy {
   /// ```dart
   /// PatternPaint(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   PatternPaint call({
     Object? visible = const $CopyWithPlaceholder(),
     Object? opacity = const $CopyWithPlaceholder(),

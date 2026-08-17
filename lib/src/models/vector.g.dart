@@ -34,7 +34,6 @@ class _$VectorCWProxyImpl implements _$VectorCWProxy {
   @override
   Vector y(num y) => call(y: y);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Vector(...).copyWith.fieldName(value)`.
   ///
@@ -42,6 +41,7 @@ class _$VectorCWProxyImpl implements _$VectorCWProxy {
   /// ```dart
   /// Vector(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   Vector call({
     Object? x = const $CopyWithPlaceholder(),
     Object? y = const $CopyWithPlaceholder(),

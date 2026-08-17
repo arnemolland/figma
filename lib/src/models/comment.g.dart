@@ -85,7 +85,6 @@ class _$CommentCWProxyImpl implements _$CommentCWProxy {
   @override
   Comment reactions(List<Reaction> reactions) => call(reactions: reactions);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Comment(...).copyWith.fieldName(value)`.
   ///
@@ -93,6 +92,7 @@ class _$CommentCWProxyImpl implements _$CommentCWProxy {
   /// ```dart
   /// Comment(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   Comment call({
     Object? id = const $CopyWithPlaceholder(),
     Object? clientMeta = const $CopyWithPlaceholder(),

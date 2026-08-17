@@ -89,7 +89,6 @@ class _$GetImagesCWProxyImpl implements _$GetImagesCWProxy {
   GetImages useAbsoluteBounds(bool useAbsoluteBounds) =>
       call(useAbsoluteBounds: useAbsoluteBounds);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `GetImages(...).copyWith.fieldName(value)`.
   ///
@@ -97,6 +96,7 @@ class _$GetImagesCWProxyImpl implements _$GetImagesCWProxy {
   /// ```dart
   /// GetImages(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   GetImages call({
     Object? ids = const $CopyWithPlaceholder(),
     Object? version = const $CopyWithPlaceholder(),

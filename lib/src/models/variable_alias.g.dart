@@ -29,7 +29,6 @@ class _$VariableAliasCWProxyImpl implements _$VariableAliasCWProxy {
   @override
   VariableAlias id(String id) => call(id: id);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `VariableAlias(...).copyWith.fieldName(value)`.
   ///
@@ -37,6 +36,7 @@ class _$VariableAliasCWProxyImpl implements _$VariableAliasCWProxy {
   /// ```dart
   /// VariableAlias(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   VariableAlias call({Object? id = const $CopyWithPlaceholder()}) {
     return VariableAlias(
       id: id == const $CopyWithPlaceholder() || id == null

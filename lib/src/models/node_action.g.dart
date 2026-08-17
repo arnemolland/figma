@@ -79,7 +79,6 @@ class _$NodeActionCWProxyImpl implements _$NodeActionCWProxy {
   NodeAction resetInteractiveComponents(bool? resetInteractiveComponents) =>
       call(resetInteractiveComponents: resetInteractiveComponents);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `NodeAction(...).copyWith.fieldName(value)`.
   ///
@@ -87,6 +86,7 @@ class _$NodeActionCWProxyImpl implements _$NodeActionCWProxy {
   /// ```dart
   /// NodeAction(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   NodeAction call({
     Object? destinationId = const $CopyWithPlaceholder(),
     Object? navigation = const $CopyWithPlaceholder(),

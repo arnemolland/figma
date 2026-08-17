@@ -34,7 +34,6 @@ class _$OnKeyDownTriggerCWProxyImpl implements _$OnKeyDownTriggerCWProxy {
   @override
   OnKeyDownTrigger keyCodes(List<num> keyCodes) => call(keyCodes: keyCodes);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `OnKeyDownTrigger(...).copyWith.fieldName(value)`.
   ///
@@ -42,6 +41,7 @@ class _$OnKeyDownTriggerCWProxyImpl implements _$OnKeyDownTriggerCWProxy {
   /// ```dart
   /// OnKeyDownTrigger(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   OnKeyDownTrigger call({
     Object? device = const $CopyWithPlaceholder(),
     Object? keyCodes = const $CopyWithPlaceholder(),

@@ -58,7 +58,6 @@ class _$DirectionalTransitionCWProxyImpl
   DirectionalTransition matchLayers(bool? matchLayers) =>
       call(matchLayers: matchLayers);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `DirectionalTransition(...).copyWith.fieldName(value)`.
   ///
@@ -66,6 +65,7 @@ class _$DirectionalTransitionCWProxyImpl
   /// ```dart
   /// DirectionalTransition(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   DirectionalTransition call({
     Object? type = const $CopyWithPlaceholder(),
     Object? direction = const $CopyWithPlaceholder(),

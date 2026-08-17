@@ -68,7 +68,6 @@ class _$PostWebhookCWProxyImpl implements _$PostWebhookCWProxy {
   PostWebhook description(String? description) =>
       call(description: description);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PostWebhook(...).copyWith.fieldName(value)`.
   ///
@@ -76,6 +75,7 @@ class _$PostWebhookCWProxyImpl implements _$PostWebhookCWProxy {
   /// ```dart
   /// PostWebhook(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   PostWebhook call({
     Object? eventType = const $CopyWithPlaceholder(),
     Object? context = const $CopyWithPlaceholder(),

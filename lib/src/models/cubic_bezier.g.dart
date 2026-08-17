@@ -44,7 +44,6 @@ class _$CubicBezierCWProxyImpl implements _$CubicBezierCWProxy {
   @override
   CubicBezier y2(num y2) => call(y2: y2);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `CubicBezier(...).copyWith.fieldName(value)`.
   ///
@@ -52,6 +51,7 @@ class _$CubicBezierCWProxyImpl implements _$CubicBezierCWProxy {
   /// ```dart
   /// CubicBezier(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   CubicBezier call({
     Object? x1 = const $CopyWithPlaceholder(),
     Object? y1 = const $CopyWithPlaceholder(),

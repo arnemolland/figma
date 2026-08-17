@@ -72,7 +72,6 @@ class _$ProgressiveBlurEffectCWProxyImpl
   ProgressiveBlurEffect endOffset(Vector endOffset) =>
       call(endOffset: endOffset);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ProgressiveBlurEffect(...).copyWith.fieldName(value)`.
   ///
@@ -80,6 +79,7 @@ class _$ProgressiveBlurEffectCWProxyImpl
   /// ```dart
   /// ProgressiveBlurEffect(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   ProgressiveBlurEffect call({
     Object? type = const $CopyWithPlaceholder(),
     Object? visible = const $CopyWithPlaceholder(),

@@ -94,7 +94,6 @@ class _$PublishedStyleCWProxyImpl implements _$PublishedStyleCWProxy {
   PublishedStyle sortPosition(String sortPosition) =>
       call(sortPosition: sortPosition);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PublishedStyle(...).copyWith.fieldName(value)`.
   ///
@@ -102,6 +101,7 @@ class _$PublishedStyleCWProxyImpl implements _$PublishedStyleCWProxy {
   /// ```dart
   /// PublishedStyle(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   PublishedStyle call({
     Object? key = const $CopyWithPlaceholder(),
     Object? fileKey = const $CopyWithPlaceholder(),

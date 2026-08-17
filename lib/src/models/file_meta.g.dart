@@ -94,7 +94,6 @@ class _$FileMetaCWProxyImpl implements _$FileMetaCWProxy {
   @override
   FileMeta version(String? version) => call(version: version);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `FileMeta(...).copyWith.fieldName(value)`.
   ///
@@ -102,6 +101,7 @@ class _$FileMetaCWProxyImpl implements _$FileMetaCWProxy {
   /// ```dart
   /// FileMeta(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   FileMeta call({
     Object? name = const $CopyWithPlaceholder(),
     Object? folderName = const $CopyWithPlaceholder(),

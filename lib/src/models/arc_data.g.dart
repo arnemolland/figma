@@ -40,7 +40,6 @@ class _$ArcDataCWProxyImpl implements _$ArcDataCWProxy {
   @override
   ArcData innerRadius(num innerRadius) => call(innerRadius: innerRadius);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ArcData(...).copyWith.fieldName(value)`.
   ///
@@ -48,6 +47,7 @@ class _$ArcDataCWProxyImpl implements _$ArcDataCWProxy {
   /// ```dart
   /// ArcData(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   ArcData call({
     Object? startingAngle = const $CopyWithPlaceholder(),
     Object? endingAngle = const $CopyWithPlaceholder(),

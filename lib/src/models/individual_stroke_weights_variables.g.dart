@@ -53,7 +53,6 @@ class _$IndividualStrokeWeightsVariablesCWProxyImpl
   IndividualStrokeWeightsVariables right(VariableAlias? right) =>
       call(right: right);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `IndividualStrokeWeightsVariables(...).copyWith.fieldName(value)`.
   ///
@@ -61,6 +60,7 @@ class _$IndividualStrokeWeightsVariablesCWProxyImpl
   /// ```dart
   /// IndividualStrokeWeightsVariables(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   IndividualStrokeWeightsVariables call({
     Object? top = const $CopyWithPlaceholder(),
     Object? bottom = const $CopyWithPlaceholder(),

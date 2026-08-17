@@ -31,7 +31,6 @@ class _$ComponentSetResponseCWProxyImpl
   ComponentSetResponse componentSet(PublishedComponentSet componentSet) =>
       call(componentSet: componentSet);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ComponentSetResponse(...).copyWith.fieldName(value)`.
   ///
@@ -39,6 +38,7 @@ class _$ComponentSetResponseCWProxyImpl
   /// ```dart
   /// ComponentSetResponse(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   ComponentSetResponse call({
     Object? componentSet = const $CopyWithPlaceholder(),
   }) {

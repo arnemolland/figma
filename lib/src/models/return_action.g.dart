@@ -29,7 +29,6 @@ class _$ReturnActionCWProxyImpl implements _$ReturnActionCWProxy {
   @override
   ReturnAction type(ActionType type) => call(type: type);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ReturnAction(...).copyWith.fieldName(value)`.
   ///
@@ -37,6 +36,7 @@ class _$ReturnActionCWProxyImpl implements _$ReturnActionCWProxy {
   /// ```dart
   /// ReturnAction(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   ReturnAction call({Object? type = const $CopyWithPlaceholder()}) {
     return ReturnAction(
       type: type == const $CopyWithPlaceholder() || type == null

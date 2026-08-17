@@ -29,7 +29,6 @@ class _$StyleResponseCWProxyImpl implements _$StyleResponseCWProxy {
   @override
   StyleResponse style(PublishedStyle style) => call(style: style);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `StyleResponse(...).copyWith.fieldName(value)`.
   ///
@@ -37,6 +36,7 @@ class _$StyleResponseCWProxyImpl implements _$StyleResponseCWProxy {
   /// ```dart
   /// StyleResponse(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   StyleResponse call({Object? style = const $CopyWithPlaceholder()}) {
     return StyleResponse(
       style: style == const $CopyWithPlaceholder() || style == null

@@ -34,7 +34,6 @@ class _$MeasurementStartEndCWProxyImpl implements _$MeasurementStartEndCWProxy {
   @override
   MeasurementStartEnd side(Side side) => call(side: side);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `MeasurementStartEnd(...).copyWith.fieldName(value)`.
   ///
@@ -42,6 +41,7 @@ class _$MeasurementStartEndCWProxyImpl implements _$MeasurementStartEndCWProxy {
   /// ```dart
   /// MeasurementStartEnd(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   MeasurementStartEnd call({
     Object? nodeId = const $CopyWithPlaceholder(),
     Object? side = const $CopyWithPlaceholder(),

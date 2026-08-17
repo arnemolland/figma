@@ -43,7 +43,6 @@ class _$PublishedVariablesMetaCWProxyImpl
     Map<String, PublishedVariableCollection> variableCollections,
   ) => call(variableCollections: variableCollections);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PublishedVariablesMeta(...).copyWith.fieldName(value)`.
   ///
@@ -51,6 +50,7 @@ class _$PublishedVariablesMetaCWProxyImpl
   /// ```dart
   /// PublishedVariablesMeta(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   PublishedVariablesMeta call({
     Object? variables = const $CopyWithPlaceholder(),
     Object? variableCollections = const $CopyWithPlaceholder(),

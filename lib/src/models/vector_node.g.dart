@@ -444,7 +444,6 @@ class _$VectorNodeCWProxyImpl implements _$VectorNodeCWProxy {
   VectorNode rectangleCornerRadii(List<num> rectangleCornerRadii) =>
       call(rectangleCornerRadii: rectangleCornerRadii);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `VectorNode(...).copyWith.fieldName(value)`.
   ///
@@ -452,6 +451,7 @@ class _$VectorNodeCWProxyImpl implements _$VectorNodeCWProxy {
   /// ```dart
   /// VectorNode(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   VectorNode call({
     Object? id = const $CopyWithPlaceholder(),
     Object? name = const $CopyWithPlaceholder(),

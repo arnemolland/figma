@@ -210,7 +210,6 @@ class _$TypeStyleCWProxyImpl implements _$TypeStyleCWProxy {
   TypeStyle boundVariables(TypeStyleVariables boundVariables) =>
       call(boundVariables: boundVariables);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `TypeStyle(...).copyWith.fieldName(value)`.
   ///
@@ -218,6 +217,7 @@ class _$TypeStyleCWProxyImpl implements _$TypeStyleCWProxy {
   /// ```dart
   /// TypeStyle(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   TypeStyle call({
     Object? fontFamily = const $CopyWithPlaceholder(),
     Object? fontPostScriptName = const $CopyWithPlaceholder(),

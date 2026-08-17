@@ -466,7 +466,6 @@ class _$RegularPolygonNodeCWProxyImpl implements _$RegularPolygonNodeCWProxy {
   RegularPolygonNode rectangleCornerRadii(List<num> rectangleCornerRadii) =>
       call(rectangleCornerRadii: rectangleCornerRadii);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `RegularPolygonNode(...).copyWith.fieldName(value)`.
   ///
@@ -474,6 +473,7 @@ class _$RegularPolygonNodeCWProxyImpl implements _$RegularPolygonNodeCWProxy {
   /// ```dart
   /// RegularPolygonNode(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   RegularPolygonNode call({
     Object? id = const $CopyWithPlaceholder(),
     Object? name = const $CopyWithPlaceholder(),

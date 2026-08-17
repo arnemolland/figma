@@ -67,7 +67,6 @@ class _$ImageFiltersCWProxyImpl implements _$ImageFiltersCWProxy {
   @override
   ImageFilters shadows(num shadows) => call(shadows: shadows);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ImageFilters(...).copyWith.fieldName(value)`.
   ///
@@ -75,6 +74,7 @@ class _$ImageFiltersCWProxyImpl implements _$ImageFiltersCWProxy {
   /// ```dart
   /// ImageFilters(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   ImageFilters call({
     Object? exposure = const $CopyWithPlaceholder(),
     Object? contrast = const $CopyWithPlaceholder(),

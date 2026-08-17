@@ -29,7 +29,6 @@ class _$ImageFillsMetaCWProxyImpl implements _$ImageFillsMetaCWProxy {
   @override
   ImageFillsMeta images(Map<String, Uri> images) => call(images: images);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ImageFillsMeta(...).copyWith.fieldName(value)`.
   ///
@@ -37,6 +36,7 @@ class _$ImageFillsMetaCWProxyImpl implements _$ImageFillsMetaCWProxy {
   /// ```dart
   /// ImageFillsMeta(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   ImageFillsMeta call({Object? images = const $CopyWithPlaceholder()}) {
     return ImageFillsMeta(
       images: images == const $CopyWithPlaceholder() || images == null

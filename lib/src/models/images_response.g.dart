@@ -29,7 +29,6 @@ class _$ImagesResponseCWProxyImpl implements _$ImagesResponseCWProxy {
   @override
   ImagesResponse images(Map<String, Uri?> images) => call(images: images);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ImagesResponse(...).copyWith.fieldName(value)`.
   ///
@@ -37,6 +36,7 @@ class _$ImagesResponseCWProxyImpl implements _$ImagesResponseCWProxy {
   /// ```dart
   /// ImagesResponse(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   ImagesResponse call({Object? images = const $CopyWithPlaceholder()}) {
     return ImagesResponse(
       images: images == const $CopyWithPlaceholder() || images == null

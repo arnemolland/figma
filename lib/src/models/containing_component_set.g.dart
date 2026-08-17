@@ -35,7 +35,6 @@ class _$ContainingComponentSetCWProxyImpl
   @override
   ContainingComponentSet name(String? name) => call(name: name);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ContainingComponentSet(...).copyWith.fieldName(value)`.
   ///
@@ -43,6 +42,7 @@ class _$ContainingComponentSetCWProxyImpl
   /// ```dart
   /// ContainingComponentSet(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   ContainingComponentSet call({
     Object? nodeId = const $CopyWithPlaceholder(),
     Object? name = const $CopyWithPlaceholder(),
