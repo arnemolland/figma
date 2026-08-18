@@ -228,4 +228,5 @@ const _$LinkAccessEnumMap = {
   LinkAccess.orgView: 'org_view',
   LinkAccess.orgEdit: 'org_edit',
   LinkAccess.inherit: 'inherit',
+  LinkAccess.workspaceView: 'workspace_view',
 };
