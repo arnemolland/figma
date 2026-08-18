@@ -1,4 +1,4 @@
-## 8.0.0-alpha.3
+## 8.0.0-alpha.4
 
 - Generate models from Figma's REST API specification ([@donny-dont](https://github.com/donny-dont))
 - Update to v0.40.0 of REST API specification ([@donny-dont](https://github.com/donny-dont))
