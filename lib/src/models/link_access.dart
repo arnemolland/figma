@@ -14,4 +14,6 @@ enum LinkAccess {
   orgEdit,
   @JsonValue('inherit')
   inherit,
+  @JsonValue('workspace_view')
+  workspaceView,
 }
