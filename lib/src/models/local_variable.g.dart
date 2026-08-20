@@ -248,6 +248,8 @@ const _$VariableResolvedDataTypeEnumMap = {
   VariableResolvedDataType.float: 'FLOAT',
   VariableResolvedDataType.string: 'STRING',
   VariableResolvedDataType.color: 'COLOR',
+  VariableResolvedDataType.timing: 'TIMING',
+  VariableResolvedDataType.easing: 'EASING',
 };
 
 const _$VariableScopeEnumMap = {

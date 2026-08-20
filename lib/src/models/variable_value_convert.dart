@@ -1,6 +1,9 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:meta/meta.dart';
 
+import 'cubic_bezier.dart';
+import 'easing.dart';
+import 'easing_type.dart';
 import 'expression.dart';
 import 'rgba.dart';
 import 'variable_alias.dart';
@@ -22,6 +25,9 @@ class VariableValueConverter implements JsonConverter<VariableValue, Object> {
         construct = Rgba.fromJson;
       } else if (json.containsKey('expressionFunction')) {
         construct = Expression.fromJson;
+      } else if (json.containsKey('easingType')) {
+        _easingFromJson(json);
+        construct = Easing.fromJson;
       }
 
       return construct(json.cast<String, Object?>());
@@ -36,9 +42,67 @@ class VariableValueConverter implements JsonConverter<VariableValue, Object> {
   Object toJson(VariableValue object) => switch (object) {
     Rgba() => object.toJson(),
     VariableAlias() => object.toJson(),
+    Easing() => _easingToJson(object),
     Expression() => object.toJson(),
     bool() || num() || String() => object,
     _ => _throw(object),
+  };
+
+  static void _easingFromJson(Map json) {
+    final bezier =
+        (json.remove('bezierValues') as Map?) ??
+        <String, Object?>{'p1x': 0.42, 'p1y': 0, 'p2x': 1, 'p2y': 1};
+    _bezierValuesFromJson(bezier);
+
+    json['easingFunctionCubicBezier'] = bezier;
+    json['type'] = switch (json.remove('easingType')) {
+      0 => 'EASE_IN',
+      1 => 'EASE_OUT',
+      2 => 'EASE_IN_AND_OUT',
+      3 => 'LINEAR',
+      4 => 'EASE_IN_BACK',
+      5 => 'EASE_OUT_BACK',
+      6 => 'EASE_IN_AND_OUT_BACK',
+      10 => 'CUSTOM_SPRING',
+      _ => 'CUSTOM_CUBIC_BEZIER',
+    };
+    json['easingFunctionSpring'] =
+        json.remove('springValues') ??
+        <String, Object?>{
+          'damping': 10.018908500671387,
+          'mass': 1,
+          'stiffness': 100,
+        };
+  }
+
+  static void _bezierValuesFromJson(Map json) {
+    json['x1'] = json.remove('p1x');
+    json['y1'] = json.remove('p1y');
+    json['x2'] = json.remove('p2x');
+    json['y2'] = json.remove('p2y');
+  }
+
+  static Map _easingToJson(Easing object) => <String, Object?>{
+    'bezierValues': _bezierValuesToJson(object.easingFunctionCubicBezier!),
+    'easingType': switch (object.type) {
+      EasingType.easeIn => 0,
+      EasingType.easeOut => 1,
+      EasingType.easeInAndOut => 2,
+      EasingType.linear => 3,
+      EasingType.easeInBack => 4,
+      EasingType.easeOutBack => 5,
+      EasingType.easeInAndOutBack => 6,
+      EasingType.customSpring => 10,
+      _ => 7,
+    },
+    'springValues': object.easingFunctionSpring?.toJson(),
+  };
+
+  static Map _bezierValuesToJson(CubicBezier object) => <String, Object?>{
+    'p1x': object.x1,
+    'p1y': object.y1,
+    'p2x': object.x2,
+    'p2y': object.y2,
   };
 
   static Object _unknown(Map<String, Object?> json) => _throw(json);
